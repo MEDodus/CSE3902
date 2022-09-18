@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -6,8 +7,8 @@ namespace Zelda
 {
     public static class TextureStorage
     {
-        // Enum for all of the different sprites in the game
-        public enum GameSprite
+        // Enum for all of the different spritesheets
+        public enum SpriteSheet
         {
             // TODO: enemies, blocks, items, projectiles
 
@@ -19,28 +20,29 @@ namespace Zelda
         };
 
         // Dictionary containing the spritesheet filenames for each sprite
-        private static Dictionary<GameSprite, string> TextureIds = new Dictionary<GameSprite, string>()
+        private static readonly Dictionary<SpriteSheet, string> FileNames = new Dictionary<SpriteSheet, string>()
         {
             //{GameSprite.Link, "LINK SPRITESHEET FILE"},
             //{GameSprite.Block, "BLOCK SPRITESHEET FILE"},
         };
 
         // Dictionary containing all of the loaded Texture2Ds for each sprite (initialized in LoadContent)
-        private static Dictionary<GameSprite, Texture2D> Textures = new Dictionary<GameSprite, Texture2D>();
+        private static readonly Dictionary<SpriteSheet, Texture2D> Textures = new Dictionary<SpriteSheet, Texture2D>();
 
         // Loads and stores textures for all sprites
         public static void LoadContent(ContentManager content)
         {
-            foreach (KeyValuePair<GameSprite, string> pair in TextureIds)
+            foreach (KeyValuePair<SpriteSheet, string> pair in FileNames)
             {
                 Texture2D texture = content.Load<Texture2D>(pair.Value);
                 Textures.Add(pair.Key, texture);
             }
         }
 
-        public static Texture2D GetTexture(GameSprite spriteKey)
+        // Returns the created Texture2D associated with a given spritesheet
+        public static Texture2D GetTexture(SpriteSheet sheetName)
         {
-            return Textures.GetValueOrDefault(spriteKey);
+            return Textures.GetValueOrDefault(sheetName);
         }
     }
 

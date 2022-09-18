@@ -2,6 +2,18 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+/*
+ * CSE 3902 Legend of Zelda
+ * Autumn 2022 - Matt Boggus
+ * 
+ * Team Members:
+ * Michael Dodus
+ * Prithviraj Patel
+ * Jacob Pohlabel
+ * Alex Reed
+ * Nichola Younoszai
+ * Jiayuan Zhang
+ */
 namespace Zelda
 {
     public class Game1 : Game
@@ -26,8 +38,7 @@ namespace Zelda
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            TextureStorage.LoadContent(Content);
         }
 
         protected override void Update(GameTime gameTime)

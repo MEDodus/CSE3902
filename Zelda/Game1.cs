@@ -20,10 +20,14 @@ namespace Zelda
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private IController keyboard;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            keyboard = new KeyboardController();
+            keyboard.RegisterCommand(Keys.D0, new Quit(this));
+            keyboard.RegisterCommand(Keys.NumPad0, new Quit(this));
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -43,11 +47,7 @@ namespace Zelda
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
-
+            keyboard.Update();
             base.Update(gameTime);
         }
 

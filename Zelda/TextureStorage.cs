@@ -16,12 +16,16 @@ namespace Zelda
 
             // Block
             Block, // example
+
+            // Tile
+            Tile, // being used
         };
 
         private static readonly Dictionary<SpriteSheet, string> FileNames = new Dictionary<SpriteSheet, string>()
         {
             //{GameSprite.Link, "LINK SPRITESHEET FILE"},
             //{GameSprite.Block, "BLOCK SPRITESHEET FILE"},
+            {SpriteSheet.Tile, "TILE SPRITESHEET FILE"}
         };
 
         private static readonly Dictionary<SpriteSheet, Texture2D> Textures = new Dictionary<SpriteSheet, Texture2D>();

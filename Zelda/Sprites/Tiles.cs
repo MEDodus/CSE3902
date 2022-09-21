@@ -34,14 +34,19 @@ namespace Zelda.Sprites
 
         public void InitTiles()
         {
-            int numTiles = rows * cols;
+            int numTiles = rows * cols, r = 0;
             for (int i = 0; i < numTiles; i++)
             {
-                int r;
-                if (i == 0) r = 0;
-                else r = cols / i;
+                if (i == 0)
+                {
+                    r = 0;
+                }
+                else
+                {
+                    r = cols / i;
+                }
                 int c = i % cols;
-                tiles[i] = new Tile(tileSheet, new Rectangle(50,50,tileSize, tileSize), new Rectangle(c * tileSize, r * tileSize, tileSize, tileSize));
+                tiles[i] = new Tile(new Rectangle(c * tileSize, r * tileSize, tileSize, tileSize), new Rectangle(50, 50, tileSize, tileSize));
             }
         }
 

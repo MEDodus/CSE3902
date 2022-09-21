@@ -11,17 +11,14 @@ namespace Zelda.Sprites
 {
     public class Tile : ISprite
     {
-        private Texture2D texture;
         private Rectangle sourceLocation;
         private Rectangle destinationLocation;
 
-        public Texture2D Texture { get { return texture; } }
         public Rectangle SourceLocation { get { return sourceLocation; } }
         public Rectangle DestinationLocation { get { return destinationLocation; } }    
 
-        public Tile(Texture2D texture, Rectangle sourceLocation, Rectangle destinationRectangle)
+        public Tile(Rectangle sourceLocation, Rectangle destinationRectangle)
         {
-            this.texture = texture;
             this.sourceLocation = sourceLocation;
             this.destinationLocation = destinationRectangle;
         }

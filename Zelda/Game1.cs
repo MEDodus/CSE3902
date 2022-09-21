@@ -3,6 +3,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Reflection.Metadata;
 using System.Security.AccessControl;
+using Zelda.Commands;
+using Zelda.Controllers;
 
 /*
  * CSE 3902 Legend of Zelda

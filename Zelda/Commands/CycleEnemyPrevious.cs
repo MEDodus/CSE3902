@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zelda
+namespace Zelda.Commands
 {
-    public class CycleBlockNext : ICommand
+    public class CycleEnemyPrevious : ICommand
     {
         private Game1 game;
 
-        public CycleBlockNext(Game1 game)
+        public CycleEnemyPrevious(Game1 game)
         {
             this.game = game;
         }

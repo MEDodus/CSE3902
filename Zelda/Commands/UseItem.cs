@@ -4,19 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zelda
+namespace Zelda.Commands
 {
-    public class Right : ICommand
+    public class UseItem : ICommand
     {
         private Game1 game;
 
-        // TODO: Pass reference of playable sprite here?
-        public Right(Game1 game)
+        public UseItem(Game1 game)
         {
             this.game = game;
         }
 
-        // TODO: Execute right on playable sprite
         public void Execute()
         {
 

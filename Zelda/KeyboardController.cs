@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Zelda
+namespace Zelda.Controllers
 {
     public class KeyboardController : IController
     {
@@ -19,7 +19,8 @@ namespace Zelda
         }
 
         // Sets state of keyboard to whichever key was pressed.
-        public void RegisterCommand(Keys key, ICommand command) {
+        public void RegisterCommand(Keys key, ICommand command)
+        {
             {
                 controllerMappings.Add(key, command);
             }
@@ -30,7 +31,7 @@ namespace Zelda
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
             foreach (Keys key in pressedKeys)
             {
-                controllerMappings[key].Execute();
+                if (controllerMappings.ContainsKey(key)) controllerMappings[key].Execute();
             }
         }
     }

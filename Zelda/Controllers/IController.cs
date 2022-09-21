@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Zelda
+namespace Zelda.Controllers
 {
     public interface IController
     {
@@ -14,4 +14,3 @@ namespace Zelda
         public void Update();
     }
 }
- 

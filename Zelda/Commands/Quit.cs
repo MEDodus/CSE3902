@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zelda
+namespace Zelda.Commands
 {
-    internal class CycleBlockPrevious : ICommand
+    public class Quit : ICommand
     {
         private Game1 game;
 
-        public CycleBlockPrevious(Game1 game)
+        public Quit(Game1 game)
         {
             this.game = game;
         }
 
         public void Execute()
         {
-
+            game.Exit();
         }
     }
 }

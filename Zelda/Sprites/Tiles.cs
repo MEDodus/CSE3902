@@ -17,11 +17,11 @@ namespace Zelda.Sprites
     public class Tiles
     {
         // Tiles in sprite sheet are always 16x16
-        private readonly int tileSize = 16;
+        private readonly int TILESIZE = 16;
 
         // Rows and Cols for sprite sheet are 2 and 5
-        private readonly int rows = 2;
-        private readonly int cols = 5;
+        private readonly int ROWS = 2;
+        private readonly int COLS = 5;
 
         private ISprite[] tiles;
         private Texture2D tileSheet;
@@ -32,13 +32,13 @@ namespace Zelda.Sprites
         public Tiles()
         {
             this.tileSheet = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Tile);
-            this.tiles = new Tile[rows * cols];
+            this.tiles = new Tile[ROWS * COLS];
             this.idx = 0;
         }
 
         public void InitTiles()
         {
-            int numTiles = rows * cols, r = 0;
+            int numTiles = ROWS * COLS, r = 0;
             for (int i = 0; i < numTiles; i++)
             {
                 if (i == 0)
@@ -47,10 +47,10 @@ namespace Zelda.Sprites
                 }
                 else
                 {
-                    r = cols / i;
+                    r = COLS / i;
                 }
-                int c = i % cols;
-                tiles[i] = new Tile(new Rectangle(c * tileSize, r * tileSize, tileSize, tileSize), new Rectangle(50, 50, tileSize, tileSize));
+                int c = i % COLS;
+                tiles[i] = new Tile(new Rectangle(c * TILESIZE, r * TILESIZE, TILESIZE, TILESIZE), new Rectangle(50, 50, TILESIZE, TILESIZE));
             }
         }
 

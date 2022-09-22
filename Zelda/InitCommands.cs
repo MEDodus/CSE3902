@@ -44,9 +44,6 @@ namespace Zelda
             // The below keys only cycle between the previous or next sprite to be drawn for 
             // each object type. We could probably just have one command class instead of 6.
 
-            // For items drawn to the screen
-            keyboard.RegisterCommand(Keys.U, new CycleItemPrevious(game));
-            keyboard.RegisterCommand(Keys.I, new CycleItemNext(game));
 
             // For enemies drawn to the screen
             keyboard.RegisterCommand(Keys.O, new CycleEnemyPrevious(game));
@@ -63,6 +60,13 @@ namespace Zelda
             // For blocks drawn to the screen
             keyboard.RegisterCommand(Keys.T, new CycleBlockPrevious(game, tiles));
             keyboard.RegisterCommand(Keys.Y, new CycleBlockNext(game, tiles));
+        }
+
+        public static void InitItems(IController keyboard, Game1 game, Items items)
+        {
+            // For items drawn to the screen
+            keyboard.RegisterCommand(Keys.U, new CycleItemPrevious(game, items));
+            keyboard.RegisterCommand(Keys.I, new CycleItemNext(game, items));
         }
     }
 }

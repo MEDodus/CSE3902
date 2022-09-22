@@ -27,6 +27,7 @@ namespace Zelda
         private SpriteBatch _spriteBatch;
 
         private Tiles tiles;
+        private Items items;
         private IController keyboard;
 
         public Game1()
@@ -49,15 +50,19 @@ namespace Zelda
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             TextureStorage.LoadContent(Content);
             tiles = new Tiles();
+            items = new Items();
             tiles.InitTiles();
+            items.InitItems();
 
             // Registering commands
             InitCommands.Init(keyboard, this);
             InitCommands.InitTiles(keyboard, this, tiles);
+            InitCommands.InitItems(keyboard, this, items);
         }
 
         protected override void Update(GameTime gameTime)
         {
+            items.Update();
             keyboard.Update();
             base.Update(gameTime);
         }
@@ -68,6 +73,7 @@ namespace Zelda
 
             // TODO: Add your drawing code here
             tiles.Draw(_spriteBatch);
+            items.Draw(_spriteBatch);
             base.Draw(gameTime);
         }
     }

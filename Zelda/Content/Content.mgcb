@@ -133,7 +133,7 @@
 /processorParam:TextureFormat=Color
 /build:COMPASS SPRITESHEET FILE.png
 
-#begin FAIRY SPRITESHEET FILE.gif
+#begin FAIRY SPRITESHEET FILE.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -143,9 +143,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:FAIRY SPRITESHEET FILE.gif
+/build:FAIRY SPRITESHEET FILE.png
 
-#begin FIRE SPRITESHEET FILE.gif
+#begin FIRE SPRITESHEET FILE.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -155,7 +155,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:FIRE SPRITESHEET FILE.gif
+/build:FIRE SPRITESHEET FILE.png
 
 #begin FIVE RUPIES SPRITESHEET FILE.png
 /importer:TextureImporter
@@ -193,7 +193,7 @@
 /processorParam:TextureFormat=Color
 /build:HEART CONTAINER SPRITESHEET FILE.png
 
-#begin HEART SPRITESHEET FILE.gif
+#begin HEART SPRITESHEET FILE.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -203,7 +203,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:HEART SPRITESHEET FILE.gif
+/build:HEART SPRITESHEET FILE.png
 
 #begin KEY SPRITESHEET FILE.png
 /importer:TextureImporter
@@ -361,7 +361,7 @@
 /processorParam:TextureFormat=Color
 /build:RED RING SPRITESHEET FILE.png
 
-#begin RUPY SPRITESHEET FILE.gif
+#begin RUPY SPRITESHEET FILE.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -371,7 +371,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:RUPY SPRITESHEET FILE.gif
+/build:RUPY SPRITESHEET FILE.png
 
 #begin SILVER ARROW SPRITESHEET FILE.png
 /importer:TextureImporter
@@ -421,7 +421,7 @@
 /processorParam:TextureFormat=Color
 /build:TILE SPRITESHEET FILE.png
 
-#begin TRIFORCE SPRITESHEET FILE.gif
+#begin TRIFORCE SPRITESHEET FILE.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -431,7 +431,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:TRIFORCE SPRITESHEET FILE.gif
+/build:TRIFORCE SPRITESHEET FILE.png
 
 #begin WHITE SWORD SPRITESHEET FILE.png
 /importer:TextureImporter

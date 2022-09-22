@@ -7,7 +7,7 @@ using Zelda.Sprites;
 
 namespace Zelda.Commands
 {
-    internal class CycleBlockPrevious : ICommand
+    public class CycleBlockPrevious : ICommand
     {
         private static int MOD = 6;
         private Game1 game;

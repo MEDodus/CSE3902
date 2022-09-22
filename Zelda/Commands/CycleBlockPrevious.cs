@@ -10,13 +10,11 @@ namespace Zelda.Commands
     public class CycleBlockPrevious : ICommand
     {
         private static int MOD = 6;
-        private Game1 game;
         private Tiles tiles;
         private int frame;
 
-        public CycleBlockPrevious(Game1 game, Tiles tiles)
+        public CycleBlockPrevious(Tiles tiles)
         {
-            this.game = game;
             this.tiles = tiles;
             this.frame = 0;
         }

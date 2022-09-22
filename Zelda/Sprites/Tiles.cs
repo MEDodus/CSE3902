@@ -34,6 +34,7 @@ namespace Zelda.Sprites
             this.tileSheet = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Tile);
             this.tiles = new Tile[ROWS * COLS];
             this.idx = 0;
+            InitTiles();
         }
 
         public void InitTiles()
@@ -78,9 +79,14 @@ namespace Zelda.Sprites
             }
         }
 
+        public void Reset()
+        {
+            idx = 0;
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            Tile tile = (Tile)tiles[idx];
+            ISprite tile = tiles[idx];
             spriteBatch.Begin();
             spriteBatch.Draw(tileSheet, tile.DestinationLocation, tile.SourceLocation, Color.White);
             spriteBatch.End();

@@ -40,7 +40,6 @@ namespace Zelda
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             base.Initialize();
         }
 
@@ -51,13 +50,12 @@ namespace Zelda
             TextureStorage.LoadContent(Content);
             tiles = new Tiles();
             items = new Items();
-            tiles.InitTiles();
-            items.InitItems();
 
             // Registering commands
             InitCommands.Init(keyboard, this);
-            InitCommands.InitTiles(keyboard, this, tiles);
-            InitCommands.InitItems(keyboard, this, items);
+            InitCommands.InitTiles(keyboard, tiles);
+            InitCommands.InitItems(keyboard, items);
+            InitCommands.InitReset(keyboard, items, tiles);
         }
 
         protected override void Update(GameTime gameTime)
@@ -71,7 +69,6 @@ namespace Zelda
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
             tiles.Draw(_spriteBatch);
             items.Draw(_spriteBatch);
             base.Draw(gameTime);

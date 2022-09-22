@@ -49,24 +49,29 @@ namespace Zelda
             keyboard.RegisterCommand(Keys.O, new CycleEnemyPrevious(game));
             keyboard.RegisterCommand(Keys.P, new CycleEnemyNext(game));
 
-
-            // For quiting and reset game state
+            // For quitting the game
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
-            keyboard.RegisterCommand(Keys.R, new Reset(game));
+
         }
 
-        public static void InitTiles(IController keyboard, Game1 game, Tiles tiles)
+        public static void InitTiles(IController keyboard, Tiles tiles)
         {
             // For blocks drawn to the screen
-            keyboard.RegisterCommand(Keys.T, new CycleBlockPrevious(game, tiles));
-            keyboard.RegisterCommand(Keys.Y, new CycleBlockNext(game, tiles));
+            keyboard.RegisterCommand(Keys.T, new CycleBlockPrevious(tiles));
+            keyboard.RegisterCommand(Keys.Y, new CycleBlockNext(tiles));
         }
 
-        public static void InitItems(IController keyboard, Game1 game, Items items)
+        public static void InitItems(IController keyboard, Items items)
         {
             // For items drawn to the screen
-            keyboard.RegisterCommand(Keys.U, new CycleItemPrevious(game, items));
-            keyboard.RegisterCommand(Keys.I, new CycleItemNext(game, items));
+            keyboard.RegisterCommand(Keys.U, new CycleItemPrevious(items));
+            keyboard.RegisterCommand(Keys.I, new CycleItemNext(items));
+        }
+
+        public static void InitReset(IController keyboard, Items items, Tiles tiles)
+        {
+            // For reseting game state
+            keyboard.RegisterCommand(Keys.R, new Reset(items, tiles));
         }
     }
 }

@@ -19,6 +19,7 @@ namespace Zelda.Sprites
         {
             items = new ISprite[itemSize];
             idx = 0;
+            InitItems();
         }
 
         public void InitItems()
@@ -87,6 +88,11 @@ namespace Zelda.Sprites
         public void Update()
         {
             items[idx].Update();
+        }
+
+        public void Reset()
+        {
+            idx = 0;
         }
 
         public void Draw(SpriteBatch spriteBatch)

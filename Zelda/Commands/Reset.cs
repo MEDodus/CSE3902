@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zelda.Sprites;
 
 namespace Zelda.Commands
 {
     public class Reset : ICommand
     {
-        private Game1 game;
+        private Tiles tiles;
+        private Items items;
 
-        public Reset(Game1 game)
+        public Reset(Items items, Tiles tiles)
         {
-            this.game = game;
+            this.items = items;
+            this.tiles = tiles;
         }
 
         public void Execute()
         {
-
+            // Add other classes to reset
+            items.Reset();
+            tiles.Reset();
         }
     }
 }

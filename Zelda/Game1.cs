@@ -48,7 +48,7 @@ namespace Zelda
             // Texture loading
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             TextureStorage.LoadContent(Content);
-            tiles = new Tiles(2, 5, 16);
+            tiles = new Tiles();
             tiles.InitTiles();
 
             // Registering commands

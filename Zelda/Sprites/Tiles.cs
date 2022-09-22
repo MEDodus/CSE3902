@@ -9,26 +9,30 @@ using System.Threading.Tasks;
 using Color = Microsoft.Xna.Framework.Color;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
+
+
+
 namespace Zelda.Sprites
 {
     public class Tiles
     {
-        private Tile[] tiles;
+        // Tiles in sprite sheet are always 16x16
+        private readonly int tileSize = 16;
+
+        // Rows and Cols for sprite sheet are 2 and 5
+        private readonly int rows = 2;
+        private readonly int cols = 5;
+
+        private ISprite[] tiles;
         private Texture2D tileSheet;
-        private int tileSize;
-        private int rows;
-        private int cols;
         private int idx;
 
-        public Tile GetTile { get { return tiles[idx]; } }
+        public ISprite GetTile { get { return tiles[idx]; } }
         
-        public Tiles(int rows, int cols, int tileSize)
+        public Tiles()
         {
             this.tileSheet = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Tile);
             this.tiles = new Tile[rows * cols];
-            this.tileSize = tileSize;
-            this.rows = rows;
-            this.cols = cols;
             this.idx = 0;
         }
 
@@ -76,7 +80,7 @@ namespace Zelda.Sprites
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Tile tile = tiles[idx];
+            Tile tile = (Tile)tiles[idx];
             spriteBatch.Begin();
             spriteBatch.Draw(tileSheet, tile.DestinationLocation, tile.SourceLocation, Color.White);
             spriteBatch.End();

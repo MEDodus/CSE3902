@@ -14,8 +14,9 @@ namespace Zelda.Sprites
         private Rectangle sourceLocation;
         private Rectangle destinationLocation;
 
+        public Texture2D Texture { get { return null; } }
         public Rectangle SourceLocation { get { return sourceLocation; } }
-        public Rectangle DestinationLocation { get { return destinationLocation; } }    
+        public Rectangle DestinationLocation { get { return destinationLocation; } }
 
         public Tile(Rectangle sourceLocation, Rectangle destinationRectangle)
         {

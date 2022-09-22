@@ -23,25 +23,43 @@ namespace Zelda
 
         private static readonly Dictionary<SpriteSheet, string> FileNames = new Dictionary<SpriteSheet, string>()
         {
-            // Items and Tiles
-            {SpriteSheet.Tile, "TILE SPRITESHEET FILE" }, {SpriteSheet.Arrow, "ARROW SPRITESHEET FILE" },
-            {SpriteSheet.SilverArrow, "SILVER ARROW SPRITESHEET FILE" }, {SpriteSheet.Bomb, "BOMB SPRITESHEET FILE" },
-            {SpriteSheet.BookOfMagic, "BOOK OF MAGIC SPRITESHEET FILE" }, {SpriteSheet.Boomerang, "BOOMERANG SPRITESHEET FILE" },
-            {SpriteSheet.MagicalBoomerang, "MAGICAL BOOMERANG SPRITESHEET FILE" }, {SpriteSheet.Bow, "BOW SPRITESHEET FILE" },
-            {SpriteSheet.BlueCandle, "BLUE CANDLE SPRITESHEET FILE" }, {SpriteSheet.RedCandle, "RED CANDLE SPRITESHEET FILE" },
-            {SpriteSheet.Clock, "CLOCK SPRITESHEET FILE" }, {SpriteSheet.Compass, "COMPASS SPRITESHEET FILE" },
-            {SpriteSheet.Fairy, "FAIRY SPRITESHEET FILE" }, {SpriteSheet.Food, "FOOD SPRITESHEET FILE" },
-            {SpriteSheet.Heart, "HEART SPRITESHEET FILE" }, {SpriteSheet.HeartContainer, "HEART CONTAINER SPRITESHEET FILE" },
-            {SpriteSheet.Key, "KEY SPRITESHEET FILE" }, {SpriteSheet.MagicalKey, "MAGICAL KEY SPRITESHEET FILE" },
-            {SpriteSheet.Letter, "LETTER SPRITESHEET FILE" }, {SpriteSheet.MagicalRod, "MAGICAL ROD SPRITESHEET FILE" },
-            {SpriteSheet.MagicalShield, "MAGICAL SHIELD SPRITESHEET FILE" }, {SpriteSheet.Map, "MAP SPRITESHEET FILE" },
-            {SpriteSheet.BluePotion, "BLUE POTION SPRITESHEET FILE" }, {SpriteSheet.RedPotion, "RED POTION SPRITESHEET FILE" },
-            {SpriteSheet.PowerBracelet, "POWER BRACELET SPRITESHEET FILE" }, {SpriteSheet.Raft, "RAFT SPRITESHEET FILE" },
-            {SpriteSheet.Recorder, "RECORDER SPRITESHEET FILE" }, {SpriteSheet.BlueRing, "BLUE RING SPRITESHEET FILE" },
-            {SpriteSheet.RedRing, "RED RING SPRITESHEET FILE" }, {SpriteSheet.Rupy, "RUPY SPRITESHEET FILE" },
-            {SpriteSheet.FiveRupies, "FIVE RUPIES SPRITESHEET FILE" }, {SpriteSheet.Stepladder, "STEPLADDER SPRITESHEET FILE" },
-            {SpriteSheet.Sword, "SWORD SPRITESHEET FILE" }, {SpriteSheet.WhiteSword, "WHITE SWORD SPRITESHEET FILE" },
-            {SpriteSheet.Triforce, "TRIFORCE SPRITESHEET FILE" }, {SpriteSheet.Fire, "FIRE SPRITESHEET FILE" }
+            // Tiles and items
+            {SpriteSheet.Tile, "tiles" },
+            {SpriteSheet.Arrow, "arrow" },
+            {SpriteSheet.SilverArrow, "silver_arrow" },
+            {SpriteSheet.Bomb, "bomb" },
+            {SpriteSheet.BookOfMagic, "book_of_magic" },
+            {SpriteSheet.Boomerang, "boomerang" },
+            {SpriteSheet.MagicalBoomerang, "magical_boomerang" },
+            {SpriteSheet.Bow, "bow" },
+            {SpriteSheet.BlueCandle, "blue_candle" },
+            {SpriteSheet.RedCandle, "red_candle" },
+            {SpriteSheet.Clock, "clock" },
+            {SpriteSheet.Compass, "compass" },
+            {SpriteSheet.Fairy, "fairy" },
+            {SpriteSheet.Food, "food" },
+            {SpriteSheet.Heart, "heart" },
+            {SpriteSheet.HeartContainer, "heart_container" },
+            {SpriteSheet.Key, "key" },
+            {SpriteSheet.MagicalKey, "magical_key" },
+            {SpriteSheet.Letter, "letter" },
+            {SpriteSheet.MagicalRod, "magical_rod" },
+            {SpriteSheet.MagicalShield, "magical_shield" },
+            {SpriteSheet.Map, "map" },
+            {SpriteSheet.BluePotion, "blue_potion" },
+            {SpriteSheet.RedPotion, "red_potion" },
+            {SpriteSheet.PowerBracelet, "power_bracelet" },
+            {SpriteSheet.Raft, "raft" },
+            {SpriteSheet.Recorder, "recorder" },
+            {SpriteSheet.BlueRing, "blue_ring" },
+            {SpriteSheet.RedRing, "red_ring" },
+            {SpriteSheet.Rupy, "rupy" },
+            {SpriteSheet.FiveRupies, "five_rupies" },
+            {SpriteSheet.Stepladder, "stepladder" },
+            {SpriteSheet.Sword, "sword" },
+            {SpriteSheet.WhiteSword, "white_sword" },
+            {SpriteSheet.Triforce, "triforce" },
+            {SpriteSheet.Fire, "fire" }
         };
 
         private static readonly Dictionary<SpriteSheet, Texture2D> Textures = new Dictionary<SpriteSheet, Texture2D>();
@@ -50,7 +68,7 @@ namespace Zelda
         {
             foreach (KeyValuePair<SpriteSheet, string> pair in FileNames)
             {
-                Texture2D texture = content.Load<Texture2D>(pair.Value);
+                Texture2D texture = content.Load<Texture2D>("spritesheets\\" + pair.Value);
                 Textures.Add(pair.Key, texture);
             }
         }

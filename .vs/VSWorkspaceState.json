@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Zelda"
+    "\\Zelda",
+    "\\Zelda\\Commands",
+    "\\Zelda\\Controllers",
+    "\\Zelda\\Sprites"
   ],
-  "SelectedNode": "\\Zelda\\IController.cs",
+  "SelectedNode": "\\Zelda\\Game1.cs",
   "PreviewInSolutionExplorer": false
 }

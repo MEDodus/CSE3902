@@ -13,7 +13,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin ARROW SPRITESHEET FILE.png
+#begin spritesheets/arrow.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -23,9 +23,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:ARROW SPRITESHEET FILE.png
+/build:spritesheets/arrow.png
 
-#begin BLUE CANDLE SPRITESHEET FILE.png
+#begin spritesheets/blue_candle.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -35,9 +35,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:BLUE CANDLE SPRITESHEET FILE.png
+/build:spritesheets/blue_candle.png
 
-#begin BLUE POTION SPRITESHEET FILE.png
+#begin spritesheets/blue_potion.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -47,9 +47,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:BLUE POTION SPRITESHEET FILE.png
+/build:spritesheets/blue_potion.png
 
-#begin BLUE RING SPRITESHEET FILE.png
+#begin spritesheets/blue_ring.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -59,9 +59,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:BLUE RING SPRITESHEET FILE.png
+/build:spritesheets/blue_ring.png
 
-#begin BOMB SPRITESHEET FILE.png
+#begin spritesheets/bomb.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -71,9 +71,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:BOMB SPRITESHEET FILE.png
+/build:spritesheets/bomb.png
 
-#begin BOOK OF MAGIC SPRITESHEET FILE.png
+#begin spritesheets/book_of_magic.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -83,9 +83,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:BOOK OF MAGIC SPRITESHEET FILE.png
+/build:spritesheets/book_of_magic.png
 
-#begin BOOMERANG SPRITESHEET FILE.png
+#begin spritesheets/boomerang.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -95,9 +95,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:BOOMERANG SPRITESHEET FILE.png
+/build:spritesheets/boomerang.png
 
-#begin BOW SPRITESHEET FILE.png
+#begin spritesheets/bow.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -107,9 +107,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:BOW SPRITESHEET FILE.png
+/build:spritesheets/bow.png
 
-#begin CLOCK SPRITESHEET FILE.png
+#begin spritesheets/clock.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -119,9 +119,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:CLOCK SPRITESHEET FILE.png
+/build:spritesheets/clock.png
 
-#begin COMPASS SPRITESHEET FILE.png
+#begin spritesheets/compass.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -131,9 +131,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:COMPASS SPRITESHEET FILE.png
+/build:spritesheets/compass.png
 
-#begin FAIRY SPRITESHEET FILE.png
+#begin spritesheets/fairy.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -143,9 +143,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:FAIRY SPRITESHEET FILE.png
+/build:spritesheets/fairy.png
 
-#begin FIRE SPRITESHEET FILE.png
+#begin spritesheets/fire.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -155,9 +155,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:FIRE SPRITESHEET FILE.png
+/build:spritesheets/fire.png
 
-#begin FIVE RUPIES SPRITESHEET FILE.png
+#begin spritesheets/five_rupies.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -167,9 +167,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:FIVE RUPIES SPRITESHEET FILE.png
+/build:spritesheets/five_rupies.png
 
-#begin FOOD SPRITESHEET FILE.png
+#begin spritesheets/food.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -179,9 +179,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:FOOD SPRITESHEET FILE.png
+/build:spritesheets/food.png
 
-#begin HEART CONTAINER SPRITESHEET FILE.png
+#begin spritesheets/heart_container.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -191,9 +191,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:HEART CONTAINER SPRITESHEET FILE.png
+/build:spritesheets/heart_container.png
 
-#begin HEART SPRITESHEET FILE.png
+#begin spritesheets/heart.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -203,9 +203,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:HEART SPRITESHEET FILE.png
+/build:spritesheets/heart.png
 
-#begin KEY SPRITESHEET FILE.png
+#begin spritesheets/key.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -215,9 +215,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:KEY SPRITESHEET FILE.png
+/build:spritesheets/key.png
 
-#begin LETTER SPRITESHEET FILE.png
+#begin spritesheets/letter.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -227,9 +227,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:LETTER SPRITESHEET FILE.png
+/build:spritesheets/letter.png
 
-#begin MAGICAL BOOMERANG SPRITESHEET FILE.png
+#begin spritesheets/magical_boomerang.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -239,9 +239,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:MAGICAL BOOMERANG SPRITESHEET FILE.png
+/build:spritesheets/magical_boomerang.png
 
-#begin MAGICAL KEY SPRITESHEET FILE.png
+#begin spritesheets/magical_key.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -251,9 +251,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:MAGICAL KEY SPRITESHEET FILE.png
+/build:spritesheets/magical_key.png
 
-#begin MAGICAL ROD SPRITESHEET FILE.png
+#begin spritesheets/magical_rod.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -263,9 +263,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:MAGICAL ROD SPRITESHEET FILE.png
+/build:spritesheets/magical_rod.png
 
-#begin MAGICAL SHIELD SPRITESHEET FILE.png
+#begin spritesheets/magical_shield.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -275,9 +275,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:MAGICAL SHIELD SPRITESHEET FILE.png
+/build:spritesheets/magical_shield.png
 
-#begin MAP SPRITESHEET FILE.png
+#begin spritesheets/map.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -287,9 +287,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:MAP SPRITESHEET FILE.png
+/build:spritesheets/map.png
 
-#begin POWER BRACELET SPRITESHEET FILE.png
+#begin spritesheets/power_bracelet.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -299,9 +299,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:POWER BRACELET SPRITESHEET FILE.png
+/build:spritesheets/power_bracelet.png
 
-#begin RAFT SPRITESHEET FILE.png
+#begin spritesheets/raft.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -311,9 +311,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:RAFT SPRITESHEET FILE.png
+/build:spritesheets/raft.png
 
-#begin RECORDER SPRITESHEET FILE.png
+#begin spritesheets/recorder.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -323,9 +323,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:RECORDER SPRITESHEET FILE.png
+/build:spritesheets/recorder.png
 
-#begin RED CANDLE SPRITESHEET FILE.png
+#begin spritesheets/red_candle.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -335,9 +335,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:RED CANDLE SPRITESHEET FILE.png
+/build:spritesheets/red_candle.png
 
-#begin RED POTION SPRITESHEET FILE.png
+#begin spritesheets/red_potion.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -347,9 +347,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:RED POTION SPRITESHEET FILE.png
+/build:spritesheets/red_potion.png
 
-#begin RED RING SPRITESHEET FILE.png
+#begin spritesheets/red_ring.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -359,9 +359,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:RED RING SPRITESHEET FILE.png
+/build:spritesheets/red_ring.png
 
-#begin RUPY SPRITESHEET FILE.png
+#begin spritesheets/rupy.gif
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -371,9 +371,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:RUPY SPRITESHEET FILE.png
+/build:spritesheets/rupy.gif
 
-#begin SILVER ARROW SPRITESHEET FILE.png
+#begin spritesheets/rupy.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -383,9 +383,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:SILVER ARROW SPRITESHEET FILE.png
+/build:spritesheets/rupy.png
 
-#begin STEPLADDER SPRITESHEET FILE.png
+#begin spritesheets/silver_arrow.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -395,9 +395,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:STEPLADDER SPRITESHEET FILE.png
+/build:spritesheets/silver_arrow.png
 
-#begin SWORD SPRITESHEET FILE.png
+#begin spritesheets/stepladder.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -407,9 +407,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:SWORD SPRITESHEET FILE.png
+/build:spritesheets/stepladder.png
 
-#begin TILE SPRITESHEET FILE.png
+#begin spritesheets/sword.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -419,9 +419,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:TILE SPRITESHEET FILE.png
+/build:spritesheets/sword.png
 
-#begin TRIFORCE SPRITESHEET FILE.png
+#begin spritesheets/tiles.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -431,9 +431,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:TRIFORCE SPRITESHEET FILE.png
+/build:spritesheets/tiles.png
 
-#begin WHITE SWORD SPRITESHEET FILE.png
+#begin spritesheets/triforce.gif
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -443,5 +443,29 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:WHITE SWORD SPRITESHEET FILE.png
+/build:spritesheets/triforce.gif
+
+#begin spritesheets/triforce.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/triforce.png
+
+#begin spritesheets/white_sword.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/white_sword.png
 

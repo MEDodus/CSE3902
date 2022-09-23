@@ -84,3 +84,39 @@ C:\Users\Michael\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\STEPLADDER 
 C:\Users\Michael\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SWORD SPRITESHEET FILE.xnb
 C:\Users\Michael\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\TRIFORCE SPRITESHEET FILE.xnb
 C:\Users\Michael\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\WHITE SWORD SPRITESHEET FILE.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\arrow.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_candle.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_potion.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_ring.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\book_of_magic.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\boomerang.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bow.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\clock.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\compass.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fairy.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fire.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\five_rupies.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\food.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_container.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\key.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\letter.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_boomerang.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_key.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_rod.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_shield.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\power_bracelet.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\raft.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\recorder.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_candle.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_potion.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_ring.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\rupy.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\silver_arrow.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\stepladder.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\tiles.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\triforce.xnb
+C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\white_sword.xnb

@@ -23,6 +23,8 @@ namespace Zelda.Sprites
         private readonly int ROWS = 2;
         private readonly int COLS = 5;
 
+        private readonly int X = 50, Y = 50;
+
         private ISprite[] tiles;
         private Texture2D tileSheet;
         private int idx;
@@ -42,16 +44,12 @@ namespace Zelda.Sprites
             int numTiles = ROWS * COLS, r = 0;
             for (int i = 0; i < numTiles; i++)
             {
-                if (i == 0)
-                {
-                    r = 0;
-                }
-                else
+                if (i != 0)
                 {
                     r = COLS / i;
                 }
                 int c = i % COLS;
-                tiles[i] = new Tile(new Rectangle(c * TILESIZE, r * TILESIZE, TILESIZE, TILESIZE), new Rectangle(50, 50, TILESIZE, TILESIZE));
+                tiles[i] = new Tile(new Rectangle(c * TILESIZE, r * TILESIZE, TILESIZE, TILESIZE), new Rectangle(X, Y, TILESIZE, TILESIZE));
             }
         }
 

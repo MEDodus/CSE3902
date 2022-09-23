@@ -10,9 +10,9 @@ using Zelda.Sprites;
 
 namespace Zelda
 {
-    public static class InitCommands
+    public static class Command
     {
-        public static void Init(IController keyboard, Game1 game)
+        public static void Init(IController keyboard, Game1 game, Items items, Tiles tiles)
         {
             // TODO: add all keyboard keys as registered keys so no exeptions occur. as well as potentially a class to build all registered commands
             keyboard.RegisterCommand(Keys.D0, new Quit(game));
@@ -52,6 +52,9 @@ namespace Zelda
             // For quitting the game
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
 
+            InitTiles(keyboard, tiles);
+            InitItems(keyboard, items);
+            InitReset(keyboard, items, tiles);
         }
 
         public static void InitTiles(IController keyboard, Tiles tiles)

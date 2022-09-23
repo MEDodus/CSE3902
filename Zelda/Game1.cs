@@ -51,11 +51,8 @@ namespace Zelda
             tiles = new Tiles();
             items = new Items();
 
-            // Registering commands
-            InitCommands.Init(keyboard, this);
-            InitCommands.InitTiles(keyboard, tiles);
-            InitCommands.InitItems(keyboard, items);
-            InitCommands.InitReset(keyboard, items, tiles);
+            // Registering commands keyboard class should probably call InitCommands initialing class instead
+            Command.Init(keyboard, this, items, tiles);
         }
 
         protected override void Update(GameTime gameTime)

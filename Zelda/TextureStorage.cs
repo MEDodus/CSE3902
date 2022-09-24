@@ -18,7 +18,7 @@ namespace Zelda
             MagicalShield, Map, BluePotion, RedPotion,
             PowerBracelet, Raft, Recorder, BlueRing,
             RedRing, Rupy, FiveRupies, Stepladder,
-            Sword, WhiteSword, Triforce, Fire
+            Sword, WhiteSword, Triforce, Fire, Link
         };
 
         private static readonly Dictionary<SpriteSheet, string> FileNames = new Dictionary<SpriteSheet, string>()
@@ -59,7 +59,8 @@ namespace Zelda
             {SpriteSheet.Sword, "sword" },
             {SpriteSheet.WhiteSword, "white_sword" },
             {SpriteSheet.Triforce, "triforce" },
-            {SpriteSheet.Fire, "fire" }
+            {SpriteSheet.Fire, "fire" },
+            {SpriteSheet.Link, "link" }
         };
 
         private static readonly Dictionary<SpriteSheet, Texture2D> Textures = new Dictionary<SpriteSheet, Texture2D>();

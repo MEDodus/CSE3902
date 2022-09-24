@@ -6,6 +6,7 @@ using System.Security.AccessControl;
 using Zelda.Commands;
 using Zelda.Controllers;
 using Zelda.Sprites;
+using Zelda.Link;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -28,6 +29,7 @@ namespace Zelda
 
         private Tiles tiles;
         private Items items;
+        private ILink link;
         private IController keyboard;
 
         public Game1()
@@ -50,6 +52,7 @@ namespace Zelda
             TextureStorage.LoadContent(Content);
             tiles = new Tiles();
             items = new Items();
+            link = new Link2();
 
             // Registering commands keyboard class should probably call InitCommands initialing class instead
             Command.Init(keyboard, this, items, tiles);
@@ -58,6 +61,7 @@ namespace Zelda
         protected override void Update(GameTime gameTime)
         {
             items.Update();
+            link.Update();
             keyboard.Update();
             base.Update(gameTime);
         }
@@ -68,6 +72,7 @@ namespace Zelda
 
             tiles.Draw(_spriteBatch);
             items.Draw(_spriteBatch);
+            link.Draw(_spriteBatch);
             base.Draw(gameTime);
         }
     }

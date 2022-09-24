@@ -102,24 +102,37 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Michael\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\nicho\\.nuget\\packages\\": {}
+>>>>>>> f81d0983d95e8ca10216f35aa7c6b491801c1545
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Michael\\source\\repos\\CSE3902\\Zelda\\Zelda.csproj",
       "projectName": "Zelda",
       "projectPath": "C:\\Users\\Michael\\source\\repos\\CSE3902\\Zelda\\Zelda.csproj",
       "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Michael\\source\\repos\\CSE3902\\Zelda\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\nicho\\Source\\Repos\\CSE3902\\Zelda\\Zelda.csproj",
+      "projectName": "Zelda",
+      "projectPath": "C:\\Users\\nicho\\Source\\Repos\\CSE3902\\Zelda\\Zelda.csproj",
+      "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nicho\\Source\\Repos\\CSE3902\\Zelda\\obj\\",
+>>>>>>> f81d0983d95e8ca10216f35aa7c6b491801c1545
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+        "C:\\Users\\nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> f81d0983d95e8ca10216f35aa7c6b491801c1545
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

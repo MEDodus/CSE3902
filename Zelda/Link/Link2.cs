@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
@@ -11,25 +12,28 @@ namespace Zelda.Link
 {
     public class Link2 : ILink
     {
-        ILinkState state;
+        public ILinkState state;
         private Texture2D texture;
         private Rectangle sourceRectangle;
         private Rectangle destinationRectangle;
-        private readonly int X = 300, Y = 50;
-        private readonly int HEIGHT = 16;
-        private readonly int WIDTH = 16;
-        private readonly int ORIGIN = 0;
+        private int X = 300, Y = 700;
+        private int HEIGHT = 48;
+        private int WIDTH = 48;
 
         public Texture2D Texture { get { return texture; } }
         public Rectangle SourceLocation { get { return sourceRectangle; } set { } }
         public Rectangle DestinationLocation { get { return destinationRectangle; } set { } }
+        public int Xpos { get { return X; } set { X = value; } }
+        public int Ypos { get { return Y; } set { Y = value; } }
+        public int Height { get { return HEIGHT;  } set { HEIGHT = value; } }
+        public int Width { get { return WIDTH; } set { WIDTH = value; } }
 
         public Link2()
         {
             texture = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Link);
             sourceRectangle = new Rectangle(69, 11, 16, 16);
             destinationRectangle = new Rectangle(X, Y, WIDTH, HEIGHT);
-            state = new LinkFacingUpState(this);
+            state = new LinkMovingUpState(this);
         }
         public void Update()
         {

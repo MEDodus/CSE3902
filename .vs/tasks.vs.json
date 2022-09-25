@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-LinkAttackingUpState",
+      "appliesTo": "Zelda/Link/LinkAttackingUpState.cs",
+      "type": "launch"
+    }
+  ]
+}

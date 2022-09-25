@@ -6,23 +6,26 @@ using Zelda.Commands;
 
 namespace Zelda.Link
 {
-    public class LinkFacingUpState : ILinkState
+    public class LinkMovingUpState : ILinkState
     {
         private Link2 link;
 
-        private Rectangle sourceRectangle;
+        private Rectangle[] sourceRectangle = new Rectangle[2];
         private Rectangle destinationRectangle;
+        private int runTime = 0;
+        private int currentSprite = 0;
 
-        public LinkFacingUpState(Link2 link)
+        public LinkMovingUpState(Link2 link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(69, 11, 16, 16);
+            sourceRectangle[0] = new Rectangle(86, 11, 16, 16);
+            sourceRectangle[1] = new Rectangle(69, 11, 16, 16);
             destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
         }
 
         public void MoveUp()
         {
-            // link.state = new LinkMovingUpState(link);
+            // Already moving up, stay in this state
         }
         public void MoveDown()
         {
@@ -51,13 +54,26 @@ namespace Zelda.Link
 
         public void Update()
         {
-
+            if(runTime == 10)
+            {
+                if(currentSprite == 0)
+                {
+                    currentSprite++;
+                } else
+                {
+                    currentSprite = 0;
+                }
+                runTime = 0;
+            }
+            link.Ypos -= 2;
+            runTime++;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
             spriteBatch.Begin();
-            spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle, Color.White);
+            spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle[currentSprite], Color.White);
             spriteBatch.End();
         }
     }

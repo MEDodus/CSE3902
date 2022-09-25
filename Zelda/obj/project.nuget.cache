@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Gek74/jH9gyLaphOtp15zfP5UcK+Yh+cEECt2vi6F0ekHZ8viOTu8exhs80wWe/bv2jP9R7BCyOxB8MZCFAL7g==",
+  "dgSpecHash": "IxMq0zO2OQYL3Uh1RUb1eCI5KWiQK0qnu64jwwzx7r6QScjWYlcXCf7ecHQvykDaBWaMWYtHWp7s2Dt/KbtChQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
+  "projectFilePath": "C:\\Users\\nicho\\Source\\Repos\\CSE3902\\Zelda\\Zelda.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\000\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
-    "C:\\Users\\000\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+    "C:\\Users\\nicho\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\nicho\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
   ],
   "logs": []
 }

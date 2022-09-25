@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Zelda",
-    "\\Zelda\\Commands",
-    "\\Zelda\\Controllers",
-    "\\Zelda\\Sprites"
+    "\\Zelda\\Link"
   ],
-  "SelectedNode": "\\Zelda.sln",
+  "SelectedNode": "\\Zelda\\Link\\LinkMovingUpState.cs",
   "PreviewInSolutionExplorer": false
 }

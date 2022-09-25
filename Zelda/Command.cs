@@ -7,34 +7,35 @@ using System.Threading.Tasks;
 using Zelda.Commands;
 using Zelda.Controllers;
 using Zelda.Sprites;
+using Zelda.Link;
 
 namespace Zelda
 {
     public static class Command
     {
-        public static void Init(IController keyboard, Game1 game, Items items, Tiles tiles)
+        public static void Init(IController keyboard, Game1 game, Items items, Tiles tiles, ILink link)
         {
             // TODO: add all keyboard keys as registered keys so no exeptions occur. as well as potentially a class to build all registered commands
             keyboard.RegisterCommand(Keys.D0, new Quit(game));
             keyboard.RegisterCommand(Keys.NumPad0, new Quit(game));
 
             // For player movement
-            keyboard.RegisterCommand(Keys.W, new Up(game));
-            keyboard.RegisterCommand(Keys.A, new Left(game));
-            keyboard.RegisterCommand(Keys.S, new Down(game));
-            keyboard.RegisterCommand(Keys.D, new Right(game));
+            keyboard.RegisterCommand(Keys.W, new Up(game, link));
+            keyboard.RegisterCommand(Keys.A, new Left(game, link));
+            keyboard.RegisterCommand(Keys.S, new Down(game, link));
+            keyboard.RegisterCommand(Keys.D, new Right(game, link));
 
             // For player attacks
-            keyboard.RegisterCommand(Keys.Z, new Attack(game));
-            keyboard.RegisterCommand(Keys.N, new Attack(game));
+            keyboard.RegisterCommand(Keys.Z, new Attack(game, link));
+            keyboard.RegisterCommand(Keys.N, new Attack(game, link));
 
             // For usable items 
-            keyboard.RegisterCommand(Keys.D1, new UseItem(game));
-            keyboard.RegisterCommand(Keys.NumPad1, new UseItem(game));
-            keyboard.RegisterCommand(Keys.D2, new UseItem(game));
-            keyboard.RegisterCommand(Keys.NumPad2, new UseItem(game));
-            keyboard.RegisterCommand(Keys.D3, new UseItem(game));
-            keyboard.RegisterCommand(Keys.NumPad3, new UseItem(game));
+            keyboard.RegisterCommand(Keys.D1, new UseItem(game, link));
+            keyboard.RegisterCommand(Keys.NumPad1, new UseItem(game, link));
+            keyboard.RegisterCommand(Keys.D2, new UseItem(game, link));
+            keyboard.RegisterCommand(Keys.NumPad2, new UseItem(game, link));
+            keyboard.RegisterCommand(Keys.D3, new UseItem(game, link));
+            keyboard.RegisterCommand(Keys.NumPad3, new UseItem(game, link));
 
             // For secondary items
             keyboard.RegisterCommand(Keys.X, new SecondaryItem(game));

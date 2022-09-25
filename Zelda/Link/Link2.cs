@@ -33,7 +33,7 @@ namespace Zelda.Link
             texture = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Link);
             sourceRectangle = new Rectangle(69, 11, 16, 16);
             destinationRectangle = new Rectangle(X, Y, WIDTH, HEIGHT);
-            state = new LinkMovingUpState(this);
+            state = new LinkFacingUpState(this);
         }
         public void Update()
         {

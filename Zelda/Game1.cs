@@ -57,7 +57,7 @@ namespace Zelda
             link = new Link2();
 
             // Registering commands keyboard class should probably call InitCommands initialing class instead
-            Command.Init(keyboard, this, items, tiles);
+            Command.Init(keyboard, this, items, tiles, link);
         }
 
         protected override void Update(GameTime gameTime)

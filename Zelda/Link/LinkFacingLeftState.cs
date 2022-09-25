@@ -6,26 +6,23 @@ using Zelda.Commands;
 
 namespace Zelda.Link
 {
-    public class LinkMovingUpState : ILinkState
+    public class LinkFacingLeftState : ILinkState
     {
         private Link2 link;
 
-        private Rectangle[] sourceRectangle = new Rectangle[2];
+        private Rectangle sourceRectangle;
         private Rectangle destinationRectangle;
-        private int runTime = 0;
-        private int currentSprite = 0;
 
-        public LinkMovingUpState(Link2 link)
+        public LinkFacingLeftState(Link2 link)
         {
             this.link = link;
-            sourceRectangle[0] = new Rectangle(86, 11, 16, 16);
-            sourceRectangle[1] = new Rectangle(69, 11, 16, 16);
+            sourceRectangle = new Rectangle(159, 11, 16, 16);
             destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
         }
 
         public void MoveUp()
         {
-            // Already moving up, stay in this state
+            link.state = new LinkMovingUpState(link);
         }
         public void MoveDown()
         {
@@ -41,11 +38,11 @@ namespace Zelda.Link
         }
         public void Attack()
         {
-            link.state = new LinkAttackingUpState(link);
+            // link.state = new LinkAttackingUpState(link);
         }
         public void UseItem()
         {
-            link.state = new LinkUsingItemUpState(link);
+            // link.state = new LinkUsingItemUpState()
         }
         public void TakeDamage()
         {
@@ -54,26 +51,13 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if(runTime == 10)
-            {
-                if(currentSprite == 0)
-                {
-                    currentSprite++;
-                } else
-                {
-                    currentSprite = 0;
-                }
-                runTime = 0;
-            }
-            runTime++;
-            link.Ypos -= 2;
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
             spriteBatch.Begin();
-            spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle[currentSprite], Color.White);
+            spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle, Color.White);
             spriteBatch.End();
         }
     }

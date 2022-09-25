@@ -6,7 +6,7 @@ using Zelda.Commands;
 
 namespace Zelda.Link
 {
-    public class LinkMovingUpState : ILinkState
+    public class LinkMovingLeftState : ILinkState
     {
         private Link2 link;
 
@@ -15,17 +15,17 @@ namespace Zelda.Link
         private int runTime = 0;
         private int currentSprite = 0;
 
-        public LinkMovingUpState(Link2 link)
+        public LinkMovingLeftState(Link2 link)
         {
             this.link = link;
-            sourceRectangle[0] = new Rectangle(86, 11, 16, 16);
-            sourceRectangle[1] = new Rectangle(69, 11, 16, 16);
+            sourceRectangle[0] = new Rectangle(159, 11, 16, 16);
+            sourceRectangle[1] = new Rectangle(177, 11, 16, 16);
             destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
         }
 
         public void MoveUp()
         {
-            // Already moving up, stay in this state
+            link.state = new LinkMovingUpState(link);
         }
         public void MoveDown()
         {
@@ -33,7 +33,7 @@ namespace Zelda.Link
         }
         public void MoveLeft()
         {
-            link.state = new LinkMovingLeftState(link);
+            // Already moving left, stay in this state
         }
         public void MoveRight()
         {
@@ -41,11 +41,11 @@ namespace Zelda.Link
         }
         public void Attack()
         {
-            link.state = new LinkAttackingUpState(link);
+            // link.state = new LinkAttackingUpState(link);
         }
         public void UseItem()
         {
-            link.state = new LinkUsingItemUpState(link);
+            // link.state = new LinkUsingItemUpState()
         }
         public void TakeDamage()
         {
@@ -54,19 +54,20 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if(runTime == 10)
+            if (runTime == 10)
             {
-                if(currentSprite == 0)
+                if (currentSprite == 0)
                 {
                     currentSprite++;
-                } else
+                }
+                else
                 {
                     currentSprite = 0;
                 }
                 runTime = 0;
             }
+            link.Xpos -= 2;
             runTime++;
-            link.Ypos -= 2;
         }
 
         public void Draw(SpriteBatch spriteBatch)

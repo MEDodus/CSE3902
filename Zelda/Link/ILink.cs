@@ -12,10 +12,10 @@ namespace Zelda.Link
     public interface ILink
     {
         public Texture2D Texture { get; }
-        public Rectangle SourceLocation { get; set; }
-        public Rectangle DestinationLocation { get; set; }
 
         public void Update();
+
+        public void Reset();
         public void Draw(SpriteBatch spriteBatch);
 
         void MoveUp();

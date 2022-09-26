@@ -21,9 +21,13 @@ namespace Zelda
 
             // For player movement
             keyboard.RegisterCommand(Keys.W, new Up(game, link));
+            keyboard.RegisterCommand(Keys.Up, new Up(game, link));
             keyboard.RegisterCommand(Keys.A, new Left(game, link));
+            keyboard.RegisterCommand(Keys.Left, new Left(game, link));
             keyboard.RegisterCommand(Keys.S, new Down(game, link));
+            keyboard.RegisterCommand(Keys.Down, new Down(game, link));
             keyboard.RegisterCommand(Keys.D, new Right(game, link));
+            keyboard.RegisterCommand(Keys.Right, new Right(game, link));
 
             // For player attacks
             keyboard.RegisterCommand(Keys.Z, new Attack(game, link));
@@ -55,7 +59,7 @@ namespace Zelda
 
             InitTiles(keyboard, tiles);
             InitItems(keyboard, items);
-            InitReset(keyboard, items, tiles);
+            InitReset(keyboard, items, tiles, link);
         }
 
         public static void InitTiles(IController keyboard, Tiles tiles)
@@ -72,10 +76,10 @@ namespace Zelda
             keyboard.RegisterCommand(Keys.I, new CycleItemNext(items));
         }
 
-        public static void InitReset(IController keyboard, Items items, Tiles tiles)
+        public static void InitReset(IController keyboard, Items items, Tiles tiles, ILink link)
         {
             // For reseting game state
-            keyboard.RegisterCommand(Keys.R, new Reset(items, tiles));
+            keyboard.RegisterCommand(Keys.R, new Reset(items, tiles, link));
         }
     }
 }

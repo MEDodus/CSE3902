@@ -14,15 +14,11 @@ namespace Zelda.Link
     {
         public ILinkState state;
         private Texture2D texture;
-        private Rectangle sourceRectangle;
-        private Rectangle destinationRectangle;
         private int X = 300, Y = 700;
         private int HEIGHT = 48;
         private int WIDTH = 48;
 
         public Texture2D Texture { get { return texture; } }
-        public Rectangle SourceLocation { get { return sourceRectangle; } set { } }
-        public Rectangle DestinationLocation { get { return destinationRectangle; } set { } }
         public int Xpos { get { return X; } set { X = value; } }
         public int Ypos { get { return Y; } set { Y = value; } }
         public int Height { get { return HEIGHT;  } set { HEIGHT = value; } }
@@ -31,13 +27,19 @@ namespace Zelda.Link
         public Link2()
         {
             texture = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Link);
-            sourceRectangle = new Rectangle(69, 11, 16, 16);
-            destinationRectangle = new Rectangle(X, Y, WIDTH, HEIGHT);
-            state = new LinkFacingUpState(this);
+            state = new LinkFacingRightState(this);
         }
         public void Update()
         {
             state.Update();
+        }
+
+        public void Reset()
+        {
+            X = 300;
+            Y = 700;
+            state = new LinkFacingRightState(this);
+
         }
         public void Draw(SpriteBatch spriteBatch)
         {

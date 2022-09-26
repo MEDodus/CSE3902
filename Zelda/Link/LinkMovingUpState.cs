@@ -14,6 +14,7 @@ namespace Zelda.Link
         private Rectangle destinationRectangle;
         private int runTime = 0;
         private int currentSprite = 0;
+        private int moveUpCount = 0;
 
         public LinkMovingUpState(Link2 link)
         {
@@ -26,6 +27,7 @@ namespace Zelda.Link
         public void MoveUp()
         {
             // Already moving up, stay in this state
+            moveUpCount++;
         }
         public void MoveDown()
         {
@@ -54,7 +56,7 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if(runTime == 10)
+            if(runTime % 10 == 0)
             {
                 if(currentSprite == 0)
                 {
@@ -63,10 +65,13 @@ namespace Zelda.Link
                 {
                     currentSprite = 0;
                 }
-                runTime = 0;
+            }
+            link.Ypos -= 2;
+            if (runTime > moveUpCount)
+            {
+                link.state = new LinkFacingUpState(link);
             }
             runTime++;
-            link.Ypos -= 2;
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -14,6 +14,7 @@ namespace Zelda.Link
         private Rectangle destinationRectangle;
         private int runTime = 0;
         private int currentSprite = 0;
+        private int moveDownCount = 0;
 
         public LinkMovingDownState(Link2 link)
         {
@@ -30,6 +31,7 @@ namespace Zelda.Link
         public void MoveDown()
         {
             // Already moving down, stay in this state
+            moveDownCount++;
         }
         public void MoveLeft()
         {
@@ -54,7 +56,7 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if (runTime == 10)
+            if (runTime % 10 == 0)
             {
                 if (currentSprite == 0)
                 {
@@ -64,9 +66,13 @@ namespace Zelda.Link
                 {
                     currentSprite = 0;
                 }
-                runTime = 0;
             }
             link.Ypos += 2;
+            if (runTime > moveDownCount)
+            {
+                // TODO: Change to facing down
+                link.state = new LinkFacingUpState(link);
+            }
             runTime++;
         }
 

@@ -14,6 +14,7 @@ namespace Zelda.Link
         private Rectangle destinationRectangle;
         private int runTime = 0;
         private int currentSprite = 0;
+        private int moveLeftCount = 0;
 
         public LinkMovingLeftState(Link2 link)
         {
@@ -34,6 +35,7 @@ namespace Zelda.Link
         public void MoveLeft()
         {
             // Already moving left, stay in this state
+            moveLeftCount++;
         }
         public void MoveRight()
         {
@@ -54,7 +56,7 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if (runTime == 10)
+            if (runTime % 10 == 0)
             {
                 if (currentSprite == 0)
                 {
@@ -64,9 +66,12 @@ namespace Zelda.Link
                 {
                     currentSprite = 0;
                 }
-                runTime = 0;
             }
             link.Xpos -= 2;
+            if (runTime > moveLeftCount)
+            {
+                link.state = new LinkFacingLeftState(link);
+            }
             runTime++;
         }
 

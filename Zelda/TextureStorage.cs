@@ -18,7 +18,10 @@ namespace Zelda
             MagicalShield, Map, BluePotion, RedPotion,
             PowerBracelet, Raft, Recorder, BlueRing,
             RedRing, Rupy, FiveRupies, Stepladder,
-            Sword, WhiteSword, Triforce, Fire, Link
+            Sword, WhiteSword, Triforce, Fire, Link,
+
+            //Enemies
+            Bat, Skeleton, Goriya, JellyBlue, Hand, Spike, Snake, Dragon
         };
 
         private static readonly Dictionary<SpriteSheet, string> FileNames = new Dictionary<SpriteSheet, string>()
@@ -60,7 +63,19 @@ namespace Zelda
             {SpriteSheet.WhiteSword, "white_sword" },
             {SpriteSheet.Triforce, "triforce" },
             {SpriteSheet.Fire, "fire" },
-            {SpriteSheet.Link, "link" }
+            {SpriteSheet.Link, "link" },
+
+            //Enemies
+            {SpriteSheet.Bat, "bat" },
+            {SpriteSheet.Skeleton, "skeleton" },
+            {SpriteSheet.Goriya, "goriya" },
+            {SpriteSheet.JellyBlue, "JellyBlue" },
+            {SpriteSheet.Hand, "hand" },
+            {SpriteSheet.Spike, "spike_cross" },
+            {SpriteSheet.Snake, "snake" },
+            {SpriteSheet.Dragon, "dragon" }
+
+
         };
 
         private static readonly Dictionary<SpriteSheet, Texture2D> Textures = new Dictionary<SpriteSheet, Texture2D>();

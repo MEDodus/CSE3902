@@ -122,3 +122,11 @@ C:\Users\alexr\source\repos\Test\Zelda\obj\Debug\net6.0\refint\Zelda.dll
 C:\Users\alexr\source\repos\Test\Zelda\obj\Debug\net6.0\Zelda.pdb
 C:\Users\alexr\source\repos\Test\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
 C:\Users\alexr\source\repos\Test\Zelda\obj\Debug\net6.0\ref\Zelda.dll
+C:\Users\alexr\source\repos\Test\Zelda\bin\Debug\net6.0\Content\spritesheets\bat.xnb
+C:\Users\alexr\source\repos\Test\Zelda\bin\Debug\net6.0\Content\spritesheets\dragon.xnb
+C:\Users\alexr\source\repos\Test\Zelda\bin\Debug\net6.0\Content\spritesheets\goriya.xnb
+C:\Users\alexr\source\repos\Test\Zelda\bin\Debug\net6.0\Content\spritesheets\hand.xnb
+C:\Users\alexr\source\repos\Test\Zelda\bin\Debug\net6.0\Content\spritesheets\JellyBlue.xnb
+C:\Users\alexr\source\repos\Test\Zelda\bin\Debug\net6.0\Content\spritesheets\skeleton.xnb
+C:\Users\alexr\source\repos\Test\Zelda\bin\Debug\net6.0\Content\spritesheets\snake.xnb
+C:\Users\alexr\source\repos\Test\Zelda\bin\Debug\net6.0\Content\spritesheets\spike_cross.xnb

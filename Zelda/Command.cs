@@ -8,12 +8,13 @@ using Zelda.Commands;
 using Zelda.Controllers;
 using Zelda.Sprites;
 using Zelda.Link;
+using Zelda.Enemy;
 
 namespace Zelda
 {
     public static class Command
     {
-        public static void Init(IController keyboard, Game1 game, Items items, Tiles tiles, ILink link)
+        public static void Init(IController keyboard, Game1 game, Items items, Tiles tiles, ILink link, IEnemy enemy)
         {
             // TODO: add all keyboard keys as registered keys so no exeptions occur. as well as potentially a class to build all registered commands
             keyboard.RegisterCommand(Keys.D0, new Quit(game));

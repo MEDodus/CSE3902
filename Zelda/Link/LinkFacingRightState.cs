@@ -38,11 +38,11 @@ namespace Zelda.Link
         }
         public void Attack()
         {
-            // link.state = new LinkAttackingUpState(link);
+            link.state = new LinkAttackingRightState(link);
         }
         public void UseItem()
         {
-            // link.state = new LinkUsingItemUpState()
+            // link.state = new LinkUsingItemDownState()
         }
         public void TakeDamage()
         {

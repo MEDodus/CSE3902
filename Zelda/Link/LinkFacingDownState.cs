@@ -6,17 +6,17 @@ using Zelda.Commands;
 
 namespace Zelda.Link
 {
-    public class LinkFacingRightState : ILinkState
+    public class LinkFacingDownState : ILinkState
     {
         private Link2 link;
 
         private Rectangle sourceRectangle;
         private Rectangle destinationRectangle;
 
-        public LinkFacingRightState(Link2 link)
+        public LinkFacingDownState(Link2 link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(35, 11, 16, 16);
+            sourceRectangle = new Rectangle(0, 8, 19, 21);
             destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
         }
 
@@ -38,11 +38,11 @@ namespace Zelda.Link
         }
         public void Attack()
         {
-            link.state = new LinkAttackingRightState(link);
+            link.state = new LinkAttackingDownState(link);
         }
         public void UseItem()
         {
-            // link.state = new LinkUsingItemDownState()
+            // link.state = new LinkUsingItemDownState(link);
         }
         public void TakeDamage()
         {

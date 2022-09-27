@@ -43,11 +43,11 @@ namespace Zelda.Link
         }
         public void Attack()
         {
-            // link.state = new LinkAttackingUpState(link);
+            link.state = new LinkAttackingDownState(link);
         }
         public void UseItem()
         {
-            // link.state = new LinkUsingItemUpState()
+            // link.state = new LinkUsingItemDownState()
         }
         public void TakeDamage()
         {
@@ -71,7 +71,7 @@ namespace Zelda.Link
             if (runTime > moveDownCount)
             {
                 // TODO: Change to facing down
-                link.state = new LinkFacingUpState(link);
+                link.state = new LinkFacingDownState(link);
             }
             runTime++;
         }

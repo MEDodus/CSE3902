@@ -1,12 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace Zelda.Link
 {
@@ -21,7 +13,7 @@ namespace Zelda.Link
         public Texture2D Texture { get { return texture; } }
         public int Xpos { get { return X; } set { X = value; } }
         public int Ypos { get { return Y; } set { Y = value; } }
-        public int Height { get { return HEIGHT;  } set { HEIGHT = value; } }
+        public int Height { get { return HEIGHT; } set { HEIGHT = value; } }
         public int Width { get { return WIDTH; } set { WIDTH = value; } }
 
         public Link2()

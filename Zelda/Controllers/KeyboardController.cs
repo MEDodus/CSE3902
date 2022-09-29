@@ -1,11 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Zelda.Sprites;
+using Zelda.Commands;
 
 namespace Zelda.Controllers
 {

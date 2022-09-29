@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Zelda",
-    "\\Zelda\\Link"
+    ""
   ],
-  "SelectedNode": "\\Zelda\\Link\\LinkMovingUpState.cs",
+  "SelectedNode": "\\Zelda.sln",
   "PreviewInSolutionExplorer": false
 }

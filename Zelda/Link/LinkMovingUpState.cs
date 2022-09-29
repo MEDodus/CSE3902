@@ -1,8 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Zelda.Sprites;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
-using Zelda.Commands;
 
 namespace Zelda.Link
 {
@@ -56,12 +54,13 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if(runTime % 10 == 0)
+            if (runTime % 10 == 0)
             {
-                if(currentSprite == 0)
+                if (currentSprite == 0)
                 {
                     currentSprite++;
-                } else
+                }
+                else
                 {
                     currentSprite = 0;
                 }

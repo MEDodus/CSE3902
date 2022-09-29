@@ -1,8 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Zelda.Sprites;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
-using Zelda.Commands;
 
 namespace Zelda.Link
 {
@@ -22,7 +20,7 @@ namespace Zelda.Link
             sourceRectangle[1] = new Rectangle(128, 98, 16, 27);
             sourceRectangle[2] = new Rectangle(111, 97, 16, 28);
             sourceRectangle[3] = new Rectangle(94, 109, 16, 16);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4*3, link.Width, link.Height + 4*3);
+            destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4 * 3, link.Width, link.Height + 4 * 3);
         }
 
         public void MoveUp()
@@ -56,11 +54,11 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if(runTime % 10 == 0)
+            if (runTime % 10 == 0)
             {
                 currentSprite++;
             }
-            if(currentSprite >= 4)
+            if (currentSprite >= 4)
             {
                 link.state = new LinkFacingUpState(link);
             }
@@ -70,15 +68,15 @@ namespace Zelda.Link
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if(currentSprite == 1)
+            if (currentSprite == 1)
             {
-                destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4*11, link.Width, link.Height + 4*11);
+                destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4 * 11, link.Width, link.Height + 4 * 11);
             }
             if (currentSprite == 2)
             {
-                destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4*12, link.Width, link.Height + 4*12);
+                destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4 * 12, link.Width, link.Height + 4 * 12);
             }
-            if(currentSprite == 3)
+            if (currentSprite == 3)
             {
                 destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
             }

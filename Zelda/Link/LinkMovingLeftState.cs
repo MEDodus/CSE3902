@@ -1,8 +1,6 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Zelda.Sprites;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
-using Zelda.Commands;
 
 namespace Zelda.Link
 {
@@ -43,11 +41,11 @@ namespace Zelda.Link
         }
         public void Attack()
         {
-            // link.state = new LinkAttackingUpState(link);
+            link.state = new LinkAttackingLeftState(link);
         }
         public void UseItem()
         {
-            // link.state = new LinkUsingItemUpState()
+            // link.state = new LinkUsingItemLeftState()
         }
         public void TakeDamage()
         {

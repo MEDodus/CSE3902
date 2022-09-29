@@ -1,4 +1,4 @@
-﻿using Zelda.Sprites;
+﻿using Zelda.Blocks;
 
 namespace Zelda.Commands
 {

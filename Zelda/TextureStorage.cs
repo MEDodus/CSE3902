@@ -8,8 +8,8 @@ namespace Zelda
     {
         public enum SpriteSheet
         {
-            // Items and Tiles
-            Tile, Arrow, SilverArrow, Bomb,
+            // Items
+            Arrow, SilverArrow, Bomb,
             BookOfMagic, Boomerang, MagicalBoomerang, Bow,
             BlueCandle, RedCandle, Clock, Compass,
             Fairy, Food, Heart, HeartContainer,
@@ -17,16 +17,21 @@ namespace Zelda
             MagicalShield, Map, BluePotion, RedPotion,
             PowerBracelet, Raft, Recorder, BlueRing,
             RedRing, Rupy, FiveRupies, Stepladder,
-            Sword, WhiteSword, Triforce, Fire, Link,
+            Sword, WhiteSword, Triforce, Fire,
 
-            //Enemies
-            Bat, Skeleton, Goriya, JellyBlue, Hand, Spike, Snake, Dragon
+            // Enemies
+            Bat, Skeleton, Goriya, JellyBlue, Hand, Spike, Snake, Dragon,
+
+            // Link
+            Link,
+
+            // Blocks
+            Tile
         };
 
         private static readonly Dictionary<SpriteSheet, string> FileNames = new Dictionary<SpriteSheet, string>()
         {
-            // Tiles and items
-            {SpriteSheet.Tile, "tiles" },
+            // Items
             {SpriteSheet.Arrow, "arrow" },
             {SpriteSheet.SilverArrow, "silver_arrow" },
             {SpriteSheet.Bomb, "bomb" },
@@ -62,7 +67,6 @@ namespace Zelda
             {SpriteSheet.WhiteSword, "white_sword" },
             {SpriteSheet.Triforce, "triforce" },
             {SpriteSheet.Fire, "fire" },
-            {SpriteSheet.Link, "link" },
 
             //Enemies
             {SpriteSheet.Bat, "bat" },
@@ -72,9 +76,13 @@ namespace Zelda
             {SpriteSheet.Hand, "hand" },
             {SpriteSheet.Spike, "spike_cross" },
             {SpriteSheet.Snake, "snake" },
-            {SpriteSheet.Dragon, "dragon" }
+            {SpriteSheet.Dragon, "dragon" },
+            
+            // Link
+            {SpriteSheet.Link, "link" },
 
-
+            // Blocks
+            {SpriteSheet.Tile, "tiles" }
         };
 
         private static readonly Dictionary<SpriteSheet, Texture2D> Textures = new Dictionary<SpriteSheet, Texture2D>();

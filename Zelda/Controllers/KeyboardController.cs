@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using Zelda.Commands;
 
 namespace Zelda.Controllers
 {

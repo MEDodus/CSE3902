@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using Zelda.Commands;
+using Zelda.Blocks;
 using Zelda.Controllers;
 using Zelda.Enemy;
 using Zelda.Link;
 using Zelda.Sprites;
 
-namespace Zelda
+namespace Zelda.Commands
 {
     public static class Command
     {

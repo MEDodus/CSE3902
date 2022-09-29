@@ -1,4 +1,5 @@
-﻿using Zelda.Link;
+﻿using Zelda.Blocks;
+using Zelda.Link;
 using Zelda.Sprites;
 
 namespace Zelda.Commands

@@ -2,10 +2,7 @@
 using Color = Microsoft.Xna.Framework.Color;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
-
-
-
-namespace Zelda.Sprites
+namespace Zelda.Blocks
 {
     public class Tiles
     {
@@ -26,9 +23,9 @@ namespace Zelda.Sprites
 
         public Tiles()
         {
-            this.tileSheet = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Tile);
-            this.tiles = new Tile[ROWS * COLS];
-            this.idx = 0;
+            tileSheet = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Tile);
+            tiles = new Tile[ROWS * COLS];
+            idx = 0;
             InitTiles();
         }
 
@@ -42,7 +39,7 @@ namespace Zelda.Sprites
                     r = COLS / i;
                 }
                 int c = i % COLS;
-                tiles[i] = new Tile(new Rectangle(c * TILESIZE, r * TILESIZE, TILESIZE, TILESIZE), new Rectangle(X, Y, TILESIZE, TILESIZE));
+                tiles[i] = new Tile(new Rectangle(c * TILESIZE, r * TILESIZE, TILESIZE, TILESIZE), new Rectangle(X, Y, Settings.BLOCK_SIZE, Settings.BLOCK_SIZE));
             }
         }
 

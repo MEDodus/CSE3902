@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
-namespace Zelda.Sprites
+namespace Zelda.Blocks
 {
     public class Tile : ISprite
     {
@@ -15,7 +15,7 @@ namespace Zelda.Sprites
         public Tile(Rectangle sourceLocation, Rectangle destinationRectangle)
         {
             this.sourceLocation = sourceLocation;
-            this.destinationLocation = destinationRectangle;
+            destinationLocation = destinationRectangle;
         }
 
         public void Update()

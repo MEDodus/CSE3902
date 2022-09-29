@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zelda.Enemy;
-
-namespace Zelda.Commands
+﻿namespace Zelda.Commands
 {
     public class CycleEnemyNext : ICommand
     {
@@ -18,7 +11,7 @@ namespace Zelda.Commands
 
         public void Execute()
         {
-            game.NextEnemy();
+
         }
     }
 }

@@ -1,12 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zelda.Commands;
-using Zelda.Link;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda.Enemy
 {
@@ -31,7 +24,7 @@ namespace Zelda.Enemy
         //public Texture2D Texture { get { return texture; } set { texture = value; } }
         public Vector2 Location { get { return location; } set { location = value; } }
         //public Rectangle SourceLocation { get { return sourceRectangle; } set { } }
-       // public Rectangle DestinationLocation { get { return destinationRectangle; } set { } }
+        // public Rectangle DestinationLocation { get { return destinationRectangle; } set { } }
 
 
         private int health = 1;

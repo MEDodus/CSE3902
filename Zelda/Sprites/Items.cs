@@ -1,11 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Zelda.Sprites
 {
@@ -24,16 +18,16 @@ namespace Zelda.Sprites
 
         public void InitItems()
         {
-            items[0]  = new Arrow(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Arrow));
-            items[1]  = new BlueCandle(TextureStorage.GetTexture(TextureStorage.SpriteSheet.BlueCandle));
-            items[2]  = new BluePotion(TextureStorage.GetTexture(TextureStorage.SpriteSheet.BluePotion));
-            items[3]  = new BlueRing(TextureStorage.GetTexture(TextureStorage.SpriteSheet.BlueRing));
-            items[4]  = new Bomb(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Bomb));
-            items[5]  = new BookOfMagic(TextureStorage.GetTexture(TextureStorage.SpriteSheet.BookOfMagic));
-            items[6]  = new Boomerang(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Boomerang));
-            items[7]  = new Bow(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Bow));
-            items[8]  = new Clock(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Clock));
-            items[9]  = new Compass(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Compass));
+            items[0] = new Arrow(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Arrow));
+            items[1] = new BlueCandle(TextureStorage.GetTexture(TextureStorage.SpriteSheet.BlueCandle));
+            items[2] = new BluePotion(TextureStorage.GetTexture(TextureStorage.SpriteSheet.BluePotion));
+            items[3] = new BlueRing(TextureStorage.GetTexture(TextureStorage.SpriteSheet.BlueRing));
+            items[4] = new Bomb(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Bomb));
+            items[5] = new BookOfMagic(TextureStorage.GetTexture(TextureStorage.SpriteSheet.BookOfMagic));
+            items[6] = new Boomerang(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Boomerang));
+            items[7] = new Bow(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Bow));
+            items[8] = new Clock(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Clock));
+            items[9] = new Compass(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Compass));
             items[10] = new Fairy(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Fairy));
             items[11] = new Fire(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Fire));
             items[12] = new Food(TextureStorage.GetTexture(TextureStorage.SpriteSheet.Food));

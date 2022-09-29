@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zelda.Link;
+﻿using Zelda.Link;
 using Zelda.Sprites;
 
 namespace Zelda.Commands

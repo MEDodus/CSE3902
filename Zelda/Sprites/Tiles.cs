@@ -1,11 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Color = Microsoft.Xna.Framework.Color;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
@@ -30,7 +23,7 @@ namespace Zelda.Sprites
         private int idx;
 
         public ISprite GetTile { get { return tiles[idx]; } }
-        
+
         public Tiles()
         {
             this.tileSheet = TextureStorage.GetTexture(TextureStorage.SpriteSheet.Tile);
@@ -71,7 +64,8 @@ namespace Zelda.Sprites
             if (idx == tiles.Length - 1)
             {
                 idx = 0;
-            } else
+            }
+            else
             {
                 idx++;
             }

@@ -1,14 +1,9 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Zelda.Commands;
 using Zelda.Controllers;
-using Zelda.Sprites;
-using Zelda.Link;
 using Zelda.Enemy;
+using Zelda.Link;
+using Zelda.Sprites;
 
 namespace Zelda
 {

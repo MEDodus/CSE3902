@@ -1,13 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System.Reflection.Metadata;
-using System.Security.AccessControl;
-using Zelda.Commands;
 using Zelda.Controllers;
-using Zelda.Sprites;
-using Zelda.Link;
 using Zelda.Enemy;
+using Zelda.Link;
+using Zelda.Sprites;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -93,7 +89,7 @@ namespace Zelda
         public void NextEnemy()
         {
             enemyCounter++;
-            if(enemyCounter > 2)
+            if (enemyCounter > 2)
             {
                 enemyCounter = 0;
             }

@@ -23,6 +23,7 @@ namespace Zelda.Link
         void MoveLeft();
         void MoveRight();
         void Attack();
+        void AttackUsingSward();
         void UseItem();
         void TakeDamage();
     }

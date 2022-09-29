@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexr\\source\\repos\\Test\\Zelda\\Zelda.csproj": {}
+    "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexr\\source\\repos\\Test\\Zelda\\Zelda.csproj": {
+    "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexr\\source\\repos\\Test\\Zelda\\Zelda.csproj",
+        "projectUniqueName": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
         "projectName": "Zelda",
-        "projectPath": "C:\\Users\\alexr\\source\\repos\\Test\\Zelda\\Zelda.csproj",
-        "packagesPath": "C:\\Users\\alexr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexr\\source\\repos\\Test\\Zelda\\obj\\",
+        "projectPath": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
+        "packagesPath": "C:\\Users\\000\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\alexr\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\000\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

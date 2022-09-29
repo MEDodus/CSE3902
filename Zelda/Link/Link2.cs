@@ -74,5 +74,10 @@ namespace Zelda.Link
         {
             state.TakeDamage();
         }
+
+        public void AttackUsingSward()
+        {
+            //using sward state
+        }
     }
 }

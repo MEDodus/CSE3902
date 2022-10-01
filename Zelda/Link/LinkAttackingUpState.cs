@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.ComponentModel;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace Zelda.Link
@@ -8,19 +10,39 @@ namespace Zelda.Link
     {
         private Link2 link;
 
-        private Rectangle[] sourceRectangle = new Rectangle[4];
-        private Rectangle destinationRectangle;
-        private int runTime = 1;
-        private int currentSprite = 0;
+        private static readonly int frames = 4;
+        private readonly int MOD = 40;
+
+        // private Rectangle destinationRectangle;
+        private Rectangle[] sourceRectangle;
+        private Rectangle[] destinationRectangle;
+
+        private int idx;
+        private int frame;
 
         public LinkAttackingUpState(Link2 link)
         {
             this.link = link;
-            sourceRectangle[0] = new Rectangle(145, 106, 16, 19);
-            sourceRectangle[1] = new Rectangle(128, 98, 16, 27);
-            sourceRectangle[2] = new Rectangle(111, 97, 16, 28);
-            sourceRectangle[3] = new Rectangle(94, 109, 16, 16);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4 * 3, link.Width, link.Height + 4 * 3);
+            idx = 0;
+            frame = 0;
+            sourceRectangle = new Rectangle[frames];
+            destinationRectangle = new Rectangle[frames];
+            InitArrays();
+        }
+
+        public void InitArrays()
+        {
+            // Source rectangles for each frame
+            sourceRectangle[0] = new Rectangle(94, 109, 16, 16);
+            sourceRectangle[1] = new Rectangle(111, 97, 16, 28);
+            sourceRectangle[2] = new Rectangle(128, 98, 16, 27);
+            sourceRectangle[3] = new Rectangle(145, 106, 16, 19);
+
+            // Destination rectangles for each frame
+            for (int i = 0; i < frames; i++)
+            {
+                destinationRectangle[i] = new Rectangle(link.Xpos, link.Ypos - (Settings.LINK_ATTACKING_UP_FRAMES_Y[i] * Settings.LINK_SIZE_MULT), sourceRectangle[i].Width * Settings.LINK_SIZE_MULT, sourceRectangle[i].Height * Settings.LINK_SIZE_MULT);
+            }
         }
 
         public void MoveUp()
@@ -54,34 +76,22 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if (runTime % 10 == 0)
-            {
-                currentSprite++;
-            }
-            if (currentSprite >= 4)
+            if (frame == 40)
             {
                 link.state = new LinkFacingUpState(link);
             }
-            runTime++;
+            frame %= MOD;
+            idx = frame / (MOD / frames);
+            frame++;
         }
 
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (currentSprite == 1)
-            {
-                destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4 * 11, link.Width, link.Height + 4 * 11);
-            }
-            if (currentSprite == 2)
-            {
-                destinationRectangle = new Rectangle(link.Xpos, link.Ypos - 4 * 12, link.Width, link.Height + 4 * 12);
-            }
-            if (currentSprite == 3)
-            {
-                destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
-            }
+            Rectangle source = sourceRectangle[idx];
+            Rectangle destination = destinationRectangle[idx];
             spriteBatch.Begin();
-            spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle[currentSprite], Color.White);
+            spriteBatch.Draw(link.Texture, destination, source, Color.White);
             spriteBatch.End();
         }
     }

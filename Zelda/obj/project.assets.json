@@ -102,37 +102,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\000\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\jacob\\.nuget\\packages\\": {},
+    "C:\\Users\\Michael\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> d7e62c002572a3e63f71f59ee27c4b1256613dd5
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
+      "projectUniqueName": "C:\\Users\\Michael\\source\\repos\\CSE 3902\\Zelda\\Zelda.csproj",
       "projectName": "Zelda",
-      "projectPath": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
-      "packagesPath": "C:\\Users\\000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
-      "projectName": "Zelda",
-      "projectPath": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
-      "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\obj\\",
->>>>>>> d7e62c002572a3e63f71f59ee27c4b1256613dd5
+      "projectPath": "C:\\Users\\Michael\\source\\repos\\CSE 3902\\Zelda\\Zelda.csproj",
+      "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Michael\\source\\repos\\CSE 3902\\Zelda\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\000\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\jacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> d7e62c002572a3e63f71f59ee27c4b1256613dd5
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -183,8 +170,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Michael\\source\\repos\\CSE 3902\\Zelda\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

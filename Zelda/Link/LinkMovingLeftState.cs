@@ -19,7 +19,7 @@ namespace Zelda.Link
             this.link = link;
             sourceRectangle[0] = new Rectangle(159, 11, 16, 16);
             sourceRectangle[1] = new Rectangle(177, 11, 16, 16);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
+            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
         }
 
         public void MoveUp()
@@ -66,6 +66,7 @@ namespace Zelda.Link
                 }
             }
             link.Xpos -= 2;
+            destinationRectangle.X = link.Xpos;
             if (runTime > moveLeftCount)
             {
                 link.state = new LinkFacingLeftState(link);
@@ -75,7 +76,6 @@ namespace Zelda.Link
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
             spriteBatch.Begin();
             spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle[currentSprite], Color.White);
             spriteBatch.End();

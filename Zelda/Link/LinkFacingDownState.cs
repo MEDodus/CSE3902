@@ -14,8 +14,8 @@ namespace Zelda.Link
         public LinkFacingDownState(Link2 link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(0, 8, 19, 21);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
+            sourceRectangle = new Rectangle(1, 11, 15, 16);
+            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
         }
 
         public void MoveUp()

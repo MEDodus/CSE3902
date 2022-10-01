@@ -8,7 +8,7 @@ namespace Zelda.Sprites
         private Texture2D texture;
         private Rectangle[] sourceRectangle;
         private Rectangle destinationRectangle;
-        private readonly int X = 100, Y = 50;
+        private readonly int X = 200, Y = 50;
         private readonly int HEIGHT = 10;
         private readonly int WIDTH = 10;
         private readonly int COLS = 2;
@@ -25,7 +25,7 @@ namespace Zelda.Sprites
             frame = 0;
             texture = texture2D;
             sourceRectangle = new Rectangle[COLS];
-            destinationRectangle = new Rectangle(X, Y, WIDTH, HEIGHT);
+            destinationRectangle = new Rectangle(X, Y, WIDTH * Settings.ITEMS_MULT, HEIGHT * Settings.ITEMS_MULT);
             LoadFrames();
         }
 

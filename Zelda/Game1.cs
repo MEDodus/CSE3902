@@ -33,6 +33,8 @@ namespace Zelda
         private IController keyboard;
 
         private int enemyCounter = 0;
+
+        // TODO: move this into a class, shouldn't have it in game class
         private IEnemy[] enemyClasses = new IEnemy[3];
 
         public Game1()
@@ -60,6 +62,7 @@ namespace Zelda
             link = new Link2();
             enemy = new Jelly();//enemyClasses[enemyCounter];
 
+            // TODO: move these into a class, shouldn't have it in game class
             enemyClasses[0] = new Jelly();
             enemyClasses[1] = new Skeleton();
             enemyClasses[2] = new Goriya();
@@ -88,6 +91,8 @@ namespace Zelda
             base.Draw(gameTime);
         }
 
+
+        // TODO: move these into a class, shouldn't have it in game class
         public void NextEnemy()
         {
             enemyCounter++;
@@ -97,6 +102,8 @@ namespace Zelda
             }
             enemy = enemyClasses[enemyCounter];
         }
+
+        // TODO: move these into a class, shouldn't have it in game class
         public void PreviousEnemy()
         {
             enemyCounter--;

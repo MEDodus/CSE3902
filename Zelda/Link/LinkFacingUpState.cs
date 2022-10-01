@@ -15,7 +15,7 @@ namespace Zelda.Link
         {
             this.link = link;
             sourceRectangle = new Rectangle(69, 11, 16, 16);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
+            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
         }
 
         public void MoveUp()

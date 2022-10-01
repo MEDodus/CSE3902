@@ -4,11 +4,12 @@ namespace Zelda.Link
 {
     public class Link2 : ILink
     {
+        private static int HEIGHT = 16;
+        private static int WIDTH = 16;
+
         public ILinkState state;
         private Texture2D texture;
         private int X = 300, Y = 700;
-        private int HEIGHT = 48;
-        private int WIDTH = 48;
 
         public Texture2D Texture { get { return texture; } }
         public int Xpos { get { return X; } set { X = value; } }

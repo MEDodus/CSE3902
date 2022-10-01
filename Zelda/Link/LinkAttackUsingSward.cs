@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zelda.Link
 {
-    internal class LinkAttackUsingSward
+    public class LinkAttackUsingSward
     {
     }
 }

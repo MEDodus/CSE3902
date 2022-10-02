@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Zelda",
-    "\\Zelda\\obj",
-    "\\Zelda\\obj\\Debug",
-    "\\Zelda\\Sprites"
+    "\\Zelda"
   ],
-  "SelectedNode": "\\Zelda\\Sprites\\ISprite.cs",
+  "SelectedNode": "\\Zelda.sln",
   "PreviewInSolutionExplorer": false
 }

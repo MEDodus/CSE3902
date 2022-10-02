@@ -4,7 +4,6 @@ namespace Zelda.Link
 {
     public interface ILink
     {
-        public Texture2D Texture { get; }
 
         public void Update();
 

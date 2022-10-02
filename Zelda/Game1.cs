@@ -33,7 +33,7 @@ namespace Zelda
         private ItemBuilder itemBuilder;
         private BlockBuilder blockBuilder;
         private NPCBuilder npcBuilder;
-        private ILink link;
+        public ILink link;
 
         public Game1()
         {

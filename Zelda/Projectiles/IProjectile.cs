@@ -11,12 +11,12 @@ namespace Zelda.Projectiles
         protected Vector2 velocity; // pixels per second
         protected double lifetime;
 
-        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecond, double lifetime)
+        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime)
         {
             this.sprite = sprite;
             this.position = position;
             direction.Normalize();
-            double pixelsPerSecondSpeed = blocksPerSecond * Settings.BLOCK_SIZE;
+            double pixelsPerSecondSpeed = blocksPerSecondSpeed * Settings.BLOCK_SIZE;
             velocity = new Vector2((float)(direction.X * pixelsPerSecondSpeed), (float)(direction.Y * pixelsPerSecondSpeed));
             this.lifetime = lifetime;
         }

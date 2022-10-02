@@ -8,13 +8,13 @@ namespace Zelda.NPCs
     {
         protected Vector2 moveDirection = new Vector2(0, 0);
         protected int health;
-        protected double speed; // blocks per second
+        protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
 
-        public IEnemy(ISprite sprite, Vector2 position, int health, double speed) : base(sprite, position)
+        public IEnemy(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed) : base(sprite, position)
         {
             this.health = health;
-            this.speed = speed;
+            this.blocksPerSecondSpeed = blocksPerSecondSpeed;
         }
 
         // additional update features that differ between enemies
@@ -31,7 +31,7 @@ namespace Zelda.NPCs
             float magnitude = moveDirection.Length();
             if (magnitude > 0)
             {
-                double pixelsDelta = speed * Settings.BLOCK_SIZE * timeDelta;
+                double pixelsDelta = blocksPerSecondSpeed * Settings.BLOCK_SIZE * timeDelta;
                 float xDelta = (float)((moveDirection.X / magnitude) * pixelsDelta);
                 float yDelta = (float)((moveDirection.Y / magnitude) * pixelsDelta);
                 position += new Vector2(xDelta, yDelta);

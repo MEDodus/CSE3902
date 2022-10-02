@@ -1,11 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Zelda.Blocks;
-using Zelda.Commands;
+using System.Collections.Generic;
+using Zelda.Sprites.Factories;
 using Zelda.Controllers;
-using Zelda.Enemy;
-using Zelda.Link;
-using Zelda.Sprites;
+using Zelda.Commands;
+using Zelda.Items;
+using Zelda.Blocks;
+using Zelda.NPCs;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -26,54 +27,54 @@ namespace Zelda
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        private Tiles tiles;
-        private Items items;
-        private ILink link;
-        private IEnemy enemy;
-        private IController keyboard;
-
-        private int enemyCounter = 0;
-        private IEnemy[] enemyClasses = new IEnemy[3];
+        private List<IController> controllers;
+        private CommandBuilder commandBuilder;
+        private ItemBuilder itemBuilder;
+        private BlockBuilder blockBuilder;
+        private NPCBuilder npcBuilder;
 
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            keyboard = new KeyboardController();
-            Content.RootDirectory = "Content";
-            IsMouseVisible = true;
             _graphics.PreferredBackBufferHeight = 768;
             _graphics.PreferredBackBufferWidth = 1024;
+            Content.RootDirectory = "Content";
+            IsMouseVisible = true;
         }
 
         protected override void Initialize()
         {
+            // This must be done before creating any sprite objects (items, blocks, NPCs, etc.)
+            SpriteFactory.Initialize(Content);
+
+            // Create controllers
+            controllers = new List<IController>();
+            KeyboardController keyboard = new KeyboardController();
+            controllers.Add(keyboard);
+
+            // Create object builders (for sprint 2 only)
+            itemBuilder = new ItemBuilder();
+            blockBuilder = new BlockBuilder();
+            npcBuilder = new NPCBuilder();
+            commandBuilder = new CommandBuilder(keyboard, this, itemBuilder, blockBuilder, npcBuilder);
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            // Texture loading
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            TextureStorage.LoadContent(Content);
-            tiles = new Tiles();
-            items = new Items();
-            link = new Link2();
-            enemy = new Jelly();//enemyClasses[enemyCounter];
-
-            enemyClasses[0] = new Jelly();
-            enemyClasses[1] = new Skeleton();
-            enemyClasses[2] = new Goriya();
-
-            // Registering commands keyboard class should probably call InitCommands initialing class instead
-            Command.Init(keyboard, this, items, tiles, link, enemy);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            items.Update();
-            link.Update();
-            enemy.Update();
-            keyboard.Update();
+            foreach (IController controller in controllers)
+            {
+                controller.Update(gameTime);
+            }
+            itemBuilder.Update(gameTime);
+            blockBuilder.Update(gameTime);
+            npcBuilder.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -81,30 +82,13 @@ namespace Zelda
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            tiles.Draw(_spriteBatch);
-            items.Draw(_spriteBatch);
-            link.Draw(_spriteBatch);
-            enemy.Draw(_spriteBatch);
-            base.Draw(gameTime);
-        }
+            _spriteBatch.Begin();
+            itemBuilder.Draw(_spriteBatch);
+            blockBuilder.Draw(_spriteBatch);
+            npcBuilder.Draw(_spriteBatch);
+            _spriteBatch.End();
 
-        public void NextEnemy()
-        {
-            enemyCounter++;
-            if (enemyCounter > 2)
-            {
-                enemyCounter = 0;
-            }
-            enemy = enemyClasses[enemyCounter];
-        }
-        public void PreviousEnemy()
-        {
-            enemyCounter--;
-            if (enemyCounter < 0)
-            {
-                enemyCounter = 0;
-            }
-            enemy = enemyClasses[enemyCounter];
+            base.Draw(gameTime);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using Zelda.Commands;
 
@@ -22,12 +23,12 @@ namespace Zelda.Controllers
             }
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
             foreach (Keys key in pressedKeys)
             {
-                if (controllerMappings.ContainsKey(key)) controllerMappings[key].Execute();
+                if (controllerMappings.ContainsKey(key)) controllerMappings[key].Execute(gameTime);
             }
         }
     }

@@ -1,39 +1,24 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {}
+    "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {
+    "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
+        "projectUniqueName": "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
         "projectName": "Zelda",
-        "projectPath": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
-        "packagesPath": "C:\\Users\\000\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\000\\source\\repos\\MEDodus\\CSE3902\\Zelda\\obj\\",
-=======
-    "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
-        "projectName": "Zelda",
-        "projectPath": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
+        "projectPath": "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
         "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\obj\\",
->>>>>>> d7e62c002572a3e63f71f59ee27c4b1256613dd5
+        "outputPath": "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-<<<<<<< HEAD
-          "C:\\Users\\000\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
           "C:\\Users\\jacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> d7e62c002572a3e63f71f59ee27c4b1256613dd5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

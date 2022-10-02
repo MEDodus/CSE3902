@@ -4,43 +4,44 @@ using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace Zelda.Link
 {
-    public class LinkFacingRightState : ILinkState
+    public class LinkUsingItemLeftState : ILinkState
     {
         private Link2 link;
 
         private Rectangle sourceRectangle;
         private Rectangle destinationRectangle;
+        private int runTime = 0;
 
-        public LinkFacingRightState(Link2 link)
+        public LinkUsingItemLeftState(Link2 link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(32, 8, 16, 16);
+            sourceRectangle = new Rectangle(48, 32, 16, 16);
             destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
         }
 
         public void MoveUp()
         {
-            link.state = new LinkMovingUpState(link);
+            // Can't move while using item
         }
         public void MoveDown()
         {
-            link.state = new LinkMovingDownState(link);
+            // Can't move while using item
         }
         public void MoveLeft()
         {
-            link.state = new LinkMovingLeftState(link);
+            // Can't move while using item
         }
         public void MoveRight()
         {
-            link.state = new LinkMovingRightState(link);
+            // Can't move while using item
         }
         public void Attack()
         {
-            link.state = new LinkAttackingRightState(link);
+            // Can't attack while using item
         }
         public void UseItem()
         {
-            link.state = new LinkUsingItemRightState(link);
+            // Can't use item while using item
         }
         public void TakeDamage()
         {
@@ -49,8 +50,16 @@ namespace Zelda.Link
 
         public void Update()
         {
-
+            if (runTime < 10)
+            {
+                runTime++;
+            }
+            else
+            {
+                link.state = new LinkFacingLeftState(link);
+            }
         }
+
 
         public void Draw(SpriteBatch spriteBatch)
         {

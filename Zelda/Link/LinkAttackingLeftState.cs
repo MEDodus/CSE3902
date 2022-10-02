@@ -30,10 +30,10 @@ namespace Zelda.Link
         public void InitArrays()
         {
             // Source rectangles for each frame
-            sourceRectangle[0] = new Rectangle(145, 211, 15, 15);
-            sourceRectangle[1] = new Rectangle(163, 210, 27, 15);
-            sourceRectangle[2] = new Rectangle(195, 210, 23, 15);
-            sourceRectangle[3] = new Rectangle(219, 210, 19, 16);
+            sourceRectangle[0] = new Rectangle(0, 126, 16, 16);
+            sourceRectangle[1] = new Rectangle(16, 126, 27, 16);
+            sourceRectangle[2] = new Rectangle(43, 126, 23, 16);
+            sourceRectangle[3] = new Rectangle(66, 126, 19, 16);
 
             // Destination rectangles for each frame
             for (int i = 0; i < frames; i++)

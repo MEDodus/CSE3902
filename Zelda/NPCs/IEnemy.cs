@@ -17,8 +17,11 @@ namespace Zelda.NPCs
             this.speed = speed;
         }
 
-        // additional update features that differ between enemies, every enemy has this
-        protected abstract void UpdateAdditional(GameTime gameTime);
+        // additional update features that differ between enemies
+        protected virtual void UpdateAdditional(GameTime gameTime)
+        {
+
+        }
 
         public override void Update(GameTime gameTime)
         {
@@ -43,7 +46,7 @@ namespace Zelda.NPCs
             UpdateAdditional(gameTime);
         }
 
-        // additional draw features that differ between enemies, not every enemy has this
+        // additional draw features that differ between enemies
         protected virtual void DrawAdditional(SpriteBatch spriteBatch)
         {
 

@@ -7,6 +7,7 @@ using Zelda.Commands;
 using Zelda.Items;
 using Zelda.Blocks;
 using Zelda.NPCs;
+using Zelda.Link;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -32,6 +33,7 @@ namespace Zelda
         private ItemBuilder itemBuilder;
         private BlockBuilder blockBuilder;
         private NPCBuilder npcBuilder;
+        private ILink link;
 
         public Game1()
         {
@@ -52,11 +54,12 @@ namespace Zelda
             KeyboardController keyboard = new KeyboardController();
             controllers.Add(keyboard);
 
+            link = new Link2();
             // Create object builders (for sprint 2 only)
             itemBuilder = new ItemBuilder();
             blockBuilder = new BlockBuilder();
             npcBuilder = new NPCBuilder();
-            commandBuilder = new CommandBuilder(keyboard, this, itemBuilder, blockBuilder, npcBuilder);
+            commandBuilder = new CommandBuilder(keyboard, this, itemBuilder, blockBuilder, npcBuilder, link);
 
             base.Initialize();
         }
@@ -75,6 +78,7 @@ namespace Zelda
             itemBuilder.Update(gameTime);
             blockBuilder.Update(gameTime);
             npcBuilder.Update(gameTime);
+            link.Update();
             base.Update(gameTime);
         }
 
@@ -86,6 +90,7 @@ namespace Zelda
             itemBuilder.Draw(_spriteBatch);
             blockBuilder.Draw(_spriteBatch);
             npcBuilder.Draw(_spriteBatch);
+            link.Draw(_spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);

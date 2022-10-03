@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 using Zelda.Commands;
 
@@ -30,6 +31,17 @@ namespace Zelda.Controllers
             {
                 if (controllerMappings.ContainsKey(key)) controllerMappings[key].Execute(gameTime);
             }
+        }
+
+        public static bool AreMultipleKeysPressed(HashSet<Keys> keys)
+        {
+            Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
+            int numPressed = 0;
+            foreach (Keys key in pressedKeys)
+            {
+                if (keys.Contains(key)) numPressed++;
+            }
+            return numPressed > 1;
         }
     }
 }

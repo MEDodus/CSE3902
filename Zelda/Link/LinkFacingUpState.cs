@@ -41,7 +41,7 @@ namespace Zelda.Link
         public void UseItem(int itemNum)
         {
             link.state = new LinkUsingItemUpState(link);
-            link.CreateItem(itemNum, new Vector2(0, -1));
+            link.CreateItem(itemNum);
         }
         public void TakeDamage(Game1 game)
         {

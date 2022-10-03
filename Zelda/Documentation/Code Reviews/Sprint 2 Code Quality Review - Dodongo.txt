@@ -1,0 +1,21 @@
+Review By: Nicholas Younoszai
+Date: 10/3/2022
+Sprint #: 2
+Class Reviewed: Dodongo.cs 
+Author: Alex Reed
+Time: 27 minutes
+
+Code Quality:
+I think that the code is relatively readable, with sections split up in ways that would be expected.
+The class is getting close to the limit for length, but it is still within the limits. The Update method seems a little on the longer side.
+Maybe some parts of the logic (for example, taking damage or changing direction randomly) could be put in methods that are for that single purpose.
+It looks like you have a lot of logic in this class, which makes me wonder if it would be more beneficial to take some of it out and put it as part of the states.
+I like that your class takes advantage of the sprite factory for drawing sprites, making it easier if some of that would need to be modified later.
+
+
+Hypothetical Change:
+A hyopthetical change for this class would be to have the Dodoongo do some sort of specific move (such walking in a specific pattern like a box or a figure 8), 
+where it would have to change directions in a specific way instead of randomly. I think it wouldn't be too difficult to add this as a possibility, although
+the class uses a lot of random logic to determine where it moves. Adding this logic would likely push the class over the limit for class length. It would
+probably be able to use some of the methods already present, along with a timer to determine how long it walks in each direction to switch instead of the
+random switching, making it a relatively easy change to make.

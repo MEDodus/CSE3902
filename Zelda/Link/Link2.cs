@@ -61,9 +61,9 @@ namespace Zelda.Link
         {
             state.Attack();
         }
-        public void UseItem()
+        public void UseItem(int itemNum)
         {
-            state.UseItem();
+            state.UseItem(itemNum);
         }
         public void TakeDamage(Game1 game)
         {

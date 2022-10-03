@@ -41,7 +41,15 @@ namespace Zelda.Link
         }
         public void UseItem()
         {
-            // Can't use item while using item
+            switch
+            {
+                case 1:
+                    arrows = new Arrow(new Vector2(link.Xpos, link.Ypos), new Vector2(-1, 0));
+                    arrows.Draw(SpriteBatch);
+                    break;
+                default:
+                    break;
+            }
         }
         public void TakeDamage(Game1 game)
         {

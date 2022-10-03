@@ -9,7 +9,7 @@ namespace Zelda.Link
         void MoveLeft();
         void MoveRight();
         void Attack();
-        void UseItem();
+        void UseItem(int itemNum);
         void TakeDamage(Game1 game);
 
         public void Update();

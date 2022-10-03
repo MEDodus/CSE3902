@@ -8,6 +8,10 @@ namespace Zelda.Sprites.Factories
         {
             return new AnimatedSprite(GetTexture("fireball"), 1, 3, 9, 0.75);
         }
+        public static ISprite Arrow()
+        {
+            return new AnimatedSprite(GetTexture("arrow"), 1, 3, 9, 0.75);
+        }
         public static ISprite Boomerang()
         {
             return new AnimatedSprite(GetTexture("boomerang"), 1, 3, 9, 0.75);

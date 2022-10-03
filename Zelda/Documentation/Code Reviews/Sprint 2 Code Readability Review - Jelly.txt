@@ -1,0 +1,22 @@
+﻿Author: Michael Dodus
+Date: 10/3/2022
+Sprint: 2
+File Name: AnimatedSprite.cs
+File Author: Jacob Pohlabel
+Comments:
+	Quality of code is good. However, the main constructor uses 8 arguments passed in. This violates the <= 6 arguments 
+	used as a guideline. I will say that, to Jacob's defense this constructor isn't used at all and the other constructors
+	that extend the main constructor mainly stay within the limit of <= 6 arguments. Thus, I'd still say the quality is still
+	very good and abstracts a lot of the functionality for animated sprites behind this class. This makes using animated
+	sprites of different types very simple, for example IItems vs IEnemies, both can extend from AnimatedSprite.cs.
+Change:
+	Continuing from the thought process of IItems and IEnemies, adding an additional animated sprite with functionality 
+	far different from enemies or items could be simply implemented and still extend from AnimatedSprite.cs. That is, 
+	all functionally different properties pertaining to this different animated sprite could be put in its own class 
+	similar to the classes for each item or each enemy while calling upon the basic methods from animated sprite to 
+	draw each frame of the animation as well as scale the size of the animation. 
+
+	I think the way this implementation could break is if we violated the rules of making a spritesheet or texture atlas,
+	for example, if we had a separate image for each frame animated spritewould be able to draw each frame of the animation
+	because it would only pick up the frame provided by Texture2D, instead this would have to be Texture2D[] to accomidate 
+	the spritesheet violation.

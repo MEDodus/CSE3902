@@ -71,8 +71,8 @@ namespace Zelda.Sprites.Factories
         }
 
         //GORIYA SPRITE
-        private static int GORIYA_ROW_HEIGHT = 63;
-        private static int GORIYA_COLUMN_WIDTH = 56;
+        private static int GORIYA_ROW_HEIGHT = 64;
+        private static int GORIYA_COLUMN_WIDTH = 60;
         private static int GORIYA_FPS = 8;
         private static double GORIYA_SIZE_IN_BLOCKS = 1;
         public static ISprite DownGoriyaSprite()
@@ -89,7 +89,7 @@ namespace Zelda.Sprites.Factories
         }
         public static ISprite RightGoriyaSprite()
         {
-            return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 3, 1, 2, SNAKE_ROW_HEIGHT, SNAKE_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
+            return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 3, 1, 2, GORIYA_ROW_HEIGHT, GORIYA_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
         }
         //Damaged Goriya
         public static ISprite DamagedDownGoriyaSprite()
@@ -106,7 +106,7 @@ namespace Zelda.Sprites.Factories
         }
         public static ISprite DamagedRightGoriyaSprite()
         {
-            return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 7, 1, 2, SNAKE_ROW_HEIGHT, SNAKE_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
+            return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 7, 1, 2, GORIYA_ROW_HEIGHT, GORIYA_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
         }
 
         //DODONGO SPRITES

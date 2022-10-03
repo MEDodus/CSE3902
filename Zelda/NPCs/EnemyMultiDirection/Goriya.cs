@@ -76,7 +76,7 @@ namespace Zelda.NPCs.Classes
                 int takeDamage = new Random().Next(100);
                 if (takeDamage < 30)
                 {
-                    state.TakeDamage();
+                    //state.TakeDamage();
                     //damageDelay = 2;
                 }
             }

@@ -3,6 +3,7 @@ using Zelda.Blocks;
 using Zelda.Items;
 using Zelda.NPCs;
 using Zelda.Link;
+using Zelda.Projectiles;
 
 namespace Zelda.Commands.Classes
 {
@@ -27,6 +28,7 @@ namespace Zelda.Commands.Classes
             blockBuilder.Reset();
             npcBuilder.Reset();
             game.link.Reset();
+            ProjectileStorage.Clear();
         }
     }
 }

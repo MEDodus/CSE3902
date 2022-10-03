@@ -38,5 +38,10 @@ namespace Zelda.Projectiles
                 projectile.Draw(spriteBatch);
             }
         }
+
+        public static void Clear()
+        {
+            projectiles.Clear();
+        }
     }
 }

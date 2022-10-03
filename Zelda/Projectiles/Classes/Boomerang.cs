@@ -6,7 +6,7 @@ namespace Zelda.Projectiles.Classes
     public class Boomerang : IProjectile
     {
         private Vector2 baseVelocity;
-        public Boomerang(Vector2 position, Vector2 direction) : base(ProjectileSpriteFactory.BoomerangSprite(), position, direction, 8, 3)
+        public Boomerang(Vector2 position, Vector2 direction) : base(ProjectileSpriteFactory.BoomerangSprite(), position, direction, 15, 2.5)
         {
             baseVelocity = velocity;
         }

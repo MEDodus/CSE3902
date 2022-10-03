@@ -3,12 +3,12 @@ using Zelda.Link;
 
 namespace Zelda.Commands
 {
-    public class UseItem_Fire : ICommand
+    public class UseItem3 : ICommand
     {
         private Game1 game;
         private ILink link;
 
-        public UseItem_Fire(Game1 game, ILink link)
+        public UseItem3(Game1 game, ILink link)
         {
             this.game = game;
             this.link = link;

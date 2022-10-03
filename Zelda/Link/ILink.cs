@@ -15,7 +15,6 @@ namespace Zelda.Link
         void MoveLeft();
         void MoveRight();
         void Attack();
-        void AttackUsingSward();
         void UseItem(int itemNum);
         void TakeDamage(Game1 game);
     }

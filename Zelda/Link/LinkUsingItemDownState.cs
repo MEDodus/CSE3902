@@ -39,17 +39,9 @@ namespace Zelda.Link
         {
             // Can't attack while using item
         }
-        public void UseItem()
+        public void UseItem(int itemNum)
         {
-            switch
-            {
-                case 1:
-                    arrows = new Arrow(new Vector2(link.Xpos, link.Ypos), new Vector2(-1, 0));
-                    arrows.Draw(SpriteBatch);
-                    break;
-                default:
-                    break;
-            }
+            // Can't use item while using item
         }
         public void TakeDamage(Game1 game)
         {

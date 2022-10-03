@@ -4,15 +4,15 @@ namespace Zelda.Sprites.Factories
 {
     public class ProjectileSpriteFactory : SpriteFactory
     {
-        public static ISprite Fireball()
+        public static ISprite FireballSprite()
         {
             return new AnimatedSprite(GetTexture("fireball"), 1, 3, 9, 0.75);
         }
-        public static ISprite Arrow()
+        public static ISprite ArrowSprite()
         {
-            return new AnimatedSprite(GetTexture("arrow"), 1, 3, 9, 0.75);
+            return ItemSpriteFactory.ArrowSprite();
         }
-        public static ISprite Boomerang()
+        public static ISprite BoomerangSprite()
         {
             return new AnimatedSprite(GetTexture("boomerang"), 1, 3, 9, 0.75);
         }

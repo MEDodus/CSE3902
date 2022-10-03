@@ -38,9 +38,10 @@ namespace Zelda.Link
         {
             link.state = new LinkAttackingDownState(link);
         }
-        public void UseItem()
+        public void UseItem(int itemNum)
         {
             link.state = new LinkUsingItemDownState(link);
+            link.CreateItem(itemNum, new Vector2(0, 1));
         }
         public void TakeDamage(Game1 game)
         {

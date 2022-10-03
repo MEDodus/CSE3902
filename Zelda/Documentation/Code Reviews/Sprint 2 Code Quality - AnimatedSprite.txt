@@ -1,0 +1,12 @@
+﻿Author: Michael Dodus
+Date: 10/3/2022
+Sprint: 2
+File Name: Jelly.cs
+File Author: Jacob Pohlabel
+Time: 10 minutes
+Comments:
+	Highly readable code, code snippets that are commented out which could be removed 
+	(depending on whether the current version introduces bugs). Non-implemented methods
+	understood in current context, i.e. Attack() method is not implemented because that 
+	will be in a future sprint. TakeDamage() method is implemented though, does not have 
+	full functionality for this sprint submission. Overall, great readability.

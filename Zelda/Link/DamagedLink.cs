@@ -5,9 +5,10 @@ namespace Zelda.Link
 {
     public class DamagedLink : SpriteFactory, ILink
     {
+
         Game1 game;
         ILink decoratedLink;
-        int timer = 24;
+        int timer = 48;
 
 
         public DamagedLink(ILink decoratedLink, Game1 game)
@@ -17,20 +18,38 @@ namespace Zelda.Link
         }
         public void Update()
         {
-            timer--;
-            if(timer == 0)
+            if (timer % 8 == 0)
+            {
+                decoratedLink.Texture = GetTexture("Link_hurt1");
+            }
+            else if (timer % 8 == 2)
+            {
+                decoratedLink.Texture = GetTexture("Link_hurt2");
+            }
+            else if (timer % 8 == 4)
+            {
+                decoratedLink.Texture = GetTexture("Link_hurt3");
+            }
+            else if (timer % 8 == 6)
+            {
+                decoratedLink.Texture = GetTexture("Link");
+            }
+            if (timer == 0)
             {
                 RemoveDecorator();
             }
+            timer--;
+            decoratedLink.Update();
         }
 
         public void Reset()
         {
-
+            decoratedLink.Reset();
+            RemoveDecorator();
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            decoratedLink.Draw(spriteBatch);
         }
 
         public void MoveUp()
@@ -55,9 +74,9 @@ namespace Zelda.Link
         }
         public void UseItem()
         {
-            decoratedLink.TakeDamage();
+            decoratedLink.UseItem();
         }
-        public void TakeDamage()
+        public void TakeDamage(Game1 game)
         {
             // Can't take damage while already taking damage
         }
@@ -69,6 +88,7 @@ namespace Zelda.Link
 
         public void RemoveDecorator()
         {
+            decoratedLink.Texture = GetTexture("Link");
             game.link = decoratedLink;
         }
     }

@@ -30,10 +30,10 @@ namespace Zelda.Link
         public void InitArrays()
         {
             // Source rectangles for each frame
-            sourceRectangle[0] = new Rectangle(0, 126, 16, 16);
-            sourceRectangle[1] = new Rectangle(16, 126, 27, 16);
-            sourceRectangle[2] = new Rectangle(43, 126, 23, 16);
-            sourceRectangle[3] = new Rectangle(66, 126, 19, 16);
+            sourceRectangle[0] = new Rectangle(0, 129, 16, 16);
+            sourceRectangle[1] = new Rectangle(16, 129, 27, 16);
+            sourceRectangle[2] = new Rectangle(43, 129, 23, 16);
+            sourceRectangle[3] = new Rectangle(66, 129, 19, 16);
 
             // Destination rectangles for each frame
             for (int i = 0; i < frames; i++)
@@ -66,9 +66,9 @@ namespace Zelda.Link
         {
             // Can't use item while attacking
         }
-        public void TakeDamage()
+        public void TakeDamage(Game1 game)
         {
-            // TODO: decorator class for this
+            game.link = new DamagedLink(link, game);
         }
 
         public void Update()

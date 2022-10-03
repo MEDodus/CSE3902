@@ -42,9 +42,9 @@ namespace Zelda.Link
         {
             link.state = new LinkUsingItemUpState(link);
         }
-        public void TakeDamage()
+        public void TakeDamage(Game1 game)
         {
-            // TODO: decorator class for this
+            game.link = new DamagedLink(link, game);
         }
 
         public void Update()

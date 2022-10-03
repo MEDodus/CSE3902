@@ -10,10 +10,10 @@ namespace Zelda.Link
         private static int WIDTH = 16;
 
         public ILinkState state;
-        private Texture2D texture;
+        public Texture2D texture;
         private int X = 300, Y = 700;
 
-        public Texture2D Texture { get { return texture; } }
+        public Texture2D Texture { get { return texture; } set { texture = value; } }
         public int Xpos { get { return X; } set { X = value; } }
         public int Ypos { get { return Y; } set { Y = value; } }
         public int Height { get { return HEIGHT; } set { HEIGHT = value; } }
@@ -65,9 +65,9 @@ namespace Zelda.Link
         {
             state.UseItem();
         }
-        public void TakeDamage()
+        public void TakeDamage(Game1 game)
         {
-            state.TakeDamage();
+            state.TakeDamage(game);
         }
 
         public void AttackUsingSward()

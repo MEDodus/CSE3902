@@ -18,7 +18,7 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
 
             // For reseting game state
-            keyboard.RegisterCommand(Keys.R, new Reset(itemBuilder, blockBuilder, npcBuilder));
+            keyboard.RegisterCommand(Keys.R, new Reset(itemBuilder, blockBuilder, npcBuilder, game));
 
             // For player movement
             keyboard.RegisterCommand(Keys.W, new Up(game, link));
@@ -41,6 +41,8 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.NumPad2, new UseItem(game, link));
             keyboard.RegisterCommand(Keys.D3, new UseItem(game, link));
             keyboard.RegisterCommand(Keys.NumPad3, new UseItem(game, link));
+
+            keyboard.RegisterCommand(Keys.E, new Hurt(game, link));
 
             // For secondary items
             //keyboard.RegisterCommand(Keys.X, new SecondaryItem(game));

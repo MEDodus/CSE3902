@@ -2,6 +2,7 @@
 using Zelda.Blocks;
 using Zelda.Items;
 using Zelda.NPCs;
+using Zelda.Link;
 
 namespace Zelda.Commands.Classes
 {
@@ -10,14 +11,14 @@ namespace Zelda.Commands.Classes
         private ItemBuilder itemBuilder;
         private BlockBuilder blockBuilder;
         private NPCBuilder npcBuilder;
-        //private ILink link;
+        private Game1 game;
 
-        public Reset(ItemBuilder itemBuilder, BlockBuilder blockBuilder, NPCBuilder npcBuilder)
+        public Reset(ItemBuilder itemBuilder, BlockBuilder blockBuilder, NPCBuilder npcBuilder, Game1 game)
         {
             this.itemBuilder = itemBuilder;
             this.blockBuilder = blockBuilder;
             this.npcBuilder = npcBuilder;
-            //this.link = link;
+            this.game = game;
         }
 
         public void Execute(GameTime gameTime)
@@ -25,7 +26,7 @@ namespace Zelda.Commands.Classes
             itemBuilder.Reset();
             blockBuilder.Reset();
             npcBuilder.Reset();
-            //link.Reset();
+            game.link.Reset();
         }
     }
 }

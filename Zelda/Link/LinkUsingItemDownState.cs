@@ -43,9 +43,9 @@ namespace Zelda.Link
         {
             // Can't use item while using item
         }
-        public void TakeDamage()
+        public void TakeDamage(Game1 game)
         {
-            // TODO: decorator class for this
+            game.link = new DamagedLink(link, game);
         }
 
         public void Update()

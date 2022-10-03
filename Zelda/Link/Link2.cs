@@ -85,7 +85,7 @@ namespace Zelda.Link
                     item = new Boomerang(position, direction);
                     break;
                 case 3:
-                    item = new Arrow(position, direction);
+                    item = new Bomb(position, direction);
                     break;
             }
             ProjectileStorage.Add(item);

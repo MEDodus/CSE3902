@@ -20,6 +20,7 @@ namespace Zelda.NPCs.Classes
         protected int health;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
+        private double damageDelay = 0;
         private double changeDirectionCooldown = 0;
 
         bool appeared = false;
@@ -47,7 +48,7 @@ namespace Zelda.NPCs.Classes
         public void Update(GameTime gameTime)
         {
             //Movement
-            if (changeDirectionCooldown <= 0)
+            if (changeDirectionCooldown <= 0 && damageDelay <= 0)
             {
                 changeDirectionCooldown = 0.5;
                 int dir = new Random().Next(1, 5);
@@ -69,9 +70,22 @@ namespace Zelda.NPCs.Classes
             }
             changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
 
+            //Take Damage
+            if (damageDelay <= 0)
+            {
+                damageDelay = 1;
+                int takeDamage = new Random().Next(100);
+                if (takeDamage < 30)
+                {
+                    state.TakeDamage();
+                    //damageDelay = 2;
+                }
+            }
+            damageDelay -= gameTime.ElapsedGameTime.TotalSeconds;
+
             //Attack
             int decideAttack = new Random().Next(100);
-            if (decideAttack < 30)
+            if (decideAttack < 100)
             {
                 state.Attack();
             }
@@ -163,6 +177,7 @@ namespace Zelda.NPCs.Classes
         public void TakeDamage(int damage)
         {
             health -= damage;
+            changeDirectionCooldown = -1;
 
         }
         public void KilledEnemy()

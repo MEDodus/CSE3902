@@ -48,6 +48,8 @@ namespace Zelda.NPCs.EnemyMultiDirection
         }
         public void TakeDamage()
         {
+            enemy.state = new DamagedUpMovingGoriyaState(enemy);
+
         }
         public void KilledEnemyState()
         {

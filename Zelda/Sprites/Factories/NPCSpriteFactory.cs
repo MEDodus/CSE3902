@@ -91,8 +91,25 @@ namespace Zelda.Sprites.Factories
         {
             return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 3, 1, 2, SNAKE_ROW_HEIGHT, SNAKE_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
         }
+        //Damaged Goriya
+        public static ISprite DamagedDownGoriyaSprite()
+        {
+            return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 4, 1, 2, GORIYA_ROW_HEIGHT, GORIYA_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
+        }
+        public static ISprite DamagedUpGoriyaSprite()
+        {
+            return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 5, 1, 2, GORIYA_ROW_HEIGHT, GORIYA_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
+        }
+        public static ISprite DamagedLeftGoriyaSprite()
+        {
+            return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 6, 1, 2, GORIYA_ROW_HEIGHT, GORIYA_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
+        }
+        public static ISprite DamagedRightGoriyaSprite()
+        {
+            return new AnimatedSprite(GetTexture("Goriya"), 0, GORIYA_ROW_HEIGHT * 7, 1, 2, SNAKE_ROW_HEIGHT, SNAKE_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);
+        }
 
-
+        //DODONGO SPRITES
         //Non-Damaged Dodongo
         private static int DODONGO_ROW_HEIGHT = 68;
         private static int DODONGO_VERT_COLUMN_WIDTH = 68;
@@ -130,5 +147,12 @@ namespace Zelda.Sprites.Factories
         {
             return new AnimatedSprite(GetTexture("dodongo"), 0, DODONGO_ROW_HEIGHT * 6, 1, 1, DODONGO_ROW_HEIGHT, DODONGO_HORIZONTAL_COLUMN_WIDTH, DODONGO_FPS, DODONGO_HORIZONTAL_SIZE_IN_BLOCKS);
         }
+
+        //DeathExplosion
+        public static ISprite DeathExplosionSprite()
+        {
+            return new AnimatedSprite(GetTexture("death_explosion"), 1, 4, 8, 1);
+        }
+
     }
 }

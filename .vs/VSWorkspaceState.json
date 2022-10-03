@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Zelda",
+    "\\Zelda\\bin",
+    "\\Zelda\\Content",
+    "\\Zelda\\Content\\spritesheets",
+    "\\Zelda\\NPCs",
+    "\\Zelda\\NPCs\\EnemyMultiDirection",
+    "\\Zelda\\NPCs\\EnemySingleDirection",
+    "\\Zelda\\Sprites",
+    "\\Zelda\\Sprites\\Factories"
   ],
-  "SelectedNode": "\\Zelda.sln",
+  "SelectedNode": "\\Zelda\\NPCs\\EnemySingleDirection\\Dragon.cs",
   "PreviewInSolutionExplorer": false
 }

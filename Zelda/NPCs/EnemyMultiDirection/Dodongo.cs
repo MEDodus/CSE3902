@@ -62,7 +62,7 @@ namespace Zelda.NPCs.Classes
             changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
 
 
-            //Attack
+            //Take Damage
             if (damageDelay <= 0)
             {
                 damageDelay = 1;

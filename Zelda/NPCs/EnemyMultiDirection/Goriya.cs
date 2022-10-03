@@ -9,6 +9,7 @@ using Zelda.NPCs.EnemyMultiDirection;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
+using Zelda.Projectiles;
 
 namespace Zelda.NPCs.Classes
 {
@@ -31,8 +32,6 @@ namespace Zelda.NPCs.Classes
         private readonly double ATTACK_ANIMATION_LENGTH = 1;
         private double attackCooldown = 0; // seconds
         private bool isAttacking = false;
-
-        private List<Boomerang> boomerangs = new List<Boomerang>();
 
         public Goriya(Vector2 position)
         {
@@ -96,18 +95,6 @@ namespace Zelda.NPCs.Classes
                 //isAttacking = attackCooldown > ATTACK_COOLDOWN_LENGTH - ATTACK_ANIMATION_LENGTH;
             }
 
-            // Update boomerangs
-            foreach (Boomerang boomerang in boomerangs)
-            {
-                bool lifetimeExpired = boomerang.Update(gameTime);
-                if (lifetimeExpired)
-                {
-                    boomerangs.Clear();
-                    break;
-                }
-            }
-
-
             state.Update(gameTime);
             //state.Draw(spritebatch);
         }
@@ -121,11 +108,6 @@ namespace Zelda.NPCs.Classes
             }
             Color color = damageCooldown <= 0 ? Color.White : Color.Red;
             sprite.Draw(spriteBatch, position, color);
-
-            foreach(Boomerang boomerang in boomerangs)
-            {
-                boomerang.Draw(spriteBatch);
-            }
         }
 
         public virtual void MoveUp(GameTime gameTime)
@@ -170,7 +152,7 @@ namespace Zelda.NPCs.Classes
             {
                 attackCooldown = ATTACK_COOLDOWN_LENGTH;
                 isAttacking = true;
-                boomerangs.Add(new Boomerang(position, direction));
+                ProjectileStorage.Add(new Boomerang(position, direction));
 
             }
         }

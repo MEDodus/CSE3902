@@ -63,7 +63,7 @@ namespace Zelda.Link
         {
             // Can't attack while attacking
         }
-        public void UseItem()
+        public void UseItem(int itemNum)
         {
             // Can't use item while attacking
         }

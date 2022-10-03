@@ -16,8 +16,6 @@ namespace Zelda.NPCs.Classes
         private double attackCooldown = 0; // seconds
         private bool isAttacking = false;
 
-        private List<Fireball> fireballs = new List<Fireball>();
-
         public Dragon(Vector2 position) : base(NPCSpriteFactory.NonAttackingDragonSprite(), position, 6, 0.5)
         {
 
@@ -49,17 +47,6 @@ namespace Zelda.NPCs.Classes
                 isAttacking = attackCooldown > ATTACK_COOLDOWN_LENGTH - ATTACK_ANIMATION_LENGTH;
             }
 
-            // Update fireballs
-            foreach (Fireball fireball in fireballs)
-            {
-                bool lifetimeExpired = fireball.Update(gameTime);
-                if (lifetimeExpired)
-                {
-                    fireballs.Clear();
-                    break;
-                }
-            }
-
             // Update sprite
             if (isAttacking != wasAttackingLastFrame)
             {
@@ -69,23 +56,15 @@ namespace Zelda.NPCs.Classes
             sprite.Update(gameTime);
         }
 
-        protected override void DrawAdditional(SpriteBatch spriteBatch)
-        {
-            foreach (Fireball fireball in fireballs)
-            {
-                fireball.Draw(spriteBatch);
-            }
-        }
-
         public override void Attack()
         {
             if (attackCooldown <= 0)
             {
                 attackCooldown = ATTACK_COOLDOWN_LENGTH;
                 isAttacking = true;
-                fireballs.Add(new Fireball(position, new Vector2(-1, 0)));
-                fireballs.Add(new Fireball(position, new Vector2(-3, 1)));
-                fireballs.Add(new Fireball(position, new Vector2(-3, -1)));
+                ProjectileStorage.Add(new Fireball(position, new Vector2(-1, 0)));
+                ProjectileStorage.Add(new Fireball(position, new Vector2(-3, 1)));
+                ProjectileStorage.Add(new Fireball(position, new Vector2(-3, -1)));
             }
         }
     }

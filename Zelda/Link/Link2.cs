@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Zelda.Sprites.Factories;
+using Zelda.Projectiles;
+using Zelda.Projectiles.Classes;
 
 namespace Zelda.Link
 {
@@ -70,9 +72,23 @@ namespace Zelda.Link
             state.TakeDamage(game);
         }
 
-        public void AttackUsingSward()
+        public void CreateItem(int itemNum, Vector2 direction)
         {
-            //using sward state
+            IProjectile item = null;
+            Vector2 position = new Vector2(X, Y);
+            switch (itemNum)
+            {
+                case 1:
+                    item = new Arrow(position, direction);
+                    break;
+                case 2:
+                    item = new Boomerang(position, direction);
+                    break;
+                case 3:
+                    item = new Arrow(position, direction);
+                    break;
+            }
+            ProjectileStorage.Add(item);
         }
     }
 }

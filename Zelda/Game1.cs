@@ -8,6 +8,7 @@ using Zelda.Items;
 using Zelda.Blocks;
 using Zelda.NPCs;
 using Zelda.Link;
+using Zelda.Projectiles;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -75,6 +76,7 @@ namespace Zelda
             {
                 controller.Update(gameTime);
             }
+            ProjectileStorage.Update(gameTime);
             itemBuilder.Update(gameTime);
             blockBuilder.Update(gameTime);
             npcBuilder.Update(gameTime);
@@ -87,6 +89,7 @@ namespace Zelda
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin();
+            ProjectileStorage.Draw(_spriteBatch);
             itemBuilder.Draw(_spriteBatch);
             blockBuilder.Draw(_spriteBatch);
             npcBuilder.Draw(_spriteBatch);

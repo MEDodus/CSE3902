@@ -3,12 +3,12 @@ using Zelda.Link;
 
 namespace Zelda.Commands
 {
-    public class UseItem : ICommand
+    public class UseItem1 : ICommand
     {
         private Game1 game;
         private ILink link;
 
-        public UseItem(Game1 game, ILink link)
+        public UseItem1(Game1 game, ILink link)
         {
             this.game = game;
             this.link = link;
@@ -16,7 +16,7 @@ namespace Zelda.Commands
 
         public void Execute(GameTime gametime)
         {
-            link.UseItem();
+            link.UseItem(1);
         }
     }
 }

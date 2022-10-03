@@ -222,3 +222,8 @@ C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\
 C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt1.xnb
 C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt2.xnb
 C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt3.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\death_explosion.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dodongo.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt1.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt2.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt3.xnb

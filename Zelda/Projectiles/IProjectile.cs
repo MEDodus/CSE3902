@@ -9,7 +9,8 @@ namespace Zelda.Projectiles
         protected ISprite sprite;
         protected Vector2 position;
         protected Vector2 velocity; // pixels per second
-        protected double lifetime;
+        protected readonly double LIFETIME;
+        protected double timeLeftUntilDelete;
 
         public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime)
         {
@@ -18,10 +19,11 @@ namespace Zelda.Projectiles
             direction.Normalize();
             double pixelsPerSecondSpeed = blocksPerSecondSpeed * Settings.BLOCK_SIZE;
             velocity = new Vector2((float)(direction.X * pixelsPerSecondSpeed), (float)(direction.Y * pixelsPerSecondSpeed));
-            this.lifetime = lifetime;
+            LIFETIME = lifetime;
+            timeLeftUntilDelete = lifetime;
         }
 
-        public virtual void UpdateAdditional(GameTime gameTime)
+        protected virtual void UpdateAdditional(GameTime gameTime)
         {
             sprite.Update(gameTime);
         }
@@ -30,9 +32,9 @@ namespace Zelda.Projectiles
         public virtual bool Update(GameTime gameTime)
         {
             double time = gameTime.ElapsedGameTime.TotalSeconds;
-            
-            lifetime -= time;
-            if (lifetime <= 0)
+
+            timeLeftUntilDelete -= time;
+            if (timeLeftUntilDelete <= 0)
             {
                 return true;
             }
@@ -45,6 +47,11 @@ namespace Zelda.Projectiles
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             sprite.Draw(spriteBatch, position);
+        }
+
+        protected virtual void Delete()
+        {
+            // TODO: deletion effects (clouds)
         }
     }
 }

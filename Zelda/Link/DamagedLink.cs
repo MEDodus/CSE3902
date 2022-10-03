@@ -72,9 +72,9 @@ namespace Zelda.Link
         {
             decoratedLink.Attack();
         }
-        public void UseItem()
+        public void UseItem(int itemNum)
         {
-            decoratedLink.UseItem();
+            decoratedLink.UseItem(itemNum);
         }
         public void TakeDamage(Game1 game)
         {

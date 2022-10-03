@@ -5,7 +5,7 @@ namespace Zelda.Projectiles.Classes
 {
     public class Fireball : IProjectile
     {
-        public Fireball(Vector2 position, Vector2 direction) : base(ProjectileSpriteFactory.Fireball(), position, direction, 8, 3)
+        public Fireball(Vector2 position, Vector2 direction) : base(ProjectileSpriteFactory.FireballSprite(), position, direction, 8, 3)
         {
 
         }

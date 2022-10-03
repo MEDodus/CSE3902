@@ -7,7 +7,7 @@ namespace Zelda.NPCs
     public class NPCBuilder
     {
         private readonly Vector2 SPAWN_POS = new Vector2(500, 500);
-        private INPC[] npcs = new INPC[8];
+        private INPC[] npcs = new INPC[11];
         private int i = 0;
 
         public NPCBuilder()
@@ -43,6 +43,9 @@ namespace Zelda.NPCs
             npcs[5] = new Zol(SPAWN_POS);
             npcs[6] = new Wallmaster(SPAWN_POS);
             npcs[7] = new SpikeCross(SPAWN_POS);
+            npcs[8] = new SnakeRefactor(SPAWN_POS);
+            npcs[9] = new Goriya(SPAWN_POS);
+            npcs[10] = new Dodongo(SPAWN_POS);
         }
 
         public void Update(GameTime gameTime)

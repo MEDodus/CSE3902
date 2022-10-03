@@ -2,17 +2,22 @@
 using Microsoft.Xna.Framework.Graphics;
 using Zelda.Sprites;
 
-namespace Zelda.NPCs
+namespace Zelda.NPCs.Classes
 {
-    public abstract class IEnemy : INPC
+    public abstract class EnemySingleDirection : INPC
     {
+        protected ISprite sprite;
+        protected Vector2 position;
         protected Vector2 moveDirection = new Vector2(0, 0);
         protected int health;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
 
-        public IEnemy(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed) : base(sprite, position)
+        public EnemySingleDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed)
         {
+            this.sprite = sprite;
+            this.position = position;
+
             this.health = health;
             this.blocksPerSecondSpeed = blocksPerSecondSpeed;
         }
@@ -23,7 +28,7 @@ namespace Zelda.NPCs
 
         }
 
-        public override void Update(GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
             double timeDelta = gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -32,8 +37,8 @@ namespace Zelda.NPCs
             if (magnitude > 0)
             {
                 double pixelsDelta = blocksPerSecondSpeed * Settings.BLOCK_SIZE * timeDelta;
-                float xDelta = (float)((moveDirection.X / magnitude) * pixelsDelta);
-                float yDelta = (float)((moveDirection.Y / magnitude) * pixelsDelta);
+                float xDelta = (float)(moveDirection.X / magnitude * pixelsDelta);
+                float yDelta = (float)(moveDirection.Y / magnitude * pixelsDelta);
                 position += new Vector2(xDelta, yDelta);
             }
 
@@ -53,8 +58,9 @@ namespace Zelda.NPCs
         }
 
         bool appeared = false;
-        public override void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
+            sprite.Draw(spriteBatch, position);
             if (!appeared)
             {
                 appeared = true;

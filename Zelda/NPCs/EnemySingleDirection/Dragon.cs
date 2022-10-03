@@ -8,7 +8,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.NPCs.Classes
 {
-    public class Dragon : IEnemy
+    public class Dragon : EnemySingleDirection
     {
         private readonly double ATTACK_COOLDOWN_LENGTH = 5;
         private readonly double ATTACK_ANIMATION_LENGTH = 1;

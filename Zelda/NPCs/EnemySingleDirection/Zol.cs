@@ -4,9 +4,9 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.NPCs.Classes
 {
-    public class Skeleton : IEnemy
+    public class Zol : EnemySingleDirection
     {
-        public Skeleton(Vector2 position) : base(NPCSpriteFactory.SkeletonSprite(), position, 2, 3)
+        public Zol(Vector2 position) : base(NPCSpriteFactory.ZolSprite(), position, 1, 1)
         {
 
         }

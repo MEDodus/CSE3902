@@ -4,9 +4,9 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.NPCs.Classes
 {
-    public class Gel : IEnemy
+    public class Skeleton : EnemySingleDirection
     {
-        public Gel(Vector2 position) : base(NPCSpriteFactory.GelSprite(), position, 1, 1)
+        public Skeleton(Vector2 position) : base(NPCSpriteFactory.SkeletonSprite(), position, 2, 3)
         {
 
         }

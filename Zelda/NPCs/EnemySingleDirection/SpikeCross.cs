@@ -4,7 +4,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.NPCs.Classes
 {
-    public class SpikeCross : IEnemy
+    public class SpikeCross : EnemySingleDirection
     {
         public SpikeCross(Vector2 position) : base(NPCSpriteFactory.SpikeCross(), position, int.MaxValue, 8)
         {

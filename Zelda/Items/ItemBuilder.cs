@@ -16,7 +16,7 @@ namespace Zelda.Items
             items[1] = new BlueCandle(SPAWN_POS);
             items[2] = new BluePotion(SPAWN_POS);
             items[3] = new Bomb(SPAWN_POS);
-            items[4] = new Boomerang(SPAWN_POS);
+            items[4] = new BoomerangOld(SPAWN_POS);
             items[5] = new Bow(SPAWN_POS);
             items[6] = new Clock(SPAWN_POS);
             items[7] = new Compass(SPAWN_POS);

@@ -4,14 +4,14 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.NPCs.Classes
 {
-    public class Wallmaster : IEnemy
+    public class Bat : EnemySingleDirection
     {
-        public Wallmaster(Vector2 position) : base(NPCSpriteFactory.WallmasterSprite(), position, 3, 1)
+        public Bat(Vector2 position) : base(NPCSpriteFactory.BatSprite(), position, 1, 3)
         {
 
         }
 
-        private double changeDirectionCooldown = 0; // seconds
+        double changeDirectionCooldown = 0; // seconds
         protected override void UpdateAdditional(GameTime gameTime)
         {
             if (changeDirectionCooldown <= 0)

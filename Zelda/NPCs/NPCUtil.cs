@@ -1,10 +1,11 @@
 ﻿using System;
+using Zelda.NPCs.Classes;
 
 namespace Zelda.NPCs
 {
     public static class NPCUtil
     {
-        public static void MoveRandomly(IEnemy enemy)
+        public static void MoveRandomly(EnemySingleDirection enemy)
         {
             int rand = new Random().Next(1, 5);
             switch (rand)

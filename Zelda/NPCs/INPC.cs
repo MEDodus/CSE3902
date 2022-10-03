@@ -4,25 +4,10 @@ using Zelda.Sprites;
 
 namespace Zelda.NPCs
 {
-    public abstract class INPC
+    public interface INPC
     {
-        protected ISprite sprite;
-        protected Vector2 position;
+        public void Update(GameTime gameTime);
 
-        public INPC(ISprite sprite, Vector2 position)
-        {
-            this.sprite = sprite;
-            this.position = position;
-        }
-
-        public virtual void Update(GameTime gameTime)
-        {
-            sprite.Update(gameTime);
-        }
-
-        public virtual void Draw(SpriteBatch spriteBatch)
-        {
-            sprite.Draw(spriteBatch, position);
-        }
+        public void Draw(SpriteBatch spriteBatch);
     }
 }

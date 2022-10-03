@@ -4,14 +4,14 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.NPCs.Classes
 {
-    public class Bat : IEnemy
+    public class Gel : EnemySingleDirection
     {
-        public Bat(Vector2 position) : base(NPCSpriteFactory.BatSprite(), position, 1, 3)
+        public Gel(Vector2 position) : base(NPCSpriteFactory.GelSprite(), position, 1, 1)
         {
 
         }
 
-        double changeDirectionCooldown = 0; // seconds
+        private double changeDirectionCooldown = 0; // seconds
         protected override void UpdateAdditional(GameTime gameTime)
         {
             if (changeDirectionCooldown <= 0)

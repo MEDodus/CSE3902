@@ -4,14 +4,14 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.NPCs.Classes
 {
-    public class Zol : IEnemy
+    public class SnakeOld : EnemySingleDirection
     {
-        public Zol(Vector2 position) : base(NPCSpriteFactory.ZolSprite(), position, 1, 1)
+        public SnakeOld(Vector2 position) : base(NPCSpriteFactory.LeftSnakeSprite(), position, 1, 3)
         {
 
         }
 
-        private double changeDirectionCooldown = 0; // seconds
+        double changeDirectionCooldown = 0; // seconds
         protected override void UpdateAdditional(GameTime gameTime)
         {
             if (changeDirectionCooldown <= 0)

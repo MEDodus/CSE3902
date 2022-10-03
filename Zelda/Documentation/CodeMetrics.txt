@@ -1,0 +1,31 @@
+Week 1 (9/18/22):
+Maintainability index: 85
+Cyclomatic complexity: 13
+Depth of inheritance: 2
+Class coupling: 23
+Lines of source code: 101
+Lines of executable code: 20
+
+Week 2 (9/22/22):
+Maintainability index: 89
+Cyclomatic complexity: 269
+Depth of inheritance: 1
+Class coupling: 75
+Lines of source code: 1824
+Lines of executable code: 498
+
+Week 1 (9/28/22):
+Maintainability index: 88
+Cyclomatic complexity: 652
+Depth of inheritance: 2
+Class coupling: 121
+Lines of source code: 4016
+Lines of executable code: 955
+
+Week 4 (10/2/22):
+Maintainability index: 90
+Cyclomatic complexity: 537
+Depth of inheritance: 3
+Class coupling: 114
+Lines of source code: 3584
+Lines of executable code: 711

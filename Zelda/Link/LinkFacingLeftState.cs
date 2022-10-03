@@ -40,7 +40,7 @@ namespace Zelda.Link
         }
         public void UseItem()
         {
-            // link.state = new LinkUsingItemLeftState()
+            link.state = new LinkUsingItemLeftState(link);
         }
         public void TakeDamage()
         {

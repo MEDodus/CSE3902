@@ -17,7 +17,7 @@ namespace Zelda.Link
         void MoveRight();
         void Attack();
         void AttackUsingSward();
-        void UseItem();
+        void UseItem(int itemNum);
         void TakeDamage();
     }
 }

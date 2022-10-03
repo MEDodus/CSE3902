@@ -15,8 +15,8 @@ namespace Zelda.Link
         public LinkUsingItemUpState(Link2 link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(141, 11, 16, 16);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width, link.Height);
+            sourceRectangle = new Rectangle(140, 11, 16, 16);
+            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
         }
 
         public void MoveUp()
@@ -39,7 +39,7 @@ namespace Zelda.Link
         {
             // Can't attack while using item
         }
-        public void UseItem()
+        public void UseItem(int itemNum)
         {
             // Can't use item while using item
         }

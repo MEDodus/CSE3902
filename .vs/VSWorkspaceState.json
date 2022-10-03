@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Zelda",
+    "\\Zelda\\Link"
   ],
-  "SelectedNode": "\\Zelda.sln",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }

@@ -30,12 +30,12 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.N, new Attack(game, link));
 
             // For usable items 
-            keyboard.RegisterCommand(Keys.D1, new UseItem(game, link));
-            keyboard.RegisterCommand(Keys.NumPad1, new UseItem(game, link));
-            keyboard.RegisterCommand(Keys.D2, new UseItem(game, link));
-            keyboard.RegisterCommand(Keys.NumPad2, new UseItem(game, link));
-            keyboard.RegisterCommand(Keys.D3, new UseItem(game, link));
-            keyboard.RegisterCommand(Keys.NumPad3, new UseItem(game, link));
+            keyboard.RegisterCommand(Keys.D1, new UseItem_Bomb(game, link));
+            keyboard.RegisterCommand(Keys.NumPad1, new UseItem_Bomb(game, link));
+            keyboard.RegisterCommand(Keys.D2, new UseItem_Banana(game, link));
+            keyboard.RegisterCommand(Keys.NumPad2, new UseItem_Banana(game, link));
+            keyboard.RegisterCommand(Keys.D3, new UseItem_Arrow(game, link));
+            keyboard.RegisterCommand(Keys.NumPad3, new UseItem_Arrow(game, link));
 
             // For secondary items
             keyboard.RegisterCommand(Keys.X, new SecondaryItem(game));

@@ -11,4 +11,4 @@ Z/N - Attack w/ sword
 E - Become damaged
 
 Known bugs:
-Some of Link's sprites aren't the cleanest
+Some of Link's sprites have pixels clipping in from other frames

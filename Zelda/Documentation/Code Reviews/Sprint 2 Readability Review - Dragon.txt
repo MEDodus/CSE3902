@@ -1,0 +1,16 @@
+Code Review By: Nicholas Younoszai
+Date: 10/3/2022
+Sprint #: 2
+Class Reviewed: Dragon.cs
+Author: Alex Reed
+Time to Review: 17 minutes
+
+Comments on Readability: 
+I think the readability of this class is very good. The variables are named in ways that help understand what they are for (which is especially useful in a class
+with lots of things like cooldowns and direction changes). The Attack method is very self-explanatory with its functionality and it does exactly what it should and
+nothing more. In the UpdateAdditional method, there are a few different things happening here. Although there are small comments describing the chunks, it would be
+easier to read if these blocks were split up into different methods, giving them smaller tasks and making it easier to follow what is being done in the
+UpdateAdditional. I don't think this is a major concern, although having the chunks in methods would help a little bit. I think that in the places where other
+methods are called (both ones in this class and in other clases), they are all named well to show what they do without having to go look at the method itself
+to figure it out. Overall, I think the readability of this class is very good. It could potentially benefit from splitting up some chunks of code in the
+UpdateAdditional method to more specific methods, although this is not a major concern.

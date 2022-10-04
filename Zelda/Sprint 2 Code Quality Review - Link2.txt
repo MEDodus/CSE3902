@@ -1,0 +1,17 @@
+Review By: Alex Reed
+Date: 10/3/2022
+Sprint #: 2
+Class Reviewed: Link2
+Author: Nicholas Younoszai
+Time: 43min.
+
+Code Quality:
+This code is very readable and keeps within the suggest class and method lengths. 
+The class is highly cohesive as each method only makes one call to a method in the LinkeState classes.
+The code moderate cohesion since it is is dependent on each of the Link state classes. However, this is a result of using the state pattern.
+It might be beneficial to use some constants instead of references to magic numbers in the class.
+
+Hypothetical Change:
+One thing this class does not take into account is a state where Link takes too much damage and dies.  This is not implemented within the DamagedLink
+class either when the damage is applied. It might be beneficial to add another state so that if link does sustain too much damage, his sprite will 
+disapear and the game will end.

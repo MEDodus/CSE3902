@@ -1,15 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
-using Zelda.Commands;
 using Zelda.Enemy;
-using Zelda.Items.Classes;
 using Zelda.NPCs.EnemyMultiDirection;
+using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
-using Zelda.Projectiles;
 
 namespace Zelda.NPCs.Classes
 {

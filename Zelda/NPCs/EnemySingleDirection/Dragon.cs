@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
-using System.Collections.Generic;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites.Factories;

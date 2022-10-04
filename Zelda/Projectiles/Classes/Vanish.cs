@@ -7,7 +7,7 @@ namespace Zelda.Projectiles.Classes
     {
         public Vanish(Vector2 position) : base(ProjectileSpriteFactory.VanishSprite(), position, new Vector2(), 0, 0.2)
         {
-            
+
         }
     }
 }

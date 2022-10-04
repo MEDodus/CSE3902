@@ -6,7 +6,7 @@ namespace Zelda.Projectiles.Classes
 {
     public class Arrow : MultiDirectionProjectile
     {
-        public Arrow(Vector2 position, Vector2 direction) 
+        public Arrow(Vector2 position, Vector2 direction)
             : base(
                   ProjectileSpriteFactory.LeftArrowSprite(),
                   ProjectileSpriteFactory.RightArrowSprite(),

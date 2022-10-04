@@ -1,14 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
-using Zelda.Sprites.Factories;
-using Zelda.Controllers;
-using Zelda.Commands;
-using Zelda.Items;
 using Zelda.Blocks;
-using Zelda.NPCs;
+using Zelda.Commands;
+using Zelda.Controllers;
+using Zelda.Items;
 using Zelda.Link;
+using Zelda.NPCs;
 using Zelda.Projectiles;
+using Zelda.Sprites.Factories;
 
 /*
  * CSE 3902 Legend of Zelda

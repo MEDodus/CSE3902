@@ -1,11 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using Zelda.Commands;
 using Zelda.Enemy;
 using Zelda.NPCs.EnemyMultiDirection;
-using Zelda.Projectiles.Classes;
 using Zelda.Projectiles;
+using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -108,7 +107,7 @@ namespace Zelda.NPCs.Classes
             double timeDelta = gameTime.ElapsedGameTime.TotalSeconds;
             double pixelsDelta = blocksPerSecondSpeed * Settings.BLOCK_SIZE * timeDelta;
 
-            position += new Vector2((float) pixelsDelta, 0);
+            position += new Vector2((float)pixelsDelta, 0);
 
             sprite.Update(gameTime);
         }

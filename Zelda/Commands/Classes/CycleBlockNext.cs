@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Zelda.Blocks;
-using Zelda.Items;
 
 namespace Zelda.Commands.Classes
 {

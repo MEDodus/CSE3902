@@ -6,7 +6,7 @@ namespace Zelda.Projectiles.Classes
 {
     public class SilverArrow : MultiDirectionProjectile
     {
-        public SilverArrow(Vector2 position, Vector2 direction) 
+        public SilverArrow(Vector2 position, Vector2 direction)
             : base(
                   ProjectileSpriteFactory.LeftSilverArrowSprite(),
                   ProjectileSpriteFactory.RightSilverArrowSprite(),

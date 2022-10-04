@@ -118,7 +118,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite LeftSwordBeamSprite()
         {
-            return new AnimatedSprite(GetTexture("sword_beam"), 4 * SWORD_BEAM_WIDTH + SWORD_BEAM_HEIGHT, 0, 2, 1, SWORD_BEAM_WIDTH, SWORD_BEAM_HEIGHT, SWORD_BEAM_FPS, 
+            return new AnimatedSprite(GetTexture("sword_beam"), 4 * SWORD_BEAM_WIDTH + SWORD_BEAM_HEIGHT, 0, 2, 1, SWORD_BEAM_WIDTH, SWORD_BEAM_HEIGHT, SWORD_BEAM_FPS,
                 SWORD_BEAM_SIZE_IN_BLOCKS);
         }
 

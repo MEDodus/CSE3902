@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.ComponentModel;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace Zelda.Link

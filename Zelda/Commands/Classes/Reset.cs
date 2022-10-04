@@ -2,7 +2,6 @@
 using Zelda.Blocks;
 using Zelda.Items;
 using Zelda.NPCs;
-using Zelda.Link;
 using Zelda.Projectiles;
 
 namespace Zelda.Commands.Classes

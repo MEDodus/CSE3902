@@ -16,7 +16,7 @@ namespace Zelda.Blocks
             blocks[1] = new PushableBlock(SPAWN_POS);
             blocks[2] = new Statue1(SPAWN_POS);
             blocks[3] = new Statue2(SPAWN_POS);
-            blocks[4] = new WhiteBrick(SPAWN_POS);  
+            blocks[4] = new WhiteBrick(SPAWN_POS);
             blocks[5] = new BlackGap(SPAWN_POS);
             blocks[6] = new BlueSand(SPAWN_POS);
             blocks[7] = new BlueGap(SPAWN_POS);

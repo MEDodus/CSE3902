@@ -8,7 +8,7 @@ namespace Zelda.Projectiles.Classes
     {
         public Bomb(Vector2 position) : base(ProjectileSpriteFactory.BombSprite(), position, new Vector2(), 0, 2)
         {
-            
+
         }
 
         private readonly int EXPLOSION_BUFFER_IN_PIXELS = 1 * Settings.BLOCK_SIZE;

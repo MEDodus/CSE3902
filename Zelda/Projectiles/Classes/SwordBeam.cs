@@ -6,7 +6,7 @@ namespace Zelda.Projectiles.Classes
 {
     public class SwordBeam : MultiDirectionProjectile
     {
-        public SwordBeam(Vector2 position, Vector2 direction) 
+        public SwordBeam(Vector2 position, Vector2 direction)
             : base(
                   ProjectileSpriteFactory.LeftSwordBeamSprite(),
                   ProjectileSpriteFactory.RightSwordBeamSprite(),

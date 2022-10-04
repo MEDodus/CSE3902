@@ -7,7 +7,7 @@ namespace Zelda.Projectiles.Classes
     {
         public AppearanceCloud(Vector2 position) : base(ProjectileSpriteFactory.AppearanceCloudSprite(), position, new Vector2(), 0, 0.5)
         {
-            
+
         }
     }
 }

@@ -12,3 +12,4 @@ E - Become damaged
 
 Known bugs:
 Some of Link's sprites have pixels clipping in from other frames
+You can spam Link's items for right now, this will be fixed once he has a functional inventory/health system

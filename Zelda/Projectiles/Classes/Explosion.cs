@@ -7,7 +7,7 @@ namespace Zelda.Projectiles.Classes
     {
         public Explosion(Vector2 position) : base(ProjectileSpriteFactory.ExplosionSprite(), position, new Vector2(), 0, 0.5)
         {
-            
+
         }
     }
 }

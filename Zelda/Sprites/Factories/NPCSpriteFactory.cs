@@ -120,7 +120,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite LeftMovingDodongoSprite()
         {
-            return new AnimatedSprite(GetTexture("dodongo"), 0, DODONGO_ROW_HEIGHT*3, 1, 2, DODONGO_ROW_HEIGHT, DODONGO_HORIZONTAL_COLUMN_WIDTH, DODONGO_FPS, DODONGO_HORIZONTAL_SIZE_IN_BLOCKS);
+            return new AnimatedSprite(GetTexture("dodongo"), 0, DODONGO_ROW_HEIGHT * 3, 1, 2, DODONGO_ROW_HEIGHT, DODONGO_HORIZONTAL_COLUMN_WIDTH, DODONGO_FPS, DODONGO_HORIZONTAL_SIZE_IN_BLOCKS);
         }
         public static ISprite RightMovingDodongoSprite()
         {

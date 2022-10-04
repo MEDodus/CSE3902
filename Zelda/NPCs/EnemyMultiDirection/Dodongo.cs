@@ -1,11 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using Zelda.Commands;
 using Zelda.Enemy;
 using Zelda.NPCs.EnemyMultiDirection;
-using Zelda.Projectiles.Classes;
 using Zelda.Projectiles;
+using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -72,11 +71,11 @@ namespace Zelda.NPCs.Classes
                 if (takeDamage < 30)
                 {
                     state.TakeDamage();
-                   //damageDelay = 2;
+                    //damageDelay = 2;
                 }
             }
-            damageDelay -= gameTime.ElapsedGameTime.TotalSeconds; 
-            
+            damageDelay -= gameTime.ElapsedGameTime.TotalSeconds;
+
 
             if (attackCooldown > 0)
             {

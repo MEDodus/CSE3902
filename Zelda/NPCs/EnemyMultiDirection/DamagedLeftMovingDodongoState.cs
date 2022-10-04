@@ -1,9 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Zelda.Enemy;
 using Zelda.NPCs.Classes;
 using Zelda.Sprites.Factories;
@@ -22,7 +17,7 @@ namespace Zelda.NPCs.EnemyMultiDirection
 
         public void TurnLeft()
         {
-                enemy.state = new LeftMovingDodongoState(enemy);
+            enemy.state = new LeftMovingDodongoState(enemy);
         }
 
         public void TurnRight()

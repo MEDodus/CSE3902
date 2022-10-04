@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Zelda.Sprites.Factories;
-using Zelda.Projectiles;
-using Zelda.Projectiles.Classes;
 using System.Collections.Generic;
 using Zelda.Controllers;
+using Zelda.Projectiles;
+using Zelda.Projectiles.Classes;
+using Zelda.Sprites.Factories;
 
 namespace Zelda.Link
 {

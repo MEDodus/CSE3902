@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Zelda.Projectiles.Classes;
 using Zelda.Projectiles;
+using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 
 namespace Zelda.NPCs.Classes

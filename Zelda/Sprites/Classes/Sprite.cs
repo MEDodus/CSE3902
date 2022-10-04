@@ -27,13 +27,13 @@ namespace Zelda.Sprites.Classes
             SIZE_IN_BLOCKS = sizeInBlocks;
         }
 
-        public Sprite(Texture2D texture) 
+        public Sprite(Texture2D texture)
             : this(texture, 0, 0, texture.Width, texture.Height, -1) { }
 
-        public Sprite(Texture2D texture, double sizeInBlocks) 
+        public Sprite(Texture2D texture, double sizeInBlocks)
             : this(texture, 0, 0, texture.Width, texture.Height, sizeInBlocks) { }
 
-        public Sprite(Texture2D texture, int x, int y, int width, int height) 
+        public Sprite(Texture2D texture, int x, int y, int width, int height)
             : this(texture, x, y, width, height, -1) { }
 
         public void Update(GameTime gameTime)

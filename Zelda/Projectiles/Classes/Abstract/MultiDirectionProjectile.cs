@@ -5,7 +5,7 @@ namespace Zelda.Projectiles.Classes.Abstract
 {
     public abstract class MultiDirectionProjectile : IProjectile
     {
-        public MultiDirectionProjectile(ISprite leftSprite, ISprite rightSprite, ISprite upSprite, ISprite downSprite, Vector2 position, Vector2 direction, 
+        public MultiDirectionProjectile(ISprite leftSprite, ISprite rightSprite, ISprite upSprite, ISprite downSprite, Vector2 position, Vector2 direction,
             double blocksPerSecondSpeed, double lifetime)
             : base(null, position, direction, blocksPerSecondSpeed, lifetime)
         {

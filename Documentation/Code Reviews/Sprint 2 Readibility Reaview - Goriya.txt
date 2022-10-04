@@ -1,7 +1,8 @@
-Author of class: Jacob Pohlabel
+Reviewed by: Jiayuan Zhang
+Author of class: Alex Reed
 Date: 10/3/2022
 Sprint: 2
-Class Reviewed: Alex Reed
+Class Reviewed: Goriya
 Time: 30min
 
 Readibility:

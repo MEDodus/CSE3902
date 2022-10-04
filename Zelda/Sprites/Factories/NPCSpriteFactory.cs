@@ -147,12 +147,5 @@ namespace Zelda.Sprites.Factories
         {
             return new AnimatedSprite(GetTexture("dodongo"), 0, DODONGO_ROW_HEIGHT * 6, 1, 1, DODONGO_ROW_HEIGHT, DODONGO_HORIZONTAL_COLUMN_WIDTH, DODONGO_FPS, DODONGO_HORIZONTAL_SIZE_IN_BLOCKS);
         }
-
-        //DeathExplosion
-        public static ISprite DeathExplosionSprite()
-        {
-            return new AnimatedSprite(GetTexture("death_explosion"), 1, 4, 8, 1);
-        }
-
     }
 }

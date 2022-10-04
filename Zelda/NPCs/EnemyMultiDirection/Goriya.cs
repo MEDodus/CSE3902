@@ -104,7 +104,7 @@ namespace Zelda.NPCs.Classes
             if (!appeared)
             {
                 appeared = true;
-                // TODO: appearance cloud
+                ProjectileStorage.Add(new AppearanceCloud(position));
             }
             Color color = damageCooldown <= 0 ? Color.White : Color.Red;
             sprite.Draw(spriteBatch, position, color);

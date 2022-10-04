@@ -6,7 +6,7 @@ namespace Zelda.Sprites.Factories
     {
         public static ISprite ArrowSprite()
         {
-            return new Sprite(GetTexture("arrow"), 1);
+            return new Sprite(GetTexture("arrow"), 0, 0, 40, 128, 1);
         }
 
         public static ISprite BlueCandleSprite()
@@ -36,7 +36,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite BoomerangSprite()
         {
-            return new Sprite(GetTexture("boomerang"), 0.5);
+            return new Sprite(GetTexture("boomerang"), 0, 0, 96, 96, 0.5);
         }
 
         public static ISprite BowSprite()
@@ -96,7 +96,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite MagicalBoomerangSprite()
         {
-            return new Sprite(GetTexture("magical_boomerang"), 0.5);
+            return new Sprite(GetTexture("magical_boomerang"), 0, 0, 96, 96, 0.5);
         }
 
         public static ISprite MagicalKeySprite()
@@ -156,7 +156,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite SilverArrowSprite()
         {
-            return new Sprite(GetTexture("silver_arrow"), 1);
+            return new Sprite(GetTexture("silver_arrow"), 0, 0, 40, 128, 1);
         }
 
         public static ISprite StepladderSprite()

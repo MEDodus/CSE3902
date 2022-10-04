@@ -15,18 +15,19 @@ namespace Zelda.Projectiles
 
         public static void Update(GameTime gameTime)
         {
-            HashSet<IProjectile> projectilesToRemove = new HashSet<IProjectile>();
+            HashSet<IProjectile> projectilesToDelete = new HashSet<IProjectile>();
             foreach (IProjectile projectile in projectiles)
             {
                 bool lifetimeExpired = projectile.Update(gameTime);
                 if (lifetimeExpired)
                 {
                     // can't remove directly from projectiles within foreach loop
-                    projectilesToRemove.Add(projectile);
+                    projectilesToDelete.Add(projectile);
                 }
             }
-            foreach (IProjectile projectile in projectilesToRemove)
+            foreach (IProjectile projectile in projectilesToDelete)
             {
+                projectile.Delete();
                 projectiles.Remove(projectile);
             }
         }

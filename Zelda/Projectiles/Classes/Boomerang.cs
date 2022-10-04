@@ -11,12 +11,13 @@ namespace Zelda.Projectiles.Classes
             baseVelocity = velocity;
         }
 
-        protected override void UpdateAdditional(GameTime gameTime)
+        public override bool Update(GameTime gameTime)
         {
             // start fast, decelerate to 0 when half of the lifetime is up, then speed up again in the opposite direciton
-            float multiplier = (float)((2 / LIFETIME) * (timeLeftUntilDelete - (LIFETIME / 2)));
+            float multiplier = (float)((2 / lifetime) * (timeLeftUntilDelete - (lifetime / 2)));
             velocity = new Vector2(multiplier * baseVelocity.X, multiplier * baseVelocity.Y);
-            sprite.Update(gameTime);
+
+            return base.Update(gameTime);
         }
     }
 }

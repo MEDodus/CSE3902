@@ -12,8 +12,6 @@ namespace Zelda.Commands
     {
         public CommandBuilder(IController keyboard, Game1 game, ItemBuilder itemBuilder, BlockBuilder blockBuilder, NPCBuilder npcBuilder, ILink link)
         {
-            // TODO: add all keyboard keys as registered keys so no exeptions occur. as well as potentially a class to build all registered commands
-
             // For quitting the game
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
 
@@ -41,7 +39,16 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.NumPad2, new UseItem2(game, link));
             keyboard.RegisterCommand(Keys.D3, new UseItem3(game, link));
             keyboard.RegisterCommand(Keys.NumPad3, new UseItem3(game, link));
+            keyboard.RegisterCommand(Keys.D4, new UseItem4(game, link));
+            keyboard.RegisterCommand(Keys.NumPad4, new UseItem4(game, link));
+            keyboard.RegisterCommand(Keys.D5, new UseItem5(game, link));
+            keyboard.RegisterCommand(Keys.NumPad5, new UseItem5(game, link));
+            keyboard.RegisterCommand(Keys.D6, new UseItem6(game, link));
+            keyboard.RegisterCommand(Keys.NumPad6, new UseItem6(game, link));
+            keyboard.RegisterCommand(Keys.D7, new UseItem7(game, link));
+            keyboard.RegisterCommand(Keys.NumPad7, new UseItem7(game, link));
 
+            // For damaged state (sprint 2 only)
             keyboard.RegisterCommand(Keys.E, new Hurt(game, link));
 
             // For secondary items

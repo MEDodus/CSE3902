@@ -85,6 +85,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/blue_ring.png
 
+#begin spritesheets/bomb_explosion.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/bomb_explosion.png
+
 #begin spritesheets/bomb.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -469,6 +481,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/power_bracelet.png
 
+#begin spritesheets/projectile_vanish.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/projectile_vanish.png
+
 #begin spritesheets/raft.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -600,6 +624,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/stepladder.png
+
+#begin spritesheets/sword_beam.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/sword_beam.png
 
 #begin spritesheets/sword.png
 /importer:TextureImporter

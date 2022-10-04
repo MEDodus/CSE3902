@@ -33,7 +33,7 @@ namespace Zelda.Controllers
             }
         }
 
-        public static bool AreMultipleKeysPressed(HashSet<Keys> keys)
+        public static bool AreMultipleKeysInSetPressed(HashSet<Keys> keys)
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
             int numPressed = 0;

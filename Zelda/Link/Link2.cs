@@ -61,7 +61,7 @@ namespace Zelda.Link
         private bool TryMove(Vector2 newDirection)
         {
             // Don't set direction if multiple keys are being pressed unless the direction is the same as the current direction
-            bool success = !KeyboardController.AreMultipleKeysPressed(movementKeys) || newDirection.Equals(facingDirection);
+            bool success = !KeyboardController.AreMultipleKeysInSetPressed(movementKeys) || newDirection.Equals(facingDirection);
             if (success)
             {
                 facingDirection = newDirection;
@@ -117,13 +117,25 @@ namespace Zelda.Link
             switch (itemNum)
             {
                 case 1:
-                    item = new Arrow(position, facingDirection);
+                    item = new SwordBeam(position, facingDirection);
                     break;
                 case 2:
-                    item = new Boomerang(position, facingDirection);
+                    item = new Arrow(position, facingDirection);
                     break;
                 case 3:
-                    item = new Bomb(position, facingDirection);
+                    item = new SilverArrow(position, facingDirection);
+                    break;
+                case 4:
+                    item = new Boomerang(position, facingDirection);
+                    break;
+                case 5:
+                    item = new MagicalBoomerang(position, facingDirection);
+                    break;
+                case 6:
+                    item = new Bomb(position);
+                    break;
+                case 7:
+                    item = new CandleFlame(position, facingDirection);
                     break;
             }
             ProjectileStorage.Add(item);

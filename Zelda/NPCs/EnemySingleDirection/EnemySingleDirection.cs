@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Projectiles;
+using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 
 namespace Zelda.NPCs.Classes
@@ -64,7 +66,7 @@ namespace Zelda.NPCs.Classes
             if (!appeared)
             {
                 appeared = true;
-                // TODO: appearance cloud
+                ProjectileStorage.Add(new AppearanceCloud(position));
             }
             Color color = damageCooldown <= 0 ? Color.White : Color.Red;
             sprite.Draw(spriteBatch, position, color);
@@ -75,7 +77,7 @@ namespace Zelda.NPCs.Classes
 
         public virtual void Die()
         {
-            // TODO: death explosion
+            ProjectileStorage.Add(new DeathExplosion(position));
         }
 
         public virtual void TakeDamage(int damage)

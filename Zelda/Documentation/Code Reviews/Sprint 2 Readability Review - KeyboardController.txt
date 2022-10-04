@@ -1,0 +1,12 @@
+Review By: Jacob Pohlabel
+Date: 10/3/2022
+Sprint: 2
+Class Reviewed: KeyboardController
+Author: Michael Dodus
+Time: 10 min
+
+Code Quality:
+This code is very readable and simple. It simply binds commands to keys and executes those commands whenever the key is pressed.
+It could not really get any simpler, it has a clear job and it does it well. There is also a static utility function to check if
+multiple keys out of a provided set are being pressed (I wrote this part, Michael wrote the rest), which could maybe get factored 
+out into the Link class, but everything that Michael wrote is good.

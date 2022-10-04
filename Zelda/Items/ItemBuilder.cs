@@ -7,7 +7,7 @@ namespace Zelda.Items
     public class ItemBuilder
     {
         private readonly Vector2 SPAWN_POS = new Vector2(100, 100);
-        private IItem[] items = new IItem[16];
+        private IItem[] items = new IItem[35];
         private int i = 0;
 
         public ItemBuilder()
@@ -28,26 +28,25 @@ namespace Zelda.Items
             items[13] = new Rupy(SPAWN_POS);
             items[14] = new Triforce(SPAWN_POS);
             items[15] = new Fire(SPAWN_POS);
-
-            //items[16] = new BlueRing(SPAWN_POS);
-            //items[17] = new BookOfMagic(SPAWN_POS);
-            //items[18] = new Food(SPAWN_POS);
-            //items[19] = new FiveRupies(SPAWN_POS);
-            //items[20] = new Letter(SPAWN_POS);
-            //items[21] = new MagicalBoomerang(SPAWN_POS);
-            //items[22] = new MagicalKey(SPAWN_POS);
-            //items[23] = new MagicalRod(SPAWN_POS);
-            //items[24] = new MagicalShield(SPAWN_POS);
-            //items[25] = new PowerBracelet(SPAWN_POS);
-            //items[26] = new Raft(SPAWN_POS);
-            //items[27] = new Recorder(SPAWN_POS);
-            //items[28] = new RedCandle(SPAWN_POS);
-            //items[29] = new RedPotion(SPAWN_POS);
-            //items[30] = new RedRing(SPAWN_POS);
-            //items[31] = new SilverArrow(SPAWN_POS);
-            //items[32] = new Stepladder(SPAWN_POS);
-            //items[33] = new Sword(SPAWN_POS);
-            //items[34] = new WhiteSword(SPAWN_POS);
+            items[16] = new BlueRing(SPAWN_POS);
+            items[17] = new BookOfMagic(SPAWN_POS);
+            items[18] = new Food(SPAWN_POS);
+            items[19] = new FiveRupies(SPAWN_POS);
+            items[20] = new Letter(SPAWN_POS);
+            items[21] = new MagicalBoomerang(SPAWN_POS);
+            items[22] = new MagicalKey(SPAWN_POS);
+            items[23] = new MagicalRod(SPAWN_POS);
+            items[24] = new MagicalShield(SPAWN_POS);
+            items[25] = new PowerBracelet(SPAWN_POS);
+            items[26] = new Raft(SPAWN_POS);
+            items[27] = new Recorder(SPAWN_POS);
+            items[28] = new RedCandle(SPAWN_POS);
+            items[29] = new RedPotion(SPAWN_POS);
+            items[30] = new RedRing(SPAWN_POS);
+            items[31] = new SilverArrow(SPAWN_POS);
+            items[32] = new Stepladder(SPAWN_POS);
+            items[33] = new Sword(SPAWN_POS);
+            items[34] = new WhiteSword(SPAWN_POS);
         }
 
         public void PreviousItem()

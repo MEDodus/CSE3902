@@ -12,12 +12,12 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite BoomerangSprite()
         {
-            return new AnimatedSprite(GetTexture("boomerang"), 1, 3, 9, 0.75);
+            return new AnimatedSprite(GetTexture("boomerang"), 1, 3, 9, 0.5);
         }
 
         public static ISprite MagicalBoomerangSprite()
         {
-            return new AnimatedSprite(GetTexture("magical_boomerang"), 1, 3, 9, 0.75);
+            return new AnimatedSprite(GetTexture("magical_boomerang"), 1, 3, 9, 0.5);
         }
 
         public static ISprite BombSprite()

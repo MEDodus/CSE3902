@@ -1,0 +1,20 @@
+Reviewed By: Jiayuan Zhang
+Author of class: Jacob Pohlabel
+Date: 10/3/2022
+Sprint: 2
+Class Reviewed: Projectile
+Time: 30min
+
+Code Quality:
+The code is highly readable, it has virtual updateAdditional class to update sprite,
+and clearly initialized the impotant parameters like pixelsPerSecond, velocity, and etc.
+The logic of the code is very beautiful, I never thought it could be such a way to make 
+it work. In a bigger view, the interface make the projectileStorage and the classes for 
+specific items like Arrow and Boomerang easily accessible and easy to understand. In all,
+this is a genius class with appopriate interface.
+
+Hypothetical change:
+There we may add more projectils class into this folder to make more items projectible in
+the future. And there probabily be more effects abailable in this class, we can implement
+more instructions  of those items.
+			

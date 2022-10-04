@@ -110,32 +110,37 @@ namespace Zelda.Link
             state.TakeDamage(game);
         }
 
+        private Vector2 getPositionInFrontOfLink(double blocksInFrontOf)
+        {
+            return new Vector2(X, Y) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
+        }
+
         public void CreateItem(int itemNum)
         {
             IProjectile item = null;
-            Vector2 position = new Vector2(X, Y);
+            Vector2 defaultItemSpawnPos = getPositionInFrontOfLink(0);
             switch (itemNum)
             {
                 case 1:
-                    item = new SwordBeam(position, facingDirection);
+                    item = new SwordBeam(defaultItemSpawnPos, facingDirection);
                     break;
                 case 2:
-                    item = new Arrow(position, facingDirection);
+                    item = new Arrow(defaultItemSpawnPos, facingDirection);
                     break;
                 case 3:
-                    item = new SilverArrow(position, facingDirection);
+                    item = new SilverArrow(defaultItemSpawnPos, facingDirection);
                     break;
                 case 4:
-                    item = new Boomerang(position, facingDirection);
+                    item = new Boomerang(defaultItemSpawnPos, facingDirection);
                     break;
                 case 5:
-                    item = new MagicalBoomerang(position, facingDirection);
+                    item = new MagicalBoomerang(defaultItemSpawnPos, facingDirection);
                     break;
                 case 6:
-                    item = new Bomb(position);
+                    item = new Bomb(getPositionInFrontOfLink(1.5));
                     break;
                 case 7:
-                    item = new CandleFlame(position, facingDirection);
+                    item = new CandleFlame(defaultItemSpawnPos, facingDirection);
                     break;
             }
             ProjectileStorage.Add(item);

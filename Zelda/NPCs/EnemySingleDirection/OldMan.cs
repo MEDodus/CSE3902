@@ -29,9 +29,10 @@ namespace Zelda.NPCs.Classes
             if (!appeared)
             {
                 appeared = true;
+                AppearanceCloud cloud = new AppearanceCloud(position);
+                cloud.Draw(spriteBatch);
                 ProjectileStorage.Add(new AppearanceCloud(position));
             }
-            sprite.Draw(spriteBatch, position);
         }
     }
 }

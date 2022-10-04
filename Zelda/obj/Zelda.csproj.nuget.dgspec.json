@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {}
+    "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {
+    "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
+        "projectUniqueName": "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
         "projectName": "Zelda",
-        "projectPath": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
+        "projectPath": "C:\\Users\\jacob\\Source\\Repos\\MEDodus\\CSE3902\\Zelda\\Zelda.csproj",
         "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\jacob\\source\\repos\\MEDodus\\CSE3902\\Zelda\\obj\\",
         "projectStyle": "PackageReference",

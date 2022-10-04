@@ -1,0 +1,14 @@
+Reviewed by: Jiayuan Zhang
+Author of class: Alex Reed
+Date: 10/3/2022
+Sprint: 2
+Class Reviewed: Goriya
+Time: 30min
+
+Readibility:
+In my view, this class as long as its interface are crystal clear. Methods are 
+following the rule of desiging code, as well as the specific logic for moving, addacking
+,and etc.  The the case switch for the sprite to turn in different directions
+are in the appopriate position for this class, and make it understandable if it is in this class.
+There are no suggestions for change in this class. The only change will be if future methods and
+functions are added to this class.

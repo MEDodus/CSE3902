@@ -9,7 +9,7 @@ namespace Zelda.Link
         private Link2 link;
 
         private static readonly int frames = 4;
-        private readonly int MOD = 40;
+        private readonly int MOD = 24;
 
         // private Rectangle destinationRectangle;
         private Rectangle[] sourceRectangle;
@@ -74,7 +74,7 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if (frame == 40)
+            if (frame == MOD)
             {
                 link.state = new LinkFacingDownState(link);
             }

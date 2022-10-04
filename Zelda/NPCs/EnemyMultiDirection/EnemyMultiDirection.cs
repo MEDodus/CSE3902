@@ -62,14 +62,15 @@ namespace Zelda.NPCs.Classes
         bool appeared = false;
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, position);
+            Color color = damageCooldown <= 0 ? Color.White : Color.Red;
+            sprite.Draw(spriteBatch, position, color);
             if (!appeared)
             {
                 appeared = true;
-                ProjectileStorage.Add(new AppearanceCloud(position));
+                AppearanceCloud cloud = new AppearanceCloud(position);
+                cloud.Draw(spriteBatch);
+                ProjectileStorage.Add(cloud);
             }
-            Color color = damageCooldown <= 0 ? Color.White : Color.Red;
-            sprite.Draw(spriteBatch, position, color);
             DrawAdditional(spriteBatch);
         }
 

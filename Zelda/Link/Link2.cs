@@ -51,7 +51,7 @@ namespace Zelda.Link
             X = 300;
             Y = 700;
             state = new LinkFacingRightState(this);
-
+            facingDirection = new Vector2(1, 0);
         }
         public void Draw(SpriteBatch spriteBatch)
         {

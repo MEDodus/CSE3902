@@ -1,0 +1,13 @@
+Code Review By: Prithviraj Patel
+Date: 10/3/2022
+Sprint #: 2
+Class Reviewed: LinkUsingItemRightState.cs
+Author: Jiayuan Zhang
+Time to Review:10min
+
+Readability: The code is easy to read and understand, the variable names and the functions names are clear and minimaly but precisely very
+			 understandable, it tells the reader what they do. References to other classes that are called in the code are also easily readable, 
+			 understandable, and minimally but precisely descriptive.
+
+			 The only thing I would like to suggest is to write some comments before the update function and LinkUsingItemRightState function so 
+			 that the reader knows what's happening in the code and why. 

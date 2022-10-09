@@ -9,7 +9,7 @@ namespace Zelda.Link
         private Link2 link;
 
         private static readonly int frames = 4;
-        private readonly int MOD = 40;
+        private readonly int MOD = 24;
 
         // private Rectangle destinationRectangle;
         private Rectangle[] sourceRectangle;
@@ -31,10 +31,10 @@ namespace Zelda.Link
         public void InitArrays()
         {
             // Source rectangles for each frame
-            sourceRectangle[0] = new Rectangle(94, 47, 16, 15);
-            sourceRectangle[1] = new Rectangle(111, 47, 16, 27);
-            sourceRectangle[2] = new Rectangle(128, 47, 15, 23);
-            sourceRectangle[3] = new Rectangle(146, 47, 13, 19);
+            sourceRectangle[0] = new Rectangle(0, 55, 16, 16);
+            sourceRectangle[1] = new Rectangle(16, 55, 16, 27);
+            sourceRectangle[2] = new Rectangle(32, 55, 16, 23);
+            sourceRectangle[3] = new Rectangle(48, 55, 16, 19);
 
             // Destination rectangles for each frame
             for (int i = 0; i < frames; i++)
@@ -63,18 +63,18 @@ namespace Zelda.Link
         {
             // Can't attack while attacking
         }
-        public void UseItem()
+        public void UseItem(int itemNum)
         {
             // Can't use item while attacking
         }
-        public void TakeDamage()
+        public void TakeDamage(Game1 game)
         {
-            // TODO: decorator class for this
+            game.link = new DamagedLink(link, game);
         }
 
         public void Update()
         {
-            if (frame == 40)
+            if (frame == MOD)
             {
                 link.state = new LinkFacingDownState(link);
             }
@@ -88,9 +88,7 @@ namespace Zelda.Link
         {
             Rectangle source = sourceRectangle[idx];
             Rectangle destination = destinationRectangle[idx];
-            spriteBatch.Begin();
             spriteBatch.Draw(link.Texture, destination, source, Color.White);
-            spriteBatch.End();
         }
     }
 }

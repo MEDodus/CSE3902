@@ -1,0 +1,15 @@
+Review By: Jacob Pohlabel
+Date: 10/3/2022
+Sprint: 2
+Class Reviewed: CommandBuilder
+Author: Michael Dodus
+Time: 10 min
+
+Code Quality:
+This code is very straightforward and high quality. The class builds many Command objects and registers them to different keyboard keys. 
+It does not do any other unspecified jobs so it is very clear from the title what it does. It is scalable and will make it easy to 
+bind different commands to different inputs in the future.
+
+Hypothetical change:
+A dictionary could maybe be used to map keys to their commands so that keyboard.RegisterCommand() isn't repeated so much, but this probably
+isn't necessary since you would replace all of the RegisterCommand calls with dictionary.Add().

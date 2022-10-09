@@ -1,0 +1,13 @@
+Code Review By: Alex Reed
+Date: 10/2/2022
+Sprint #: 2
+Class Reviewed: LinkMovingLeftState
+Author: Nicholas Younoszai
+Time to Review:20min
+
+Comments on Readability: The methods/states in this class are very readable.  The method names describe exactly what the methods are doing.
+In addition, the names of the calls to different classes are easily understandable and descriptive. 
+
+The only thing that is not readable in this code is there are a lot of magic numbers which are not immediately clear what they are referring to.
+For example, the currentSprite variable is compared to zero, and incremented or set to zero accordingly.  It might be beneficial if more variables are 
+introduced to this class to use constants.

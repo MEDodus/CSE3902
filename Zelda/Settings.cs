@@ -2,10 +2,8 @@
 {
     public static class Settings
     {
-
         public static readonly int BLOCK_SIZE = 40; // pixels
-
-        // To use for items classes for sizing items in window
+                                                    // To use for items classes for sizing items in window
         public static readonly int ITEMS_MULT = 3;
 
         // To calculate destinationRectangle of link attachking up, array initialized from l-r in link spriteshite reference
@@ -17,5 +15,4 @@
         // To use for link classes for sizing link in window
         public static readonly int LINK_SIZE_MULT = 3;
     }
-
 }

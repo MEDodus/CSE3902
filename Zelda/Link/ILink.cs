@@ -4,8 +4,7 @@ namespace Zelda.Link
 {
     public interface ILink
     {
-        public Texture2D Texture { get; }
-
+        public Texture2D Texture { set { } }
         public void Update();
 
         public void Reset();
@@ -16,8 +15,7 @@ namespace Zelda.Link
         void MoveLeft();
         void MoveRight();
         void Attack();
-        void AttackUsingSward();
         void UseItem(int itemNum);
-        void TakeDamage();
+        void TakeDamage(Game1 game);
     }
 }

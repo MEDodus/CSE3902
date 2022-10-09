@@ -10,7 +10,7 @@ namespace Zelda.Link
         void MoveRight();
         void Attack();
         void UseItem(int itemNum);
-        void TakeDamage();
+        void TakeDamage(Game1 game);
 
         public void Update();
         public void Draw(SpriteBatch spriteBatch);

@@ -15,7 +15,7 @@ namespace Zelda.Link
         public LinkUsingItemRightState(Link2 link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(125, 11, 16, 16);
+            sourceRectangle = new Rectangle(16, 32, 16, 16);
             destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
         }
 
@@ -39,13 +39,13 @@ namespace Zelda.Link
         {
             // Can't attack while using item
         }
-        public void UseItem()
+        public void UseItem(int itemNum)
         {
             // Can't use item while using item
         }
-        public void TakeDamage()
+        public void TakeDamage(Game1 game)
         {
-            // TODO: decorator class for this
+            game.link = new DamagedLink(link, game);
         }
 
         public void Update()
@@ -63,9 +63,7 @@ namespace Zelda.Link
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
             spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
         }
     }
 }

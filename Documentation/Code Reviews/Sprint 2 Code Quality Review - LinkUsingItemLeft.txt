@@ -1,0 +1,13 @@
+Code Review By: Prithviraj Patel
+Date: 10/3/2022
+Sprint #: 2
+Class Reviewed: LinkUsingItemLeftState.cs
+Author: Jiayuan Zhang
+Time to Review:9min
+
+Quality: The code is minimal but good and precise, it doesn't do extra work and is efficient. It is similar to the LinkUsingItemRightState
+		 which it is supposed to be and just the direction of the Link is changed, the sprite used looks good, and code is easy to read and understand.
+		 The variable names are also understandable and descriptive.
+
+		 Similar to LingUsingItemRightState.cs the only thing I would like to suggest is to write some comments before the update function 
+		 and LinkUsingItemLeftState function so that the reader knows what's happening in the code and why. 

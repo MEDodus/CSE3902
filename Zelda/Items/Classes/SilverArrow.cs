@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class SilverArrow : IItem
+    public class SilverArrow : INPC
     {
         public SilverArrow(Vector2 position) : base(ItemSpriteFactory.SilverArrowSprite(), position)
         {

@@ -7,7 +7,7 @@ namespace Zelda.Items
     public class ItemBuilder
     {
         private readonly Vector2 SPAWN_POS = new Vector2(100, 100);
-        private IItem[] items = new IItem[35];
+        private INPC[] items = new INPC[35];
         private int i = 0;
 
         public ItemBuilder()

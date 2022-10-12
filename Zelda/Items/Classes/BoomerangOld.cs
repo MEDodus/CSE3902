@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class BoomerangOld : IItem
+    public class BoomerangOld : INPC
     {
         public BoomerangOld(Vector2 position) : base(ItemSpriteFactory.BoomerangSprite(), position)
         {

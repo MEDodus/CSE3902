@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Fairy : IItem
+    public class Fairy : INPC
     {
         public Fairy(Vector2 position) : base(ItemSpriteFactory.FairySprite(), position)
         {

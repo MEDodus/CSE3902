@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Triforce : IItem
+    public class Triforce : INPC
     {
         public Triforce(Vector2 position) : base(ItemSpriteFactory.TriforceSprite(), position)
         {

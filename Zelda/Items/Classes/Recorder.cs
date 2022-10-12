@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Recorder : IItem
+    public class Recorder : INPC
     {
         public Recorder(Vector2 position) : base(ItemSpriteFactory.RecorderSprite(), position)
         {

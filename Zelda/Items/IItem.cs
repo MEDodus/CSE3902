@@ -4,12 +4,12 @@ using Zelda.Sprites;
 
 namespace Zelda.Items
 {
-    public abstract class IItem
+    public abstract class INPC
     {
         protected ISprite sprite;
         protected Vector2 position;
 
-        public IItem(ISprite sprite, Vector2 position)
+        public INPC(ISprite sprite, Vector2 position)
         {
             this.sprite = sprite;
             this.position = position;

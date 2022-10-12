@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class RedPotion : IItem
+    public class RedPotion : INPC
     {
         public RedPotion(Vector2 position) : base(ItemSpriteFactory.RedPotionSprite(), position)
         {

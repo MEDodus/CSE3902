@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Fire : IItem
+    public class Fire : INPC
     {
         public Fire(Vector2 position) : base(ItemSpriteFactory.FireSprite(), position)
         {

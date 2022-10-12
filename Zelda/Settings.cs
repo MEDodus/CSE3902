@@ -14,5 +14,6 @@
 
         // To use for link classes for sizing link in window
         public static readonly int LINK_SIZE_MULT = 3;
+
     }
 }

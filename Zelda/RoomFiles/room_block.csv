@@ -1,0 +1,7 @@
+﻿
+Example csv file for blocks in a room
+
+black_gap,black_gap,blue_floor,blue_floor,blue_floor
+blue_floor,stairs,black_gap,blue_floor,blue_floor
+blue_gap,blue_floor,blue_floor,blue_gap,blue_gap
+blue_gap,statue_1,blue_gap,statue_2,blue_gap

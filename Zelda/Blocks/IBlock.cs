@@ -8,6 +8,8 @@ namespace Zelda.Blocks
     {
         protected ISprite sprite;
         protected Vector2 position;
+        // Michael changed this, can't access position hard to draw room made getter to access Vector2
+        public Vector2 Position { get { return position; } }
 
         public IBlock(ISprite sprite, Vector2 position)
         {

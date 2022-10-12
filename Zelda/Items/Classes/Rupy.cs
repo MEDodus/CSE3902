@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Rupy : INPC
+    public class Rupy : IItem
     {
         public Rupy(Vector2 position) : base(ItemSpriteFactory.RupySprite(), position)
         {

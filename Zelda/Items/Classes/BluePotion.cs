@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class BluePotion : INPC
+    public class BluePotion : IItem
     {
         public BluePotion(Vector2 position) : base(ItemSpriteFactory.BluePotionSprite(), position)
         {

@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Clock : INPC
+    public class Clock : IItem
     {
         public Clock(Vector2 position) : base(ItemSpriteFactory.ClockSprite(), position)
         {

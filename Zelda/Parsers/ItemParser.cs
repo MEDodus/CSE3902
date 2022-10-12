@@ -15,8 +15,8 @@ namespace Zelda.Parsers
     public class ItemParser
     {
         private string fileName;
-        private Dictionary<int, List<INPC>> items;
-        public ItemParser(string value, Dictionary<int, List<INPC>> dict)
+        private Dictionary<int, List<IItem>> items;
+        public ItemParser(string value, Dictionary<int, List<IItem>> dict)
         {
             fileName = value;
             items = dict;
@@ -34,10 +34,10 @@ namespace Zelda.Parsers
                     string[] itemsInRow = itemReader.ReadLine().Split(',');
                     if (!items.ContainsKey(row))
                     {
-                        items.Add(0, new List<INPC>());
+                        items.Add(row, new List<IItem>());
                     }
 
-                    List<INPC> list = items[row];
+                    List<IItem> list = items[row];
                     foreach (string itemName in itemsInRow)
                     {
                         list.Add(GetItem(itemName));
@@ -51,11 +51,11 @@ namespace Zelda.Parsers
             }
         }
 
-        public INPC GetItem(string value)
+        public IItem GetItem(string value)
         {
             // TODO:
             /* Using switch statement or mapping to retrieve item type */
-            return new Fairy(new Vector2(0, 0));
+            return new Arrow(new Vector2(0, 0));
         }
     }
 }

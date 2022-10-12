@@ -33,13 +33,14 @@ namespace Zelda.Parsers
                     string[] blocksInRow = blockReader.ReadLine().Split(',');
                     if (!blocks.ContainsKey(row))
                     {
-                        blocks.Add(0, new List<IBlock>());
+                        blocks.Add(row, new List<IBlock>());
                     }
 
                     List<IBlock> list = blocks[row];
                     foreach (string blockName in blocksInRow)
                     {
-                        list.Add(GetBlock(blockName));
+                        if (list.Count != 0) list.Add(GetBlock(blockName, list[list.Count - 1].Position));
+                        else { list.Add(GetBlock(blockName, new Vector2(0, 0))); }
                     }
                 }
                 blockReader.Close();
@@ -49,7 +50,7 @@ namespace Zelda.Parsers
             }
         }
 
-        public IBlock GetBlock(string value)
+        public IBlock GetBlock(string value, Vector2 lastBlock)
         {
             // Default position (0, 0) right now, should be changed to blocks 
             // actual position

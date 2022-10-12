@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Bow : INPC
+    public class Bow : IItem
     {
         public Bow(Vector2 position) : base(ItemSpriteFactory.BowSprite(), position)
         {

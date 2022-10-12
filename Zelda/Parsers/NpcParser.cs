@@ -32,7 +32,7 @@ namespace Zelda.Parsers
                     string[] npcsInRow = npcReader.ReadLine().Split(',');
                     if (!npcs.ContainsKey(row))
                     {
-                        npcs.Add(0, new List<INPC>());
+                        npcs.Add(row, new List<INPC>());
                     }
 
                     List<INPC> list = npcs[row];

@@ -15,27 +15,28 @@ namespace Zelda.Rooms
     public class GridRoom : IRoom
     {
         private BlockParser blockParser;
-        private ItemParser itemParser;
-        private NpcParser npcParser;
+        //private ItemParser itemParser;
+        //private NpcParser npcParser;
         private Dictionary<int, List<IBlock>> blocks;
-        private Dictionary<int, List<IItem>> items;
-        private Dictionary<int, List<INPC>> npcs;
+        //private Dictionary<int, List<IItem>> items;
+        //private Dictionary<int, List<INPC>> npcs;
 
-        public GridRoom(string file)
+        public GridRoom(string file, Viewport viewport)
         {
             blocks = new Dictionary<int, List<IBlock>>();
-            items = new Dictionary<int, List<IItem>>();
-            npcs = new Dictionary<int, List<INPC>>();
-            blockParser = new BlockParser(file + "/block.csv", blocks);
-            itemParser = new ItemParser(file + "/item.csv", items);
-            npcParser = new NpcParser(file + "/npc.csv", npcs);
+            //items = new Dictionary<int, List<IItem>>();
+            //npcs = new Dictionary<int, List<INPC>>();
+            blockParser = new BlockParser(file, blocks, viewport);
+            //itemParser = new ItemParser(file + "/item.csv", items);
+            //npcParser = new NpcParser(file + "/npc.csv", npcs);
+            ReadFile();
         }
 
         public void ReadFile()
         {
             blockParser.ReadFile();
-            itemParser.ReadFile();
-            npcParser.ReadFile();
+            //itemParser.ReadFile();
+            //npcParser.ReadFile();
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -49,6 +50,7 @@ namespace Zelda.Rooms
                     block.Draw(spriteBatch);
                 }
 
+                /*
                 List<INPC> npcList = npcs[row];
                 foreach (INPC npc in npcList)
                 {
@@ -59,7 +61,7 @@ namespace Zelda.Rooms
                 foreach (IItem item in itemList)
                 {
                     item.Draw(spriteBatch);
-                }
+                } */
                 row++;
             }
         }
@@ -75,6 +77,7 @@ namespace Zelda.Rooms
                     block.Update(gameTime);
                 }
 
+                /*
                 List<INPC> npcList = npcs[row];
                 foreach (INPC npc in npcList)
                 {
@@ -85,7 +88,7 @@ namespace Zelda.Rooms
                 foreach (IItem item in itemList)
                 {
                     item.Update(gameTime);
-                }
+                } */
                 row++;
             }
         }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using Zelda.Blocks;
 using Zelda.Commands;
 using Zelda.Controllers;
@@ -8,6 +10,7 @@ using Zelda.Items;
 using Zelda.Link;
 using Zelda.NPCs;
 using Zelda.Projectiles;
+using Zelda.Rooms;
 using Zelda.Sprites.Factories;
 
 /*
@@ -35,6 +38,8 @@ namespace Zelda
         private BlockBuilder blockBuilder;
         private NPCBuilder npcBuilder;
         public ILink link;
+        private IRoom room;
+        private Viewport viewport;
 
         public Game1()
         {
@@ -49,6 +54,7 @@ namespace Zelda
         {
             // This must be done before creating any sprite objects (items, blocks, NPCs, etc.)
             SpriteFactory.Initialize(Content);
+            viewport = _graphics.GraphicsDevice.Viewport;
 
             // Create controllers
             controllers = new List<IController>();
@@ -61,6 +67,7 @@ namespace Zelda
             blockBuilder = new BlockBuilder();
             npcBuilder = new NPCBuilder();
             commandBuilder = new CommandBuilder(keyboard, this, itemBuilder, blockBuilder, npcBuilder, link);
+            room = new GridRoom("../../../RoomFiles/block.csv", viewport);
 
             base.Initialize();
         }
@@ -81,6 +88,10 @@ namespace Zelda
             npcBuilder.Update(gameTime);
             link.Update();
             ProjectileStorage.Update(gameTime);
+
+            // Testing room
+            room.Update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -94,6 +105,10 @@ namespace Zelda
             npcBuilder.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
             ProjectileStorage.Draw(_spriteBatch);
+
+            // Testing room
+            room.Draw(_spriteBatch);
+
             _spriteBatch.End();
 
             base.Draw(gameTime);

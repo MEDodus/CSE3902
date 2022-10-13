@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,18 +16,19 @@ namespace Zelda.Parsers
     {
         private string fileName;
         private Dictionary<int, List<IBlock>> blocks;
-        public BlockParser(string value, Dictionary<int, List<IBlock>> dict)
+        private Viewport viewport;
+        public BlockParser(string value, Dictionary<int, List<IBlock>> dict, Viewport view)
         {
             fileName = value;
             blocks = dict;
+            viewport = view;
         }
 
         public void ReadFile()
         {
-            StreamReader blockReader;
             try
             {
-                blockReader = new StreamReader(fileName);
+                StreamReader blockReader = new StreamReader(fileName);
                 int row = 0;
                 while (!blockReader.EndOfStream)
                 {
@@ -36,44 +38,48 @@ namespace Zelda.Parsers
                         blocks.Add(row, new List<IBlock>());
                     }
 
+                    int x = 0;
                     List<IBlock> list = blocks[row];
                     foreach (string blockName in blocksInRow)
                     {
-                        if (list.Count != 0) list.Add(GetBlock(blockName, list[list.Count - 1].Position));
-                        else { list.Add(GetBlock(blockName, new Vector2(0, 0))); }
+                        list.Add(GetBlock(viewport, blockName, x, row, (double)list.Count));
+                        x++;
                     }
+                    row++;
                 }
                 blockReader.Close();
             } catch
             {
-                throw new Exception("Failed to create stream reader blockReader");
+                throw new Exception("Failed to create stream reader blockReader at path: " + fileName);
             }
         }
 
-        public IBlock GetBlock(string value, Vector2 lastBlock)
+        public IBlock GetBlock(Viewport viewport, string value, int x, int y, double size)
         {
+            int midX = viewport.Width / 2;
+            int midY = viewport.Height / 2;
             // Default position (0, 0) right now, should be changed to blocks 
             // actual position
             switch (value)
             {
                 case "black_gap":
-                    return new BlackGap(new Vector2(0, 0));
+                    return new BlackGap(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 case "blue_floor":
-                    return new BlueFloor(new Vector2(0, 0));
+                    return new BlueFloor(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 case "blue_gap":
-                    return new BlueGap(new Vector2(0, 0));
+                    return new BlueGap(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 case "blue_sand":
-                    return new BlueSand(new Vector2(0, 0));
+                    return new BlueSand(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 case "ladder":
-                    return new Ladder(new Vector2(0, 0));
+                    return new Ladder(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 case "pushable_block":
-                    return new PushableBlock(new Vector2(0, 0));
+                    return new PushableBlock(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 case "stairs":
-                    return new Stairs(new Vector2(0, 0));
+                    return new Stairs(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 case "statue_1":
-                    return new Statue1(new Vector2(0, 0));
+                    return new Statue1(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 case "statue_2":
-                    return new Statue2(new Vector2(0, 0));
+                    return new Statue2(new Vector2(midX + (x * Settings.BLOCK_SIZE), midY + (y * Settings.BLOCK_SIZE)));
                 default:
                     throw new Exception("Block type not found");
             }

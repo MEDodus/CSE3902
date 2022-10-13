@@ -19,14 +19,15 @@ namespace Zelda.Collision
             link.TakeDamage(game);
 
             //return vector pointing in direction from first parameter to side of collision
-            Vector2D direction = CollisionSide(enemy, link);
+            //Vector2D direction = CollisionSide(enemy, link);
 
-            ChangeEnemyDirection(enemy, direction, gameTime);
+            //ChangeEnemyDirection(enemy, direction, gameTime);
 
 
         }
 
-        private Vector2D CollisionSide(INPC enemy, ILink link)
+        // Commented out to compile code
+        /*private Vector2D CollisionSide(INPC enemy, ILink link)
         {
 
         }
@@ -50,6 +51,6 @@ namespace Zelda.Collision
 
                 enemy.MoveLeft(GameTime);
             }
-        }
+        } */
     }
 }

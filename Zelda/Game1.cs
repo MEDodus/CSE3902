@@ -99,7 +99,7 @@ namespace Zelda
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin();
+            _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             itemBuilder.Draw(_spriteBatch);
             blockBuilder.Draw(_spriteBatch);
             npcBuilder.Draw(_spriteBatch);

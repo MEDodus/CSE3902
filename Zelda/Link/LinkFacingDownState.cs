@@ -14,7 +14,7 @@ namespace Zelda.Link
         public LinkFacingDownState(Link2 link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(0, 8, 15, 16);
+            sourceRectangle = new Rectangle(0, 8, 16, 16);
             destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
         }
 

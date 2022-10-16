@@ -27,7 +27,7 @@ namespace Zelda.Rooms.Parsers
                 int i = 0;
                 foreach (string identifier in row)
                 {
-                    if (identifier != "EMPTY")
+                    if (identifier != ".")
                     {
                         ParseObject(identifier, i, j);
                     }

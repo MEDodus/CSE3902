@@ -16,7 +16,7 @@ namespace Zelda.Link
 
         public ILinkState state;
         public Texture2D texture;
-        private int X = 300, Y = 700;
+        private int X = 450, Y = 450;
         private Vector2 facingDirection;
         private double swordAttackTimer = 0;
 

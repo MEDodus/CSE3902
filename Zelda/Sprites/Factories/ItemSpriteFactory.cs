@@ -51,7 +51,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite CompassSprite()
         {
-            return new Sprite(GetTexture("compass"), 1);
+            return new Sprite(GetTexture("compass"), 0.8);
         }
 
         public static ISprite FairySprite()
@@ -81,12 +81,12 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite HeartContainerSprite()
         {
-            return new Sprite(GetTexture("heart_container"), 1);
+            return new Sprite(GetTexture("heart_container"), 0.8);
         }
 
         public static ISprite KeySprite()
         {
-            return new Sprite(GetTexture("key"), 1);
+            return new Sprite(GetTexture("key"), 0.8);
         }
 
         public static ISprite LetterSprite()
@@ -116,7 +116,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite MapSprite()
         {
-            return new Sprite(GetTexture("map"), 1);
+            return new Sprite(GetTexture("map"), 0.8);
         }
 
         public static ISprite PowerBraceletSprite()

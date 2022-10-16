@@ -38,6 +38,9 @@ namespace Zelda.Rooms.Parsers
                 case "pushable_block":
                     block = new PushableBlock(spawnPos);
                     break;
+                case "static_block":
+                    block = new StaticBlock(spawnPos);
+                    break;
                 case "stairs":
                     block = new Stairs(spawnPos);
                     break;

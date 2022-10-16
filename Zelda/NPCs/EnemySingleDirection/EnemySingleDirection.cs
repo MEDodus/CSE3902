@@ -11,9 +11,11 @@ namespace Zelda.NPCs.Classes
         protected ISprite sprite;
         protected Vector2 position;
         protected Vector2 moveDirection = new Vector2(0, 0);
+        public double changeDirectionCooldown = 0;
         protected int health;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
+        
 
         public EnemySingleDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed)
         {
@@ -25,7 +27,7 @@ namespace Zelda.NPCs.Classes
         }
 
         // additional update features that differ between enemies
-        protected virtual void UpdateAdditional(GameTime gameTime)
+        protected virtual void UpdateAdditional(GameTime gameTime, double changeDirectionCooldown)
         {
 
         }
@@ -50,7 +52,7 @@ namespace Zelda.NPCs.Classes
                 damageCooldown -= timeDelta;
             }
 
-            UpdateAdditional(gameTime);
+            UpdateAdditional(gameTime, changeDirectionCooldown);
         }
 
         // additional draw features that differ between enemies
@@ -112,6 +114,11 @@ namespace Zelda.NPCs.Classes
         public virtual void MoveDown()
         {
             moveDirection = new Vector2(0, -1);
+        }
+
+        public virtual void ChangeDirection()
+        {
+            changeDirectionCooldown = -1;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Link
@@ -16,7 +17,7 @@ namespace Zelda.Link
             this.decoratedLink = decoratedLink;
             this.game = game;
         }
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             if (timer % 8 == 0)
             {
@@ -39,7 +40,7 @@ namespace Zelda.Link
                 RemoveDecorator();
             }
             timer--;
-            decoratedLink.Update();
+            decoratedLink.Update(gameTime);
         }
 
         public void Reset()
@@ -68,10 +69,6 @@ namespace Zelda.Link
         {
             decoratedLink.MoveRight();
         }
-        public void Attack()
-        {
-            decoratedLink.Attack();
-        }
         public void UseItem(int itemNum)
         {
             decoratedLink.UseItem(itemNum);
@@ -79,11 +76,6 @@ namespace Zelda.Link
         public void TakeDamage(Game1 game)
         {
             // Can't take damage while already taking damage
-        }
-
-        public void AttackUsingSward()
-        {
-            //using sward state
         }
 
         public void RemoveDecorator()

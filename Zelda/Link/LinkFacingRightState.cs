@@ -34,10 +34,6 @@ namespace Zelda.Link
         {
             link.state = new LinkMovingRightState(link);
         }
-        public void Attack()
-        {
-            link.state = new LinkAttackingRightState(link);
-        }
         public void UseItem(int itemNum)
         {
             link.state = new LinkUsingItemRightState(link);

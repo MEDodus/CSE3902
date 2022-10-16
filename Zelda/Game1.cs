@@ -83,14 +83,12 @@ namespace Zelda
             {
                 controller.Update(gameTime);
             }
+            room.Update(gameTime);
             itemBuilder.Update(gameTime);
             blockBuilder.Update(gameTime);
             npcBuilder.Update(gameTime);
-            link.Update();
             ProjectileStorage.Update(gameTime);
-
-            // Testing room
-            room.Update(gameTime);
+            link.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -100,14 +98,13 @@ namespace Zelda
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
+
+            room.Draw(_spriteBatch);
             itemBuilder.Draw(_spriteBatch);
             blockBuilder.Draw(_spriteBatch);
             npcBuilder.Draw(_spriteBatch);
-            link.Draw(_spriteBatch);
             ProjectileStorage.Draw(_spriteBatch);
-
-            // Testing room
-            room.Draw(_spriteBatch);
+            link.Draw(_spriteBatch);
 
             _spriteBatch.End();
 

@@ -97,30 +97,50 @@ namespace Zelda.Sprites.Factories
         }
 
         // Sword beam
-        private static int SWORD_BEAM_WIDTH = 56;
-        private static int SWORD_BEAM_HEIGHT = 128;
-        private static int SWORD_BEAM_FPS = 10;
-        private static int SWORD_BEAM_SIZE_IN_BLOCKS = 1;
+        private static int SWORD_WIDTH = 56;
+        private static int SWORD_HEIGHT = 128;
+        private static int SWORD_FPS = 10;
+        private static double SWORD_SIZE_IN_BLOCKS = 1.4;
         public static ISprite UpSwordBeamSprite()
         {
-            return new AnimatedSprite(GetTexture("sword_beam"), 0, 0, 1, 2, SWORD_BEAM_HEIGHT, SWORD_BEAM_WIDTH, SWORD_BEAM_FPS, SWORD_BEAM_SIZE_IN_BLOCKS);
+            return new AnimatedSprite(GetTexture("sword_beam"), 0, 0, 1, 2, SWORD_HEIGHT, SWORD_WIDTH, SWORD_FPS, SWORD_SIZE_IN_BLOCKS);
         }
 
         public static ISprite DownSwordBeamSprite()
         {
-            return new AnimatedSprite(GetTexture("sword_beam"), 2 * SWORD_BEAM_WIDTH, 0, 1, 2, SWORD_BEAM_HEIGHT, SWORD_BEAM_WIDTH, SWORD_BEAM_FPS, SWORD_BEAM_SIZE_IN_BLOCKS);
+            return new AnimatedSprite(GetTexture("sword_beam"), 2 * SWORD_WIDTH, 0, 1, 2, SWORD_HEIGHT, SWORD_WIDTH, SWORD_FPS, SWORD_SIZE_IN_BLOCKS);
         }
 
         public static ISprite RightSwordBeamSprite()
         {
-            return new AnimatedSprite(GetTexture("sword_beam"), 4 * SWORD_BEAM_WIDTH, 0, 2, 1, SWORD_BEAM_WIDTH, SWORD_BEAM_HEIGHT, SWORD_BEAM_FPS, SWORD_BEAM_SIZE_IN_BLOCKS);
+            return new AnimatedSprite(GetTexture("sword_beam"), 4 * SWORD_WIDTH, 0, 2, 1, SWORD_WIDTH, SWORD_HEIGHT, SWORD_FPS, SWORD_SIZE_IN_BLOCKS);
         }
 
         public static ISprite LeftSwordBeamSprite()
         {
-            return new AnimatedSprite(GetTexture("sword_beam"), 4 * SWORD_BEAM_WIDTH + SWORD_BEAM_HEIGHT, 0, 2, 1, SWORD_BEAM_WIDTH, SWORD_BEAM_HEIGHT, SWORD_BEAM_FPS,
-                SWORD_BEAM_SIZE_IN_BLOCKS);
+            return new AnimatedSprite(GetTexture("sword_beam"), 4 * SWORD_WIDTH + SWORD_HEIGHT, 0, 2, 1, SWORD_WIDTH, SWORD_HEIGHT, SWORD_FPS,
+                SWORD_SIZE_IN_BLOCKS);
         }
 
+        // Sword
+        public static ISprite UpSwordSprite()
+        {
+            return new Sprite(GetTexture("directional_sword"), 0, 0, SWORD_WIDTH, SWORD_HEIGHT, SWORD_SIZE_IN_BLOCKS);
+        }
+
+        public static ISprite DownSwordSprite()
+        {
+            return new Sprite(GetTexture("directional_sword"), SWORD_WIDTH, 0, SWORD_WIDTH, SWORD_HEIGHT, SWORD_SIZE_IN_BLOCKS);
+        }
+
+        public static ISprite RightSwordSprite()
+        {
+            return new Sprite(GetTexture("directional_sword"), 2 * SWORD_WIDTH, 0, SWORD_HEIGHT, SWORD_WIDTH, SWORD_SIZE_IN_BLOCKS);
+        }
+
+        public static ISprite LeftSwordSprite()
+        {
+            return new Sprite(GetTexture("directional_sword"), 2 * SWORD_WIDTH, SWORD_WIDTH, SWORD_HEIGHT, SWORD_WIDTH, SWORD_SIZE_IN_BLOCKS);
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Zelda.Controllers;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
+using Zelda.Sprites.Classes;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Link
@@ -18,6 +19,7 @@ namespace Zelda.Link
         public Texture2D texture;
         private int X = 300, Y = 700;
         private Vector2 facingDirection;
+        private double swordAttackTimer = 0;
 
         public Texture2D Texture { get { return texture; } set { texture = value; } }
         public int Xpos { get { return X; } set { X = value; } }
@@ -41,8 +43,12 @@ namespace Zelda.Link
             movementKeys.Add(Keys.Down);
             movementKeys.Add(Keys.Right);
         }
-        public void Update()
+        public void Update(GameTime gameTime)
         {
+            if (swordAttackTimer > 0)
+            {
+                swordAttackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
+            }
             state.Update();
         }
 
@@ -61,7 +67,9 @@ namespace Zelda.Link
         private bool TryMove(Vector2 newDirection)
         {
             // Don't set direction if multiple keys are being pressed unless the direction is the same as the current direction
-            bool success = !KeyboardController.AreMultipleKeysInSetPressed(movementKeys) || newDirection.Equals(facingDirection);
+            // also don't move if currently attacking with the sword
+            bool success = (!KeyboardController.AreMultipleKeysInSetPressed(movementKeys) || newDirection.Equals(facingDirection))
+                && swordAttackTimer <= 0;
             if (success)
             {
                 facingDirection = newDirection;
@@ -97,10 +105,6 @@ namespace Zelda.Link
                 state.MoveRight();
             }
         }
-        public void Attack()
-        {
-            state.Attack();
-        }
         public void UseItem(int itemNum)
         {
             state.UseItem(itemNum);
@@ -112,7 +116,7 @@ namespace Zelda.Link
 
         private Vector2 getPositionInFrontOfLink(double blocksInFrontOf)
         {
-            return new Vector2(X, Y) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
+            return new Vector2(X + 10, Y + 10) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
         }
 
         public void CreateItem(int itemNum)
@@ -121,6 +125,24 @@ namespace Zelda.Link
             Vector2 defaultItemSpawnPos = getPositionInFrontOfLink(0);
             switch (itemNum)
             {
+                case 0:
+                    // base attack  
+                    if (swordAttackTimer <= 0)
+                    {
+                        swordAttackTimer = 0.3;
+                        Vector2 spawnPos = defaultItemSpawnPos;
+                        // adjust spawn position if facing left or up
+                        if (facingDirection.Equals(new Vector2(-1, 0)))
+                        {
+                            spawnPos += new Vector2(-15, 0);
+                        }
+                        else if (facingDirection.Equals(new Vector2(0, -1)))
+                        {
+                            spawnPos += new Vector2(0, -15);
+                        }
+                        item = new Sword(spawnPos, facingDirection, swordAttackTimer);
+                    }
+                    break;
                 case 1:
                     item = new SwordBeam(defaultItemSpawnPos, facingDirection);
                     break;
@@ -143,7 +165,10 @@ namespace Zelda.Link
                     item = new CandleFlame(defaultItemSpawnPos, facingDirection);
                     break;
             }
-            ProjectileStorage.Add(item);
+            if (item != null)
+            {
+                ProjectileStorage.Add(item);
+            }
         }
     }
 }

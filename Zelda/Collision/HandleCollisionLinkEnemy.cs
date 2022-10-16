@@ -1,13 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using Zelda.NPCs;
 using Zelda.Link;
-using Zelda.Projectiles;
-using Zelda.Projectiles.Classes;
-using Zelda.Sprites;
-using Zelda.Sprites.Factories;
+using Zelda.NPCs;
 
 
 namespace Zelda.Collision
@@ -28,30 +21,30 @@ namespace Zelda.Collision
         }
 
         // Commented out to compile code
-       /* private Vector2 CollisionSide(INPC enemy, ILink link)
-        {
-            return new Vector2(0, 0);
-        }
+        /* private Vector2 CollisionSide(INPC enemy, ILink link)
+         {
+             return new Vector2(0, 0);
+         }
 
-        private void ChangeEnemyDirection(INPC enemy, Vector2 direction, GameTime gameTime) 
-        {
-            if(direction.X > 0)
-            {
-                enemy.state.MoveRight(gameTime);
-            }
-            else
-            {
-                if(direction.Y > 0)
-                {
-                    enemy.state.MoveDown(gameTime);
-                }
-                else
-                {
-                    enemy.state.MoveDown(gameTime);
-                }
+         private void ChangeEnemyDirection(INPC enemy, Vector2 direction, GameTime gameTime) 
+         {
+             if(direction.X > 0)
+             {
+                 enemy.state.MoveRight(gameTime);
+             }
+             else
+             {
+                 if(direction.Y > 0)
+                 {
+                     enemy.state.MoveDown(gameTime);
+                 }
+                 else
+                 {
+                     enemy.state.MoveDown(gameTime);
+                 }
 
-                enemy.state.MoveLeft(gameTime);
-            }
-        } */
+                 enemy.state.MoveLeft(gameTime);
+             }
+         } */
     }
 }

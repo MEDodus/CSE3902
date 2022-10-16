@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.IO;
 
 namespace Zelda.Rooms.Parsers
@@ -6,12 +7,10 @@ namespace Zelda.Rooms.Parsers
     public abstract class Parser
     {
         private string filename;
-        protected object collection;
 
-        public Parser(string filename, object collection)
+        public Parser(string filename)
         {
             this.filename = filename;
-            this.collection = collection;
         }
 
         public void Parse()
@@ -40,5 +39,10 @@ namespace Zelda.Rooms.Parsers
         }
 
         protected abstract void ParseObject(string identifier, int i, int j);
+
+        protected static Vector2 GetSpawnPosition(int i, int j)
+        {
+            return new Vector2(Settings.ROOM_POSITION_X + (i * Settings.BLOCK_SIZE), Settings.ROOM_POSITION_Y + (j * Settings.BLOCK_SIZE))
+        }
     }
 }

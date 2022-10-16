@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
 using Zelda.NPCs;
 using Zelda.Link;
 using Zelda.Projectiles;
@@ -19,38 +20,38 @@ namespace Zelda.Collision
             link.TakeDamage(game);
 
             //return vector pointing in direction from first parameter to side of collision
-            //Vector2D direction = CollisionSide(enemy, link);
+            //Vector2D direction = CollisionSide(enemy, link);    //dont need collision side for this isntance
 
-            //ChangeEnemyDirection(enemy, direction, gameTime);
+            ChangeEnemyDirection(enemy, gameTime);
 
 
         }
 
         // Commented out to compile code
-        /*private Vector2D CollisionSide(INPC enemy, ILink link)
+        private Vector2 CollisionSide(INPC enemy, ILink link)
         {
-
+            return new Vector2(0, 0);
         }
 
-        private void ChangeEnemyDirection(INPC enemy, Vector2D direction, GameTime gameTime) 
+        private void ChangeEnemyDirection(INPC enemy, Vector2 direction, GameTime gameTime) 
         {
             if(direction.X > 0)
             {
-                enemy.MoveRight(gameTime);
+                enemy.state.MoveRight(gameTime);
             }
             else
             {
                 if(direction.Y > 0)
                 {
-                    enemy.MoveDown(gameTime);
+                    enemy.state.MoveDown(gameTime);
                 }
                 else
                 {
-                    enemy.MoveDown(gameTime);
+                    enemy.state.MoveDown(gameTime);
                 }
 
-                enemy.MoveLeft(GameTime);
+                enemy.state.MoveLeft(gameTime);
             }
-        } */
+        } 
     }
 }

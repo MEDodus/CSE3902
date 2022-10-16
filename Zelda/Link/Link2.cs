@@ -116,7 +116,7 @@ namespace Zelda.Link
 
         private Vector2 getPositionInFrontOfLink(double blocksInFrontOf)
         {
-            return new Vector2(X + 10, Y + 10) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
+            return new Vector2(X + 10, Y + 12) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
         }
 
         public void CreateItem(int itemNum)
@@ -129,18 +129,18 @@ namespace Zelda.Link
                     // base attack  
                     if (swordAttackTimer <= 0)
                     {
-                        swordAttackTimer = 0.3;
-                        Vector2 spawnPos = defaultItemSpawnPos;
+                        swordAttackTimer = 0.35;
                         // adjust spawn position if facing left or up
+                        Vector2 spawnPos = defaultItemSpawnPos;
                         if (facingDirection.Equals(new Vector2(-1, 0)))
                         {
-                            spawnPos += new Vector2(-15, 0);
+                            spawnPos += new Vector2(-20, 0);
                         }
                         else if (facingDirection.Equals(new Vector2(0, -1)))
                         {
-                            spawnPos += new Vector2(0, -15);
+                            spawnPos += new Vector2(0, -22);
                         }
-                        item = new Sword(spawnPos, facingDirection, swordAttackTimer);
+                        item = new Sword(spawnPos, facingDirection, 0.3);
                     }
                     break;
                 case 1:

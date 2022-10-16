@@ -5,18 +5,19 @@ using Zelda.Controllers;
 using Zelda.Items;
 using Zelda.Link;
 using Zelda.NPCs;
+using Zelda.Rooms;
 
 namespace Zelda.Commands
 {
     public class CommandBuilder
     {
-        public CommandBuilder(IController keyboard, Game1 game, ItemBuilder itemBuilder, BlockBuilder blockBuilder, NPCBuilder npcBuilder, ILink link)
+        public CommandBuilder(IController keyboard, Game1 game, ILink link, RoomBuilder roomBuilder)
         {
             // For quitting the game
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
 
             // For reseting game state
-            keyboard.RegisterCommand(Keys.R, new Reset(itemBuilder, blockBuilder, npcBuilder, game));
+            //keyboard.RegisterCommand(Keys.R, new Reset(itemBuilder, blockBuilder, npcBuilder, game));
 
             // For player movement
             keyboard.RegisterCommand(Keys.W, new Up(game, link));
@@ -56,16 +57,16 @@ namespace Zelda.Commands
             //keyboard.RegisterCommand(Keys.M, new SecondaryItem(game));
 
             // Swapping enemies
-            keyboard.RegisterCommand(Keys.O, new CycleNPCPrevious(npcBuilder));
-            keyboard.RegisterCommand(Keys.P, new CycleNPCNext(npcBuilder));
+            //keyboard.RegisterCommand(Keys.O, new CycleNPCPrevious(npcBuilder));
+            //keyboard.RegisterCommand(Keys.P, new CycleNPCNext(npcBuilder));
 
             // Swapping items
-            keyboard.RegisterCommand(Keys.U, new CycleItemPrevious(itemBuilder));
-            keyboard.RegisterCommand(Keys.I, new CycleItemNext(itemBuilder));
+            //keyboard.RegisterCommand(Keys.U, new CycleItemPrevious(itemBuilder));
+            //keyboard.RegisterCommand(Keys.I, new CycleItemNext(itemBuilder));
 
             // Swapping blocks
-            keyboard.RegisterCommand(Keys.T, new CycleBlockPrevious(blockBuilder));
-            keyboard.RegisterCommand(Keys.Y, new CycleBlockNext(blockBuilder));
+            //keyboard.RegisterCommand(Keys.T, new CycleBlockPrevious(blockBuilder));
+            //keyboard.RegisterCommand(Keys.Y, new CycleBlockNext(blockBuilder));
         }
     }
 }

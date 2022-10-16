@@ -100,7 +100,7 @@ namespace Zelda.Sprites.Factories
         private static int SWORD_WIDTH = 56;
         private static int SWORD_HEIGHT = 128;
         private static int SWORD_FPS = 10;
-        private static double SWORD_SIZE_IN_BLOCKS = 1.4;
+        private static double SWORD_SIZE_IN_BLOCKS = 1.2;
         public static ISprite UpSwordBeamSprite()
         {
             return new AnimatedSprite(GetTexture("sword_beam"), 0, 0, 1, 2, SWORD_HEIGHT, SWORD_WIDTH, SWORD_FPS, SWORD_SIZE_IN_BLOCKS);

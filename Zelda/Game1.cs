@@ -1,8 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using Zelda.Blocks;
 using Zelda.Commands;
 using Zelda.Controllers;
@@ -33,13 +31,9 @@ namespace Zelda
         private SpriteBatch _spriteBatch;
 
         private List<IController> controllers;
-        private CommandBuilder commandBuilder;
-        private ItemBuilder itemBuilder;
-        private BlockBuilder blockBuilder;
-        private NPCBuilder npcBuilder;
+        private RoomBuilder roomBuilder;
         public ILink link;
-        private IRoom room;
-        private Viewport viewport;
+        private CommandBuilder commandBuilder;
 
         public Game1()
         {
@@ -54,7 +48,6 @@ namespace Zelda
         {
             // This must be done before creating any sprite objects (items, blocks, NPCs, etc.)
             SpriteFactory.Initialize(Content);
-            viewport = _graphics.GraphicsDevice.Viewport;
 
             // Create controllers
             controllers = new List<IController>();
@@ -62,12 +55,8 @@ namespace Zelda
             controllers.Add(keyboard);
 
             link = new Link2();
-            // Create object builders (for sprint 2 only)
-            itemBuilder = new ItemBuilder();
-            blockBuilder = new BlockBuilder();
-            npcBuilder = new NPCBuilder();
-            commandBuilder = new CommandBuilder(keyboard, this, itemBuilder, blockBuilder, npcBuilder, link);
-            room = new GridRoom("../../../RoomFiles/block.csv", viewport);
+            roomBuilder = new RoomBuilder();
+            commandBuilder = new CommandBuilder(keyboard, this, link, roomBuilder);
 
             base.Initialize();
         }
@@ -83,10 +72,7 @@ namespace Zelda
             {
                 controller.Update(gameTime);
             }
-            room.Update(gameTime);
-            itemBuilder.Update(gameTime);
-            blockBuilder.Update(gameTime);
-            npcBuilder.Update(gameTime);
+            roomBuilder.Update(gameTime);
             ProjectileStorage.Update(gameTime);
             link.Update(gameTime);
 
@@ -99,10 +85,7 @@ namespace Zelda
 
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
 
-            room.Draw(_spriteBatch);
-            itemBuilder.Draw(_spriteBatch);
-            blockBuilder.Draw(_spriteBatch);
-            npcBuilder.Draw(_spriteBatch);
+            roomBuilder.Draw(_spriteBatch);
             ProjectileStorage.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
 

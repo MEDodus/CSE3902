@@ -1,20 +1,17 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Zelda.NPCs.Classes;
-using Microsoft.Xna.Framework;
 using Zelda.NPCs;
+using Zelda.NPCs.Classes;
 
 namespace Zelda.Parsers
 {
-    public class NpcParser
+    public class NPCParser
     {
         private string fileName;
         private Dictionary<int, List<INPC>> npcs;
-        public NpcParser(string value, Dictionary<int, List<INPC>> dict)
+        public NPCParser(string value, Dictionary<int, List<INPC>> dict)
         {
             fileName = value;
             npcs = dict;
@@ -38,7 +35,7 @@ namespace Zelda.Parsers
                     List<INPC> list = npcs[row];
                     foreach (string npcName in npcsInRow)
                     {
-                        list.Add(GetNpc(npcName));
+                        list.Add(GetNPC(npcName));
                     }
                 }
                 npcReader.Close();
@@ -49,7 +46,7 @@ namespace Zelda.Parsers
             }
         }
 
-        public INPC GetNpc(string value)
+        public INPC GetNPC(string value)
         {
             // TODO:
             /* Using switch statement or mapping to retrieve npc type */

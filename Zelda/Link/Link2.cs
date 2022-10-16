@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using Zelda.Controllers;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
-using Zelda.Sprites.Classes;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Link

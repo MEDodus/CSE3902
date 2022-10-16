@@ -2,9 +2,9 @@
 
 namespace Zelda.Rooms.Classes
 {
-    public class EntranceRoom : DungeonRoom
+    public class Room5 : DungeonRoom
     {
-        public EntranceRoom() : base("EntranceRoom")
+        public Room5() : base("Room5")
         {
 
         }

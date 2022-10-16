@@ -9,13 +9,11 @@ namespace Zelda.Controllers
     {
         Dictionary<Keys, ICommand> controllerMappings;
 
-        // No-arg constructor
         public KeyboardController()
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
         }
 
-        // Sets state of keyboard to whichever key was pressed.
         public void RegisterCommand(Keys key, ICommand command)
         {
             {

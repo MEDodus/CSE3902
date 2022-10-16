@@ -49,11 +49,13 @@ namespace Zelda
             // Create controllers
             controllers = new List<IController>();
             KeyboardController keyboard = new KeyboardController();
+            MouseController mouse = new MouseController();
             controllers.Add(keyboard);
+            controllers.Add(mouse);
 
             link = new Link2();
             roomBuilder = new RoomBuilder();
-            commandBuilder = new CommandBuilder(keyboard, this, link, roomBuilder);
+            commandBuilder = new CommandBuilder(keyboard, mouse, this, link, roomBuilder);
 
             base.Initialize();
         }

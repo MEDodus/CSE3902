@@ -6,12 +6,29 @@ namespace Zelda.Rooms
 {
     public class RoomBuilder
     {
-        private IRoom[] rooms = new IRoom[1];
-        private int i = 0;
+        private IRoom[] rooms = new IRoom[17];
+        private int i;
 
         public RoomBuilder()
         {
-            rooms[0] = new EntranceRoom();
+            i = 15;
+            rooms[0] = new Room0();
+            rooms[1] = new Room1();
+            rooms[2] = new Room2();
+            rooms[3] = new Room3();
+            rooms[4] = new Room4();
+            rooms[5] = new Room5();
+            rooms[6] = new Room6();
+            rooms[7] = new Room7();
+            rooms[8] = new Room8();
+            rooms[9] = new Room9();
+            rooms[10] = new Room10();
+            rooms[11] = new Room11();
+            rooms[12] = new Room12();
+            rooms[13] = new Room13();
+            rooms[14] = new Room14();
+            rooms[15] = new Room15();
+            rooms[16] = new Room16();
         }
 
         public void Update(GameTime gameTime)
@@ -31,11 +48,7 @@ namespace Zelda.Rooms
 
         public void PreviousRoom()
         {
-            i--;
-            if (i < 0)
-            {
-                i = rooms.Length;
-            }
+            i = i > 0 ? i - 1 : rooms.Length - 1;
         }
     }
 }

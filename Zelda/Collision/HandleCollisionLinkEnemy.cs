@@ -22,13 +22,13 @@ namespace Zelda.Collision
             //return vector pointing in direction from first parameter to side of collision
             //Vector2D direction = CollisionSide(enemy, link);    //dont need collision side for this isntance
 
-            ChangeEnemyDirection(enemy, gameTime);
+            //ChangeEnemyDirection(enemy, gameTime);
 
 
         }
 
         // Commented out to compile code
-        private Vector2 CollisionSide(INPC enemy, ILink link)
+       /* private Vector2 CollisionSide(INPC enemy, ILink link)
         {
             return new Vector2(0, 0);
         }
@@ -52,6 +52,6 @@ namespace Zelda.Collision
 
                 enemy.state.MoveLeft(gameTime);
             }
-        } 
+        } */
     }
 }

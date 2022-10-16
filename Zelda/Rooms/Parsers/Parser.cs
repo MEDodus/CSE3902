@@ -15,34 +15,34 @@ namespace Zelda.Rooms.Parsers
 
         public void Parse()
         {
-            try
+            if (!File.Exists(filename))
             {
-                StreamReader reader = new StreamReader(filename);
-                int j = 0;
-                while (!reader.EndOfStream)
+                return;
+            }
+            StreamReader reader = new StreamReader(filename);
+            int j = 0;
+            while (!reader.EndOfStream)
+            {
+                string[] row = reader.ReadLine().Split(',');
+                int i = 0;
+                foreach (string identifier in row)
                 {
-                    string[] row = reader.ReadLine().Split(',');
-                    int i = 0;
-                    foreach (string identifier in row)
+                    if (identifier != "EMPTY")
                     {
                         ParseObject(identifier, i, j);
-                        i++;
                     }
-                    j++;
+                    i++;
                 }
-                reader.Close();
+                j++;
             }
-            catch
-            {
-                throw new Exception("Failed to parse blocks from file: " + filename);
-            }
+            reader.Close();
         }
 
         protected abstract void ParseObject(string identifier, int i, int j);
 
         protected static Vector2 GetSpawnPosition(int i, int j)
         {
-            return new Vector2(Settings.ROOM_POSITION_X + (i * Settings.BLOCK_SIZE), Settings.ROOM_POSITION_Y + (j * Settings.BLOCK_SIZE))
+            return new Vector2(Settings.ROOM_POSITION_X + (i * Settings.BLOCK_SIZE), Settings.ROOM_POSITION_Y + (j * Settings.BLOCK_SIZE));
         }
     }
 }

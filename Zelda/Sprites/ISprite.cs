@@ -5,6 +5,8 @@ namespace Zelda.Sprites
 {
     public interface ISprite
     {
+        public Rectangle Destination { get; }
+
         public void Update(GameTime gameTime);
 
         public void Draw(SpriteBatch spriteBatch, Vector2 position);

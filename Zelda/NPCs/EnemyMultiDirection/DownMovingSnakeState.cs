@@ -6,9 +6,9 @@ namespace Zelda.NPCs.EnemyMultiDirection
 {
     internal class DownMovingSnakeState : INPCState
     {
-        private SnakeRefactor enemy;
+        private Snake enemy;
 
-        public DownMovingSnakeState(SnakeRefactor snake)
+        public DownMovingSnakeState(Snake snake)
         {
             enemy = snake;
             //dont update sprite as snake only has left and right sprite

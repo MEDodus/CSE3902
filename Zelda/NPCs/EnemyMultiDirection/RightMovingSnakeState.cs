@@ -7,10 +7,10 @@ namespace Zelda.NPCs.EnemyMultiDirection
 {
     internal class RightMovingSnakeState : INPCState
     {
-        private SnakeRefactor enemy;
+        private Snake enemy;
         protected Vector2 moveDirection = new Vector2(1, 0);
 
-        public RightMovingSnakeState(SnakeRefactor snake)
+        public RightMovingSnakeState(Snake snake)
         {
             enemy = snake;
             enemy.sprite = NPCSpriteFactory.RightSnakeSprite();

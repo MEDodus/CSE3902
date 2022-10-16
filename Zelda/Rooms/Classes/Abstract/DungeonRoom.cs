@@ -24,8 +24,12 @@ namespace Zelda.Rooms.Classes.Abstract
             items = new HashSet<IItem>();
 
             BlockParser blockParser = new BlockParser(filename, blocks);
+            NPCParser npcParser = new NPCParser(filename, npcs);
+            ItemParser itemParser = new ItemParser(filename, items);
 
             blockParser.Parse();
+            npcParser.Parse();
+            itemParser.Parse();
         }
 
         public void Update(GameTime gameTime)

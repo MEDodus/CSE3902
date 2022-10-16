@@ -10,7 +10,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.NPCs.Classes
 {
-    public class SnakeRefactor : INPC
+    public class Snake : INPC
     {
         public INPCState state;
         public ISprite sprite;
@@ -24,7 +24,7 @@ namespace Zelda.NPCs.Classes
         bool appeared = false;
 
 
-        public SnakeRefactor(Vector2 position)
+        public Snake(Vector2 position)
         {
             sprite = NPCSpriteFactory.LeftSnakeSprite();
             state = new LeftMovingSnakeState(this);

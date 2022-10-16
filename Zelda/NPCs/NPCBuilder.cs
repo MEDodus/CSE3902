@@ -43,7 +43,7 @@ namespace Zelda.NPCs
             npcs[5] = new Zol(SPAWN_POS);
             npcs[6] = new Wallmaster(SPAWN_POS);
             npcs[7] = new SpikeCross(SPAWN_POS);
-            npcs[8] = new SnakeRefactor(SPAWN_POS);
+            npcs[8] = new Snake(SPAWN_POS);
             npcs[9] = new Goriya(SPAWN_POS);
             npcs[10] = new Dodongo(SPAWN_POS);
         }

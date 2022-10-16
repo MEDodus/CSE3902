@@ -1,56 +1,64 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using Zelda.NPCs;
 using Zelda.NPCs.Classes;
 
-namespace Zelda.Parsers
+namespace Zelda.Rooms.Parsers
 {
-    public class NPCParser
+    public class NPCParser : Parser
     {
-        private string fileName;
-        private Dictionary<int, List<INPC>> npcs;
-        public NPCParser(string value, Dictionary<int, List<INPC>> dict)
+        private HashSet<INPC> npcs;
+
+        public NPCParser(string filename, HashSet<INPC> npcs) : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\npcs.csv")
         {
-            fileName = value;
-            npcs = dict;
+            this.npcs = npcs;
         }
 
-        public void ReadFile()
+        protected override void ParseObject(string identifier, int i, int j)
         {
-            StreamReader npcReader;
-            try
+            INPC npc;
+            Vector2 spawnPos = GetSpawnPosition(i, j);
+            switch (identifier)
             {
-                npcReader = new StreamReader(fileName);
-                int row = 0;
-                while (!npcReader.EndOfStream)
-                {
-                    string[] npcsInRow = npcReader.ReadLine().Split(',');
-                    if (!npcs.ContainsKey(row))
-                    {
-                        npcs.Add(row, new List<INPC>());
-                    }
-
-                    List<INPC> list = npcs[row];
-                    foreach (string npcName in npcsInRow)
-                    {
-                        list.Add(GetNPC(npcName));
-                    }
-                }
-                npcReader.Close();
+                case "old_man":
+                    npc = new OldMan(spawnPos);
+                    break;
+                case "bat":
+                    npc = new Bat(spawnPos);
+                    break;
+                case "dragon":
+                    npc = new Dragon(spawnPos);
+                    break;
+                case "gel":
+                    npc = new Gel(spawnPos);
+                    break;
+                case "skeleton":
+                    npc = new Skeleton(spawnPos);
+                    break;
+                case "spike_cross":
+                    npc = new SpikeCross(spawnPos);
+                    break;
+                case "wallmaster":
+                    npc = new Wallmaster(spawnPos);
+                    break;
+                case "zol":
+                    npc = new Zol(spawnPos);
+                    break;
+                case "goriya":
+                    npc = new Goriya(spawnPos);
+                    break;
+                case "dodongo":
+                    npc = new Dodongo(spawnPos);
+                    break;
+                case "snake":
+                    npc = new Snake(spawnPos);
+                    break;
+                default:
+                    throw new Exception("NPC type not found: " + identifier);
             }
-            catch
-            {
-                throw new Exception("Failed to create stream reader blockReader");
-            }
-        }
 
-        public INPC GetNPC(string value)
-        {
-            // TODO:
-            /* Using switch statement or mapping to retrieve npc type */
-            return new Gel(new Vector2(0, 0));
+            npcs.Add(npc);
         }
     }
 }

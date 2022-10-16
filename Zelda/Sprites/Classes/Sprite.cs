@@ -5,6 +5,19 @@ namespace Zelda.Sprites.Classes
 {
     public class Sprite : ISprite
     {
+        private Rectangle destination;
+        public Rectangle Destination
+        {
+            get
+            {
+                return destination;
+            }
+            private set
+            {
+                destination = value;
+            }
+        }
+
         private readonly Texture2D TEXTURE;
         // the size of the dominant axis of the sprite in blocks
         // for use when a destination rectangle is not provided as an argument to Draw
@@ -75,31 +88,37 @@ namespace Zelda.Sprites.Classes
 
         public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
-            spriteBatch.Draw(TEXTURE, GetScaledDestinationRectangle(position), GetDefaultSourceRectangle(), Color.White);
+            destination = GetScaledDestinationRectangle(position);
+            spriteBatch.Draw(TEXTURE, destination, GetDefaultSourceRectangle(), Color.White);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 position, Color color)
         {
-            spriteBatch.Draw(TEXTURE, GetScaledDestinationRectangle(position), GetDefaultSourceRectangle(), color);
+            destination = GetScaledDestinationRectangle(position);
+            spriteBatch.Draw(TEXTURE, destination, GetDefaultSourceRectangle(), color);
         }
 
         public void Draw(SpriteBatch spriteBatch, Rectangle destination)
         {
+            this.destination = destination;
             spriteBatch.Draw(TEXTURE, destination, GetDefaultSourceRectangle(), Color.White);
         }
 
         public void Draw(SpriteBatch spriteBatch, Rectangle destination, Color color)
         {
+            this.destination = destination;
             spriteBatch.Draw(TEXTURE, destination, GetDefaultSourceRectangle(), color);
         }
 
         public void Draw(SpriteBatch spriteBatch, Rectangle destination, Rectangle source)
         {
+            this.destination = destination;
             spriteBatch.Draw(TEXTURE, destination, source, Color.White);
         }
 
         public void Draw(SpriteBatch spriteBatch, Rectangle destination, Rectangle source, Color color)
         {
+            this.destination = destination;
             spriteBatch.Draw(TEXTURE, destination, source, color);
         }
     }

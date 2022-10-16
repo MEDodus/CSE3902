@@ -48,7 +48,7 @@ namespace Zelda.Rooms.Parsers
                     block = new Statue2(spawnPos);
                     break;
                 default:
-                    throw new Exception("Block type not found");
+                    throw new Exception("Block type not found: " + identifier);
             }
 
             blocks[i, j] = block;

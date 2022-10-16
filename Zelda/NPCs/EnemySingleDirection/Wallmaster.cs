@@ -11,8 +11,8 @@ namespace Zelda.NPCs.Classes
 
         }
 
-        private double changeDirectionCooldown = 0; // seconds
-        protected override void UpdateAdditional(GameTime gameTime)
+        //private double changeDirectionCooldown = 0; // seconds
+        protected override void UpdateAdditional(GameTime gameTime, double changeDirectionCooldown)
         {
             if (changeDirectionCooldown <= 0)
             {

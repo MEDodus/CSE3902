@@ -19,9 +19,9 @@ namespace Zelda.NPCs.Classes
 
         }
 
-        private double changeDirectionCooldown = 0; // seconds
+        //private double changeDirectionCooldown = 0; // seconds
         private bool wasAttackingLastFrame = false;
-        protected override void UpdateAdditional(GameTime gameTime)
+        protected override void UpdateAdditional(GameTime gameTime, double changeDirectionCooldown)
         {
             // Move around randomly
             if (changeDirectionCooldown <= 0)

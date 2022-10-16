@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
-using System.IO;
 using Zelda.Blocks;
 using Zelda.Blocks.Classes;
 

@@ -1,12 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
-using Zelda.Blocks;
 using Zelda.Commands;
 using Zelda.Controllers;
-using Zelda.Items;
 using Zelda.Link;
-using Zelda.NPCs;
 using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sprites.Factories;

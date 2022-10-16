@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Zelda.Blocks;
 using Zelda.Items;
 using Zelda.NPCs;
-using Zelda.Parsers;
 using Zelda.Rooms.Parsers;
 
 namespace Zelda.Rooms.Classes.Abstract

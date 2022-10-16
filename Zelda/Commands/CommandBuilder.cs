@@ -1,10 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using Zelda.Blocks;
 using Zelda.Commands.Classes;
 using Zelda.Controllers;
-using Zelda.Items;
 using Zelda.Link;
-using Zelda.NPCs;
 using Zelda.Rooms;
 
 namespace Zelda.Commands

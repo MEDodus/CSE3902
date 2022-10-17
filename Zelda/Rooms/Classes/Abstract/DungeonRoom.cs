@@ -27,14 +27,14 @@ namespace Zelda.Rooms.Classes.Abstract
             borders = new Dictionary<Direction, IBorder>();
 
             BlockParser blockParser = new BlockParser(filename, blocks);
+            BorderParser borderParser = new BorderParser(filename, borders);
             NPCParser npcParser = new NPCParser(filename, npcs);
             ItemParser itemParser = new ItemParser(filename, items);
-            BorderParser borderParser = new BorderParser(filename, borders);
-
+            
             blockParser.Parse();
+            borderParser.Parse();
             npcParser.Parse();
             itemParser.Parse();
-            borderParser.Parse();
         }
 
         public void Update(GameTime gameTime)
@@ -46,6 +46,10 @@ namespace Zelda.Rooms.Classes.Abstract
                     blocks[i, j].Update(gameTime);
                 }
             }
+            foreach (IBorder border in borders.Values)
+            {
+                border.Update(gameTime);
+            }
             foreach (INPC npc in npcs)
             {
                 npc.Update(gameTime);
@@ -53,10 +57,6 @@ namespace Zelda.Rooms.Classes.Abstract
             foreach (IItem item in items)
             {
                 item.Update(gameTime);
-            }
-            foreach (IBorder border in borders.Values)
-            {
-                border.Update(gameTime);
             }
         }
 
@@ -69,6 +69,10 @@ namespace Zelda.Rooms.Classes.Abstract
                     blocks[i, j].Draw(spriteBatch);
                 }
             }
+            foreach (IBorder border in borders.Values)
+            {
+                border.Draw(spriteBatch);
+            }
             foreach (INPC npc in npcs)
             {
                 npc.Draw(spriteBatch);
@@ -76,10 +80,6 @@ namespace Zelda.Rooms.Classes.Abstract
             foreach (IItem item in items)
             {
                 item.Draw(spriteBatch);
-            }
-            foreach (IBorder border in borders.Values)
-            {
-                border.Draw(spriteBatch);
             }
         }
     }

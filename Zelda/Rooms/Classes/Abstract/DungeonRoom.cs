@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using Zelda.Blocks;
+using Zelda.Borders;
 using Zelda.Items;
 using Zelda.NPCs;
 using Zelda.Rooms.Parsers;
@@ -10,33 +12,36 @@ namespace Zelda.Rooms.Classes.Abstract
 {
     public abstract class DungeonRoom : IRoom
     {
-        protected static readonly int ROOM_WIDTH = 12; // blocks
-        protected static readonly int ROOM_HEIGHT = 7; // blocks
+        public enum Direction { Left, Right, Top, Bottom }
 
         protected IBlock[,] blocks;
         protected HashSet<INPC> npcs;
         protected HashSet<IItem> items;
+        protected Dictionary<Direction, IBorder> borders;
 
         public DungeonRoom(string filename)
         {
-            blocks = new IBlock[ROOM_WIDTH, ROOM_HEIGHT];
+            blocks = new IBlock[Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT];
             npcs = new HashSet<INPC>();
             items = new HashSet<IItem>();
+            borders = new Dictionary<Direction, IBorder>();
 
             BlockParser blockParser = new BlockParser(filename, blocks);
             NPCParser npcParser = new NPCParser(filename, npcs);
             ItemParser itemParser = new ItemParser(filename, items);
+            BorderParser borderParser = new BorderParser(filename, borders);
 
             blockParser.Parse();
             npcParser.Parse();
             itemParser.Parse();
+            borderParser.Parse();
         }
 
         public void Update(GameTime gameTime)
         {
-            for (int i = 0; i < ROOM_WIDTH; i++)
+            for (int i = 0; i < Settings.ROOM_WIDTH; i++)
             {
-                for (int j = 0; j < ROOM_HEIGHT; j++)
+                for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
                 {
                     blocks[i, j].Update(gameTime);
                 }
@@ -49,13 +54,17 @@ namespace Zelda.Rooms.Classes.Abstract
             {
                 item.Update(gameTime);
             }
+            foreach (IBorder border in borders.Values)
+            {
+                border.Update(gameTime);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            for (int i = 0; i < ROOM_WIDTH; i++)
+            for (int i = 0; i < Settings.ROOM_WIDTH; i++)
             {
-                for (int j = 0; j < ROOM_HEIGHT; j++)
+                for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
                 {
                     blocks[i, j].Draw(spriteBatch);
                 }
@@ -67,6 +76,10 @@ namespace Zelda.Rooms.Classes.Abstract
             foreach (IItem item in items)
             {
                 item.Draw(spriteBatch);
+            }
+            foreach (IBorder border in borders.Values)
+            {
+                border.Draw(spriteBatch);
             }
         }
     }

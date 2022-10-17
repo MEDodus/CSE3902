@@ -13,7 +13,7 @@ namespace Zelda.Rooms.Parsers
             this.filename = filename;
         }
 
-        public void Parse()
+        public virtual void Parse()
         {
             if (!File.Exists(filename))
             {

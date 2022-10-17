@@ -18,7 +18,7 @@ namespace Zelda.Rooms.Parsers
         protected override void ParseObject(string identifier, int i, int j)
         {
             IItem item;
-            Vector2 spawnPos = GetSpawnPosition(i, j);
+            Vector2 spawnPos = GetSpawnPosition(i, j) + new Vector2(5, 5);
             switch (identifier)
             {
                 case "arrow":

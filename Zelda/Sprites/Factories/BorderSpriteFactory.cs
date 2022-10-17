@@ -45,19 +45,19 @@ namespace Zelda.Sprites.Factories
         }
 
         // Open doors
-        public static ISprite TopOpenDoorSprite()
+        public static ISprite TopDoorSprite()
         {
             return TopSprite("borders_doors_open");
         }
-        public static ISprite BottomOpenDoorSprite()
+        public static ISprite BottomDoorSprite()
         {
             return BottomSprite("borders_doors_open");
         }
-        public static ISprite LeftOpenDoorSprite()
+        public static ISprite LeftDoorSprite()
         {
             return LeftSprite("borders_doors_open");
         }
-        public static ISprite RightOpenDoorSprite()
+        public static ISprite RightDoorSprite()
         {
             return RightSprite("borders_doors_open");
         }

@@ -35,11 +35,25 @@ namespace Zelda.Rooms.Parsers
             }
             else if (identifier == "door")
             {
-                // TODO
+                if (i == 0)
+                    border = new LeftDoor();
+                else if (i == 1)
+                    border = new RightDoor();
+                else if (i == 2)
+                    border = new TopDoor();
+                else
+                    border = new BottomDoor();
             }
             else if (identifier == "locked_door")
             {
-                // TODO
+                if (i == 0)
+                    border = new LeftLockedDoor();
+                else if (i == 1)
+                    border = new RightLockedDoor();
+                else if (i == 2)
+                    border = new TopLockedDoor();
+                else
+                    border = new BottomLockedDoor();
             }
 
             DungeonRoom.Direction direction;

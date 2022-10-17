@@ -8,7 +8,7 @@ namespace Zelda.Blocks
     {
         protected ISprite sprite;
         protected Vector2 position;
-        
+
         public IBlock(ISprite sprite, Vector2 position)
         {
             this.sprite = sprite;

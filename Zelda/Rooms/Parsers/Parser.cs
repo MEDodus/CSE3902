@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
 using System.IO;
 
 namespace Zelda.Rooms.Parsers

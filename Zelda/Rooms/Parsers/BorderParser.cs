@@ -1,11 +1,6 @@
-﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Zelda.Borders;
 using Zelda.Borders.Classes;
-using Zelda.Borders.Classes.Abstract;
-using Zelda.NPCs;
-using Zelda.NPCs.Classes;
 using Zelda.Rooms.Classes.Abstract;
 
 namespace Zelda.Rooms.Parsers

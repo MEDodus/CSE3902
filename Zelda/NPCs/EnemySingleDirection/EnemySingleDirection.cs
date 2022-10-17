@@ -15,7 +15,7 @@ namespace Zelda.NPCs.Classes
         protected int health;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
-        
+
 
         public EnemySingleDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed)
         {

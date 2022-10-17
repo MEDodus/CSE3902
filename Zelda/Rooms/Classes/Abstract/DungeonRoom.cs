@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using System.Collections.Generic;
 using Zelda.Blocks;
 using Zelda.Borders;
@@ -30,7 +29,7 @@ namespace Zelda.Rooms.Classes.Abstract
             BorderParser borderParser = new BorderParser(filename, borders);
             NPCParser npcParser = new NPCParser(filename, npcs);
             ItemParser itemParser = new ItemParser(filename, items);
-            
+
             blockParser.Parse();
             borderParser.Parse();
             npcParser.Parse();

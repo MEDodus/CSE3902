@@ -14,13 +14,18 @@ namespace Zelda.Rooms.Classes.Abstract
         public enum Direction { Left, Right, Top, Bottom }
 
         protected IBlock[,] blocks;
+        //used for collision detection
+        protected List<IBlock> barriers;
         protected HashSet<INPC> npcs;
         protected HashSet<IItem> items;
         protected Dictionary<Direction, IBorder> borders;
 
+        public List<IBlock> Barriers { get { return barriers; } }
+
         public DungeonRoom(string filename)
         {
             blocks = new IBlock[Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT];
+
             npcs = new HashSet<INPC>();
             items = new HashSet<IItem>();
             borders = new Dictionary<Direction, IBorder>();
@@ -43,6 +48,11 @@ namespace Zelda.Rooms.Classes.Abstract
                 for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
                 {
                     blocks[i, j].Update(gameTime);
+                    //if block is a barrier, add it to barrier list
+                    if(blocks[i, j].Barrier)
+                    {
+                        barriers.Add(blocks[i,j]);
+                    }
                 }
             }
             foreach (IBorder border in borders.Values)

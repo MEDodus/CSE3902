@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Blocks.Classes
@@ -6,7 +7,7 @@ namespace Zelda.Blocks.Classes
     public class StaticBlock : IBlock
     {
         // looks the same as pushable block but is not pushable
-        public StaticBlock(Vector2 position) : base(BlockSpriteFactory.PushableBlockSprite(), position)
+        public StaticBlock(Vector2 position, Boolean barrier) : base(BlockSpriteFactory.PushableBlockSprite(), position, barrier)
         {
 
         }

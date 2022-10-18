@@ -30,6 +30,7 @@ namespace Zelda.Collision
 
         public void DetectCollisions(Game1 myGame, GameTime gameTime, RoomBuilder roomBuilder, ILink link)
         {
+            roomBuilder.CurrentRoom.blocks;
             CheckStaticPlayerCollision(myGame, gameTime);
             CheckDynamicPlayerCollision(myGame, gameTime);
             CheckStaticEnemyCollision();

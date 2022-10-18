@@ -9,7 +9,7 @@ namespace Zelda.Rooms
         private IRoom[] rooms = new IRoom[17];
         private int i;
 
-        public IRoom Room 
+        public IRoom CurrentRoom 
         { 
             get { return rooms[i]; } 
             set { rooms[i] = value; } 

@@ -12,6 +12,8 @@ namespace Zelda.Projectiles
         protected double lifetime;
         protected double timeLeftUntilDelete;
 
+        public ISprite Sprite { get { return sprite; } }
+
         public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime)
         {
             this.sprite = sprite;

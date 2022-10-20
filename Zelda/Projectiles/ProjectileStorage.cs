@@ -6,7 +6,7 @@ namespace Zelda.Projectiles
 {
     public static class ProjectileStorage
     {
-        private static readonly HashSet<IProjectile> projectiles = new HashSet<IProjectile>();
+        public static readonly HashSet<IProjectile> projectiles = new HashSet<IProjectile>();
 
         public static void Add(IProjectile projectile)
         {

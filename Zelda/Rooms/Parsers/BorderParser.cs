@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Zelda.Borders;
 using Zelda.Borders.Classes;
-using Zelda.Rooms.Classes.Abstract;
 
 namespace Zelda.Rooms.Parsers
 {

@@ -6,17 +6,20 @@ namespace Zelda.Projectiles
 {
     public static class ProjectileStorage
     {
-        public static readonly HashSet<IProjectile> projectiles = new HashSet<IProjectile>();
+        private static readonly HashSet<IProjectile> projectiles = new HashSet<IProjectile>();
+        public static HashSet<IProjectile> Projectiles { 
+            get {return projectiles;}
+        }
 
         public static void Add(IProjectile projectile)
         {
-            projectiles.Add(projectile);
+            Projectiles.Add(projectile);
         }
 
         public static void Update(GameTime gameTime)
         {
             HashSet<IProjectile> projectilesToDelete = new HashSet<IProjectile>();
-            foreach (IProjectile projectile in projectiles)
+            foreach (IProjectile projectile in Projectiles)
             {
                 bool lifetimeExpired = projectile.Update(gameTime);
                 if (lifetimeExpired)
@@ -28,7 +31,7 @@ namespace Zelda.Projectiles
             foreach (IProjectile projectile in projectilesToDelete)
             {
                 projectile.Delete();
-                projectiles.Remove(projectile);
+                Projectiles.Remove(projectile);
             }
         }
 
@@ -42,7 +45,7 @@ namespace Zelda.Projectiles
 
         public static void Clear()
         {
-            projectiles.Clear();
+            Projectiles.Clear();
         }
     }
 }

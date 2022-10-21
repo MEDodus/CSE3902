@@ -7,9 +7,9 @@ using Zelda.Items;
 using Zelda.NPCs;
 using Zelda.Rooms.Parsers;
 
-namespace Zelda.Rooms.Classes.Abstract
+namespace Zelda.Rooms
 {
-    public abstract class DungeonRoom : IRoom
+    public class DungeonRoom : IRoom
     {
         public enum Direction { Left, Right, Top, Bottom }
 
@@ -49,9 +49,9 @@ namespace Zelda.Rooms.Classes.Abstract
                 {
                     blocks[i, j].Update(gameTime);
                     //if block is a barrier, add it to barrier list
-                    if(blocks[i, j].Barrier)
+                    if (blocks[i, j].Barrier)
                     {
-                        barriers.Add(blocks[i,j]);
+                        barriers.Add(blocks[i, j]);
                     }
                 }
             }

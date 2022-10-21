@@ -9,8 +9,6 @@ using Zelda.NPCs;
 using Zelda.NPCs.Classes;
 using Zelda.Projectiles;
 using Zelda.Rooms;
-using Zelda.Collision;
-using Zelda.Projectiles;
 
 namespace Zelda.Collision
 {
@@ -62,7 +60,7 @@ namespace Zelda.Collision
                     playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
                 }
 
-                foreach (IProjectile projectile in ProjectileStorage.projectiles)
+                foreach (IProjectile projectile in ProjectileStorage.Projectiles)
                 {
                     //check if collision
                     //playerProjectileCollisionHandler.HandleCollision();
@@ -81,7 +79,7 @@ namespace Zelda.Collision
                     playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
                 }
 
-                foreach(IProjectile projectile in ProjectileStorage.projectiles)
+                foreach(IProjectile projectile in ProjectileStorage.Projectiles)
                 {
                     //check if collision
                     //playerProjectileCollisionHandler.HandleCollision();

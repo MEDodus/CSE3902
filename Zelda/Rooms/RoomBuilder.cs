@@ -5,10 +5,10 @@ namespace Zelda.Rooms
 {
     public class RoomBuilder
     {
-        private IRoom[] rooms = new IRoom[17];
+        private Room[] rooms = new Room[17];
         private int i;
 
-        public IRoom CurrentRoom 
+        public Room CurrentRoom 
         { 
             get { return rooms[i]; } 
         }
@@ -18,7 +18,7 @@ namespace Zelda.Rooms
             i = 15;
             for (int j = 0; j < rooms.Length; j++)
             {
-                rooms[i] = new DungeonRoom("Room" + j);
+                rooms[j] = new Room("Room" + j);
             }
         }
 

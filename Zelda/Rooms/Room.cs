@@ -9,20 +9,21 @@ using Zelda.Rooms.Parsers;
 
 namespace Zelda.Rooms
 {
-    public class DungeonRoom : IRoom
+    public class Room
     {
         public enum Direction { Left, Right, Top, Bottom }
 
         protected IBlock[,] blocks;
-        //used for collision detection
-        protected List<IBlock> barriers;
         protected HashSet<INPC> npcs;
         protected HashSet<IItem> items;
         protected Dictionary<Direction, IBorder> borders;
 
-        public List<IBlock> Barriers { get { return barriers; } }
+        public IBlock[,] Blocks { get { return blocks; } }
+        public HashSet<INPC> NPCs { get { return npcs; } }
+        public HashSet<IItem> Items { get { return items; } }
+        protected Dictionary<Direction, IBorder> Borders { get { return borders; } }
 
-        public DungeonRoom(string filename)
+        public Room(string filename)
         {
             blocks = new IBlock[Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT];
 
@@ -48,11 +49,6 @@ namespace Zelda.Rooms
                 for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
                 {
                     blocks[i, j].Update(gameTime);
-                    //if block is a barrier, add it to barrier list
-                    if (blocks[i, j].Barrier)
-                    {
-                        barriers.Add(blocks[i, j]);
-                    }
                 }
             }
             foreach (IBorder border in borders.Values)

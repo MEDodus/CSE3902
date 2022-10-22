@@ -9,14 +9,14 @@ namespace Zelda.Blocks
     {
         protected ISprite sprite;
         protected Vector2 position;
-        protected Boolean barrier;
-        public Boolean Barrier { get { return barrier; } set { barrier = value; } }
+        protected bool canCollide;
+        public bool CanCollide { get { return canCollide; } set { canCollide = value; } }
 
-        public IBlock(ISprite sprite, Vector2 position, Boolean barrier)
+        public IBlock(ISprite sprite, Vector2 position, bool canCollide)
         {
             this.sprite = sprite;
             this.position = position;
-            this.barrier = barrier;
+            this.canCollide = canCollide;
         }
 
         public virtual void Update(GameTime gameTime)

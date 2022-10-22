@@ -1,30 +1,26 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Sprites.Factories;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace Zelda.Link
 {
     public class LinkMovingDownState : ILinkState
     {
-        private Link2 link;
+        private ILink link;
 
-        private Rectangle[] sourceRectangle = new Rectangle[2];
-        private Rectangle destinationRectangle;
         private int runTime = 0;
-        private int currentSprite = 0;
         private int moveDownCount = 0;
 
-        public LinkMovingDownState(Link2 link)
+        public LinkMovingDownState(ILink link)
         {
             this.link = link;
-            sourceRectangle[0] = new Rectangle(0, 8, 16, 16);
-            sourceRectangle[1] = new Rectangle(16, 8, 16, 16);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
+            link.Sprite = LinkSpriteFactory.LinkMovingDownSprite();
         }
 
         public void MoveUp()
         {
-            link.state = new LinkMovingUpState(link);
+            link.State = new LinkMovingUpState(link);
         }
         public void MoveDown()
         {
@@ -33,15 +29,15 @@ namespace Zelda.Link
         }
         public void MoveLeft()
         {
-            link.state = new LinkMovingLeftState(link);
+            link.State = new LinkMovingLeftState(link);
         }
         public void MoveRight()
         {
-            link.state = new LinkMovingRightState(link);
+            link.State = new LinkMovingRightState(link);
         }
         public void UseItem(int itemNum)
         {
-            link.state = new LinkUsingItemDownState(link);
+            link.State = new LinkUsingItemDownState(link);
             link.CreateItem(itemNum);
         }
         public void TakeDamage(Game1 game)
@@ -51,29 +47,12 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if (runTime % 10 == 0)
-            {
-                if (currentSprite == 0)
-                {
-                    currentSprite++;
-                }
-                else
-                {
-                    currentSprite = 0;
-                }
-            }
-            link.Ypos += 2;
-            destinationRectangle.Y = link.Ypos;
+            link.Position += new Vector2(0, 2);
             if (runTime > moveDownCount)
             {
-                link.state = new LinkFacingDownState(link);
+                link.State = new LinkFacingDownState(link);
             }
             runTime++;
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle[currentSprite], Color.White);
         }
     }
 }

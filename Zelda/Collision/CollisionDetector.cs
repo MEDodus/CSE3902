@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zelda.Collision.Handlers;
 using Zelda.Link;
 using Zelda.NPCs;
 using Zelda.NPCs.Classes;
@@ -79,14 +80,14 @@ namespace Zelda.Collision
                     playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
                 }
 
-                foreach(IProjectile projectile in ProjectileStorage.Projectiles)
+                foreach (IProjectile projectile in ProjectileStorage.Projectiles)
                 {
                     //check if collision
                     //playerProjectileCollisionHandler.HandleCollision();
                 }
 
                 //check block collisisons
-                foreach()
+                foreach ()
                 {
 
                 }

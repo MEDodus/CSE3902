@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Zelda.Blocks;
 using Zelda.NPCs.Classes;
 
-namespace Zelda.Collision
+namespace Zelda.Collision.Handlers
 {
     internal class EnemyBlockCollisionHandler
     {

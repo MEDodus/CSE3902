@@ -5,7 +5,13 @@ namespace Zelda.Sprites.Classes
 {
     public class AnimatedSprite : ISprite
     {
-        private Rectangle destination;
+        public Texture2D Texture
+        {
+            set
+            {
+                texture = value;
+            }
+        }
         public Rectangle Destination
         {
             get
@@ -18,7 +24,6 @@ namespace Zelda.Sprites.Classes
             }
         }
 
-        private readonly Texture2D TEXTURE;
         // the size of the dominant axis of the sprite in blocks
         // for use when a destination rectangle is not provided as an argument to Draw
         // if not passed to constructor (and thus kept as -1), use WIDTH/HEIGHT as size of destination rectangle
@@ -35,10 +40,13 @@ namespace Zelda.Sprites.Classes
         private readonly int FPS;
         private int frame = 0;
 
+        private Texture2D texture;
+        private Rectangle destination;
+
         // all-argument constructor, inherited by other constructors
         public AnimatedSprite(Texture2D texture, int x, int y, int rows, int columns, int rowHeight, int columnWidth, int fps, double sizeInBlocks)
         {
-            TEXTURE = texture;
+            this.texture = texture;
             X = x;
             Y = y;
             NUM_ROWS = rows;
@@ -112,25 +120,25 @@ namespace Zelda.Sprites.Classes
         public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
             destination = GetScaledDestinationRectangle(position);
-            spriteBatch.Draw(TEXTURE, destination, GetSourceRectangle(), Color.White);
+            spriteBatch.Draw(texture, destination, GetSourceRectangle(), Color.White);
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 position, Color color)
         {
             destination = GetScaledDestinationRectangle(position);
-            spriteBatch.Draw(TEXTURE, destination, GetSourceRectangle(), color);
+            spriteBatch.Draw(texture, destination, GetSourceRectangle(), color);
         }
 
         public void Draw(SpriteBatch spriteBatch, Rectangle destination)
         {
             this.destination = destination;
-            spriteBatch.Draw(TEXTURE, destination, GetSourceRectangle(), Color.White);
+            spriteBatch.Draw(texture, destination, GetSourceRectangle(), Color.White);
         }
 
         public void Draw(SpriteBatch spriteBatch, Rectangle destination, Color color)
         {
             this.destination = destination;
-            spriteBatch.Draw(TEXTURE, destination, GetSourceRectangle(), color);
+            spriteBatch.Draw(texture, destination, GetSourceRectangle(), color);
         }
 
         // Draw methods using source rectangle arguments are unavailable

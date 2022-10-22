@@ -17,7 +17,7 @@ namespace Zelda.Sprites.Factories
         }
 
         // Loads a texture on the first call, returns the same texture on any subsequent calls
-        protected static Texture2D GetTexture(string filename)
+        public static Texture2D GetTexture(string filename)
         {
             if (!Textures.ContainsKey(filename))
             {

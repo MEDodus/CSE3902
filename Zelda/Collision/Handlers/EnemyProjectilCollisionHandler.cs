@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Zelda.NPCs.Classes;
 using Zelda.Projectiles;
 
-namespace Zelda.Collision
+namespace Zelda.Collision.Handlers
 {
     internal class EnemyProjectileCollisionHandler
     {

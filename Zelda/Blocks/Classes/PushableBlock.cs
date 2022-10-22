@@ -6,7 +6,7 @@ namespace Zelda.Blocks.Classes
 {
     public class PushableBlock : IBlock
     {
-        public PushableBlock(Vector2 position, Boolean barrier) : base(BlockSpriteFactory.PushableBlockSprite(), position, barrier)
+        public PushableBlock(Vector2 position) : base(BlockSpriteFactory.PushableBlockSprite(), position, true)
         {
 
         }

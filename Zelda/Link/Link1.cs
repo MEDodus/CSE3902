@@ -5,34 +5,26 @@ using System.Collections.Generic;
 using Zelda.Controllers;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
-using Zelda.Sprites.Factories;
+using Zelda.Sprites;
 
 namespace Zelda.Link
 {
-    public class Link2 : SpriteFactory, ILink
+    public class Link1 : ILink
     {
-        private static int HEIGHT = 16;
-        private static int WIDTH = 16;
+        public ILinkState State { get { return state; } set { state = value; } }
+        public ISprite Sprite { get { return sprite; } set { sprite = value; } }
+        public Vector2 Position { get { return position; } set { position = value; } }
 
-        public ILinkState state;
-        public Texture2D texture;
-        private int X = 450, Y = 450;
+        private ILinkState state;
+        private ISprite sprite;
+        private Vector2 position;
         private Vector2 facingDirection;
         private double swordAttackTimer = 0;
-
-        public Texture2D Texture { get { return texture; } set { texture = value; } }
-        public int Xpos { get { return X; } set { X = value; } }
-        public int Ypos { get { return Y; } set { Y = value; } }
-        public int Height { get { return HEIGHT; } set { HEIGHT = value; } }
-        public int Width { get { return WIDTH; } set { WIDTH = value; } }
-
         private HashSet<Keys> movementKeys = new HashSet<Keys>();
 
-        public Link2()
+        public Link1()
         {
-            texture = GetTexture("Link");
-            state = new LinkFacingRightState(this);
-            facingDirection = new Vector2(1, 0);
+            Reset();
             movementKeys.Add(Keys.W);
             movementKeys.Add(Keys.A);
             movementKeys.Add(Keys.S);
@@ -42,6 +34,14 @@ namespace Zelda.Link
             movementKeys.Add(Keys.Down);
             movementKeys.Add(Keys.Right);
         }
+
+        public void Reset()
+        {
+            position = new Vector2(450, 450);
+            state = new LinkFacingRightState(this);
+            facingDirection = new Vector2(1, 0);
+        }
+
         public void Update(GameTime gameTime)
         {
             if (swordAttackTimer > 0)
@@ -49,18 +49,12 @@ namespace Zelda.Link
                 swordAttackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
             }
             state.Update();
+            sprite.Update(gameTime);
         }
 
-        public void Reset()
-        {
-            X = 300;
-            Y = 700;
-            state = new LinkFacingRightState(this);
-            facingDirection = new Vector2(1, 0);
-        }
         public void Draw(SpriteBatch spriteBatch)
         {
-            state.Draw(spriteBatch);
+            sprite.Draw(spriteBatch, position);
         }
 
         private bool TryMove(Vector2 newDirection)
@@ -104,18 +98,19 @@ namespace Zelda.Link
                 state.MoveRight();
             }
         }
-        public void UseItem(int itemNum)
-        {
-            state.UseItem(itemNum);
-        }
         public void TakeDamage(Game1 game)
         {
             state.TakeDamage(game);
         }
 
+        public void UseItem(int itemNum)
+        {
+            state.UseItem(itemNum);
+        }
+
         private Vector2 getPositionInFrontOfLink(double blocksInFrontOf)
         {
-            return new Vector2(X + 10, Y + 12) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
+            return position + new Vector2(10, 12) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
         }
 
         public void CreateItem(int itemNum)
@@ -125,7 +120,7 @@ namespace Zelda.Link
             switch (itemNum)
             {
                 case 0:
-                    // base attack  
+                    // base attack
                     if (swordAttackTimer <= 0)
                     {
                         swordAttackTimer = 0.35;

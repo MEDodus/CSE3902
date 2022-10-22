@@ -21,34 +21,34 @@ namespace Zelda.Rooms.Parsers
             switch (identifier)
             {
                 case "black_gap":
-                    block = new BlackGap(spawnPos, false);
+                    block = new BlackGap(spawnPos);
                     break;
                 case "blue_floor":
-                    block = new BlueFloor(spawnPos, false);
+                    block = new BlueFloor(spawnPos);
                     break;
                 case "blue_gap":
-                    block = new BlueGap(spawnPos, false);
+                    block = new BlueGap(spawnPos);
                     break;
                 case "blue_sand":
-                    block = new BlueSand(spawnPos, false);
+                    block = new BlueSand(spawnPos);
                     break;
                 case "ladder":
-                    block = new Ladder(spawnPos, true);
+                    block = new Ladder(spawnPos);
                     break;
                 case "pushable_block":
-                    block = new PushableBlock(spawnPos, true);
+                    block = new PushableBlock(spawnPos);
                     break;
                 case "static_block":
-                    block = new StaticBlock(spawnPos, true);
+                    block = new StaticBlock(spawnPos);
                     break;
                 case "stairs":
-                    block = new Stairs(spawnPos, false);
+                    block = new Stairs(spawnPos);
                     break;
                 case "statue_1":
-                    block = new Statue1(spawnPos, true);
+                    block = new Statue1(spawnPos);
                     break;
                 case "statue_2":
-                    block = new Statue2(spawnPos, true);
+                    block = new Statue2(spawnPos);
                     break;
                 default:
                     throw new Exception("Block type not found: " + identifier);

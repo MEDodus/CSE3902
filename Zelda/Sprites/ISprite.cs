@@ -5,6 +5,7 @@ namespace Zelda.Sprites
 {
     public interface ISprite
     {
+        public Texture2D Texture { set; }
         public Rectangle Destination { get; }
 
         public void Update(GameTime gameTime);

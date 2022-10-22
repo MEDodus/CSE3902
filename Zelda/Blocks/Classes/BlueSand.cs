@@ -6,7 +6,7 @@ namespace Zelda.Blocks.Classes
 {
     public class BlueSand : IBlock
     {
-        public BlueSand(Vector2 position, Boolean barrier) : base(BlockSpriteFactory.BlueSandSprite(), position, barrier)
+        public BlueSand(Vector2 position) : base(BlockSpriteFactory.BlueSandSprite(), position, false)
         {
 
         }

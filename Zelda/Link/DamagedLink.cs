@@ -1,16 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Link
 {
-    public class DamagedLink : SpriteFactory, ILink
+    public class DamagedLink : ILink
     {
+        public ILinkState State { get => decoratedLink.State; set => decoratedLink.State = value; }
+        public ISprite Sprite { get => decoratedLink.Sprite; set => decoratedLink.Sprite = value; }
+        public Vector2 Position { get => decoratedLink.Position; set => decoratedLink.Position = value; }
 
         Game1 game;
         ILink decoratedLink;
         int timer = 48;
-
 
         public DamagedLink(ILink decoratedLink, Game1 game)
         {
@@ -21,19 +24,19 @@ namespace Zelda.Link
         {
             if (timer % 8 == 0)
             {
-                decoratedLink.Texture = GetTexture("Link_hurt1");
+                decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link_hurt_1");
             }
             else if (timer % 8 == 2)
             {
-                decoratedLink.Texture = GetTexture("Link_hurt2");
+                decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link_hurt_2");
             }
             else if (timer % 8 == 4)
             {
-                decoratedLink.Texture = GetTexture("Link_hurt3");
+                decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link_hurt_3");
             }
             else if (timer % 8 == 6)
             {
-                decoratedLink.Texture = GetTexture("Link");
+                decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link2");
             }
             if (timer == 0)
             {
@@ -69,18 +72,24 @@ namespace Zelda.Link
         {
             decoratedLink.MoveRight();
         }
-        public void UseItem(int itemNum)
-        {
-            decoratedLink.UseItem(itemNum);
-        }
         public void TakeDamage(Game1 game)
         {
             // Can't take damage while already taking damage
         }
 
+        public void UseItem(int itemNum)
+        {
+            decoratedLink.UseItem(itemNum);
+        }
+        
+        public void CreateItem(int itemNum)
+        {
+            decoratedLink.CreateItem(itemNum);
+        }
+
         public void RemoveDecorator()
         {
-            decoratedLink.Texture = GetTexture("Link");
+            decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link2");
             game.link = decoratedLink;
         }
     }

@@ -6,9 +6,9 @@ namespace Zelda.Rooms.Parsers
 {
     public class BorderParser : Parser
     {
-        private Dictionary<DungeonRoom.Direction, IBorder> borders;
+        private Dictionary<Room.Direction, IBorder> borders;
 
-        public BorderParser(string filename, Dictionary<DungeonRoom.Direction, IBorder> borders) : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\borders.csv")
+        public BorderParser(string filename, Dictionary<Room.Direction, IBorder> borders) : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\borders.csv")
         {
             this.borders = borders;
         }
@@ -50,15 +50,15 @@ namespace Zelda.Rooms.Parsers
                     border = new BottomLockedDoor();
             }
 
-            DungeonRoom.Direction direction;
+            Room.Direction direction;
             if (i == 0)
-                direction = DungeonRoom.Direction.Left;
+                direction = Room.Direction.Left;
             else if (i == 1)
-                direction = DungeonRoom.Direction.Right;
+                direction = Room.Direction.Right;
             else if (i == 2)
-                direction = DungeonRoom.Direction.Top;
+                direction = Room.Direction.Top;
             else
-                direction = DungeonRoom.Direction.Bottom;
+                direction = Room.Direction.Bottom;
             borders.Add(direction, border);
         }
     }

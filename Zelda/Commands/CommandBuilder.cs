@@ -51,7 +51,7 @@ namespace Zelda.Commands
             mouse.RegisterRightClickCommand(new CycleRoomNext(roomBuilder));
 
             // For damaged state (sprint 2 only)
-            //keyboard.RegisterCommand(Keys.E, new Hurt(game, link));
+            keyboard.RegisterCommand(Keys.E, new Hurt(game, link));
 
             // For secondary items
             //keyboard.RegisterCommand(Keys.X, new SecondaryItem(game));

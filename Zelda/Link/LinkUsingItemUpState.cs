@@ -1,22 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Sprites.Factories;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace Zelda.Link
 {
     public class LinkUsingItemUpState : ILinkState
     {
-        private Link2 link;
-
-        private Rectangle sourceRectangle;
-        private Rectangle destinationRectangle;
+        private ILink link;
         private int runTime = 0;
 
-        public LinkUsingItemUpState(Link2 link)
+        public LinkUsingItemUpState(ILink link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(32, 32, 16, 16);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
+            link.Sprite = LinkSpriteFactory.LinkUsingItemUpSprite();
         }
 
         public void MoveUp()
@@ -52,14 +49,8 @@ namespace Zelda.Link
             }
             else
             {
-                link.state = new LinkFacingUpState(link);
+                link.State = new LinkFacingUpState(link);
             }
-        }
-
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle, Color.White);
         }
     }
 }

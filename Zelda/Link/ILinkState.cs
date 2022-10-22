@@ -12,6 +12,5 @@ namespace Zelda.Link
         void TakeDamage(Game1 game);
 
         public void Update();
-        public void Draw(SpriteBatch spriteBatch);
     }
 }

@@ -53,7 +53,7 @@ namespace Zelda
             controllers.Add(keyboard);
             controllers.Add(mouse);
 
-            link = new Link2();
+            link = new Link1();
             roomBuilder = new RoomBuilder();
             commandBuilder = new CommandBuilder(keyboard, mouse, this, link, roomBuilder);
 

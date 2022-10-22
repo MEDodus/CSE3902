@@ -11,7 +11,7 @@ using Zelda.Sprites.Factories;
 using Zelda.NPCs.Classes;
 using Zelda.Blocks;
 
-namespace Zelda.Collision
+namespace Zelda.Collision.Handlers
 {
     internal class PlayerEnemyCollisionHandler : ICollision
     {

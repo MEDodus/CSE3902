@@ -1,42 +1,39 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Sprites.Factories;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace Zelda.Link
 {
     public class LinkFacingUpState : ILinkState
     {
-        private Link2 link;
+        private ILink link;
 
-        private Rectangle sourceRectangle;
-        private Rectangle destinationRectangle;
-
-        public LinkFacingUpState(Link2 link)
+        public LinkFacingUpState(ILink link)
         {
             this.link = link;
-            sourceRectangle = new Rectangle(64, 8, 16, 16);
-            destinationRectangle = new Rectangle(link.Xpos, link.Ypos, link.Width * Settings.LINK_SIZE_MULT, link.Height * Settings.LINK_SIZE_MULT);
+            link.Sprite = LinkSpriteFactory.LinkFacingUpSprite();
         }
 
         public void MoveUp()
         {
-            link.state = new LinkMovingUpState(link);
+            link.State = new LinkMovingUpState(link);
         }
         public void MoveDown()
         {
-            link.state = new LinkMovingDownState(link);
+            link.State = new LinkMovingDownState(link);
         }
         public void MoveLeft()
         {
-            link.state = new LinkMovingLeftState(link);
+            link.State = new LinkMovingLeftState(link);
         }
         public void MoveRight()
         {
-            link.state = new LinkMovingRightState(link);
+            link.State = new LinkMovingRightState(link);
         }
         public void UseItem(int itemNum)
         {
-            link.state = new LinkUsingItemUpState(link);
+            link.State = new LinkUsingItemUpState(link);
             link.CreateItem(itemNum);
         }
         public void TakeDamage(Game1 game)
@@ -46,12 +43,7 @@ namespace Zelda.Link
 
         public void Update()
         {
-
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(link.Texture, destinationRectangle, sourceRectangle, Color.White);
+            
         }
     }
 }

@@ -13,10 +13,12 @@ namespace Zelda.Collision.Handlers
         public void HandleCollision(EnemySingleDirection enemy, IProjectile projectile)
         {
             enemy.TakeDamage(1);
+            projectile.Delete();
         }
         public void HandleCollision(EnemyMultiDirection enemy, IProjectile projectile)
         {
             enemy.TakeDamage(1);
+            projectile.Delete();
         }
     }
 }

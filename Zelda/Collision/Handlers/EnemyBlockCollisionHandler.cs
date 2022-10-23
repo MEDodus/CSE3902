@@ -17,7 +17,7 @@ namespace Zelda.Collision.Handlers
 
         public void HandleCollision(EnemyMultiDirection enemy, IBlock block)
         {
-            Rectangle.Intersect(enemy.Position, block.Position);
+            //Rectangle.Intersect(enemy.Position, block.Position);
         }
     }
 }

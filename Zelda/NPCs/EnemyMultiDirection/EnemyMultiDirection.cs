@@ -8,6 +8,8 @@ namespace Zelda.NPCs.Classes
 {
     public abstract class EnemyMultiDirection : INPC
     {
+        public ISprite Sprite { get { return sprite; } }
+
         protected ISprite sprite;
         protected Vector2 position;
         protected Vector2 moveDirection = new Vector2(0, 0);

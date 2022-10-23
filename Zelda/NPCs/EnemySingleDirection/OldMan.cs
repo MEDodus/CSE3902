@@ -9,8 +9,11 @@ namespace Zelda.NPCs.Classes
 {
     public class OldMan : INPC
     {
+        public ISprite Sprite { get { return sprite; } }
+
         protected ISprite sprite;
         protected Vector2 position;
+
         public OldMan(Vector2 startPosition)
         {
             sprite = NPCSpriteFactory.OldManSprite();

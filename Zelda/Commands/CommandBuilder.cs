@@ -51,23 +51,11 @@ namespace Zelda.Commands
             mouse.RegisterRightClickCommand(new CycleRoomNext(roomBuilder));
 
             // For damaged state (sprint 2 only)
-            keyboard.RegisterCommand(Keys.E, new Hurt(game, link));
+            //keyboard.RegisterCommand(Keys.E, new Hurt(game, link));
 
             // For secondary items
             //keyboard.RegisterCommand(Keys.X, new SecondaryItem(game));
             //keyboard.RegisterCommand(Keys.M, new SecondaryItem(game));
-
-            // Swapping enemies
-            //keyboard.RegisterCommand(Keys.O, new CycleNPCPrevious(npcBuilder));
-            //keyboard.RegisterCommand(Keys.P, new CycleNPCNext(npcBuilder));
-
-            // Swapping items
-            //keyboard.RegisterCommand(Keys.U, new CycleItemPrevious(itemBuilder));
-            //keyboard.RegisterCommand(Keys.I, new CycleItemNext(itemBuilder));
-
-            // Swapping blocks
-            //keyboard.RegisterCommand(Keys.T, new CycleBlockPrevious(blockBuilder));
-            //keyboard.RegisterCommand(Keys.Y, new CycleBlockNext(blockBuilder));
         }
     }
 }

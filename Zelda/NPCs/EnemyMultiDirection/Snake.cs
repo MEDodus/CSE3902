@@ -12,6 +12,8 @@ namespace Zelda.NPCs.Classes
 {
     public class Snake : INPC
     {
+        public ISprite Sprite { get { return sprite; } }
+
         public INPCState state;
         public ISprite sprite;
         protected Vector2 position;

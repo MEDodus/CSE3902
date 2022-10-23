@@ -8,6 +8,8 @@ namespace Zelda.NPCs.Classes
 {
     public abstract class EnemySingleDirection : INPC
     {
+        public ISprite Sprite { get { return sprite; } }
+
         protected ISprite sprite;
         protected Vector2 position;
         protected Vector2 moveDirection = new Vector2(0, 0);
@@ -15,7 +17,6 @@ namespace Zelda.NPCs.Classes
         protected int health;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
-
 
         public EnemySingleDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed)
         {

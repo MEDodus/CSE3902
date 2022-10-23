@@ -86,6 +86,10 @@ namespace Zelda.Link
         {
             decoratedLink.CreateItem(itemNum);
         }
+        public void CancelMovement()
+        {
+            decoratedLink.CancelMovement();
+        }
 
         public void RemoveDecorator()
         {

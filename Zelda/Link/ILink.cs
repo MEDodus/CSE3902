@@ -22,5 +22,6 @@ namespace Zelda.Link
         public void TakeDamage(Game1 game);
         public void UseItem(int itemNum);
         public void CreateItem(int itemNum);
+        public void CancelMovement();
     }
 }

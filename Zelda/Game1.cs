@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using Zelda.Collision;
 using Zelda.Commands;
 using Zelda.Controllers;
 using Zelda.Link;
@@ -31,6 +32,7 @@ namespace Zelda
         private RoomBuilder roomBuilder;
         public ILink link;
         private CommandBuilder commandBuilder;
+        private CollisionDetector collisionDetector;
 
         public Game1()
         {
@@ -57,6 +59,8 @@ namespace Zelda
             roomBuilder = new RoomBuilder();
             commandBuilder = new CommandBuilder(keyboard, mouse, this, link, roomBuilder);
 
+            collisionDetector = new CollisionDetector();
+
             base.Initialize();
         }
 
@@ -74,6 +78,8 @@ namespace Zelda
             roomBuilder.Update(gameTime);
             ProjectileStorage.Update(gameTime);
             link.Update(gameTime);
+
+            collisionDetector.DetectCollisions(this, gameTime, roomBuilder, link);
 
             base.Update(gameTime);
         }

@@ -6,7 +6,7 @@ namespace Zelda.Blocks.Classes
 {
     public class Stairs : IBlock
     {
-        public Stairs(Vector2 position) : base(BlockSpriteFactory.StairsSprite(), position, false)
+        public Stairs(Vector2 position) : base(BlockSpriteFactory.StairsSprite(), position, true)
         {
 
         }

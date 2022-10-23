@@ -373,6 +373,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/heart.png
 
+#begin spritesheets/invisible_block.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/invisible_block.png
+
 #begin spritesheets/key.png
 /importer:TextureImporter
 /processor:TextureProcessor

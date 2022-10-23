@@ -4,8 +4,8 @@
     {
         public static readonly int BLOCK_SIZE = 50; // pixels
         public static readonly int BORDER_SIZE = 2 * BLOCK_SIZE; // pixels, keep this aspect ratio or else it will size incorrectly
-        public static readonly int ROOM_WIDTH = 12; // blocks
-        public static readonly int ROOM_HEIGHT = 7; // blocks
+        public static readonly int ROOM_WIDTH = 14; // blocks
+        public static readonly int ROOM_HEIGHT = 9; // blocks
         public static readonly int ROOM_POSITION_X = 200;
         public static readonly int ROOM_POSITION_Y = 200;
 

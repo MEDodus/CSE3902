@@ -27,6 +27,7 @@ namespace Zelda.Rooms
 
         public Room(string filename)
         {
+            //added two to each side to account for invisible barriers for walls
             blocks = new IBlock[Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT];
 
             npcs = new HashSet<INPC>();
@@ -74,10 +75,10 @@ namespace Zelda.Rooms
                 for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
                 {
                     blocks[i, j].Draw(spriteBatch);
-                    if (blocks[i, j].CanCollide)
+                    /*if (blocks[i,j] != null && !blocks[i, j].CanCollide)
                     {
                         barriers.Add(blocks[i, j]);
-                    }
+                    }*/ //Need other way to add blocks to barriers
                 }
             }
             foreach (IBorder border in borders.Values)

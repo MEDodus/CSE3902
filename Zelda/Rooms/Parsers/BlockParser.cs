@@ -17,7 +17,7 @@ namespace Zelda.Rooms.Parsers
         protected override void ParseObject(string identifier, int i, int j)
         {
             IBlock block;
-            Vector2 spawnPos = GetSpawnPosition(i, j);
+            Vector2 spawnPos = GetSpawnPosition(i, j ) - new Vector2(Settings.BLOCK_SIZE, Settings.BLOCK_SIZE);
             switch (identifier)
             {
                 case "black_gap":
@@ -49,6 +49,12 @@ namespace Zelda.Rooms.Parsers
                     break;
                 case "statue_2":
                     block = new Statue2(spawnPos);
+                    break;
+                case "invisible_barrier":
+                    block = new InvisibleBarrier(spawnPos);
+                    break;
+                case "invisible_path":
+                    block = new InvisiblePath(spawnPos);
                     break;
                 default:
                     throw new Exception("Block type not found: " + identifier);

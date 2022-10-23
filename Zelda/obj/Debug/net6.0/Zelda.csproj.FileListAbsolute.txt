@@ -265,3 +265,4 @@ C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\
 C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_1.xnb
 C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_2.xnb
 C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_3.xnb
+C:\Users\alexr\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\invisible_block.xnb

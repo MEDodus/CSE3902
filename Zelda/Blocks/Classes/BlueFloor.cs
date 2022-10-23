@@ -6,7 +6,7 @@ namespace Zelda.Blocks.Classes
 {
     public class BlueFloor : IBlock
     {
-        public BlueFloor(Vector2 position) : base(BlockSpriteFactory.BlueFloorSprite(), position, false)
+        public BlueFloor(Vector2 position) : base(BlockSpriteFactory.BlueFloorSprite(), position, true)
         {
 
         }

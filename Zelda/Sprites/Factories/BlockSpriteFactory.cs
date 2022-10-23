@@ -1,4 +1,5 @@
-﻿using Zelda.Sprites.Classes;
+﻿using System.Data;
+using Zelda.Sprites.Classes;
 
 namespace Zelda.Sprites.Factories
 {
@@ -52,6 +53,10 @@ namespace Zelda.Sprites.Factories
         public static ISprite LadderSprite()
         {
             return new Sprite(GetTexture("blocks"), 640, 160, 160, 160, 1);
+        }
+        public static ISprite InvisibleSprite()
+        {
+            return new Sprite(GetTexture("invisible_block"), 0, 0, 160, 160, 1);
         }
     }
 }

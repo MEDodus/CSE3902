@@ -28,12 +28,13 @@ using Zelda.NPCs;
          protected List<INPC> staticEnemies = new List<INPC>();
          protected List<ILink> staticPlayers = new List<ILink>();
 
-         protected List<INPC> dynamicEnemies = new List<INPC>();
+         protected HashSet<INPC> dynamicEnemies = new HashSet<INPC>();
          protected List<ILink> dynamicPlayers = new List<ILink>();
 
 
          public void DetectCollisions(Game1 myGame, GameTime gameTime, RoomBuilder roomBuilder, ILink link)
          {
+            this.dynamicEnemies = roomBuilder.CurrentRoom.NPCs;
              //CheckStaticPlayerCollision(myGame, gameTime);
              //CheckDynamicPlayerCollision(myGame, gameTime, roomBuilder);
              CheckStaticEnemyCollision();  //Will wait to implement static enemy collisions; for now, assume always moving
@@ -108,7 +109,8 @@ using Zelda.NPCs;
 
              foreach (INPC dynamicEnemy in dynamicEnemies)
              {
-                 foreach (IProjectile projectile in ProjectileStorage.Projectiles)
+                //HashSet<IProjectile> projectilesCopy = ProjectileStorage.Projectiles;
+                 foreach (IProjectile projectile in ProjectileStorage.Projectiles.ToArray())
                  {
                     //check if collision
                     if (projectile.Sprite.Destination.Intersects(dynamicEnemy.Sprite.Destination))
@@ -116,13 +118,16 @@ using Zelda.NPCs;
                         enemyProjectileCollisionHandler.HandleCollision(dynamicEnemy, projectile);
                     }
                  }
-                 foreach (IBlock block in roomBuilder.CurrentRoom.Barriers)//block collision check)
-                 {
-                     if (dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
-                     {
-                         enemyBlockCollisionHandler.HandleCollision(dynamicEnemy, block);
-                     }
-                 }
+                if (roomBuilder.CurrentRoom.Barriers != null)
+                {
+                    foreach (IBlock block in roomBuilder.CurrentRoom.Barriers)//block collision check)
+                    {
+                        if (dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
+                        {
+                            enemyBlockCollisionHandler.HandleCollision(dynamicEnemy, block);
+                        }
+                    }
+                }
              }
 
 
@@ -130,11 +135,11 @@ using Zelda.NPCs;
 
          protected void CheckStaticEnemyCollision()
          {
-             foreach (INPC dynamicEnemy in dynamicEnemies)
+             foreach (INPC staticEnemy in staticEnemies)
              {
                  foreach (IProjectile projectile in ProjectileStorage.Projectiles)
                  {
-                     projectile.Sprite.Destination.Intersects(dynamicEnemy.Sprite.Destination);
+                     projectile.Sprite.Destination.Intersects(staticEnemy.Sprite.Destination);
                  }
              }
          }

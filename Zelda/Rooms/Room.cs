@@ -23,7 +23,7 @@ namespace Zelda.Rooms
         public HashSet<INPC> NPCs { get { return npcs; } }
         public HashSet<IItem> Items { get { return items; } }
         protected Dictionary<Direction, IBorder> Borders { get { return borders; } }
-        protected List<IBlock> Barriers { get { return barriers; } }
+        public List<IBlock> Barriers { get { return barriers; } }
 
         public Room(string filename)
         {

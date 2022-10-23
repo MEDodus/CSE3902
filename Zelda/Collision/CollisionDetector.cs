@@ -22,6 +22,7 @@ using Zelda.NPCs;
          protected PlayerBlockCollisionHandler playerBlockCollisionHandler = new PlayerBlockCollisionHandler();
          protected PlayerEnemyCollisionHandler playerEnemyCollisionHandler = new PlayerEnemyCollisionHandler();
          protected EnemyBlockCollisionHandler enemyBlockCollisionHandler = new EnemyBlockCollisionHandler();
+        protected EnemyProjectileCollisionHandler enemyProjectileCollisionHandler = new EnemyProjectileCollisionHandler();
 
 
          protected List<INPC> staticEnemies = new List<INPC>();
@@ -109,8 +110,11 @@ using Zelda.NPCs;
              {
                  foreach (IProjectile projectile in ProjectileStorage.Projectiles)
                  {
-                     //check if collision
-                     projectile.Sprite.Destination.Intersects(dynamicEnemy.Sprite.Destination);
+                    //check if collision
+                    if (projectile.Sprite.Destination.Intersects(dynamicEnemy.Sprite.Destination))
+                    {
+                        enemyProjectileCollisionHandler.HandleCollision(dynamicEnemy, projectile);
+                    }
                  }
                  foreach (IBlock block in roomBuilder.CurrentRoom.Barriers)//block collision check)
                  {

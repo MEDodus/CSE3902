@@ -17,11 +17,13 @@ namespace Zelda.Rooms
         protected HashSet<INPC> npcs;
         protected HashSet<IItem> items;
         protected Dictionary<Direction, IBorder> borders;
+        protected List<IBlock> barriers;
 
         public IBlock[,] Blocks { get { return blocks; } }
         public HashSet<INPC> NPCs { get { return npcs; } }
         public HashSet<IItem> Items { get { return items; } }
         protected Dictionary<Direction, IBorder> Borders { get { return borders; } }
+        protected List<IBlock> Barriers { get { return barriers; } }
 
         public Room(string filename)
         {
@@ -72,6 +74,10 @@ namespace Zelda.Rooms
                 for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
                 {
                     blocks[i, j].Draw(spriteBatch);
+                    if (blocks[i, j].CanCollide)
+                    {
+                        barriers.Add(blocks[i, j]);
+                    }
                 }
             }
             foreach (IBorder border in borders.Values)

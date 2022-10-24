@@ -1,0 +1,15 @@
+Code Review By: Alex Reed
+Date: 10/24/2022
+Sprint #: 3
+Class Reviewed:RoomBuilder
+Author: Jacob Pohlabel
+Time to Review:20min
+
+Comments on Readability: The methods/states in this class are very readable.  The names of variables (CurrentRoom, rooms, etc.) describe exactly
+what they contain.  The methods are also descriptive of the jobs they do.  Each method does not do more than what it is described to do.
+
+
+The only thing that is not very readable are the indices.  The array of rooms is set to 17, 
+which could be improved by making it a constant instead of a magic number.  Also, in the method PreviousRoom(),
+line 44 (i = i > 0 ? i - 1 : rooms.Length - 1;) is hard to read. While it effectively does it job, the syntax could make it hard for other
+programmers not as familiar with C# syntax to understand what it accomplishes.

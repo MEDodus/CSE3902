@@ -1,0 +1,16 @@
+Review By: Alex Reed
+Date: 10/24/2022
+Sprint #: 3
+Class Reviewed: Room
+Author: Jacob Pohlabel and Michael Doddus
+Time: 43min.
+
+Code Quality:
+This code is very readable and keeps within the suggest class and method lengths. 
+The class is cohesive as it solely handles room creation, and each of its methods accomplish one goal.
+The code has higher coupling than other classes, but since objects of several types must be present in each room, this can't be avoided.
+Overall, this class has very high code quality.
+
+Hypothetical Change:
+One possible change would be to split each foreach loop into seperate methods which have a descriptive name as to what the loop is accomplishing.
+However, the benefit of improved readability is very small compared to the effort required and increase in class length.  

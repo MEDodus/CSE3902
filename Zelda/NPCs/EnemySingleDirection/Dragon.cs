@@ -24,12 +24,12 @@ namespace Zelda.NPCs.Classes
         protected override void UpdateAdditional(GameTime gameTime, double changeDirectionCooldown)
         {
             // Move around randomly
-            if (changeDirectionCooldown <= 0)
+            if (base.changeDirectionCooldown <= 0)
             {
-                changeDirectionCooldown = 1;
+                base.changeDirectionCooldown = 1;
                 NPCUtil.MoveRandomly(this);
             }
-            changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
+            base.changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
 
             // Attack randomly
             int rand = new Random().Next(100);

@@ -10,6 +10,7 @@ namespace Zelda.NPCs.Classes
     public class OldMan : INPC
     {
         public ISprite Sprite { get { return sprite; } }
+        public bool Dead { get { return false; } }
 
         protected ISprite sprite;
         protected Vector2 position;

@@ -63,6 +63,10 @@ namespace Zelda.Rooms
             foreach (INPC npc in npcs)
             {
                 npc.Update(gameTime);
+                if (npc.Dead)
+                {
+                    npcs.Remove(npc);
+                }
             }
             foreach (IItem item in items)
             {

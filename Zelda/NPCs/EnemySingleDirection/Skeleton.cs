@@ -14,12 +14,12 @@ namespace Zelda.NPCs.Classes
         //private double changeDirectionCooldown = 0; // seconds
         protected override void UpdateAdditional(GameTime gameTime, double changeDirectionCooldown)
         {
-            if (changeDirectionCooldown <= 0)
+            if (base.changeDirectionCooldown <= 0)
             {
-                changeDirectionCooldown = 50;
+                base.changeDirectionCooldown = 1.5;
                 NPCUtil.MoveRandomly(this);
             }
-            changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
+            base.changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
 
             sprite.Update(gameTime);
         }

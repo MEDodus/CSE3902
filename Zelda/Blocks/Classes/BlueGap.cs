@@ -7,7 +7,7 @@ namespace Zelda.Blocks.Classes
 {
     public class BlueGap : IBlock
     {
-        public BlueGap(Vector2 position) : base(BlockSpriteFactory.BlueGapSprite(), position, false)
+        public BlueGap(Vector2 position) : base(BlockSpriteFactory.BlueGapSprite(), position, true)
         {
 
         }

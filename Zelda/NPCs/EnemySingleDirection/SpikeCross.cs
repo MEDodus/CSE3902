@@ -15,9 +15,9 @@ namespace Zelda.NPCs.Classes
         private int timesChangedDirection = 0;
         protected override void UpdateAdditional(GameTime gameTime, double changeDirectionCooldown)
         {
-            if (changeDirectionCooldown <= 0)
+            if (base.changeDirectionCooldown <= 0)
             {
-                changeDirectionCooldown = 1;
+                base.changeDirectionCooldown = 1;
                 timesChangedDirection++;
                 if (timesChangedDirection % 2 == 0)
                 {
@@ -28,7 +28,7 @@ namespace Zelda.NPCs.Classes
                     MoveRight();
                 }
             }
-            changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
+            base.changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
 
             sprite.Update(gameTime);
         }

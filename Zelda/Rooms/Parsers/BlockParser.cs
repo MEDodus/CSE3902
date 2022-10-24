@@ -67,7 +67,7 @@ namespace Zelda.Rooms.Parsers
 
             if (block.CanCollide)
             {
-                barriers.Add(blocks[i, j]);
+                barriers.Add(block);
             }
 
             blocks[i, j] = block;

@@ -6,6 +6,7 @@ namespace Zelda.NPCs
 {
     public interface INPC
     {
+        public bool Dead { get; }
         public ISprite Sprite { get; }
 
         public void Update(GameTime gameTime);

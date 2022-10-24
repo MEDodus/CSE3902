@@ -9,12 +9,14 @@ namespace Zelda.NPCs.Classes
     public abstract class EnemySingleDirection : INPC
     {
         public ISprite Sprite { get { return sprite; } }
+        public bool Dead { get { return dead; } }
 
         protected ISprite sprite;
         protected Vector2 position;
         protected Vector2 moveDirection = new Vector2(0, 0);
         public double changeDirectionCooldown = 0;
         protected int health;
+        protected bool dead;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
 
@@ -25,6 +27,7 @@ namespace Zelda.NPCs.Classes
 
             this.health = health;
             this.blocksPerSecondSpeed = blocksPerSecondSpeed;
+            this.dead = false;
         }
 
         // additional update features that differ between enemies
@@ -83,6 +86,7 @@ namespace Zelda.NPCs.Classes
         public virtual void Die()
         {
             ProjectileStorage.Add(new DeathExplosion(position));
+            this.dead = true;
         }
 
         public virtual void TakeDamage(int damage)
@@ -118,9 +122,10 @@ namespace Zelda.NPCs.Classes
             moveDirection = new Vector2(0, -1);
         }
 
-        public virtual void ChangeDirection()
+        public virtual void ChangeDirection(Vector2 direction)
         {
-            changeDirectionCooldown = -1;
+            this.moveDirection = direction;
+            this.changeDirectionCooldown = 1.5;
         }
     }
 }

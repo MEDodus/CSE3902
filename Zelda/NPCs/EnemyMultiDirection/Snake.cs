@@ -13,11 +13,13 @@ namespace Zelda.NPCs.Classes
     public class Snake : INPC
     {
         public ISprite Sprite { get { return sprite; } }
+        public bool Dead {  get { return dead; } }
 
         public INPCState state;
         public ISprite sprite;
         protected Vector2 position;
         protected int health;
+        protected bool dead;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
         private double changeDirectionCooldown = 0;
@@ -35,6 +37,7 @@ namespace Zelda.NPCs.Classes
 
             health = 1;
             blocksPerSecondSpeed = 1;
+            this.dead = false;
 
         }
 
@@ -76,6 +79,24 @@ namespace Zelda.NPCs.Classes
                 cloud.Draw(spriteBatch);
                 ProjectileStorage.Add(cloud);
                 NPCProjectiles.AddEnemyProjectile(cloud);
+            }
+        }
+        public void ChangeDirection(Vector2 direction)
+        {
+            switch (direction)
+            {
+                case (1, 0):
+                    state.TurnRight();
+                    break;
+                case (-1, 0):
+                    state.TurnLeft();
+                    break;
+                case (0, -1):
+                    state.TurnUp();
+                    break;
+                case (0, 1):
+                    state.TurnDown();
+                    break;
             }
         }
 
@@ -122,12 +143,16 @@ namespace Zelda.NPCs.Classes
         public void TakeDamage(int damage)
         {
             health -= damage;
+            if(health < 0)
+            {
+                Die();
+            }
 
         }
-        public void KilledEnemy()
+        public void Die()
         {
-            //display killed enemy sprite
-            //delete enemy
+            ProjectileStorage.Add(new DeathExplosion(position));
+            this.dead = true;
         }
 
     }

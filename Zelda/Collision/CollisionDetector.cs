@@ -32,6 +32,10 @@ using Zelda.NPCs;
          protected HashSet<INPC> dynamicEnemies = new HashSet<INPC>();
          protected List<ILink> dynamicPlayers = new List<ILink>();
 
+        public CollisionDetector()
+        {
+
+        }
 
          public void DetectCollisions(Game1 myGame, GameTime gameTime, RoomBuilder roomBuilder, ILink link)
          {
@@ -128,7 +132,7 @@ using Zelda.NPCs;
 
                 foreach (IBlock block in roomBuilder.CurrentRoom.Barriers.ToArray())//block collision check)
                 {
-                    if (block != null && dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
+                    if (dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
                     {
                         enemyBlockCollisionHandler.HandleCollision(dynamicEnemy, block);
                     }

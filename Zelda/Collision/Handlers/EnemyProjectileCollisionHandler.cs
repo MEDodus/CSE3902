@@ -21,9 +21,17 @@ namespace Zelda.Collision.Handlers
                 {
                     CollisionHelper((EnemySingleDirection)enemy);
                 }
-                else if (enemy is EnemyMultiDirection)
+                else if (enemy is Snake)
                 {
-                    CollisionHelper((EnemyMultiDirection)enemy);
+                    CollisionHelper((Snake)enemy);
+                }
+                else if (enemy is Dodongo)
+                {
+                    CollisionHelper((Dodongo)enemy);
+                }
+                else if (enemy is Goriya)
+                {
+                    CollisionHelper((Goriya)enemy);
                 }
             }
         }
@@ -31,9 +39,17 @@ namespace Zelda.Collision.Handlers
         {
             enemy.TakeDamage(1);
         }
-        public void CollisionHelper(EnemyMultiDirection enemy)
+        public void CollisionHelper(Snake enemy)
         {
-            enemy.TakeDamage(1);
+            enemy.state.TakeDamage();
+        }
+        public void CollisionHelper(Dodongo enemy)
+        {
+            enemy.state.TakeDamage();
+        }
+        public void CollisionHelper(Goriya enemy)
+        {
+            enemy.state.TakeDamage();
         }
     }
 }

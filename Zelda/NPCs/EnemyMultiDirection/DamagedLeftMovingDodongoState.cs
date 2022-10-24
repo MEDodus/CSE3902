@@ -53,7 +53,7 @@ namespace Zelda.NPCs.EnemyMultiDirection
 
         public void Update(GameTime gameTime)
         {
-            enemy.TakeDamage(1);
+            //enemy.TakeDamage(1);
             //enemy.state = new LeftMovingDodongoState(enemy);
         }
     }

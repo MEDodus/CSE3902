@@ -7,17 +7,21 @@ using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
+using Zelda.Collision;
 
 namespace Zelda.NPCs.Classes
 {
     public class Goriya : INPC
     {
         public ISprite Sprite { get { return sprite; } }
+        public bool Dead { get { return dead; } }
+
 
         public INPCState state;
         public ISprite sprite;
         protected Vector2 position;
         protected int health;
+        protected bool dead;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
         private double damageDelay = 0;
@@ -40,6 +44,7 @@ namespace Zelda.NPCs.Classes
 
             health = 1;
             blocksPerSecondSpeed = 1;
+            this.dead = false;
 
         }
 
@@ -110,8 +115,25 @@ namespace Zelda.NPCs.Classes
                 NPCProjectiles.AddEnemyProjectile(cloud);
             }
         }
-
-        public virtual void MoveUp(GameTime gameTime)
+        public void ChangeDirection(Vector2 direction)
+        {
+            switch (direction)
+            {
+                case (1,0):
+                    state.TurnRight();
+                    break;
+                case (-1, 0):
+                    state.TurnLeft();
+                    break;
+                case (0, -1):
+                    state.TurnUp();
+                    break;
+                case (0, 1):
+                    state.TurnDown();
+                    break;
+            }
+        }
+        public void MoveUp(GameTime gameTime)
         {
             double timeDelta = gameTime.ElapsedGameTime.TotalSeconds;
             double pixelsDelta = blocksPerSecondSpeed * Settings.BLOCK_SIZE * timeDelta;
@@ -163,12 +185,16 @@ namespace Zelda.NPCs.Classes
         {
             health -= damage;
             changeDirectionCooldown = -1;
+            if(health < 0)
+            {
+                Die();
+            }
 
         }
-        public void KilledEnemy()
+        public void Die()
         {
-            //display killed enemy sprite
-            //delete enemy
+            ProjectileStorage.Add(new DeathExplosion(position));
+            this.dead = true;
         }
 
     }

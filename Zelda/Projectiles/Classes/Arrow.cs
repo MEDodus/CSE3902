@@ -17,7 +17,7 @@ namespace Zelda.Projectiles.Classes
 
         }
 
-        public override void Delete()
+        public override void OnDelete()
         {
             ProjectileStorage.Add(new Vanish(position));
         }

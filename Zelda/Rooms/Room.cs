@@ -66,7 +66,7 @@ namespace Zelda.Rooms
                 npc.Update(gameTime);
                 if (npc.Dead)
                 {
-                    npcs.Add(npc);
+                    npcsToRemove.Add(npc);
                 }
             }
             foreach (INPC npc in npcsToRemove)

@@ -12,7 +12,7 @@ namespace Zelda.Projectiles.Classes
         }
 
         private readonly int EXPLOSION_BUFFER_IN_PIXELS = 1 * Settings.BLOCK_SIZE;
-        public override void Delete()
+        public override void OnDelete()
         {
             Random rand = new Random();
             int numExplosions = rand.Next(4, 6);
@@ -23,7 +23,6 @@ namespace Zelda.Projectiles.Classes
                 Explosion explosion = new Explosion(new Vector2(x, y));
                 ProjectileStorage.Add(explosion);
             }
-            base.Delete();
         }
     }
 }

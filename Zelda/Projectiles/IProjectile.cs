@@ -55,9 +55,13 @@ namespace Zelda.Projectiles
             sprite.Draw(spriteBatch, position);
         }
 
-        public virtual void Delete()
+        public void Delete()
         {
             timeLeftUntilDelete = 0;
+        }
+
+        public virtual void OnDelete()
+        {
             // put any deletion effects here (bomb explosions, disappearing clouds, etc.)
         }
     }

@@ -37,7 +37,7 @@ namespace Zelda.Projectiles
             }
             foreach (IProjectile projectile in projectilesToDelete)
             {
-                projectile.Delete();
+                projectile.OnDelete();
                 Projectiles.Remove(projectile);
             }
         }

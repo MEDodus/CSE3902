@@ -18,10 +18,10 @@ using Zelda.NPCs;
  {
      internal class CollisionDetector
      {
-
-         protected PlayerBlockCollisionHandler playerBlockCollisionHandler = new PlayerBlockCollisionHandler();
-         protected PlayerEnemyCollisionHandler playerEnemyCollisionHandler = new PlayerEnemyCollisionHandler();
-         protected EnemyBlockCollisionHandler enemyBlockCollisionHandler = new EnemyBlockCollisionHandler();
+        protected enum CollisionDirection { left, right, up, down }
+        protected PlayerBlockCollisionHandler playerBlockCollisionHandler = new PlayerBlockCollisionHandler();
+        protected PlayerEnemyCollisionHandler playerEnemyCollisionHandler = new PlayerEnemyCollisionHandler();
+        protected EnemyBlockCollisionHandler enemyBlockCollisionHandler = new EnemyBlockCollisionHandler();
         protected EnemyProjectileCollisionHandler enemyProjectileCollisionHandler = new EnemyProjectileCollisionHandler();
         protected PlayerProjectileCollisionHandler playerProjectileCollisionHandler = new PlayerProjectileCollisionHandler();
 
@@ -37,9 +37,9 @@ using Zelda.NPCs;
          {
             this.dynamicEnemies = roomBuilder.CurrentRoom.NPCs;
             this.dynamicPlayers.Add(link);
-             CheckPlayerCollision(myGame, gameTime, roomBuilder);
-             CheckStaticEnemyCollision();  //Will wait to implement static enemy collisions; for now, assume always moving
-             CheckDynamicEnemyCollision(roomBuilder);
+            CheckPlayerCollision(myGame, gameTime, roomBuilder);
+            CheckStaticEnemyCollision();  //Will wait to implement static enemy collisions; for now, assume always moving
+            CheckDynamicEnemyCollision(roomBuilder);
 
          }
 

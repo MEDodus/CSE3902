@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
+using System.Collections.Generic;
+using System.Threading;
 using Zelda.Blocks;
 using Zelda.Blocks.Classes;
 
@@ -8,10 +10,12 @@ namespace Zelda.Rooms.Parsers
     public class BlockParser : Parser
     {
         private IBlock[,] blocks;
+        private List<IBlock> barriers;
 
-        public BlockParser(string filename, IBlock[,] blocks) : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\blocks.csv")
+        public BlockParser(string filename, IBlock[,] blocks, List<IBlock> barriers) : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\blocks.csv")
         {
             this.blocks = blocks;
+            this.barriers = barriers;
         }
 
         protected override void ParseObject(string identifier, int i, int j)
@@ -58,6 +62,12 @@ namespace Zelda.Rooms.Parsers
                     break;
                 default:
                     throw new Exception("Block type not found: " + identifier);
+            }
+
+
+            if (block.CanCollide)
+            {
+                barriers.Add(blocks[i, j]);
             }
 
             blocks[i, j] = block;

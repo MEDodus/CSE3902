@@ -118,16 +118,15 @@ using Zelda.NPCs;
                         enemyProjectileCollisionHandler.HandleCollision(dynamicEnemy, projectile);
                     }
                  }
-                if (roomBuilder.CurrentRoom.Barriers != null)
+
+                foreach (IBlock block in roomBuilder.CurrentRoom.Barriers.ToArray())//block collision check)
                 {
-                    foreach (IBlock block in roomBuilder.CurrentRoom.Barriers)//block collision check)
+                    if (block != null && dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
                     {
-                        if (dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
-                        {
-                            enemyBlockCollisionHandler.HandleCollision(dynamicEnemy, block);
-                        }
+                        enemyBlockCollisionHandler.HandleCollision(dynamicEnemy, block);
                     }
                 }
+                
              }
 
 

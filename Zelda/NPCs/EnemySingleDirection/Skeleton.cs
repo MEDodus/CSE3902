@@ -16,7 +16,7 @@ namespace Zelda.NPCs.Classes
         {
             if (changeDirectionCooldown <= 0)
             {
-                changeDirectionCooldown = 5;
+                changeDirectionCooldown = 50;
                 NPCUtil.MoveRandomly(this);
             }
             changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;

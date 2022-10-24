@@ -107,6 +107,7 @@ namespace Zelda.NPCs.Classes
                 AppearanceCloud cloud = new AppearanceCloud(position);
                 cloud.Draw(spriteBatch);
                 ProjectileStorage.Add(cloud);
+                NPCProjectiles.AddEnemyProjectile(cloud);
             }
         }
 
@@ -152,7 +153,9 @@ namespace Zelda.NPCs.Classes
             {
                 attackCooldown = ATTACK_COOLDOWN_LENGTH;
                 isAttacking = true;
-                ProjectileStorage.Add(new Boomerang(position, direction));
+                IProjectile boomerang = new Boomerang(position, direction);
+                ProjectileStorage.Add(boomerang);
+                NPCProjectiles.AddEnemyProjectile(boomerang);
 
             }
         }

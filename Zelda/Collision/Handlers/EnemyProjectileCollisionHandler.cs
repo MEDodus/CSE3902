@@ -13,15 +13,18 @@ namespace Zelda.Collision.Handlers
     {
         public void HandleCollision(INPC enemy, IProjectile projectile)
         {
-            projectile.Delete();
+            if (!NPCProjectiles.EnemyProjectiles.Contains(projectile))
+            {
+                projectile.Delete();
 
-            if (enemy is EnemySingleDirection)
-            {
-                CollisionHelper((EnemySingleDirection)enemy);
-            }
-            else if (enemy is EnemyMultiDirection)
-            {
-                CollisionHelper((EnemyMultiDirection)enemy);
+                if (enemy is EnemySingleDirection)
+                {
+                    CollisionHelper((EnemySingleDirection)enemy);
+                }
+                else if (enemy is EnemyMultiDirection)
+                {
+                    CollisionHelper((EnemyMultiDirection)enemy);
+                }
             }
         }
         public void CollisionHelper(EnemySingleDirection enemy)

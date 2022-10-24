@@ -37,8 +37,7 @@ using Zelda.NPCs;
          {
             this.dynamicEnemies = roomBuilder.CurrentRoom.NPCs;
             this.dynamicPlayers.Add(link);
-             CheckStaticPlayerCollision(myGame, gameTime);
-             CheckDynamicPlayerCollision(myGame, gameTime, roomBuilder);
+             CheckPlayerCollision(myGame, gameTime, roomBuilder);
              CheckStaticEnemyCollision();  //Will wait to implement static enemy collisions; for now, assume always moving
              CheckDynamicEnemyCollision(roomBuilder);
 
@@ -56,7 +55,6 @@ using Zelda.NPCs;
          }
 
 
-         //LINK COLLISION - NICHOLAS
          protected void CheckStaticPlayerCollision(Game1 myGame, GameTime gameTime)
          {
              foreach (ILink player in staticPlayers)
@@ -74,15 +72,14 @@ using Zelda.NPCs;
                  {
                     if (player.Sprite.Destination.Intersects(projectile.Sprite.Destination))
                     {
-                        playerProjectileCollisionHandler.HandleCollision();
+                        playerProjectileCollisionHandler.HandleCollision(player, projectile, myGame);
                     }
                  }
 
              }
          }
 
-         //LINK COLLISION - NICHOLAS
-         protected void CheckDynamicPlayerCollision(Game1 myGame, GameTime gameTime, RoomBuilder roomBuilder)
+         protected void CheckPlayerCollision(Game1 myGame, GameTime gameTime, RoomBuilder roomBuilder)
          {
              foreach (ILink player in dynamicPlayers)
              {
@@ -99,7 +96,7 @@ using Zelda.NPCs;
                  {
                     if (player.Sprite.Destination.Intersects(projectile.Sprite.Destination))
                     {
-                        playerProjectileCollisionHandler.HandleCollision();
+                        playerProjectileCollisionHandler.HandleCollision(player, projectile, myGame);
                     }
                 }
 
@@ -107,7 +104,7 @@ using Zelda.NPCs;
                  {
                      if (block != null && player.Sprite.Destination.Intersects(block.Sprite.Destination))
                      {
-                         playerBlockCollisionHandler.HandleCollision(player, block, myGame);
+                         playerBlockCollisionHandler.HandleCollision(player, block);
                      }
                  }
 

@@ -60,9 +60,15 @@ namespace Zelda.NPCs.Classes
             {
                 attackCooldown = ATTACK_COOLDOWN_LENGTH;
                 isAttacking = true;
-                ProjectileStorage.Add(new Fireball(position, new Vector2(-1, 0)));
-                ProjectileStorage.Add(new Fireball(position, new Vector2(-3, 1)));
-                ProjectileStorage.Add(new Fireball(position, new Vector2(-3, -1)));
+                IProjectile fireball1 = new Fireball(position, new Vector2(-1, 0));
+                IProjectile fireball2 = new Fireball(position, new Vector2(-3, 1));
+                IProjectile fireball3 = new Fireball(position, new Vector2(-3, -1));
+                ProjectileStorage.Add(fireball1);
+                ProjectileStorage.Add(fireball2);
+                ProjectileStorage.Add(fireball3);
+                NPCProjectiles.AddEnemyProjectile(fireball1);
+                NPCProjectiles.AddEnemyProjectile(fireball2);
+                NPCProjectiles.AddEnemyProjectile(fireball3);
             }
         }
     }

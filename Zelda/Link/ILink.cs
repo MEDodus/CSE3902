@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using System.Security.Cryptography;
+using Zelda.Projectiles;
 using Zelda.Sprites;
 
 namespace Zelda.Link
@@ -10,6 +12,8 @@ namespace Zelda.Link
         public ILinkState State { get; set; }
         public ISprite Sprite { get; set; }
         public Vector2 Position { get; set; }
+        public Vector2 Direction { get; }
+        public HashSet<IProjectile> LinkProjectiles { get; }
 
         public void Reset();
         public void Update(GameTime gameTime);

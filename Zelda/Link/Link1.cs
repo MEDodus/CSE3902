@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using Zelda.Collision.Handlers;
 using Zelda.Controllers;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
@@ -14,12 +15,15 @@ namespace Zelda.Link
         public ILinkState State { get { return state; } set { state = value; } }
         public ISprite Sprite { get { return sprite; } set { sprite = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
+        public Vector2 Direction { get { return facingDirection;  } } 
+        public HashSet<IProjectile> LinkProjectiles { get { return linkProjectiles;  } }
 
         private ILinkState state;
         private ISprite sprite;
         private Vector2 position;
         private Vector2 facingDirection;
         private double swordAttackTimer = 0;
+        private HashSet<IProjectile> linkProjectiles = new HashSet<IProjectile>();
         private HashSet<Keys> movementKeys = new HashSet<Keys>();
 
         public Link1()
@@ -37,8 +41,8 @@ namespace Zelda.Link
 
         public void Reset()
         {
-            position = new Vector2(450, 450);
-            state = new LinkFacingRightState(this);
+            position = new Vector2(475, 500);
+            state = new LinkFacingUpState(this);
             facingDirection = new Vector2(1, 0);
         }
 
@@ -162,6 +166,7 @@ namespace Zelda.Link
             if (item != null)
             {
                 ProjectileStorage.Add(item);
+                linkProjectiles.Add(item);
             }
         }
 

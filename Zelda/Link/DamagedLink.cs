@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using Zelda.Projectiles;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -10,6 +12,8 @@ namespace Zelda.Link
         public ILinkState State { get => decoratedLink.State; set => decoratedLink.State = value; }
         public ISprite Sprite { get => decoratedLink.Sprite; set => decoratedLink.Sprite = value; }
         public Vector2 Position { get => decoratedLink.Position; set => decoratedLink.Position = value; }
+        public Vector2 Direction { get => decoratedLink.Direction; }
+        public HashSet<IProjectile> LinkProjectiles { get => decoratedLink.LinkProjectiles; }
 
         Game1 game;
         ILink decoratedLink;

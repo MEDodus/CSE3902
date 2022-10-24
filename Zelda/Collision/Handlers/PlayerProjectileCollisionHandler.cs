@@ -10,6 +10,7 @@ using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 using Zelda.NPCs.Classes;
 using Zelda.Blocks;
+using Zelda.Projectiles;
 
 namespace Zelda.Collision.Handlers
 {
@@ -25,9 +26,20 @@ namespace Zelda.Collision.Handlers
 
         }
 
-        public void HandleCollision(ILink link, IProjectile projectile)
+        public void HandleCollision(ILink link, IProjectile projectile, Game1 game)
         {
-            
+            if (!link.LinkProjectiles.Contains(projectile))
+            {
+                Vector2 linkDirection = link.Direction;
+                Vector2 projectileDirection = projectile.Velocity;
+                linkDirection.Normalize();
+                projectileDirection.Normalize();
+                if (!Vector2.Add(linkDirection, projectileDirection).Equals(new Vector2(0, 0)))
+                {
+                    game.link.TakeDamage(game);
+                }
+                projectile.Delete();
+            }
         }
 
 

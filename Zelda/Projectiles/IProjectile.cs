@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Windows.Markup;
 using Zelda.Sprites;
 
 namespace Zelda.Projectiles
@@ -13,6 +14,7 @@ namespace Zelda.Projectiles
         protected double timeLeftUntilDelete;
 
         public ISprite Sprite { get { return sprite; } }
+        public Vector2 Velocity { get { return velocity; }}
 
         public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime)
         {
@@ -50,6 +52,7 @@ namespace Zelda.Projectiles
 
         public virtual void Delete()
         {
+            timeLeftUntilDelete = 0;
             // put any deletion effects here (bomb explosions, disappearing clouds, etc.)
         }
     }

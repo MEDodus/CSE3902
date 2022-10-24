@@ -6,18 +6,25 @@ namespace Zelda.Projectiles
 {
     public static class ProjectileStorage
     {
-        private static readonly HashSet<IProjectile> projectiles = new HashSet<IProjectile>();
+        private static readonly HashSet<IProjectile> projectiles = new();
+        private static readonly HashSet<IProjectile> projectilesToAdd = new();
         public static HashSet<IProjectile> Projectiles { 
             get {return projectiles;}
         }
 
         public static void Add(IProjectile projectile)
         {
-            Projectiles.Add(projectile);
+            // Projectiles might be created externally within foreach loops over Projectiles, so do not add directly to Projectiles
+            projectilesToAdd.Add(projectile);
         }
 
         public static void Update(GameTime gameTime)
         {
+            foreach (IProjectile projectile in projectilesToAdd)
+            {
+                Projectiles.Add(projectile);
+            }
+            projectilesToAdd.Clear();
             HashSet<IProjectile> projectilesToDelete = new HashSet<IProjectile>();
             foreach (IProjectile projectile in Projectiles)
             {

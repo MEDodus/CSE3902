@@ -26,7 +26,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite BombSprite()
         {
-            return new Sprite(GetTexture("bomb"), 1);
+            return new Sprite(GetTexture("bomb"), 0.85);
         }
 
         public static ISprite BookOfMagicSprite()

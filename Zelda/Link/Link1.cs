@@ -16,14 +16,12 @@ namespace Zelda.Link
         public ISprite Sprite { get { return sprite; } set { sprite = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
         public Vector2 Direction { get { return facingDirection;  } } 
-        public HashSet<IProjectile> LinkProjectiles { get { return linkProjectiles;  } }
 
         private ILinkState state;
         private ISprite sprite;
         private Vector2 position;
         private Vector2 facingDirection;
         private double swordAttackTimer = 0;
-        private HashSet<IProjectile> linkProjectiles = new HashSet<IProjectile>();
         private HashSet<Keys> movementKeys = new HashSet<Keys>();
 
         public Link1()
@@ -151,7 +149,7 @@ namespace Zelda.Link
                     item = new SilverArrow(defaultItemSpawnPos, facingDirection);
                     break;
                 case 4:
-                    item = new Boomerang(defaultItemSpawnPos, facingDirection);
+                    item = new Boomerang(defaultItemSpawnPos, facingDirection, ProjectileBehavior.Friendly);
                     break;
                 case 5:
                     item = new MagicalBoomerang(defaultItemSpawnPos, facingDirection);
@@ -166,7 +164,6 @@ namespace Zelda.Link
             if (item != null)
             {
                 ProjectileStorage.Add(item);
-                linkProjectiles.Add(item);
             }
         }
 

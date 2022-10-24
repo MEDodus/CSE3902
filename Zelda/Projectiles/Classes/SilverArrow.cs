@@ -12,7 +12,7 @@ namespace Zelda.Projectiles.Classes
                   ProjectileSpriteFactory.RightSilverArrowSprite(),
                   ProjectileSpriteFactory.UpSilverArrowSprite(),
                   ProjectileSpriteFactory.DownSilverArrowSprite(),
-                  position, direction, 15, 0.85)
+                  position, direction, 15, 0.7, ProjectileBehavior.Friendly)
         {
 
         }

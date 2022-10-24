@@ -13,7 +13,6 @@ namespace Zelda.Link
         public ISprite Sprite { get; set; }
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; }
-        public HashSet<IProjectile> LinkProjectiles { get; }
 
         public void Reset();
         public void Update(GameTime gameTime);

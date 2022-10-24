@@ -120,7 +120,6 @@ using Zelda.NPCs;
 
              foreach (INPC dynamicEnemy in dynamicEnemies)
              {
-                //HashSet<IProjectile> projectilesCopy = ProjectileStorage.Projectiles;
                  foreach (IProjectile projectile in ProjectileStorage.Projectiles.ToArray())
                  {
                     //check if collision

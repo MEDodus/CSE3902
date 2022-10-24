@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Projectiles;
 
 namespace Zelda.Rooms
 {
@@ -35,11 +36,13 @@ namespace Zelda.Rooms
         public void NextRoom()
         {
             i = (i + 1) % rooms.Length;
+            ProjectileStorage.Clear();
         }
 
         public void PreviousRoom()
         {
             i = i > 0 ? i - 1 : rooms.Length - 1;
+            ProjectileStorage.Clear();
         }
     }
 }

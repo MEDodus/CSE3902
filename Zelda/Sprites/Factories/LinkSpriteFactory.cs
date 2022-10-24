@@ -6,7 +6,7 @@ namespace Zelda.Sprites.Factories
     public class LinkSpriteFactory : SpriteFactory
     {
         private static readonly string FILE_NAME = "link2";
-        private static readonly double SIZE_IN_BLOCKS = 1;
+        private static readonly double SIZE_IN_BLOCKS = 0.9;
         private static readonly int CELL_SIZE = 16;
         private static readonly int FPS = 6;
 

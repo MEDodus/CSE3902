@@ -12,7 +12,7 @@ namespace Zelda.Projectiles.Classes
                   ProjectileSpriteFactory.RightSwordBeamSprite(),
                   ProjectileSpriteFactory.UpSwordBeamSprite(),
                   ProjectileSpriteFactory.DownSwordBeamSprite(),
-                  position, direction, 15, 0.6)
+                  position, direction, 15, 0.6, ProjectileBehavior.Friendly)
         {
 
         }

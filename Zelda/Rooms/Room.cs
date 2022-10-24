@@ -60,13 +60,18 @@ namespace Zelda.Rooms
             {
                 border.Update(gameTime);
             }
+            HashSet<INPC> npcsToRemove = new();
             foreach (INPC npc in npcs)
             {
                 npc.Update(gameTime);
                 if (npc.Dead)
                 {
-                    npcs.Remove(npc);
+                    npcs.Add(npc);
                 }
+            }
+            foreach (INPC npc in npcsToRemove)
+            {
+                npcs.Remove(npc);
             }
             foreach (IItem item in items)
             {
@@ -81,10 +86,6 @@ namespace Zelda.Rooms
                 for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
                 {
                     blocks[i, j].Draw(spriteBatch);
-                    /*if (blocks[i,j] != null && !blocks[i, j].CanCollide)
-                    {
-                        barriers.Add(blocks[i, j]);
-                    }*/ //Need other way to add blocks to barriers
                 }
             }
             foreach (IBorder border in borders.Values)

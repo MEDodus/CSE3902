@@ -66,9 +66,6 @@ namespace Zelda.NPCs.Classes
                 ProjectileStorage.Add(fireball1);
                 ProjectileStorage.Add(fireball2);
                 ProjectileStorage.Add(fireball3);
-                NPCProjectiles.AddEnemyProjectile(fireball1);
-                NPCProjectiles.AddEnemyProjectile(fireball2);
-                NPCProjectiles.AddEnemyProjectile(fireball3);
             }
         }
     }

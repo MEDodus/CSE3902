@@ -13,7 +13,7 @@ namespace Zelda.Sprites.Factories
         // Enemies (single state)
         public static ISprite BatSprite()
         {
-            return new AnimatedSprite(GetTexture("bat"), 1, 2, 8, 1);
+            return new AnimatedSprite(GetTexture("bat"), 1, 2, 8, 0.9);
         }
 
         public static ISprite GelSprite()
@@ -23,17 +23,17 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite SkeletonSprite()
         {
-            return new AnimatedSprite(GetTexture("skeleton"), 1, 2, 8, 1);
+            return new AnimatedSprite(GetTexture("skeleton"), 1, 2, 8, 0.9);
         }
 
         public static ISprite SpikeCross()
         {
-            return new Sprite(GetTexture("spike_cross"), 1);
+            return new Sprite(GetTexture("spike_cross"), 0.9);
         }
 
         public static ISprite WallmasterSprite()
         {
-            return new AnimatedSprite(GetTexture("hand"), 1, 2, 8, 1);
+            return new AnimatedSprite(GetTexture("hand"), 1, 2, 8, 0.9);
         }
 
         public static ISprite ZolSprite()
@@ -60,7 +60,7 @@ namespace Zelda.Sprites.Factories
         private static int SNAKE_ROW_HEIGHT = 60;
         private static int SNAKE_COLUMN_WIDTH = 64;
         private static int SNAKE_FPS = 8;
-        private static double SNAKE_SIZE_IN_BLOCKS = 1;
+        private static double SNAKE_SIZE_IN_BLOCKS = 0.9;
         public static ISprite RightSnakeSprite()
         {
             return new AnimatedSprite(GetTexture("snake"), 0, 0, 1, 2, SNAKE_ROW_HEIGHT, SNAKE_COLUMN_WIDTH, SNAKE_FPS, SNAKE_SIZE_IN_BLOCKS);
@@ -74,7 +74,7 @@ namespace Zelda.Sprites.Factories
         private static int GORIYA_ROW_HEIGHT = 64;
         private static int GORIYA_COLUMN_WIDTH = 60;
         private static int GORIYA_FPS = 8;
-        private static double GORIYA_SIZE_IN_BLOCKS = 1;
+        private static double GORIYA_SIZE_IN_BLOCKS = 0.9;
         public static ISprite DownGoriyaSprite()
         {
             return new AnimatedSprite(GetTexture("Goriya"), 0, 0, 1, 2, GORIYA_ROW_HEIGHT, GORIYA_COLUMN_WIDTH, GORIYA_FPS, GORIYA_SIZE_IN_BLOCKS);

@@ -14,7 +14,7 @@ namespace Zelda.Projectiles.Classes
                   ProjectileSpriteFactory.RightSwordSprite(),
                   ProjectileSpriteFactory.UpSwordSprite(),
                   ProjectileSpriteFactory.DownSwordSprite(),
-                  position, direction, 7, lifetime)
+                  position, direction, 7, lifetime, ProjectileBehavior.Friendly)
         {
             baseVelocity = velocity;
         }

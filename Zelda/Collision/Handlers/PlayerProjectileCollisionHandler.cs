@@ -28,7 +28,7 @@ namespace Zelda.Collision.Handlers
 
         public void HandleCollision(ILink link, IProjectile projectile, Game1 game)
         {
-            if (!link.LinkProjectiles.Contains(projectile))
+            if (projectile.Behavior == ProjectileBehavior.Enemy || projectile.Behavior == ProjectileBehavior.NeutralHarmful)
             {
                 Vector2 linkDirection = link.Direction;
                 Vector2 projectileDirection = projectile.Velocity;

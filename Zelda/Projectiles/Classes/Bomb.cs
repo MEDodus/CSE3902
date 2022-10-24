@@ -6,7 +6,7 @@ namespace Zelda.Projectiles.Classes
 {
     public class Bomb : IProjectile
     {
-        public Bomb(Vector2 position) : base(ProjectileSpriteFactory.BombSprite(), position, new Vector2(), 0, 2)
+        public Bomb(Vector2 position) : base(ProjectileSpriteFactory.BombSprite(), position, new Vector2(), 0, 2, ProjectileBehavior.NeutralHarmless)
         {
 
         }

@@ -5,6 +5,8 @@ using Zelda.Sprites;
 
 namespace Zelda.Projectiles
 {
+    public enum ProjectileBehavior { Friendly, Enemy, NeutralHarmless, NeutralHarmful }
+
     public abstract class IProjectile
     {
         protected ISprite sprite;
@@ -12,11 +14,13 @@ namespace Zelda.Projectiles
         protected Vector2 velocity; // pixels per second
         protected double lifetime;
         protected double timeLeftUntilDelete;
-
+        protected ProjectileBehavior behavior;
+        
         public ISprite Sprite { get { return sprite; } }
-        public Vector2 Velocity { get { return velocity; }}
+        public Vector2 Velocity { get { return velocity; } }
+        public ProjectileBehavior Behavior { get { return behavior; } }
 
-        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime)
+        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior)
         {
             this.sprite = sprite;
             this.position = position;
@@ -28,6 +32,7 @@ namespace Zelda.Projectiles
             velocity = new Vector2((float)(direction.X * pixelsPerSecondSpeed), (float)(direction.Y * pixelsPerSecondSpeed));
             this.lifetime = lifetime;
             timeLeftUntilDelete = lifetime;
+            this.behavior = behavior;
         }
 
         // Returns whether the projectile should be deleted

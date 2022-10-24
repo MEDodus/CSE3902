@@ -13,7 +13,7 @@ namespace Zelda.Collision.Handlers
     {
         public void HandleCollision(INPC enemy, IProjectile projectile)
         {
-            if (!NPCProjectiles.EnemyProjectiles.Contains(projectile))
+            if (projectile.Behavior == ProjectileBehavior.Friendly || projectile.Behavior == ProjectileBehavior.NeutralHarmful)
             {
                 projectile.Delete();
 

@@ -72,7 +72,7 @@ namespace Zelda.NPCs.Classes
                 appeared = true;
                 AppearanceCloud cloud = new AppearanceCloud(position);
                 cloud.Draw(spriteBatch);
-                ProjectileStorage.Add(new AppearanceCloud(position));
+                ProjectileStorage.Add(cloud);
                 NPCProjectiles.AddEnemyProjectile(cloud);
             }
             DrawAdditional(spriteBatch);

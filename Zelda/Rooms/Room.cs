@@ -14,29 +14,29 @@ namespace Zelda.Rooms
     {
         public enum Direction { Left, Right, Top, Bottom }
 
-        protected IBlock[,] blocks;
+        protected HashSet<IBlock> blocks;
+        protected HashSet<IBlock> collidableBlocks;
+        protected HashSet<IBlock> belowLayerBlocks; // contains floor blocks underneath pushable blocks
         protected HashSet<INPC> npcs;
         protected HashSet<IItem> items;
         protected Dictionary<Direction, IBorder> borders;
-        protected List<IBlock> barriers;
 
-        public IBlock[,] Blocks { get { return blocks; } }
+        public HashSet<IBlock> Blocks { get { return blocks; } }
+        public HashSet<IBlock> CollidableBlocks { get { return collidableBlocks; } }
         public HashSet<INPC> NPCs { get { return npcs; } }
         public HashSet<IItem> Items { get { return items; } }
         protected Dictionary<Direction, IBorder> Borders { get { return borders; } }
-        public List<IBlock> Barriers { get { return barriers; } }
 
         public Room(string filename)
         {
-            //added two to each side to account for invisible barriers for walls
-            blocks = new IBlock[Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT];
-
+            blocks = new HashSet<IBlock>();
+            collidableBlocks = new HashSet<IBlock>();
+            belowLayerBlocks = new HashSet<IBlock>();
             npcs = new HashSet<INPC>();
             items = new HashSet<IItem>();
             borders = new Dictionary<Direction, IBorder>();
-            barriers = new List<IBlock>();
 
-            BlockParser blockParser = new BlockParser(filename, blocks, barriers);
+            BlockParser blockParser = new BlockParser(filename, blocks, collidableBlocks, belowLayerBlocks);
             BorderParser borderParser = new BorderParser(filename, borders);
             NPCParser npcParser = new NPCParser(filename, npcs);
             ItemParser itemParser = new ItemParser(filename, items);
@@ -49,12 +49,9 @@ namespace Zelda.Rooms
 
         public void Update(GameTime gameTime)
         {
-            for (int i = 0; i < Settings.ROOM_WIDTH; i++)
+            foreach (IBlock block in blocks)
             {
-                for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
-                {
-                    blocks[i, j].Update(gameTime);
-                }
+                block.Update(gameTime);
             }
             foreach (IBorder border in borders.Values)
             {
@@ -81,12 +78,13 @@ namespace Zelda.Rooms
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            for (int i = 0; i < Settings.ROOM_WIDTH; i++)
+            foreach (IBlock block in belowLayerBlocks)
             {
-                for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
-                {
-                    blocks[i, j].Draw(spriteBatch);
-                }
+                block.Draw(spriteBatch);
+            }
+            foreach (IBlock block in blocks)
+            {
+                block.Draw(spriteBatch);
             }
             foreach (IBorder border in borders.Values)
             {

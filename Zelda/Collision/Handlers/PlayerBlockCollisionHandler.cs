@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Zelda.Link;
 using Zelda.Blocks;
+using Zelda.Blocks.Classes;
 
 namespace Zelda.Collision.Handlers
 {
@@ -44,6 +45,11 @@ namespace Zelda.Collision.Handlers
                     break;
             }
             link.Position = new Vector2(x, y);
+            if (block is PushableBlock)
+            {
+                PushableBlock pushable = (PushableBlock)block;
+                pushable.Push(-collisionDirection.Vector);
+            }
         }
 
         protected void GetCollisionDirection(ILink link, IBlock block)

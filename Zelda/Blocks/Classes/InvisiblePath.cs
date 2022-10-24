@@ -6,7 +6,7 @@ namespace Zelda.Blocks.Classes
 {
     public class InvisiblePath : IBlock
     {
-        public InvisiblePath(Vector2 position) : base(BlockSpriteFactory.InvisibleSprite(), position, false)
+        public InvisiblePath(Vector2 position) : base(BlockSpriteFactory.InvisibleSprite(), position, false, false)
         {
 
         }

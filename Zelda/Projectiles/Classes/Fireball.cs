@@ -9,5 +9,10 @@ namespace Zelda.Projectiles.Classes
         {
 
         }
+
+        public override void OnDelete()
+        {
+            ProjectileStorage.Add(new Explosion(position));
+        }
     }
 }

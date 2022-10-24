@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace Zelda.Collision
 {
+    public enum Sides { left, right, up, down, none }
+
     public class Direction
     {
-        enum Sides { left, right, up, down, none }
         private Sides direction;
         private Vector2 vector;
 
+        public Sides Side { get { return direction; } }
         public Vector2 Vector { get { return vector; } }
 
         public Direction(String direction)

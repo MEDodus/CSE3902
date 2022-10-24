@@ -166,10 +166,5 @@ namespace Zelda.Link
                 ProjectileStorage.Add(item);
             }
         }
-
-        public void CancelMovement()
-        {
-            state.CancelMovement();
-        }
     }
 }

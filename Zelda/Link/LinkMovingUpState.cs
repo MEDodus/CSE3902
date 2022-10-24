@@ -44,12 +44,6 @@ namespace Zelda.Link
         {
             game.link = new DamagedLink(link, game);
         }
-        public void CancelMovement()
-        {
-            link.Position += new Vector2(0, 5);
-            link.State = new LinkFacingUpState(link);
-        }
-
         public void Update()
         {
             link.Position += new Vector2(0, -2);

@@ -42,10 +42,6 @@ namespace Zelda.Link
         {
             game.link = new DamagedLink(link, game);
         }
-        public void CancelMovement()
-        {
-            // No movement to cancel when Link isn't moving
-        }
 
         public void Update()
         {

@@ -1,4 +1,5 @@
 ﻿using Zelda.Blocks;
+using Zelda.Blocks.Classes;
 using Zelda.Projectiles;
 
 namespace Zelda.Collision.Handlers
@@ -7,7 +8,8 @@ namespace Zelda.Collision.Handlers
     {
         public void HandleCollision(IProjectile projectile, IBlock block)
         {
-            if (projectile.Behavior != ProjectileBehavior.NeutralHarmless && projectile.Behavior != ProjectileBehavior.NeutralHarmful)
+            if (projectile.Behavior != ProjectileBehavior.NeutralHarmless && projectile.Behavior != ProjectileBehavior.NeutralHarmful
+                && !block.IsGap)
             {
                 projectile.Delete();
             }

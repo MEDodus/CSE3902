@@ -25,9 +25,9 @@ namespace Zelda.Collision.Handlers
 
         }
 
-        public void HandleCollision(ILink link, IBlock block)
+        public void HandleCollision(ILink link, IBlock block, Game1 game)
         {
-            link.CancelMovement();
+            game.link.CancelMovement();
         }
 
 

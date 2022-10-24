@@ -27,7 +27,7 @@ namespace Zelda.Collision.Handlers
 
         public void HandleCollision(ILink link, INPC enemy, Game1 game, GameTime gameTime)
         {
-            link.TakeDamage(game);
+            game.link.TakeDamage(game);
         }
 
 

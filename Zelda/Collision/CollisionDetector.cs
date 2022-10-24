@@ -23,6 +23,7 @@ using Zelda.NPCs;
          protected PlayerEnemyCollisionHandler playerEnemyCollisionHandler = new PlayerEnemyCollisionHandler();
          protected EnemyBlockCollisionHandler enemyBlockCollisionHandler = new EnemyBlockCollisionHandler();
         protected EnemyProjectileCollisionHandler enemyProjectileCollisionHandler = new EnemyProjectileCollisionHandler();
+        protected PlayerProjectileCollisionHandler playerProjectileCollisionHandler = new PlayerProjectileCollisionHandler();
 
 
          protected List<INPC> staticEnemies = new List<INPC>();
@@ -35,8 +36,9 @@ using Zelda.NPCs;
          public void DetectCollisions(Game1 myGame, GameTime gameTime, RoomBuilder roomBuilder, ILink link)
          {
             this.dynamicEnemies = roomBuilder.CurrentRoom.NPCs;
-             //CheckStaticPlayerCollision(myGame, gameTime);
-             //CheckDynamicPlayerCollision(myGame, gameTime, roomBuilder);
+            this.dynamicPlayers.Add(link);
+             CheckStaticPlayerCollision(myGame, gameTime);
+             CheckDynamicPlayerCollision(myGame, gameTime, roomBuilder);
              CheckStaticEnemyCollision();  //Will wait to implement static enemy collisions; for now, assume always moving
              CheckDynamicEnemyCollision(roomBuilder);
 
@@ -55,54 +57,62 @@ using Zelda.NPCs;
 
 
          //LINK COLLISION - NICHOLAS
-         /*protected void CheckStaticPlayerCollision(Game1 myGame, GameTime gameTime)
+         protected void CheckStaticPlayerCollision(Game1 myGame, GameTime gameTime)
          {
              foreach (ILink player in staticPlayers)
              {
 
                  foreach (INPC dynamicEnemy in dynamicEnemies)
                  {
-                     check if collision -->
-                     playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
+                    if (player.Sprite.Destination.Intersects(dynamicEnemy.Sprite.Destination))
+                    {
+                        playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
+                    }
                  }
 
-                 foreach (IProjectile projectile in ProjectileStorage.projectiles)
+                 foreach (IProjectile projectile in ProjectileStorage.Projectiles.ToArray())
                  {
-                     check if collision
-                     playerProjectileCollisionHandler.HandleCollision();
+                    if (player.Sprite.Destination.Intersects(projectile.Sprite.Destination))
+                    {
+                        playerProjectileCollisionHandler.HandleCollision();
+                    }
                  }
 
              }
-         }*/
+         }
 
          //LINK COLLISION - NICHOLAS
-         /*protected void CheckDynamicPlayerCollision(Game1 myGame, GameTime gameTime, RoomBuilder roomBuilder)
+         protected void CheckDynamicPlayerCollision(Game1 myGame, GameTime gameTime, RoomBuilder roomBuilder)
          {
              foreach (ILink player in dynamicPlayers)
              {
 
                  foreach (INPC dynamicEnemy in dynamicEnemies)
                  {
-                     check if collision -->
-                     playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
-                 }
+                    if (player.Sprite.Destination.Intersects(dynamicEnemy.Sprite.Destination))
+                    {
+                        playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
+                    }
+                }
 
-                 foreach(IProjectile projectile in ProjectileStorage.projectiles)
+                 foreach(IProjectile projectile in ProjectileStorage.Projectiles.ToArray())
                  {
-                     check if collision
-                     playerProjectileCollisionHandler.HandleCollision();
-                 }
+                    if (player.Sprite.Destination.Intersects(projectile.Sprite.Destination))
+                    {
+                        playerProjectileCollisionHandler.HandleCollision();
+                    }
+                }
 
-                 check block collisisons
-                 foreach(IBlock block in roomBuilder.CurrentRoom.Barriers)
+                 foreach(IBlock block in roomBuilder.CurrentRoom.Barriers.ToArray())
                  {
-                     if (player.Sprite.Destination.Intersects(block.Sprite.Destination){
-                         PlayerBlockCollisionHandler.HandleCollision(player, block);
+                     if (block != null && player.Sprite.Destination.Intersects(block.Sprite.Destination))
+                     {
+                         playerBlockCollisionHandler.HandleCollision(player, block, myGame);
                      }
                  }
 
              }
-         }*/
+         }
 
          protected void CheckDynamicEnemyCollision(RoomBuilder roomBuilder)
          {

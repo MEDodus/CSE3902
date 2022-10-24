@@ -1,0 +1,12 @@
+Review By: Jacob Pohlabel
+Date: 10/24/2022
+Sprint: 3
+Class Reviewed: CollisionDetector
+Author: Alex Reed
+Time: 10 min
+
+Code quality:
+The code is pretty straightforward and easy to understand, as it basically loops over all of the collidable objects and checks if they are colliding. There is a lot of repeated logic that could probably be factored out, it might be tough to do this though since the collections of objects are different types.
+
+Hypothetical change:
+A new interface for collidable objects (ICollidable?) could maybe be created, that IBlock, IEnemy, etc. could extend. RoomBuilder could also use Lists/HashSets/etc. for storing all of its objects rather than different types of collections. Then, the collision detection code inside this class could be simplified. Right now, though, this class is about as simple as it can be without adding things to other classes, so it would be a trade-off.

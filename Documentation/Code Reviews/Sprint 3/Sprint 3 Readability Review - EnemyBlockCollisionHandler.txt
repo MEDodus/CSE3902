@@ -1,0 +1,11 @@
+﻿Author: Jacob Pohlabel
+Date: 10/24/2022
+Sprint: 3
+File Name: EnemyBlockCollisionHandler.cs
+File Author: Alex Reed
+
+Code readability:
+The code is pretty easy to read since the class is short. The meanings of the methods are not very clear from their names, though, such as CollisionHelper. Casting to EnemySingleDirection and EnemyMultipleDirection might not be the cleanest solution either, but I'm not sure how you could change this. Some methods should also be made private. Good class overall, not too many problems.
+
+Hypothetical change:
+Rename CollisionHelper to something more meaningful and make these methods private. The GetCollisionDirection function could also be factored out into CollisionDetector if other classes need to use it.

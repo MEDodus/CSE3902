@@ -11,14 +11,14 @@ namespace Zelda.Rooms.Parsers
     {
         private HashSet<IBlock> blocks;
         private HashSet<IBlock> collidableBlocks;
-        private HashSet<IBlock> belowLayerBlocks;
+        private HashSet<IBlock> pushableBlocks;
 
-        public BlockParser(string filename, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> belowLayerBlocks) 
+        public BlockParser(string filename, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> pushableBlocks) 
             : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\blocks.csv")
         {
             this.blocks = blocks;
             this.collidableBlocks = collidableBlocks;
-            this.belowLayerBlocks = belowLayerBlocks;
+            this.pushableBlocks = pushableBlocks;
         }
 
         protected override void ParseObject(string identifier, int i, int j)
@@ -43,8 +43,10 @@ namespace Zelda.Rooms.Parsers
                     block = new Ladder(spawnPos);
                     break;
                 case "pushable_block":
-                    block = new PushableBlock(spawnPos);
-                    belowLayerBlocks.Add(new BlueFloor(spawnPos));
+                    block = new BlueFloor(spawnPos);
+                    PushableBlock pushableBlock = new PushableBlock(spawnPos);
+                    pushableBlocks.Add(pushableBlock);
+                    collidableBlocks.Add(pushableBlock);
                     break;
                 case "static_block":
                     block = new StaticBlock(spawnPos);

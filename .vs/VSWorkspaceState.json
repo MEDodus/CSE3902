@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Documentation",
+    "\\Zelda",
+    "\\Zelda\\Link"
   ],
   "SelectedNode": "\\Zelda.sln",
   "PreviewInSolutionExplorer": false

@@ -16,7 +16,7 @@ namespace Zelda.Rooms
 
         protected HashSet<IBlock> blocks;
         protected HashSet<IBlock> collidableBlocks;
-        protected HashSet<IBlock> belowLayerBlocks; // contains floor blocks underneath pushable blocks
+        protected HashSet<IBlock> pushableBlocks;
         protected HashSet<INPC> npcs;
         protected HashSet<IItem> items;
         protected Dictionary<Direction, IBorder> borders;
@@ -31,12 +31,12 @@ namespace Zelda.Rooms
         {
             blocks = new HashSet<IBlock>();
             collidableBlocks = new HashSet<IBlock>();
-            belowLayerBlocks = new HashSet<IBlock>();
+            pushableBlocks = new HashSet<IBlock>();
             npcs = new HashSet<INPC>();
             items = new HashSet<IItem>();
             borders = new Dictionary<Direction, IBorder>();
 
-            BlockParser blockParser = new BlockParser(filename, blocks, collidableBlocks, belowLayerBlocks);
+            BlockParser blockParser = new BlockParser(filename, blocks, collidableBlocks, pushableBlocks);
             BorderParser borderParser = new BorderParser(filename, borders);
             NPCParser npcParser = new NPCParser(filename, npcs);
             ItemParser itemParser = new ItemParser(filename, items);
@@ -52,6 +52,10 @@ namespace Zelda.Rooms
             foreach (IBlock block in blocks)
             {
                 block.Update(gameTime);
+            }
+            foreach (IBlock pushableBlock in pushableBlocks)
+            {
+                pushableBlock.Update(gameTime);
             }
             foreach (IBorder border in borders.Values)
             {
@@ -78,11 +82,11 @@ namespace Zelda.Rooms
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (IBlock block in belowLayerBlocks)
+            foreach (IBlock block in blocks)
             {
                 block.Draw(spriteBatch);
             }
-            foreach (IBlock block in blocks)
+            foreach (IBlock block in pushableBlocks)
             {
                 block.Draw(spriteBatch);
             }

@@ -5,7 +5,7 @@ namespace Zelda.Borders.Classes
 {
     public class RightWall : RightBorder
     {
-        public RightWall() : base(BorderSpriteFactory.RightWallSprite())
+        public RightWall() : base(BorderSpriteFactory.RightWallSprite(), true)
         {
 
         }

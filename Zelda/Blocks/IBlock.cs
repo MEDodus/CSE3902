@@ -8,7 +8,7 @@ namespace Zelda.Blocks
     public abstract class IBlock
     {
         public ISprite Sprite { get { return sprite; } }
-        public bool CanCollide { get { return canCollide; } }
+        public bool CanCollide { get { return canCollide; } set { canCollide = value; } }
         public bool IsGap { get { return isGap; } }
 
         protected ISprite sprite;

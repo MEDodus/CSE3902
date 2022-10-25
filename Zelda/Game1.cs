@@ -93,6 +93,7 @@ namespace Zelda
             roomBuilder.Draw(_spriteBatch);
             ProjectileStorage.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
+            roomBuilder.DrawTopLayer(_spriteBatch);
 
             _spriteBatch.End();
 

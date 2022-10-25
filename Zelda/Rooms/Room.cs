@@ -16,9 +16,10 @@ namespace Zelda.Rooms
 
         protected HashSet<IBlock> blocks;
         protected HashSet<IBlock> collidableBlocks;
-        protected HashSet<IBlock> pushableBlocks;
+        protected HashSet<IBlock> topLayerBlocks;
         protected HashSet<INPC> npcs;
         protected HashSet<IItem> items;
+        private HashSet<IItem> itemsToRemove;
         protected Dictionary<Direction, IBorder> borders;
 
         public HashSet<IBlock> Blocks { get { return blocks; } }
@@ -31,13 +32,14 @@ namespace Zelda.Rooms
         {
             blocks = new HashSet<IBlock>();
             collidableBlocks = new HashSet<IBlock>();
-            pushableBlocks = new HashSet<IBlock>();
+            topLayerBlocks = new HashSet<IBlock>();
             npcs = new HashSet<INPC>();
             items = new HashSet<IItem>();
+            itemsToRemove = new HashSet<IItem>();
             borders = new Dictionary<Direction, IBorder>();
 
-            BlockParser blockParser = new BlockParser(filename, blocks, collidableBlocks, pushableBlocks);
-            BorderParser borderParser = new BorderParser(filename, borders);
+            BlockParser blockParser = new BlockParser(filename, blocks, collidableBlocks, topLayerBlocks);
+            BorderParser borderParser = new BorderParser(filename, borders, collidableBlocks);
             NPCParser npcParser = new NPCParser(filename, npcs);
             ItemParser itemParser = new ItemParser(filename, items);
 
@@ -53,9 +55,9 @@ namespace Zelda.Rooms
             {
                 block.Update(gameTime);
             }
-            foreach (IBlock pushableBlock in pushableBlocks)
+            foreach (IBlock block in topLayerBlocks)
             {
-                pushableBlock.Update(gameTime);
+                block.Update(gameTime);
             }
             foreach (IBorder border in borders.Values)
             {
@@ -74,6 +76,11 @@ namespace Zelda.Rooms
             {
                 npcs.Remove(npc);
             }
+            foreach (IItem item in itemsToRemove)
+            {
+                items.Remove(item);
+            }
+            itemsToRemove.Clear();
             foreach (IItem item in items)
             {
                 item.Update(gameTime);
@@ -86,13 +93,10 @@ namespace Zelda.Rooms
             {
                 block.Draw(spriteBatch);
             }
-            foreach (IBlock block in pushableBlocks)
+            foreach (IBlock block in collidableBlocks)
             {
+                // border blocks are in collidableBlocks but not in blocks
                 block.Draw(spriteBatch);
-            }
-            foreach (IBorder border in borders.Values)
-            {
-                border.Draw(spriteBatch);
             }
             foreach (INPC npc in npcs)
             {
@@ -102,6 +106,23 @@ namespace Zelda.Rooms
             {
                 item.Draw(spriteBatch);
             }
+        }
+
+        public void DrawTopLayer(SpriteBatch spriteBatch)
+        {
+            foreach (IBlock block in topLayerBlocks)
+            {
+                block.Draw(spriteBatch);
+            }
+            foreach (IBorder border in borders.Values)
+            {
+                border.Draw(spriteBatch);
+            }
+        }
+
+        public void RemoveItem(IItem item)
+        {
+            itemsToRemove.Add(item);
         }
     }
 }

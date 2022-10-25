@@ -5,7 +5,7 @@ namespace Zelda.Borders.Classes
 {
     public class BottomLockedDoor : BottomBorder
     {
-        public BottomLockedDoor() : base(BorderSpriteFactory.BottomLockedDoorSprite())
+        public BottomLockedDoor() : base(BorderSpriteFactory.BottomLockedDoorSprite(), true)
         {
 
         }

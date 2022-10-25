@@ -11,20 +11,32 @@ namespace Zelda.Rooms.Parsers
     {
         private HashSet<IBlock> blocks;
         private HashSet<IBlock> collidableBlocks;
-        private HashSet<IBlock> pushableBlocks;
+        private HashSet<IBlock> topLayerBlocks;
 
-        public BlockParser(string filename, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> pushableBlocks) 
+        public BlockParser(string filename, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> topLayerBlocks)
             : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\blocks.csv")
         {
             this.blocks = blocks;
             this.collidableBlocks = collidableBlocks;
-            this.pushableBlocks = pushableBlocks;
+            this.topLayerBlocks = topLayerBlocks;
+        }
+
+        public override void Parse()
+        {
+            base.Parse();
+            // add floors that will show underneath doors
+            ParseObject("blue_floor", -1, Settings.ROOM_HEIGHT / 2);
+            ParseObject("blue_floor", Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT / 2);
+            ParseObject("blue_floor", Settings.ROOM_WIDTH / 2 - 1, -1);
+            ParseObject("blue_floor", Settings.ROOM_WIDTH / 2, -1);
+            ParseObject("blue_floor", Settings.ROOM_WIDTH / 2 - 1, Settings.ROOM_HEIGHT);
+            ParseObject("blue_floor", Settings.ROOM_WIDTH / 2, Settings.ROOM_HEIGHT);
         }
 
         protected override void ParseObject(string identifier, int i, int j)
         {
             IBlock block;
-            Vector2 spawnPos = GetSpawnPosition(i, j ) - new Vector2(Settings.BLOCK_SIZE, Settings.BLOCK_SIZE);
+            Vector2 spawnPos = GetSpawnPosition(i, j);
             switch (identifier)
             {
                 case "black_gap":
@@ -45,7 +57,7 @@ namespace Zelda.Rooms.Parsers
                 case "pushable_block":
                     block = new BlueFloor(spawnPos);
                     PushableBlock pushableBlock = new PushableBlock(spawnPos);
-                    pushableBlocks.Add(pushableBlock);
+                    topLayerBlocks.Add(pushableBlock);
                     collidableBlocks.Add(pushableBlock);
                     break;
                 case "static_block":
@@ -53,6 +65,8 @@ namespace Zelda.Rooms.Parsers
                     break;
                 case "stairs":
                     block = new Stairs(spawnPos);
+                    BlueFloor floor = new BlueFloor(spawnPos + new Vector2(Settings.BLOCK_SIZE, 0));
+                    topLayerBlocks.Add(floor);
                     break;
                 case "statue_1":
                     block = new Statue1(spawnPos);

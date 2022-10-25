@@ -33,6 +33,11 @@ namespace Zelda.Rooms
             rooms[i].Draw(spriteBatch);
         }
 
+        public void DrawTopLayer(SpriteBatch spriteBatch)
+        {
+            rooms[i].DrawTopLayer(spriteBatch);
+        }
+
         public void NextRoom()
         {
             i = (i + 1) % rooms.Length;

@@ -21,6 +21,9 @@ namespace Zelda.Collision.Handlers
 
         public void HandleCollision(ILink link, IBlock block)
         {
+            if (!block.CanCollide)
+                return;
+
             GetCollisionDirection(link, block);
             Rectangle linkRectangle = link.Sprite.Destination;
             Rectangle blockRectangle = block.Sprite.Destination;

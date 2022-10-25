@@ -5,7 +5,7 @@ namespace Zelda.Borders.Classes
 {
     public class TopWall : TopBorder
     {
-        public TopWall() : base(BorderSpriteFactory.TopWallSprite())
+        public TopWall() : base(BorderSpriteFactory.TopWallSprite(), true)
         {
 
         }

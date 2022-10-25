@@ -7,6 +7,7 @@ using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Blocks;
 using Zelda.Collision.Handlers;
+using Zelda.Items;
 
 namespace Zelda.Collision
 {
@@ -20,6 +21,7 @@ namespace Zelda.Collision
         private EnemyProjectileCollisionHandler enemyProjectileCollisionHandler = new EnemyProjectileCollisionHandler();
         private PlayerProjectileCollisionHandler playerProjectileCollisionHandler = new PlayerProjectileCollisionHandler();
         private ProjectileBlockCollisionHandler projectileBlockCollisionHandler = new ProjectileBlockCollisionHandler();
+        private PlayerItemCollisionHandler playerItemCollisionHandler = new PlayerItemCollisionHandler();
 
         private List<INPC> staticEnemies = new List<INPC>();
         private List<ILink> staticPlayers = new List<ILink>();
@@ -96,6 +98,13 @@ namespace Zelda.Collision
                     if (block != null && player.Sprite.Destination.Intersects(block.Sprite.Destination))
                     {
                         playerBlockCollisionHandler.HandleCollision(player, block);
+                    }
+                }
+                foreach (IItem item in roomBuilder.CurrentRoom.Items)
+                {
+                    if (player.Sprite.Destination.Intersects(item.Sprite.Destination))
+                    {
+                        playerItemCollisionHandler.HandleCollision(player, item, roomBuilder);
                     }
                 }
             }

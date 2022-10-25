@@ -5,7 +5,7 @@ namespace Zelda.Borders.Classes
 {
     public class LeftLockedDoor : LeftBorder
     {
-        public LeftLockedDoor() : base(BorderSpriteFactory.LeftLockedDoorSprite())
+        public LeftLockedDoor() : base(BorderSpriteFactory.LeftLockedDoorSprite(), true)
         {
 
         }

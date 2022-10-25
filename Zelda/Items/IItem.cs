@@ -6,6 +6,8 @@ namespace Zelda.Items
 {
     public abstract class IItem
     {
+        public ISprite Sprite { get { return sprite; } }
+
         protected ISprite sprite;
         protected Vector2 position;
 

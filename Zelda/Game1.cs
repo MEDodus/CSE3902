@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Zelda.Collision;
 using Zelda.Commands;
 using Zelda.Controllers;
+using Zelda.HUD;
 using Zelda.Link;
 using Zelda.Projectiles;
 using Zelda.Rooms;
@@ -33,6 +34,7 @@ namespace Zelda
         public ILink link;
         private CommandBuilder commandBuilder;
         private CollisionDetector collisionDetector;
+        private IHUD hud;
 
         public Game1()
         {
@@ -61,6 +63,8 @@ namespace Zelda
 
             collisionDetector = new CollisionDetector();
 
+            hud = new LinkHUD();
+
             base.Initialize();
         }
 
@@ -81,6 +85,8 @@ namespace Zelda
 
             collisionDetector.DetectCollisions(this, gameTime, roomBuilder, link);
 
+            hud.Update(gameTime);
+
             base.Update(gameTime);
         }
 
@@ -94,6 +100,8 @@ namespace Zelda
             ProjectileStorage.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
             roomBuilder.DrawTopLayer(_spriteBatch);
+
+            hud.Draw(_spriteBatch);
 
             _spriteBatch.End();
 

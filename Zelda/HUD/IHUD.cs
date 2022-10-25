@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -9,7 +11,7 @@ namespace Zelda.HUD
 {
     internal interface IHUD
     {
-        public void Update();
-        public void Draw();
+        public void Update(GameTime gameTime);
+        public void Draw(SpriteBatch spriteBatch);
     }
 }

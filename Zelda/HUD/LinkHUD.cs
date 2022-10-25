@@ -8,6 +8,7 @@ namespace Zelda.HUD
 {
     internal class LinkHUD : IHUD
     {
+
         public LinkHUD()
         {
             //initialize map

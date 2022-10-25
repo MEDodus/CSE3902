@@ -55,29 +55,43 @@ namespace Zelda.Rooms.Parsers
                 else
                     border = new BottomLockedDoor();
             }
+            else if (identifier == "white_brick")
+            {
+                if (i == 0)
+                    CreateLeftRightWhiteBrickBlocks(-2);
+                else if (i == 1)
+                    CreateLeftRightWhiteBrickBlocks(Settings.ROOM_WIDTH);
+                else if (i == 2)
+                    CreateTopWhiteBrickBlocks();
+                else
+                    CreateBottomWhiteBrickBlocks();
+            }
 
-            Room.Direction direction;
-            if (i == 0)
+            if (border != null)
             {
-                direction = Room.Direction.Left;
-                CreateLeftRightInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border);
+                Room.Direction direction;
+                if (i == 0)
+                {
+                    direction = Room.Direction.Left;
+                    CreateLeftRightInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border);
+                }
+                else if (i == 1)
+                {
+                    direction = Room.Direction.Right;
+                    CreateLeftRightInvisibleBlocks(Settings.ROOM_WIDTH, Settings.BLOCK_SIZE, border);
+                }
+                else if (i == 2)
+                {
+                    direction = Room.Direction.Top;
+                    CreateTopBottomInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border);
+                }
+                else
+                {
+                    direction = Room.Direction.Bottom;
+                    CreateTopBottomInvisibleBlocks(Settings.ROOM_HEIGHT, Settings.BLOCK_SIZE, border);
+                }
+                borders.Add(direction, border);
             }
-            else if (i == 1)
-            {
-                direction = Room.Direction.Right;
-                CreateLeftRightInvisibleBlocks(Settings.ROOM_WIDTH, Settings.BLOCK_SIZE, border);
-            }
-            else if (i == 2)
-            {
-                direction = Room.Direction.Top;
-                CreateTopBottomInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border);
-            }
-            else
-            {
-                direction = Room.Direction.Bottom;
-                CreateTopBottomInvisibleBlocks(Settings.ROOM_HEIGHT, Settings.BLOCK_SIZE, border);
-            } 
-            borders.Add(direction, border);
         }
 
         private void CreateLeftRightInvisibleBlocks(int i, int doorOffset, IBorder border)
@@ -118,6 +132,54 @@ namespace Zelda.Rooms.Parsers
                 else
                 {
                     collidableBlocks.Add(new InvisibleBarrier(spawnPosition));
+                }
+            }
+        }
+
+        private void CreateLeftRightWhiteBrickBlocks(int iStart)
+        {
+            for (int i = iStart; i < iStart + 2; i++)
+            {
+                for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
+                {
+                    collidableBlocks.Add(new WhiteBrick(GetSpawnPosition(i, j)));
+                }
+            }
+        }
+
+        private void CreateBottomWhiteBrickBlocks()
+        {
+            for (int i = -2; i < Settings.ROOM_WIDTH + 2; i++)
+            {
+                for (int j = Settings.ROOM_HEIGHT; j < Settings.ROOM_HEIGHT + 2; j++)
+                {
+                    collidableBlocks.Add(new WhiteBrick(GetSpawnPosition(i, j)));
+                }
+            }
+        }
+
+        private void CreateTopWhiteBrickBlocks()
+        {
+            for (int i = -2; i < Settings.ROOM_WIDTH + 2; i++)
+            {
+                for (int j = -2; j < 0; j++)
+                {
+                    Vector2 spawnPosition = GetSpawnPosition(i, j);
+                    if (i == 3)
+                    {
+                        collidableBlocks.Add(new Ladder(spawnPosition));
+                        if (j == -2)
+                        {
+                            collidableBlocks.Add(new Door(GetSpawnPosition(i, j - 1), false));
+                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i - 1, j - 1)));
+                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i + 1, j - 1)));
+                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i, j - 2)));
+                        }
+                    }
+                    else
+                    {
+                        collidableBlocks.Add(new WhiteBrick(spawnPosition));
+                    }
                 }
             }
         }

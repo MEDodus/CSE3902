@@ -5,7 +5,7 @@ namespace Zelda.Blocks.Classes
 {
     public class WhiteBrick : IBlock
     {
-        public WhiteBrick(Vector2 position) : base(BlockSpriteFactory.WhiteBrickSprite(), position, false, false)
+        public WhiteBrick(Vector2 position) : base(BlockSpriteFactory.WhiteBrickSprite(), position, true, false)
         {
 
         }

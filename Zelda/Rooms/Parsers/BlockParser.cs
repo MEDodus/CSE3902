@@ -74,6 +74,9 @@ namespace Zelda.Rooms.Parsers
                 case "statue_2":
                     block = new Statue2(spawnPos);
                     break;
+                case "white_brick":
+                    block = new WhiteBrick(spawnPos);
+                    break;
                 case "invisible_barrier":
                     block = new InvisibleBarrier(spawnPos);
                     break;

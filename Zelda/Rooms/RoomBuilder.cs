@@ -6,7 +6,7 @@ namespace Zelda.Rooms
 {
     public class RoomBuilder
     {
-        private Room[] rooms = new Room[17];
+        private Room[] rooms = new Room[18];
         private int i;
 
         public Room CurrentRoom 

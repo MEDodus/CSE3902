@@ -14,7 +14,7 @@ Class coupling: 75
 Lines of source code: 1824
 Lines of executable code: 498
 
-Week 1 (9/28/22):
+Week 3 (9/28/22):
 Maintainability index: 88
 Cyclomatic complexity: 652
 Depth of inheritance: 2

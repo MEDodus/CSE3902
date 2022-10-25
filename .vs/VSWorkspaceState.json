@@ -1,16 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Documentation",
-    "\\Documentation\\Code Metrics",
-    "\\Documentation\\Code Reviews",
-    "\\Documentation\\Reflections",
-    "\\Zelda",
-    "\\Zelda\\Blocks",
-    "\\Zelda\\Blocks\\Classes",
-    "\\Zelda\\Rooms",
-    "\\Zelda\\Rooms\\Parsers"
+    ""
   ],
-  "SelectedNode": "\\Documentation\\README.txt",
+  "SelectedNode": "\\Zelda.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,16 @@
+Review By: Nicholas Younoszai
+Date: 10/24/2022
+Sprint #: 3
+Class Reviewed: Parser
+Author: Michael Dodus
+Time: 23 minutes
+
+Code Quality: 
+This class serves as a parser for the CSV files, so it is separate from pretty much everything else in the project.
+All of the methods implemented here are pretty short and serve a single purpose, which is good. The class itself
+is also pretty short, which is likely due to it being an abstract class with the specific objects being parsed in their
+own classes, which is also very good and improved the quality. It keeps this class short and is useful for all the other parsers. 
+
+Hypothetical Change:
+A potential change that could be added to this class would be some simple error checking to help determine what went wrong in
+a file if there was an error causing it to be unable to be parsed.

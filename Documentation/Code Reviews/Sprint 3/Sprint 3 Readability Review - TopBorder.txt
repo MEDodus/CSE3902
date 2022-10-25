@@ -1,0 +1,12 @@
+Code Review By: Michael Dodus
+Date: 10/24/2022
+Sprint #: 3
+Class Reviewed: TopBorder
+Author: Jacob Pohlabel
+Time to Review: 20min.
+
+Comments on Readability: Great readability in terms of descriptive words to desribe our object. The code only has a constructor, no methods
+are provided in this class making it the shortest code I have seen in any of our sprints so far. I'm fought to say whether or not using Settings
+class is good or bad. I think for readability it can make it harder to read and understand the parameters that are passed in, but I think I like 
+the idea of storing variables that multiple classes will need to access in some static class. Great overall (perhaps change accessing Settings var
+iables).

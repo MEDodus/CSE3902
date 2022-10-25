@@ -1,0 +1,15 @@
+Review By: Michael Dodus
+Date: 10/24/2022
+Sprint: 3
+Class Reviewed: MouseControl
+Author: Prithviraj Patel
+Time: 15min.
+
+Code quality:
+The code for MouseControl is extremely functional. That being said there isn't much responsibilty to this class (all the better!). Methods are only a
+few lines max, and passed parameters do not exceed 4 arguments. In addition only 2 class members are declared. This is high class code!
+
+Hypothetical change:
+Potentially switching ExecuteCommands() to include an additional passed HashSet argument. This isn't necessary but it would cut down the Update()
+method by one line of code and we need every line cut we can get! Other than that, potential future-proofing... i.e. adding methods to allow 
+re-registering commands so, for example, if there was a menu, players could register a button to another command.

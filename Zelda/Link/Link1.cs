@@ -123,18 +123,19 @@ namespace Zelda.Link
                     // base attack
                     if (swordAttackTimer <= 0)
                     {
-                        swordAttackTimer = 0.35;
+                        //swordAttackTimer = 0.35;
                         // adjust spawn position if facing left or up
                         Vector2 spawnPos = defaultItemSpawnPos;
-                        if (facingDirection.Equals(new Vector2(-1, 0)))
+                        /*if (facingDirection.Equals(new Vector2(-1, 0)))
                         {
                             spawnPos += new Vector2(-20, 0);
                         }
                         else if (facingDirection.Equals(new Vector2(0, -1)))
                         {
                             spawnPos += new Vector2(0, -22);
-                        }
-                        item = new Sword(spawnPos, facingDirection, 0.3);
+                        }*/
+                        
+                        //item = new Sword(position, facingDirection, 0.3);
                     }
                     break;
                 case 1:

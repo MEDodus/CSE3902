@@ -6,6 +6,7 @@ namespace Zelda.Sprites.Factories
     public class LinkSpriteFactory : SpriteFactory
     {
         private static readonly string FILE_NAME = "link2";
+        private static readonly string FILE_NAME_2 = "Link";
         private static readonly double SIZE_IN_BLOCKS = 1;
         private static readonly int CELL_SIZE = 16;
         private static readonly int FPS = 6;
@@ -18,7 +19,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite LinkFacingLeftSprite()
         {
-            return new Sprite(GetTexture(FILE_NAME), 3 * CELL_SIZE, CELL_SIZE, CELL_SIZE, CELL_SIZE, SIZE_IN_BLOCKS);
+            return new Sprite(GetTexture(FILE_NAME), 3 * CELL_SIZE, CELL_SIZE + 1, CELL_SIZE, CELL_SIZE, SIZE_IN_BLOCKS);
         }
 
         public static ISprite LinkFacingRightSprite()
@@ -71,6 +72,26 @@ namespace Zelda.Sprites.Factories
         public static ISprite LinkUsingItemUpSprite()
         {
             return new Sprite(GetTexture(FILE_NAME), 2 * CELL_SIZE, 2 * CELL_SIZE, CELL_SIZE, CELL_SIZE, SIZE_IN_BLOCKS);
+        }
+
+        public static ISprite LinkUsingSwordDownSprite()
+        {
+            return new SwordSprite(GetTexture(FILE_NAME_2), 6, SIZE_IN_BLOCKS, 0);
+        }
+
+        public static ISprite LinkUsingSwordLeftSprite()
+        {
+            return new SwordSprite(GetTexture(FILE_NAME_2), 6, SIZE_IN_BLOCKS, 1);
+        }
+
+        public static ISprite LinkUsingSwordRightSprite()
+        {
+            return new SwordSprite(GetTexture(FILE_NAME_2), 6, SIZE_IN_BLOCKS, 2);
+        }
+
+        public static ISprite LinkUsingSwordUpSprite()
+        {
+            return new SwordSprite(GetTexture(FILE_NAME_2), 6, SIZE_IN_BLOCKS, 3);
         }
     }
 }

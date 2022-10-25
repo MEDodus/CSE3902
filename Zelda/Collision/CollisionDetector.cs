@@ -62,13 +62,13 @@ using Zelda.NPCs;
 
                  foreach (INPC dynamicEnemy in dynamicEnemies)
                  {
-                     check if collision -->
+                     // check if collision -->
                      playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
                  }
 
                  foreach (IProjectile projectile in ProjectileStorage.projectiles)
                  {
-                     check if collision
+                     // check if collision
                      playerProjectileCollisionHandler.HandleCollision();
                  }
 

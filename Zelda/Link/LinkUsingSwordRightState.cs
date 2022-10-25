@@ -1,19 +1,21 @@
-﻿ using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Zelda.Sprites.Factories;
-using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
 namespace Zelda.Link
 {
-    public class LinkUsingItemDownState : ILinkState
+    public class LinkUsingSwordRightState : ILinkState
     {
         private ILink link;
         private int runTime = 0;
 
-        public LinkUsingItemDownState(ILink link)
+        public LinkUsingSwordRightState(ILink link)
         {
             this.link = link;
-            link.Sprite = LinkSpriteFactory.LinkUsingItemDownSprite();
+            link.Sprite = LinkSpriteFactory.LinkUsingSwordRightSprite();
         }
 
         public void MoveUp()
@@ -47,13 +49,13 @@ namespace Zelda.Link
 
         public void Update()
         {
-            if (runTime < 10)
+            if (runTime < 20)
             {
                 runTime++;
             }
             else
             {
-                link.State = new LinkFacingDownState(link);
+                link.State = new LinkFacingRightState(link);
             }
         }
     }

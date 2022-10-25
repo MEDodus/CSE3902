@@ -35,7 +35,13 @@ namespace Zelda.Link
         }
         public void UseItem(int itemNum)
         {
-            link.State = new LinkUsingItemDownState(link);
+            if (itemNum == 0)
+            {
+                link.State = new LinkUsingSwordDownState(link);
+            } else
+            {
+                link.State = new LinkUsingItemDownState(link);
+            }
             link.CreateItem(itemNum);
         }
         public void TakeDamage(Game1 game)

@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
+using System.Reflection.Metadata.Ecma335;
 using Zelda.Projectiles.Classes.Abstract;
+using Zelda.Sprites.Classes;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
@@ -10,10 +12,10 @@ namespace Zelda.Projectiles.Classes
 
         public Sword(Vector2 position, Vector2 direction, double lifetime)
             : base(
-                  ProjectileSpriteFactory.LeftSwordSprite(),
-                  ProjectileSpriteFactory.RightSwordSprite(),
-                  ProjectileSpriteFactory.UpSwordSprite(),
-                  ProjectileSpriteFactory.DownSwordSprite(),
+                  LinkSpriteFactory.LinkUsingSwordLeftSprite(),
+                  LinkSpriteFactory.LinkUsingSwordRightSprite(),
+                  LinkSpriteFactory.LinkUsingSwordUpSprite(),
+                  LinkSpriteFactory.LinkUsingSwordDownSprite(),
                   position, direction, 7, lifetime)
         {
             baseVelocity = velocity;
@@ -21,10 +23,17 @@ namespace Zelda.Projectiles.Classes
 
         public override bool Update(GameTime gameTime)
         {
-            // move in original direction until half of the liftime is up, then return towards link
-            int multiplier = timeLeftUntilDelete > lifetime / 2.0 ? 1 : -1;
-            velocity = baseVelocity * multiplier;
-            return base.Update(gameTime);
+            double time = gameTime.ElapsedGameTime.TotalSeconds;
+            timeLeftUntilDelete -= time;
+            if (timeLeftUntilDelete <= 0)
+            {
+                return true;
+            }
+
+            //position += new Vector2((float)(velocity.X * time), (float)(velocity.Y * time));
+            this.sprite.Update(gameTime);
+            SwordSprite sprite = (SwordSprite)this.Sprite;
+            return sprite.AnimationFinished();
         }
     }
 }

@@ -1,0 +1,16 @@
+Code Review By: Nicholas Younoszai
+Date: 10/24/2022
+Sprint #: 3
+Class Reviewed: Block Parser
+Author: Michael Dodus
+Time to Review: 15 minutes
+
+Comments on Readability:
+I think this class is very readable. The majority of the class is a large switch case, which is long but it is also honestly
+pretty easy to understand what is happening in it since the names of everything being parsed is very clear. There are some
+HashSets for for all the blocks, collidable blocks, and top layer blocks. Since there are only 3 of these with clear names, it is
+easy to identify what they are meant to hold. I think all of the variable names are very easy to read and understand what they are
+for. The hardest part of reading this code was the part in the overridden Parse method to draw floors under the doors. Understanding what some
+of those numbers were for was somewhat difficult, but the comment helped understand what was happening and it makes more sense because
+of that. I think that this is a very readable parser for blocks, helped in some spots by the comments.
+

@@ -6,6 +6,13 @@ namespace Zelda.Sprites.Factories
 {
     public class HUDSpriteFactory : SpriteFactory
     {
+        //BACKGROUND SPRITES
+        public static ISprite LinkHUDBackground()
+        {
+            return new Sprite(GetTexture("link_hud_background"), HUDUtilities.HUD_X, HUDUtilities.HUD_Y, HUDUtilities.HUD_WIDTH, HUDUtilities.HUD_HEIGHT, HUDUtilities.BACKGROUND_BLOCK_SIZE);
+        }
+
+        //HEART SPRITES
         public static ISprite FullHeart()
         {
             return new Sprite(GetTexture("heart_display"), HUDUtilities.FULL_HEART_COLUMN * HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH, HUDUtilities.HEART_ROW * HUDUtilities.HEART_DISPLAY_ROW_HEIGHT, HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH, HUDUtilities.HEART_DISPLAY_ROW_HEIGHT, HUDUtilities.HEART_DISPLAY_BLOCK_SIZE);

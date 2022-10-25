@@ -179,3 +179,4 @@ C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.pdb
 C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
 C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
 C:\Users\alexr\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_display.xnb
+C:\Users\alexr\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hud_background.xnb

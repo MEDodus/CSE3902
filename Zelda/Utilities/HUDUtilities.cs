@@ -8,9 +8,12 @@ namespace Zelda.Utilities
 {
     public static class HUDUtilities
     {
-        //MAIN HUD VARIABLES
+        //LINK HUD VARIABLES
         public static readonly int HUD_X = 0;
         public static readonly int HUD_Y = 0;
+        public static readonly int HUD_WIDTH = 256;
+        public static readonly int HUD_HEIGHT = 56;
+        public static readonly int BACKGROUND_BLOCK_SIZE = 5;
 
         //HEALTH DISPLAY - MAIN
         public static readonly int HEALTH_DISPLAY_X = HUD_X + 0;

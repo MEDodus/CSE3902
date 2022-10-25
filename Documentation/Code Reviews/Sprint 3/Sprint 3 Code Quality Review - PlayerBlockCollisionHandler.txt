@@ -1,0 +1,11 @@
+Review By: Prithviraj Patel
+Date: 10/24/2022
+Sprint #: 3
+Class Reviewed: PlayerBlockCollisionHandler
+Author: Nicholas Younoszai
+Time: 10min.
+
+Code Quality:
+Code Quality nice and simple, it is easy to read and understand. The function names and variable names are easily relatable
+and readable, which makes the code easy to understand. The only suggestion which not even needed, however we could just write a brief
+description before methods would make the code more easy to understand clearly.

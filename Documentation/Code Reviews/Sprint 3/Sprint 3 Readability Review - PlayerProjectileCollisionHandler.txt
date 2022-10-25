@@ -1,0 +1,13 @@
+Review By: Prithviraj Patel
+Date: 10/24/2022
+Sprint #: 3
+Class Reviewed: PlayerProjectileCollisionHandler
+Author: Nicholas Younoszai
+Time: 10min.
+
+Readability:
+The Code is simple and easy to read. The function names and the variable names are relatable. It is well formatted and 
+confusion when reading the code. 
+
+Suggestion:
+Just a few comments before function and in condition would help understand it better and with easy.

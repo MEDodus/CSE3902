@@ -9,7 +9,13 @@ namespace Zelda.Sprites.Factories
         //BACKGROUND SPRITES
         public static ISprite LinkHUDBackground()
         {
-            return new Sprite(GetTexture("link_hud_background"), HUDUtilities.HUD_X, HUDUtilities.HUD_Y, HUDUtilities.HUD_WIDTH, HUDUtilities.HUD_HEIGHT, HUDUtilities.BACKGROUND_BLOCK_SIZE);
+            return new Sprite(GetTexture("link_hud_background"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.HUD_WIDTH, HUDUtilities.HUD_HEIGHT, HUDUtilities.BACKGROUND_BLOCK_SIZE);
+        }
+
+        //MAP SPRITES
+        public static ISprite DungeonHUDMap()
+        {
+            return new Sprite(GetTexture("dungeon_hud_map"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.MAP_WIDTH, HUDUtilities.MAP_HEIGHT, HUDUtilities.MAP_BLOCK_SIZE);
         }
 
         //HEART SPRITES

@@ -11,12 +11,14 @@ namespace Zelda.HUD
 {
     internal class LinkHUD : IHUD
     {
-        protected HealthDisplay healthDisplay;
         protected HUDBackground hudBackground;
+        protected DungeonHUDMap map;
+        protected HealthDisplay healthDisplay;
+
         public LinkHUD()
         {
             hudBackground = new HUDBackground();
-            //initialize map
+            map = new DungeonHUDMap();
             //initialize weapon/item displays
             healthDisplay = new HealthDisplay();
 
@@ -24,12 +26,14 @@ namespace Zelda.HUD
         }
         public void Update(GameTime gameTime, ILink link)
         {
-            hudBackground.Update(gameTime, link);   
+            hudBackground.Update(gameTime, link);
+            map.Update(gameTime, link);
             healthDisplay.Update(gameTime, link);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
             hudBackground.Draw(spriteBatch);
+            map.Draw(spriteBatch);
             healthDisplay.Draw(spriteBatch);
         }
     }

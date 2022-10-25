@@ -15,12 +15,14 @@ namespace Zelda.Projectiles
         protected double lifetime;
         protected double timeLeftUntilDelete;
         protected ProjectileBehavior behavior;
+        protected bool canCollide;
         
         public ISprite Sprite { get { return sprite; } }
         public Vector2 Velocity { get { return velocity; } }
         public ProjectileBehavior Behavior { get { return behavior; } }
+        public bool CanCollide { get { return canCollide; } }
 
-        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior)
+        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior, bool canCollide)
         {
             this.sprite = sprite;
             this.position = position;
@@ -33,7 +35,11 @@ namespace Zelda.Projectiles
             this.lifetime = lifetime;
             timeLeftUntilDelete = lifetime;
             this.behavior = behavior;
+            this.canCollide = canCollide;
         }
+
+        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior)
+            : this(sprite, position, direction, blocksPerSecondSpeed, lifetime, behavior, true) { }
 
         // Returns whether the projectile should be deleted
         public virtual bool Update(GameTime gameTime)

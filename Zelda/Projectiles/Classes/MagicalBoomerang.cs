@@ -8,7 +8,7 @@ namespace Zelda.Projectiles.Classes
         public MagicalBoomerang(Vector2 position, Vector2 direction) : base(position, direction, ProjectileBehavior.Friendly)
         {
             sprite = ProjectileSpriteFactory.MagicalBoomerangSprite();
-            lifetime = 2.5;
+            lifetime = 1.8;
             timeLeftUntilDelete = lifetime;
         }
     }

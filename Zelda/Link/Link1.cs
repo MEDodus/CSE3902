@@ -41,7 +41,7 @@ namespace Zelda.Link
         {
             position = new Vector2(475, 500);
             state = new LinkFacingUpState(this);
-            facingDirection = new Vector2(1, 0);
+            facingDirection = new Vector2(0, -1);
         }
 
         public void Update(GameTime gameTime)
@@ -126,15 +126,19 @@ namespace Zelda.Link
                     if (swordAttackTimer <= 0)
                     {
                         swordAttackTimer = 0.35;
-                        // adjust spawn position if facing left or up
+                        // adjust spawn position
                         Vector2 spawnPos = defaultItemSpawnPos;
                         if (facingDirection.Equals(new Vector2(-1, 0)))
                         {
                             spawnPos += new Vector2(-20, 0);
                         }
-                        else if (facingDirection.Equals(new Vector2(0, -1)))
+                        else if (facingDirection.Equals(new Vector2(1, 0)))
                         {
-                            spawnPos += new Vector2(0, -22);
+                            spawnPos += new Vector2(-10, 0);
+                        }
+                        else
+                        {
+                            spawnPos += new Vector2(0, -20);
                         }
                         item = new Sword(spawnPos, facingDirection, 0.3);
                     }

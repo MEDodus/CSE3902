@@ -8,8 +8,7 @@ namespace Zelda.Collision.Handlers
     {
         public void HandleCollision(IProjectile projectile, IBlock block)
         {
-            if (projectile.Behavior != ProjectileBehavior.NeutralHarmless && projectile.Behavior != ProjectileBehavior.NeutralHarmful
-                && !block.IsGap)
+            if (projectile.CanCollide && !block.IsGap)
             {
                 projectile.Delete();
             }

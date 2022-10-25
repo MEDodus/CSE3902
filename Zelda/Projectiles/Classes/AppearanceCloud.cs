@@ -5,7 +5,7 @@ namespace Zelda.Projectiles.Classes
 {
     public class AppearanceCloud : IProjectile
     {
-        public AppearanceCloud(Vector2 position) : base(ProjectileSpriteFactory.AppearanceCloudSprite(), position, new Vector2(), 0, 0.5, ProjectileBehavior.NeutralHarmless)
+        public AppearanceCloud(Vector2 position) : base(ProjectileSpriteFactory.AppearanceCloudSprite(), position, new Vector2(), 0, 0.5, ProjectileBehavior.NeutralHarmless, false)
         {
 
         }

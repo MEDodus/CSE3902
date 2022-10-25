@@ -12,22 +12,22 @@ namespace Zelda.Utilities
         public static readonly int ORIGIN = 0;
 
         //LINK HUD VARIABLES
-        public static readonly int HUD_X = 0;
-        public static readonly int HUD_Y = 0;
+        public static readonly int HUD_X = 180;
+        public static readonly int HUD_Y = 10;
         public static readonly int HUD_WIDTH = 256;
         public static readonly int HUD_HEIGHT = 56;
-        public static readonly int BACKGROUND_BLOCK_SIZE = 5;
+        public static readonly int BACKGROUND_BLOCK_SIZE = 14;
 
         //DUNGEON HUD MAP 
         public static readonly int MAP_WIDTH = 48;
         public static readonly int MAP_HEIGHT = 24;
-        public static readonly int MAP_X = HUD_X + 0;
-        public static readonly int MAP_Y = HUD_Y + 0;
+        public static readonly int MAP_X = HUD_X + 30;
+        public static readonly int MAP_Y = HUD_Y + 70;
         public static readonly int MAP_BLOCK_SIZE = 3;
 
         //HEALTH DISPLAY - MAIN
-        public static readonly int HEALTH_DISPLAY_X = HUD_X + 0;
-        public static readonly int HEALTH_DISPLAY_Y = HUD_Y + 0;
+        public static readonly int HEALTH_DISPLAY_X = HUD_X + 510;
+        public static readonly int HEALTH_DISPLAY_Y = HUD_Y + 100;
 
         //HEALTH DISPLAY - HEART
         public static readonly int HEART_DISPLAY_ROW_HEIGHT = 8;

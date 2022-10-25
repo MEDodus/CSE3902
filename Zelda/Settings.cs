@@ -7,7 +7,7 @@
         public static readonly int ROOM_WIDTH = 12; // blocks
         public static readonly int ROOM_HEIGHT = 7; // blocks
         public static readonly int ROOM_POSITION_X = 200;
-        public static readonly int ROOM_POSITION_Y = 200;
+        public static readonly int ROOM_POSITION_Y = 300;
 
         public static readonly int LINK_SIZE_MULT = 3; // To use for link classes for sizing link in window
     }

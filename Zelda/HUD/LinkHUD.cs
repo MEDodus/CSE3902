@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zelda.Link;
 
 namespace Zelda.HUD
 {
@@ -19,9 +20,9 @@ namespace Zelda.HUD
             healthDisplay = new HealthDisplay();
 
         }
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ILink link)
         {
-            healthDisplay.Update(gameTime);
+            healthDisplay.Update(gameTime, link);
         }
         public void Draw(SpriteBatch spriteBatch)
         {

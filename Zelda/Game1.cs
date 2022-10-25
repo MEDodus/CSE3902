@@ -85,7 +85,7 @@ namespace Zelda
 
             collisionDetector.DetectCollisions(this, gameTime, roomBuilder, link);
 
-            hud.Update(gameTime);
+            hud.Update(gameTime, link);
 
             base.Update(gameTime);
         }

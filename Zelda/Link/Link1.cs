@@ -7,6 +7,7 @@ using Zelda.Controllers;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
+using Zelda.Utilities;
 
 namespace Zelda.Link
 {
@@ -15,7 +16,7 @@ namespace Zelda.Link
         public ILinkState State { get { return state; } set { state = value; } }
         public ISprite Sprite { get { return sprite; } set { sprite = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
-        public Vector2 Direction { get { return facingDirection;  } } 
+        public Vector2 Direction { get { return facingDirection;  } }
 
         private ILinkState state;
         private ISprite sprite;

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zelda.Link;
 using Zelda.Sprites;
 using Zelda.Utilities;
 
@@ -23,9 +24,24 @@ namespace Zelda.HUD
             }
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ILink link)
         {
-
+            int offset = 1;
+            for (int currentHeart = 0; currentHeart < LinkUtilities.TOTAL_HEALTH; currentHeart++)
+            {
+                if (currentHeart + offset <= LinkUtilities.CURRENT_HEALTH)
+                {
+                    hearts[currentHeart].FullHeart();
+                }
+                else if (currentHeart + offset == Math.Ceiling(LinkUtilities.CURRENT_HEALTH))
+                {
+                    hearts[currentHeart].HalfHeart();
+                }
+                else
+                {
+                    hearts[currentHeart].EmptyHeart();
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

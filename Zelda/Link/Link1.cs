@@ -8,6 +8,7 @@ using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Utilities;
+using Zelda.Inventory;
 
 namespace Zelda.Link
 {
@@ -17,6 +18,7 @@ namespace Zelda.Link
         public ISprite Sprite { get { return sprite; } set { sprite = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
         public Vector2 Direction { get { return facingDirection;  } }
+        public IInventory Inventory { get { return inventory; } }
 
         private ILinkState state;
         private ISprite sprite;
@@ -24,7 +26,7 @@ namespace Zelda.Link
         private Vector2 facingDirection;
         private double swordAttackTimer = 0;
         private HashSet<Keys> movementKeys = new HashSet<Keys>();
-
+        private IInventory inventory;
         public Link1()
         {
             Reset();
@@ -36,6 +38,8 @@ namespace Zelda.Link
             movementKeys.Add(Keys.Left);
             movementKeys.Add(Keys.Down);
             movementKeys.Add(Keys.Right);
+
+            inventory = new LinkInventory();
         }
 
         public void Reset()

@@ -40,5 +40,8 @@ namespace Zelda.Utilities
         public static readonly int FULL_HEART_COLUMN = 2;
         public static readonly int HEART_ROW = 0;
         public static readonly int HEART_OFFSET = 17;
+
+        //FONT
+
     }
 }

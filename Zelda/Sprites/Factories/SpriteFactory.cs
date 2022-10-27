@@ -8,8 +8,10 @@ namespace Zelda.Sprites.Factories
     // Sprite factories are not static (as they must inherit this abstract class), but all of their methods are static
     public abstract class SpriteFactory
     {
-        private static ContentManager content;
+        protected static ContentManager content;
         private static readonly Dictionary<string, Texture2D> Textures = new Dictionary<string, Texture2D>();
+
+        public ContentManager Content { get { return content; } }
 
         public static void Initialize(ContentManager content)
         {

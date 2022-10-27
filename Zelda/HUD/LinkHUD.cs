@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zelda.Link;
+using Zelda.Utilities;
 
 namespace Zelda.HUD
 {
@@ -14,6 +15,7 @@ namespace Zelda.HUD
         protected HUDBackground hudBackground;
         protected DungeonHUDMap map;
         protected HealthDisplay healthDisplay;
+        protected HUDItemQuantity bombQuantity;
 
         public LinkHUD()
         {
@@ -21,6 +23,7 @@ namespace Zelda.HUD
             map = new DungeonHUDMap();
             //initialize weapon/item displays
             healthDisplay = new HealthDisplay();
+            bombQuantity = new HUDItemQuantity(new Vector2(HUDUtilities.HUD_X + 20, HUDUtilities.MAP_Y - 30), "Level 1");
 
 
         }
@@ -29,12 +32,14 @@ namespace Zelda.HUD
             hudBackground.Update(gameTime, link);
             map.Update(gameTime, link);
             healthDisplay.Update(gameTime, link);
+            bombQuantity.Update(gameTime, link);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
             hudBackground.Draw(spriteBatch);
             map.Draw(spriteBatch);
             healthDisplay.Draw(spriteBatch);
+            bombQuantity.Draw(spriteBatch);
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System.Data;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using System.Data;
+using System.Net.Mime;
 using Zelda.Sprites.Classes;
 using Zelda.Utilities;
 
@@ -6,6 +9,7 @@ namespace Zelda.Sprites.Factories
 {
     public class HUDSpriteFactory : SpriteFactory
     {
+
         //BACKGROUND SPRITES
         public static ISprite LinkHUDBackground()
         {
@@ -16,6 +20,12 @@ namespace Zelda.Sprites.Factories
         public static ISprite DungeonHUDMap()
         {
             return new Sprite(GetTexture("dungeon_hud_map"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.MAP_WIDTH, HUDUtilities.MAP_HEIGHT, HUDUtilities.MAP_BLOCK_SIZE);
+        }
+
+        //FONT SPRITE
+        public static SpriteFont HUDFont()
+        {
+            return content.Load<SpriteFont>("Font");
         }
 
         //HEART SPRITES

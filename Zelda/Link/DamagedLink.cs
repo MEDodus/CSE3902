@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
@@ -61,19 +62,19 @@ namespace Zelda.Link
 
         public void MoveUp()
         {
-            decoratedLink.MoveUp();
+            // Can't move when damaged
         }
         public void MoveDown()
         {
-            decoratedLink.MoveDown();
+            // Can't move when damaged
         }
         public void MoveLeft()
         {
-            decoratedLink.MoveLeft();
+            // Can't move when damaged
         }
         public void MoveRight()
         {
-            decoratedLink.MoveRight();
+            // Can't move when damaged
         }
         public void TakeDamage(Game1 game)
         {
@@ -82,12 +83,18 @@ namespace Zelda.Link
 
         public void UseItem(int itemNum)
         {
-            decoratedLink.UseItem(itemNum);
+            // Can't use items when damaged
         }
         
         public void CreateItem(int itemNum)
         {
-            decoratedLink.CreateItem(itemNum);
+            // Can't create items when damaged
+        }
+
+        public bool Equip(IItem item)
+        {
+            // Can't equip items when damaged
+            return false;
         }
 
         public void RemoveDecorator()

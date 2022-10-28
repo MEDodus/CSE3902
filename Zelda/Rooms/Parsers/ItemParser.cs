@@ -51,9 +51,6 @@ namespace Zelda.Rooms.Parsers
                 case "compass":
                     item = new Compass(spawnPos);
                     break;
-                case "fire":
-                    item = new Fire(spawnPos);
-                    break;
                 case "five_rupies":
                     item = new FiveRupies(spawnPos);
                     break;

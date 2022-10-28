@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Sprites;
 
@@ -25,5 +26,6 @@ namespace Zelda.Link
         public void TakeDamage(Game1 game);
         public void UseItem(int itemNum);
         public void CreateItem(int itemNum);
+        public bool Equip(IItem item);
     }
 }

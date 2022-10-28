@@ -18,8 +18,11 @@ namespace Zelda.Collision.Handlers
 
         public void HandleCollision(ILink link, IItem item, RoomBuilder roomBuilder)
         {
-            // TODO: add item to inventory once inventory system is made
-            roomBuilder.CurrentRoom.RemoveItem(item);
+            if (link.Equip(item))
+            {
+                // Equip was successful, remove item from room
+                roomBuilder.CurrentRoom.RemoveItem(item);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Zelda.Blocks;
 using Zelda.Blocks.Classes;
+using Zelda.Items;
 
 namespace Zelda.Rooms.Parsers
 {
@@ -82,6 +83,9 @@ namespace Zelda.Rooms.Parsers
                     break;
                 case "invisible_path":
                     block = new InvisiblePath(spawnPos);
+                    break;
+                case "fire":
+                    block = new Fire(spawnPos);
                     break;
                 default:
                     throw new Exception("Block type not found: " + identifier);

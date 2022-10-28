@@ -19,7 +19,7 @@ namespace Zelda.HUD
         private string text;
         public HUDItemQuantity(Vector2 position, String text)
         {
-            font = HUDSpriteFactory.HUDFont();
+            //font = HUDSpriteFactory.HUDFont();
             destination = new Vector2(position.X, position.Y);
             this.text = text;
         }
@@ -29,7 +29,7 @@ namespace Zelda.HUD
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, text, destination, Color.White);
+            //spriteBatch.DrawString(font, text, destination, Color.White);
         }
     }
 }

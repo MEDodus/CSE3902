@@ -6,17 +6,15 @@ namespace Zelda.Commands
     public class UseItem4 : ICommand
     {
         private Game1 game;
-        private ILink link;
 
-        public UseItem4(Game1 game, ILink link)
+        public UseItem4(Game1 game)
         {
             this.game = game;
-            this.link = link;
         }
 
         public void Execute(GameTime gametime)
         {
-            link.UseItem(4);
+            game.link.UseItem(4);
         }
     }
 }

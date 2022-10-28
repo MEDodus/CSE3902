@@ -59,11 +59,6 @@ namespace Zelda.Sprites.Factories
             return new AnimatedSprite(GetTexture("fairy"), 1, 2, 4, 1);
         }
 
-        public static ISprite FireSprite()
-        {
-            return new AnimatedSprite(GetTexture("fire"), 1, 2, 10, 1);
-        }
-
         public static ISprite FiveRupiesSprite()
         {
             return new Sprite(GetTexture("five_rupies"), 1);

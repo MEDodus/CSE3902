@@ -27,7 +27,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite CandleFlameSprite()
         {
-            return ItemSpriteFactory.FireSprite();
+            return BlockSpriteFactory.FireSprite();
         }
 
         // Effects

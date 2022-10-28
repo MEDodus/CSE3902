@@ -58,5 +58,10 @@ namespace Zelda.Sprites.Factories
         {
             return new Sprite(GetTexture("invisible_block"), 0, 0, 160, 160, 1);
         }
+
+        public static ISprite FireSprite()
+        {
+            return new AnimatedSprite(GetTexture("fire"), 1, 2, 10, 0.85);
+        }
     }
 }

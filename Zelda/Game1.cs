@@ -59,7 +59,7 @@ namespace Zelda
 
             link = new Link1();
             roomBuilder = new RoomBuilder();
-            commandBuilder = new CommandBuilder(keyboard, mouse, this, link, roomBuilder);
+            commandBuilder = new CommandBuilder(keyboard, mouse, this, roomBuilder);
 
             collisionDetector = new CollisionDetector();
 

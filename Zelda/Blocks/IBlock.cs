@@ -26,7 +26,7 @@ namespace Zelda.Blocks
 
         public virtual void Update(GameTime gameTime)
         {
-
+            sprite.Update(gameTime);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)

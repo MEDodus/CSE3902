@@ -10,7 +10,7 @@ namespace Zelda.Rooms.Parsers
     {
         private HashSet<IItem> items;
 
-        public ItemParser(string filename, HashSet<IItem> items) : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\items.csv")
+        public ItemParser(Room room, HashSet<IItem> items) : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\items.csv")
         {
             this.items = items;
         }
@@ -18,7 +18,7 @@ namespace Zelda.Rooms.Parsers
         protected override void ParseObject(string identifier, int i, int j)
         {
             IItem item;
-            Vector2 spawnPos = GetSpawnPosition(i, j) + new Vector2(5, 5);
+            Vector2 spawnPos = GetSpawnPosition(i, j, room) + new Vector2(5, 5);
             switch (identifier)
             {
                 case "arrow":

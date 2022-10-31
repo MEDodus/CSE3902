@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Windows.Markup;
+using Zelda.Rooms;
 using Zelda.Sprites;
 
 namespace Zelda.Projectiles
@@ -58,7 +59,7 @@ namespace Zelda.Projectiles
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, position);
+            sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset);
         }
 
         public void Delete()

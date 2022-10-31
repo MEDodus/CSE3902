@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
+using Zelda.Rooms;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -29,7 +30,7 @@ namespace Zelda.NPCs.Classes
         bool appeared = false;
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, position);
+            sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset);
             if (!appeared)
             {
                 appeared = true;

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Rooms;
 using Zelda.Sprites;
 
 namespace Zelda.Items
@@ -24,7 +25,7 @@ namespace Zelda.Items
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, position);
+            sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset);
         }
     }
 }

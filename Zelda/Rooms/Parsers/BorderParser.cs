@@ -12,8 +12,8 @@ namespace Zelda.Rooms.Parsers
         private Dictionary<Room.Direction, IBorder> borders;
         private HashSet<IBlock> collidableBlocks;
 
-        public BorderParser(string filename, Dictionary<Room.Direction, IBorder> borders, HashSet<IBlock> collidableBlocks) 
-            : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\borders.csv")
+        public BorderParser(Room room, Dictionary<Room.Direction, IBorder> borders, HashSet<IBlock> collidableBlocks) 
+            : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\borders.csv")
         {
             this.borders = borders;
             this.collidableBlocks = collidableBlocks;
@@ -25,35 +25,35 @@ namespace Zelda.Rooms.Parsers
             if (identifier == "wall")
             {
                 if (i == 0)
-                    border = new LeftWall();
+                    border = new LeftWall(room);
                 else if (i == 1)
-                    border = new RightWall();
+                    border = new RightWall(room);
                 else if (i == 2)
-                    border = new TopWall();
+                    border = new TopWall(room);
                 else
-                    border = new BottomWall();
+                    border = new BottomWall(room);
             }
             else if (identifier == "door")
             {
                 if (i == 0)
-                    border = new LeftDoor();
+                    border = new LeftDoor(room);
                 else if (i == 1)
-                    border = new RightDoor();
+                    border = new RightDoor(room);
                 else if (i == 2)
-                    border = new TopDoor();
+                    border = new TopDoor(room);
                 else
-                    border = new BottomDoor();
+                    border = new BottomDoor(room);
             }
             else if (identifier == "locked_door")
             {
                 if (i == 0)
-                    border = new LeftLockedDoor();
+                    border = new LeftLockedDoor(room);
                 else if (i == 1)
-                    border = new RightLockedDoor();
+                    border = new RightLockedDoor(room);
                 else if (i == 2)
-                    border = new TopLockedDoor();
+                    border = new TopLockedDoor(room);
                 else
-                    border = new BottomLockedDoor();
+                    border = new BottomLockedDoor(room);
             }
             else if (identifier == "white_brick")
             {
@@ -98,7 +98,7 @@ namespace Zelda.Rooms.Parsers
         {
             for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
             {
-                Vector2 spawnPosition = GetSpawnPosition(i, j);
+                Vector2 spawnPosition = GetSpawnPosition(i, j, room);
                 if (j == 3)
                 {
                     Door door = new Door(spawnPosition, border.Locked);
@@ -116,7 +116,7 @@ namespace Zelda.Rooms.Parsers
         {
             for (int i = 0; i < Settings.ROOM_WIDTH; i++)
             {
-                Vector2 spawnPosition = GetSpawnPosition(i, j);
+                Vector2 spawnPosition = GetSpawnPosition(i, j, room);
                 if (i == 5)
                 {
                     Vector2 doorSpawnPosition = spawnPosition + new Vector2(Settings.BLOCK_SIZE / 2, 0);
@@ -142,7 +142,7 @@ namespace Zelda.Rooms.Parsers
             {
                 for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
                 {
-                    collidableBlocks.Add(new WhiteBrick(GetSpawnPosition(i, j)));
+                    collidableBlocks.Add(new WhiteBrick(GetSpawnPosition(i, j, room)));
                 }
             }
         }
@@ -153,7 +153,7 @@ namespace Zelda.Rooms.Parsers
             {
                 for (int j = Settings.ROOM_HEIGHT; j < Settings.ROOM_HEIGHT + 2; j++)
                 {
-                    collidableBlocks.Add(new WhiteBrick(GetSpawnPosition(i, j)));
+                    collidableBlocks.Add(new WhiteBrick(GetSpawnPosition(i, j, room)));
                 }
             }
         }
@@ -164,16 +164,16 @@ namespace Zelda.Rooms.Parsers
             {
                 for (int j = -2; j < 0; j++)
                 {
-                    Vector2 spawnPosition = GetSpawnPosition(i, j);
+                    Vector2 spawnPosition = GetSpawnPosition(i, j, room);
                     if (i == 3)
                     {
                         collidableBlocks.Add(new Ladder(spawnPosition));
                         if (j == -2)
                         {
-                            collidableBlocks.Add(new Door(GetSpawnPosition(i, j - 1), false));
-                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i - 1, j - 1)));
-                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i + 1, j - 1)));
-                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i, j - 2)));
+                            collidableBlocks.Add(new Door(GetSpawnPosition(i, j - 1, room), false));
+                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i - 1, j - 1, room)));
+                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i + 1, j - 1, room)));
+                            collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i, j - 2, room)));
                         }
                     }
                     else

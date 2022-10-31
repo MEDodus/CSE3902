@@ -1,17 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Rooms;
 using Zelda.Sprites;
 
 namespace Zelda.Borders.Classes.Abstract
 {
     public abstract class BottomBorder : IBorder
     {
-        public BottomBorder(ISprite sprite, bool locked) : base(sprite,
-            new Rectangle(
-                Settings.ROOM_POSITION_X - Settings.BORDER_SIZE,
-                Settings.ROOM_POSITION_Y + (7 * Settings.BLOCK_SIZE),
-                (2 * Settings.BORDER_SIZE) + (12 * Settings.BLOCK_SIZE),
-                Settings.BORDER_SIZE
-            ), locked)
+        public BottomBorder(Room room, ISprite sprite, bool locked) : base(room, sprite, locked,
+            new Vector2(- Settings.BORDER_SIZE, Settings.ROOM_HEIGHT * Settings.BLOCK_SIZE),
+            new Vector2((2 * Settings.BORDER_SIZE) + (Settings.ROOM_WIDTH * Settings.BLOCK_SIZE), Settings.BORDER_SIZE))
         {
 
         }

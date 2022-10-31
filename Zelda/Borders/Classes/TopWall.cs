@@ -1,11 +1,12 @@
 ﻿using Zelda.Borders.Classes.Abstract;
+using Zelda.Rooms;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Borders.Classes
 {
     public class TopWall : TopBorder
     {
-        public TopWall() : base(BorderSpriteFactory.TopWallSprite(), true)
+        public TopWall(Room room) : base(room, BorderSpriteFactory.TopWallSprite(), true)
         {
 
         }

@@ -7,6 +7,7 @@ using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Items;
+using Zelda.Rooms;
 
 namespace Zelda.Link
 {
@@ -115,7 +116,7 @@ namespace Zelda.Link
 
         private Vector2 getPositionInFrontOfLink(double blocksInFrontOf)
         {
-            return position + new Vector2(10, 12) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
+            return position + new Vector2(10, 12) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf) - RoomBuilder.Instance.WindowOffset;
         }
 
         public void CreateItem(int itemNum)

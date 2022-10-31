@@ -1,17 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Rooms;
 using Zelda.Sprites;
 
 namespace Zelda.Borders.Classes.Abstract
 {
     public abstract class LeftBorder : IBorder
     {
-        public LeftBorder(ISprite sprite, bool locked) : base(sprite,
-            new Rectangle(
-                Settings.ROOM_POSITION_X - Settings.BORDER_SIZE,
-                Settings.ROOM_POSITION_Y,
-                Settings.BORDER_SIZE,
-                7 * Settings.BLOCK_SIZE
-            ), locked)
+        public LeftBorder(Room room, ISprite sprite, bool locked) : base(room, sprite, locked,
+            new Vector2(-Settings.BORDER_SIZE, 0),
+            new Vector2(Settings.BORDER_SIZE, Settings.ROOM_HEIGHT * Settings.BLOCK_SIZE))
         {
 
         }

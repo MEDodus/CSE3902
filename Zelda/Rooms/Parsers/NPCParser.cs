@@ -10,7 +10,7 @@ namespace Zelda.Rooms.Parsers
     {
         private HashSet<INPC> npcs;
 
-        public NPCParser(string filename, HashSet<INPC> npcs) : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\npcs.csv")
+        public NPCParser(Room room, HashSet<INPC> npcs) : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\npcs.csv")
         {
             this.npcs = npcs;
         }
@@ -18,7 +18,7 @@ namespace Zelda.Rooms.Parsers
         protected override void ParseObject(string identifier, int i, int j)
         {
             INPC npc;
-            Vector2 spawnPos = GetSpawnPosition(i, j);
+            Vector2 spawnPos = GetSpawnPosition(i, j, room);
             switch (identifier)
             {
                 case "old_man":

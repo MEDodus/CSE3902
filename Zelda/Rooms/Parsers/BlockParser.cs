@@ -14,8 +14,8 @@ namespace Zelda.Rooms.Parsers
         private HashSet<IBlock> collidableBlocks;
         private HashSet<IBlock> topLayerBlocks;
 
-        public BlockParser(string filename, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> topLayerBlocks)
-            : base("..\\..\\..\\Rooms\\Files\\" + filename + "\\blocks.csv")
+        public BlockParser(Room room, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> topLayerBlocks)
+            : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\blocks.csv")
         {
             this.blocks = blocks;
             this.collidableBlocks = collidableBlocks;
@@ -37,7 +37,7 @@ namespace Zelda.Rooms.Parsers
         protected override void ParseObject(string identifier, int i, int j)
         {
             IBlock block;
-            Vector2 spawnPos = GetSpawnPosition(i, j);
+            Vector2 spawnPos = GetSpawnPosition(i, j, room);
             switch (identifier)
             {
                 case "black_gap":

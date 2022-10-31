@@ -5,6 +5,7 @@ using Zelda.Enemy;
 using Zelda.NPCs.EnemyMultiDirection;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
+using Zelda.Rooms;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -71,7 +72,7 @@ namespace Zelda.NPCs.Classes
         public void Draw(SpriteBatch spriteBatch)
         {
             Color color = damageCooldown <= 0 ? Color.White : Color.Red;
-            sprite.Draw(spriteBatch, position, color);
+            sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset, color);
             if (!appeared)
             {
                 appeared = true;

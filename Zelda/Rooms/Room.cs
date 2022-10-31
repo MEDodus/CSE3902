@@ -14,22 +14,29 @@ namespace Zelda.Rooms
     {
         public enum Direction { Left, Right, Top, Bottom }
 
-        protected HashSet<IBlock> blocks;
-        protected HashSet<IBlock> collidableBlocks;
-        protected HashSet<IBlock> topLayerBlocks;
-        protected HashSet<INPC> npcs;
-        protected HashSet<IItem> items;
+        private string filename;
+        private HashSet<IBlock> blocks;
+        private HashSet<IBlock> collidableBlocks;
+        private HashSet<IBlock> topLayerBlocks;
+        private HashSet<INPC> npcs;
+        private HashSet<IItem> items;
         private HashSet<IItem> itemsToRemove;
-        protected Dictionary<Direction, IBorder> borders;
+        private Dictionary<Direction, IBorder> borders;
+        private Dictionary<Direction, Room> adjacentRooms;
+        private Vector2 position;
 
+        public string Name { get { return filename; } }
         public HashSet<IBlock> Blocks { get { return blocks; } }
         public HashSet<IBlock> CollidableBlocks { get { return collidableBlocks; } }
         public HashSet<INPC> NPCs { get { return npcs; } }
         public HashSet<IItem> Items { get { return items; } }
-        protected Dictionary<Direction, IBorder> Borders { get { return borders; } }
+        public Dictionary<Direction, IBorder> Borders { get { return borders; } }
+        public Dictionary<Direction, Room> AdjacentRooms { get { return adjacentRooms; } }
+        public Vector2 Position { get { return position; } set { position = value; } }
 
         public Room(string filename)
         {
+            this.filename = filename;
             blocks = new HashSet<IBlock>();
             collidableBlocks = new HashSet<IBlock>();
             topLayerBlocks = new HashSet<IBlock>();
@@ -37,11 +44,15 @@ namespace Zelda.Rooms
             items = new HashSet<IItem>();
             itemsToRemove = new HashSet<IItem>();
             borders = new Dictionary<Direction, IBorder>();
+            adjacentRooms = new Dictionary<Direction, Room>();
+        }
 
-            BlockParser blockParser = new BlockParser(filename, blocks, collidableBlocks, topLayerBlocks);
-            BorderParser borderParser = new BorderParser(filename, borders, collidableBlocks);
-            NPCParser npcParser = new NPCParser(filename, npcs);
-            ItemParser itemParser = new ItemParser(filename, items);
+        public void Parse()
+        {
+            BlockParser blockParser = new BlockParser(this, blocks, collidableBlocks, topLayerBlocks);
+            BorderParser borderParser = new BorderParser(this, borders, collidableBlocks);
+            NPCParser npcParser = new NPCParser(this, npcs);
+            ItemParser itemParser = new ItemParser(this, items);
 
             blockParser.Parse();
             borderParser.Parse();

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Rooms;
 using Zelda.Sprites;
 
 namespace Zelda.Borders
@@ -8,20 +9,25 @@ namespace Zelda.Borders
     {
         public bool Locked { get { return locked; } }
 
+        protected Room room;
         protected ISprite sprite;
-        protected Rectangle destination;
+        protected Vector2 absolutePosition;
+        protected Vector2 size;
         protected bool locked;
 
-        public IBorder(ISprite sprite, Rectangle destination, bool locked)
+        public IBorder(Room room, ISprite sprite, bool locked, Vector2 relativePosition, Vector2 size)
         {
+            this.room = room;
             this.sprite = sprite;
-            this.destination = destination;
+            absolutePosition = room.Position + relativePosition;
+            this.size = size;
             this.locked = locked;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, destination);
+            Vector2 offset = RoomBuilder.Instance.WindowOffset;
+            sprite.Draw(spriteBatch, new Rectangle((int)(absolutePosition.X + offset.X), (int)(absolutePosition.Y + offset.Y), (int)size.X, (int)size.Y));
         }
 
         public void Update(GameTime gameTime)

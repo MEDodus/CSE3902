@@ -16,12 +16,12 @@ namespace Zelda.Collision.Handlers
             
         }
 
-        public void HandleCollision(ILink link, IItem item, RoomBuilder roomBuilder)
+        public void HandleCollision(ILink link, IItem item)
         {
             if (link.Equip(item))
             {
                 // Equip was successful, remove item from room
-                roomBuilder.CurrentRoom.RemoveItem(item);
+                RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
             }
         }
     }

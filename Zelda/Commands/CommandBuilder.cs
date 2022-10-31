@@ -8,7 +8,7 @@ namespace Zelda.Commands
 {
     public class CommandBuilder
     {
-        public CommandBuilder(KeyboardController keyboard, MouseController mouse, Game1 game, RoomBuilder roomBuilder)
+        public CommandBuilder(KeyboardController keyboard, MouseController mouse, Game1 game)
         {
             // For quitting the game
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
@@ -47,8 +47,8 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.NumPad7, new UseItem7(game));
 
             // For swapping rooms (sprint 3 only)
-            mouse.RegisterLeftClickCommand(new CycleRoomPrevious(roomBuilder));
-            mouse.RegisterRightClickCommand(new CycleRoomNext(roomBuilder));
+            mouse.RegisterLeftClickCommand(new CycleRoomPrevious());
+            mouse.RegisterRightClickCommand(new CycleRoomNext());
 
             // For damaged state (sprint 2 only)
             //keyboard.RegisterCommand(Keys.E, new Hurt(game, link));

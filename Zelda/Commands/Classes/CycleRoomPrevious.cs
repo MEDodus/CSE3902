@@ -5,11 +5,9 @@ namespace Zelda.Commands.Classes
 {
     public class CycleRoomPrevious : ICommand
     {
-        private readonly RoomBuilder roomBuilder;
-
-        public CycleRoomPrevious(RoomBuilder roomBuilder)
+        public CycleRoomPrevious()
         {
-            this.roomBuilder = roomBuilder;
+            
         }
 
         private double lastExecuteTime = 0;
@@ -19,7 +17,7 @@ namespace Zelda.Commands.Classes
             if (currentTime - lastExecuteTime > 0.25)
             {
                 lastExecuteTime = currentTime;
-                roomBuilder.PreviousRoom();
+                RoomBuilder.Instance.PreviousRoom();
             }
         }
     }

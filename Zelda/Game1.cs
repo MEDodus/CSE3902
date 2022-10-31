@@ -30,7 +30,6 @@ namespace Zelda
         private SpriteBatch _spriteBatch;
 
         private List<IController> controllers;
-        private RoomBuilder roomBuilder;
         public ILink link;
         private CommandBuilder commandBuilder;
         private CollisionDetector collisionDetector;
@@ -50,6 +49,8 @@ namespace Zelda
             // This must be done before creating any sprite objects (items, blocks, NPCs, etc.)
             SpriteFactory.Initialize(Content);
 
+            RoomBuilder.Instance.Initialize();
+
             // Create controllers
             controllers = new List<IController>();
             KeyboardController keyboard = new KeyboardController();
@@ -58,8 +59,7 @@ namespace Zelda
             controllers.Add(mouse);
 
             link = new Link1();
-            roomBuilder = new RoomBuilder();
-            commandBuilder = new CommandBuilder(keyboard, mouse, this, roomBuilder);
+            commandBuilder = new CommandBuilder(keyboard, mouse, this);
 
             collisionDetector = new CollisionDetector();
 
@@ -79,11 +79,11 @@ namespace Zelda
             {
                 controller.Update(gameTime);
             }
-            roomBuilder.Update(gameTime);
+            RoomBuilder.Instance.Update(gameTime);
             ProjectileStorage.Update(gameTime);
             link.Update(gameTime);
 
-            collisionDetector.DetectCollisions(this, gameTime, roomBuilder, link);
+            collisionDetector.DetectCollisions(this, gameTime, link);
 
             hud.Update(gameTime, link);
 
@@ -96,10 +96,10 @@ namespace Zelda
 
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
 
-            roomBuilder.Draw(_spriteBatch);
+            RoomBuilder.Instance.Draw(_spriteBatch);
             ProjectileStorage.Draw(_spriteBatch);
             link.Draw(_spriteBatch);
-            roomBuilder.DrawTopLayer(_spriteBatch);
+            RoomBuilder.Instance.DrawTopLayer(_spriteBatch);
 
             hud.Draw(_spriteBatch);
 

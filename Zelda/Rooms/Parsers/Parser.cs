@@ -5,10 +5,12 @@ namespace Zelda.Rooms.Parsers
 {
     public abstract class Parser
     {
+        protected Room room;
         private string filename;
 
-        public Parser(string filename)
+        public Parser(Room room, string filename)
         {
+            this.room = room;
             this.filename = filename;
         }
 
@@ -39,9 +41,10 @@ namespace Zelda.Rooms.Parsers
 
         protected abstract void ParseObject(string identifier, int i, int j);
 
-        protected static Vector2 GetSpawnPosition(int i, int j)
+        protected static Vector2 GetSpawnPosition(int i, int j, Room room)
         {
-            return new Vector2(Settings.ROOM_POSITION_X + (i * Settings.BLOCK_SIZE), Settings.ROOM_POSITION_Y + (j * Settings.BLOCK_SIZE));
+            Vector2 offset = room.Position - RoomBuilder.Instance.WindowPosition;
+            return new Vector2(Settings.ROOM_WINDOW_X + (i * Settings.BLOCK_SIZE), Settings.ROOM_WINDOW_Y + (j * Settings.BLOCK_SIZE)) + offset;
         }
     }
 }

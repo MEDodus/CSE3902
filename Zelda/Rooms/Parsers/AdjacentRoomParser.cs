@@ -27,9 +27,9 @@ namespace Zelda.Rooms.Parsers
             else if (i == 1)
                 direction = Room.Direction.Right;
             else if (i == 2)
-                direction = Room.Direction.Top;
+                direction = Room.Direction.Up;
             else
-                direction = Room.Direction.Bottom;
+                direction = Room.Direction.Down;
             adjacentRooms.Add(direction, roomBuilder.GetRoom(identifier));
         }
     }

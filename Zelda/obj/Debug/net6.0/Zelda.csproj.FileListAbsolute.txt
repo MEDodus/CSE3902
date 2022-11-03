@@ -216,3 +216,4 @@ C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\Sound
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Slash.xnb
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text.xnb
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text_Slow.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\black_rectangle.xnb

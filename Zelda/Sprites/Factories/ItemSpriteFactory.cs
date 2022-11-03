@@ -161,7 +161,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite SwordSprite()
         {
-            return new Sprite(GetTexture("sword"), 1);
+            return new Sprite(GetTexture("sword"), 0.85);
         }
 
         public static ISprite TriforceSprite()
@@ -171,7 +171,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite WhiteSwordSprite()
         {
-            return new Sprite(GetTexture("white_sword"), 1);
+            return new Sprite(GetTexture("white_sword"), 0.85);
         }
     }
 }

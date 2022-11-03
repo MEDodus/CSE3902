@@ -7,7 +7,7 @@ namespace Zelda.Borders.Classes.Abstract
     public abstract class LeftBorder : IBorder
     {
         public LeftBorder(Room room, ISprite sprite, bool locked) : base(room, sprite, locked,
-            new Vector2(-Settings.BORDER_SIZE, 0),
+            new Vector2(0, Settings.BORDER_SIZE),
             new Vector2(Settings.BORDER_SIZE, Settings.ROOM_HEIGHT * Settings.BLOCK_SIZE))
         {
 

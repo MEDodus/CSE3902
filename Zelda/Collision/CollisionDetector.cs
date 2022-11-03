@@ -8,6 +8,7 @@ using Zelda.Rooms;
 using Zelda.Blocks;
 using Zelda.Collision.Handlers;
 using Zelda.Items;
+using System.Numerics;
 
 namespace Zelda.Collision
 {
@@ -101,6 +102,16 @@ namespace Zelda.Collision
                         playerBlockCollisionHandler.HandleCollision(player, block);
                     }
                 }
+                foreach (Room room in RoomBuilder.Instance.CurrentRoom.AdjacentRooms.Values)
+                {
+                    foreach (IBlock block in room.CollidableBlocks)
+                    {
+                        if (block != null && player.Sprite.Destination.Intersects(block.Sprite.Destination))
+                        {
+                            playerBlockCollisionHandler.HandleCollision(player, block);
+                        }
+                    }
+                }
                 foreach (IItem item in RoomBuilder.Instance.CurrentRoom.Items)
                 {
                     if (player.Sprite.Destination.Intersects(item.Sprite.Destination))
@@ -127,6 +138,16 @@ namespace Zelda.Collision
                     if (dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
                     {
                         enemyBlockCollisionHandler.HandleCollision(dynamicEnemy, block);
+                    }
+                }
+                foreach (Room room in RoomBuilder.Instance.CurrentRoom.AdjacentRooms.Values)
+                {
+                    foreach (IBlock block in room.CollidableBlocks)
+                    {
+                        if (dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
+                        {
+                            enemyBlockCollisionHandler.HandleCollision(dynamicEnemy, block);
+                        }
                     }
                 }
             }

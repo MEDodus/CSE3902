@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using Zelda.Link;
 using Zelda.Projectiles;
 using Zelda.Rooms.Parsers;
 
@@ -12,9 +13,26 @@ namespace Zelda.Rooms
     {
         private static RoomBuilder instance = new RoomBuilder();
         public static RoomBuilder Instance { get { return instance; } }
-
-        public Room CurrentRoom { get { return rooms[i]; } }
-        public Vector2 WindowPosition { get { return windowPosition; } }
+        
+        public Room CurrentRoom { 
+            get 
+            { 
+                return rooms[i]; 
+            } 
+            set 
+            {
+                for (int j = 0; j < rooms.Length; j++)
+                {
+                    if (rooms[j] == value)
+                    {
+                        i = j;
+                        break;
+                    }
+                }
+            } 
+        }
+        public Room[] Rooms { get { return rooms; } }
+        public Vector2 WindowPosition { get { return windowPosition; } set { windowPosition = value; } }
         public Vector2 WindowOffset { get { return BASE_WINDOW_POSITION - windowPosition; } }
 
         private Room[] rooms = new Room[17]; // TODO: re-add white brick dungeon and fix offset (change array size to 18 to do this)
@@ -39,7 +57,7 @@ namespace Zelda.Rooms
             }
             // Create the room graph starting from the entrance room
             i = 15;
-            windowPosition = new Vector2(Settings.ROOM_WINDOW_X, Settings.ROOM_WINDOW_Y);
+            windowPosition = BASE_WINDOW_POSITION;
             ConnectAdjacentRooms(CurrentRoom, windowPosition);
             // Parse the remaining room objects to populate the rooms
             foreach (Room room in rooms)
@@ -59,8 +77,6 @@ namespace Zelda.Rooms
             adjacentRoomParser.Parse();
 
             // Recursively link adjacent rooms
-            int roomWidth = Settings.ROOM_WIDTH * Settings.BLOCK_SIZE + 2 * Settings.BORDER_SIZE;
-            int roomHeight = Settings.ROOM_HEIGHT * Settings.BLOCK_SIZE + 2 * Settings.BORDER_SIZE;
             foreach (KeyValuePair<Room.Direction, Room> entry in room.AdjacentRooms)
             {
                 Room adjacentRoom = entry.Value;
@@ -71,13 +87,13 @@ namespace Zelda.Rooms
                 Room.Direction direction = entry.Key;
                 Vector2 adjacentRoomOffset;
                 if (direction == Room.Direction.Left)
-                    adjacentRoomOffset = new Vector2(-roomWidth, 0);
+                    adjacentRoomOffset = new Vector2(-Settings.ROOM_WINDOW_WIDTH, 0);
                 else if (direction == Room.Direction.Right)
-                    adjacentRoomOffset = new Vector2(roomWidth, 0);
-                else if (direction == Room.Direction.Top)
-                    adjacentRoomOffset = new Vector2(0, -roomHeight);
+                    adjacentRoomOffset = new Vector2(Settings.ROOM_WINDOW_WIDTH, 0);
+                else if (direction == Room.Direction.Up)
+                    adjacentRoomOffset = new Vector2(0, -Settings.ROOM_WINDOW_HEIGHT);
                 else
-                    adjacentRoomOffset = new Vector2(0, roomHeight);
+                    adjacentRoomOffset = new Vector2(0, Settings.ROOM_WINDOW_HEIGHT);
                 ConnectAdjacentRooms(adjacentRoom, position + adjacentRoomOffset);
             }
         }
@@ -102,20 +118,25 @@ namespace Zelda.Rooms
 
         public void DrawTopLayer(SpriteBatch spriteBatch)
         {
-            rooms[i].DrawTopLayer(spriteBatch);
+            foreach (Room room in rooms)
+            {
+                room.DrawTopLayer(spriteBatch);
+            }
         }
 
-        public void NextRoom()
+        public void NextRoom(ILink link)
         {
             i = (i + 1) % rooms.Length;
             windowPosition = CurrentRoom.Position;
+            link.Position = CurrentRoom.Position + new Vector2(7.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
             ProjectileStorage.Clear();
         }
 
-        public void PreviousRoom()
+        public void PreviousRoom(ILink link)
         {
             i = i > 0 ? i - 1 : rooms.Length - 1;
             windowPosition = CurrentRoom.Position;
+            link.Position = CurrentRoom.Position + new Vector2(7.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
             ProjectileStorage.Clear();
         }
     }

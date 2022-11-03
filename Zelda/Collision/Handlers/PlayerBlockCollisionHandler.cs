@@ -27,7 +27,7 @@ namespace Zelda.Collision.Handlers
             GetCollisionDirection(link, block);
             Rectangle linkRectangle = link.Sprite.Destination;
             Rectangle blockRectangle = block.Sprite.Destination;
-            Vector2 blockPosition = new Vector2(blockRectangle.X, blockRectangle.Y);
+            Vector2 blockPosition = block.Position;
             float x = link.Position.X;
             float y = link.Position.Y;
             switch (collisionDirection.Side)

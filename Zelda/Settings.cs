@@ -10,9 +10,13 @@
         public static readonly int ROOM_WIDTH = 12;
         public static readonly int ROOM_HEIGHT = 7;
 
+        // Game window size
+        public static readonly int WINDOW_WIDTH = 1024;
+        public static readonly int WINDOW_HEIGHT = 768;
+
         // Room drawing window position/size including borders (pixels)
-        public static readonly int ROOM_WINDOW_X = 200;
-        public static readonly int ROOM_WINDOW_Y = 300;
+        public static readonly int ROOM_WINDOW_X = 100;
+        public static readonly int ROOM_WINDOW_Y = 200;
         public static readonly int ROOM_WINDOW_WIDTH = ROOM_WIDTH * BLOCK_SIZE + 2 * BORDER_SIZE;
         public static readonly int ROOM_WINDOW_HEIGHT = ROOM_HEIGHT * BLOCK_SIZE + 2 * BORDER_SIZE;
     }

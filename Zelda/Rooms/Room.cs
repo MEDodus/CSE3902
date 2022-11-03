@@ -12,7 +12,7 @@ namespace Zelda.Rooms
 {
     public class Room
     {
-        public enum Direction { Left, Right, Top, Bottom }
+        public enum Direction { Left, Right, Up, Down }
 
         private string filename;
         private HashSet<IBlock> blocks;
@@ -109,10 +109,6 @@ namespace Zelda.Rooms
                 // border blocks are in collidableBlocks but not in blocks
                 block.Draw(spriteBatch);
             }
-            foreach (IBorder border in borders.Values)
-            {
-                border.Draw(spriteBatch);
-            }
             foreach (INPC npc in npcs)
             {
                 npc.Draw(spriteBatch);
@@ -128,6 +124,10 @@ namespace Zelda.Rooms
             foreach (IBlock block in topLayerBlocks)
             {
                 block.Draw(spriteBatch);
+            }
+            foreach (IBorder border in borders.Values)
+            {
+                border.Draw(spriteBatch);
             }
         }
 

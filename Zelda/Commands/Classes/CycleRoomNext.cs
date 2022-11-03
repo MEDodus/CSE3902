@@ -1,13 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Link;
 using Zelda.Rooms;
 
 namespace Zelda.Commands.Classes
 {
     public class CycleRoomNext : ICommand
     {
-        public CycleRoomNext()
+        private ILink link;
+
+        public CycleRoomNext(ILink link)
         {
-            
+            this.link = link;
         }
 
         private double lastExecuteTime = 0;
@@ -17,7 +20,7 @@ namespace Zelda.Commands.Classes
             if (currentTime - lastExecuteTime > 0.25)
             {
                 lastExecuteTime = currentTime;
-                RoomBuilder.Instance.NextRoom();
+                RoomBuilder.Instance.NextRoom(link);
             }
         }
     }

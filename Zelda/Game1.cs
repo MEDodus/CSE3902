@@ -38,8 +38,8 @@ namespace Zelda
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferHeight = 768;
-            _graphics.PreferredBackBufferWidth = 1024;
+            _graphics.PreferredBackBufferHeight = Settings.WINDOW_HEIGHT;
+            _graphics.PreferredBackBufferWidth = Settings.WINDOW_WIDTH;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -80,6 +80,7 @@ namespace Zelda
                 controller.Update(gameTime);
             }
             RoomBuilder.Instance.Update(gameTime);
+            RoomTransitions.Update(gameTime, link);
             ProjectileStorage.Update(gameTime);
             link.Update(gameTime);
 

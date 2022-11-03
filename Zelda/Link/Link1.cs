@@ -43,7 +43,7 @@ namespace Zelda.Link
 
         public void Reset()
         {
-            position = new Vector2(475, 500);
+            position = RoomBuilder.Instance.WindowPosition + new Vector2(Settings.BLOCK_SIZE * 7.5f, Settings.BLOCK_SIZE * 7);
             state = new LinkFacingUpState(this);
             facingDirection = new Vector2(0, -1);
         }
@@ -60,7 +60,7 @@ namespace Zelda.Link
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, position);
+            sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset);
         }
 
         private bool TryMove(Vector2 newDirection)
@@ -116,7 +116,7 @@ namespace Zelda.Link
 
         private Vector2 getPositionInFrontOfLink(double blocksInFrontOf)
         {
-            return position + new Vector2(10, 12) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf) - RoomBuilder.Instance.WindowOffset;
+            return position + new Vector2(10, 12) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
         }
 
         public void CreateItem(int itemNum)
@@ -132,17 +132,17 @@ namespace Zelda.Link
                         swordAttackTimer = 0.35;
                         // adjust spawn position
                         Vector2 spawnPos = defaultItemSpawnPos;
-                        if (facingDirection.Equals(new Vector2(-1, 0)))
-                        {
-                            spawnPos += new Vector2(-20, 0);
-                        }
-                        else if (facingDirection.Equals(new Vector2(1, 0)))
+                        if (facingDirection.Equals(new Vector2(1, 0)))
                         {
                             spawnPos += new Vector2(-10, 0);
                         }
-                        else
+                        else if (facingDirection.Equals(new Vector2(0, 1)))
                         {
-                            spawnPos += new Vector2(0, -20);
+                            spawnPos += new Vector2(0, -15);
+                        }
+                        else if (facingDirection.Equals(new Vector2(0, -1)))
+                        {
+                            spawnPos += new Vector2(0, -10);
                         }
                         item = new Sword(spawnPos, facingDirection, 0.3);
                     }

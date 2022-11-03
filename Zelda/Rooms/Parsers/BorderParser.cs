@@ -82,12 +82,12 @@ namespace Zelda.Rooms.Parsers
                 }
                 else if (i == 2)
                 {
-                    direction = Room.Direction.Top;
+                    direction = Room.Direction.Up;
                     CreateTopBottomInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border);
                 }
                 else
                 {
-                    direction = Room.Direction.Bottom;
+                    direction = Room.Direction.Down;
                     CreateTopBottomInvisibleBlocks(Settings.ROOM_HEIGHT, Settings.BLOCK_SIZE, border);
                 }
                 borders.Add(direction, border);
@@ -103,6 +103,11 @@ namespace Zelda.Rooms.Parsers
                 {
                     Door door = new Door(spawnPosition, border.Locked);
                     collidableBlocks.Add(door);
+                    //collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(doorOffset, 0)));
+                }
+                else if (j == 2 || j == 4)
+                {
+                    collidableBlocks.Add(new InvisibleBarrier(spawnPosition));
                     collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(doorOffset, 0)));
                 }
                 else
@@ -122,12 +127,14 @@ namespace Zelda.Rooms.Parsers
                     Vector2 doorSpawnPosition = spawnPosition + new Vector2(Settings.BLOCK_SIZE / 2, 0);
                     Door door = new Door(doorSpawnPosition, border.Locked);
                     collidableBlocks.Add(door);
-                    collidableBlocks.Add(new InvisibleBarrier(doorSpawnPosition + new Vector2(0, doorOffset)));
-                    collidableBlocks.Add(new InvisibleBarrier(spawnPosition - new Vector2(Settings.BLOCK_SIZE / 2, 0)));
+                    //collidableBlocks.Add(new InvisibleBarrier(doorSpawnPosition + new Vector2(0, doorOffset)));
+                    collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(-Settings.BLOCK_SIZE / 2, 0)));
+                    collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(-Settings.BLOCK_SIZE / 2, doorOffset)));
                 }
                 else if (i == 6)
                 {
                     collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(Settings.BLOCK_SIZE / 2, 0)));
+                    collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(Settings.BLOCK_SIZE / 2, doorOffset)));
                 }
                 else
                 {

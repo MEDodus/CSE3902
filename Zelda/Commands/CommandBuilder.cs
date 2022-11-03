@@ -47,8 +47,8 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.NumPad7, new UseItem7(game));
 
             // For swapping rooms (sprint 3 only)
-            mouse.RegisterLeftClickCommand(new CycleRoomPrevious());
-            mouse.RegisterRightClickCommand(new CycleRoomNext());
+            mouse.RegisterLeftClickCommand(new CycleRoomPrevious(game.link));
+            mouse.RegisterRightClickCommand(new CycleRoomNext(game.link));
 
             // For damaged state (sprint 2 only)
             //keyboard.RegisterCommand(Keys.E, new Hurt(game, link));

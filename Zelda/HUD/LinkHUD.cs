@@ -36,6 +36,7 @@ namespace Zelda.HUD
         }
         public void Draw(SpriteBatch spriteBatch)
         {
+            BlackBorders.Draw(spriteBatch);
             hudBackground.Draw(spriteBatch);
             map.Draw(spriteBatch);
             healthDisplay.Draw(spriteBatch);

@@ -41,5 +41,11 @@ namespace Zelda.Sprites.Factories
         {
             return new Sprite(GetTexture("heart_display"), HUDUtilities.EMPTY_HEART_COLUMN * HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH, HUDUtilities.HEART_ROW * HUDUtilities.HEART_DISPLAY_ROW_HEIGHT, HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH, HUDUtilities.HEART_DISPLAY_ROW_HEIGHT, HUDUtilities.HEART_DISPLAY_BLOCK_SIZE);
         }
+
+        // black borders
+        public static ISprite BlackBorder()
+        {
+            return new Sprite(GetTexture("black_rectangle"));
+        }
     }
 }

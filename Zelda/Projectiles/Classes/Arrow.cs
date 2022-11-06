@@ -16,7 +16,7 @@ namespace Zelda.Projectiles.Classes
                   position, direction, 15, 0.45, ProjectileBehavior.Friendly)
 
         {
-            SoundManager.Instance.PlayArrowBoomerangSound();
+            SoundManager.Instance.PlayArrowSound();
         }
 
         public override void OnDelete()

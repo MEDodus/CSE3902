@@ -59,7 +59,7 @@ namespace Zelda
             MouseController mouse = new MouseController();
             controllers.Add(keyboard);
             controllers.Add(mouse);
-            SoundManager.Instance.PlayMainThemeSound();
+            //SoundManager.Instance.PlayMainThemeSound();
 
             link = new Link1();
             commandBuilder = new CommandBuilder(keyboard, mouse, this);

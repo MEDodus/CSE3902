@@ -15,7 +15,7 @@ namespace Zelda.Projectiles.Classes
                   ProjectileSpriteFactory.DownSilverArrowSprite(),
                   position, direction, 15, 0.7, ProjectileBehavior.Friendly)
         {
-            SoundManager.Instance.PlayArrowBoomerangSound();
+            SoundManager.Instance.PlayArrowSound();
         }
 
         public override void OnDelete()

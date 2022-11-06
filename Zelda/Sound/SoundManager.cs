@@ -13,7 +13,7 @@ namespace Zelda.Sound
         private SoundEffect bombBlow;
         private SoundEffect bombDrop;
         private SoundEffect bossHit;
-        private SoundEffect bossScream1;
+        private SoundEffect bossScream1; //needwork
         private SoundEffect bossScream2;
         private SoundEffect bossScream3;
         private SoundEffect candle;
@@ -25,7 +25,7 @@ namespace Zelda.Sound
         private SoundEffect getItem;
         private SoundEffect getRupee;
         private SoundEffect keyAppear;
-        private SoundEffect linkDie;
+        private SoundEffect linkDie; //need work
         private SoundEffect linkHurt;
         private SoundEffect lowHealth;
         private SoundEffect magicalRod;
@@ -42,9 +42,7 @@ namespace Zelda.Sound
         private SoundEffect textSlow;
 
 
-        //private Song undergroundSong;
-        //private Song overworldSong;
-        //private Song starSong;
+
         private bool IsMuted = false;
 
         private static SoundManager instance = new SoundManager();
@@ -96,6 +94,7 @@ namespace Zelda.Sound
             swordSlash = content.Load<SoundEffect>("SoundEffect\\LOZ_Sword_Slash");
             text = content.Load<SoundEffect>("SoundEffect\\LOZ_Text");
             textSlow = content.Load<SoundEffect>("SoundEffect\\LOZ_Text_Slow");
+            PlayMainThemeSound();
 
         }
 
@@ -175,6 +174,46 @@ namespace Zelda.Sound
             if (!IsMuted)
             {
                 enemyDie.Play();
+            }
+        }
+
+        public void PlayBossHitSound()
+        {
+            if (!IsMuted)
+            {
+                bossHit.Play();
+            }
+        }
+
+        public void PlayLinkHurtSound()
+        {
+            if (!IsMuted)
+            {
+                linkHurt.Play();
+            }
+        }
+
+        public void PlayBossScream1Sound()
+        {
+            if (!IsMuted)
+            {
+                bossScream1.Play();
+            }
+        }
+
+        public void PlayArrowSound()
+        {
+            if (!IsMuted)
+            {
+                magicalRod.Play();
+            }
+        }
+
+        public void PlayFireSound()
+        {
+            if (!IsMuted)
+            {
+                candle.Play();
             }
         }
     }

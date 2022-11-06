@@ -9,6 +9,7 @@ using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 using Zelda.Collision;
 using Zelda.Rooms;
+using Zelda.Sound;
 
 namespace Zelda.NPCs.Classes
 {
@@ -174,6 +175,7 @@ namespace Zelda.NPCs.Classes
             {
                 Die();
             }
+
         }
         public void Die()
         {

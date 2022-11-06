@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Zelda"
   ],
-  "SelectedNode": "\\Zelda.sln",
+  "SelectedNode": "\\Zelda\\Game1.cs",
   "PreviewInSolutionExplorer": false
 }

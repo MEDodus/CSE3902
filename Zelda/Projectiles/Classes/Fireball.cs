@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Sound;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes

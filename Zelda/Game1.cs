@@ -9,6 +9,7 @@ using Zelda.Link;
 using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sprites.Factories;
+using Zelda.Sound;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -50,6 +51,7 @@ namespace Zelda
             SpriteFactory.Initialize(Content);
 
             RoomBuilder.Instance.Initialize();
+            SoundManager.Instance.Initialize(Content);
 
             // Create controllers
             controllers = new List<IController>();
@@ -57,6 +59,7 @@ namespace Zelda
             MouseController mouse = new MouseController();
             controllers.Add(keyboard);
             controllers.Add(mouse);
+            SoundManager.Instance.PlayMainThemeSound();
 
             link = new Link1();
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
@@ -71,6 +74,7 @@ namespace Zelda
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            
         }
 
         protected override void Update(GameTime gameTime)

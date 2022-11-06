@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Sound;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
@@ -10,6 +11,7 @@ namespace Zelda.Projectiles.Classes
             : base(ProjectileSpriteFactory.BoomerangSprite(), position, direction, 15, 1.1, behavior, false)
         {
             baseVelocity = velocity;
+            SoundManager.Instance.PlayArrowBoomerangSound();
         }
 
         public override bool Update(GameTime gameTime)

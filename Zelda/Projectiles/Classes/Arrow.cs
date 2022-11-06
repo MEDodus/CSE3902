@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Zelda.Projectiles.Classes.Abstract;
+using Zelda.Sound;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
@@ -13,8 +14,9 @@ namespace Zelda.Projectiles.Classes
                   ProjectileSpriteFactory.UpArrowSprite(),
                   ProjectileSpriteFactory.DownArrowSprite(),
                   position, direction, 15, 0.45, ProjectileBehavior.Friendly)
-        {
 
+        {
+            SoundManager.Instance.PlayArrowBoomerangSound();
         }
 
         public override void OnDelete()

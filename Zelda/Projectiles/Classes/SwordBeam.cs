@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Zelda.Projectiles.Classes.Abstract;
+using Zelda.Sound;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
@@ -14,7 +15,7 @@ namespace Zelda.Projectiles.Classes
                   ProjectileSpriteFactory.DownSwordBeamSprite(),
                   position, direction, 15, 0.6, ProjectileBehavior.Friendly)
         {
-
+            SoundManager.Instance.PlaySwardCombinedSound();
         }
 
         public override void OnDelete()

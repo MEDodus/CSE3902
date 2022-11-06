@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Zelda.Projectiles.Classes.Abstract;
+using Zelda.Sound;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
@@ -17,6 +18,8 @@ namespace Zelda.Projectiles.Classes
                   position, direction, 7, lifetime, ProjectileBehavior.Friendly, false)
         {
             baseVelocity = velocity;
+            SoundManager.Instance.PlaySwarShootSound();
+
         }
 
         public override bool Update(GameTime gameTime)

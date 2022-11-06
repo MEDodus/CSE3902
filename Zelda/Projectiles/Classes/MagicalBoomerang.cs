@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Sound;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
@@ -10,6 +11,7 @@ namespace Zelda.Projectiles.Classes
             sprite = ProjectileSpriteFactory.MagicalBoomerangSprite();
             lifetime = 1.8;
             timeLeftUntilDelete = lifetime;
+            SoundManager.Instance.PlayArrowBoomerangSound();
         }
     }
 }

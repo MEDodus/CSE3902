@@ -22,5 +22,7 @@ namespace Zelda.Inventory
          * then AddItem -> AddItem(IRecord record, int quantity)
          *      RemoveItem(IRecord record, int quantity)
          */
+
+        /* Item class could also have field for max stackable item quantity */
     }
 }

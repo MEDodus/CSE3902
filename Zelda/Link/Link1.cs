@@ -18,6 +18,7 @@ namespace Zelda.Link
         public Vector2 Position { get { return position; } set { position = value; } }
         public Vector2 Direction { get { return facingDirection;  } }
         public Inventory Inventory { get { return inventory; } }
+        public Health Health { get { return health; } }
 
         private ILinkState state;
         private ISprite sprite;
@@ -26,6 +27,7 @@ namespace Zelda.Link
         private double swordAttackTimer = 0;
         private HashSet<Keys> movementKeys = new HashSet<Keys>();
         private Inventory inventory;
+        private Health health;
         public Link1()
         {
             Reset();
@@ -39,6 +41,7 @@ namespace Zelda.Link
             movementKeys.Add(Keys.Right);
 
             inventory = new Inventory();
+            health = new Health();
         }
 
         public void Reset()

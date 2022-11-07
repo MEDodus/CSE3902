@@ -14,10 +14,10 @@ namespace Zelda.HUD
     internal class HealthDisplay : IHUDElement
     {
         protected Heart[] hearts;
-        public HealthDisplay()
+        public HealthDisplay(ILink link)
         {
-            this.hearts = new Heart[LinkUtilities.TOTAL_HEALTH];
-            for (int currentHeart = 0; currentHeart < LinkUtilities.TOTAL_HEALTH; currentHeart++)
+            this.hearts = new Heart[LinkUtilities.MAX_HEARTS];
+            for (int currentHeart = 0; currentHeart < LinkUtilities.MAX_HEARTS; currentHeart++)
             {
                 hearts[currentHeart] = new Heart();
                 hearts[currentHeart].SetDestination(currentHeart);
@@ -27,13 +27,13 @@ namespace Zelda.HUD
         public void Update(GameTime gameTime, ILink link)
         {
             int offset = 1;
-            for (int currentHeart = 0; currentHeart < LinkUtilities.TOTAL_HEALTH; currentHeart++)
+            for (int currentHeart = 0; currentHeart < LinkUtilities.MAX_HEARTS; currentHeart++)
             {
-                if (currentHeart + offset <= LinkUtilities.CURRENT_HEALTH)
+                if ((currentHeart + offset) * 2 <= ((Link1)link).Health.CurrentHealth)
                 {
                     hearts[currentHeart].FullHeart();
                 }
-                else if (currentHeart + offset == Math.Ceiling(LinkUtilities.CURRENT_HEALTH))
+                else if ((currentHeart + offset) * 2 - 1 == ((Link1)link).Health.CurrentHealth)
                 {
                     hearts[currentHeart].HalfHeart();
                 }

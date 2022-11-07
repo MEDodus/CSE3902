@@ -68,7 +68,7 @@ namespace Zelda
 
             collisionDetector = new CollisionDetector();
 
-            hud = new LinkHUD();
+            hud = new LinkHUD(link);
 
             base.Initialize();
         }

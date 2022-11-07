@@ -14,6 +14,7 @@ namespace Zelda.Link
         public ISprite Sprite { get; set; }
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; }
+        public Health Health { get; }
 
         public void Reset();
         public void Update(GameTime gameTime);
@@ -23,7 +24,7 @@ namespace Zelda.Link
         public void MoveDown();
         public void MoveLeft();
         public void MoveRight();
-        public void TakeDamage(Game1 game);
+        public void TakeDamage(Game1 game, int damage);
         public void UseItem(int itemNum);
         public void CreateItem(int itemNum);
         public bool Equip(IItem item);

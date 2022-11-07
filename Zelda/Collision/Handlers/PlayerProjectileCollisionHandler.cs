@@ -26,7 +26,7 @@ namespace Zelda.Collision.Handlers
                 projectileDirection.Normalize();
                 if (!Vector2.Add(linkDirection, projectileDirection).Equals(new Vector2(0, 0)))
                 {
-                    game.link.TakeDamage(game);
+                    game.link.TakeDamage(game, 1);
                 }
                 projectile.Delete();
             }

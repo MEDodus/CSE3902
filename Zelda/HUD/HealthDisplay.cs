@@ -29,11 +29,11 @@ namespace Zelda.HUD
             int offset = 1;
             for (int currentHeart = 0; currentHeart < LinkUtilities.MAX_HEARTS; currentHeart++)
             {
-                if ((currentHeart + offset) * 2 <= ((Link1)link).Health.CurrentHealth)
+                if ((currentHeart + offset) * 2 <= link.Health.CurrentHealth)
                 {
                     hearts[currentHeart].FullHeart();
                 }
-                else if ((currentHeart + offset) * 2 - 1 == ((Link1)link).Health.CurrentHealth)
+                else if ((currentHeart + offset) * 2 - 1 == link.Health.CurrentHealth)
                 {
                     hearts[currentHeart].HalfHeart();
                 }

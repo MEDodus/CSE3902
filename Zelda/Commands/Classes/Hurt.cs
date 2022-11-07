@@ -15,7 +15,7 @@ namespace Zelda.Commands
 
         public void Execute(GameTime gametime)
         {
-            game.link.TakeDamage(game);
+            game.link.TakeDamage(game, 1);
         }
     }
 }

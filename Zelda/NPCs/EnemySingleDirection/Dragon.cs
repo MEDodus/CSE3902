@@ -16,7 +16,7 @@ namespace Zelda.NPCs.Classes
 
         public Dragon(Vector2 position) : base(NPCSpriteFactory.NonAttackingDragonSprite(), position, 6, 0.5)
         {
-
+            damage = 2;
         }
 
         //private double changeDirectionCooldown = 0; // seconds

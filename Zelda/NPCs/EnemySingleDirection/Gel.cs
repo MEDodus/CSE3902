@@ -8,7 +8,7 @@ namespace Zelda.NPCs.Classes
     {
         public Gel(Vector2 position) : base(NPCSpriteFactory.GelSprite(), position, 1, 1)
         {
-
+            damage = 1;
         }
 
         //private double changeDirectionCooldown = 0; // seconds

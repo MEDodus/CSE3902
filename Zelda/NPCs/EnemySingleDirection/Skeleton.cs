@@ -8,7 +8,7 @@ namespace Zelda.NPCs.Classes
     {
         public Skeleton(Vector2 position) : base(NPCSpriteFactory.SkeletonSprite(), position, 2, 3)
         {
-
+            damage = 1;
         }
 
         //private double changeDirectionCooldown = 0; // seconds

@@ -15,6 +15,8 @@ namespace Zelda.NPCs.Classes
     {
         public ISprite Sprite { get { return sprite; } }
         public bool Dead {  get { return dead; } }
+        public int Damage { get { return damage; } }
+
 
         public INPCState state;
         public ISprite sprite;
@@ -25,6 +27,7 @@ namespace Zelda.NPCs.Classes
         private double damageCooldown = 0; // seconds
         private double changeDirectionCooldown = 0;
         private bool facingRight;
+        private int damage;
 
         bool appeared = false;
 

@@ -27,9 +27,9 @@ namespace Zelda.Collision.Handlers
 
         public void HandleCollision(ILink link, INPC enemy, Game1 game, GameTime gameTime)
         {
-            if(!(enemy is OldMan))
+            if(enemy.Damage > 0)
             {
-                game.link.TakeDamage(game);
+                game.link.TakeDamage(game, enemy.Damage);
             }
         }
 

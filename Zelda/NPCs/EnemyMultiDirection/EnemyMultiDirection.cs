@@ -11,6 +11,7 @@ namespace Zelda.NPCs.Classes
     {
         public ISprite Sprite { get { return sprite; } }
         public bool Dead { get { return dead; } }
+        public int Damage { get { return damage; } }
 
 
         protected ISprite sprite;
@@ -20,6 +21,7 @@ namespace Zelda.NPCs.Classes
         protected bool dead;
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
+        private int damage;
 
         public EnemyMultiDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed)
         {

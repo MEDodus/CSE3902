@@ -8,7 +8,7 @@ namespace Zelda.NPCs.Classes
     {
         public Bat(Vector2 position) : base(NPCSpriteFactory.BatSprite(), position, 1, 3)
         {
-
+            damage = 1;
         }
 
         //double changeDirectionCooldown = 0; // seconds

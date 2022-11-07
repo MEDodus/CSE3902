@@ -14,6 +14,7 @@ namespace Zelda.Link
         public ISprite Sprite { get => decoratedLink.Sprite; set => decoratedLink.Sprite = value; }
         public Vector2 Position { get => decoratedLink.Position; set => decoratedLink.Position = value; }
         public Vector2 Direction { get => decoratedLink.Direction; }
+        public Health Health { get => decoratedLink.Health; }
 
         Game1 game;
         ILink decoratedLink;
@@ -76,7 +77,7 @@ namespace Zelda.Link
         {
             // Can't move when damaged
         }
-        public void TakeDamage(Game1 game)
+        public void TakeDamage(Game1 game, int damage)
         {
             // Can't take damage while already taking damage
         }

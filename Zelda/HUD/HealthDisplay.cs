@@ -37,9 +37,12 @@ namespace Zelda.HUD
                 {
                     hearts[currentHeart].HalfHeart();
                 }
-                else
+                else if ((currentHeart + offset) * 2 <= link.Health.MaxHealth)
                 {
                     hearts[currentHeart].EmptyHeart();
+                } else
+                {
+                    hearts[currentHeart].InvisibleHeart();
                 }
             }
         }

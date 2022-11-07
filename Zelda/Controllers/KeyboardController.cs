@@ -8,10 +8,12 @@ namespace Zelda.Controllers
     public class KeyboardController : IController
     {
         Dictionary<Keys, ICommand> controllerMappings;
+        private Game1 game;
 
-        public KeyboardController()
+        public KeyboardController(Game1 game)
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
+            this.game = game;
         }
 
         public void RegisterCommand(Keys key, ICommand command)
@@ -24,9 +26,18 @@ namespace Zelda.Controllers
         public void Update(GameTime gameTime)
         {
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-            foreach (Keys key in pressedKeys)
+            if (!game.Paused)
             {
-                if (controllerMappings.ContainsKey(key)) controllerMappings[key].Execute(gameTime);
+                foreach (Keys key in pressedKeys)
+                {
+                    if (controllerMappings.ContainsKey(key)) controllerMappings[key].Execute(gameTime);
+                }
+            } else
+            {
+                foreach(Keys key in pressedKeys)
+                {
+                    if (key.Equals(Keys.P)) controllerMappings[key].Execute(gameTime);
+                }
             }
         }
 

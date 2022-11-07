@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Input;
+using System.Security.Cryptography.X509Certificates;
 using Zelda.Commands.Classes;
 using Zelda.Controllers;
 using Zelda.Link;
@@ -12,6 +13,9 @@ namespace Zelda.Commands
         {
             // For quitting the game
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
+
+            // For pausing the game
+            keyboard.RegisterCommand(Keys.P, new Pause(game));
 
             // For reseting game state
             //keyboard.RegisterCommand(Keys.R, new Reset(itemBuilder, blockBuilder, npcBuilder, game));

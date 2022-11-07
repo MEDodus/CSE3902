@@ -35,6 +35,8 @@ namespace Zelda
         private CommandBuilder commandBuilder;
         private CollisionDetector collisionDetector;
         private IHUD hud;
+        private bool paused;
+        public bool Paused { get { return paused; } set { paused = value; } }
 
         public Game1()
         {
@@ -55,7 +57,7 @@ namespace Zelda
 
             // Create controllers
             controllers = new List<IController>();
-            KeyboardController keyboard = new KeyboardController();
+            KeyboardController keyboard = new KeyboardController(this);
             MouseController mouse = new MouseController();
             controllers.Add(keyboard);
             controllers.Add(mouse);
@@ -79,10 +81,18 @@ namespace Zelda
 
         protected override void Update(GameTime gameTime)
         {
+            /* If game paused we still have to check and update 
+             * controller if unpause button is pressed, so it is
+             * above the return statement
+             */
             foreach (IController controller in controllers)
             {
                 controller.Update(gameTime);
             }
+
+            if (Paused) return;
+
+            // If the game is not paused update all states
             RoomBuilder.Instance.Update(gameTime);
             RoomTransitions.Update(gameTime, link);
             ProjectileStorage.Update(gameTime);

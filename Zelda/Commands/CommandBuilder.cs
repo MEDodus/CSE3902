@@ -17,6 +17,8 @@ namespace Zelda.Commands
             // For pausing the game
             keyboard.RegisterCommand(Keys.P, new Pause(game));
 
+            keyboard.RegisterCommand(Keys.M, new Mute());
+
             // For reseting game state
             //keyboard.RegisterCommand(Keys.R, new Reset(itemBuilder, blockBuilder, npcBuilder, game));
 

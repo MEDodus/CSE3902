@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class MagicalKey : IItem
     {
-        public MagicalKey(Vector2 position) : base(ItemSpriteFactory.MagicalKeySprite(), position)
+        public MagicalKey(Vector2 position) : base(ItemSpriteFactory.MagicalKeySprite(), position, ONE)
         {
 
         }

@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class RedPotion : IItem
     {
-        public RedPotion(Vector2 position) : base(ItemSpriteFactory.RedPotionSprite(), position)
+        public RedPotion(Vector2 position) : base(ItemSpriteFactory.RedPotionSprite(), position, ONE)
         {
 
         }

@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class FiveRupies : IItem
     {
-        public FiveRupies(Vector2 position) : base(ItemSpriteFactory.FiveRupiesSprite(), position)
+        public FiveRupies(Vector2 position) : base(ItemSpriteFactory.FiveRupiesSprite(), position, 0)
         {
 
         }

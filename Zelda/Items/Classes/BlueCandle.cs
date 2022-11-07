@@ -5,7 +5,8 @@ namespace Zelda.Items.Classes
 {
     public class BlueCandle : IItem
     {
-        public BlueCandle(Vector2 position) : base(ItemSpriteFactory.BlueCandleSprite(), position)
+        // Working in inventory for CandleFlame projectile at the moment
+        public BlueCandle(Vector2 position) : base(ItemSpriteFactory.BlueCandleSprite(), position, INFINITE)
         {
 
         }

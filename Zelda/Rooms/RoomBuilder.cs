@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using Zelda.Items.Classes;
 using Zelda.Link;
 using Zelda.Projectiles;
 using Zelda.Rooms.Parsers;
@@ -55,15 +56,18 @@ namespace Zelda.Rooms
                 rooms[j] = room;
                 roomMap.Add(room.Name, room);
             }
+
             // Create the room graph starting from the entrance room
             i = 15;
             windowPosition = BASE_WINDOW_POSITION;
             ConnectAdjacentRooms(CurrentRoom, windowPosition);
+
             // Parse the remaining room objects to populate the rooms
             foreach (Room room in rooms)
             {
                 room.Parse();
             }
+
         }
 
         private readonly HashSet<Room> seen = new HashSet<Room>();

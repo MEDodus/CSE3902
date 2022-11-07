@@ -5,7 +5,8 @@ namespace Zelda.Items.Classes
 {
     public class MagicalBoomerang : IItem
     {
-        public MagicalBoomerang(Vector2 position) : base(ItemSpriteFactory.MagicalBoomerangSprite(), position)
+        // Working in inventory system as MagicalBoomerang projectile at the moment
+        public MagicalBoomerang(Vector2 position) : base(ItemSpriteFactory.MagicalBoomerangSprite(), position, INFINITE)
         {
 
         }

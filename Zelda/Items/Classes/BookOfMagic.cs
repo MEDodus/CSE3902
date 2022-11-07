@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class BookOfMagic : IItem
     {
-        public BookOfMagic(Vector2 position) : base(ItemSpriteFactory.BookOfMagicSprite(), position)
+        public BookOfMagic(Vector2 position) : base(ItemSpriteFactory.BookOfMagicSprite(), position, ONE)
         {
 
         }

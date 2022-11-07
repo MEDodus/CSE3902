@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class BlueRing : IItem
     {
-        public BlueRing(Vector2 position) : base(ItemSpriteFactory.BlueRingSprite(), position)
+        public BlueRing(Vector2 position) : base(ItemSpriteFactory.BlueRingSprite(), position, ONE)
         {
 
         }

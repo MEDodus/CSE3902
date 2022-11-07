@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class Clock : IItem
     {
-        public Clock(Vector2 position) : base(ItemSpriteFactory.ClockSprite(), position)
+        public Clock(Vector2 position) : base(ItemSpriteFactory.ClockSprite(), position, ONE)
         {
 
         }

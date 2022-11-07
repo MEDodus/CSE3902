@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class Raft : IItem
     {
-        public Raft(Vector2 position) : base(ItemSpriteFactory.RaftSprite(), position)
+        public Raft(Vector2 position) : base(ItemSpriteFactory.RaftSprite(), position, ONE)
         {
 
         }

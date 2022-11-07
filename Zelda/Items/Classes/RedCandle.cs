@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class RedCandle : IItem
     {
-        public RedCandle(Vector2 position) : base(ItemSpriteFactory.RedCandleSprite(), position)
+        public RedCandle(Vector2 position) : base(ItemSpriteFactory.RedCandleSprite(), position, ONE)
         {
 
         }

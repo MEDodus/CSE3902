@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class MagicalShield : IItem
     {
-        public MagicalShield(Vector2 position) : base(ItemSpriteFactory.MagicalShieldSprite(), position)
+        public MagicalShield(Vector2 position) : base(ItemSpriteFactory.MagicalShieldSprite(), position, ONE)
         {
 
         }

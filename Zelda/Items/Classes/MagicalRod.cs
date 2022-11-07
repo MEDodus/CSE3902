@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class MagicalRod : IItem
     {
-        public MagicalRod(Vector2 position) : base(ItemSpriteFactory.MagicalRodSprite(), position)
+        public MagicalRod(Vector2 position) : base(ItemSpriteFactory.MagicalRodSprite(), position, ONE)
         {
 
         }

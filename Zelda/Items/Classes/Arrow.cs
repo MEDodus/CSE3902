@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class Arrow : IItem
     {
-        public Arrow(Vector2 position) : base(ItemSpriteFactory.ArrowSprite(), position)
+        public Arrow(Vector2 position) : base(ItemSpriteFactory.ArrowSprite(), position, INFINITE)
         {
 
         }

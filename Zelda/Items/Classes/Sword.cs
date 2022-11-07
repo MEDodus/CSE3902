@@ -5,7 +5,8 @@ namespace Zelda.Items.Classes
 {
     public class Sword : IItem
     {
-        public Sword(Vector2 position) : base(ItemSpriteFactory.SwordSprite(), position)
+        // Working in inventory systems as Sword and SwordBeam projectiles at the moment
+        public Sword(Vector2 position) : base(ItemSpriteFactory.SwordSprite(), position, INFINITE)
         {
 
         }

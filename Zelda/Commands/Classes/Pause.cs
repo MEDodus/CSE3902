@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zelda.Sound;
 
 namespace Zelda.Commands.Classes
 {
@@ -19,6 +20,7 @@ namespace Zelda.Commands.Classes
         public void Execute(GameTime gameTime)
         {
             game.Paused = !game.Paused;
+            SoundManager.Instance.muteAndUnmute(game.Paused);
         }
     }
 }

@@ -26,6 +26,6 @@ namespace Zelda.Link
         public void TakeDamage(Game1 game);
         public void UseItem(int itemNum);
         public void CreateItem(int itemNum);
-        public bool Equip(IItem item);
+        public bool AddToInventory(IItem item);
     }
 }

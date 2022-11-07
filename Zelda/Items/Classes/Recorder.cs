@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class Recorder : IItem
     {
-        public Recorder(Vector2 position) : base(ItemSpriteFactory.RecorderSprite(), position)
+        public Recorder(Vector2 position) : base(ItemSpriteFactory.RecorderSprite(), position, ONE)
         {
 
         }

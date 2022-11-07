@@ -91,7 +91,7 @@ namespace Zelda.Link
             // Can't create items when damaged
         }
 
-        public bool Equip(IItem item)
+        public bool AddToInventory(IItem item)
         {
             // Can't equip items when damaged
             return false;

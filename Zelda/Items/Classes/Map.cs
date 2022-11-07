@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class Map : IItem
     {
-        public Map(Vector2 position) : base(ItemSpriteFactory.MapSprite(), position)
+        public Map(Vector2 position) : base(ItemSpriteFactory.MapSprite(), position, ONE)
         {
 
         }

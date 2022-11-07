@@ -8,6 +8,7 @@ using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Items;
 using Zelda.Rooms;
+using Zelda.Inventory;
 
 namespace Zelda.Link
 {
@@ -17,7 +18,7 @@ namespace Zelda.Link
         public ISprite Sprite { get { return sprite; } set { sprite = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
         public Vector2 Direction { get { return facingDirection;  } }
-        public Inventory Inventory { get { return inventory; } }
+        public Zelda.Inventory.IInventory Inventory { get { return inventory; } }
 
         private ILinkState state;
         private ISprite sprite;
@@ -25,7 +26,7 @@ namespace Zelda.Link
         private Vector2 facingDirection;
         private double swordAttackTimer = 0;
         private HashSet<Keys> movementKeys = new HashSet<Keys>();
-        private Inventory inventory;
+        private IInventory inventory;
         public Link1()
         {
             Reset();
@@ -37,8 +38,8 @@ namespace Zelda.Link
             movementKeys.Add(Keys.Left);
             movementKeys.Add(Keys.Down);
             movementKeys.Add(Keys.Right);
-
-            inventory = new Inventory();
+            inventory = new Zelda.Inventory.Inventory();
+            InventoryBuidler.BuildInventory(inventory);
         }
 
         public void Reset()
@@ -122,6 +123,7 @@ namespace Zelda.Link
         public void CreateItem(int itemNum)
         {
             IProjectile item = null;
+            IItem type = null;
             Vector2 defaultItemSpawnPos = getPositionInFrontOfLink(0);
             switch (itemNum)
             {
@@ -145,39 +147,49 @@ namespace Zelda.Link
                             spawnPos += new Vector2(0, -10);
                         }
                         item = new Sword(spawnPos, facingDirection, 0.3);
+                        type = new Zelda.Items.Classes.Sword(new Vector2());
                     }
                     break;
                 case 1:
                     item = new SwordBeam(defaultItemSpawnPos, facingDirection);
+                    type = new Zelda.Items.Classes.Sword(new Vector2());
                     break;
                 case 2:
                     item = new Arrow(defaultItemSpawnPos, facingDirection);
+                    type = new Zelda.Items.Classes.Arrow(new Vector2());
                     break;
                 case 3:
                     item = new SilverArrow(defaultItemSpawnPos, facingDirection);
+                    type = new Zelda.Items.Classes.SilverArrow(new Vector2());
                     break;
                 case 4:
                     item = new Boomerang(defaultItemSpawnPos, facingDirection, ProjectileBehavior.Friendly);
+                    type = new Zelda.Items.Classes.Boomerang(new Vector2());
                     break;
                 case 5:
                     item = new MagicalBoomerang(defaultItemSpawnPos, facingDirection);
+                    type = new Zelda.Items.Classes.MagicalBoomerang(new Vector2());
                     break;
                 case 6:
                     item = new Bomb(getPositionInFrontOfLink(1.5));
+                    type = new Zelda.Items.Classes.Bomb(new Vector2());
                     break;
                 case 7:
                     item = new CandleFlame(defaultItemSpawnPos, facingDirection);
+                    type = new Zelda.Items.Classes.BlueCandle(new Vector2());
                     break;
             }
-            if (item != null)
+            if (item != null && inventory.FindInSet(type))
             {
                 ProjectileStorage.Add(item);
+                inventory.RemoveItem(type, 1);
             }
         }
 
-        public bool Equip(IItem item)
+        public bool AddToInventory(IItem item)
         {
-            return inventory.Add(item);
+            inventory.FindInSet(item);
+            return inventory.AddItem(item, 1);
         }
     }
 }

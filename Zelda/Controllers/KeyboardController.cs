@@ -51,7 +51,8 @@ namespace Zelda.Controllers
                 }
             } else if (game.Paused)
             {
-                if (HasBeenPressed(Keys.P)) controllerMappings[Keys.P].Execute(gameTime);
+                // Allows quitting while game is paused
+                if (HasBeenPressed(Keys.P) || HasBeenPressed(Keys.Q)) controllerMappings[Keys.P].Execute(gameTime);
             }
         }
 

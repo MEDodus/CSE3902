@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System.Transactions;
 using Zelda.Commands;
 
 namespace Zelda.Controllers
@@ -9,6 +10,8 @@ namespace Zelda.Controllers
     {
         Dictionary<Keys, ICommand> controllerMappings;
         private Game1 game;
+        private static KeyboardState previousState;
+        private static KeyboardState currentState;
 
         public KeyboardController(Game1 game)
         {
@@ -23,21 +26,32 @@ namespace Zelda.Controllers
             }
         }
 
+        public static KeyboardState GetState()
+        {
+            previousState = currentState;
+            currentState = Keyboard.GetState();
+            return currentState;
+        }
+
+        public static bool HasBeenPressed(Keys key)
+        {
+            return currentState.IsKeyDown(key) && !previousState.IsKeyDown(key);
+        }
+
         public void Update(GameTime gameTime)
         {
-            Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
+            // Must call static GetState() here to update previous and current keyboard state
+            Keys[] pressedKeys = GetState().GetPressedKeys();
             if (!game.Paused)
             {
                 foreach (Keys key in pressedKeys)
                 {
-                    if (controllerMappings.ContainsKey(key)) controllerMappings[key].Execute(gameTime);
+                    if (controllerMappings.ContainsKey(key) && !key.Equals(Keys.P)) controllerMappings[key].Execute(gameTime);
+                    if (HasBeenPressed(Keys.P)) controllerMappings[Keys.P].Execute(gameTime);
                 }
-            } else
+            } else if (game.Paused)
             {
-                foreach(Keys key in pressedKeys)
-                {
-                    if (key.Equals(Keys.P)) controllerMappings[key].Execute(gameTime);
-                }
+                if (HasBeenPressed(Keys.P)) controllerMappings[Keys.P].Execute(gameTime);
             }
         }
 

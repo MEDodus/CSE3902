@@ -11,10 +11,7 @@ namespace Zelda.Utilities
     {
         public static readonly int MAX_HEALTH_START = 6;
 
-        public static readonly int MAX_HEARTS = 6;
-
-        //TEMPORARY FOR TESTING - DELETE ONCE LINK HAS HEALTH IMPLEMENTED
-        public static readonly Double CURRENT_HEALTH = 3.5;
+        public static readonly int MAX_HEARTS = 9;
 
     }
 }

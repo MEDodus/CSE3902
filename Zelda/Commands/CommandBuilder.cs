@@ -19,6 +19,8 @@ namespace Zelda.Commands
 
             keyboard.RegisterCommand(Keys.M, new Mute());
 
+            keyboard.RegisterCommand(Keys.H, new HealthCheat(game));
+
             // For reseting game state
             //keyboard.RegisterCommand(Keys.R, new Reset(itemBuilder, blockBuilder, npcBuilder, game));
 

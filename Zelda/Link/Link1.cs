@@ -19,6 +19,7 @@ namespace Zelda.Link
         public Vector2 Position { get { return position; } set { position = value; } }
         public Vector2 Direction { get { return facingDirection;  } }
         public Zelda.Inventory.IInventory Inventory { get { return inventory; } }
+        public Health Health { get { return health; } }
 
         private ILinkState state;
         private ISprite sprite;
@@ -27,6 +28,7 @@ namespace Zelda.Link
         private double swordAttackTimer = 0;
         private HashSet<Keys> movementKeys = new HashSet<Keys>();
         private IInventory inventory;
+        private Health health;
         public Link1()
         {
             Reset();
@@ -40,6 +42,7 @@ namespace Zelda.Link
             movementKeys.Add(Keys.Right);
             inventory = new Zelda.Inventory.Inventory();
             InventoryBuidler.BuildInventory(inventory);
+            health = new Health();
         }
 
         public void Reset()
@@ -105,8 +108,9 @@ namespace Zelda.Link
                 state.MoveRight();
             }
         }
-        public void TakeDamage(Game1 game)
+        public void TakeDamage(Game1 game, int damage)
         {
+            health.removeHealth(damage);
             state.TakeDamage(game);
         }
 
@@ -148,6 +152,10 @@ namespace Zelda.Link
                         }
                         item = new Sword(spawnPos, facingDirection, 0.3);
                         type = new Zelda.Items.Classes.Sword(new Vector2());
+                        if(Health.CurrentHealth == Health.MaxHealth)
+                        {
+                            ProjectileStorage.Add(new SwordBeam(defaultItemSpawnPos, facingDirection));
+                        }
                     }
                     break;
                 case 1:

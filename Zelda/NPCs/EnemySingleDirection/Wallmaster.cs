@@ -8,7 +8,7 @@ namespace Zelda.NPCs.Classes
     {
         public Wallmaster(Vector2 position) : base(NPCSpriteFactory.WallmasterSprite(), position, 3, 1)
         {
-
+            damage = 1;
         }
 
         //private double changeDirectionCooldown = 0; // seconds

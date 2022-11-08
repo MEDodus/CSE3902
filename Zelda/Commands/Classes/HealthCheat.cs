@@ -1,21 +1,21 @@
 ﻿using Microsoft.Xna.Framework;
 using Zelda.Link;
-using Zelda.Sound;
 
 namespace Zelda.Commands
 {
-    public class Hurt : ICommand
+    public class HealthCheat : ICommand
     {
         private Game1 game;
 
-        public Hurt(Game1 game, ILink link)
+        public HealthCheat(Game1 game)
         {
             this.game = game;
         }
 
         public void Execute(GameTime gametime)
         {
-            game.link.TakeDamage(game, 1);
+            game.link.Health.addMaxHealth(24);
+            game.link.Health.healthToFull();
         }
     }
 }

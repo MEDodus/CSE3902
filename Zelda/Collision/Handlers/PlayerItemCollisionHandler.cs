@@ -1,6 +1,7 @@
 ﻿using Zelda.Link;
 using Zelda.Rooms;
 using Zelda.Items;
+using Zelda.Items.Classes;
 
 namespace Zelda.Collision.Handlers
 {
@@ -21,6 +22,17 @@ namespace Zelda.Collision.Handlers
             if (link.AddToInventory(item))
             {
                 // AddToInventory was successful, remove item from room
+                if(item is Fairy)
+                {
+                    link.Health.addHealth(6);
+                } else if(item is Heart)
+                {
+                    link.Health.addHealth(2);
+                } else if(item is HeartContainer)
+                {
+                    link.Health.addMaxHealth(2);
+                    link.Health.healthToFull();
+                }
                 RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
             }
         }

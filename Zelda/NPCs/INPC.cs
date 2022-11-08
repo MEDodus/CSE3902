@@ -8,6 +8,7 @@ namespace Zelda.NPCs
     {
         public bool Dead { get; }
         public ISprite Sprite { get; }
+        public int Damage { get; }
 
         public void Update(GameTime gameTime);
 

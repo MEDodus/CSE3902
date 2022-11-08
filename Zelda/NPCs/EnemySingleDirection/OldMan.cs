@@ -12,14 +12,17 @@ namespace Zelda.NPCs.Classes
     {
         public ISprite Sprite { get { return sprite; } }
         public bool Dead { get { return false; } }
+        public int Damage { get { return damage; } }
 
         protected ISprite sprite;
         protected Vector2 position;
+        private int damage;
 
         public OldMan(Vector2 startPosition)
         {
             sprite = NPCSpriteFactory.OldManSprite();
             position = startPosition;
+            damage = 0;
         }
 
         public void Update(GameTime gameTime)

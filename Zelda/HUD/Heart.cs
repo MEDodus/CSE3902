@@ -40,5 +40,9 @@ namespace Zelda.HUD
         {
             this.heart = HUDSpriteFactory.EmptyHeart();
         }
+        public void InvisibleHeart()
+        {
+            this.heart = HUDSpriteFactory.InvisibleHeart();
+        }
     }
 }

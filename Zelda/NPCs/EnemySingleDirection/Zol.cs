@@ -8,7 +8,7 @@ namespace Zelda.NPCs.Classes
     {
         public Zol(Vector2 position) : base(NPCSpriteFactory.ZolSprite(), position, 1, 1)
         {
-
+            damage = 2;
         }
 
         //private double changeDirectionCooldown = 0; // seconds

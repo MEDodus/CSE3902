@@ -8,7 +8,7 @@ namespace Zelda.NPCs.Classes
     {
         public SpikeCross(Vector2 position) : base(NPCSpriteFactory.SpikeCross(), position, int.MaxValue, 8)
         {
-
+            damage = 1;
         }
 
         //private double changeDirectionCooldown = 0; // seconds

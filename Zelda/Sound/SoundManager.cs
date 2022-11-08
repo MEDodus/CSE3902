@@ -98,6 +98,19 @@ namespace Zelda.Sound
 
         }
 
+        public void toggleMute()
+        {
+            if (IsMuted)
+            {
+                MediaPlayer.Resume();
+            } else
+            {
+                MediaPlayer.Pause();
+            }
+            IsMuted = !IsMuted;
+        }
+
+
         public void muteAndUnmute(bool Muted)
         {
             if (Muted)

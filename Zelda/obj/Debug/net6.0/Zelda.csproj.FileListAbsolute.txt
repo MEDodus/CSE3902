@@ -1,473 +1,127 @@
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\arrow.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bat.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blocks.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_candle.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_potion.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_ring.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb_explosion.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\book_of_magic.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\boomerang.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_locked.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_open.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bow.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\clock.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\compass.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\death_explosion.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\directional_sword.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dodongo.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dragon.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fairy.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fire.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fireball.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\five_rupies.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\food.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\gel.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\goriya.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\hand.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_container.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\invisible_block.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\key.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\letter.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link2.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt1.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt2.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt3.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_1.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_2.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_3.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_boomerang.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_key.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_rod.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_shield.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\power_bracelet.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\projectile_vanish.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\raft.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\recorder.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_candle.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_potion.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_ring.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\rupy.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\silver_arrow.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\skeleton.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\snake.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\spike_cross.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\stepladder.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword_beam.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\triforce.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\white_sword.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\zol.xnb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.exe
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.deps.json
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.runtimeconfig.json
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.dll
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.pdb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\MonoGame.Framework.dll
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.AssemblyReference.cache
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfoInputs.cache
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfo.cs
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CoreCompileInputs.cache
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CopyComplete
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.dll
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\refint\Zelda.dll
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.pdb
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
-C:\Users\jacob\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\arrow.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bat.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blocks.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_candle.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_potion.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_ring.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb_explosion.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\book_of_magic.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\boomerang.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_locked.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_open.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bow.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\clock.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\compass.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\death_explosion.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\directional_sword.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dodongo.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dragon.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fairy.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fire.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fireball.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\five_rupies.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\food.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\gel.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\goriya.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\hand.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_container.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\invisible_block.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\key.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\letter.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link2.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt1.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt2.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt3.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_1.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_2.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_3.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_boomerang.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_key.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_rod.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_shield.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\power_bracelet.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\projectile_vanish.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\raft.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\recorder.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_candle.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_potion.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_ring.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\rupy.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\silver_arrow.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\skeleton.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\snake.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\spike_cross.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\stepladder.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword_beam.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\triforce.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\white_sword.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\zol.xnb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.exe
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.deps.json
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.runtimeconfig.json
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.pdb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\MonoGame.Framework.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.AssemblyReference.cache
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfoInputs.cache
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfo.cs
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CoreCompileInputs.cache
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CopyComplete
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\refint\Zelda.dll
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.pdb
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
-C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
-C:\Users\alexr\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_display.xnb
-C:\Users\alexr\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hud_background.xnb
-C:\Users\alexr\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dungeon_hud_map.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dungeon_hud_map.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_display.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hud_background.xnb
-C:\Users\alexr\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\Font.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Arrow_Boomerang.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Bomb_Blow.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Bomb_Drop.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Hit.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream1.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream2.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream3.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Candle.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Door_Unlock.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Enemy_Die.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Enemy_Hit.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Fanfare.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Heart.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Item.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Rupee.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Key_Appear.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Link_Die.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Link_Hurt.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_LowHealth.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_MagicalRod.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Recorder.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Refill_Loop.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Secret.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Shield.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Shore.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Stairs.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Combined.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Shoot.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Slash.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text_Slow.xnb
-C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\black_rectangle.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Arrow_Boomerang.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Bomb_Blow.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Bomb_Drop.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Hit.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream1.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream2.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream3.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Candle.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Door_Unlock.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Enemy_Die.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Enemy_Hit.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Fanfare.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Heart.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Item.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Rupee.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Key_Appear.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Link_Die.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Link_Hurt.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_LowHealth.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_MagicalRod.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Recorder.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Refill_Loop.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Secret.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Shield.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Shore.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Stairs.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Combined.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Shoot.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Slash.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text_Slow.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\arrow.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bat.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\black_rectangle.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blocks.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_candle.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_potion.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_ring.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb_explosion.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\book_of_magic.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\boomerang.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_locked.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_open.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bow.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\clock.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\compass.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\death_explosion.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\directional_sword.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dodongo.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dragon.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dungeon_hud_map.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fairy.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fire.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fireball.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\five_rupies.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\food.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\gel.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\goriya.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\hand.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_container.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_display.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\invisible_block.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\key.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\letter.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link2.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hud_background.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt1.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt2.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt3.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_1.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_2.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_3.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_boomerang.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_key.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_rod.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_shield.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\power_bracelet.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\projectile_vanish.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\raft.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\recorder.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_candle.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_potion.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_ring.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\rupy.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\silver_arrow.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\skeleton.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\snake.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\spike_cross.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\stepladder.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword_beam.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\triforce.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\white_sword.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\zol.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.exe
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.deps.json
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.runtimeconfig.json
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Zelda.pdb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\MonoGame.Framework.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.AssemblyReference.cache
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfoInputs.cache
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfo.cs
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CoreCompileInputs.cache
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CopyComplete
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\refint\Zelda.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.pdb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Main_Theme.xnb
-C:\Users\000\Source\Repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Main_Theme.ogg
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Arrow_Boomerang.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Bomb_Blow.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Bomb_Drop.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Hit.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream1.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream2.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream3.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Candle.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Door_Unlock.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Enemy_Die.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Enemy_Hit.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Fanfare.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Heart.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Item.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Rupee.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Key_Appear.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Link_Die.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Link_Hurt.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_LowHealth.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_MagicalRod.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Main_Theme.ogg
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Main_Theme.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Recorder.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Refill_Loop.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Secret.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Shield.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Shore.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Stairs.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Combined.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Shoot.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Slash.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text_Slow.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\arrow.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bat.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\black_rectangle.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blocks.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_candle.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_potion.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_ring.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb_explosion.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\book_of_magic.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\boomerang.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_locked.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_open.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bow.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\clock.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\compass.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\death_explosion.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\directional_sword.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dodongo.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dragon.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dungeon_hud_map.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fairy.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fire.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fireball.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\five_rupies.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\food.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\gel.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\goriya.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\hand.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_container.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_display.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\invisible_block.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\key.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\letter.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link2.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hud_background.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt1.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt2.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt3.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_1.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_2.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_3.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_boomerang.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_key.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_rod.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_shield.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\power_bracelet.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\projectile_vanish.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\raft.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\recorder.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_candle.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_potion.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_ring.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\rupy.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\silver_arrow.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\skeleton.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\snake.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\spike_cross.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\stepladder.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword_beam.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\triforce.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\white_sword.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\zol.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Zelda.exe
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Zelda.deps.json
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Zelda.runtimeconfig.json
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Zelda.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Zelda.pdb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\MonoGame.Framework.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.csproj.AssemblyReference.cache
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfoInputs.cache
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfo.cs
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CoreCompileInputs.cache
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CopyComplete
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\refint\Zelda.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.pdb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
-C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Arrow_Boomerang.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Bomb_Blow.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Bomb_Drop.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Hit.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream1.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream2.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Boss_Scream3.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Candle.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Door_Unlock.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Enemy_Die.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Enemy_Hit.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Fanfare.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Heart.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Item.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Get_Rupee.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Key_Appear.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Link_Die.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Link_Hurt.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_LowHealth.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_MagicalRod.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Main_Theme.ogg
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Main_Theme.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Recorder.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Refill_Loop.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Secret.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Shield.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Shore.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Stairs.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Combined.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Shoot.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Sword_Slash.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\SoundEffect\LOZ_Text_Slow.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\arrow.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bat.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\black_rectangle.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blocks.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_candle.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_potion.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blue_ring.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bomb_explosion.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\book_of_magic.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\boomerang.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_locked.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\borders_doors_open.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bow.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\clock.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\compass.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\death_explosion.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\directional_sword.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dodongo.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dragon.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dungeon_hud_map.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fairy.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fire.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\fireball.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\five_rupies.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\food.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\gel.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\goriya.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\hand.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_container.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_display.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\invisible_block.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\key.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\letter.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link2.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hud_background.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt1.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt2.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt3.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_1.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_2.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_3.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_boomerang.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_key.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_rod.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_shield.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\power_bracelet.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\projectile_vanish.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\raft.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\recorder.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_candle.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_potion.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_ring.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\rupy.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\silver_arrow.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\skeleton.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\snake.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\spike_cross.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\stepladder.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword_beam.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\triforce.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\white_sword.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\zol.xnb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.exe
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.deps.json
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.runtimeconfig.json
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\Zelda.pdb
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\MonoGame.Framework.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\linux-x64\native\libopenal.so.1
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libSDL2.dylib
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\osx\native\libopenal.1.dylib
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\SDL2.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x64\native\soft_oal.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\SDL2.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\bin\Debug\net6.0\runtimes\win-x86\native\soft_oal.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.AssemblyReference.cache
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfoInputs.cache
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.AssemblyInfo.cs
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CoreCompileInputs.cache
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.csproj.CopyComplete
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\refint\Zelda.dll
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.pdb
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
+C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll

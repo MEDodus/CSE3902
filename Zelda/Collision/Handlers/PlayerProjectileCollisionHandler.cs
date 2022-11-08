@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Zelda.Link;
 using Zelda.Projectiles;
+using Zelda.Projectiles.Classes;
 
 namespace Zelda.Collision.Handlers
 {
@@ -26,7 +27,17 @@ namespace Zelda.Collision.Handlers
                 projectileDirection.Normalize();
                 if (!Vector2.Add(linkDirection, projectileDirection).Equals(new Vector2(0, 0)))
                 {
-                    game.link.TakeDamage(game);
+                    int damage = 0;
+                    if(projectile is Explosion)
+                    {
+                        damage = 4;
+                    } else if(projectile is Boomerang) {
+                        damage = 2;
+                    } else if(projectile is Fireball)
+                    {
+                        damage = 1;
+                    }
+                    game.link.TakeDamage(game, damage);
                 }
                 projectile.Delete();
             }

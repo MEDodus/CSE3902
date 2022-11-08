@@ -17,12 +17,12 @@ namespace Zelda.HUD
         protected HealthDisplay healthDisplay;
         protected HUDItemQuantity bombQuantity;
 
-        public LinkHUD()
+        public LinkHUD(ILink link)
         {
             hudBackground = new HUDBackground();
             map = new DungeonHUDMap();
             //initialize weapon/item displays
-            healthDisplay = new HealthDisplay();
+            healthDisplay = new HealthDisplay(link);
             bombQuantity = new HUDItemQuantity(new Vector2(HUDUtilities.HUD_X + 20, HUDUtilities.MAP_Y - 30), "Level 1");
 
 

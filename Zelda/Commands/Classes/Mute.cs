@@ -4,18 +4,16 @@ using Zelda.Sound;
 
 namespace Zelda.Commands
 {
-    public class Hurt : ICommand
+    public class Mute : ICommand
     {
-        private Game1 game;
 
-        public Hurt(Game1 game, ILink link)
+        public Mute()
         {
-            this.game = game;
         }
 
         public void Execute(GameTime gametime)
         {
-            game.link.TakeDamage(game, 1);
+            SoundManager.Instance.toggleMute();
         }
     }
 }

@@ -5,7 +5,7 @@ using Zelda.Projectiles.Classes;
 
 namespace Zelda.Collision.Handlers
 {
-    internal class PlayerProjectileCollisionHandler : ICollision
+    public class PlayerProjectileCollisionHandler : ICollision
     {
         public PlayerProjectileCollisionHandler()
         {
@@ -37,7 +37,7 @@ namespace Zelda.Collision.Handlers
                     {
                         damage = 1;
                     }
-                    game.link.TakeDamage(game, damage);
+                    game.Link.TakeDamage(game, damage);
                 }
                 projectile.Delete();
             }

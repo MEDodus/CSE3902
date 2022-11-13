@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Transactions;
 using Zelda.Commands;
+using Zelda.GameStates.Classes;
 
 namespace Zelda.Controllers
 {
@@ -42,17 +43,28 @@ namespace Zelda.Controllers
         {
             // Must call static GetState() here to update previous and current keyboard state
             Keys[] pressedKeys = GetState().GetPressedKeys();
-            if (!game.Paused)
+            bool paused = game.GameState is PausedGameState;
+            if (!paused)
             {
                 foreach (Keys key in pressedKeys)
                 {
-                    if (controllerMappings.ContainsKey(key) && !key.Equals(Keys.P)) controllerMappings[key].Execute(gameTime);
-                    if (HasBeenPressed(Keys.P)) controllerMappings[Keys.P].Execute(gameTime);
+
+                    if (controllerMappings.ContainsKey(key) && !key.Equals(Keys.P))
+                    {
+                        controllerMappings[key].Execute(gameTime);
+                    }
+                    else if (HasBeenPressed(Keys.P) && key.Equals(Keys.P))
+                    {
+                        controllerMappings[Keys.P].Execute(gameTime);
+                    }
                 }
-            } else if (game.Paused)
+            } else if (paused)
             {
                 // Allows quitting while game is paused
-                if (HasBeenPressed(Keys.P) || HasBeenPressed(Keys.Q)) controllerMappings[Keys.P].Execute(gameTime);
+                if (HasBeenPressed(Keys.P) || HasBeenPressed(Keys.Q))
+                {
+                    controllerMappings[Keys.P].Execute(gameTime);
+                }
             }
         }
 

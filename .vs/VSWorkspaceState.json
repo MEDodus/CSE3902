@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Zelda"
+    "\\Zelda",
+    "\\Zelda\\Collision",
+    "\\Zelda\\Collision\\Handlers"
   ],
-  "SelectedNode": "\\Zelda\\Game1.cs",
+  "SelectedNode": "\\Zelda\\Collision\\Handlers\\PlayerItemCollisionHandler.cs",
   "PreviewInSolutionExplorer": false
 }

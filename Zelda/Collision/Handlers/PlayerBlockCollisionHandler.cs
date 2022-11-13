@@ -5,7 +5,7 @@ using Zelda.Blocks.Classes;
 
 namespace Zelda.Collision.Handlers
 {
-    internal class PlayerBlockCollisionHandler : ICollision
+    public class PlayerBlockCollisionHandler : ICollision
     {
         protected Direction collisionDirection;
 

@@ -10,7 +10,7 @@ using Zelda.Utilities;
 
 namespace Zelda.HUD
 {
-    internal class LinkHUD : IHUD
+    public class LinkHUD : IHUD
     {
         protected HUDBackground hudBackground;
         protected DungeonHUDMap map;

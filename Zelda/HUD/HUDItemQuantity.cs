@@ -11,7 +11,7 @@ using Zelda.Utilities;
 
 namespace Zelda.HUD
 {
-    internal class HUDItemQuantity : IHUDElement
+    public class HUDItemQuantity : IHUDElement
     {
         private SpriteFont font;
         private Vector2 destination;

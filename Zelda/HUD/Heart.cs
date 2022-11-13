@@ -11,7 +11,7 @@ using Zelda.Utilities;
 
 namespace Zelda.HUD
 {
-    internal class Heart
+    public class Heart
     {
         protected ISprite heart;
         protected Vector2 destination;

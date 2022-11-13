@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zelda.Collision
 {
-    internal interface ICollision
+    public interface ICollision
     {
         public void HandleCollision();
     }

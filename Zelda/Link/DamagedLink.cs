@@ -101,7 +101,7 @@ namespace Zelda.Link
         public void RemoveDecorator()
         {
             decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link2");
-            game.link = decoratedLink;
+            game.Link = decoratedLink;
         }
     }
 }

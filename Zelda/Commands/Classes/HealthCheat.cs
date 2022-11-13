@@ -14,8 +14,8 @@ namespace Zelda.Commands
 
         public void Execute(GameTime gametime)
         {
-            game.link.Health.addMaxHealth(24);
-            game.link.Health.healthToFull();
+            game.Link.Health.addMaxHealth(24);
+            game.Link.Health.healthToFull();
         }
     }
 }

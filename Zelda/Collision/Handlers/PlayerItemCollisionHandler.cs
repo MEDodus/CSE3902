@@ -5,7 +5,7 @@ using Zelda.Items.Classes;
 
 namespace Zelda.Collision.Handlers
 {
-    internal class PlayerItemCollisionHandler : ICollision
+    public class PlayerItemCollisionHandler : ICollision
     {
         public PlayerItemCollisionHandler()
         {

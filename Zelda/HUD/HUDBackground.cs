@@ -13,7 +13,7 @@ using Zelda.Utilities;
 
 namespace Zelda.HUD
 {
-    internal class HUDBackground : IHUDElement
+    public class HUDBackground : IHUDElement
     {
         protected ISprite background;
         protected Vector2 destination;

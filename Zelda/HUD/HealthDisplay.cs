@@ -11,7 +11,7 @@ using Zelda.Utilities;
 
 namespace Zelda.HUD
 {
-    internal class HealthDisplay : IHUDElement
+    public class HealthDisplay : IHUDElement
     {
         protected Heart[] hearts;
         public HealthDisplay(ILink link)

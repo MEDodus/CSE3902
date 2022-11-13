@@ -10,7 +10,7 @@ using Zelda.Link;
 
 namespace Zelda.HUD
 {
-    internal interface IHUD
+    public interface IHUD
     {
         public void Update(GameTime gameTime, ILink link);
         public void Draw(SpriteBatch spriteBatch);

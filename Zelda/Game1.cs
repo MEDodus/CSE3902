@@ -10,6 +10,8 @@ using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sprites.Factories;
 using Zelda.Sound;
+using Zelda.GameStates;
+using Zelda.GameStates.Classes;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -27,16 +29,19 @@ namespace Zelda
 {
     public class Game1 : Game
     {
+        public IGameState GameState { get { return gameState; } set { gameState = value; } }
+        public ILink Link { get { return link; } set { link = value; } }
+        public IHUD HUD { get { return hud; } }
+        public CollisionDetector Collisions { get { return collisionDetector; } }
+
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-
+        private ILink link;
+        private IHUD hud;
+        private IGameState gameState;
         private List<IController> controllers;
-        public ILink link;
         private CommandBuilder commandBuilder;
         private CollisionDetector collisionDetector;
-        private IHUD hud;
-        private bool paused;
-        public bool Paused { get { return paused; } set { paused = value; } }
 
         public Game1()
         {
@@ -49,77 +54,49 @@ namespace Zelda
 
         protected override void Initialize()
         {
-            // This must be done before creating any sprite objects (items, blocks, NPCs, etc.)
+            // This must be done before creating any content-dependent objects
             SpriteFactory.Initialize(Content);
-
-            RoomBuilder.Instance.Initialize();
             SoundManager.Instance.Initialize(Content);
+            RoomBuilder.Instance.Initialize();
 
-            // Create controllers
+            // Set up controllers
             controllers = new List<IController>();
             KeyboardController keyboard = new KeyboardController(this);
             MouseController mouse = new MouseController();
             controllers.Add(keyboard);
             controllers.Add(mouse);
-            //SoundManager.Instance.PlayMainThemeSound();
 
+            // Other initialization
             link = new Link1();
-            commandBuilder = new CommandBuilder(keyboard, mouse, this);
-
-            collisionDetector = new CollisionDetector();
-
             hud = new LinkHUD(link);
-
+            commandBuilder = new CommandBuilder(keyboard, mouse, this);
+            collisionDetector = new CollisionDetector();
+            gameState = new RunningGameState(this);
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            
         }
 
         protected override void Update(GameTime gameTime)
         {
-            /* If game paused we still have to check and update 
-             * controller if unpause button is pressed, so it is
-             * above the return statement
-             */
+            // All controllers must be updated regardless of game state so state transitions can occur
             foreach (IController controller in controllers)
             {
                 controller.Update(gameTime);
             }
-
-            if (Paused) return;
-
-            // If the game is not paused update all states
-            RoomBuilder.Instance.Update(gameTime);
-            RoomTransitions.Update(gameTime, link);
-            ProjectileStorage.Update(gameTime);
-            link.Update(gameTime);
-
-            collisionDetector.DetectCollisions(this, gameTime, link);
-
-            hud.Update(gameTime, link);
-
+            gameState.Update(gameTime);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
             _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
-
-            RoomBuilder.Instance.Draw(_spriteBatch);
-            ProjectileStorage.Draw(_spriteBatch);
-            link.Draw(_spriteBatch);
-            RoomBuilder.Instance.DrawTopLayer(_spriteBatch);
-
-            hud.Draw(_spriteBatch);
-
+            gameState.Draw(_spriteBatch);
             _spriteBatch.End();
-
             base.Draw(gameTime);
         }
     }

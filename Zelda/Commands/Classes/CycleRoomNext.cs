@@ -6,11 +6,11 @@ namespace Zelda.Commands.Classes
 {
     public class CycleRoomNext : ICommand
     {
-        private ILink link;
+        Game1 game;
 
-        public CycleRoomNext(ILink link)
+        public CycleRoomNext(Game1 game)
         {
-            this.link = link;
+            this.game = game;
         }
 
         private double lastExecuteTime = 0;
@@ -20,7 +20,7 @@ namespace Zelda.Commands.Classes
             if (currentTime - lastExecuteTime > 0.25)
             {
                 lastExecuteTime = currentTime;
-                RoomBuilder.Instance.NextRoom(link);
+                RoomBuilder.Instance.NextRoom(game.Link);
             }
         }
     }

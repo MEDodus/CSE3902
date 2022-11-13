@@ -13,7 +13,7 @@ using Zelda.Utilities;
 
 namespace Zelda.HUD
 {
-    internal class DungeonHUDMap : IHUDElement
+    public class DungeonHUDMap : IHUDElement
     {
         protected ISprite map;
         protected Vector2 destination;

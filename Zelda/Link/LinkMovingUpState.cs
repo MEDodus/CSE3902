@@ -42,7 +42,7 @@ namespace Zelda.Link
         }
         public void TakeDamage(Game1 game)
         {
-            game.link = new DamagedLink(link, game);
+            game.Link = new DamagedLink(link, game);
         }
         public void Update()
         {

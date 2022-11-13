@@ -11,7 +11,7 @@ using Zelda.NPCs.Classes;
 
 namespace Zelda.Collision
 {
-    internal class EnemyBlockCollisionHandler
+    public class EnemyBlockCollisionHandler
     {
         protected Direction AwayFromCollision;
         protected Rectangle collisionArea;

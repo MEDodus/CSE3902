@@ -13,7 +13,7 @@ using Zelda.Blocks;
 
 namespace Zelda.Collision.Handlers
 {
-    internal class PlayerEnemyCollisionHandler : ICollision
+    public class PlayerEnemyCollisionHandler : ICollision
     {
         public PlayerEnemyCollisionHandler()
         {
@@ -29,7 +29,7 @@ namespace Zelda.Collision.Handlers
         {
             if(enemy.Damage > 0)
             {
-                game.link.TakeDamage(game, enemy.Damage);
+                game.Link.TakeDamage(game, enemy.Damage);
             }
         }
 

@@ -11,18 +11,11 @@ namespace Zelda.Commands
     {
         public CommandBuilder(KeyboardController keyboard, MouseController mouse, Game1 game)
         {
-            // For quitting the game
+            // For game states
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
-
-            // For pausing the game
             keyboard.RegisterCommand(Keys.P, new Pause(game));
-
             keyboard.RegisterCommand(Keys.M, new Mute());
-
             keyboard.RegisterCommand(Keys.H, new HealthCheat(game));
-
-            // For reseting game state
-            //keyboard.RegisterCommand(Keys.R, new Reset(itemBuilder, blockBuilder, npcBuilder, game));
 
             // For player movement
             keyboard.RegisterCommand(Keys.W, new Up(game));
@@ -54,16 +47,9 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.D7, new UseItem7(game));
             keyboard.RegisterCommand(Keys.NumPad7, new UseItem7(game));
 
-            // For swapping rooms (sprint 3 only)
-            mouse.RegisterLeftClickCommand(new CycleRoomPrevious(game.link));
-            mouse.RegisterRightClickCommand(new CycleRoomNext(game.link));
-
-            // For damaged state (sprint 2 only)
-            //keyboard.RegisterCommand(Keys.E, new Hurt(game, link));
-
-            // For secondary items
-            //keyboard.RegisterCommand(Keys.X, new SecondaryItem(game));
-            //keyboard.RegisterCommand(Keys.M, new SecondaryItem(game));
+            // For swapping rooms (sprint 3/4 only)
+            mouse.RegisterLeftClickCommand(new CycleRoomPrevious(game));
+            mouse.RegisterRightClickCommand(new CycleRoomNext(game));
         }
     }
 }

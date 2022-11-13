@@ -12,7 +12,7 @@ using System.Numerics;
 
 namespace Zelda.Collision
 {
-    internal class CollisionDetector
+    public class CollisionDetector
     {
         protected enum CollisionDirection { left, right, up, down }
 

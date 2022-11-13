@@ -9,7 +9,7 @@ using Zelda.Projectiles;
 
 namespace Zelda.Collision.Handlers
 {
-    internal class EnemyProjectileCollisionHandler
+    public class EnemyProjectileCollisionHandler
     {
         public void HandleCollision(INPC enemy, IProjectile projectile)
         {

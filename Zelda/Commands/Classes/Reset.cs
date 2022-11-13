@@ -1,7 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Zelda.Blocks;
-using Zelda.Items;
-using Zelda.NPCs;
 using Zelda.Projectiles;
 
 namespace Zelda.Commands.Classes
@@ -17,7 +14,7 @@ namespace Zelda.Commands.Classes
 
         public void Execute(GameTime gameTime)
         {
-            game.link.Reset();
+            game.Link.Reset();
             ProjectileStorage.Clear();
         }
     }

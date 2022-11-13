@@ -5,9 +5,12 @@ namespace Zelda.Blocks.Classes
 {
     public class PushableBlock : IBlock
     {
+        public bool Pushed { get { return animationComplete; } }
+
         private readonly double PUSH_DURATION = 0.6;
 
         private bool pushed = false;
+        private bool animationComplete = false;
         private double pushTimer;
         private Vector2 startPosition;
         private Vector2 goalPosition;
@@ -34,6 +37,7 @@ namespace Zelda.Blocks.Classes
             {
                 pushTimer -= gameTime.ElapsedGameTime.TotalSeconds;
                 position = startPosition + (goalPosition - startPosition) * (float)((PUSH_DURATION - pushTimer) / PUSH_DURATION);
+                animationComplete = pushTimer <= 0;
             }
         }
     }

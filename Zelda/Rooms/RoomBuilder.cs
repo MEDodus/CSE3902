@@ -34,6 +34,7 @@ namespace Zelda.Rooms
         }
         public Room[] Rooms { get { return rooms; } }
         public Vector2 WindowPosition { get { return windowPosition; } set { windowPosition = value; } }
+        public Vector2 BaseWindowPosition { get { return BASE_WINDOW_POSITION; } }
         public Vector2 WindowOffset { get { return BASE_WINDOW_POSITION - windowPosition; } }
 
         private Room[] rooms = new Room[19];
@@ -67,7 +68,6 @@ namespace Zelda.Rooms
             {
                 room.Parse();
             }
-
         }
 
         private readonly HashSet<Room> seen = new HashSet<Room>();

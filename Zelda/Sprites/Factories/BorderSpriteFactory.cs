@@ -79,5 +79,23 @@ namespace Zelda.Sprites.Factories
         {
             return RightSprite("borders_doors_locked");
         }
+
+        // Puzzle doors
+        public static ISprite TopPuzzleDoorSprite()
+        {
+            return TopSprite("borders_doors_puzzle");
+        }
+        public static ISprite BottomPuzzleDoorSprite()
+        {
+            return BottomSprite("borders_doors_puzzle");
+        }
+        public static ISprite LeftPuzzleDoorSprite()
+        {
+            return LeftSprite("borders_doors_puzzle");
+        }
+        public static ISprite RightPuzzleDoorSprite()
+        {
+            return RightSprite("borders_doors_puzzle");
+        }
     }
 }

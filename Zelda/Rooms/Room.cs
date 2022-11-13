@@ -7,7 +7,9 @@ using Zelda.Blocks.Classes;
 using Zelda.Borders;
 using Zelda.Items;
 using Zelda.NPCs;
+using Zelda.Puzzles;
 using Zelda.Rooms.Parsers;
+using Zelda.Rooms.Puzzles.Classes;
 
 namespace Zelda.Rooms
 {
@@ -23,9 +25,10 @@ namespace Zelda.Rooms
         private HashSet<IItem> items;
         private HashSet<IItem> itemsToRemove;
         private Dictionary<Direction, IBorder> borders;
-        private Dictionary<Direction, Door> doors;
+        private Dictionary<Direction, IBlock> doors;
         private Dictionary<Direction, Room> adjacentRooms;
         private Vector2 position;
+        private IPuzzle puzzle;
 
         public string Name { get { return filename; } }
         public HashSet<IBlock> Blocks { get { return blocks; } }
@@ -33,9 +36,10 @@ namespace Zelda.Rooms
         public HashSet<INPC> NPCs { get { return npcs; } }
         public HashSet<IItem> Items { get { return items; } }
         public Dictionary<Direction, IBorder> Borders { get { return borders; } }
-        public Dictionary<Direction, Door> Doors { get { return doors; } }
+        public Dictionary<Direction, IBlock> Doors { get { return doors; } }
         public Dictionary<Direction, Room> AdjacentRooms { get { return adjacentRooms; } }
         public Vector2 Position { get { return position; } set { position = value; } }
+        public IPuzzle Puzzle { set { puzzle = value; } }
 
         public Room(string filename)
         {
@@ -47,8 +51,9 @@ namespace Zelda.Rooms
             items = new HashSet<IItem>();
             itemsToRemove = new HashSet<IItem>();
             borders = new Dictionary<Direction, IBorder>();
-            doors = new Dictionary<Direction, Door>();
+            doors = new Dictionary<Direction, IBlock>();
             adjacentRooms = new Dictionary<Direction, Room>();
+            puzzle = null;
         }
 
         public void Parse()
@@ -57,11 +62,12 @@ namespace Zelda.Rooms
             BorderParser borderParser = new BorderParser(this, borders, doors, collidableBlocks);
             NPCParser npcParser = new NPCParser(this, npcs);
             ItemParser itemParser = new ItemParser(this, items);
-
+            PuzzleParser puzzleParser = new PuzzleParser(this);
             blockParser.Parse();
             borderParser.Parse();
             npcParser.Parse();
             itemParser.Parse();
+            puzzleParser.Parse();
         }
 
         public void Update(GameTime gameTime)
@@ -99,6 +105,10 @@ namespace Zelda.Rooms
             foreach (IItem item in items)
             {
                 item.Update(gameTime);
+            }
+            if (puzzle != null)
+            {
+                puzzle.Update();
             }
         }
 

@@ -41,9 +41,9 @@ namespace Zelda.Rooms.Parsers
 
         protected abstract void ParseObject(string identifier, int i, int j);
 
-        protected static Vector2 GetSpawnPosition(int i, int j, Room room)
+        public static Vector2 GetSpawnPosition(int i, int j, Room room)
         {
-            Vector2 offset = room.Position - RoomBuilder.Instance.WindowPosition + new Vector2(Settings.BORDER_SIZE, Settings.BORDER_SIZE);
+            Vector2 offset = room.Position - RoomBuilder.Instance.BaseWindowPosition + new Vector2(Settings.BORDER_SIZE, Settings.BORDER_SIZE);
             return new Vector2(Settings.ROOM_WINDOW_X + (i * Settings.BLOCK_SIZE), Settings.ROOM_WINDOW_Y + (j * Settings.BLOCK_SIZE)) + offset;
         }
     }

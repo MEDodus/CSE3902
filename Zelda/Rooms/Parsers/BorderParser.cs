@@ -11,9 +11,9 @@ namespace Zelda.Rooms.Parsers
     {
         private Dictionary<Room.Direction, IBorder> borders;
         private HashSet<IBlock> collidableBlocks;
-        private Dictionary<Room.Direction, Door> doors;
+        private Dictionary<Room.Direction, IBlock> doors;
 
-        public BorderParser(Room room, Dictionary<Room.Direction, IBorder> borders, Dictionary<Room.Direction, Door> doors, HashSet<IBlock> collidableBlocks) 
+        public BorderParser(Room room, Dictionary<Room.Direction, IBorder> borders, Dictionary<Room.Direction, IBlock> doors, HashSet<IBlock> collidableBlocks) 
             : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\borders.csv")
         {
             this.borders = borders;
@@ -24,6 +24,7 @@ namespace Zelda.Rooms.Parsers
         protected override void ParseObject(string identifier, int i, int j)
         {
             IBorder border = null;
+            bool puzzle = false;
             if (identifier == "wall")
             {
                 if (i == 0)
@@ -57,6 +58,18 @@ namespace Zelda.Rooms.Parsers
                 else
                     border = new BottomLockedDoor(room);
             }
+            else if (identifier == "puzzle_door")
+            {
+                puzzle = true;
+                if (i == 0)
+                    border = new LeftPuzzleDoor(room);
+                else if (i == 1)
+                    border = new RightPuzzleDoor(room);
+                else if (i == 2)
+                    border = new TopPuzzleDoor(room);
+                else
+                    border = new BottomPuzzleDoor(room);
+            }
             else if (identifier == "white_brick")
             {
                 if (i == 0)
@@ -75,38 +88,44 @@ namespace Zelda.Rooms.Parsers
                 if (i == 0)
                 {
                     direction = Room.Direction.Left;
-                    CreateLeftRightInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border, direction);
+                    CreateLeftRightInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border, direction, puzzle);
                 }
                 else if (i == 1)
                 {
                     direction = Room.Direction.Right;
-                    CreateLeftRightInvisibleBlocks(Settings.ROOM_WIDTH, Settings.BLOCK_SIZE, border, direction);
+                    CreateLeftRightInvisibleBlocks(Settings.ROOM_WIDTH, Settings.BLOCK_SIZE, border, direction, puzzle);
                 }
                 else if (i == 2)
                 {
                     direction = Room.Direction.Up;
-                    CreateTopBottomInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border, direction);
+                    CreateTopBottomInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border, direction, puzzle);
                 }
                 else
                 {
                     direction = Room.Direction.Down;
-                    CreateTopBottomInvisibleBlocks(Settings.ROOM_HEIGHT, Settings.BLOCK_SIZE, border, direction);
+                    CreateTopBottomInvisibleBlocks(Settings.ROOM_HEIGHT, Settings.BLOCK_SIZE, border, direction, puzzle);
                 }
                 borders.Add(direction, border);
             }
         }
 
-        private void CreateLeftRightInvisibleBlocks(int i, int doorOffset, IBorder border, Room.Direction direction)
+        private void CreateLeftRightInvisibleBlocks(int i, int doorOffset, IBorder border, Room.Direction direction, bool puzzle)
         {
             for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
             {
                 Vector2 spawnPosition = GetSpawnPosition(i, j, room);
                 if (j == 3)
                 {
-                    Door door = new Door(spawnPosition, border.Locked);
-                    collidableBlocks.Add(door);
-                    doors[direction] = door;
-                    //collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(doorOffset, 0)));
+                    if (border.IsWall)
+                    {
+                        collidableBlocks.Add(new InvisibleBarrier(spawnPosition));
+                    }
+                    else if (border.Locked)
+                    {
+                        IBlock door = puzzle ? new PuzzleDoor(spawnPosition) : new Door(spawnPosition, true);
+                        collidableBlocks.Add(door);
+                        doors[direction] = door;
+                    }
                 }
                 else if (j == 2 || j == 4)
                 {
@@ -120,18 +139,23 @@ namespace Zelda.Rooms.Parsers
             }
         }
 
-        private void CreateTopBottomInvisibleBlocks(int j, int doorOffset, IBorder border, Room.Direction direction)
+        private void CreateTopBottomInvisibleBlocks(int j, int doorOffset, IBorder border, Room.Direction direction, bool puzzle)
         {
             for (int i = 0; i < Settings.ROOM_WIDTH; i++)
             {
                 Vector2 spawnPosition = GetSpawnPosition(i, j, room);
                 if (i == 5)
                 {
-                    Vector2 doorSpawnPosition = spawnPosition + new Vector2(Settings.BLOCK_SIZE / 2, 0);
-                    Door door = new Door(doorSpawnPosition, border.Locked);
-                    collidableBlocks.Add(door);
-                    doors[direction] = door;
-                    //collidableBlocks.Add(new InvisibleBarrier(doorSpawnPosition + new Vector2(0, doorOffset)));
+                    if (border.IsWall)
+                    {
+                        collidableBlocks.Add(new InvisibleBarrier(spawnPosition));
+                    }
+                    else if (border.Locked)
+                    {
+                        IBlock door = puzzle ? new PuzzleDoor(spawnPosition) : new Door(spawnPosition, true);
+                        collidableBlocks.Add(door);
+                        doors[direction] = door;
+                    }
                     collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(-Settings.BLOCK_SIZE / 2, 0)));
                     collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(-Settings.BLOCK_SIZE / 2, doorOffset)));
                 }

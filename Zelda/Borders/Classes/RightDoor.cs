@@ -6,7 +6,7 @@ namespace Zelda.Borders.Classes
 {
     public class RightDoor : RightBorder
     {
-        public RightDoor(Room room) : base(room, BorderSpriteFactory.RightDoorSprite(), false)
+        public RightDoor(Room room) : base(room, BorderSpriteFactory.RightDoorSprite(), false, false)
         {
 
         }

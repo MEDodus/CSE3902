@@ -6,7 +6,6 @@ using Zelda.Commands;
 using Zelda.Controllers;
 using Zelda.HUD;
 using Zelda.Link;
-using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sprites.Factories;
 using Zelda.Sound;
@@ -34,8 +33,8 @@ namespace Zelda
         public IHUD HUD { get { return hud; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
 
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
         private ILink link;
         private IHUD hud;
         private IGameState gameState;
@@ -45,9 +44,9 @@ namespace Zelda
 
         public Game1()
         {
-            _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferHeight = Settings.WINDOW_HEIGHT;
-            _graphics.PreferredBackBufferWidth = Settings.WINDOW_WIDTH;
+            graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = Settings.WINDOW_HEIGHT;
+            graphics.PreferredBackBufferWidth = Settings.WINDOW_WIDTH;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -77,7 +76,7 @@ namespace Zelda
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime)
@@ -94,9 +93,9 @@ namespace Zelda
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-            _spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
-            gameState.Draw(_spriteBatch);
-            _spriteBatch.End();
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
+            gameState.Draw(spriteBatch);
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

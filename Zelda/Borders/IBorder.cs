@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Borders.Classes;
 using Zelda.Rooms;
 using Zelda.Sprites;
+using Zelda.Sprites.Factories;
 
 namespace Zelda.Borders
 {
@@ -33,6 +35,12 @@ namespace Zelda.Borders
         public void Update(GameTime gameTime)
         {
             sprite.Update(gameTime);
+        }
+
+        public void Unlock()
+        {
+            locked = false;
+            sprite.Texture = SpriteFactory.GetTexture("borders_doors_open");
         }
     }
 }

@@ -3,7 +3,7 @@ using Zelda.Items;
 
 namespace Zelda.Link
 {
-    public class Inventory
+    public class OldInventory
     {
         /*
          * TODO:
@@ -15,7 +15,7 @@ namespace Zelda.Link
 
         public List<IItem> Items { get { return items; } }
 
-        public Inventory()
+        public OldInventory()
         {
             items = new List<IItem>();
         }

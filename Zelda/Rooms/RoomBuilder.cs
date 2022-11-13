@@ -36,7 +36,7 @@ namespace Zelda.Rooms
         public Vector2 WindowPosition { get { return windowPosition; } set { windowPosition = value; } }
         public Vector2 WindowOffset { get { return BASE_WINDOW_POSITION - windowPosition; } }
 
-        private Room[] rooms = new Room[17]; // TODO: re-add white brick dungeon and fix offset (change array size to 18 to do this)
+        private Room[] rooms = new Room[19];
         private Dictionary<string, Room> roomMap = new Dictionary<string, Room>();
         private int i;
         private Vector2 windowPosition;

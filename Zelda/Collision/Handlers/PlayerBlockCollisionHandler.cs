@@ -2,6 +2,8 @@
 using Zelda.Link;
 using Zelda.Blocks;
 using Zelda.Blocks.Classes;
+using Zelda.Items.Classes;
+using Zelda.Rooms;
 
 namespace Zelda.Collision.Handlers
 {
@@ -30,21 +32,24 @@ namespace Zelda.Collision.Handlers
             Vector2 blockPosition = block.Position;
             float x = link.Position.X;
             float y = link.Position.Y;
+            Room.Direction roomDirection;
             switch (collisionDirection.Side)
             {
                 case Sides.left:
                     x = blockPosition.X - linkRectangle.Width;
+                    roomDirection = Room.Direction.Right;
                     break;
                 case Sides.right:
                     x = blockPosition.X + blockRectangle.Width;
+                    roomDirection = Room.Direction.Left;
                     break;
                 case Sides.up:
                     y = blockPosition.Y - linkRectangle.Height;
-                    break;
-                case Sides.down:
-                    y = blockPosition.Y + blockRectangle.Height;
+                    roomDirection = Room.Direction.Down;
                     break;
                 default:
+                    y = blockPosition.Y + blockRectangle.Height;
+                    roomDirection = Room.Direction.Up;
                     break;
             }
             link.Position = new Vector2(x, y);
@@ -52,6 +57,11 @@ namespace Zelda.Collision.Handlers
             {
                 PushableBlock pushable = (PushableBlock)block;
                 pushable.Push(-collisionDirection.Vector);
+            }
+            else if (block is Door && block.CanCollide && link.Inventory.FindInSet(new Key(new Vector2())))
+            {
+                link.Inventory.RemoveItem(new Key(new Vector2()), 1);
+                RoomBuilder.Instance.CurrentRoom.UnlockDoor(roomDirection, true);
             }
         }
 

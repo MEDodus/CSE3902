@@ -7,13 +7,13 @@ using Zelda.Items;
 
 namespace Zelda.Inventory
 {
-    public class Inventory : IInventory
+    public class LinkInventory : IInventory
     {
 
         private IItem itemToChange;
         private List<IItem> inventory;
 
-        public Inventory()
+        public LinkInventory()
         {
             inventory = new List<IItem>();
         }

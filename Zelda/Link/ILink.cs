@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Zelda.Inventory;
 using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Sprites;
@@ -15,6 +16,7 @@ namespace Zelda.Link
         public Vector2 Position { get; set; }
         public Vector2 Direction { get; }
         public Health Health { get; }
+        public IInventory Inventory { get; }
 
         public void Reset();
         public void Update(GameTime gameTime);

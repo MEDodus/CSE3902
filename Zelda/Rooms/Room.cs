@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using Zelda.Blocks;
+using Zelda.Blocks.Classes;
 using Zelda.Borders;
 using Zelda.Items;
 using Zelda.NPCs;
@@ -22,6 +23,7 @@ namespace Zelda.Rooms
         private HashSet<IItem> items;
         private HashSet<IItem> itemsToRemove;
         private Dictionary<Direction, IBorder> borders;
+        private Dictionary<Direction, Door> doors;
         private Dictionary<Direction, Room> adjacentRooms;
         private Vector2 position;
 
@@ -31,6 +33,7 @@ namespace Zelda.Rooms
         public HashSet<INPC> NPCs { get { return npcs; } }
         public HashSet<IItem> Items { get { return items; } }
         public Dictionary<Direction, IBorder> Borders { get { return borders; } }
+        public Dictionary<Direction, Door> Doors { get { return doors; } }
         public Dictionary<Direction, Room> AdjacentRooms { get { return adjacentRooms; } }
         public Vector2 Position { get { return position; } set { position = value; } }
 
@@ -44,13 +47,14 @@ namespace Zelda.Rooms
             items = new HashSet<IItem>();
             itemsToRemove = new HashSet<IItem>();
             borders = new Dictionary<Direction, IBorder>();
+            doors = new Dictionary<Direction, Door>();
             adjacentRooms = new Dictionary<Direction, Room>();
         }
 
         public void Parse()
         {
             BlockParser blockParser = new BlockParser(this, blocks, collidableBlocks, topLayerBlocks);
-            BorderParser borderParser = new BorderParser(this, borders, collidableBlocks);
+            BorderParser borderParser = new BorderParser(this, borders, doors, collidableBlocks);
             NPCParser npcParser = new NPCParser(this, npcs);
             ItemParser itemParser = new ItemParser(this, items);
 
@@ -134,6 +138,35 @@ namespace Zelda.Rooms
         public void RemoveItem(IItem item)
         {
             itemsToRemove.Add(item);
+        }
+
+        public void UnlockDoor(Direction direction, bool unlockAdjacent)
+        {
+            Borders[direction].Unlock();
+            Doors[direction].CanCollide = false;
+            if (AdjacentRooms.ContainsKey(direction))
+            {
+                Direction opposite;
+                switch (direction)
+                {
+                    case Direction.Left:
+                        opposite = Direction.Right;
+                        break;
+                    case Direction.Right:
+                        opposite = Direction.Left;
+                        break;
+                    case Direction.Up:
+                        opposite = Direction.Down;
+                        break;
+                    default:
+                        opposite = Direction.Up;
+                        break;
+                }
+                if (unlockAdjacent)
+                {
+                    AdjacentRooms[direction].UnlockDoor(opposite, false);
+                }
+            }
         }
     }
 }

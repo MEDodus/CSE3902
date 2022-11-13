@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using Zelda.Inventory;
 using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Sprites;
@@ -15,6 +16,7 @@ namespace Zelda.Link
         public Vector2 Position { get => decoratedLink.Position; set => decoratedLink.Position = value; }
         public Vector2 Direction { get => decoratedLink.Direction; }
         public Health Health { get => decoratedLink.Health; }
+        public IInventory Inventory { get => decoratedLink.Inventory; }
 
         Game1 game;
         ILink decoratedLink;

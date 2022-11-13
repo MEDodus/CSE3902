@@ -11,11 +11,13 @@ namespace Zelda.Rooms.Parsers
     {
         private Dictionary<Room.Direction, IBorder> borders;
         private HashSet<IBlock> collidableBlocks;
+        private Dictionary<Room.Direction, Door> doors;
 
-        public BorderParser(Room room, Dictionary<Room.Direction, IBorder> borders, HashSet<IBlock> collidableBlocks) 
+        public BorderParser(Room room, Dictionary<Room.Direction, IBorder> borders, Dictionary<Room.Direction, Door> doors, HashSet<IBlock> collidableBlocks) 
             : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\borders.csv")
         {
             this.borders = borders;
+            this.doors = doors;
             this.collidableBlocks = collidableBlocks;
         }
 
@@ -73,28 +75,28 @@ namespace Zelda.Rooms.Parsers
                 if (i == 0)
                 {
                     direction = Room.Direction.Left;
-                    CreateLeftRightInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border);
+                    CreateLeftRightInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border, direction);
                 }
                 else if (i == 1)
                 {
                     direction = Room.Direction.Right;
-                    CreateLeftRightInvisibleBlocks(Settings.ROOM_WIDTH, Settings.BLOCK_SIZE, border);
+                    CreateLeftRightInvisibleBlocks(Settings.ROOM_WIDTH, Settings.BLOCK_SIZE, border, direction);
                 }
                 else if (i == 2)
                 {
                     direction = Room.Direction.Up;
-                    CreateTopBottomInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border);
+                    CreateTopBottomInvisibleBlocks(-1, -Settings.BLOCK_SIZE, border, direction);
                 }
                 else
                 {
                     direction = Room.Direction.Down;
-                    CreateTopBottomInvisibleBlocks(Settings.ROOM_HEIGHT, Settings.BLOCK_SIZE, border);
+                    CreateTopBottomInvisibleBlocks(Settings.ROOM_HEIGHT, Settings.BLOCK_SIZE, border, direction);
                 }
                 borders.Add(direction, border);
             }
         }
 
-        private void CreateLeftRightInvisibleBlocks(int i, int doorOffset, IBorder border)
+        private void CreateLeftRightInvisibleBlocks(int i, int doorOffset, IBorder border, Room.Direction direction)
         {
             for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
             {
@@ -103,6 +105,7 @@ namespace Zelda.Rooms.Parsers
                 {
                     Door door = new Door(spawnPosition, border.Locked);
                     collidableBlocks.Add(door);
+                    doors[direction] = door;
                     //collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(doorOffset, 0)));
                 }
                 else if (j == 2 || j == 4)
@@ -117,7 +120,7 @@ namespace Zelda.Rooms.Parsers
             }
         }
 
-        private void CreateTopBottomInvisibleBlocks(int j, int doorOffset, IBorder border)
+        private void CreateTopBottomInvisibleBlocks(int j, int doorOffset, IBorder border, Room.Direction direction)
         {
             for (int i = 0; i < Settings.ROOM_WIDTH; i++)
             {
@@ -127,6 +130,7 @@ namespace Zelda.Rooms.Parsers
                     Vector2 doorSpawnPosition = spawnPosition + new Vector2(Settings.BLOCK_SIZE / 2, 0);
                     Door door = new Door(doorSpawnPosition, border.Locked);
                     collidableBlocks.Add(door);
+                    doors[direction] = door;
                     //collidableBlocks.Add(new InvisibleBarrier(doorSpawnPosition + new Vector2(0, doorOffset)));
                     collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(-Settings.BLOCK_SIZE / 2, 0)));
                     collidableBlocks.Add(new InvisibleBarrier(spawnPosition + new Vector2(-Settings.BLOCK_SIZE / 2, doorOffset)));

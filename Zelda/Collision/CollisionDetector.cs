@@ -116,7 +116,7 @@ namespace Zelda.Collision
                 {
                     if (player.Sprite.Destination.Intersects(item.Sprite.Destination))
                     {
-                        playerItemCollisionHandler.HandleCollision(player, item);
+                        playerItemCollisionHandler.HandleCollision(player, item, myGame);
                     }
                 }
             }

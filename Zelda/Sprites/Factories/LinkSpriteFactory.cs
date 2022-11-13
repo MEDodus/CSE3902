@@ -72,5 +72,11 @@ namespace Zelda.Sprites.Factories
         {
             return new Sprite(GetTexture(FILE_NAME), 2 * CELL_SIZE, 2 * CELL_SIZE, CELL_SIZE, CELL_SIZE, SIZE_IN_BLOCKS);
         }
+
+        // Triforce
+        public static ISprite LinkTriforceSprite()
+        {
+            return new AnimatedSprite(GetTexture("link_triforce"), 1, 2, 4, 1.55);
+        }
     }
 }

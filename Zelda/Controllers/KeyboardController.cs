@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Transactions;
 using Zelda.Commands;
+using Zelda.Commands.Classes;
 using Zelda.GameStates.Classes;
 
 namespace Zelda.Controllers
@@ -34,7 +35,7 @@ namespace Zelda.Controllers
             return currentState;
         }
 
-        public static bool HasBeenPressed(Keys key)
+        public static bool WasPressedForFirstTime(Keys key)
         {
             return currentState.IsKeyDown(key) && !previousState.IsKeyDown(key);
         }
@@ -43,27 +44,25 @@ namespace Zelda.Controllers
         {
             // Must call static GetState() here to update previous and current keyboard state
             Keys[] pressedKeys = GetState().GetPressedKeys();
-            bool paused = game.GameState is PausedGameState;
-            if (!paused)
+            foreach (Keys key in pressedKeys)
             {
-                foreach (Keys key in pressedKeys)
+                // Skip over unmapped keys
+                if (!controllerMappings.ContainsKey(key))
                 {
-
-                    if (controllerMappings.ContainsKey(key) && !key.Equals(Keys.P))
-                    {
-                        controllerMappings[key].Execute(gameTime);
-                    }
-                    else if (HasBeenPressed(Keys.P) && key.Equals(Keys.P))
-                    {
-                        controllerMappings[Keys.P].Execute(gameTime);
-                    }
+                    continue;
                 }
-            } else if (paused)
-            {
-                // Allows quitting while game is paused
-                if (HasBeenPressed(Keys.P) || HasBeenPressed(Keys.Q))
+                // Skip over commands that can't be executed while the game is paused
+                ICommand command = controllerMappings[key];
+                bool allowExecutionWhilePaused = command is Pause || command is Quit;
+                if (game.GameState is PausedGameState && !allowExecutionWhilePaused)
                 {
-                    controllerMappings[Keys.P].Execute(gameTime);
+                    continue;
+                }
+                // Execute command
+                bool executeOnlyOnFirstPress = command is Pause || command is Mute;
+                if ((executeOnlyOnFirstPress && WasPressedForFirstTime(key)) || !executeOnlyOnFirstPress)
+                {
+                    command.Execute(gameTime);
                 }
             }
         }

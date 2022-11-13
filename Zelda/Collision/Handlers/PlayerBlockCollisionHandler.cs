@@ -63,6 +63,14 @@ namespace Zelda.Collision.Handlers
                 link.Inventory.RemoveItem(new Key(new Vector2()), 1);
                 RoomBuilder.Instance.CurrentRoom.UnlockDoor(roomDirection, true);
             }
+            else if (block is StairsTrigger)
+            {
+                RoomTransitions.EnterWhiteBrickDungeon();
+            }
+            else if (block is LadderTrigger)
+            {
+                RoomTransitions.LeaveWhiteBrickDungeon();
+            }
         }
 
         protected void GetCollisionDirection(ILink link, IBlock block)

@@ -57,6 +57,7 @@ namespace Zelda
             SpriteFactory.Initialize(Content);
             SoundManager.Instance.Initialize(Content);
             RoomBuilder.Instance.Initialize();
+            RoomTransitions.Initialize(this);
 
             // Set up controllers
             controllers = new List<IController>();

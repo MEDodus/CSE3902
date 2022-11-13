@@ -66,8 +66,9 @@ namespace Zelda.Rooms.Parsers
                     break;
                 case "stairs":
                     block = new Stairs(spawnPos);
-                    BlueFloor floor = new BlueFloor(spawnPos + new Vector2(Settings.BLOCK_SIZE, 0));
-                    topLayerBlocks.Add(floor);
+                    Vector2 rightBlockPos = spawnPos + new Vector2(Settings.BLOCK_SIZE, 0);
+                    collidableBlocks.Add(new StairsTrigger(rightBlockPos + new Vector2(Settings.BLOCK_SIZE / 2, Settings.BLOCK_SIZE / 2)));
+                    topLayerBlocks.Add(new BlueFloor(rightBlockPos));
                     break;
                 case "statue_1":
                     block = new Statue1(spawnPos);

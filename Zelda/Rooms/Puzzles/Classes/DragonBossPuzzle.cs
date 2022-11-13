@@ -23,7 +23,6 @@ namespace Zelda.Rooms.Puzzles.Classes
         {
             Room.UnlockDoor(Room.Direction.Right, false);
             Vector2 spawnPos = Parser.GetSpawnPosition(10, 3, Room);
-            System.Diagnostics.Debug.WriteLine(spawnPos + Room.Name);
             Room.Items.Add(new HeartContainer(spawnPos));
         }
     }

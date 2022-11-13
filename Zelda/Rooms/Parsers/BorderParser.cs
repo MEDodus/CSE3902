@@ -205,7 +205,7 @@ namespace Zelda.Rooms.Parsers
                         collidableBlocks.Add(new Ladder(spawnPosition));
                         if (j == -2)
                         {
-                            collidableBlocks.Add(new Door(GetSpawnPosition(i, j - 1, room), false));
+                            collidableBlocks.Add(new LadderTrigger(GetSpawnPosition(i, j, room) - new Vector2(0, Settings.BLOCK_SIZE / 2)));
                             collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i - 1, j - 1, room)));
                             collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i + 1, j - 1, room)));
                             collidableBlocks.Add(new InvisibleBarrier(GetSpawnPosition(i, j - 2, room)));

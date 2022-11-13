@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Zelda.Link;
+using Zelda.Rooms.Parsers;
 
 namespace Zelda.Rooms
 {
@@ -7,9 +8,15 @@ namespace Zelda.Rooms
     {
         private static readonly double ANIMATION_LENGTH = 1;
 
+        private static Game1 game;
         private static Vector2 goal;
         private static Vector2 start;
         private static double animationTime = 0;
+
+        public static void Initialize(Game1 game)
+        {
+            RoomTransitions.game = game;
+        }
 
         public static void Update(GameTime gameTime, ILink link)
         {
@@ -68,6 +75,24 @@ namespace Zelda.Rooms
                 alpha = 1 - (goal.Y - windowPosition.Y) / (goal.Y - start.Y);
             }
             animationTime = (1 - alpha) * ANIMATION_LENGTH;
+        }
+
+        public static void EnterWhiteBrickDungeon()
+        {
+            RoomBuilder roomBuilder = RoomBuilder.Instance;
+            Room whiteBrickDungeon = roomBuilder.GetRoom("Room17");
+            roomBuilder.CurrentRoom = whiteBrickDungeon;
+            roomBuilder.WindowPosition = whiteBrickDungeon.Position;
+            game.Link.Position = Parser.GetSpawnPosition(3, -1, whiteBrickDungeon) + new Vector2(0, Settings.BLOCK_SIZE / 2);
+        }
+
+        public static void LeaveWhiteBrickDungeon()
+        {
+            RoomBuilder roomBuilder = RoomBuilder.Instance;
+            Room spikeCrossRoom = roomBuilder.GetRoom("Room0");
+            roomBuilder.CurrentRoom = spikeCrossRoom;
+            roomBuilder.WindowPosition = spikeCrossRoom.Position;
+            game.Link.Position = Parser.GetSpawnPosition(6, 3, spikeCrossRoom);
         }
     }
 }

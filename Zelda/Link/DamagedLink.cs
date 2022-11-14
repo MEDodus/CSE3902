@@ -21,11 +21,13 @@ namespace Zelda.Link
         Game1 game;
         ILink decoratedLink;
         int timer = 48;
+        Vector2 pushDirection;
 
-        public DamagedLink(ILink decoratedLink, Game1 game)
+        public DamagedLink(ILink decoratedLink, Game1 game, Vector2 pushDirection)
         {
             this.decoratedLink = decoratedLink;
             this.game = game;
+            this.pushDirection = pushDirection;
         }
         public void Update(GameTime gameTime)
         {
@@ -51,6 +53,10 @@ namespace Zelda.Link
             }
             timer--;
             decoratedLink.Update(gameTime);
+            if(timer >= 32w)
+            {
+                decoratedLink.Position += pushDirection;
+            }
         }
 
         public void Reset()
@@ -79,7 +85,7 @@ namespace Zelda.Link
         {
             // Can't move when damaged
         }
-        public void TakeDamage(Game1 game, int damage)
+        public void TakeDamage(Game1 game, int damage, Vector2 direction)
         {
             // Can't take damage while already taking damage
         }

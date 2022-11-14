@@ -26,7 +26,7 @@ namespace Zelda.Link
         public void MoveDown();
         public void MoveLeft();
         public void MoveRight();
-        public void TakeDamage(Game1 game, int damage);
+        public void TakeDamage(Game1 game, int damage, Vector2 direction);
         public void UseItem(int itemNum);
         public void CreateItem(int itemNum);
         public bool AddToInventory(IItem item);

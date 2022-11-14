@@ -110,10 +110,10 @@ namespace Zelda.Link
                 state.MoveRight();
             }
         }
-        public void TakeDamage(Game1 game, int damage)
+        public void TakeDamage(Game1 game, int damage, Vector2 direction)
         {
             health.removeHealth(damage);
-            state.TakeDamage(game);
+            state.TakeDamage(game, direction);
         }
 
         public void UseItem(int itemNum)

@@ -10,11 +10,14 @@ using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 using Zelda.NPCs.Classes;
 using Zelda.Blocks;
+using Zelda.Rooms;
+using System.IO;
 
 namespace Zelda.Collision.Handlers
 {
     public class PlayerEnemyCollisionHandler : ICollision
     {
+        protected Direction collisionDirection;
         public PlayerEnemyCollisionHandler()
         {
 
@@ -29,12 +32,65 @@ namespace Zelda.Collision.Handlers
         {
             if(enemy.Damage > 0)
             {
-                game.Link.TakeDamage(game, enemy.Damage);
+                GetCollisionDirection(link, enemy);
+                Vector2 direction;
+                switch (collisionDirection.Side)
+                {
+                    case Sides.left:
+                        direction = new Vector2(-3*Settings.LINK_SPEED, 0);
+                        break;
+                    case Sides.right:
+                        direction = new Vector2(3*Settings.LINK_SPEED, 0);
+                        break;
+                    case Sides.up:
+                        direction = new Vector2(0, -3*Settings.LINK_SPEED);
+                        break;
+                    default:
+                        direction = new Vector2(0, 3*Settings.LINK_SPEED);
+                        break;
+                }
+                game.Link.TakeDamage(game, enemy.Damage,direction);
             }
         }
 
 
+        protected void GetCollisionDirection(ILink link, INPC enemy)
+        {
+            Rectangle collisionArea = Rectangle.Intersect(link.Sprite.Destination, enemy.Sprite.Destination);
+            if (collisionArea.Height > collisionArea.Width)
+            {
+                LeftOrRightCollision(link, enemy);
+            }
+            else
+            {
+                UpOrDownCollision(link, enemy);
+            }
 
+
+        }
+
+        protected void UpOrDownCollision(ILink link, INPC enemy)
+        {
+            if (link.Sprite.Destination.Y > enemy.Sprite.Destination.Y)
+            {
+                collisionDirection = new Direction("down");
+            }
+            else
+            {
+                collisionDirection = new Direction("up");
+            }
+        }
+        protected void LeftOrRightCollision(ILink link, INPC enemy)
+        {
+            if (link.Sprite.Destination.X > enemy.Sprite.Destination.X)
+            {
+                collisionDirection = new Direction("right");
+            }
+            else
+            {
+                collisionDirection = new Direction("left");
+            }
+        }
 
     }
 }

@@ -40,9 +40,9 @@ namespace Zelda.Link
             link.State = new LinkUsingItemRightState(link);
             link.CreateItem(itemNum);
         }
-        public void TakeDamage(Game1 game)
+        public void TakeDamage(Game1 game, Vector2 pushDirection)
         {
-            game.Link = new DamagedLink(link, game);
+            game.Link = new DamagedLink(link, game, pushDirection);
         }
         public void Update()
         {

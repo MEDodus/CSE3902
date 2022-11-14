@@ -20,8 +20,11 @@ namespace Zelda.Utilities
         public static readonly int HUD_HEIGHT = 56;
         public static readonly int BACKGROUND_BLOCK_SIZE = 14;
 
-        public static readonly int PAUSED_HUD_X = 180;
-        public static readonly int PAUSED_HUD_Y = 500;
+        public static readonly int PAUSE_HUD_X = 180;
+        public static readonly int PAUSE_HUD_Y = 500;
+        public static readonly int PAUSE_HUD_INVENTORY_Y = HUD_Y;
+        public static readonly int PAUSE_HUD_WIDTH = 255;
+        public static readonly int PAUSE_HUD_HEIGHT = 175;
 
         //DUNGEON HUD MAP 
         public static readonly int MAP_WIDTH = 150;
@@ -37,6 +40,12 @@ namespace Zelda.Utilities
         {
             new Vector2(MAP_X + 50,MAP_Y + 5),
             new Vector2(MAP_X + 50,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
             new Vector2(MAP_X + 10,MAP_Y + 10),
             new Vector2(MAP_X + 10,MAP_Y + 10),
             new Vector2(MAP_X + 10,MAP_Y + 10),
@@ -86,6 +95,11 @@ namespace Zelda.Utilities
         public static readonly int SLOT_A_X = 420;//HUD_X + 420;
         public static readonly int SLOT_Y = 70; // HUD_Y + 70;
         public static readonly int SLOT_B_X = 353;// HUD_X + 353;
+
+        //PAUSE SCREEN ITEM POSITIONS
+        public static readonly int PAUSE_ITEM_X = HUD_X + 125;//HUD_X + 420;
+        public static readonly int MAP_ITEM_Y = HUD_Y + 300; // HUD_Y + 70;
+        public static readonly int COMPASS_ITEM_Y = HUD_Y + 415;// HUD_X + 353;
 
         //FONT
 

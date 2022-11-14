@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zelda.Link;
+using Zelda.Rooms;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 using Zelda.Utilities;
@@ -30,16 +31,17 @@ namespace Zelda.HUD
 
         public void Update(GameTime gameTime, ILink link)
         {
-
+            roomIndicatorPosition = GetRoom();
         }
         public void Draw(SpriteBatch spriteBatch)
         {
             map.Draw(spriteBatch, destination);
+            roomIndicator.Draw(spriteBatch, roomIndicatorPosition);
         }
 
         private Vector2 GetRoom()
         {
-            return new Vector2(0, 0);
+            return HUDUtilities.ROOM_INDICATOR_POSITION[RoomBuilder.Instance.CurrentRoomNumber - 1];
         }
     }
 }

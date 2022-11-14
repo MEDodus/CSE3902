@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda.Utilities
 {
@@ -24,6 +26,32 @@ namespace Zelda.Utilities
         public static readonly int MAP_X = HUD_X + 30;
         public static readonly int MAP_Y = HUD_Y + 70;
         public static readonly int MAP_BLOCK_SIZE = 3;
+
+        //DUNGEON HUD MAP - ROOM INDICATOR
+        public static int ROOM_INDICATOR_LENGTH = 1;
+        public static double ROOM_INDICATOR_BLOCK_SIZE = 0.125;
+        public static readonly Vector2[] ROOM_INDICATOR_POSITION =
+        {
+            new Vector2(MAP_X + 50,MAP_Y + 5),
+            new Vector2(MAP_X + 50,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 10,MAP_Y + 10),
+            new Vector2(MAP_X + 15,MAP_Y + 30)
+        };
+
 
         //HEALTH DISPLAY - MAIN
         public static readonly int HEALTH_DISPLAY_X = HUD_X + 510;

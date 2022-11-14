@@ -32,6 +32,7 @@ namespace Zelda.Rooms
                 }
             } 
         }
+        public int CurrentRoomNumber { get { return i; } }
         public Room[] Rooms { get { return rooms; } }
         public Vector2 WindowPosition { get { return windowPosition; } set { windowPosition = value; } }
         public Vector2 BaseWindowPosition { get { return BASE_WINDOW_POSITION; } }

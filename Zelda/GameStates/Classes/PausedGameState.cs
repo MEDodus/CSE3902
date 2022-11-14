@@ -4,6 +4,7 @@ using Zelda.HUD;
 using Zelda.Items.Classes;
 using Zelda.Projectiles;
 using Zelda.Rooms;
+using Zelda.Sound;
 using Zelda.Sprites.Factories;
 using Zelda.Utilities;
 
@@ -22,7 +23,7 @@ namespace Zelda.GameStates.Classes
         public PausedGameState(Game1 game)
         {
             this.game = game;
-            pauseHUD = new LinkHUD(game.Link, new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_Y));
+            pauseHUD = new LinkHUD(game, new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_Y));
             pauseHUDBackground = new HUDBackground(HUDSpriteFactory.PauseHUDBackground(), new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_INVENTORY_Y));
             if(game.Link.Inventory.FindInSet(new Map(new Vector2(0, 0)))){
                 map = new HUDItem(new Map(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.MAP_ITEM_Y));
@@ -41,7 +42,6 @@ namespace Zelda.GameStates.Classes
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
             pauseHUD.Draw(spriteBatch);
             pauseHUDBackground.Draw(spriteBatch);
             if (HasMap)

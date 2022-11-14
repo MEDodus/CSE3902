@@ -12,6 +12,7 @@ using Zelda.NPCs.Classes;
 using Zelda.Blocks;
 using Zelda.Rooms;
 using System.IO;
+using Zelda.Sound;
 
 namespace Zelda.Collision.Handlers
 {

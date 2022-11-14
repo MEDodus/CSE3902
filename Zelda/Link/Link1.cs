@@ -11,6 +11,7 @@ using Zelda.Rooms;
 using Zelda.Inventory;
 using System;
 using Zelda.Items.Classes;
+using Zelda.Sound;
 
 namespace Zelda.Link
 {
@@ -114,6 +115,7 @@ namespace Zelda.Link
         {
             health.removeHealth(damage);
             state.TakeDamage(game, direction);
+            SoundManager.Instance.PlayLinkHurtSound();
         }
 
         public void UseItem(int itemNum)

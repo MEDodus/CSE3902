@@ -1,7 +1,4 @@
-﻿using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
-using System.Data;
-using System.Net.Mime;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Zelda.Sprites.Classes;
 using Zelda.Utilities;
 
@@ -17,7 +14,15 @@ namespace Zelda.Sprites.Factories
         }
         public static ISprite PauseHUDBackground()
         {
-            return new Sprite(GetTexture("pause_hud_inventory_map"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.PAUSE_HUD_WIDTH, HUDUtilities.PAUSE_HUD_HEIGHT, HUDUtilities.BACKGROUND_BLOCK_SIZE);
+            return new Sprite(GetTexture("pause_hud_background"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.PAUSE_HUD_WIDTH, HUDUtilities.PAUSE_HUD_HEIGHT, HUDUtilities.BACKGROUND_BLOCK_SIZE);
+        }
+        public static ISprite PauseHUDMap()
+        {
+            return new Sprite(GetTexture("pause_hud_inventory_map"));
+        }
+        public static ISprite PauseHUDMapTile()
+        {
+            return new Sprite(GetTexture("pause_hud_inventory_map_tile"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.ROOM_INDICATOR_LENGTH, HUDUtilities.ROOM_INDICATOR_LENGTH, HUDUtilities.ROOM_INDICATOR_BLOCK_SIZE);
         }
 
         //MAP SPRITES

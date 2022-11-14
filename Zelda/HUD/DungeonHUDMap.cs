@@ -93,11 +93,16 @@ namespace Zelda.HUD
                 {
                     continue;
                 }
-                ISprite tile = HUDSpriteFactory.DungeonHUDMapTile();
+                ISprite tile = CreateMapTile();
                 Vector2 mapPosition = DungeonToMapPosition(room.Position);
                 Rectangle tileDestination = new Rectangle((int)mapPosition.X, (int)mapPosition.Y, tileWidth, tileHeight);
                 mapTiles.Add(tile, tileDestination);
             }
+        }
+
+        protected virtual ISprite CreateMapTile()
+        {
+            return HUDSpriteFactory.DungeonHUDMapTile();
         }
 
         protected Vector2 DungeonToMapPosition(Vector2 dungeonPosition)

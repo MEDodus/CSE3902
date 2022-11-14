@@ -12,6 +12,7 @@ namespace Zelda.HUD
         private Game1 game;
         protected HUDBackground hudBackground;
         protected DungeonHUDMap map;
+        protected PauseMenuMap pauseMenuMap;
         protected HealthDisplay healthDisplay;
         protected HUDItemQuantity rupyQuantity;
         protected HUDItemQuantity keyQuantity;
@@ -26,6 +27,7 @@ namespace Zelda.HUD
             hudBackground = new HUDBackground(HUDSpriteFactory.LinkHUDBackground(), position);
             map = new DungeonHUDMap(game, new Rectangle((int)position.X + HUDUtilities.MAP_X, (int)position.Y + HUDUtilities.MAP_Y, 
                 HUDUtilities.MAP_WIDTH, HUDUtilities.MAP_HEIGHT));
+            pauseMenuMap = new PauseMenuMap(game, position);
             //initialize weapon/item displays
             healthDisplay = new HealthDisplay(position);
             rupyQuantity = new HUDItemQuantity(new FiveRupies(new Vector2(0, 0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.RUPY_COUNT_Y));
@@ -41,6 +43,7 @@ namespace Zelda.HUD
             ILink link = game.Link;
             hudBackground.Update(gameTime, link);
             map.Update(gameTime, link);
+            pauseMenuMap.Update(gameTime, link);
             healthDisplay.Update(gameTime, link);
             rupyQuantity.Update(gameTime, link);
             keyQuantity.Update(gameTime, link);
@@ -53,6 +56,10 @@ namespace Zelda.HUD
             BlackBorders.Draw(spriteBatch);
             hudBackground.Draw(spriteBatch);
             map.Draw(spriteBatch);
+            if (game.Link.Inventory.FindInSet(new Map(new Vector2())))
+            {
+                pauseMenuMap.Draw(spriteBatch);
+            }
             healthDisplay.Draw(spriteBatch);
             rupyQuantity.Draw(spriteBatch);
             keyQuantity.Draw(spriteBatch);

@@ -26,6 +26,17 @@ namespace Zelda.Utilities
         public static readonly int PAUSE_HUD_WIDTH = 255;
         public static readonly int PAUSE_HUD_HEIGHT = 175;
 
+        // Pause menu map
+        public static readonly int PAUSE_HUD_MAP_X = 300;
+        public static readonly int PAUSE_HUD_MAP_Y = -230;
+        public static readonly int PAUSE_HUD_MAP_WIDTH = 320;
+        public static readonly int PAUSE_HUD_MAP_HEIGHT = 190;
+        // Pause menu map tiles
+        public static readonly int PAUSE_HUD_MAP_TILES_X = 425;
+        public static readonly int PAUSE_HUD_MAP_TILES_Y = -100;
+        public static readonly int PAUSE_HUD_MAP_TILES_WIDTH = 130;
+        public static readonly int PAUSE_HUD_MAP_TILES_HEIGHT = 130;
+
         //DUNGEON HUD MAP 
         public static readonly int MAP_WIDTH = 150;
         public static readonly int MAP_HEIGHT = 75;

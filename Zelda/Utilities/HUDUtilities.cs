@@ -86,7 +86,7 @@ namespace Zelda.Utilities
 
         public static readonly int RUPY_COUNT_Y = 45;//HUD_Y + 45;
         public static readonly int KEY_COUNT_Y = 85;//HUD_Y + 85;
-        public static readonly int BOMB_COUNT_Y = 120;//HUD_Y + 120;
+        public static readonly int BOMB_COUNT_Y = 115;//HUD_Y + 120;
 
         public static readonly int LEVEL_X = 20;// HUD_X + 20;
         public static readonly int LEVEL_Y = 30;// HUD_Y - 30;

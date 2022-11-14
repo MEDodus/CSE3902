@@ -22,6 +22,7 @@ namespace Zelda.Utilities
 
         public static readonly int PAUSE_HUD_X = 180;
         public static readonly int PAUSE_HUD_Y = 500;
+        public static readonly int PAUSE_HUD_INVENTORY_Y = HUD_Y;
         public static readonly int PAUSE_HUD_WIDTH = 255;
         public static readonly int PAUSE_HUD_HEIGHT = 175;
 

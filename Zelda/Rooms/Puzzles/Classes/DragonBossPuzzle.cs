@@ -22,7 +22,7 @@ namespace Zelda.Rooms.Puzzles.Classes
         protected override void Solve()
         {
             Room.UnlockDoor(Room.Direction.Right, false);
-            Vector2 spawnPos = Parser.GetSpawnPosition(10, 3, Room);
+            Vector2 spawnPos = Parser.GetSpawnPosition(10, 3, Room) + new Vector2(5, 5);
             Room.Items.Add(new HeartContainer(spawnPos));
         }
     }

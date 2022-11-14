@@ -31,7 +31,7 @@ namespace Zelda.GameStates.Classes
             // Update only some game objects
             RoomBuilder.Instance.Update(gameTime);
             game.Link.Update(gameTime);
-            game.HUD.Update(gameTime, game.Link);
+            game.HUD.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)

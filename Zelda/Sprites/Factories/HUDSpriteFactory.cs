@@ -21,6 +21,10 @@ namespace Zelda.Sprites.Factories
         {
             return new Sprite(GetTexture("dungeon_hud_map"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.MAP_WIDTH, HUDUtilities.MAP_HEIGHT, HUDUtilities.MAP_BLOCK_SIZE);
         }
+        public static ISprite DungeonHUDMapTile()
+        {
+            return new Sprite(GetTexture("dungeon_hud_map_tile"));
+        }
         public static ISprite RoomIndicator()
         {
             return new Sprite(GetTexture("map_position"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.ROOM_INDICATOR_LENGTH, HUDUtilities.ROOM_INDICATOR_LENGTH, HUDUtilities.ROOM_INDICATOR_BLOCK_SIZE);

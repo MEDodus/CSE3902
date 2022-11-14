@@ -22,7 +22,7 @@ namespace Zelda.GameStates.Classes
             ProjectileStorage.Update(gameTime);
             game.Link.Update(gameTime);
             game.Collisions.DetectCollisions(game, gameTime, game.Link);
-            game.HUD.Update(gameTime, game.Link);
+            game.HUD.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)

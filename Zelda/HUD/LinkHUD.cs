@@ -1,10 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Zelda.Items.Classes;
 using Zelda.Link;
 using Zelda.Utilities;
@@ -13,6 +8,7 @@ namespace Zelda.HUD
 {
     public class LinkHUD : IHUD
     {
+        private Game1 game;
         protected HUDBackground hudBackground;
         protected DungeonHUDMap map;
         protected HealthDisplay healthDisplay;
@@ -23,12 +19,14 @@ namespace Zelda.HUD
         protected HUDItemEquipped slotB;
 
         protected Vector2 HUDPosition;
-        public LinkHUD(ILink link, Vector2 position)
+        public LinkHUD(Game1 game, Vector2 position)
         {
+            this.game = game;
             hudBackground = new HUDBackground(position);
-            map = new DungeonHUDMap(position);
+            map = new DungeonHUDMap(game, new Rectangle((int)position.X + HUDUtilities.MAP_X, (int)position.Y + HUDUtilities.MAP_Y, 
+                HUDUtilities.MAP_WIDTH, HUDUtilities.MAP_HEIGHT));
             //initialize weapon/item displays
-            healthDisplay = new HealthDisplay(link, position);
+            healthDisplay = new HealthDisplay(position);
             rupyQuantity = new HUDItemQuantity(new FiveRupies(new Vector2(0, 0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.RUPY_COUNT_Y));
             keyQuantity = new HUDItemQuantity(new Key(new Vector2(0, 0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.KEY_COUNT_Y));
             bombQuantity =  new HUDItemQuantity(new Bomb(new Vector2(0,0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.BOMB_COUNT_Y));
@@ -37,8 +35,9 @@ namespace Zelda.HUD
             slotB = new HUDItemEquipped(new Bomb(new Vector2(0, 0)), position + new Vector2(HUDUtilities.SLOT_B_X, HUDUtilities.SLOT_Y));
 
         }
-        public void Update(GameTime gameTime, ILink link)
+        public void Update(GameTime gameTime)
         {
+            ILink link = game.Link;
             hudBackground.Update(gameTime, link);
             map.Update(gameTime, link);
             healthDisplay.Update(gameTime, link);

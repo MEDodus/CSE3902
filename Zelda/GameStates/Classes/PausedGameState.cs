@@ -14,13 +14,13 @@ namespace Zelda.GameStates.Classes
         public PausedGameState(Game1 game)
         {
             this.game = game;
-             pauseHUD =  new LinkHUD(game.Link, new Vector2(HUDUtilities.PAUSED_HUD_X, HUDUtilities.PAUSED_HUD_Y));
+            pauseHUD =  new LinkHUD(game, new Vector2(HUDUtilities.PAUSED_HUD_X, HUDUtilities.PAUSED_HUD_Y));
 
         }
 
         public void Update(GameTime gameTime)
         {
-            pauseHUD.Update(gameTime, game.Link);
+            pauseHUD.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)

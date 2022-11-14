@@ -69,7 +69,7 @@ namespace Zelda
 
             // Other initialization
             link = new Link1();
-            hud = new LinkHUD(link, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
+            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
             collisionDetector = new CollisionDetector();
             gameState = new RunningGameState(this);

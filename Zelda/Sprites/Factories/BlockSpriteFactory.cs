@@ -68,5 +68,10 @@ namespace Zelda.Sprites.Factories
         {
             return new AnimatedSprite(GetTexture("fire"), 1, 2, 10, 0.85);
         }
+
+        public static ISprite OldManWordsSprite()
+        {
+            return new Sprite(GetTexture("old_man_words"), 10);
+        }
     }
 }

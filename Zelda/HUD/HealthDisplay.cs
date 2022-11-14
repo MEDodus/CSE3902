@@ -15,7 +15,7 @@ namespace Zelda.HUD
     {
         protected Heart[] hearts;
         protected Vector2 offset;
-        public HealthDisplay(ILink link, Vector2 position)
+        public HealthDisplay(Vector2 position)
         {
             offset = position;
             this.hearts = new Heart[LinkUtilities.MAX_HEARTS];

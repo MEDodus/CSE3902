@@ -1,5 +1,4 @@
-﻿using Zelda.Puzzles;
-using Zelda.Rooms.Puzzles.Classes;
+﻿using Zelda.Rooms.Puzzles.Classes;
 
 namespace Zelda.Rooms.Parsers
 {
@@ -17,6 +16,10 @@ namespace Zelda.Rooms.Parsers
             if (room.Name.Equals("Room3"))
             {
                 room.Puzzle = new DragonBossPuzzle(room);
+            }
+            else if (room.Name.Equals("Room5"))
+            {
+                room.Puzzle = new TriforceRevealPuzzle(room);
             }
             else if (room.Name.Equals("Room6"))
             {

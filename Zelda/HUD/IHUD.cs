@@ -12,7 +12,7 @@ namespace Zelda.HUD
 {
     public interface IHUD
     {
-        public void Update(GameTime gameTime, ILink link);
+        public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);
     }
 }

@@ -152,6 +152,10 @@ namespace Zelda.Rooms
 
         public void UnlockDoor(Direction direction, bool unlockAdjacent)
         {
+            if (!Doors.ContainsKey(direction))
+            {
+                return;
+            }
             Borders[direction].Unlock();
             Doors[direction].CanCollide = false;
             if (AdjacentRooms.ContainsKey(direction))

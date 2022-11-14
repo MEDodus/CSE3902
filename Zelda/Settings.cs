@@ -19,5 +19,8 @@
         public static readonly int ROOM_WINDOW_Y = 200;
         public static readonly int ROOM_WINDOW_WIDTH = ROOM_WIDTH * BLOCK_SIZE + 2 * BORDER_SIZE;
         public static readonly int ROOM_WINDOW_HEIGHT = ROOM_HEIGHT * BLOCK_SIZE + 2 * BORDER_SIZE;
+
+        // Link movement settings
+        public static readonly float LINK_SPEED = 2.5f; // pixels per frame
     }
 }

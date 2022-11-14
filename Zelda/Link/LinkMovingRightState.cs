@@ -46,7 +46,7 @@ namespace Zelda.Link
         }
         public void Update()
         {
-            link.Position += new Vector2(2, 0);
+            link.Position += new Vector2(Settings.LINK_SPEED, 0);
             if (runTime > moveRightCount)
             {
                 link.State = new LinkFacingRightState(link);

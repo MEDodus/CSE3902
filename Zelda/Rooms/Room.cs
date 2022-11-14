@@ -10,6 +10,7 @@ using Zelda.NPCs;
 using Zelda.Puzzles;
 using Zelda.Rooms.Parsers;
 using Zelda.Rooms.Puzzles.Classes;
+using Zelda.Sound;
 
 namespace Zelda.Rooms
 {
@@ -179,6 +180,10 @@ namespace Zelda.Rooms
                 if (unlockAdjacent)
                 {
                     AdjacentRooms[direction].UnlockDoor(opposite, false);
+                }
+                else
+                {
+                    SoundManager.Instance.PlayDoorUnlockSound();
                 }
             }
         }

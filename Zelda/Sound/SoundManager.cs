@@ -229,5 +229,13 @@ namespace Zelda.Sound
                 candle.Play();
             }
         }
+
+        public void PlayDoorUnlockSound()
+        {
+            if (!IsMuted)
+            {
+                doorUnlock.Play();
+            }
+        }
     }
 }

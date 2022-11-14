@@ -20,7 +20,7 @@ namespace Zelda.Rooms.Puzzles.Classes
 
         protected override void Solve()
         {
-            DungeonHUDMap.TriforceVisible = true;
+            //DungeonHUDMap.TriforceVisible = true;
             Room.Blocks.Add(new OldManWords(Parser.GetSpawnPosition(1, 1, Room)));
         }
     }

@@ -13,8 +13,6 @@ namespace Zelda.HUD
 {
     public class DungeonHUDMap : IHUDElement
     {
-        public static bool TriforceVisible { get { return triforceVisible; } set { triforceVisible = value; } }
-
         private readonly int PIXELS_BETWEEN_TILES = 0;
 
         private Game1 game;
@@ -24,7 +22,6 @@ namespace Zelda.HUD
         private Vector2 roomIndicatorPosition;
         private ISprite triforceIndicator;
         private Vector2 triforceIndicatorPosition;
-        private static bool triforceVisible = false;
 
         private int dungeonWidthInPixels;
         private int dungeonHeightInPixels;
@@ -59,11 +56,11 @@ namespace Zelda.HUD
                     pair.Key.Draw(spriteBatch, pair.Value);
                 }
             }
-            roomIndicator.Draw(spriteBatch, roomIndicatorPosition, Color.GreenYellow);
-            if (TriforceVisible)
+            if (game.Link.Inventory.FindInSet(new Compass(new Vector2())))
             {
                 triforceIndicator.Draw(spriteBatch, triforceIndicatorPosition, Color.Orange);
             }
+            roomIndicator.Draw(spriteBatch, roomIndicatorPosition, Color.GreenYellow);
         }
 
         private void CreateMapTiles()

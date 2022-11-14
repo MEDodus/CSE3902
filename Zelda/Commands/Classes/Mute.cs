@@ -12,7 +12,7 @@ namespace Zelda.Commands
 
         public void Execute(GameTime gametime)
         {
-            SoundManager.Instance.toggleMute();
+            SoundManager.Instance.ToggleMute();
         }
     }
 }

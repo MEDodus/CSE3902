@@ -41,9 +41,7 @@ namespace Zelda.Sound
         private SoundEffect text;
         private SoundEffect textSlow;
 
-
-
-        private bool IsMuted = false;
+        private bool muted = false;
 
         private static SoundManager instance = new SoundManager();
 
@@ -98,36 +96,35 @@ namespace Zelda.Sound
 
         }
 
-        public void toggleMute()
+        public void ToggleMute()
         {
-            if (IsMuted)
-            {
-                MediaPlayer.Resume();
-            } else
+            muted = !muted;
+            if (muted)
             {
                 MediaPlayer.Pause();
-            }
-            IsMuted = !IsMuted;
-        }
-
-
-        public void muteAndUnmute(bool Muted)
-        {
-            if (Muted)
-            {
-                MediaPlayer.Pause();
-                IsMuted = true;
-            }
+            } 
             else
             {
                 MediaPlayer.Resume();
-                IsMuted = false;
+            }
+        }
+
+        public void Pause()
+        {
+            MediaPlayer.Pause();
+        }
+
+        public void Resume()
+        {
+            if (!muted)
+            {
+                MediaPlayer.Resume();
             }
         }
 
         public void PlayLinkDieSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 MediaPlayer.Stop();
                 linkDie.Play();
@@ -136,7 +133,7 @@ namespace Zelda.Sound
 
         public void PlayMainThemeSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 MediaPlayer.Stop();
                 MediaPlayer.Play(mainTheme);
@@ -146,14 +143,14 @@ namespace Zelda.Sound
 
         public void PlayBombDropSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 bombDrop.Play();
             }
         }
         public void PlayBombBlowSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 bombBlow.Play();
             }
@@ -161,7 +158,7 @@ namespace Zelda.Sound
 
         public void PlayArrowBoomerangSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 arrowBoomerang.Play();
             }
@@ -169,14 +166,14 @@ namespace Zelda.Sound
 
         public void PlaySwardCombinedSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 swordCombined.Play();
             }
         }
         public void PlaySwarShootSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 swordShoot.Play();
             }
@@ -184,7 +181,7 @@ namespace Zelda.Sound
 
         public void PlayEnemyDieSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 enemyDie.Play();
             }
@@ -192,7 +189,7 @@ namespace Zelda.Sound
 
         public void PlayBossHitSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 bossHit.Play();
             }
@@ -200,7 +197,7 @@ namespace Zelda.Sound
 
         public void PlayLinkHurtSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 linkHurt.Play();
             }
@@ -208,7 +205,7 @@ namespace Zelda.Sound
 
         public void PlayBossScream1Sound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 bossScream1.Play();
             }
@@ -216,7 +213,7 @@ namespace Zelda.Sound
 
         public void PlayArrowSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 magicalRod.Play();
             }
@@ -224,7 +221,7 @@ namespace Zelda.Sound
 
         public void PlayFireSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 candle.Play();
             }
@@ -232,7 +229,7 @@ namespace Zelda.Sound
 
         public void PlayDoorUnlockSound()
         {
-            if (!IsMuted)
+            if (!muted)
             {
                 doorUnlock.Play();
             }

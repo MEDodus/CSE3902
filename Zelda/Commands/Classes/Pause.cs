@@ -17,7 +17,14 @@ namespace Zelda.Commands.Classes
         {
             bool paused = game.GameState is PausedGameState;
             game.GameState = paused ? new RunningGameState(game) : new PausedGameState(game);
-            SoundManager.Instance.muteAndUnmute(!paused);
+            if (paused)
+            {
+                SoundManager.Instance.Pause();
+            }
+            else
+            {
+                SoundManager.Instance.Resume();
+            }
         }
     }
 }

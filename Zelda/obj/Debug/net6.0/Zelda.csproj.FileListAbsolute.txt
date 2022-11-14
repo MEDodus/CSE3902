@@ -385,3 +385,5 @@ C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfi
 C:\Users\alexr\Source\Repos\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
 C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spriteFonts\Font.xnb
 C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map_position.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spriteFonts\Font.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map_position.xnb

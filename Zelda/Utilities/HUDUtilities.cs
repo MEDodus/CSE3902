@@ -20,8 +20,10 @@ namespace Zelda.Utilities
         public static readonly int HUD_HEIGHT = 56;
         public static readonly int BACKGROUND_BLOCK_SIZE = 14;
 
-        public static readonly int PAUSED_HUD_X = 180;
-        public static readonly int PAUSED_HUD_Y = 500;
+        public static readonly int PAUSE_HUD_X = 180;
+        public static readonly int PAUSE_HUD_Y = 500;
+        public static readonly int PAUSE_HUD_WIDTH = 255;
+        public static readonly int PAUSE_HUD_HEIGHT = 175;
 
         //DUNGEON HUD MAP 
         public static readonly int MAP_WIDTH = 48;

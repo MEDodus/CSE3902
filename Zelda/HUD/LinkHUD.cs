@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Zelda.Items.Classes;
 using Zelda.Link;
+using Zelda.Sprites.Factories;
 using Zelda.Utilities;
 
 namespace Zelda.HUD
@@ -25,13 +26,13 @@ namespace Zelda.HUD
         protected Vector2 HUDPosition;
         public LinkHUD(ILink link, Vector2 position)
         {
-            hudBackground = new HUDBackground(position);
+            hudBackground = new HUDBackground(HUDSpriteFactory.LinkHUDBackground(), position);
             map = new DungeonHUDMap(position);
             //initialize weapon/item displays
             healthDisplay = new HealthDisplay(link, position);
             rupyQuantity = new HUDItemQuantity(new FiveRupies(new Vector2(0, 0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.RUPY_COUNT_Y));
             keyQuantity = new HUDItemQuantity(new Key(new Vector2(0, 0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.KEY_COUNT_Y));
-            bombQuantity =  new HUDItemQuantity(new Bomb(new Vector2(0,0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.BOMB_COUNT_Y));
+            bombQuantity = new HUDItemQuantity(new Bomb(new Vector2(0, 0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.BOMB_COUNT_Y));
             //new HUDItemQuantity(new Vector2(HUDUtilities.HUD_X + 20, HUDUtilities.MAP_Y - 30), "Level 1");
             slotA = new HUDItemEquipped(new Sword(new Vector2(0, 0)), position + new Vector2(HUDUtilities.SLOT_A_X, HUDUtilities.SLOT_Y));
             slotB = new HUDItemEquipped(new Bomb(new Vector2(0, 0)), position + new Vector2(HUDUtilities.SLOT_B_X, HUDUtilities.SLOT_Y));

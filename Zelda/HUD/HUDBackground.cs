@@ -17,11 +17,11 @@ namespace Zelda.HUD
     {
         protected ISprite background;
         protected Vector2 destination;
-        public HUDBackground(Vector2 destination)
+        public HUDBackground(ISprite background, Vector2 destination)
         {
-            this.background = HUDSpriteFactory.LinkHUDBackground();
+            this.background = background;//HUDSpriteFactory.LinkHUDBackground();
             this.destination = destination;
-                               //new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y);
+            //new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y);
         }
         public void Update(GameTime gameTime, ILink link)
         {

@@ -15,6 +15,10 @@ namespace Zelda.Sprites.Factories
         {
             return new Sprite(GetTexture("link_hud_background"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.HUD_WIDTH, HUDUtilities.HUD_HEIGHT, HUDUtilities.BACKGROUND_BLOCK_SIZE);
         }
+        public static ISprite PauseHUDBackground()
+        {
+            return new Sprite(GetTexture("pause_hud_inventory_map"), HUDUtilities.ORIGIN, HUDUtilities.ORIGIN, HUDUtilities.PAUSE_HUD_WIDTH, HUDUtilities.PAUSE_HUD_HEIGHT, HUDUtilities.BACKGROUND_BLOCK_SIZE);
+        }
 
         //MAP SPRITES
         public static ISprite DungeonHUDMap()

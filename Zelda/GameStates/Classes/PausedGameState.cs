@@ -20,16 +20,12 @@ namespace Zelda.GameStates.Classes
 
         public void Update(GameTime gameTime)
         {
-            // no updating in paused state
+            pauseHUD.Update(gameTime, game.Link);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            // TODO: change to draw the pause screen instead
-            //RoomBuilder.Instance.Draw(spriteBatch);
-            //ProjectileStorage.Draw(spriteBatch);
-            //game.Link.Draw(spriteBatch);
-            //RoomBuilder.Instance.DrawTopLayer(spriteBatch);
+
             pauseHUD.Draw(spriteBatch);
         }
     }

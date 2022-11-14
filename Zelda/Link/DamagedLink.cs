@@ -53,7 +53,7 @@ namespace Zelda.Link
             }
             timer--;
             decoratedLink.Update(gameTime);
-            if(timer >= 32w)
+            if(timer >= 32)
             {
                 decoratedLink.Position += pushDirection;
             }

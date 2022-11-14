@@ -42,7 +42,6 @@ namespace Zelda.HUD
 
         public void Update(GameTime gameTime, ILink link)
         {
-            
             roomIndicatorPosition = IndicatorPosition(RoomBuilder.Instance.CurrentRoom);
             triforceIndicatorPosition = IndicatorPosition(RoomBuilder.Instance.GetRoom("Room4"));
         }
@@ -90,6 +89,10 @@ namespace Zelda.HUD
             tileHeight = (mapDestination.Height - (dungeonHeightInRooms - 1) * PIXELS_BETWEEN_TILES) / dungeonHeightInRooms;
             foreach (Room room in RoomBuilder.Instance.Rooms)
             {
+                if (room.Name.Equals("Room17") || room.Name.Equals("Room18"))
+                {
+                    continue;
+                }
                 ISprite tile = HUDSpriteFactory.DungeonHUDMapTile();
                 Vector2 mapPosition = DungeonToMapPosition(room.Position);
                 Rectangle tileDestination = new Rectangle((int)mapPosition.X, (int)mapPosition.Y, tileWidth, tileHeight);

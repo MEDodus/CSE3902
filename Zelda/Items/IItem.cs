@@ -18,6 +18,8 @@ namespace Zelda.Items
         protected int maxItemCount;
         protected int quantityHeld;
 
+        public int QuantityHeld { get { return quantityHeld; } }
+
         public IItem(ISprite sprite, Vector2 position, int maxItemCount)
         {
             this.sprite = sprite;

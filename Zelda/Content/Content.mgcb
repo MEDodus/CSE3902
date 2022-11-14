@@ -205,6 +205,13 @@
 /processorParam:Quality=Best
 /build:SoundEffect/LOZ_Text.wav
 
+#begin spriteFonts/Font.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:spriteFonts/Font.spritefont
+
 #begin spritesheets/arrow.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -816,6 +823,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/magical_shield.png
+
+#begin spritesheets/map_position.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/map_position.png
 
 #begin spritesheets/map.png
 /importer:TextureImporter

@@ -41,6 +41,21 @@ namespace Zelda.Utilities
         public static readonly int HEART_ROW = 0;
         public static readonly int HEART_OFFSET = 17;
 
+        //ITEM COUNTS
+        public static readonly int ITEM_COUNT_X = HUD_X + 275;
+
+        public static readonly int RUPY_COUNT_Y = HUD_Y + 45;
+        public static readonly int KEY_COUNT_Y = HUD_Y + 85;
+        public static readonly int BOMB_COUNT_Y = HUD_Y + 120;
+
+        public static readonly int LEVEL_X = HUD_X + 20;
+        public static readonly int LEVEL_Y = HUD_Y - 30;
+
+        //ITEM SLOTS
+        public static readonly int SLOT_A_X = HUD_X + 420;
+        public static readonly int SLOT_Y = HUD_Y + 70;
+        public static readonly int SLOT_B_X = HUD_X + 353;
+
         //FONT
 
     }

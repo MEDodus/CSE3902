@@ -65,5 +65,19 @@ namespace Zelda.Inventory
             itemToChange = null;
             return false;
         }
+
+        public int GetCount(IItem item)
+        {
+            int itemQuantity = 0;
+            foreach (IItem currentItem in inventory)
+            {
+                if (currentItem.GetType() == item.GetType())
+                {
+                    itemQuantity = currentItem.QuantityHeld;
+                }
+            }
+
+            return itemQuantity;
+        }
     }
 }

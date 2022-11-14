@@ -25,5 +25,6 @@ namespace Zelda.Inventory
          */
 
         /* Item class could also have field for max stackable item quantity */
+        public int GetCount(IItem item);
     }
 }

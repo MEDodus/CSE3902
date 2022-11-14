@@ -70,6 +70,18 @@ namespace Zelda.Rooms
             }
         }
 
+        public void Reset()
+        {
+            for (int j = 0; j < rooms.Length; j++)
+            {
+                rooms[j] = null;
+                roomMap.Remove("Room" + j);
+            }
+            this.i = Settings.START_ROOM;
+
+            RoomBuilder.Instance.Initialize();
+        }
+
         private readonly HashSet<Room> seen = new HashSet<Room>();
         private void ConnectAdjacentRooms(Room room, Vector2 position)
         {

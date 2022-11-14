@@ -41,7 +41,7 @@ namespace Zelda.Utilities
         public static readonly int MAP_WIDTH = 150;
         public static readonly int MAP_HEIGHT = 75;
         public static readonly int MAP_X = 30;// HUD_X + 30;
-        public static readonly int MAP_Y = 70;// HUD_Y + 70;
+        public static readonly int MAP_Y = 125;// HUD_Y + 70;
         public static readonly int MAP_BLOCK_SIZE = 3;
 
         //DUNGEON HUD MAP - ROOM INDICATOR

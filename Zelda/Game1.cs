@@ -90,6 +90,22 @@ namespace Zelda
             }
             gameState.Update(gameTime);
             base.Update(gameTime);
+            if (link.Health.CurrentHealth <= 0)
+            {
+                Reset();
+            }
+        }
+
+        public void Reset()
+        {
+            // Other initialization
+            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
+            gameState = new RunningGameState(this);
+            RoomBuilder.Instance.Reset();
+            RoomTransitions.Initialize(this);
+            link = new Link1();
+
+            base.Initialize();
         }
 
         protected override void Draw(GameTime gameTime)

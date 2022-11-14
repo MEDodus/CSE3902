@@ -393,3 +393,7 @@ C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\sprit
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\pause_hud_inventory_map.xnb
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\pause_hud_background.xnb
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\pause_hud_inventory_map_tile.xnb
+C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\dungeon_hud_map_tile.xnb
+C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man_words.xnb
+C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\pause_hud_background.xnb
+C:\Users\alexr\Source\Repos\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\pause_hud_inventory_map_tile.xnb

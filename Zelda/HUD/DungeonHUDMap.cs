@@ -41,7 +41,7 @@ namespace Zelda.HUD
 
         private Vector2 GetRoom()
         {
-            return HUDUtilities.ROOM_INDICATOR_POSITION[RoomBuilder.Instance.CurrentRoomNumber - 1];
+            return HUDUtilities.ROOM_INDICATOR_POSITION[RoomBuilder.Instance.CurrentRoomNumber];
         }
     }
 }

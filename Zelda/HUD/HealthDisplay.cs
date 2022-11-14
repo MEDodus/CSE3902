@@ -14,13 +14,15 @@ namespace Zelda.HUD
     public class HealthDisplay : IHUDElement
     {
         protected Heart[] hearts;
-        public HealthDisplay(ILink link)
+        protected Vector2 offset;
+        public HealthDisplay(ILink link, Vector2 position)
         {
+            offset = position;
             this.hearts = new Heart[LinkUtilities.MAX_HEARTS];
             for (int currentHeart = 0; currentHeart < LinkUtilities.MAX_HEARTS; currentHeart++)
             {
                 hearts[currentHeart] = new Heart();
-                hearts[currentHeart].SetDestination(currentHeart);
+                hearts[currentHeart].SetDestination(currentHeart, offset);
             }
         }
 

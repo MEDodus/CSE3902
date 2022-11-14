@@ -20,12 +20,12 @@ namespace Zelda.HUD
         protected ISprite roomIndicator;
         protected Vector2 destination;
         protected Vector2 roomIndicatorPosition;
-        public DungeonHUDMap()
+        public DungeonHUDMap(Vector2 position)
         {
             map = HUDSpriteFactory.DungeonHUDMap();
             roomIndicator = HUDSpriteFactory.RoomIndicator();
-            destination = new Vector2(HUDUtilities.MAP_X, HUDUtilities.MAP_Y);
-            roomIndicatorPosition = new Vector2(HUDUtilities.MAP_X, HUDUtilities.MAP_Y);
+            destination = position + new Vector2(HUDUtilities.MAP_X, HUDUtilities.MAP_Y);
+            roomIndicatorPosition = position + new Vector2(HUDUtilities.MAP_X, HUDUtilities.MAP_Y);
 
         }
 

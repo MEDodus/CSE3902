@@ -23,10 +23,10 @@ namespace Zelda.HUD
         {
             heart.Draw(spriteBatch, destination);
         }
-        public void SetDestination(int heartNum)
+        public void SetDestination(int heartNum, Vector2 position)
         {
             //this.destination = new Rectangle(HUDUtilities.HEALTH_DISPLAY_X + HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH * heartNum, HUDUtilities.HEALTH_DISPLAY_Y, HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH, HUDUtilities.HEART_DISPLAY_ROW_HEIGHT);
-            this.destination = new Vector2(HUDUtilities.HEALTH_DISPLAY_X + (HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH + HUDUtilities.HEART_OFFSET) * heartNum, HUDUtilities.HEALTH_DISPLAY_Y);
+            this.destination = position + new Vector2(HUDUtilities.HEALTH_DISPLAY_X + (HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH + HUDUtilities.HEART_OFFSET) * heartNum, HUDUtilities.HEALTH_DISPLAY_Y);
         }
         public void FullHeart()
         {

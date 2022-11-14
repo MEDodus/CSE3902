@@ -11,6 +11,7 @@ using Zelda.Sprites.Factories;
 using Zelda.Sound;
 using Zelda.GameStates;
 using Zelda.GameStates.Classes;
+using Zelda.Utilities;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -68,7 +69,7 @@ namespace Zelda
 
             // Other initialization
             link = new Link1();
-            hud = new LinkHUD(link);
+            hud = new LinkHUD(link, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
             collisionDetector = new CollisionDetector();
             gameState = new RunningGameState(this);

@@ -20,11 +20,14 @@ namespace Zelda.Utilities
         public static readonly int HUD_HEIGHT = 56;
         public static readonly int BACKGROUND_BLOCK_SIZE = 14;
 
+        public static readonly int PAUSED_HUD_X = 180;
+        public static readonly int PAUSED_HUD_Y = 300;
+
         //DUNGEON HUD MAP 
         public static readonly int MAP_WIDTH = 48;
         public static readonly int MAP_HEIGHT = 24;
-        public static readonly int MAP_X = HUD_X + 30;
-        public static readonly int MAP_Y = HUD_Y + 70;
+        public static readonly int MAP_X = 30;// HUD_X + 30;
+        public static readonly int MAP_Y = 70;// HUD_Y + 70;
         public static readonly int MAP_BLOCK_SIZE = 3;
 
         //DUNGEON HUD MAP - ROOM INDICATOR
@@ -54,8 +57,8 @@ namespace Zelda.Utilities
 
 
         //HEALTH DISPLAY - MAIN
-        public static readonly int HEALTH_DISPLAY_X = HUD_X + 510;
-        public static readonly int HEALTH_DISPLAY_Y = HUD_Y + 100;
+        public static readonly int HEALTH_DISPLAY_X = 510;//HUD_X + 510;
+        public static readonly int HEALTH_DISPLAY_Y = 100;//HUD_Y + 100;
 
         //HEALTH DISPLAY - HEART
         public static readonly int HEART_DISPLAY_ROW_HEIGHT = 8;
@@ -70,19 +73,19 @@ namespace Zelda.Utilities
         public static readonly int HEART_OFFSET = 17;
 
         //ITEM COUNTS
-        public static readonly int ITEM_COUNT_X = HUD_X + 275;
+        public static readonly int ITEM_COUNT_X = 275;//HUD_X + 275;
 
-        public static readonly int RUPY_COUNT_Y = HUD_Y + 45;
-        public static readonly int KEY_COUNT_Y = HUD_Y + 85;
-        public static readonly int BOMB_COUNT_Y = HUD_Y + 120;
+        public static readonly int RUPY_COUNT_Y = 45;//HUD_Y + 45;
+        public static readonly int KEY_COUNT_Y = 85;//HUD_Y + 85;
+        public static readonly int BOMB_COUNT_Y = 120;//HUD_Y + 120;
 
-        public static readonly int LEVEL_X = HUD_X + 20;
-        public static readonly int LEVEL_Y = HUD_Y - 30;
+        public static readonly int LEVEL_X = 20;// HUD_X + 20;
+        public static readonly int LEVEL_Y = 30;// HUD_Y - 30;
 
         //ITEM SLOTS
-        public static readonly int SLOT_A_X = HUD_X + 420;
-        public static readonly int SLOT_Y = HUD_Y + 70;
-        public static readonly int SLOT_B_X = HUD_X + 353;
+        public static readonly int SLOT_A_X = 420;//HUD_X + 420;
+        public static readonly int SLOT_Y = 70; // HUD_Y + 70;
+        public static readonly int SLOT_B_X = 353;// HUD_X + 353;
 
         //FONT
 

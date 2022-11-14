@@ -234,5 +234,21 @@ namespace Zelda.Sound
                 doorUnlock.Play();
             }
         }
+
+        public void PlayGetHealthSound()
+        {
+            if (!muted)
+            {
+                getHeart.Play();
+            }
+        }
+
+        public void PlayGetItemSound()
+        {
+            if (!muted)
+            {
+                getItem.Play();
+            }
+        }
     }
 }

@@ -2,18 +2,18 @@
 
 namespace Zelda.Commands
 {
-    public class Attack : ICommand
+    public class AttackSecondary : ICommand
     {
         private Game1 game;
 
-        public Attack(Game1 game)
+        public AttackSecondary(Game1 game)
         {
             this.game = game;
         }
 
         public void Execute(GameTime gameTime)
         {
-            game.Link.UseItem(0);
+            game.Link.UseItem(1);
         }
     }
 }

@@ -1,0 +1,18 @@
+Review By: Michael Dodus
+Date: 11/14/2022
+Sprint #: 4
+Class Reviewed: SoundManager.cs
+Author: Jiayuan Zhang
+Time: 15 mins
+
+Code Quality:
+All methods are clear and simple to understand, most of them are one liners due to the nature of the class handling sounds.
+That being said I think there is a bit that could be worked on. There are almost 30 class members and it would be better to abstract these members into
+different sound classes based on the effect that is being played and the gamestate we are currently in. Even just using a Dictionary<String, SoundEffect>
+would cut down on the lines the class takes up. Thus, I think the two best options are abstracting further for different sound functionality, or putting in a
+dictionary. To be noted, the code is very functional, I'm just nit-picking.
+
+Hypothetical Change:
+As I was stating early as part of a hypothetical change, I would like to see how this sound manager deals with game state changes without referencing other classes
+too much. I think it would be interesting to see it's dependency graph with and without this change because right now I think it may handled dependencies
+differently.

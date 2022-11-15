@@ -1,0 +1,21 @@
+Review By: Nicholas Younoszai
+Date: 11/14/2022
+Sprint #: 4
+Class Reviewed: LinkInventory.cs
+Author: Michael Dodus
+Time: 21 mins
+
+Code Quality:
+This inventory system seems to be a very robust inventory system that is designed to hold any object Link has.
+I think it has a lot of useful methods that help with the inventory management. It does a good job at doing the
+single task of inventory management with items, and not much more. The only things this class uses are items,
+which is good since it doesn't need to use much more. Each method also has a very specific task (for example, 
+adding/removing items, or finding if they are in the inventory). I like that it can hold every possible item,
+not just the useable items (like weapons). I think that overall, the quality of this code is very good since
+it has a specific purpose and only does that. I also think most of it is straightforward and is easy to
+read/understand.
+
+Hypothetical Change:
+I think it could potentially be useful to add how items that are essentially infinite once picked up work
+with things such as quantity held, either some more useful comments or more clear code on how that case
+is handled. 

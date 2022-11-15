@@ -4,6 +4,7 @@ using Zelda.Items;
 using Zelda.Items.Classes;
 using Zelda.GameStates.Classes;
 using Zelda.Sound;
+using Microsoft.Xna.Framework;
 
 namespace Zelda.Collision.Handlers
 {
@@ -21,7 +22,7 @@ namespace Zelda.Collision.Handlers
 
         public void HandleCollision(ILink link, IItem item, Game1 game)
         {
-            if (link.AddToInventory(item))
+            if (item is not Rupy && item is not FiveRupies && link.AddToInventory(item))
             {
                 // AddToInventory was successful, remove item from room
                 if (item is Fairy)
@@ -48,6 +49,12 @@ namespace Zelda.Collision.Handlers
                 {
                     SoundManager.Instance.PlayGetKeySound();
                 }
+                RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
+            } else if (item is Rupy || item is FiveRupies)
+            {
+                IItem wallet = link.Inventory.GetItem(new Wallet(new Vector2()));
+                int add = item is Rupy ? 1 : 5;
+                wallet.AddToQuantity(add);
                 RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
             }
         }

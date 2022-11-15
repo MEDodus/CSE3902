@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zelda.Items.Classes;
 using Zelda.NPCs;
 using Zelda.NPCs.Classes;
 using Zelda.Projectiles;
+using Boomerang = Zelda.Projectiles.Classes.Boomerang;
 
 namespace Zelda.Collision.Handlers
 {
@@ -15,9 +17,18 @@ namespace Zelda.Collision.Handlers
         {
             if (projectile.Behavior == ProjectileBehavior.Friendly || projectile.Behavior == ProjectileBehavior.NeutralHarmful)
             {
-                projectile.Delete();
-
-                if (enemy is EnemySingleDirection)
+                
+                if (projectile is Boomerang) 
+                {
+                    if (enemy is Bat || enemy is Gel)
+                    {
+                        CollisionHelper((EnemySingleDirection)enemy);
+                    } else
+                    {
+                        return;
+                    }
+                }
+                else if (enemy is EnemySingleDirection)
                 {
                     CollisionHelper((EnemySingleDirection)enemy);
                 }
@@ -33,6 +44,7 @@ namespace Zelda.Collision.Handlers
                 {
                     CollisionHelper((Goriya)enemy);
                 }
+                projectile.Delete();
             }
         }
         public void CollisionHelper(EnemySingleDirection enemy)

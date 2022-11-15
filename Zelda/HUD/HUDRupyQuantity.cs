@@ -29,7 +29,7 @@ namespace Zelda.HUD
         }
         public void Update(GameTime gameTime, ILink link)
         {
-            this.quantity = link.Inventory.GetCount(this.item) * 5 + link.Inventory.GetCount(new Rupy(new Vector2()));
+            this.quantity = link.Inventory.GetCount(new Wallet(new Vector2()));
         }
         public void Draw(SpriteBatch spriteBatch)
         {

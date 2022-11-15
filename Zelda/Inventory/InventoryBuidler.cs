@@ -17,9 +17,9 @@ namespace Zelda.Inventory
             inventory.AddItem(new Sword(new Vector2()), 1); // For Sword and SwordBeam
             inventory.AddItem(new Arrow(new Vector2()), 1); // Need Bow and 1 Rupee cost
             inventory.AddItem(new BlueCandle(new Vector2()), 1); // For CandleFlame (Blue can be used once per screen) red infinite
+            inventory.AddItem(new Wallet(new Vector2()), 0);
             //inventory.AddItem(new MagicalBoomerang(new Vector2()), 1); // Infinite
             //inventory.AddItem(new SilverArrow(new Vector2()), 1); // Need Bow and 1 Rupee cost
-            inventory.AddItem(new Rupy(new Vector2()), 13);
             // TODO: Added arrow and bow functionality so it works with FiveRupies as well
             //inventory.AddItem(new FiveRupies(new Vector2()), 3);
             inventory.AddItem(new BluePotion(new Vector2()), 1);

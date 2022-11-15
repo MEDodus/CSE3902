@@ -15,15 +15,15 @@ namespace Zelda.ItemEffects
     {
         public bool RequirementsMet(IInventory inventory)
         {
-            return inventory.Contains(new Arrow(new Vector2())) && inventory.Contains(new Bow(new Vector2())) && inventory.Contains(new Rupy(new Vector2()));
+            return inventory.Contains(new Arrow(new Vector2())) && inventory.Contains(new Bow(new Vector2())) && inventory.GetCount(new Wallet(new Vector2())) > 0;
         }
 
         public bool UseEffect(IItem item, IInventory inventory, Health health, Vector2 spawnPos, Vector2 facingDirection)
         {
             if (RequirementsMet(inventory))
             {
-                IItem rupy = inventory.GetItem(new Rupy(new Vector2()));
-                rupy.AddToQuantity(-1);
+                IItem wallet = inventory.GetItem(new Wallet(new Vector2()));
+                wallet.AddToQuantity(-1);
                 return true;
             }
             return false;

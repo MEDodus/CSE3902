@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zelda.Items;
+using Zelda.Items.Classes;
 using Zelda.Link;
 
 namespace Zelda.Inventory
@@ -52,7 +53,11 @@ namespace Zelda.Inventory
          */
         public bool Contains(IItem item)
         {
-            if (inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld <= 0)
+            if (item is Wallet && inventory.ContainsKey(item.GetType()))
+            {
+                return true;
+            }
+            else if (inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld <= 0)
             {
                 inventory.Remove(item.GetType());
             }

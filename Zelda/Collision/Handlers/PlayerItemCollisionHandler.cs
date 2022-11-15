@@ -3,6 +3,7 @@ using Zelda.Rooms;
 using Zelda.Items;
 using Zelda.Items.Classes;
 using Zelda.GameStates.Classes;
+using Zelda.Sound;
 
 namespace Zelda.Collision.Handlers
 {
@@ -29,16 +30,23 @@ namespace Zelda.Collision.Handlers
                 } 
                 else if (item is Heart)
                 {
+                    SoundManager.Instance.PlayGetHealthSound();
                     link.Health.addHealth(2);
                 } 
                 else if (item is HeartContainer)
                 {
+                    SoundManager.Instance.PlayGetHealthSound();
                     link.Health.addMaxHealth(2);
                     link.Health.healthToFull();
                 }
                 else if (item is Triforce)
                 {
                     game.GameState = new WinningGameState(game);
+                    SoundManager.Instance.PlayGetItemSound();
+                }
+                else if (item is Key)
+                {
+                    SoundManager.Instance.PlayGetKeySound();
                 }
                 RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
             }

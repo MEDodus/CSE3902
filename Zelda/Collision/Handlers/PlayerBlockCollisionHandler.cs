@@ -5,6 +5,7 @@ using Zelda.Blocks.Classes;
 using Zelda.Items.Classes;
 using Zelda.Rooms;
 using System.Collections.Generic;
+using Zelda.Sound;
 
 namespace Zelda.Collision.Handlers
 {
@@ -66,6 +67,7 @@ namespace Zelda.Collision.Handlers
             }
             else if (block is StairsTrigger)
             {
+                SoundManager.Instance.PlayStairSound();
                 RoomTransitions.EnterWhiteBrickDungeon();
             }
             else if (block is LadderTrigger)

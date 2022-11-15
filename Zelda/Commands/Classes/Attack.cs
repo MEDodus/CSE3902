@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Zelda.Link;
 
 namespace Zelda.Commands
 {

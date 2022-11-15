@@ -65,7 +65,7 @@ namespace Zelda.Link
         {
             // Can't move when holding triforce
         }
-        public void TakeDamage(Game1 game, int damage)
+        public void TakeDamage(Game1 game, int damage, Vector2 direction)
         {
             // Can't take when holding triforce
         }

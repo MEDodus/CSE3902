@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using Zelda.Items;
+using Zelda.Sound;
 using Zelda.Utilities;
 
 namespace Zelda.Link

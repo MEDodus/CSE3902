@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Zelda.Link
 {
@@ -9,7 +10,7 @@ namespace Zelda.Link
         void MoveLeft();
         void MoveRight();
         void UseItem(int itemNum);
-        void TakeDamage(Game1 game);
+        void TakeDamage(Game1 game, Vector2 pushDirection);
 
         public void Update();
     }

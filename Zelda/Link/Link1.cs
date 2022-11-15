@@ -11,6 +11,7 @@ using Zelda.Rooms;
 using Zelda.Inventory;
 using System;
 using Zelda.Items.Classes;
+using Zelda.Sound;
 
 namespace Zelda.Link
 {
@@ -110,10 +111,11 @@ namespace Zelda.Link
                 state.MoveRight();
             }
         }
-        public void TakeDamage(Game1 game, int damage)
+        public void TakeDamage(Game1 game, int damage, Vector2 direction)
         {
             health.removeHealth(damage);
-            state.TakeDamage(game);
+            state.TakeDamage(game, direction);
+            SoundManager.Instance.PlayLinkHurtSound();
         }
 
         public void UseItem(int itemNum)
@@ -152,7 +154,6 @@ namespace Zelda.Link
                         {
                             spawnPos += new Vector2(0, -10);
                         }
-                        item = new Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3);
                         type = new Items.Classes.Sword(new Vector2());
                     }
                     break;

@@ -36,9 +36,9 @@ namespace Zelda.Link
         {
             // Can't use item while using item
         }
-        public void TakeDamage(Game1 game)
+        public void TakeDamage(Game1 game, Vector2 pushDirection)
         {
-            game.Link = new DamagedLink(link, game);
+            game.Link = new DamagedLink(link, game, pushDirection);
         }
 
         public void Update()

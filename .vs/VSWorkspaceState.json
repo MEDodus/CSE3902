@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Zelda",
+    "\\Zelda\\Utilities"
   ],
+  "SelectedNode": "\\Zelda\\Utilities\\HUDUtilities.cs",
   "PreviewInSolutionExplorer": false
 }

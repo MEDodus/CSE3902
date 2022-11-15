@@ -250,5 +250,21 @@ namespace Zelda.Sound
                 getItem.Play();
             }
         }
+
+        public void PlayGetKeySound()
+        {
+            if (!muted)
+            {
+                keyAppear.Play();
+            }
+        }
+
+        public void PlayStairSound()
+        {
+            if (!muted)
+            {
+                stairs.Play();
+            }
+        }
     }
 }

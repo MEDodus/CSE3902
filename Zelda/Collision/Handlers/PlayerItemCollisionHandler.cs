@@ -44,6 +44,10 @@ namespace Zelda.Collision.Handlers
                     game.GameState = new WinningGameState(game);
                     SoundManager.Instance.PlayGetItemSound();
                 }
+                else if (item is Key)
+                {
+                    SoundManager.Instance.PlayGetKeySound();
+                }
                 RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
             }
         }

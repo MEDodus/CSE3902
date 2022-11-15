@@ -14,7 +14,7 @@ namespace Zelda.Inventory
         // Remove some item by some quantity
         public bool RemoveItem(IItem item, int quantity);
         // Check if inventory contains an item
-        public bool FindInSet(IItem item);
+        public bool Contains(IItem item);
         /* Item class could also have field for max stackable item quantity */
         public int GetCount(IItem item);
         // Retrieve item from inventory

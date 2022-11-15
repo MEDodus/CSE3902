@@ -20,18 +20,53 @@ namespace Zelda.GameStates.Classes
 
         protected bool HasMap = false;
         protected bool HasCompass = false;
+        protected bool HasBoomerang = false;
+        protected bool HasBomb = false;
+        protected bool HasBow = false;
+        protected bool HasCandle = false;
+        protected bool HasRecorder = false;
+        protected bool HasPotion = false;
         public PausedGameState(Game1 game)
         {
             this.game = game;
             pauseHUD = new LinkHUD(game, new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_Y));
             pauseHUDBackground = new HUDBackground(HUDSpriteFactory.PauseHUDBackground(), new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_INVENTORY_Y));
-            if(game.Link.Inventory.FindInSet(new Map(new Vector2(0, 0)))){
+            if(game.Link.Inventory.Contains(new Map(new Vector2(0, 0)))){
                 map = new HUDItem(new Map(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.MAP_ITEM_Y));
                 HasMap = true;
             }
-            if (game.Link.Inventory.FindInSet(new Compass(new Vector2(0, 0)))){
+            if (game.Link.Inventory.Contains(new Compass(new Vector2(0, 0)))){
                 compass = new HUDItem(new Compass(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
                 HasCompass = true;
+            }
+            if (game.Link.Inventory.Contains(new Boomerang(new Vector2()))) {
+                /* Change positioning for boomerang */
+                compass = new HUDItem(new Boomerang(new Vector2(0, 0)), new Vector2(HUDUtilities.SLOT_0_X, HUDUtilities.SLOT_0_Y));
+                HasBoomerang = true;
+            }
+            if (game.Link.Inventory.Contains(new Bomb(new Vector2())))
+            {
+                /* Change positioning for boomerang */
+                compass = new HUDItem(new Bomb(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
+                HasBomb = true;
+            }
+            if (game.Link.Inventory.Contains(new Bow(new Vector2())))
+            {
+                /* Change positioning for boomerang */
+                compass = new HUDItem(new Bow(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
+                HasBow = true;
+            }
+            if (game.Link.Inventory.Contains(new BlueCandle(new Vector2())))
+            {
+                /* Change positioning for boomerang */
+                compass = new HUDItem(new BlueCandle(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
+                HasCandle = true;
+            }
+            if (game.Link.Inventory.Contains(new Recorder(new Vector2())))
+            {
+                /* Change positioning for boomerang */
+                compass = new HUDItem(new Recorder(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
+                HasRecorder = true;
             }
         }
 

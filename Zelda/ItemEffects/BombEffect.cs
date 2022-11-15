@@ -17,7 +17,7 @@ namespace Zelda.ItemEffects
         public bool RequirementsMet(IInventory inventory)
         {
             IItem item = new Bomb(new Vector2());
-            return inventory.FindInSet(item) && inventory.GetCount(item) > 0;
+            return inventory.Contains(item) && inventory.GetCount(item) > 0;
         }
         public bool UseEffect(IItem item, IInventory inventory, Health health, Vector2 spawnPos, Vector2 facingDirection)
         {

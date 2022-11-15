@@ -154,6 +154,7 @@ namespace Zelda.Link
                         {
                             spawnPos += new Vector2(0, -10);
                         }
+                        item = new Zelda.Projectiles.Classes.Sword(spawnPos, facingDirection, swordAttackTimer);
                         type = new Items.Classes.Sword(new Vector2());
                     }
                     break;
@@ -186,7 +187,7 @@ namespace Zelda.Link
                     type = new Zelda.Items.Classes.BlueCandle(new Vector2());
                     break;
             }
-            if (item != null && inventory.FindInSet(type) && inventory.GetItem(type).UseItem(inventory, health, defaultItemSpawnPos, facingDirection))
+            if (item != null && inventory.Contains(type) && inventory.GetItem(type).UseItem(inventory, health, defaultItemSpawnPos, facingDirection))
             {
                 ProjectileStorage.Add(item);
             }

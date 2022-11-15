@@ -18,7 +18,7 @@ namespace Zelda.ItemEffects
     {
         public bool RequirementsMet(IInventory inventory)
         {
-            return inventory.FindInSet(new Sword(new Vector2()));
+            return inventory.Contains(new Sword(new Vector2()));
         }
 
         public bool UseEffect(IItem item, IInventory inventory, Health health, Vector2 spawnPos, Vector2 facingDirection)

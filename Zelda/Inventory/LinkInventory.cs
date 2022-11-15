@@ -18,7 +18,7 @@ namespace Zelda.Inventory
         }
         public bool AddItem(IItem item, int quantity)
         {
-            if (!FindInSet(item))
+            if (!Contains(item))
             {
                 inventory.Add(item.GetType(), item);
                 item.AddToQuantity(quantity);
@@ -38,7 +38,7 @@ namespace Zelda.Inventory
          */
         public bool RemoveItem(IItem item, int quantity)
         {
-            if (!FindInSet(item)) return false;
+            if (!Contains(item)) return false;
 
             // Try to use item... check requirements etc...
             IItem itemToChange = inventory[item.GetType()];
@@ -50,7 +50,7 @@ namespace Zelda.Inventory
 
         /* Sets index in list of found item and returns true if found
          */
-        public bool FindInSet(IItem item)
+        public bool Contains(IItem item)
         {
             if (inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld <= 0)
             {
@@ -61,13 +61,13 @@ namespace Zelda.Inventory
 
         public int GetCount(IItem item)
         {
-            if (!FindInSet(item)) return 0;
+            if (!Contains(item)) return 0;
             return inventory[item.GetType()].QuantityHeld;
         }
 
         public IItem GetItem(IItem item)
         {
-            if (FindInSet(item)) return inventory[item.GetType()];
+            if (Contains(item)) return inventory[item.GetType()];
             return null;
         }
     }

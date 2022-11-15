@@ -112,6 +112,10 @@ namespace Zelda.Utilities
         public static readonly int MAP_ITEM_Y = HUD_Y + 300; // HUD_Y + 70;
         public static readonly int COMPASS_ITEM_Y = HUD_Y + 415;// HUD_X + 353;
 
+        //INVENTORY SLOTS
+        public static readonly int SLOT_0_X = HUD_X + 150;
+        public static readonly int SLOT_0_Y = HUD_Y + 200;
+
         //FONT
 
     }

@@ -56,7 +56,7 @@ namespace Zelda.HUD
             BlackBorders.Draw(spriteBatch);
             hudBackground.Draw(spriteBatch);
             map.Draw(spriteBatch);
-            if (game.Link.Inventory.FindInSet(new Map(new Vector2())))
+            if (game.Link.Inventory.Contains(new Map(new Vector2())))
             {
                 pauseMenuMap.Draw(spriteBatch);
             }

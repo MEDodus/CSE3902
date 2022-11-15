@@ -42,7 +42,6 @@ namespace Zelda
         private List<IController> controllers;
         private CommandBuilder commandBuilder;
         private CollisionDetector collisionDetector;
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);

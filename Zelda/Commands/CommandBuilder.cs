@@ -33,6 +33,7 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.H, new HealthCheat(game));
             mouse.RegisterLeftClickCommand(new CycleRoomPrevious(game));
             mouse.RegisterRightClickCommand(new CycleRoomNext(game));
+
         }
     }
 }

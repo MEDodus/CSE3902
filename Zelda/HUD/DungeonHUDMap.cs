@@ -48,14 +48,14 @@ namespace Zelda.HUD
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (game.Link.Inventory.FindInSet(new Map(new Vector2())))
+            if (game.Link.Inventory.Contains(new Map(new Vector2())))
             {
                 foreach (KeyValuePair<ISprite, Rectangle> pair in mapTiles)
                 {
                     pair.Key.Draw(spriteBatch, pair.Value);
                 }
             }
-            if (game.Link.Inventory.FindInSet(new Compass(new Vector2())))
+            if (game.Link.Inventory.Contains(new Compass(new Vector2())))
             {
                 triforceIndicator.Draw(spriteBatch, triforceIndicatorPosition, Color.Orange);
             }

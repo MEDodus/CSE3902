@@ -60,7 +60,7 @@ namespace Zelda.Collision.Handlers
                 PushableBlock pushable = (PushableBlock)block;
                 pushable.Push(-collisionDirection.Vector);
             }
-            else if (block is Door && block.CanCollide && link.Inventory.FindInSet(new Key(new Vector2())))
+            else if (block is Door && block.CanCollide && link.Inventory.Contains(new Key(new Vector2())))
             {
                 link.Inventory.GetItem(new Key(new Vector2())).UseItem(link.Inventory, null, new Vector2(), new Vector2());
                 RoomBuilder.Instance.CurrentRoom.UnlockDoor(roomDirection, true);

@@ -1,0 +1,10 @@
+Review By: Jiayuan Zhang
+Date: 11/14/2022
+Sprint #: 4
+Class Reviewed: DamagedLink.cs
+Author: Nicholas Younoszai
+Time: 20min
+
+
+The updated DamagedLink class is highly readable, it uses timer to control
+the update of link. Straight forward and well formated work.

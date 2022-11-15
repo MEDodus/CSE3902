@@ -1,0 +1,12 @@
+Review By: Jiayuan Zhang
+Date: 11/14/2022
+Sprint #: 4
+Class Reviewed: DamagedLink.cs
+Author: Nicholas Younoszai
+Time: 20min
+
+This code is very readable and keeps within the suggest class 
+and method lengths. The new version of DamagedLink.cs added the 
+full feature of damaged link in Update(), The method uses timer 
+to make the feature work, which is straight forward and easy to 
+read.

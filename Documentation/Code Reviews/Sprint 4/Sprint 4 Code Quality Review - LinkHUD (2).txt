@@ -1,0 +1,17 @@
+Review By: Jacob Pohlabel
+Date: 11/14/2022
+Sprint: 4
+Class Reviewed: LinkHUD.cs
+Author: Alex Reed
+Time: 15 min
+
+Code Quality:
+This code is pretty good, it's nothing too complicated as it basically instantiates a bunch of HUD elements and then updates/draws them.
+There is a lot of repeated logic, such as calling Update and Draw several times which could be simplified. Also, the constructors for 
+the HUD elements are a bit messy since they are passed in a lot of positions/vectors/etc. which could possibly be simplified by handling 
+the positioning within the classes since the HUD does not really need to know about this. The update functions should also probably not
+get passed in link since the standard for all other classes within the project is only to pass in gameTime to Update, you could change this
+by passing in a reference to game in the constructor for the HUD elements.
+
+Hypothetical Change:
+Store the HUD elements in a data structure of IHUDElement and loop over it to update/draw them.

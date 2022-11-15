@@ -1,0 +1,19 @@
+Review By: Alex Reed
+Date: 11/14/2022
+Sprint #: 4
+Class Reviewed: RoomTransitions.cs
+Author: Jacob Pohlabel
+Time: 43min.
+
+Code Quality:
+This code is very readable and keeps within the suggest class and method lengths. 
+The class is cohesive as it solely handles room transitions. The classes also do a good job of breaking
+up each responsibility into different methods.
+The has very low coupling, and efficiently performs room transitions.
+
+Hypothetical Change:
+This class could use some more comments as it is performing some complicated actions.
+This would greatly improve the readability of the class.
+
+This class could also be improved by generalizing the entrance into the brick dungeons so
+it could be applied to other rooms with similar entrances and exits, and not solely "Room17."

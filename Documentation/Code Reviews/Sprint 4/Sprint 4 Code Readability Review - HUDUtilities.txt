@@ -1,0 +1,21 @@
+Review By: Jacob Pohlabel
+Date: 11/14/2022
+Sprint: 4
+Class Reviewed: HUDUtilities.cs
+Author: Alex Reed
+Time: 15 min
+
+Code Readability:
+This class is just a class containing a bunch of magic numbers for HUD drawing, so it's not very complicated,
+but a lot of the names are a bit confusing and seem to adhere to different standards. This makes other classes
+that reference these values harder to understand. Also, some values seem unnecessary/do not match the standards
+used for other game objects. For example, a lot of HUD elements have a size in blocks listed, which does not really
+make much sense since you would expect them to just have hardcoded x/y/width/height values rather than scale based
+on the size of blocks. A lot of these elements are later drawn to a given destination rectangle, which makes the size
+in blocks portion useless since size in blocks is only useful when calling ISprite.Draw(position) where position is a
+Vector2 and no other arguments are passed. Also, for sprint 5, we may want to change this to a file.
+
+Hypothetical Change:
+Go through and check which things are necessary and which are not, especially with regard to sprite drawing.
+Try to have a consistent standard in how things are positioned/sized/named.
+Also consider moving these values to a file.

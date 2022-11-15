@@ -22,3 +22,4 @@ Features we have not fully implemented yet but are working on:
 - Enemies dropping items
 - Enemy knockback
 - Use item animation should not play if no items available to use
+- Spike crosses need updates

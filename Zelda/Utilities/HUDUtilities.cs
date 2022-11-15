@@ -113,8 +113,18 @@ namespace Zelda.Utilities
         public static readonly int COMPASS_ITEM_Y = HUD_Y + 415;// HUD_X + 353;
 
         //INVENTORY SLOTS
-        public static readonly int SLOT_0_X = HUD_X + 150;
-        public static readonly int SLOT_0_Y = HUD_Y + 200;
+        public static readonly int SLOT_0_X = HUD_X + 365;
+        public static readonly int SLOT_0_Y = HUD_Y + 140;
+        public static readonly int SLOT_1_X = HUD_X + 420;
+        public static readonly int SLOT_1_Y = HUD_Y + 125;
+        public static readonly int SLOT_2_X = HUD_X + 485;
+        public static readonly int SLOT_2_Y = HUD_Y + 125;
+        public static readonly int SLOT_3_X = HUD_X + 550;
+        public static readonly int SLOT_3_Y = HUD_Y + 125;
+        public static readonly int SLOT_4_X = HUD_X + 370;
+        public static readonly int SLOT_4_Y = HUD_Y + 175;
+        public static readonly int SLOT_5_X = HUD_X + 485;
+        public static readonly int SLOT_5_Y = HUD_Y + 175;
 
         //FONT
 

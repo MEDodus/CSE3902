@@ -22,6 +22,10 @@ namespace Zelda.Inventory
             //inventory.AddItem(new SilverArrow(new Vector2()), 1); // Need Bow and 1 Rupee cost
             inventory.AddItem(new Bow(new Vector2()), 1);
             inventory.AddItem(new Rupy(new Vector2()), 5);
+            inventory.AddItem(new Key(new Vector2()), 2);
+            inventory.AddItem(new Map(new Vector2()), 1);
+            inventory.AddItem(new Recorder(new Vector2()), 1);
+            inventory.AddItem(new BluePotion(new Vector2()), 1);
         }
     }
 }

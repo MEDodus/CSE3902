@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq.Expressions;
+using System.Security.Principal;
 using Zelda.HUD;
+using Zelda.Inventory;
 using Zelda.Items.Classes;
 using Zelda.Projectiles;
 using Zelda.Rooms;
@@ -13,61 +16,24 @@ namespace Zelda.GameStates.Classes
     public class PausedGameState : IGameState
     {
         private Game1 game;
+        private IInventory inventory;
         protected HUDBackground pauseHUDBackground;
         protected IHUD pauseHUD;
+        protected HUDItem[] items;
         protected HUDItem map;
         protected HUDItem compass;
-
-        protected bool HasMap = false;
-        protected bool HasCompass = false;
-        protected bool HasBoomerang = false;
-        protected bool HasBomb = false;
-        protected bool HasBow = false;
-        protected bool HasCandle = false;
-        protected bool HasRecorder = false;
-        protected bool HasPotion = false;
+        protected HUDItem boomerang;
+        protected HUDItem bomb;
+        protected HUDItem bow;
+        protected HUDItem candle;
+        protected HUDItem recorder;
+        protected HUDItem bluePotion;
+        protected HUDItem redPotion;
         public PausedGameState(Game1 game)
         {
+            this.inventory = game.Link.Inventory;
             this.game = game;
-            pauseHUD = new LinkHUD(game, new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_Y));
-            pauseHUDBackground = new HUDBackground(HUDSpriteFactory.PauseHUDBackground(), new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_INVENTORY_Y));
-            if(game.Link.Inventory.Contains(new Map(new Vector2(0, 0)))){
-                map = new HUDItem(new Map(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.MAP_ITEM_Y));
-                HasMap = true;
-            }
-            if (game.Link.Inventory.Contains(new Compass(new Vector2(0, 0)))){
-                compass = new HUDItem(new Compass(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
-                HasCompass = true;
-            }
-            if (game.Link.Inventory.Contains(new Boomerang(new Vector2()))) {
-                /* Change positioning for boomerang */
-                compass = new HUDItem(new Boomerang(new Vector2(0, 0)), new Vector2(HUDUtilities.SLOT_0_X, HUDUtilities.SLOT_0_Y));
-                HasBoomerang = true;
-            }
-            if (game.Link.Inventory.Contains(new Bomb(new Vector2())))
-            {
-                /* Change positioning for boomerang */
-                compass = new HUDItem(new Bomb(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
-                HasBomb = true;
-            }
-            if (game.Link.Inventory.Contains(new Bow(new Vector2())))
-            {
-                /* Change positioning for boomerang */
-                compass = new HUDItem(new Bow(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
-                HasBow = true;
-            }
-            if (game.Link.Inventory.Contains(new BlueCandle(new Vector2())))
-            {
-                /* Change positioning for boomerang */
-                compass = new HUDItem(new BlueCandle(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
-                HasCandle = true;
-            }
-            if (game.Link.Inventory.Contains(new Recorder(new Vector2())))
-            {
-                /* Change positioning for boomerang */
-                compass = new HUDItem(new Recorder(new Vector2(0, 0)), new Vector2(HUDUtilities.PAUSE_ITEM_X, HUDUtilities.COMPASS_ITEM_Y));
-                HasRecorder = true;
-            }
+            PauseHUDBuilder.BuildHUD(items, pauseHUD, pauseHUDBackground, game);
         }
 
         public void Update(GameTime gameTime)
@@ -79,13 +45,37 @@ namespace Zelda.GameStates.Classes
         {
             pauseHUD.Draw(spriteBatch);
             pauseHUDBackground.Draw(spriteBatch);
-            if (HasMap)
+            if (inventory.Contains(new Map(new Vector2())))
             {
                 map.Draw(spriteBatch);
             }
-            if (HasCompass)
+            if (inventory.Contains(new Compass(new Vector2())))
             {
                 compass.Draw(spriteBatch);
+            }
+            if (inventory.Contains(new Boomerang(new Vector2())))
+            {
+                boomerang.Draw(spriteBatch);
+            }
+            if (inventory.Contains(new Bomb(new Vector2())))
+            {
+                bomb.Draw(spriteBatch);
+            }
+            if (inventory.Contains(new Bow(new Vector2())))
+            {
+                bow.Draw(spriteBatch);
+            }
+            if (inventory.Contains(new BlueCandle(new Vector2())))
+            {
+                candle.Draw(spriteBatch);
+            }
+            if (inventory.Contains(new Recorder(new Vector2())))
+            {
+                recorder.Draw(spriteBatch);
+            }
+            if (inventory.Contains(new BluePotion(new Vector2())))
+            {
+                bluePotion.Draw(spriteBatch);
             }
         }
     }

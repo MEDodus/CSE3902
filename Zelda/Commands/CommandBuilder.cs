@@ -34,8 +34,6 @@ namespace Zelda.Commands
             mouse.RegisterLeftClickCommand(new CycleRoomPrevious(game));
             mouse.RegisterRightClickCommand(new CycleRoomNext(game));
 
-<<<<<<< HEAD
-=======
             // Item usage (temporary
             keyboard.RegisterCommand(Keys.D1, new UseItem1(game));
             keyboard.RegisterCommand(Keys.D2, new UseItem2(game));
@@ -44,7 +42,6 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.D5, new UseItem5(game));
             keyboard.RegisterCommand(Keys.D6, new UseItem6(game));
             keyboard.RegisterCommand(Keys.D7, new UseItem7(game));
->>>>>>> 7bf523e2e2e70161618f82a33fed3c34eb9edc8e
         }
     }
 }

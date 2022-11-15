@@ -156,6 +156,15 @@ namespace Zelda.Link
                         }
                         item = new Zelda.Projectiles.Classes.Sword(spawnPos, facingDirection, swordAttackTimer);
                         type = new Items.Classes.Sword(new Vector2());
+                        if (Health.CurrentHealth == Health.MaxHealth)
+                        {
+                            ProjectileStorage.Add(new SwordBeam(defaultItemSpawnPos, facingDirection));
+                            item = new SwordBeam(spawnPos, facingDirection);
+                        }
+                        else
+                        {
+                            item = new Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3);
+                        }
                     }
                     break;
                 case 1:

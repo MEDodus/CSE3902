@@ -33,7 +33,10 @@ namespace Zelda.GameStates.Classes
         {
             this.inventory = game.Link.Inventory;
             this.game = game;
-            PauseHUDBuilder.BuildHUD(items, pauseHUD, pauseHUDBackground, game);
+            this.items = new HUDItem[10];
+            pauseHUD = new LinkHUD(game, new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_Y));
+            pauseHUDBackground = new HUDBackground(HUDSpriteFactory.PauseHUDBackground(), new Vector2(HUDUtilities.PAUSE_HUD_X, HUDUtilities.PAUSE_HUD_INVENTORY_Y));
+            PauseHUDBuilder.BuildHUD(items);
         }
 
         public void Update(GameTime gameTime)
@@ -45,37 +48,48 @@ namespace Zelda.GameStates.Classes
         {
             pauseHUD.Draw(spriteBatch);
             pauseHUDBackground.Draw(spriteBatch);
+
+            // TODO: Refactor so we don't have a bunch of branching
             if (inventory.Contains(new Map(new Vector2())))
             {
-                map.Draw(spriteBatch);
+                items[0].Draw(spriteBatch);
             }
             if (inventory.Contains(new Compass(new Vector2())))
             {
-                compass.Draw(spriteBatch);
+                items[1].Draw(spriteBatch);
             }
             if (inventory.Contains(new Boomerang(new Vector2())))
             {
-                boomerang.Draw(spriteBatch);
+                items[2].Draw(spriteBatch);
             }
             if (inventory.Contains(new Bomb(new Vector2())))
             {
-                bomb.Draw(spriteBatch);
+                items[3].Draw(spriteBatch);
             }
             if (inventory.Contains(new Bow(new Vector2())))
             {
-                bow.Draw(spriteBatch);
+                items[4].Draw(spriteBatch);
             }
             if (inventory.Contains(new BlueCandle(new Vector2())))
             {
-                candle.Draw(spriteBatch);
+                items[5].Draw(spriteBatch);
             }
             if (inventory.Contains(new Recorder(new Vector2())))
             {
-                recorder.Draw(spriteBatch);
+                items[6].Draw(spriteBatch);
             }
-            if (inventory.Contains(new BluePotion(new Vector2())))
+            if (inventory.Contains(new Food(new Vector2())))
             {
-                bluePotion.Draw(spriteBatch);
+                items[7].Draw(spriteBatch);
+            }
+            // Change so RedPotion defaults over BluePotion if the player has both... at least that's how I think it works in the game
+            if (inventory.Contains(new BluePotion(new Vector2())) || inventory.Contains(new RedPotion(new Vector2())))
+            {
+                items[8].Draw(spriteBatch);
+            }
+            if (inventory.Contains(new MagicalRod(new Vector2())))
+            {
+                items[9].Draw(spriteBatch);
             }
         }
     }

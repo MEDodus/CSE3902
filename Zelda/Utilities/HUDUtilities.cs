@@ -123,8 +123,12 @@ namespace Zelda.Utilities
         public static readonly int SLOT_3_Y = HUD_Y + 125;
         public static readonly int SLOT_4_X = HUD_X + 370;
         public static readonly int SLOT_4_Y = HUD_Y + 175;
-        public static readonly int SLOT_5_X = HUD_X + 485;
+        public static readonly int SLOT_5_X = HUD_X + 420;
         public static readonly int SLOT_5_Y = HUD_Y + 175;
+        public static readonly int SLOT_6_X = HUD_X + 485;
+        public static readonly int SLOT_6_Y = HUD_Y + 175;
+        public static readonly int SLOT_7_X = HUD_X + 555;
+        public static readonly int SLOT_7_Y = HUD_Y + 175;
 
         //FONT
 

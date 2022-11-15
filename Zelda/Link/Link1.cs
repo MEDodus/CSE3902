@@ -154,10 +154,6 @@ namespace Zelda.Link
                         }
                         item = new Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3);
                         type = new Items.Classes.Sword(new Vector2());
-                        if(Health.CurrentHealth == Health.MaxHealth)
-                        {
-                            ProjectileStorage.Add(new SwordBeam(defaultItemSpawnPos, facingDirection));
-                        }
                     }
                     break;
                 case 1:
@@ -166,11 +162,11 @@ namespace Zelda.Link
                     break;
                 case 2:
                     item = new Projectiles.Classes.Arrow(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.Arrow(new Vector2());
+                    type = new Zelda.Items.Classes.Bow(new Vector2()); // When using an arrow we need a bow
                     break;
                 case 3:
                     item = new Projectiles.Classes.SilverArrow(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.SilverArrow(new Vector2());
+                    type = new Zelda.Items.Classes.Bow(new Vector2()); // When using an arrow we need a bow
                     break;
                 case 4:
                     item = new Projectiles.Classes.Boomerang(defaultItemSpawnPos, facingDirection, ProjectileBehavior.Friendly);
@@ -189,16 +185,14 @@ namespace Zelda.Link
                     type = new Zelda.Items.Classes.BlueCandle(new Vector2());
                     break;
             }
-            if (item != null && inventory.FindInSet(type))
+            if (item != null && inventory.FindInSet(type) && inventory.GetItem(type).UseItem(inventory, health, defaultItemSpawnPos, facingDirection))
             {
                 ProjectileStorage.Add(item);
-                inventory.RemoveItem(type, 1);
             }
         }
 
         public bool AddToInventory(IItem item)
         {
-            inventory.FindInSet(item);
             return inventory.AddItem(item, 1);
         }
     }

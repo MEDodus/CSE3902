@@ -4,6 +4,7 @@ using Zelda.Blocks;
 using Zelda.Blocks.Classes;
 using Zelda.Items.Classes;
 using Zelda.Rooms;
+using System.Collections.Generic;
 
 namespace Zelda.Collision.Handlers
 {
@@ -60,7 +61,7 @@ namespace Zelda.Collision.Handlers
             }
             else if (block is Door && block.CanCollide && link.Inventory.FindInSet(new Key(new Vector2())))
             {
-                link.Inventory.RemoveItem(new Key(new Vector2()), 1);
+                link.Inventory.GetItem(new Key(new Vector2())).UseItem(link.Inventory, null, new Vector2(), new Vector2());
                 RoomBuilder.Instance.CurrentRoom.UnlockDoor(roomDirection, true);
             }
             else if (block is StairsTrigger)

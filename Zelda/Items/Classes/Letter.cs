@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class Letter : IItem
     {
-        public Letter(Vector2 position) : base(ItemSpriteFactory.LetterSprite(), position, ONE)
+        public Letter(Vector2 position) : base(ItemSpriteFactory.LetterSprite(), position, ONE, null)
         {
 
         }

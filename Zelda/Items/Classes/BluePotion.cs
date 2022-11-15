@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class BluePotion : IItem
     {
-        public BluePotion(Vector2 position) : base(ItemSpriteFactory.BluePotionSprite(), position, ONE)
+        public BluePotion(Vector2 position) : base(ItemSpriteFactory.BluePotionSprite(), position, ONE, new Zelda.ItemEffects.BluePotionEffect())
         {
 
         }

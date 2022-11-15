@@ -2,6 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Xml;
+using Zelda.Inventory;
+using Zelda.ItemEffects;
+using Zelda.Link;
 using Zelda.Rooms;
 using Zelda.Sprites;
 
@@ -17,14 +20,16 @@ namespace Zelda.Items
         protected Vector2 position;
         protected int maxItemCount;
         protected int quantityHeld;
+        protected IEffect effect;
 
         public int QuantityHeld { get { return quantityHeld; } }
 
-        public IItem(ISprite sprite, Vector2 position, int maxItemCount)
+        public IItem(ISprite sprite, Vector2 position, int maxItemCount, IEffect effect)
         {
             this.sprite = sprite;
             this.position = position;
             this.maxItemCount = maxItemCount;
+            this.effect = effect;
             quantityHeld = 0;
         }
 
@@ -56,19 +61,9 @@ namespace Zelda.Items
         /* True if we successfully removed amount from item capacity,
          * false if we can't or results in zero or negative item capacity
          */
-        public bool RemoveFromQuantity(int amount)
+        public bool UseItem(IInventory inventory, Health health, Vector2 spawnPos, Vector2 facingDirection)
         {
-            int newQuantity = quantityHeld - amount;
-            if (newQuantity == 0 || quantityHeld == 0)
-            {
-                quantityHeld = 0;
-                return false;
-            }
-            else
-            {
-                quantityHeld = newQuantity;
-                return true;
-            }
+            return effect.UseEffect(this, inventory, health, spawnPos, facingDirection);
         }
     }
 }

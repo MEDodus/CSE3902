@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class Stepladder : IItem
     {
-        public Stepladder(Vector2 position) : base(ItemSpriteFactory.StepladderSprite(), position, ONE)
+        public Stepladder(Vector2 position) : base(ItemSpriteFactory.StepladderSprite(), position, ONE, null)
         {
 
         }

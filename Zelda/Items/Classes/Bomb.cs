@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class Bomb : IItem
     {
-        public Bomb(Vector2 position) : base(ItemSpriteFactory.BombSprite(), position, 8)
+        public Bomb(Vector2 position) : base(ItemSpriteFactory.BombSprite(), position, 8, new Zelda.ItemEffects.BombEffect())
         {
 
         }

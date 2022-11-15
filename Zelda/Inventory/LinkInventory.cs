@@ -1,31 +1,31 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Zelda.Items;
+using Zelda.Link;
 
 namespace Zelda.Inventory
 {
     public class LinkInventory : IInventory
     {
-
-        private IItem itemToChange;
-        private List<IItem> inventory;
-
+        private Dictionary<Type, IItem> inventory;
         public LinkInventory()
         {
-            inventory = new List<IItem>();
+            inventory = new Dictionary<Type, IItem>();
         }
         public bool AddItem(IItem item, int quantity)
         {
-            if (itemToChange == null) 
+            if (!FindInSet(item))
             {
-                inventory.Add(item);
+                inventory.Add(item.GetType(), item);
                 item.AddToQuantity(quantity);
                 return true;
             } else
             {
+                IItem itemToChange = inventory[item.GetType()];
                 itemToChange.AddToQuantity(quantity);
                 return true;
             }
@@ -38,13 +38,11 @@ namespace Zelda.Inventory
          */
         public bool RemoveItem(IItem item, int quantity)
         {
-            if (itemToChange == null) return true;
+            if (!FindInSet(item)) return false;
 
-            if (!itemToChange.RemoveFromQuantity(quantity))
-            {
-                inventory.Remove(itemToChange);
-            }
-            return true;
+            // Try to use item... check requirements etc...
+            IItem itemToChange = inventory[item.GetType()];
+            return itemToChange.UseItem(this, null, new Vector2(), new Vector2());
             // only returning true now, conditions could chagne,
             // for example, an item that can't be picked up until
             // something happens in the story...
@@ -54,30 +52,23 @@ namespace Zelda.Inventory
          */
         public bool FindInSet(IItem item)
         {
-            foreach (IItem currentItem in inventory)
+            if (inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld <= 0)
             {
-                if (currentItem.GetType() == item.GetType())
-                {
-                    itemToChange = currentItem;
-                    return true;
-                }
+                inventory.Remove(item.GetType());
             }
-            itemToChange = null;
-            return false;
+            return inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld > 0;
         }
 
         public int GetCount(IItem item)
         {
-            int itemQuantity = 0;
-            foreach (IItem currentItem in inventory)
-            {
-                if (currentItem.GetType() == item.GetType())
-                {
-                    itemQuantity = currentItem.QuantityHeld;
-                }
-            }
+            if (!FindInSet(item)) return 0;
+            return inventory[item.GetType()].QuantityHeld;
+        }
 
-            return itemQuantity;
+        public IItem GetItem(IItem item)
+        {
+            if (FindInSet(item)) return inventory[item.GetType()];
+            return null;
         }
     }
 }

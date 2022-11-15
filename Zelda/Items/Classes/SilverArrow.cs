@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class SilverArrow : IItem
     {
-        public SilverArrow(Vector2 position) : base(ItemSpriteFactory.SilverArrowSprite(), position, INFINITE)
+        public SilverArrow(Vector2 position) : base(ItemSpriteFactory.SilverArrowSprite(), position, INFINITE, null)
         {
 
         }

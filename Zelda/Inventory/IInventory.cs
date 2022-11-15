@@ -15,16 +15,9 @@ namespace Zelda.Inventory
         public bool RemoveItem(IItem item, int quantity);
         // Check if inventory contains an item
         public bool FindInSet(IItem item);
-        /* Could have a wrapper class for example "Record.cs" which contains fields
-         * IItem item
-         * int quantity
-         * if refactory IItem is too difficult
-         *
-         * then AddItem -> AddItem(IRecord record, int quantity)
-         *      RemoveItem(IRecord record, int quantity)
-         */
-
         /* Item class could also have field for max stackable item quantity */
         public int GetCount(IItem item);
+        // Retrieve item from inventory
+        public IItem GetItem(IItem item);
     }
 }

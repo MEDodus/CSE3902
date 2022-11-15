@@ -6,6 +6,7 @@ O - Mute
 WASD - Move
 X/M - Attack w/ sword
 Z/N - Attack w/ secondary item
+1/2/3/.../7 - Use item (temporary, once item swapping is added it will only be done through Z/N)
 
 Developer controls:
 H - Max health cheat
@@ -17,6 +18,7 @@ Notes:
 
 Features we have not fully implemented yet but are working on:
 - Game over screen (currently just resets level, needs a screen/sound)
-- Inventory display on HUD/item swapping
+- Inventory display on HUD/item swapping (secondary item is stuck as the bomb for right now)
 - Enemies dropping items
 - Enemy knockback
+- Use item animation should not play if no items available to use

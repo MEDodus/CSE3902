@@ -7,4 +7,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Zelda
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Michael\source\repos\CSE 3902\Zelda\
+=======
+build_property.ProjectDir = C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\
+>>>>>>> 7bf523e2e2e70161618f82a33fed3c34eb9edc8e

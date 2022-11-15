@@ -1,0 +1,15 @@
+Code Review By: Nicholas Younoszai
+Date: 11/14/2022
+Sprint #: 4
+Class Reviewed: BowEffect.cs
+Author: Michael Dodus
+Time to Review: 12 minutes
+
+Comments on Readability:
+This class seems to be pretty short, which makes it relatively easy to read since there isn't a lot to sort through.
+I do think that there is alow of text and a lot of calls, which can make it harder to read without taking the time to really look through it.
+For example, the return statement in the RequirementsMet method is very long, with three things it is looking to check. This makes sense
+due to the nature of the method, but it is still difficult to read, especially since it is just finding three things in the set but has
+a lot of new objects created inside of each other (like new Arrow(new Vector2())). The UseEffect method is much more straightforward, 
+where you can clearly tell that a Rupy is removed every time an arrow is used (which can only happen when everything is in the inventory).
+I think overall, since the class is small, the readability isn't too bad, but does take a little bit to figure out what is going on at first glance.

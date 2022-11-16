@@ -1,9 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Text.RegularExpressions;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
 using Zelda.Sprites;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -22,8 +24,9 @@ namespace Zelda.NPCs.Classes
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
         protected int damage;
+        protected Group group;
 
-        public EnemySingleDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed)
+        public EnemySingleDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed, Group enemyGroup)
         {
             this.sprite = sprite;
             this.position = position;
@@ -31,6 +34,7 @@ namespace Zelda.NPCs.Classes
             this.health = health;
             this.blocksPerSecondSpeed = blocksPerSecondSpeed;
             this.dead = false;
+            this.group = enemyGroup;
         }
 
         // additional update features that differ between enemies

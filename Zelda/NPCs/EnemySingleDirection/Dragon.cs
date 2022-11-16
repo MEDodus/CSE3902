@@ -3,6 +3,7 @@ using System;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -14,7 +15,7 @@ namespace Zelda.NPCs.Classes
         private double attackCooldown = 0; // seconds
         private bool isAttacking = false;
 
-        public Dragon(Vector2 position) : base(NPCSpriteFactory.NonAttackingDragonSprite(), position, 6, 0.5)
+        public Dragon(Vector2 position) : base(NPCSpriteFactory.NonAttackingDragonSprite(), position, 6, 0.5, Group.D)
         {
             damage = 2;
         }

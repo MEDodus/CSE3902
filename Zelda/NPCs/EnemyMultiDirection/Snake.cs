@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Text.RegularExpressions;
 using Zelda.Enemy;
 using Zelda.NPCs.EnemyMultiDirection;
 using Zelda.Projectiles;
@@ -8,6 +9,7 @@ using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -28,7 +30,7 @@ namespace Zelda.NPCs.Classes
         private double changeDirectionCooldown = 0;
         private bool facingRight;
         private int damage;
-
+        protected Group group;
         bool appeared = false;
 
 
@@ -42,7 +44,7 @@ namespace Zelda.NPCs.Classes
             health = 1;
             blocksPerSecondSpeed = 1;
             this.dead = false;
-
+            this.group = Group.C;
         }
 
         public void Update(GameTime gameTime)

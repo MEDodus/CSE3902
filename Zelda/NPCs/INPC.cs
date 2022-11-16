@@ -6,6 +6,7 @@ namespace Zelda.NPCs
 {
     public interface INPC
     {
+        public enum Group { A, B, C, D, X };
         public bool Dead { get; }
         public ISprite Sprite { get; }
         public int Damage { get; }

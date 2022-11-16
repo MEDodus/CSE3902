@@ -1,12 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
     public class SpikeCross : EnemySingleDirection
     {
-        public SpikeCross(Vector2 position) : base(NPCSpriteFactory.SpikeCross(), position, int.MaxValue, 8)
+        public SpikeCross(Vector2 position) : base(NPCSpriteFactory.SpikeCross(), position, int.MaxValue, 8, Group.X)
         {
             damage = 1;
         }

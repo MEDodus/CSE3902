@@ -1,12 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
     public class Wallmaster : EnemySingleDirection
     {
-        public Wallmaster(Vector2 position) : base(NPCSpriteFactory.WallmasterSprite(), position, 3, 1)
+        public Wallmaster(Vector2 position) : base(NPCSpriteFactory.WallmasterSprite(), position, 3, 1, Group.C)
         {
             damage = 1;
         }

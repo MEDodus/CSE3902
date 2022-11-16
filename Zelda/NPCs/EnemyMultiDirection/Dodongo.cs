@@ -10,6 +10,7 @@ using Zelda.Sprites.Factories;
 using Zelda.Collision;
 using Zelda.Rooms;
 using Zelda.Sound;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -32,6 +33,7 @@ namespace Zelda.NPCs.Classes
         private double attackCooldown = 0; // seconds
         private bool facingRight;
         private int damage;
+        protected Group group;
 
         bool appeared = false;
 
@@ -48,6 +50,8 @@ namespace Zelda.NPCs.Classes
 
             this.dead = false;
             damage = 2;
+
+            this.group = Group.D;
 
         }
 

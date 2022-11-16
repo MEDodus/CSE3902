@@ -9,6 +9,8 @@ using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 using Zelda.Collision;
 using Zelda.Rooms;
+using System.Text.RegularExpressions;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -29,7 +31,7 @@ namespace Zelda.NPCs.Classes
         private double damageDelay = 0;
         private double changeDirectionCooldown = 0;
         int damage;
-
+        protected Group group;
         bool appeared = false;
 
 
@@ -49,7 +51,7 @@ namespace Zelda.NPCs.Classes
             blocksPerSecondSpeed = 1;
             this.dead = false;
             damage = 1;
-
+            this.group = Group.B;
         }
 
         public void Update(GameTime gameTime)

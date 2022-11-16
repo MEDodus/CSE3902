@@ -1,12 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
     public class Zol : EnemySingleDirection
     {
-        public Zol(Vector2 position) : base(NPCSpriteFactory.ZolSprite(), position, 1, 1)
+        public Zol(Vector2 position) : base(NPCSpriteFactory.ZolSprite(), position, 1, 1, Group.C)
         {
             damage = 2;
         }

@@ -1,12 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
     public class Gel : EnemySingleDirection
     {
-        public Gel(Vector2 position) : base(NPCSpriteFactory.GelSprite(), position, 1, 1)
+        public Gel(Vector2 position) : base(NPCSpriteFactory.GelSprite(), position, 1, 1, Group.X)
         {
             damage = 1;
         }

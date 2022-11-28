@@ -560,6 +560,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/food.png
 
+#begin spritesheets/GameOver.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/GameOver.png
+
 #begin spritesheets/gel.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -895,18 +907,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/pause_hud_background.png
-
-#begin spritesheets/pause_hud_inventory_map_tile.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:spritesheets/pause_hud_inventory_map_tile.png
 
 #begin spritesheets/pause_hud_inventory_map_tile.png
 /importer:TextureImporter

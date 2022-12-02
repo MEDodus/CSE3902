@@ -45,6 +45,10 @@ namespace Zelda.Sprites.Factories
         {
             return content.Load<SpriteFont>("spriteFonts\\Font");
         }
+        public static SpriteFont winOrLoseFront()
+        {
+            return content.Load<SpriteFont>("spriteFonts\\winOrLose");
+        }
 
         //HEART SPRITES
         public static ISprite FullHeart()

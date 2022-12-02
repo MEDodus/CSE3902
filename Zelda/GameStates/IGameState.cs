@@ -7,5 +7,6 @@ namespace Zelda.GameStates
     {
         public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);
+
     }
 }

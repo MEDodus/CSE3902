@@ -12,6 +12,7 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
             keyboard.RegisterCommand(Keys.P, new Pause(game));
             keyboard.RegisterCommand(Keys.O, new Mute());
+            keyboard.RegisterCommand(Keys.R, new Restart(game));
 
             // Player movement
             keyboard.RegisterCommand(Keys.W, new Up(game));
@@ -43,5 +44,6 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.D6, new UseItem6(game));
             keyboard.RegisterCommand(Keys.D7, new UseItem7(game));
         }
+
     }
 }

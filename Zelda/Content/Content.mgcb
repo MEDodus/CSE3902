@@ -212,6 +212,13 @@
 /processorParam:TextureFormat=Compressed
 /build:spriteFonts/Font.spritefont
 
+#begin spriteFonts/winOrLose.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:spriteFonts/winOrLose.spritefont
+
 #begin spritesheets/arrow.png
 /importer:TextureImporter
 /processor:TextureProcessor

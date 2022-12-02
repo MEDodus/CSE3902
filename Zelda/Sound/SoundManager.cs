@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Zelda.Sound
 {
-    class SoundManager
+    public class SoundManager
     {
         private Song mainTheme;
         private SoundEffect arrowBoomerang;
@@ -112,14 +112,14 @@ namespace Zelda.Sound
         public void Pause()
         {
             MediaPlayer.Pause();
+            muted = true;
         }
 
         public void Resume()
         {
-            if (!muted)
-            {
-                MediaPlayer.Resume();
-            }
+
+            MediaPlayer.Resume();
+            muted = false;
         }
 
         public void PlayLinkDieSound()

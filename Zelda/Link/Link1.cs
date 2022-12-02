@@ -113,7 +113,7 @@ namespace Zelda.Link
         }
         public void TakeDamage(Game1 game, int damage, Vector2 direction)
         {
-            health.removeHealth(damage);
+            health.removeHealth(damage,game);
             state.TakeDamage(game, direction);
             SoundManager.Instance.PlayLinkHurtSound();
         }

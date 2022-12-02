@@ -12,6 +12,7 @@ using Zelda.Sound;
 using Zelda.GameStates;
 using Zelda.GameStates.Classes;
 using Zelda.Utilities;
+using System;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -33,6 +34,7 @@ namespace Zelda
         public ILink Link { get { return link; } set { link = value; } }
         public IHUD HUD { get { return hud; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
+        public static Boolean stopAll = false;
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -49,6 +51,7 @@ namespace Zelda
             graphics.PreferredBackBufferWidth = Settings.WINDOW_WIDTH;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            
         }
 
         protected override void Initialize()
@@ -83,16 +86,13 @@ namespace Zelda
         protected override void Update(GameTime gameTime)
         {
             // All controllers must be updated regardless of game state so state transitions can occur
-            foreach (IController controller in controllers)
-            {
-                controller.Update(gameTime);
-            }
-            gameState.Update(gameTime);
-            base.Update(gameTime);
-            if (link.Health.CurrentHealth <= 0)
-            {
-                Reset();
-            }
+                foreach (IController controller in controllers)
+                {
+                    controller.Update(gameTime);
+                }
+                gameState.Update(gameTime);
+                //base.Update(gameTime);
+
         }
 
         public void Reset()
@@ -103,13 +103,17 @@ namespace Zelda
             RoomBuilder.Instance.Reset();
             RoomTransitions.Initialize(this);
             link = new Link1();
-
             base.Initialize();
+        }
+
+        public void GraphicClear()
+        {
+            GraphicsDevice.Clear(Color.Black);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicClear();
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             gameState.Draw(spriteBatch);
             spriteBatch.End();

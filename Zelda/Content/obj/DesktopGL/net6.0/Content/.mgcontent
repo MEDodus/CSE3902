@@ -1,1 +1,236 @@
-<?xml version="1.0" encoding="utf-8"?><SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Profile>Reach</Profile><Platform>DesktopGL</Platform><Config /><SourceFiles><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Arrow_Boomerang.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Bomb_Blow.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Bomb_Drop.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Boss_Hit.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Boss_Scream1.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Boss_Scream2.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Boss_Scream3.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Candle.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Door_Unlock.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Enemy_Die.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Enemy_Hit.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Fanfare.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Get_Heart.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Get_Item.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Get_Rupee.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Key_Appear.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Link_Die.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Link_Hurt.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_LowHealth.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_MagicalRod.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Main_Theme.mp3</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Recorder.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Refill_Loop.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Secret.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Shield.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Shore.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Stairs.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Sword_Combined.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Sword_Shoot.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Sword_Slash.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Text_Slow.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Text.wav</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spriteFonts/Font.spritefont</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spriteFonts/winOrLose.spritefont</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/arrow.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bat.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/black_rectangle.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blocks.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blue_candle.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blue_potion.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blue_ring.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bomb_explosion.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bomb.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/book_of_magic.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/boomerang.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/borders_doors_locked.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/borders_doors_open.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/borders_doors_puzzle.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/borders.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bow.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/clock.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/compass.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/death_explosion.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/directional_sword.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/dodongo.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/dragon.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/dungeon_hud_map_tile.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/dungeon_hud_map.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/fairy.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/fire.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/fireball.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/five_rupies.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/food.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/GameOver.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/gel.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/goriya.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/hand.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/heart_container.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/heart_display.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/heart.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/invisible_block.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/key.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/letter.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_hud_background.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_hurt_1.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_hurt_2.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_hurt_3.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Link_hurt1.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Link_hurt2.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Link_hurt3.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_triforce.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Link.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link2.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_boomerang.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_key.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_rod.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_shield.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/map_position.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/map.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/old_man_words.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/old_man.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/pause_hud_background.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/pause_hud_inventory_map_tile.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/pause_hud_inventory_map.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/power_bracelet.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/projectile_vanish.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/raft.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/recorder.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/red_candle.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/red_potion.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/red_ring.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/rupy.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/silver_arrow.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/skeleton.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/snake.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/spike_cross.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/stepladder.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/sword_beam.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/sword.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/triforce.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/white_sword.png</File><File>C:/Users/000/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/zol.png</File></SourceFiles><DestFiles><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /></DestFiles></SourceFileCollection>
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Arrow_Boomerang.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Bomb_Blow.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Bomb_Drop.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Boss_Hit.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Boss_Scream1.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Boss_Scream2.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Boss_Scream3.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Candle.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Door_Unlock.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Enemy_Die.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Enemy_Hit.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Fanfare.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Get_Heart.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Get_Item.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Get_Rupee.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Key_Appear.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Link_Die.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Link_Hurt.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_LowHealth.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_MagicalRod.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Main_Theme.mp3</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Recorder.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Refill_Loop.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Secret.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Shield.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Shore.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Stairs.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Sword_Combined.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Sword_Shoot.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Sword_Slash.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Text_Slow.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Text.wav</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spriteFonts/Font.spritefont</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spriteFonts/winOrLose.spritefont</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/arrow.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bat.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/black_rectangle.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blocks.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blue_candle.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blue_potion.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blue_ring.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bomb_explosion.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bomb.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/book_of_magic.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/boomerang.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/borders_doors_locked.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/borders_doors_open.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/borders_doors_puzzle.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/borders.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bow.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/clock.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/compass.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/death_explosion.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/directional_sword.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/dodongo.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/dragon.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/dungeon_hud_map_tile.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/dungeon_hud_map.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/fairy.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/fire.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/fireball.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/five_rupies.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/food.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/GameOver.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/gel.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/goriya.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/hand.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/heart_container.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/heart_display.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/heart.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/invisible_block.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/key.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/letter.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_hud_background.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_hurt_1.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_hurt_2.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_hurt_3.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Link_hurt1.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Link_hurt2.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Link_hurt3.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link_triforce.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Link.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/link2.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_boomerang.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_key.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_rod.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_shield.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/map_position.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/map.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/old_man_words.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/old_man.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/pause_hud_background.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/pause_hud_inventory_map_tile.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/pause_hud_inventory_map.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/power_bracelet.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/projectile_vanish.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/raft.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/recorder.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/red_candle.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/red_potion.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/red_ring.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/rupy.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/silver_arrow.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/skeleton.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/snake.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/spike_cross.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/stepladder.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/sword_beam.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/sword.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/title_screen.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/triforce.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/white_sword.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/zol.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

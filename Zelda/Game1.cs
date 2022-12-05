@@ -13,6 +13,7 @@ using Zelda.GameStates;
 using Zelda.GameStates.Classes;
 using Zelda.Utilities;
 using System;
+using Zelda.Projectiles;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -34,7 +35,6 @@ namespace Zelda
         public ILink Link { get { return link; } set { link = value; } }
         public IHUD HUD { get { return hud; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
-        public static Boolean stopAll = false;
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -74,7 +74,7 @@ namespace Zelda
             hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
             collisionDetector = new CollisionDetector();
-            gameState = new RunningGameState(this);
+            gameState = new TitleScreenGameState(this);
             base.Initialize();
         }
 
@@ -86,13 +86,12 @@ namespace Zelda
         protected override void Update(GameTime gameTime)
         {
             // All controllers must be updated regardless of game state so state transitions can occur
-                foreach (IController controller in controllers)
-                {
-                    controller.Update(gameTime);
-                }
-                gameState.Update(gameTime);
-                //base.Update(gameTime);
-
+            foreach (IController controller in controllers)
+            {
+                controller.Update(gameTime);
+            }
+            gameState.Update(gameTime);
+            base.Update(gameTime);
         }
 
         public void Reset()
@@ -100,8 +99,10 @@ namespace Zelda
             // Other initialization
             hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
             gameState = new RunningGameState(this);
+            SoundManager.Instance.Resume();
             RoomBuilder.Instance.Reset();
             RoomTransitions.Initialize(this);
+            ProjectileStorage.Clear();
             link = new Link1();
             base.Initialize();
         }

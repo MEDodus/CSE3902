@@ -11,10 +11,10 @@ namespace Zelda.Commands
             // Game controls
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
             keyboard.RegisterCommand(Keys.P, new Pause(game));
+            keyboard.RegisterCommand(Keys.R, new Reset(game));
             keyboard.RegisterCommand(Keys.O, new Mute());
-            keyboard.RegisterCommand(Keys.R, new Restart(game));
 
-            // Player movement
+            // General input (WASD/arrow keys/mouse), behavior depends on game state
             keyboard.RegisterCommand(Keys.W, new Up(game));
             keyboard.RegisterCommand(Keys.Up, new Up(game));
             keyboard.RegisterCommand(Keys.A, new Left(game));
@@ -23,6 +23,8 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.Down, new Down(game));
             keyboard.RegisterCommand(Keys.D, new Right(game));
             keyboard.RegisterCommand(Keys.Right, new Right(game));
+            mouse.RegisterLeftClickCommand(new LeftClick(game));
+            mouse.RegisterRightClickCommand(new RightClick(game));
 
             // For player attacks
             keyboard.RegisterCommand(Keys.X, new Attack(game));
@@ -32,18 +34,15 @@ namespace Zelda.Commands
 
             // Cheats
             keyboard.RegisterCommand(Keys.H, new HealthCheat(game));
-            mouse.RegisterLeftClickCommand(new CycleRoomPrevious(game));
-            mouse.RegisterRightClickCommand(new CycleRoomNext(game));
-
-            // Item usage (temporary
-            keyboard.RegisterCommand(Keys.D1, new UseItem1(game));
-            keyboard.RegisterCommand(Keys.D2, new UseItem2(game));
-            keyboard.RegisterCommand(Keys.D3, new UseItem3(game));
-            keyboard.RegisterCommand(Keys.D4, new UseItem4(game));
-            keyboard.RegisterCommand(Keys.D5, new UseItem5(game));
-            keyboard.RegisterCommand(Keys.D6, new UseItem6(game));
-            keyboard.RegisterCommand(Keys.D7, new UseItem7(game));
+            
+            // Item usage (testing purposes)
+            //keyboard.RegisterCommand(Keys.D1, new UseItem1(game));
+            //keyboard.RegisterCommand(Keys.D2, new UseItem2(game));
+            //keyboard.RegisterCommand(Keys.D3, new UseItem3(game));
+            //keyboard.RegisterCommand(Keys.D4, new UseItem4(game));
+            //keyboard.RegisterCommand(Keys.D5, new UseItem5(game));
+            //keyboard.RegisterCommand(Keys.D6, new UseItem6(game));
+            //keyboard.RegisterCommand(Keys.D7, new UseItem7(game));
         }
-
     }
 }

@@ -1,16 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System.Drawing;
-using Zelda.Commands;
-using Zelda.Commands.Classes;
 using Zelda.Link;
 using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sound;
 using Zelda.Sprites.Factories;
-using static System.Net.Mime.MediaTypeNames;
-using System;
 using Color = Microsoft.Xna.Framework.Color;
 
 namespace Zelda.GameStates.Classes
@@ -29,10 +23,8 @@ namespace Zelda.GameStates.Classes
             decoratedLink = new TriforceLink(game.Link, game);
             game.Link = decoratedLink;
             timer = 1.5;
-            font1 = HUDSpriteFactory.winOrLoseFront();
+            font1 = HUDSpriteFactory.WinOrLoseFont();
             font2 = HUDSpriteFactory.HUDFont();
-
-
         }
 
         public void Update(GameTime gameTime)
@@ -41,10 +33,7 @@ namespace Zelda.GameStates.Classes
             if (timer <= 0)
             {
                 decoratedLink.RemoveDecorator();
-                //game.GameState = new RunningGameState(game); // TODO: change to win screen?
-                Game1.stopAll = true;
                 SoundManager.Instance.Pause();
-
             }
             // Update only some game objects
             RoomBuilder.Instance.Update(gameTime);
@@ -69,6 +58,36 @@ namespace Zelda.GameStates.Classes
                 RoomBuilder.Instance.DrawTopLayer(spriteBatch);
                 game.HUD.Draw(spriteBatch);
             }
+        }
+
+        public void LeftClick()
+        {
+
+        }
+
+        public void RightClick()
+        {
+
+        }
+
+        public void Up()
+        {
+
+        }
+
+        public void Down()
+        {
+
+        }
+
+        public void Left()
+        {
+
+        }
+
+        public void Right()
+        {
+
         }
     }
 }

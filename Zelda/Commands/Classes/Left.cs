@@ -14,7 +14,7 @@ namespace Zelda.Commands
 
         public void Execute(GameTime gametime)
         {
-            game.Link.MoveLeft();
+            game.GameState.Left();
         }
     }
 }

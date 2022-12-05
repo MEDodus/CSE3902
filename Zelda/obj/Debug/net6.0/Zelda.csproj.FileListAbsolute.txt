@@ -408,3 +408,6 @@ C:\Users\000\source\repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\refint\Zelda.dl
 C:\Users\000\source\repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.pdb
 C:\Users\000\source\repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
 C:\Users\000\source\repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spriteFonts\winOrLose.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\GameOver.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\title_screen.xnb

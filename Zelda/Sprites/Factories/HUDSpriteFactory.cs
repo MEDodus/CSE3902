@@ -45,7 +45,7 @@ namespace Zelda.Sprites.Factories
         {
             return content.Load<SpriteFont>("spriteFonts\\Font");
         }
-        public static SpriteFont winOrLoseFront()
+        public static SpriteFont WinOrLoseFont()
         {
             return content.Load<SpriteFont>("spriteFonts\\winOrLose");
         }
@@ -72,6 +72,12 @@ namespace Zelda.Sprites.Factories
         public static ISprite BlackBorder()
         {
             return new Sprite(GetTexture("black_rectangle"));
+        }
+
+        // title screen
+        public static ISprite TitleScreenSprite()
+        {
+            return new AnimatedSprite(GetTexture("title_screen"), 6, 1, 10, 10);
         }
     }
 }

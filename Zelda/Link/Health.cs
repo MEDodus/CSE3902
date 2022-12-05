@@ -27,8 +27,6 @@ namespace Zelda.Link
             if(playerHealth <= 0)
             {
                 game.GameState = new LosingGameState(game);
-                Game1.stopAll = true;
-                // Trigger link death
             }
         }
 

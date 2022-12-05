@@ -92,5 +92,36 @@ namespace Zelda.GameStates.Classes
                 items[9].Draw(spriteBatch);
             }
         }
+
+        public void LeftClick()
+        {
+
+        }
+
+        public void RightClick()
+        {
+
+        }
+
+        // TODO: make below functions change inventory selection 
+        public void Up()
+        {
+
+        }
+
+        public void Down()
+        {
+
+        }
+
+        public void Left()
+        {
+
+        }
+
+        public void Right()
+        {
+
+        }
     }
 }

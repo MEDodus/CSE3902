@@ -37,7 +37,7 @@ namespace Zelda.Rooms
         public Vector2 BaseWindowPosition { get { return BASE_WINDOW_POSITION; } }
         public Vector2 WindowOffset { get { return BASE_WINDOW_POSITION - windowPosition; } }
 
-        private Room[] rooms = new Room[19];
+        private Room[] rooms = new Room[18];
         private Dictionary<string, Room> roomMap = new Dictionary<string, Room>();
         private int i;
         private Vector2 windowPosition;

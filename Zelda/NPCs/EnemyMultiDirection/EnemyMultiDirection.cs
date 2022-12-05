@@ -86,7 +86,9 @@ namespace Zelda.NPCs.Classes
 
         public virtual void Die()
         {
+            dead = true;
             ProjectileStorage.Add(new DeathExplosion(position));
+            NPCUtil.DropRandomItem(position);
         }
 
         public virtual void TakeDamage(int damage)

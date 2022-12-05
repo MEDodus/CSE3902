@@ -1,5 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using Zelda.HUD;
+using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
@@ -87,8 +90,9 @@ namespace Zelda.NPCs.Classes
 
         public virtual void Die()
         {
+            dead = true;
             ProjectileStorage.Add(new DeathExplosion(position));
-            this.dead = true;
+            NPCUtil.DropRandomItem(position);
         }
 
         public virtual void TakeDamage(int damage)

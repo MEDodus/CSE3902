@@ -56,12 +56,12 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite FairySprite()
         {
-            return new AnimatedSprite(GetTexture("fairy"), 1, 2, 4, 1);
+            return new AnimatedSprite(GetTexture("fairy"), 1, 2, 4, 0.7);
         }
 
         public static ISprite FiveRupiesSprite()
         {
-            return new Sprite(GetTexture("five_rupies"), 1);
+            return new Sprite(GetTexture("five_rupies"), 0.8);
         }
 
         public static ISprite FoodSprite()
@@ -71,7 +71,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite HeartSprite()
         {
-            return new AnimatedSprite(GetTexture("heart"), 1, 2, 4, 1);
+            return new AnimatedSprite(GetTexture("heart"), 1, 2, 4, 0.5);
         }
 
         public static ISprite HeartContainerSprite()
@@ -146,7 +146,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite RupySprite()
         {
-            return new AnimatedSprite(GetTexture("rupy"), 1, 2, 4, 1);
+            return new AnimatedSprite(GetTexture("rupy"), 1, 2, 4, 0.8);
         }
 
         public static ISprite SilverArrowSprite()

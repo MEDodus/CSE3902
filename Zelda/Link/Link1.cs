@@ -44,7 +44,7 @@ namespace Zelda.Link
             movementKeys.Add(Keys.Down);
             movementKeys.Add(Keys.Right);
             inventory = new LinkInventory();
-            InventoryBuidler.BuildInventory(inventory);
+            InventoryBuilder.BuildInventory(inventory);
             health = new Health();
         }
 
@@ -113,7 +113,7 @@ namespace Zelda.Link
         }
         public void TakeDamage(Game1 game, int damage, Vector2 direction)
         {
-            health.removeHealth(damage,game);
+            health.removeHealth(damage, game);
             state.TakeDamage(game, direction);
             SoundManager.Instance.PlayLinkHurtSound();
         }

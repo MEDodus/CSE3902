@@ -1,16 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System.Collections.Generic;
-using Zelda.Controllers;
 using Zelda.Projectiles;
-using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Items;
 using Zelda.Rooms;
 using Zelda.Inventory;
-using System;
-using Zelda.Items.Classes;
 using Zelda.Sound;
 
 namespace Zelda.Link
@@ -103,63 +97,36 @@ namespace Zelda.Link
             IProjectile item = null;
             IItem type = null;
             Vector2 defaultItemSpawnPos = getPositionInFrontOfLink(0);
-            switch (itemNum)
+
+            if(itemNum == 0)
             {
-                case 0:
-                    // base attack
-                    if (swordAttackTimer <= 0)
+                if (swordAttackTimer <= 0)
+                {
+                    swordAttackTimer = 0.35;
+                    // adjust spawn position
+                    Vector2 spawnPos = defaultItemSpawnPos;
+                    if (facingDirection.Equals(new Vector2(1, 0)))
                     {
-                        swordAttackTimer = 0.35;
-                        // adjust spawn position
-                        Vector2 spawnPos = defaultItemSpawnPos;
-                        if (facingDirection.Equals(new Vector2(1, 0)))
-                        {
-                            spawnPos += new Vector2(-10, 0);
-                        }
-                        else if (facingDirection.Equals(new Vector2(0, 1)))
-                        {
-                            spawnPos += new Vector2(0, -15);
-                        }
-                        else if (facingDirection.Equals(new Vector2(0, -1)))
-                        {
-                            spawnPos += new Vector2(0, -10);
-                        }
-                        item = new Zelda.Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3);
-                        type = new Items.Classes.Sword(new Vector2());
+                        spawnPos += new Vector2(-10, 0);
                     }
-                    break;
-                case 1:
-                    item = new SwordBeam(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.Sword(new Vector2());
-                    break;
-                case 2:
-                    item = new Projectiles.Classes.Arrow(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.Bow(new Vector2()); // When using an arrow we need a bow
-                    break;
-                case 3:
-                    item = new Projectiles.Classes.SilverArrow(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.Bow(new Vector2()); // When using an arrow we need a bow
-                    break;
-                case 4:
-                    item = new Projectiles.Classes.Boomerang(defaultItemSpawnPos, facingDirection, ProjectileBehavior.Friendly);
-                    type = new Zelda.Items.Classes.Boomerang(new Vector2());
-                    break;
-                case 5:
-                    item = new Projectiles.Classes.MagicalBoomerang(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.MagicalBoomerang(new Vector2());
-                    break;
-                case 6:
-                    item = new Projectiles.Classes.Bomb(getPositionInFrontOfLink(1.5));
-                    type = new Zelda.Items.Classes.Bomb(new Vector2());
-                    break;
-                case 7:
-                    item = new CandleFlame(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.BlueCandle(new Vector2());
-                    break;
-            }
-            if (item != null && inventory.Contains(type) && inventory.GetItem(type).UseItem(inventory, health, defaultItemSpawnPos, facingDirection))
+                    else if (facingDirection.Equals(new Vector2(0, 1)))
+                    {
+                        spawnPos += new Vector2(0, -15);
+                    }
+                    else if (facingDirection.Equals(new Vector2(0, -1)))
+                    {
+                        spawnPos += new Vector2(0, -10);
+                    }
+                    item = new Zelda.Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3);
+                    type = new Items.Classes.Sword(new Vector2());
+                }
+                if (item != null && inventory.Contains(type) && inventory.GetItem(type).UseItem(inventory, health, defaultItemSpawnPos, facingDirection))
+                {
+                    ProjectileStorage.Add(item);
+                }
+            } else
             {
-                ProjectileStorage.Add(item);
+                LinkItemHandler.UseItem(itemNum, facingDirection, health, inventory, getPositionInFrontOfLink(0));
             }
         }
 

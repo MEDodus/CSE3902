@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Main_Theme.mp3</SourceFile>
@@ -18,3 +19,6 @@
     <string>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/LOZ_Main_Theme.ogg</string>
   </BuildOutput>
 </PipelineBuildEvent>
+=======
+<?xml version="1.0" encoding="utf-8"?><PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><SourceFile>C:/Users/alexr/Source/Repos/CSE3902/Zelda/Content/SoundEffect/LOZ_Main_Theme.mp3</SourceFile><SourceTime>2022-12-06T12:57:00.4533129-05:00</SourceTime><DestFile>C:/Users/alexr/Source/Repos/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/LOZ_Main_Theme.xnb</DestFile><DestTime>2022-12-06T13:02:35.689148-05:00</DestTime><Importer>Mp3Importer</Importer><ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime><Processor>SongProcessor</Processor><ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime><Parameters><Key>Quality</Key><Value>Best</Value></Parameters><Dependencies /><BuildAsset /><BuildOutput><string>C:/Users/alexr/Source/Repos/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/LOZ_Main_Theme.ogg</string></BuildOutput></PipelineBuildEvent>
+>>>>>>> bfb60229167833ad46c716e640d25a331989e53a

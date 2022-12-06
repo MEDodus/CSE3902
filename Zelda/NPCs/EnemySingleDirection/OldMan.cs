@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Enemy;
+using Zelda.NPCs.EnemyMultiDirection;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
@@ -10,24 +12,36 @@ namespace Zelda.NPCs.Classes
 {
     public class OldMan : INPC
     {
-        public ISprite Sprite { get { return sprite; } }
+        public readonly int OLDMAN_AGRO_HEALTH = 5;
+
         public bool Dead { get { return false; } }
-        public int Damage { get { return damage; } }
 
         protected ISprite sprite;
         protected Vector2 position;
+        protected INPCState state;
         private int damage;
+        protected int health;
+
+        public INPCState State { get { return state; } set { state = value; } }
+        public ISprite Sprite { get { return sprite; } set { sprite = value; } }
+        public Vector2 Position { get { return position; } set { position = value; } }
+        public int Health { get { return health; } set { health = value; } }
+        public int Damage { get { return damage; } }
+
+
 
         public OldMan(Vector2 startPosition)
         {
             sprite = NPCSpriteFactory.OldManSprite();
             position = startPosition;
             damage = 0;
+            state = new OldManPassiveState(this);
         }
 
         public void Update(GameTime gameTime)
         {
-            sprite.Update(gameTime);
+            state.Update(gameTime);
+            //sprite.Update(gameTime);
         }
 
         bool appeared = false;
@@ -42,5 +56,6 @@ namespace Zelda.NPCs.Classes
                 ProjectileStorage.Add(new AppearanceCloud(position));
             }
         }
+
     }
 }

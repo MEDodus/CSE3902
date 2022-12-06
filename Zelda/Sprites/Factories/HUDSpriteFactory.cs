@@ -68,16 +68,18 @@ namespace Zelda.Sprites.Factories
             return new Sprite(GetTexture("black_rectangle"), HUDUtilities.EMPTY_HEART_COLUMN * HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH, HUDUtilities.HEART_ROW * HUDUtilities.HEART_DISPLAY_ROW_HEIGHT, HUDUtilities.HEART_DISPLAY_COLUMN_WIDTH, HUDUtilities.HEART_DISPLAY_ROW_HEIGHT, HUDUtilities.HEART_DISPLAY_BLOCK_SIZE);
         }
 
-        // black borders
+        // MISC
         public static ISprite BlackBorder()
         {
             return new Sprite(GetTexture("black_rectangle"));
         }
-
-        // title screen
         public static ISprite TitleScreenSprite()
         {
             return new AnimatedSprite(GetTexture("title_screen"), 6, 1, 10, 10);
+        }
+        public static ISprite ItemSelectSprite()
+        {
+            return new Sprite(GetTexture("item_select"));
         }
     }
 }

@@ -51,7 +51,6 @@ namespace Zelda
             graphics.PreferredBackBufferWidth = Settings.WINDOW_WIDTH;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
-            
         }
 
         protected override void Initialize()
@@ -70,17 +69,31 @@ namespace Zelda
             controllers.Add(mouse);
 
             // Other initialization
-            link = new Link1();
-            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
-            collisionDetector = new CollisionDetector();
-            gameState = new TitleScreenGameState(this);
-            base.Initialize();
+            Reset();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+        }
+
+        public void Reset()
+        {
+            collisionDetector = new CollisionDetector();
+            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
+            gameState = new RunningGameState(this);
+            SoundManager.Instance.Resume();
+            RoomBuilder.Instance.Reset();
+            RoomTransitions.Initialize(this);
+            ProjectileStorage.Clear();
+            link = new Link1(this);
+            base.Initialize();
+        }
+
+        public void GraphicClear()
+        {
+            GraphicsDevice.Clear(Color.Black);
         }
 
         protected override void Update(GameTime gameTime)
@@ -92,24 +105,6 @@ namespace Zelda
             }
             gameState.Update(gameTime);
             base.Update(gameTime);
-        }
-
-        public void Reset()
-        {
-            // Other initialization
-            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
-            gameState = new RunningGameState(this);
-            SoundManager.Instance.Resume();
-            RoomBuilder.Instance.Reset();
-            RoomTransitions.Initialize(this);
-            ProjectileStorage.Clear();
-            link = new Link1();
-            base.Initialize();
-        }
-
-        public void GraphicClear()
-        {
-            GraphicsDevice.Clear(Color.Black);
         }
 
         protected override void Draw(GameTime gameTime)

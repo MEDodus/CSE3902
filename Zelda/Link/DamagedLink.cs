@@ -1,9 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Zelda.Inventory;
 using Zelda.Items;
-using Zelda.Projectiles;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -29,6 +27,7 @@ namespace Zelda.Link
             this.game = game;
             this.pushDirection = pushDirection;
         }
+
         public void Update(GameTime gameTime)
         {
             if (timer % 8 == 0)
@@ -58,15 +57,14 @@ namespace Zelda.Link
                 decoratedLink.Position += pushDirection;
             }
         }
-
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            decoratedLink.Draw(spriteBatch);
+        }
         public void Reset()
         {
             decoratedLink.Reset();
             RemoveDecorator();
-        }
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            decoratedLink.Draw(spriteBatch);
         }
 
         public void MoveUp()
@@ -85,27 +83,33 @@ namespace Zelda.Link
         {
             // Can't move when damaged
         }
-        public void TakeDamage(Game1 game, int damage, Vector2 direction)
+        public void TakeDamage(int damage, Vector2 direction)
         {
             // Can't take damage while already taking damage
         }
-
-        public void UseItem(int itemNum)
-        {
-            // Can't use items when damaged
-        }
-        
-        public void CreateItem(int itemNum)
-        {
-            // Can't create items when damaged
-        }
-
         public bool AddToInventory(IItem item)
         {
             // Can't equip items when damaged
             return false;
         }
-
+        public void Attack()
+        {
+            // Can't attack when damaged
+        }
+        public void AttackSecondary()
+        {
+            // Can't attack when damaged
+        }
+        public bool TryUsePrimary()
+        {
+            // Can't use items when damaged
+            return false;
+        }
+        public bool TryUseSecondary()
+        {
+            // Can't use items when damaged
+            return false;
+        }
         public void RemoveDecorator()
         {
             decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link2");

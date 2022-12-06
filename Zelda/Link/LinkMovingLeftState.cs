@@ -35,14 +35,23 @@ namespace Zelda.Link
         {
             link.State = new LinkMovingRightState(link);
         }
-        public void UseItem(int itemNum)
-        {
-            link.State = new LinkUsingItemLeftState(link);
-            link.CreateItem(itemNum);
-        }
         public void TakeDamage(Game1 game, Vector2 pushDirection)
         {
             game.Link = new DamagedLink(link, game, pushDirection);
+        }
+        public void Attack()
+        {
+            if (link.TryUsePrimary())
+            {
+                link.State = new LinkUsingItemLeftState(link);
+            }
+        }
+        public void AttackSecondary()
+        {
+            if (link.TryUseSecondary())
+            {
+                link.State = new LinkUsingItemLeftState(link);
+            }
         }
         public void Update()
         {

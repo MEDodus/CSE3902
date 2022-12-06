@@ -37,7 +37,7 @@ namespace Zelda.Collision.Handlers
                     {
                         damage = 1;
                     }
-                    game.Link.TakeDamage(game, damage, new Vector2(0,0));
+                    game.Link.TakeDamage(damage, new Vector2(0,0));
                 }
                 projectile.Delete();
             }

@@ -550,3 +550,4 @@ C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\refint\Zelda.dll
 C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.pdb
 C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
 C:\Users\nicho\source\repos\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\item_select.xnb

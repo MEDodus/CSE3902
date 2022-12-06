@@ -13,7 +13,7 @@ namespace Zelda.Commands
 
         public void Execute(GameTime gameTime)
         {
-            game.Link.UseItem(6);
+            game.Link.AttackSecondary();
         }
     }
 }

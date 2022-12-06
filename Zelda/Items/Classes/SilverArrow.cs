@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Projectiles;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
@@ -8,6 +9,11 @@ namespace Zelda.Items.Classes
         public SilverArrow(Vector2 position) : base(ItemSpriteFactory.SilverArrowSprite(), position, INFINITE, null)
         {
 
+        }
+
+        public override IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
+        {
+            return new Projectiles.Classes.SilverArrow(position, facingDirection);
         }
     }
 }

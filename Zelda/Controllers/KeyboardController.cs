@@ -64,13 +64,14 @@ namespace Zelda.Controllers
                 }
                 // Skip over commands that can't be executed while the game is paused
                 ICommand command = controllerMappings[key];
-                bool allowExecutionWhilePaused = command is Pause || command is Quit;
-                if (game.GameState is PausedGameState && !allowExecutionWhilePaused)
+                bool allowExecutionWhilePaused = command is Pause || command is Quit || command is Left || command is Right || command is Up || command is Down;
+                bool paused = game.GameState is PausedGameState;
+                if (paused && !allowExecutionWhilePaused)
                 {
                     continue;
                 }
                 // Execute command
-                bool executeOnlyOnFirstPress = command is Pause || command is Mute;
+                bool executeOnlyOnFirstPress = command is Pause || command is Mute || (paused && (command is Left || command is Right || command is Up || command is Down));
                 if ((executeOnlyOnFirstPress && WasPressedForFirstTime(key)) || !executeOnlyOnFirstPress)
                 {
                     command.Execute(gameTime);

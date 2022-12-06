@@ -45,7 +45,7 @@ namespace Zelda.NPCs.Classes
             state = new LeftMovingGoriyaState(this);
             this.position = position;
 
-            health = 1;
+            health = 3;
             blocksPerSecondSpeed = 1;
             this.dead = false;
             damage = 1;

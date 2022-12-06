@@ -103,25 +103,56 @@ namespace Zelda.GameStates.Classes
 
         }
 
-        // TODO: make below functions change inventory selection 
+        private void MoveSelectionUpDown()
+        {
+            if (inventory.SecondaryIndex < 4)
+            {
+                inventory.SecondaryIndex += 4;
+            }
+            else
+            {
+                inventory.SecondaryIndex -= 4;
+            }
+        }
+
         public void Up()
         {
-
+            MoveSelectionUpDown();
         }
 
         public void Down()
         {
-
+            MoveSelectionUpDown();
         }
 
         public void Left()
         {
-
+            int maxIndexInRow = (inventory.SecondaryIndex < 4) ? 3 : 7;
+            if (inventory.SecondaryIndex == maxIndexInRow - 3)
+            {
+                // wrap around to the rightmost item in current row
+                inventory.SecondaryIndex = maxIndexInRow;
+            }
+            else
+            {
+                // select item to the left
+                inventory.SecondaryIndex--;
+            }
         }
 
         public void Right()
         {
-
+            int minIndexInRow = (inventory.SecondaryIndex < 4) ? 0 : 4;
+            if (inventory.SecondaryIndex == minIndexInRow + 3)
+            {
+                // wrap around to the leftmost item in current row
+                inventory.SecondaryIndex = minIndexInRow;
+            }
+            else
+            {
+                // select item to the right
+                inventory.SecondaryIndex++;
+            }
         }
     }
 }

@@ -34,15 +34,6 @@ namespace Zelda.Commands
 
             // Cheats
             keyboard.RegisterCommand(Keys.H, new HealthCheat(game));
-            
-            // Item usage (testing purposes)
-            //keyboard.RegisterCommand(Keys.D1, new UseItem1(game));
-            //keyboard.RegisterCommand(Keys.D2, new UseItem2(game));
-            //keyboard.RegisterCommand(Keys.D3, new UseItem3(game));
-            //keyboard.RegisterCommand(Keys.D4, new UseItem4(game));
-            //keyboard.RegisterCommand(Keys.D5, new UseItem5(game));
-            //keyboard.RegisterCommand(Keys.D6, new UseItem6(game));
-            //keyboard.RegisterCommand(Keys.D7, new UseItem7(game));
         }
     }
 }

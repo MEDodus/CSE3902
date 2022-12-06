@@ -1,10 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
 using Zelda.Inventory;
 using Zelda.Items;
-using Zelda.Projectiles;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -23,7 +20,8 @@ namespace Zelda.Link
         ILink decoratedLink;
         ISprite originalSprite;
 
-        private readonly Vector2 OFFSET = new Vector2(0, Settings.BLOCK_SIZE * 0.8f);
+        // triforce link sprite is taller than normal link so its position needs to be shifted up some
+        private readonly Vector2 OFFSET = new Vector2(0, -Settings.BLOCK_SIZE * 0.8f);
 
         public TriforceLink(ILink decoratedLink, Game1 game)
         {
@@ -32,21 +30,21 @@ namespace Zelda.Link
             originalSprite = decoratedLink.Sprite;
             decoratedLink.Sprite = LinkSpriteFactory.LinkTriforceSprite();
             this.game = game;
-            Position -= OFFSET;
+            Position += OFFSET;
         }
+
         public void Update(GameTime gameTime)
         {
             decoratedLink.Update(gameTime);
         }
-
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            decoratedLink.Draw(spriteBatch);
+        }
         public void Reset()
         {
             decoratedLink.Reset();
             RemoveDecorator();
-        }
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            decoratedLink.Draw(spriteBatch);
         }
 
         public void MoveUp()
@@ -65,27 +63,33 @@ namespace Zelda.Link
         {
             // Can't move when holding triforce
         }
-        public void TakeDamage(Game1 game, int damage, Vector2 direction)
+        public void TakeDamage(int damage, Vector2 direction)
         {
             // Can't take when holding triforce
         }
-
-        public void UseItem(int itemNum)
-        {
-            // Can't use items when holding triforce
-        }
-
-        public void CreateItem(int itemNum)
-        {
-            // Can't create items when holding triforce
-        }
-
         public bool AddToInventory(IItem item)
         {
             // Can't equip items when holding triforce
             return false;
         }
-
+        public void Attack()
+        {
+            // Can't attack when damaged
+        }
+        public void AttackSecondary()
+        {
+            // Can't attack when damaged
+        }
+        public bool TryUsePrimary()
+        {
+            // Can't use items when holding triforce
+            return false;
+        }
+        public bool TryUseSecondary()
+        {
+            // Can't use items when holding triforce
+            return false;
+        }
         public void RemoveDecorator()
         {
             Position += OFFSET;

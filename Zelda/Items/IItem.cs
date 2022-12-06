@@ -5,6 +5,7 @@ using System.Xml;
 using Zelda.Inventory;
 using Zelda.ItemEffects;
 using Zelda.Link;
+using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sprites;
 
@@ -58,12 +59,19 @@ namespace Zelda.Items
             // Implement false condition for other game inventory conditions if needed
         }
 
-        /* True if we successfully removed amount from item capacity,
+        /* 
+         * True if we successfully removed amount from item capacity,
          * false if we can't or results in zero or negative item capacity
          */
-        public bool UseItem(IInventory inventory, Health health, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseItem(IInventory inventory, Health health, Vector2 position, Vector2 facingDirection)
         {
-            return effect.UseEffect(this, inventory, health, spawnPos, facingDirection);
+            return effect.UseEffect(this, inventory, health, position, facingDirection);
+        }
+
+        public virtual IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
+        {
+            // Most items do not have a projectile counterpart
+            throw new NotImplementedException();
         }
     }
 }

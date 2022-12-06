@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Projectiles.Classes;
+using Zelda.Projectiles;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
@@ -8,6 +10,11 @@ namespace Zelda.Items.Classes
         public RedCandle(Vector2 position) : base(ItemSpriteFactory.RedCandleSprite(), position, ONE, null)
         {
 
+        }
+
+        public override IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
+        {
+            return new CandleFlame(position, facingDirection);
         }
     }
 }

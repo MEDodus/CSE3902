@@ -50,7 +50,7 @@ namespace Zelda.Collision.Handlers
                         direction = new Vector2(0, 3*Settings.LINK_SPEED);
                         break;
                 }
-                game.Link.TakeDamage(game, enemy.Damage,direction);
+                game.Link.TakeDamage(enemy.Damage, direction);
             }
         }
 

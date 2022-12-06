@@ -1,10 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using Zelda.Inventory;
 using Zelda.Items;
-using Zelda.Projectiles;
 using Zelda.Sprites;
 
 namespace Zelda.Link
@@ -17,18 +14,20 @@ namespace Zelda.Link
         public Vector2 Direction { get; }
         public Health Health { get; }
         public IInventory Inventory { get; }
-
-        public void Reset();
+        
         public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);
+        public void Reset();
 
         public void MoveUp();
         public void MoveDown();
         public void MoveLeft();
         public void MoveRight();
-        public void TakeDamage(Game1 game, int damage, Vector2 direction);
-        public void UseItem(int itemNum);
-        public void CreateItem(int itemNum);
+        public void TakeDamage(int damage, Vector2 direction);
         public bool AddToInventory(IItem item);
+        public void Attack();
+        public void AttackSecondary();
+        public bool TryUsePrimary();
+        public bool TryUseSecondary();
     }
 }

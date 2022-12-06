@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Projectiles.Classes;
+using Zelda.Projectiles;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes

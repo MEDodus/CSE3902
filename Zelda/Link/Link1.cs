@@ -29,20 +29,11 @@ namespace Zelda.Link
         private Vector2 position;
         private Vector2 facingDirection;
         private double swordAttackTimer = 0;
-        private HashSet<Keys> movementKeys = new HashSet<Keys>();
         private IInventory inventory;
         private Health health;
         public Link1()
         {
             Reset();
-            movementKeys.Add(Keys.W);
-            movementKeys.Add(Keys.A);
-            movementKeys.Add(Keys.S);
-            movementKeys.Add(Keys.D);
-            movementKeys.Add(Keys.Up);
-            movementKeys.Add(Keys.Left);
-            movementKeys.Add(Keys.Down);
-            movementKeys.Add(Keys.Right);
             inventory = new LinkInventory();
             InventoryBuilder.BuildInventory(inventory);
             health = new Health();
@@ -70,46 +61,25 @@ namespace Zelda.Link
             sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset);
         }
 
-        private bool TryMove(Vector2 newDirection)
-        {
-            // Don't set direction if multiple keys are being pressed unless the direction is the same as the current direction
-            // also don't move if currently attacking with the sword
-            bool success = (!KeyboardController.AreMultipleKeysInSetPressed(movementKeys) || newDirection.Equals(facingDirection))
-                && swordAttackTimer <= 0;
-            if (success)
-            {
-                facingDirection = newDirection;
-            }
-            return success;
-        }
-
         public void MoveUp()
         {
-            if (TryMove(new Vector2(0, -1)))
-            {
-                state.MoveUp();
-            }
+            state.MoveUp();
+            facingDirection = new Vector2(0, -1);
         }
         public void MoveDown()
         {
-            if (TryMove(new Vector2(0, 1)))
-            {
-                state.MoveDown();
-            }
+            state.MoveDown();
+            facingDirection = new Vector2(0, 1);
         }
         public void MoveLeft()
         {
-            if (TryMove(new Vector2(-1, 0)))
-            {
-                state.MoveLeft();
-            }
+            state.MoveLeft();
+            facingDirection = new Vector2(-1, 0);
         }
         public void MoveRight()
         {
-            if (TryMove(new Vector2(1, 0)))
-            {
-                state.MoveRight();
-            }
+            state.MoveRight();
+            facingDirection = new Vector2(1, 0);
         }
         public void TakeDamage(Game1 game, int damage, Vector2 direction)
         {

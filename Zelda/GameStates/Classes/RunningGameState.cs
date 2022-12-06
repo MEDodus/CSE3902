@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Zelda.Controllers;
 using Zelda.Projectiles;
 using Zelda.Rooms;
 
@@ -61,22 +63,34 @@ namespace Zelda.GameStates.Classes
 
         public void Up()
         {
-            game.Link.MoveUp();
+            if(KeyboardController.mostRecentMovementKey(Keys.Up) == Keys.Up || KeyboardController.mostRecentMovementKey(Keys.W) == Keys.W)
+            {
+                game.Link.MoveUp();
+            }
         }
 
         public void Down()
         {
-            game.Link.MoveDown();
+            if (KeyboardController.mostRecentMovementKey(Keys.Down) == Keys.Down || KeyboardController.mostRecentMovementKey(Keys.S) == Keys.S)
+            {
+                game.Link.MoveDown();
+            }
         }
 
         public void Left()
         {
-            game.Link.MoveLeft();
+            if (KeyboardController.mostRecentMovementKey(Keys.Left) == Keys.Left || KeyboardController.mostRecentMovementKey(Keys.A) == Keys.A)
+            {
+                game.Link.MoveLeft();
+            }
         }
 
         public void Right()
         {
-            game.Link.MoveRight();
+            if (KeyboardController.mostRecentMovementKey(Keys.Right) == Keys.Right || KeyboardController.mostRecentMovementKey(Keys.D) == Keys.D)
+            {
+                game.Link.MoveRight();
+            }
         }
     }
 }

@@ -14,11 +14,22 @@ namespace Zelda.Controllers
         private Game1 game;
         private static KeyboardState previousState;
         private static KeyboardState currentState;
+        private static HashSet<Keys> movementKeys = new HashSet<Keys>();
+        private static Keys mostRecentMoveKey;
 
         public KeyboardController(Game1 game)
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
             this.game = game;
+            movementKeys.Add(Keys.W);
+            movementKeys.Add(Keys.A);
+            movementKeys.Add(Keys.S);
+            movementKeys.Add(Keys.D);
+            movementKeys.Add(Keys.Up);
+            movementKeys.Add(Keys.Left);
+            movementKeys.Add(Keys.Down);
+            movementKeys.Add(Keys.Right);
+            mostRecentMoveKey = Keys.Up;
         }
 
         public void RegisterCommand(Keys key, ICommand command)
@@ -67,15 +78,25 @@ namespace Zelda.Controllers
             }
         }
 
-        public static bool AreMultipleKeysInSetPressed(HashSet<Keys> keys)
+        public static Keys mostRecentMovementKey(Keys key)
         {
-            Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-            int numPressed = 0;
-            foreach (Keys key in pressedKeys)
+            Keys[] oldPressedKeys = previousState.GetPressedKeys();
+            Keys[] newPressedKeys = currentState.GetPressedKeys();
+            if(currentState.IsKeyDown(key) && previousState.IsKeyUp(key))
             {
-                if (keys.Contains(key)) numPressed++;
+                mostRecentMoveKey = key;
             }
-            return numPressed > 1;
+            if (currentState.IsKeyUp(mostRecentMoveKey) && previousState.IsKeyDown(mostRecentMoveKey))
+            {
+                foreach(Keys pressedKey in newPressedKeys)
+                {
+                    if (movementKeys.Contains(pressedKey))
+                    {
+                        mostRecentMoveKey = pressedKey;
+                    }
+                }
+            }
+            return mostRecentMoveKey;
         }
     }
 }

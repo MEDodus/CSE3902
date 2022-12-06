@@ -13,8 +13,10 @@ namespace Zelda.Inventory
 
         public static void BuildInventory(IInventory inventory)
         {
+            inventory.AddItem(new Sword(new Vector2()), 1); // For Sword and SwordBeam
+
+            // Testing purposes:
             //inventory.AddItem(new Bomb(new Vector2()), 8); // Max Count is 8
-            //inventory.AddItem(new Sword(new Vector2()), 1); // For Sword and SwordBeam
             //inventory.AddItem(new Arrow(new Vector2()), 1); // Need Bow and 1 Rupee cost
             //inventory.AddItem(new BlueCandle(new Vector2()), 1); // For CandleFlame (Blue can be used once per screen) red infinite
             ////inventory.AddItem(new MagicalBoomerang(new Vector2()), 1); // Infinite

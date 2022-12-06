@@ -18,6 +18,7 @@ namespace Zelda.GameStates.Classes
             font1 = HUDSpriteFactory.WinOrLoseFont();
             font2 = HUDSpriteFactory.HUDFont();
             SoundManager.Instance.Pause();
+            game.GraphicClear();
         }
 
         public void Update(GameTime gameTime)

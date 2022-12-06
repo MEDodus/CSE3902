@@ -8,27 +8,29 @@ namespace Zelda.GameStates.Classes
     public class TitleScreenGameState : IGameState
     {
         private Game1 game;
-        private ISprite menuSprite;
+        private ISprite titleScreenSprite;
         
         public TitleScreenGameState(Game1 game)
         {
             this.game = game;
-            menuSprite = HUDSpriteFactory.TitleScreenSprite();
+            titleScreenSprite = HUDSpriteFactory.TitleScreenSprite();
+            game.GraphicClear();
         }
 
         public void Update(GameTime gameTime)
         {
-            menuSprite.Update(gameTime);
+            titleScreenSprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            menuSprite.Draw(spriteBatch, new Vector2(Settings.ROOM_WINDOW_X + 3 * Settings.BLOCK_SIZE, Settings.ROOM_WINDOW_Y));
+            titleScreenSprite.Draw(spriteBatch, new Vector2(Settings.ROOM_WINDOW_X + 3 * Settings.BLOCK_SIZE, Settings.ROOM_WINDOW_Y));
         }
 
         public void LeftClick()
         {
-            game.GameState = new RunningGameState(game);
+            game.GameState = new MenuGameState(game);
+            // TODO: a sound effect here may be nice
         }
 
         public void RightClick()

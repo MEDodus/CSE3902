@@ -45,6 +45,14 @@ namespace Zelda.Inventory
             } 
             else
             {
+                if(item is Bomb && GetCount(item) + quantity > LinkUtilities.BOMB_MAX_COUNT)
+                {
+                    quantity = GetCount(item) + quantity - LinkUtilities.BOMB_MAX_COUNT;
+                    if(quantity == LinkUtilities.BOMB_ITEM_PICKUP_AMOUNT)
+                    {
+                        return false;
+                    }
+                }
                 IItem itemToChange = inventory[item.GetType()];
                 itemToChange.AddToQuantity(quantity);
                 UpdateSecondary();

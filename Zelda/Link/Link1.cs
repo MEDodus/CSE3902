@@ -6,6 +6,7 @@ using Zelda.Items;
 using Zelda.Rooms;
 using Zelda.Inventory;
 using Zelda.Sound;
+using Zelda.Items.Classes;
 
 namespace Zelda.Link
 {
@@ -93,6 +94,10 @@ namespace Zelda.Link
         }
         public bool AddToInventory(IItem item)
         {
+            if(item is Bomb)
+            {
+                return inventory.AddItem(item, 4);
+            }
             return inventory.AddItem(item, 1);
         }
         public void Attack()

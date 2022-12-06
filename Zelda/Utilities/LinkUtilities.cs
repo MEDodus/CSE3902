@@ -13,5 +13,9 @@ namespace Zelda.Utilities
 
         public static readonly int MAX_HEARTS = 9;
 
+        public static readonly int DEFAULT_ITEM_PICKUP_AMOUNT = 1;
+        public static readonly int BOMB_ITEM_PICKUP_AMOUNT = 4;
+        public static readonly int BOMB_MAX_COUNT = 8;
+
     }
 }

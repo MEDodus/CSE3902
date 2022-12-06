@@ -69,19 +69,20 @@ namespace Zelda.Link
 
         public void MoveUp()
         {
-            // Can't move when damaged
+            decoratedLink.MoveUp();
+            
         }
         public void MoveDown()
         {
-            // Can't move when damaged
+            decoratedLink.MoveDown();
         }
         public void MoveLeft()
         {
-            // Can't move when damaged
+            decoratedLink.MoveLeft();
         }
         public void MoveRight()
         {
-            // Can't move when damaged
+            decoratedLink.MoveRight();
         }
         public void TakeDamage(int damage, Vector2 direction)
         {

@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Zelda.Controllers;
 using Zelda.Projectiles;
 using Zelda.Rooms;
+using Zelda.Sound;
 
 namespace Zelda.GameStates.Classes
 {
@@ -16,6 +17,7 @@ namespace Zelda.GameStates.Classes
         public RunningGameState(Game1 game)
         {
             this.game = game;
+            SoundManager.Instance.PlayMainThemeSound();
         }
 
         public void Update(GameTime gameTime)

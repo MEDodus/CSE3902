@@ -2,26 +2,28 @@
 using Zelda.HUD;
 using Zelda.Puzzles;
 using Zelda.Rooms.Parsers;
+using Zelda.Sound;
 
 namespace Zelda.Rooms.Puzzles.Classes
 {
-    public class TriforceRevealPuzzle : IPuzzle
+    public class OldManPuzzle : IPuzzle
     {
-        public TriforceRevealPuzzle(Room room) : base(room)
+        public OldManPuzzle(Room room) : base(room)
         {
             
         }
 
         protected override bool CanSolve()
         {
-            // Reveal the triforce once the old man room is entered
+            // Reveal the secret the old man room is entered
             return RoomBuilder.Instance.CurrentRoom == Room;
         }
 
         protected override void Solve()
         {
-            //DungeonHUDMap.TriforceVisible = true;
+            // TODO: animate words here possibly
             Room.Blocks.Add(new OldManWords(Parser.GetSpawnPosition(1, 1, Room)));
+            SoundManager.Instance.PlaySecretSound();
         }
     }
 }

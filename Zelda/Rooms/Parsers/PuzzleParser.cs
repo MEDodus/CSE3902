@@ -23,7 +23,7 @@ namespace Zelda.Rooms.Parsers
             }
             else if (room.Name.Equals("Room5"))
             {
-                room.Puzzle = new TriforceRevealPuzzle(room);
+                room.Puzzle = new OldManPuzzle(room);
             }
             else if (room.Name.Equals("Room6"))
             {

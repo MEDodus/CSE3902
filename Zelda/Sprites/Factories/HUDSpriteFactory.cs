@@ -73,10 +73,6 @@ namespace Zelda.Sprites.Factories
         {
             return new Sprite(GetTexture("black_rectangle"));
         }
-        public static ISprite TitleScreenSprite()
-        {
-            return new AnimatedSprite(GetTexture("title_screen"), 6, 1, 10, 10);
-        }
         public static ISprite ItemSelectSprite()
         {
             return new Sprite(GetTexture("item_select"));

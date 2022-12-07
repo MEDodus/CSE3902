@@ -43,7 +43,7 @@ namespace Zelda.HUD
         public void Update(GameTime gameTime, ILink link)
         {
             roomIndicatorPosition = IndicatorPosition(RoomBuilder.Instance.CurrentRoom);
-            triforceIndicatorPosition = IndicatorPosition(RoomBuilder.Instance.GetRoom("Room4"));
+            triforceIndicatorPosition = IndicatorPosition(RoomBuilder.Instance.TriforceRoom);
         }
 
         public void Draw(SpriteBatch spriteBatch)

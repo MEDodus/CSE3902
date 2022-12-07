@@ -14,7 +14,7 @@ namespace Zelda.Rooms.Parsers
         private Dictionary<Room.Direction, IBlock> doors;
 
         public BorderParser(Room room, Dictionary<Room.Direction, IBorder> borders, Dictionary<Room.Direction, IBlock> doors, HashSet<IBlock> collidableBlocks) 
-            : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\borders.csv")
+            : base(room, room.Name + "\\borders.csv")
         {
             this.borders = borders;
             this.doors = doors;

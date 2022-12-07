@@ -10,7 +10,7 @@ namespace Zelda.Rooms.Parsers
     {
         private HashSet<INPC> npcs;
 
-        public NPCParser(Room room, HashSet<INPC> npcs) : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\npcs.csv")
+        public NPCParser(Room room, HashSet<INPC> npcs) : base(room, room.Name + "\\npcs.csv")
         {
             this.npcs = npcs;
         }
@@ -54,7 +54,6 @@ namespace Zelda.Rooms.Parsers
                     {
                         moveDirection = new Vector2(-1, 0);
                     }
-                    System.Diagnostics.Debug.WriteLine(i + " " + j + " " + moveDirection);
                     npc = new SpikeCross(spawnPos, moveDirection);
                     break;
                 case "wallmaster":

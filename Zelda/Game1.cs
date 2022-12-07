@@ -17,7 +17,7 @@ using System.Drawing;
 using System.Numerics;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 using Color = Microsoft.Xna.Framework.Color;
-using System.Xml;
+using Zelda.Achievements;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -38,7 +38,7 @@ namespace Zelda
         public IGameState GameState { get { return gameState; } set { gameState = value; } }
         public ILink Link { get { return link; } set { link = value; } }
         public ILink LinkCompanion { get { return linkCompanion; } set { linkCompanion = value; } }
-        public IHUD HUD { get { return hud; } }
+        public IHUD HUD { get { return hud; } set { hud = value; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
 
         private GraphicsDeviceManager graphics;
@@ -63,7 +63,7 @@ namespace Zelda
             // This must be done before creating any content-dependent objects
             SpriteFactory.Initialize(Content);
             SoundManager.Instance.Initialize(Content);
-            RoomBuilder.Instance.Initialize();
+            RoomBuilder.Instance.LoadLevel("Level1");
             RoomTransitions.Initialize(this);
 
             // Set up controllers
@@ -83,6 +83,7 @@ namespace Zelda
             ProjectileStorage.Clear();
             link = new Link1(this, 1);
             linkCompanion = new Link1(this, 2);
+            AchievementManager.Load(this);
             base.Initialize();
         }
 
@@ -95,7 +96,7 @@ namespace Zelda
         {
             hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
             gameState = new RunningGameState(this);
-            SoundManager.Instance.Resume();
+            SoundManager.Instance.Stop();
             RoomBuilder.Instance.Reset();
             RoomTransitions.Initialize(this);
             ProjectileStorage.Clear();

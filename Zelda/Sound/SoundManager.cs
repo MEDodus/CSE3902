@@ -92,8 +92,6 @@ namespace Zelda.Sound
             swordSlash = content.Load<SoundEffect>("SoundEffect\\LOZ_Sword_Slash");
             text = content.Load<SoundEffect>("SoundEffect\\LOZ_Text");
             textSlow = content.Load<SoundEffect>("SoundEffect\\LOZ_Text_Slow");
-            PlayMainThemeSound();
-
         }
 
         public void ToggleMute()
@@ -117,9 +115,21 @@ namespace Zelda.Sound
 
         public void Resume()
         {
-
             MediaPlayer.Resume();
             muted = false;
+        }
+
+        public void Stop()
+        {
+            MediaPlayer.Stop();
+        }
+
+        private void PlaySound(SoundEffect soundEffect)
+        {
+            if (!muted)
+            {
+                soundEffect.Play();
+            }
         }
 
         public void PlayLinkDieSound()
@@ -143,128 +153,90 @@ namespace Zelda.Sound
 
         public void PlayBombDropSound()
         {
-            if (!muted)
-            {
-                bombDrop.Play();
-            }
+            PlaySound(bombDrop);
         }
         public void PlayBombBlowSound()
         {
-            if (!muted)
-            {
-                bombBlow.Play();
-            }
+            PlaySound(bombBlow);
         }
 
         public void PlayArrowBoomerangSound()
         {
-            if (!muted)
-            {
-                arrowBoomerang.Play();
-            }
+            PlaySound(arrowBoomerang);
         }
 
         public void PlaySwardCombinedSound()
         {
-            if (!muted)
-            {
-                swordCombined.Play();
-            }
+            PlaySound(swordCombined);
         }
         public void PlaySwarShootSound()
         {
-            if (!muted)
-            {
-                swordShoot.Play();
-            }
+            PlaySound(swordShoot);
         }
 
         public void PlayEnemyDieSound()
         {
-            if (!muted)
-            {
-                enemyDie.Play();
-            }
+            PlaySound(enemyDie);
         }
 
         public void PlayBossHitSound()
         {
-            if (!muted)
-            {
-                bossHit.Play();
-            }
+            PlaySound(bossHit);
         }
 
         public void PlayLinkHurtSound()
         {
-            if (!muted)
-            {
-                linkHurt.Play();
-            }
+            PlaySound(linkHurt);
         }
 
         public void PlayBossScream1Sound()
         {
-            if (!muted)
-            {
-                bossScream1.Play();
-            }
+            PlaySound(bossScream1);
         }
 
         public void PlayArrowSound()
         {
-            if (!muted)
-            {
-                magicalRod.Play();
-            }
+            PlaySound(arrowBoomerang);
         }
 
         public void PlayFireSound()
         {
-            if (!muted)
-            {
-                candle.Play();
-            }
+            PlaySound(candle);
         }
 
         public void PlayDoorUnlockSound()
         {
-            if (!muted)
-            {
-                doorUnlock.Play();
-            }
+            PlaySound(doorUnlock);
         }
 
         public void PlayGetHealthSound()
         {
-            if (!muted)
-            {
-                getHeart.Play();
-            }
+            PlaySound(getHeart);
         }
 
         public void PlayGetItemSound()
         {
-            if (!muted)
-            {
-                getItem.Play();
-            }
+            PlaySound(getItem);
         }
 
-        public void PlayGetKeySound()
+        public void PlayItemAppearSound()
         {
-            if (!muted)
-            {
-                keyAppear.Play();
-            }
+            PlaySound(keyAppear);
         }
 
         public void PlayStairSound()
         {
-            if (!muted)
-            {
-                stairs.Play();
-            }
+            PlaySound(stairs);
+        }
+
+        public void PlaySecretSound()
+        {
+            PlaySound(secret);
+        }
+
+        public void PlayMenuClickSound()
+        {
+            PlaySound(getItem);
         }
     }
 }

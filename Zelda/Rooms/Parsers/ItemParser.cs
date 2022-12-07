@@ -10,7 +10,7 @@ namespace Zelda.Rooms.Parsers
     {
         private HashSet<IItem> items;
 
-        public ItemParser(Room room, HashSet<IItem> items) : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\items.csv")
+        public ItemParser(Room room, HashSet<IItem> items) : base(room, room.Name + "\\items.csv")
         {
             this.items = items;
         }

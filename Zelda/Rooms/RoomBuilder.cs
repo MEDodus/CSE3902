@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using Zelda.Items;
 using Zelda.Items.Classes;
 using Zelda.Link;
 using Zelda.Projectiles;
@@ -14,7 +15,7 @@ namespace Zelda.Rooms
     {
         private static RoomBuilder instance = new RoomBuilder();
         public static RoomBuilder Instance { get { return instance; } }
-        
+
         public Room CurrentRoom { 
             get 
             { 
@@ -32,15 +33,20 @@ namespace Zelda.Rooms
                 }
             } 
         }
+        public string CurrentLevel { get { return currentLevel; } }
         public Room[] Rooms { get { return rooms; } }
         public Vector2 WindowPosition { get { return windowPosition; } set { windowPosition = value; } }
         public Vector2 BaseWindowPosition { get { return BASE_WINDOW_POSITION; } }
         public Vector2 WindowOffset { get { return BASE_WINDOW_POSITION - windowPosition; } }
+        public Room TriforceRoom { get { return triforceRoom; } }
 
-        private Room[] rooms = new Room[18];
+        private string currentLevel;
+        private Room[] rooms;
         private Dictionary<string, Room> roomMap = new Dictionary<string, Room>();
         private int i;
         private Vector2 windowPosition;
+        private int startRoom;
+        private Room triforceRoom;
 
         private static readonly Vector2 BASE_WINDOW_POSITION = new Vector2(Settings.ROOM_WINDOW_X, Settings.ROOM_WINDOW_Y);
 
@@ -48,10 +54,20 @@ namespace Zelda.Rooms
         { 
         }
 
-        public void Initialize()
+        public void LoadLevel(string filename)
         {
+            // Reset
+            currentLevel = filename;
+            LevelData levelData = new LevelData();
+            LevelParser levelParser = new LevelParser(filename, levelData);
+            levelParser.Parse();
+            rooms = new Room[levelData.RoomCount];
+            startRoom = levelData.StartRoom;
+            i = startRoom;
+            roomMap.Clear();
+
             // Build the rooms first
-            for (int j = 0; j < rooms.Length; j++)
+            for (int j = 0; j < levelData.RoomCount; j++)
             {
                 Room room = new Room("Room" + j);
                 rooms[j] = room;
@@ -59,7 +75,6 @@ namespace Zelda.Rooms
             }
 
             // Create the room graph starting from the entrance room
-            i = 15;
             windowPosition = BASE_WINDOW_POSITION;
             ConnectAdjacentRooms(CurrentRoom, windowPosition);
 
@@ -68,18 +83,25 @@ namespace Zelda.Rooms
             {
                 room.Parse();
             }
+
+            // Check for the triforce room
+            triforceRoom = CurrentRoom;
+            foreach (Room room in rooms)
+            {
+                foreach (IItem item in room.Items)
+                {
+                    if (item is Triforce)
+                    {
+                        triforceRoom = room;
+                        break;
+                    }
+                }
+            }
         }
 
         public void Reset()
         {
-            for (int j = 0; j < rooms.Length; j++)
-            {
-                rooms[j] = null;
-                roomMap.Remove("Room" + j);
-            }
-            this.i = Settings.START_ROOM;
-
-            RoomBuilder.Instance.Initialize();
+            LoadLevel(currentLevel);
         }
 
         private readonly HashSet<Room> seen = new HashSet<Room>();

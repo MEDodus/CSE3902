@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Achievements;
 using Zelda.Link;
 using Zelda.Projectiles;
 using Zelda.Rooms;
@@ -19,6 +20,7 @@ namespace Zelda.GameStates.Classes
 
         public WinningGameState(Game1 game)
         {
+            SoundManager.Instance.PlayGetItemSound();
             this.game = game;
             decoratedLink = new TriforceLink(game.Link, game);
             game.Link = decoratedLink;
@@ -26,15 +28,19 @@ namespace Zelda.GameStates.Classes
             font1 = HUDSpriteFactory.WinOrLoseFont();
             font2 = HUDSpriteFactory.HUDFont();
             game.GraphicClear();
+            AchievementManager.UnlockNextLevel();
         }
 
+        private bool swappedScreens = false;
         public void Update(GameTime gameTime)
         {
             timer -= gameTime.ElapsedGameTime.TotalSeconds;
-            if (timer <= 0)
+            if (timer <= 0 && !swappedScreens)
             {
+                swappedScreens = true;
                 decoratedLink.RemoveDecorator();
-                SoundManager.Instance.Pause();
+                SoundManager.Instance.Stop();
+                SoundManager.Instance.PlaySecretSound();
             }
             // Update only some game objects
             RoomBuilder.Instance.Update(gameTime);
@@ -49,7 +55,7 @@ namespace Zelda.GameStates.Classes
             {
                 game.GraphicClear();
                 spriteBatch.DrawString(font1, "YOU WIN !", new Vector2(200, 300), Color.Green);
-                spriteBatch.DrawString(font2, "Press R to Restart", new Vector2(420, 550), Color.White);
+                spriteBatch.DrawString(font2, "Click to continue", new Vector2(420, 550), Color.White);
             }
             else
             {
@@ -63,12 +69,12 @@ namespace Zelda.GameStates.Classes
 
         public void LeftClick()
         {
-
+            game.GameState = new MenuGameState(game);
         }
 
         public void RightClick()
         {
-
+            game.GameState = new MenuGameState(game);
         }
 
         public void Up()

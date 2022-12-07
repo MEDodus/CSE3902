@@ -212,6 +212,13 @@
 /processorParam:TextureFormat=Compressed
 /build:spriteFonts/Font.spritefont
 
+#begin spriteFonts/MenuFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:spriteFonts/MenuFont.spritefont
+
 #begin spriteFonts/winOrLose.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -230,6 +237,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/arrow.png
+
+#begin spritesheets/back_arrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/back_arrow.png
 
 #begin spritesheets/bat.png
 /importer:TextureImporter
@@ -890,6 +909,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/map.png
+
+#begin spritesheets/menu_button.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/menu_button.png
 
 #begin spritesheets/old_man_words.png
 /importer:TextureImporter

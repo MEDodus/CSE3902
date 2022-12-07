@@ -5,6 +5,7 @@ using Zelda.Items;
 using Zelda.Items.Classes;
 using Zelda.Puzzles;
 using Zelda.Rooms.Parsers;
+using Zelda.Sound;
 
 namespace Zelda.Rooms.Puzzles.Classes
 {
@@ -34,6 +35,7 @@ namespace Zelda.Rooms.Puzzles.Classes
             } while (block.CanCollide || block.IsGap);
             item.Position = block.Position + new Vector2(rng.Next(10), rng.Next(10));
             Room.Items.Add(item);
+            SoundManager.Instance.PlayItemAppearSound();
         }
     }
 }

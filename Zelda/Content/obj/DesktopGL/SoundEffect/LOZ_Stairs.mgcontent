@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Stairs.wav</SourceFile>
   <SourceTime>2022-11-14T21:19:17.2146443-05:00</SourceTime>
   <DestFile>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/bin/DesktopGL/SoundEffect/LOZ_Stairs.xnb</DestFile>
-  <DestTime>2022-12-06T16:14:44.5718169-05:00</DestTime>
+  <DestTime>2022-12-06T21:51:01.3031958-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

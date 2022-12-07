@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Sound;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -13,7 +14,7 @@ namespace Zelda.GameStates.Classes
         public TitleScreenGameState(Game1 game)
         {
             this.game = game;
-            titleScreenSprite = HUDSpriteFactory.TitleScreenSprite();
+            titleScreenSprite = MenuSpriteFactory.TitleScreenSprite();
             game.GraphicClear();
         }
 
@@ -30,7 +31,7 @@ namespace Zelda.GameStates.Classes
         public void LeftClick()
         {
             game.GameState = new MenuGameState(game);
-            // TODO: a sound effect here may be nice
+            SoundManager.Instance.PlaySecretSound();
         }
 
         public void RightClick()

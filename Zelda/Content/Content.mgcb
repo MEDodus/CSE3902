@@ -217,6 +217,13 @@
 /processorParam:Quality=Best
 /build:SoundEffect/LOZ_Text.wav
 
+#begin spriteFonts/AchievementFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:spriteFonts/AchievementFont.spritefont
+
 #begin spriteFonts/Font.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
@@ -285,6 +292,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/Accomplish_SecretWeapon.png
+
+#begin spritesheets/achievement.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/achievement.png
 
 #begin spritesheets/arrow.png
 /importer:TextureImporter

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using Zelda.Achievements;
 using Zelda.HUD;
 using Zelda.Items;
 using Zelda.Projectiles;
@@ -93,6 +94,7 @@ namespace Zelda.NPCs.Classes
             dead = true;
             ProjectileStorage.Add(new DeathExplosion(position));
             NPCUtil.DropRandomItem(position);
+            AchievementManager.GrantAchievement(Achievement.FirstKill);
         }
 
         public virtual void TakeDamage(int damage)

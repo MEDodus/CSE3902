@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
+using Zelda.Achievements;
 using Zelda.Blocks;
 using Zelda.Items;
 using Zelda.Items.Classes;
@@ -36,6 +37,12 @@ namespace Zelda.Rooms.Puzzles.Classes
             item.Position = block.Position + new Vector2(rng.Next(10), rng.Next(10));
             Room.Items.Add(item);
             SoundManager.Instance.PlayItemAppearSound();
+            if (item is Boomerang)
+                AchievementManager.GrantAchievement(Achievement.BoomerangFound);
+            else if (item is MagicalRod)
+                AchievementManager.GrantAchievement(Achievement.MagicalRodFound);
+            else if (item is Map)
+                AchievementManager.GrantAchievement(Achievement.MapFound);
         }
     }
 }

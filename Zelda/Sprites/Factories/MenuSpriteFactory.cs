@@ -24,5 +24,15 @@ namespace Zelda.Sprites.Factories
         {
             return new Sprite(GetTexture("back_arrow"));
         }
+
+        public static ISprite AchievementSprite()
+        {
+            return new Sprite(GetTexture("achievement"), 8);
+        }
+
+        public static SpriteFont AchievementFont()
+        {
+            return content.Load<SpriteFont>("spriteFonts\\AchievementFont");
+        }
     }
 }

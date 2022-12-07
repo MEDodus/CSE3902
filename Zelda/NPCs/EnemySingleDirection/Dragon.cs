@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
+using Zelda.Achievements;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites.Factories;
@@ -67,6 +68,12 @@ namespace Zelda.NPCs.Classes
                 ProjectileStorage.Add(fireball2);
                 ProjectileStorage.Add(fireball3);
             }
+        }
+
+        public override void Die()
+        {
+            AchievementManager.GrantAchievement(Achievement.DragonKilled);
+            base.Die();
         }
     }
 }

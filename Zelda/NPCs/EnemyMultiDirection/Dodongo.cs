@@ -10,6 +10,7 @@ using Zelda.Sprites.Factories;
 using Zelda.Collision;
 using Zelda.Rooms;
 using Zelda.Sound;
+using Zelda.Achievements;
 
 namespace Zelda.NPCs.Classes
 {
@@ -181,6 +182,8 @@ namespace Zelda.NPCs.Classes
         {
             ProjectileStorage.Add(new DeathExplosion(position));
             this.dead = true;
+            AchievementManager.GrantAchievement(Achievement.DodongoKilled);
+            NPCUtil.DropRandomItem(position);
         }
 
     }

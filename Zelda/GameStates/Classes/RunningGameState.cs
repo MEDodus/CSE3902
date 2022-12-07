@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Zelda.Achievements;
 using Zelda.Controllers;
 using Zelda.Projectiles;
 using Zelda.Rooms;
@@ -34,6 +35,7 @@ namespace Zelda.GameStates.Classes
             game.LinkCompanion.Update(gameTime);
             game.Collisions.DetectCollisions(game, gameTime, game.Link, game.LinkCompanion);
             game.HUD.Update(gameTime);
+            AchievementManager.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -45,6 +47,7 @@ namespace Zelda.GameStates.Classes
             game.LinkCompanion.Draw(spriteBatch);
             RoomBuilder.Instance.DrawTopLayer(spriteBatch);
             game.HUD.Draw(spriteBatch);
+            AchievementManager.Draw(spriteBatch);
         }
 
         public void LeftClick()

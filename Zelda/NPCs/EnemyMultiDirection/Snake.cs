@@ -167,6 +167,7 @@ namespace Zelda.NPCs.Classes
         {
             ProjectileStorage.Add(new DeathExplosion(position));
             this.dead = true;
+            NPCUtil.DropRandomItem(position);
         }
 
     }

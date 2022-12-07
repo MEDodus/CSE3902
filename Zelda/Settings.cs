@@ -22,7 +22,6 @@
 
         // Level info
         public static readonly int NUM_LEVELS = 2;
-        public static readonly int START_ROOM = 15;
 
         // Link movement settings
         public static readonly float LINK_SPEED = 3f; // pixels per frame

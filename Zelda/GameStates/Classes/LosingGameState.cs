@@ -17,7 +17,8 @@ namespace Zelda.GameStates.Classes
             this.game = game;
             font1 = HUDSpriteFactory.WinOrLoseFont();
             font2 = HUDSpriteFactory.HUDFont();
-            SoundManager.Instance.Pause();
+            SoundManager.Instance.Stop();
+            SoundManager.Instance.PlayLinkDieSound();
             game.GraphicClear();
         }
 
@@ -34,13 +35,13 @@ namespace Zelda.GameStates.Classes
 
         public void LeftClick()
         {
-            game.Reset();
+            game.Reset(); // TODO: don't reset link inventory
             game.GameState = new MenuGameState(game);
         }
 
         public void RightClick()
         {
-            game.Reset();
+            game.Reset(); // TODO: don't reset link inventory
             game.GameState = new MenuGameState(game);
         }
 

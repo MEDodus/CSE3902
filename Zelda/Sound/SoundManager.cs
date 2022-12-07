@@ -92,8 +92,6 @@ namespace Zelda.Sound
             swordSlash = content.Load<SoundEffect>("SoundEffect\\LOZ_Sword_Slash");
             text = content.Load<SoundEffect>("SoundEffect\\LOZ_Text");
             textSlow = content.Load<SoundEffect>("SoundEffect\\LOZ_Text_Slow");
-            PlayMainThemeSound();
-
         }
 
         public void ToggleMute()
@@ -117,9 +115,13 @@ namespace Zelda.Sound
 
         public void Resume()
         {
-
             MediaPlayer.Resume();
             muted = false;
+        }
+
+        public void Stop()
+        {
+            MediaPlayer.Stop();
         }
 
         private void PlaySound(SoundEffect soundEffect)

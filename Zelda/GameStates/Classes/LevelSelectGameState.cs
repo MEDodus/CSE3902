@@ -3,9 +3,13 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using Zelda.Achievements;
+using Zelda.HUD;
 using Zelda.Menu;
+using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sound;
+using Zelda.Utilities;
 
 namespace Zelda.GameStates.Classes
 {
@@ -44,9 +48,17 @@ namespace Zelda.GameStates.Classes
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (MenuButton button in menuButtons)
+            for (int i = 0; i < menuButtons.Count; i++)
             {
-                button.Draw(spriteBatch);
+                MenuButton button = menuButtons[i];
+                if (AchievementManager.IsUnlocked(i + 1))
+                {
+                    button.Draw(spriteBatch);
+                }
+                else
+                {
+                    button.DrawGrayedOut(spriteBatch);
+                }
             }
         }
 
@@ -60,13 +72,15 @@ namespace Zelda.GameStates.Classes
             for (int i = 0; i < menuButtons.Count; i++)
             {
                 MenuButton button = menuButtons[i];
-                if (button.Destination.Contains(position)) // TODO: check if level is unlocked
+                if (button.Destination.Contains(position) && AchievementManager.IsUnlocked(i + 1))
                 {
                     SoundManager.Instance.PlayMenuClickSound();
                     RoomBuilder.Instance.LoadLevel("Level" + (i + 1));
-                    game.Reset();
+                    game.Link.Reset();
+                    game.HUD = new LinkHUD(game, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
+                    ProjectileStorage.Clear();
                     game.GameState = new RunningGameState(game);
-                    break;
+                    return;
                 }
             }
         }

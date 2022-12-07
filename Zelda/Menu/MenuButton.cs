@@ -35,5 +35,11 @@ namespace Zelda.Menu
             buttonSprite.Draw(spriteBatch, new Rectangle((int)position.X, (int)position.Y, WIDTH, HEIGHT));
             spriteBatch.DrawString(font, text, position + new Vector2(40, 20), Color.PeachPuff);
         }
+
+        public void DrawGrayedOut(SpriteBatch spriteBatch)
+        {
+            buttonSprite.Draw(spriteBatch, new Rectangle((int)position.X, (int)position.Y, WIDTH, HEIGHT), Color.DarkGray);
+            spriteBatch.DrawString(font, text, position + new Vector2(40, 20), Color.DarkSlateGray);
+        }
     }
 }

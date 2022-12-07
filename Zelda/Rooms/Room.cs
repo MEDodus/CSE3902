@@ -92,6 +92,11 @@ namespace Zelda.Rooms
                 if (npc.Dead)
                 {
                     npcsToRemove.Add(npc);
+                    IItem item = npc.DropItem();
+                    if (item != null)
+                    {
+                        items.Add(item);
+                    }
                 }
             }
             foreach (INPC npc in npcsToRemove)

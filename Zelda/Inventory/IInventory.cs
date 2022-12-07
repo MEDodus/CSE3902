@@ -10,7 +10,7 @@ namespace Zelda.Inventory
     public interface IInventory
     {
         // Have some quantity field in item class or additional class with quantity functionality
-        public bool AddItem(IItem item, int quantity);
+        public bool AddItem(IItem item);
         // Remove some item by some quantity
         public bool RemoveItem(IItem item, int quantity);
         // Check if inventory contains an item

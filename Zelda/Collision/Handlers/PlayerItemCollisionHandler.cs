@@ -52,7 +52,7 @@ namespace Zelda.Collision.Handlers
                 RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
             } else if (item is Rupy || item is FiveRupies)
             {
-                IItem wallet = link.Inventory.GetItem(new Wallet(new Vector2()));
+                IItem wallet = link.Inventory.GetItem(new Wallet());
                 int add = item is Rupy ? 1 : 5;
                 wallet.AddToQuantity(add);
                 RoomBuilder.Instance.CurrentRoom.RemoveItem(item);

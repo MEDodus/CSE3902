@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Text.RegularExpressions;
 using Zelda.Enemy;
+using Zelda.Items;
 using Zelda.NPCs.EnemyMultiDirection;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
@@ -160,5 +161,24 @@ namespace Zelda.NPCs.Classes
             this.dead = true;
         }
 
+        public IItem DropItem()
+        {
+            IItem item = NPCUtil.GetItem(group, EnemyCounter.Count, position);
+            EnemyCounter.Increment(); // Increment counter to next row in the table
+            return item;
+
+            // Uncomment for chance at drop, above makes it 100% chance, below makes it 25% chance at drop
+            /*int rand = new Random().Next(1, 5);
+            switch(rand)
+            {
+                case 1:
+                    return NPCUtil.GetItem(group, EnemyCounter.Count, position);
+                case 2:
+                case 3:
+                case 4:
+                default:
+                    return null;
+            }*/
+        }
     }
 }

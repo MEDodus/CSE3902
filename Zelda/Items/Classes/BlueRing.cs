@@ -5,7 +5,13 @@ namespace Zelda.Items.Classes
 {
     public class BlueRing : IItem
     {
-        public BlueRing(Vector2 position) : base(ItemSpriteFactory.BlueRingSprite(), position, ONE, null)
+        public BlueRing(Vector2 position) : base(ItemSpriteFactory.BlueRingSprite(), position, ONE, null, 1)
+        {
+
+        }
+
+        /* Default constructor for item in inventory or not displayed in game */
+        public BlueRing() : base(ItemSpriteFactory.BlueRingSprite(), new Vector2(), ONE, null, 1)
         {
 
         }

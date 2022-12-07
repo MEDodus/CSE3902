@@ -17,17 +17,17 @@ namespace Zelda.Inventory
         {
             inventory = new Dictionary<Type, IItem>();
         }
-        public bool AddItem(IItem item, int quantity)
+        public bool AddItem(IItem item)
         {
             if (!Contains(item))
             {
                 inventory.Add(item.GetType(), item);
-                item.AddToQuantity(quantity);
+                item.AddToQuantity(item.BundleSize);
                 return true;
             } else
             {
                 IItem itemToChange = inventory[item.GetType()];
-                itemToChange.AddToQuantity(quantity);
+                itemToChange.AddToQuantity(item.BundleSize);
                 return true;
             }
             // only returning true now, conditions could chagne,

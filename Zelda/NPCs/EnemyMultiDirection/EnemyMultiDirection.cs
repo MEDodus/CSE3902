@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Text.RegularExpressions;
+using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
@@ -104,6 +106,31 @@ namespace Zelda.NPCs.Classes
                     Die();
                 }
             }
+        }
+
+        public IItem DropItem()
+        {
+            int itemRow = EnemyCounter.Count;
+            int rand = new Random().Next(1, 5);
+            Group enemyGroup = this.group;
+
+            IItem item;
+
+            switch (rand)
+            {
+                case 1:
+
+                    item = NPCUtil.GetItem(enemyGroup, itemRow, position);
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                default:
+                    item = null;
+                    break;
+            }
+            EnemyCounter.Increment();
+            return item;
         }
 
         public virtual void MoveRight()

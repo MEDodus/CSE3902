@@ -1,5 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
@@ -41,6 +43,11 @@ namespace Zelda.NPCs.Classes
                 cloud.Draw(spriteBatch);
                 ProjectileStorage.Add(new AppearanceCloud(position));
             }
+        }
+
+        public IItem DropItem()
+        {
+            return null;
         }
     }
 }

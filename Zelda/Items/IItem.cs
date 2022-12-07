@@ -12,25 +12,29 @@ namespace Zelda.Items
 {
     public abstract class IItem
     {
+
         public static readonly int INFINITE = int.MaxValue, ONE = 1;
         public ISprite Sprite { get { return sprite; } }
         public int MaxItemCount { get { return maxItemCount; } }
+        public int BundleSize { get { return bundleSize; } }
 
         protected ISprite sprite;
         protected Vector2 position;
         protected int maxItemCount;
         protected int quantityHeld;
         protected IEffect effect;
+        protected int bundleSize;
 
         public int QuantityHeld { get { return quantityHeld; } }
 
-        public IItem(ISprite sprite, Vector2 position, int maxItemCount, IEffect effect)
+        public IItem(ISprite sprite, Vector2 position, int maxItemCount, IEffect effect, int bundleSize)
         {
             this.sprite = sprite;
             this.position = position;
             this.maxItemCount = maxItemCount;
             this.effect = effect;
             quantityHeld = 0;
+            this.bundleSize = bundleSize;
         }
 
         public virtual void Update(GameTime gameTime)

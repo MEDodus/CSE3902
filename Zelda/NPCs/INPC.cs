@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Items;
 using Zelda.Sprites;
 
 namespace Zelda.NPCs
@@ -12,7 +13,7 @@ namespace Zelda.NPCs
         public int Damage { get; }
 
         public void Update(GameTime gameTime);
-
         public void Draw(SpriteBatch spriteBatch);
+        public IItem DropItem();
     }
 }

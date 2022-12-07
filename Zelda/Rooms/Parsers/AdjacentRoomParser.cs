@@ -13,7 +13,7 @@ namespace Zelda.Rooms.Parsers
         private RoomBuilder roomBuilder;
 
         public AdjacentRoomParser(Room room, Dictionary<Room.Direction, Room> adjacentRooms, RoomBuilder roomBuilder) 
-            : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\adjacent.csv")
+            : base(room, room.Name + "\\adjacent.csv")
         {
             this.adjacentRooms = adjacentRooms;
             this.roomBuilder = roomBuilder;

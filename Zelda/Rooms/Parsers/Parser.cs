@@ -11,7 +11,7 @@ namespace Zelda.Rooms.Parsers
         public Parser(Room room, string filename)
         {
             this.room = room;
-            this.filename = filename;
+            this.filename = "..\\..\\..\\Rooms\\Files\\" + RoomBuilder.Instance.CurrentLevel + "\\" + filename;
         }
 
         public virtual void Parse()

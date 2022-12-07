@@ -16,7 +16,7 @@ namespace Zelda.Rooms.Parsers
         private HashSet<IBlock> topLayerBlocks;
 
         public BlockParser(Room room, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> topLayerBlocks, IBlock[,] blocksArray)
-            : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\blocks.csv")
+            : base(room, room.Name + "\\blocks.csv")
         {
             this.blocks = blocks;
             this.collidableBlocks = collidableBlocks;

@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using Zelda.Menu;
+using Zelda.Rooms;
 using Zelda.Sound;
 
 namespace Zelda.GameStates.Classes
@@ -56,13 +57,15 @@ namespace Zelda.GameStates.Classes
                 return;
             }
             Point position = Mouse.GetState().Position;
-            foreach (MenuButton button in menuButtons)
+            for (int i = 0; i < menuButtons.Count; i++)
             {
+                MenuButton button = menuButtons[i];
                 if (button.Destination.Contains(position)) // TODO: check if level is unlocked
                 {
                     SoundManager.Instance.PlayMenuClickSound();
+                    RoomBuilder.Instance.LoadLevel("Level" + (i + 1));
+                    game.Reset();
                     game.GameState = new RunningGameState(game);
-                    // TODO: change to selected level
                     break;
                 }
             }

@@ -61,7 +61,7 @@ namespace Zelda
             // This must be done before creating any content-dependent objects
             SpriteFactory.Initialize(Content);
             SoundManager.Instance.Initialize(Content);
-            RoomBuilder.Instance.Initialize();
+            RoomBuilder.Instance.LoadLevel("Level1");
             RoomTransitions.Initialize(this);
 
             // Set up controllers

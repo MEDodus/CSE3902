@@ -12,8 +12,11 @@ using Zelda.Sound;
 using Zelda.GameStates;
 using Zelda.GameStates.Classes;
 using Zelda.Utilities;
-using System;
 using Zelda.Projectiles;
+using System.Drawing;
+using System.Numerics;
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+using Color = Microsoft.Xna.Framework.Color;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -70,7 +73,14 @@ namespace Zelda
 
             // Other initialization
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
-            Reset();
+            collisionDetector = new CollisionDetector();
+            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
+            gameState = new TitleScreenGameState(this);
+            SoundManager.Instance.Resume();
+            RoomTransitions.Initialize(this);
+            ProjectileStorage.Clear();
+            link = new Link1(this);
+            base.Initialize();
         }
 
         protected override void LoadContent()
@@ -80,7 +90,6 @@ namespace Zelda
 
         public void Reset()
         {
-            collisionDetector = new CollisionDetector();
             hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
             gameState = new RunningGameState(this);
             SoundManager.Instance.Resume();

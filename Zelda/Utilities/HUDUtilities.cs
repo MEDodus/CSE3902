@@ -26,6 +26,8 @@ namespace Zelda.Utilities
         public static readonly int PAUSE_HUD_WIDTH = 255;
         public static readonly int PAUSE_HUD_HEIGHT = 175;
 
+        public static readonly Vector2 LEVEL_TEXT_OFFSET = new Vector2(20, 40);
+
         // Pause menu map
         public static readonly int PAUSE_HUD_MAP_X = 300;
         public static readonly int PAUSE_HUD_MAP_Y = -230;

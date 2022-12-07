@@ -4,6 +4,7 @@ using Zelda.GameStates.Classes;
 using Zelda.Items;
 using Zelda.Items.Classes;
 using Zelda.Link;
+using Zelda.Rooms;
 using Zelda.Sprites.Factories;
 using Zelda.Utilities;
 
@@ -24,6 +25,7 @@ namespace Zelda.HUD
         protected HUDItem slotB;
         protected HUDItem pauseItem;
         protected Vector2 HUDPosition;
+        protected SpriteFont font;
 
         public LinkHUD(Game1 game, Vector2 position)
         {
@@ -39,8 +41,8 @@ namespace Zelda.HUD
             keyQuantity = new HUDItemQuantity(new Key(new Vector2(0, 0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.KEY_COUNT_Y));
             bombQuantity = new HUDItemQuantity(new Bomb(new Vector2(0, 0)), position + new Vector2(HUDUtilities.ITEM_COUNT_X, HUDUtilities.SECONDARY_COUNT_Y));
             itemSelectionBox = new ItemSelectionBox();
-            //new HUDItemQuantity(new Vector2(HUDUtilities.HUD_X + 20, HUDUtilities.MAP_Y - 30), "Level 1");
             slotA = new HUDItem(new Sword(new Vector2(0, 0)), position + new Vector2(HUDUtilities.SLOT_A_X, HUDUtilities.SLOT_Y));
+            font = HUDSpriteFactory.HUDFont();
         }
         public void Update(GameTime gameTime)
         {
@@ -95,6 +97,7 @@ namespace Zelda.HUD
             {
                 pauseItem.Draw(spriteBatch);
             }
+            spriteBatch.DrawString(font, RoomBuilder.Instance.CurrentLevel.ToUpper(), HUDPosition + HUDUtilities.LEVEL_TEXT_OFFSET, Color.White);
         }
     }
 }

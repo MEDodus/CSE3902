@@ -14,6 +14,7 @@ namespace Zelda.Link
         public Vector2 Direction { get; }
         public Health Health { get; }
         public IInventory Inventory { get; }
+        public int PlayerNumber { get; }
         
         public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);

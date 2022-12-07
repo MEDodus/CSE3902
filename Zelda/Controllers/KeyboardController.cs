@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
 using System.Transactions;
 using Zelda.Commands;
@@ -14,22 +15,24 @@ namespace Zelda.Controllers
         private Game1 game;
         private static KeyboardState previousState;
         private static KeyboardState currentState;
-        private static HashSet<Keys> movementKeys = new HashSet<Keys>();
-        private static Keys mostRecentMoveKey;
+        private static HashSet<Keys> linkMovementKeys = new HashSet<Keys>();
+        private static HashSet<Keys> compMovementKeys = new HashSet<Keys>();
+        private static Keys mostRecentMoveKeyLink, mostRecentMoveKeyComp;
 
         public KeyboardController(Game1 game)
         {
             controllerMappings = new Dictionary<Keys, ICommand>();
             this.game = game;
-            movementKeys.Add(Keys.W);
-            movementKeys.Add(Keys.A);
-            movementKeys.Add(Keys.S);
-            movementKeys.Add(Keys.D);
-            movementKeys.Add(Keys.Up);
-            movementKeys.Add(Keys.Left);
-            movementKeys.Add(Keys.Down);
-            movementKeys.Add(Keys.Right);
-            mostRecentMoveKey = Keys.Up;
+            linkMovementKeys.Add(Keys.W);
+            linkMovementKeys.Add(Keys.A);
+            linkMovementKeys.Add(Keys.S);
+            linkMovementKeys.Add(Keys.D);
+            compMovementKeys.Add(Keys.Up);
+            compMovementKeys.Add(Keys.Left);
+            compMovementKeys.Add(Keys.Down);
+            compMovementKeys.Add(Keys.Right);
+            mostRecentMoveKeyLink = Keys.D0;
+            mostRecentMoveKeyComp = Keys.D0;
         }
 
         public void RegisterCommand(Keys key, ICommand command)
@@ -79,25 +82,59 @@ namespace Zelda.Controllers
             }
         }
 
-        public static Keys mostRecentMovementKey(Keys key)
+        public static Keys mostRecentLinkMovementKey(Keys key)
         {
             Keys[] oldPressedKeys = previousState.GetPressedKeys();
             Keys[] newPressedKeys = currentState.GetPressedKeys();
-            if(currentState.IsKeyDown(key) && previousState.IsKeyUp(key))
+            Boolean anyMovementKeyPressed = false;
+            foreach (Keys pressedKey in newPressedKeys)
             {
-                mostRecentMoveKey = key;
+                if (linkMovementKeys.Contains(pressedKey)) { anyMovementKeyPressed = true; }
             }
-            if (currentState.IsKeyUp(mostRecentMoveKey) && previousState.IsKeyDown(mostRecentMoveKey))
+            if (!anyMovementKeyPressed) { return Keys.D0; }
+            if (currentState.IsKeyDown(key) && previousState.IsKeyUp(key))
             {
-                foreach(Keys pressedKey in newPressedKeys)
+                mostRecentMoveKeyLink = key;
+            }
+            if (currentState.IsKeyUp(mostRecentMoveKeyLink) && previousState.IsKeyDown(mostRecentMoveKeyLink))
+            {
+                foreach (Keys pressedKey in newPressedKeys)
                 {
-                    if (movementKeys.Contains(pressedKey))
+                    if (linkMovementKeys.Contains(pressedKey))
                     {
-                        mostRecentMoveKey = pressedKey;
+                        mostRecentMoveKeyLink = pressedKey;
                     }
                 }
             }
-            return mostRecentMoveKey;
+            
+            return mostRecentMoveKeyLink;
+        }
+
+        public static Keys mostRecentCompMovementKey(Keys key)
+        {
+            Keys[] oldPressedKeys = previousState.GetPressedKeys();
+            Keys[] newPressedKeys = currentState.GetPressedKeys();
+            Boolean anyMovementKeyPressed = false;
+            foreach (Keys pressedKey in newPressedKeys)
+            {
+                if (compMovementKeys.Contains(pressedKey)) { anyMovementKeyPressed = true; }
+            }
+            if(!anyMovementKeyPressed) { return Keys.D0; }
+            if (currentState.IsKeyDown(key) && previousState.IsKeyUp(key))
+            {
+                mostRecentMoveKeyComp = key;
+            }
+            if (currentState.IsKeyUp(mostRecentMoveKeyComp) && previousState.IsKeyDown(mostRecentMoveKeyComp))
+            {
+                foreach (Keys pressedKey in newPressedKeys)
+                {
+                    if (compMovementKeys.Contains(pressedKey))
+                    {
+                        mostRecentMoveKeyComp = pressedKey;
+                    }
+                }
+            }
+            return mostRecentMoveKeyComp;
         }
     }
 }

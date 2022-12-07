@@ -5,15 +5,24 @@ namespace Zelda.Commands
     public class Attack : ICommand
     {
         private Game1 game;
+        int playerNumber;
 
-        public Attack(Game1 game)
+        public Attack(Game1 game, int number)
         {
             this.game = game;
+            playerNumber = number;
         }
 
         public void Execute(GameTime gameTime)
         {
-            game.Link.Attack();
+            if(playerNumber == 1)
+            {
+                game.Link.Attack();
+            }
+            else
+            {
+                game.LinkCompanion.Attack();
+            }
         }
     }
 }

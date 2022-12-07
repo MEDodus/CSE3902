@@ -27,13 +27,24 @@ namespace Zelda.Commands
             mouse.RegisterRightClickCommand(new RightClick(game));
 
             // For player attacks
-            keyboard.RegisterCommand(Keys.X, new Attack(game));
-            keyboard.RegisterCommand(Keys.M, new Attack(game));
-            keyboard.RegisterCommand(Keys.Z, new AttackSecondary(game));
-            keyboard.RegisterCommand(Keys.N, new AttackSecondary(game));
+            keyboard.RegisterCommand(Keys.X, new Attack(game, 1));
+            keyboard.RegisterCommand(Keys.M, new Attack(game, 2));
+            keyboard.RegisterCommand(Keys.Z, new AttackSecondary(game, 1));
+            keyboard.RegisterCommand(Keys.N, new AttackSecondary(game, 2));
 
             // Cheats
             keyboard.RegisterCommand(Keys.H, new HealthCheat(game));
+            keyboard.RegisterCommand(Keys.D0, new ItemCheat(game, 0));
+            keyboard.RegisterCommand(Keys.D1, new ItemCheat(game, 1));
+            keyboard.RegisterCommand(Keys.D2, new ItemCheat(game, 2));
+            keyboard.RegisterCommand(Keys.D3, new ItemCheat(game, 3));
+            keyboard.RegisterCommand(Keys.D4, new ItemCheat(game, 4));
+            keyboard.RegisterCommand(Keys.D5, new ItemCheat(game, 5));
+            keyboard.RegisterCommand(Keys.D6, new ItemCheat(game, 6));
+            keyboard.RegisterCommand(Keys.D7, new ItemCheat(game, 7));
+            keyboard.RegisterCommand(Keys.D8, new ItemCheat(game, 8));
+            keyboard.RegisterCommand(Keys.D9, new ItemCheat(game, 9));
+
         }
     }
 }

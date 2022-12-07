@@ -34,7 +34,14 @@ namespace Zelda.Link
         }
         public void TakeDamage(Game1 game, Vector2 pushDirection)
         {
-            game.Link = new DamagedLink(link, game, pushDirection);
+            if (link.PlayerNumber == 1)
+            {
+                game.Link = new DamagedLink(link, game, pushDirection);
+            }
+            else
+            {
+                game.LinkCompanion = new DamagedLink(link, game, pushDirection);
+            }
         }
         public void Attack()
         {

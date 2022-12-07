@@ -15,6 +15,7 @@ namespace Zelda.Link
         public Vector2 Direction { get => decoratedLink.Direction; }
         public Health Health { get => decoratedLink.Health; }
         public IInventory Inventory { get => decoratedLink.Inventory; }
+        public int PlayerNumber { get => decoratedLink.PlayerNumber; }
 
         Game1 game;
         ILink decoratedLink;
@@ -94,7 +95,14 @@ namespace Zelda.Link
         {
             Position += OFFSET;
             decoratedLink.Sprite = originalSprite;
-            game.Link = decoratedLink;
+            if (decoratedLink.PlayerNumber == 1)
+            {
+                game.Link = decoratedLink;
+            }
+            else
+            {
+                game.LinkCompanion = decoratedLink;
+            }
         }
     }
 }

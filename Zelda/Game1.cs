@@ -17,6 +17,7 @@ using System.Drawing;
 using System.Numerics;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 using Color = Microsoft.Xna.Framework.Color;
+using System.Xml;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -36,12 +37,13 @@ namespace Zelda
     {
         public IGameState GameState { get { return gameState; } set { gameState = value; } }
         public ILink Link { get { return link; } set { link = value; } }
+        public ILink LinkCompanion { get { return linkCompanion; } set { linkCompanion = value; } }
         public IHUD HUD { get { return hud; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        private ILink link;
+        private ILink link, linkCompanion;
         private IHUD hud;
         private IGameState gameState;
         private List<IController> controllers;
@@ -79,7 +81,8 @@ namespace Zelda
             SoundManager.Instance.Resume();
             RoomTransitions.Initialize(this);
             ProjectileStorage.Clear();
-            link = new Link1(this);
+            link = new Link1(this, 1);
+            linkCompanion = new Link1(this, 2);
             base.Initialize();
         }
 
@@ -96,7 +99,8 @@ namespace Zelda
             RoomBuilder.Instance.Reset();
             RoomTransitions.Initialize(this);
             ProjectileStorage.Clear();
-            link = new Link1(this);
+            link = new Link1(this, 1);
+            linkCompanion = new Link1(this, 2);
             base.Initialize();
         }
 

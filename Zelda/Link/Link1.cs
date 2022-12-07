@@ -18,6 +18,7 @@ namespace Zelda.Link
         public Vector2 Direction { get { return facingDirection;  } }
         public IInventory Inventory { get { return inventory; } }
         public Health Health { get { return health; } }
+        public int PlayerNumber { get { return playerNumber; } }
 
         private Game1 game;
         private ILinkState state;
@@ -28,21 +29,37 @@ namespace Zelda.Link
         private double secondaryAttackTimer = 0;
         private IInventory inventory;
         private Health health;
+        private int playerNumber;
 
         private readonly double ATTACK_TIMER_LENGTH = 0.35;
-        
-        public Link1(Game1 game)
+
+        public Link1(Game1 game, int number)
         {
+            playerNumber = number;
             this.game = game;
             Reset();
-            inventory = new LinkInventory();
-            InventoryBuilder.BuildInventory(inventory);
-            health = new Health();
+            if (playerNumber == 1)
+            {
+                inventory = new LinkInventory();
+                InventoryBuilder.BuildInventory(inventory);
+                health = new Health();
+            } else
+            {
+                inventory = game.Link.Inventory;
+                health = game.Link.Health;
+            }
+
         }
 
         public void Reset()
         {
-            position = RoomBuilder.Instance.WindowPosition + new Vector2(Settings.BLOCK_SIZE * 7.5f, Settings.BLOCK_SIZE * 7);
+            if(playerNumber == 1)
+            {
+                position = RoomBuilder.Instance.WindowPosition + new Vector2(Settings.BLOCK_SIZE * 7.5f, Settings.BLOCK_SIZE * 7);
+            } else
+            {
+                position = RoomBuilder.Instance.WindowPosition + new Vector2(Settings.BLOCK_SIZE * 8.5f, Settings.BLOCK_SIZE * 7);
+            }
             state = new LinkFacingUpState(this);
             facingDirection = new Vector2(0, -1);
         }

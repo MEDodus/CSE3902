@@ -26,10 +26,11 @@ namespace Zelda.GameStates.Classes
             }
             // Update all game objects
             RoomBuilder.Instance.Update(gameTime);
-            RoomTransitions.Update(gameTime, game.Link);
+            RoomTransitions.Update(gameTime, game.Link, game.LinkCompanion);
             ProjectileStorage.Update(gameTime);
             game.Link.Update(gameTime);
-            game.Collisions.DetectCollisions(game, gameTime, game.Link);
+            game.LinkCompanion.Update(gameTime);
+            game.Collisions.DetectCollisions(game, gameTime, game.Link, game.LinkCompanion);
             game.HUD.Update(gameTime);
         }
 
@@ -39,6 +40,7 @@ namespace Zelda.GameStates.Classes
             RoomBuilder.Instance.Draw(spriteBatch);
             ProjectileStorage.Draw(spriteBatch);
             game.Link.Draw(spriteBatch);
+            game.LinkCompanion.Draw(spriteBatch);
             RoomBuilder.Instance.DrawTopLayer(spriteBatch);
             game.HUD.Draw(spriteBatch);
         }
@@ -48,7 +50,7 @@ namespace Zelda.GameStates.Classes
             if (roomSwitchTimer <= 0)
             {
                 roomSwitchTimer = ROOM_SWITCH_DELAY;
-                RoomBuilder.Instance.NextRoom(game.Link);
+                RoomBuilder.Instance.NextRoom(game.Link, game.LinkCompanion);
             }
         }
 
@@ -57,39 +59,55 @@ namespace Zelda.GameStates.Classes
             if (roomSwitchTimer <= 0)
             {
                 roomSwitchTimer = ROOM_SWITCH_DELAY;
-                RoomBuilder.Instance.PreviousRoom(game.Link);
+                RoomBuilder.Instance.PreviousRoom(game.Link, game.LinkCompanion);
             }
         }
 
         public void Up()
         {
-            if(KeyboardController.mostRecentMovementKey(Keys.Up) == Keys.Up || KeyboardController.mostRecentMovementKey(Keys.W) == Keys.W)
+            if(KeyboardController.mostRecentLinkMovementKey(Keys.W) == Keys.W)
             {
                 game.Link.MoveUp();
+            }
+            else if(KeyboardController.mostRecentCompMovementKey(Keys.Up) == Keys.Up)
+            {
+                game.LinkCompanion.MoveUp();
             }
         }
 
         public void Down()
         {
-            if (KeyboardController.mostRecentMovementKey(Keys.Down) == Keys.Down || KeyboardController.mostRecentMovementKey(Keys.S) == Keys.S)
+            if (KeyboardController.mostRecentLinkMovementKey(Keys.S) == Keys.S)
             {
                 game.Link.MoveDown();
+            }
+            if (KeyboardController.mostRecentCompMovementKey(Keys.Down) == Keys.Down)
+            {
+                game.LinkCompanion.MoveDown();
             }
         }
 
         public void Left()
         {
-            if (KeyboardController.mostRecentMovementKey(Keys.Left) == Keys.Left || KeyboardController.mostRecentMovementKey(Keys.A) == Keys.A)
+            if (KeyboardController.mostRecentLinkMovementKey(Keys.A) == Keys.A)
             {
                 game.Link.MoveLeft();
+            }
+            if (KeyboardController.mostRecentCompMovementKey(Keys.Left) == Keys.Left)
+            {
+                game.LinkCompanion.MoveLeft();
             }
         }
 
         public void Right()
         {
-            if (KeyboardController.mostRecentMovementKey(Keys.Right) == Keys.Right || KeyboardController.mostRecentMovementKey(Keys.D) == Keys.D)
+            if (KeyboardController.mostRecentLinkMovementKey(Keys.D) == Keys.D)
             {
                 game.Link.MoveRight();
+            }
+            if (KeyboardController.mostRecentCompMovementKey(Keys.Right) == Keys.Right)
+            {
+                game.LinkCompanion.MoveRight();
             }
         }
     }

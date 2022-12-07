@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using Zelda.Link;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
@@ -37,7 +38,13 @@ namespace Zelda.Collision.Handlers
                     {
                         damage = 1;
                     }
-                    game.Link.TakeDamage(damage, new Vector2(0,0));
+                    if(link.PlayerNumber == 1)
+                    {
+                        game.Link.TakeDamage(damage, new Vector2(0, 0));
+                    } else
+                    {
+                        game.LinkCompanion.TakeDamage(damage, new Vector2(0, 0));
+                    }
                 }
                 projectile.Delete();
             }

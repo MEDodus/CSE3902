@@ -7,7 +7,6 @@ namespace Zelda.Rooms.Puzzles.Classes
 {
     public class DragonBossPuzzle : IPuzzle
     {
-
         public DragonBossPuzzle(Room room) : base(room)
         {
             

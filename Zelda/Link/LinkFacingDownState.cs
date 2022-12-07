@@ -8,9 +8,6 @@ namespace Zelda.Link
     {
         private ILink link;
 
-        private Rectangle sourceRectangle;
-        private Rectangle destinationRectangle;
-
         public LinkFacingDownState(ILink link)
         {
             this.link = link;

@@ -16,6 +16,7 @@ namespace Zelda.Items
         public static readonly int INFINITE = int.MaxValue, ONE = 1;
         public ISprite Sprite { get { return sprite; } }
         public int MaxItemCount { get { return maxItemCount; } }
+        public Vector2 Position { get { return position; } set { position = value; } }
 
         protected ISprite sprite;
         protected Vector2 position;

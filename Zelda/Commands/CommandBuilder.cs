@@ -12,7 +12,7 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.Q, new Quit(game));
             keyboard.RegisterCommand(Keys.P, new Pause(game));
             keyboard.RegisterCommand(Keys.R, new Reset(game));
-            keyboard.RegisterCommand(Keys.O, new Mute());
+            keyboard.RegisterCommand(Keys.O, new Mute(game));
 
             // General input (WASD/arrow keys/mouse), behavior depends on game state
             keyboard.RegisterCommand(Keys.W, new Up(game));

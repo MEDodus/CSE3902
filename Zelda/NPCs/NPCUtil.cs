@@ -30,28 +30,37 @@ namespace Zelda.NPCs
 
         public static void DropRandomItem(Vector2 position)
         {
-            int x = new Random().Next(10);
+            int x = new Random().Next(15);
             IItem droppedItem = null;
-            if (x == 3 || x == 4)
+            if (x < 4)
             {
                 droppedItem = new Items.Classes.Rupy(position);
             }
-            else if (x == 5 || x == 6)
+            else if (x < 6)
             {
                 droppedItem = new Items.Classes.Heart(position);
             }
-            else if (x == 7)
+            else if (x < 8)
             {
-                droppedItem = new Items.Classes.Fairy(position);
+                droppedItem = new Items.Classes.Food(position);
             }
-            else if (x == 8)
+            else if (x < 10)
             {
                 droppedItem = new Items.Classes.Bomb(position);
             }
-            else if (x == 9)
+            else if (x < 11)
+            {
+                droppedItem = new Items.Classes.Fairy(position);
+            }
+            else if (x < 12)
             {
                 droppedItem = new Items.Classes.FiveRupies(position);
             }
+            else if (x < 13)
+            {
+                droppedItem = new Items.Classes.BluePotion(position);
+            }
+            
             if (droppedItem != null)
             {
                 RoomBuilder.Instance.CurrentRoom.Items.Add(droppedItem);

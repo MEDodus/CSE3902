@@ -72,7 +72,7 @@ namespace Zelda.Items
         public virtual IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
         {
             // Most items do not have a projectile counterpart
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

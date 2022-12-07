@@ -12,5 +12,6 @@ namespace Zelda.Inventory
         public bool Contains(IItem item);
         public int GetCount(IItem item);
         public IItem GetItem(IItem item);
+        public void UpdateSecondary();
     }
 }

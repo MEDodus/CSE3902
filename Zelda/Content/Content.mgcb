@@ -922,6 +922,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/magical_key.png
 
+#begin spritesheets/magical_rod_directional.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/magical_rod_directional.png
+
 #begin spritesheets/magical_rod.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -981,6 +993,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/menu_button.png
+
+#begin spritesheets/music_note.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/music_note.png
 
 #begin spritesheets/old_man_words.png
 /importer:TextureImporter

@@ -104,7 +104,7 @@ namespace Zelda.Inventory
             return null;
         }
 
-        private void UpdateSecondary()
+        public void UpdateSecondary()
         {
             IItem type;
             Vector2 defaultPos = new Vector2();

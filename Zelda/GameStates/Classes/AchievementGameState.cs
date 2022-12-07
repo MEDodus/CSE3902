@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
 using Zelda.Menu;
 using Zelda.Sound;
 
@@ -11,12 +12,15 @@ namespace Zelda.GameStates.Classes
         private Game1 game;
         private double clickCooldown = 0.5; // when entering screen, left click is already down from the main menu, so wait to accept input
         private BackButton backButton;
+        private List<Accomplish_DoorUnlock> accomplishes;
 
         public AchievementGameState(Game1 game)
         {
             this.game = game;
             game.GraphicClear();
             backButton = new BackButton(new Vector2(100, 100));
+            accomplishes = new List<Accomplish_DoorUnlock>();
+            accomplishes.Add(new Accomplish_DoorUnlock(new Vector2(100, 200)));
             // TODO: create list/grid of achievements, link this to an AchievementManager class or something
         }
 
@@ -33,6 +37,10 @@ namespace Zelda.GameStates.Classes
         public void Draw(SpriteBatch spriteBatch)
         {
             backButton.Draw(spriteBatch);
+            foreach (Accomplish_DoorUnlock accomp in accomplishes)
+            {
+                accomp.Draw(spriteBatch);
+            }
             // TODO: draw achievement list
         }
 

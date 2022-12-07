@@ -40,6 +40,7 @@ namespace Zelda.Sound
         private SoundEffect swordSlash;
         private SoundEffect text;
         private SoundEffect textSlow;
+        private SoundEffect achievement;
 
         private bool muted = false;
 
@@ -92,6 +93,7 @@ namespace Zelda.Sound
             swordSlash = content.Load<SoundEffect>("SoundEffect\\LOZ_Sword_Slash");
             text = content.Load<SoundEffect>("SoundEffect\\LOZ_Text");
             textSlow = content.Load<SoundEffect>("SoundEffect\\LOZ_Text_Slow");
+            achievement = content.Load<SoundEffect>("SoundEffect\\achievement");
         }
 
         public void ToggleMute()
@@ -100,7 +102,7 @@ namespace Zelda.Sound
             if (muted)
             {
                 MediaPlayer.Pause();
-            } 
+            }
             else
             {
                 MediaPlayer.Resume();
@@ -237,6 +239,11 @@ namespace Zelda.Sound
         public void PlayMenuClickSound()
         {
             PlaySound(getItem);
+        }
+
+        public void PlayAchievementSound()
+        {
+            PlaySound(achievement);
         }
     }
 }

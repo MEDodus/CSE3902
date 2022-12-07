@@ -49,7 +49,7 @@ namespace Zelda.GameStates.Classes
             {
                 game.GraphicClear();
                 spriteBatch.DrawString(font1, "YOU WIN !", new Vector2(200, 300), Color.Green);
-                spriteBatch.DrawString(font2, "Press R to Restart", new Vector2(420, 550), Color.White);
+                spriteBatch.DrawString(font2, "Click to continue", new Vector2(420, 550), Color.White);
             }
             else
             {
@@ -63,12 +63,14 @@ namespace Zelda.GameStates.Classes
 
         public void LeftClick()
         {
-
+            game.Reset();
+            game.GameState = new MenuGameState(game);
         }
 
         public void RightClick()
         {
-
+            game.Reset();
+            game.GameState = new MenuGameState(game);
         }
 
         public void Up()

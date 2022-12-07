@@ -278,3 +278,6 @@ C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\refint\Zelda.
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.pdb
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
 C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\menu_button.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spriteFonts\MenuFont.xnb
+C:\Users\jacob\source\repos\MEDodus\CSE3902\Zelda\bin\Debug\net6.0\Content\spritesheets\back_arrow.xnb

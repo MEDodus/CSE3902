@@ -29,17 +29,19 @@ namespace Zelda.GameStates.Classes
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.DrawString(font1, "LINK DIED !", new Vector2(170, 260), Color.Red);
-            spriteBatch.DrawString(font2, "Press R to Restart", new Vector2(420, 550), Color.White);
+            spriteBatch.DrawString(font2, "Click to continue", new Vector2(420, 550), Color.White);
         }
 
         public void LeftClick()
         {
-            
+            game.Reset();
+            game.GameState = new MenuGameState(game);
         }
 
         public void RightClick()
         {
-            
+            game.Reset();
+            game.GameState = new MenuGameState(game);
         }
 
         public void Up()

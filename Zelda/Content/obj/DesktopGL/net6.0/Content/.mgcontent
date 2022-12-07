@@ -37,8 +37,10 @@
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Text_Slow.wav</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/LOZ_Text.wav</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spriteFonts/Font.spritefont</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spriteFonts/MenuFont.spritefont</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spriteFonts/winOrLose.spritefont</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/arrow.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/back_arrow.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bat.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/black_rectangle.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/blocks.png</File>
@@ -94,6 +96,7 @@
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/magical_shield.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/map_position.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/map.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/menu_button.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/old_man_words.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/old_man.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/pause_hud_background.png</File>
@@ -120,6 +123,9 @@
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/zol.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

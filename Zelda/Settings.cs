@@ -19,6 +19,9 @@
         public static readonly int ROOM_WINDOW_Y = 200;
         public static readonly int ROOM_WINDOW_WIDTH = ROOM_WIDTH * BLOCK_SIZE + 2 * BORDER_SIZE;
         public static readonly int ROOM_WINDOW_HEIGHT = ROOM_HEIGHT * BLOCK_SIZE + 2 * BORDER_SIZE;
+
+        // Level info
+        public static readonly int NUM_LEVELS = 2;
         public static readonly int START_ROOM = 15;
 
         // Link movement settings

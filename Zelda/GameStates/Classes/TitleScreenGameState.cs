@@ -15,6 +15,7 @@ namespace Zelda.GameStates.Classes
         {
             this.game = game;
             titleScreenSprite = MenuSpriteFactory.TitleScreenSprite();
+            SoundManager.Instance.PlayMainThemeSound();
             game.GraphicClear();
         }
 

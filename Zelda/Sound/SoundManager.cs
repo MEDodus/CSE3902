@@ -9,6 +9,7 @@ namespace Zelda.Sound
     public class SoundManager
     {
         private Song mainTheme;
+        private Song dungeonTheme;
         private SoundEffect arrowBoomerang;
         private SoundEffect bombBlow;
         private SoundEffect bombDrop;
@@ -43,7 +44,7 @@ namespace Zelda.Sound
         private SoundEffect achievement;
 
         private bool muted = false;
-
+        private bool playingTheme = false;
         private static SoundManager instance = new SoundManager();
 
         public static SoundManager Instance
@@ -62,6 +63,7 @@ namespace Zelda.Sound
         public void Initialize(ContentManager content)
         {
             mainTheme = content.Load<Song>("SoundEffect\\LOZ_Main_Theme");
+            dungeonTheme = content.Load<Song>("SoundEffect\\dungeon_theme");
             arrowBoomerang = content.Load<SoundEffect>("SoundEffect\\LOZ_Arrow_boomerang");
             bombBlow = content.Load<SoundEffect>("SoundEffect\\LOZ_Bomb_Blow");
             bombDrop = content.Load<SoundEffect>("SoundEffect\\LOZ_Bomb_Drop");
@@ -124,6 +126,7 @@ namespace Zelda.Sound
         public void Stop()
         {
             MediaPlayer.Stop();
+            playingTheme = false;
         }
 
         private void PlaySound(SoundEffect soundEffect)
@@ -145,10 +148,21 @@ namespace Zelda.Sound
 
         public void PlayMainThemeSound()
         {
+            if (!muted && !playingTheme)
+            {
+                playingTheme = true;
+                MediaPlayer.Stop();
+                MediaPlayer.Play(mainTheme);
+                MediaPlayer.IsRepeating = true;
+            }
+        }
+
+        public void PlayDungeonThemeSound()
+        {
             if (!muted)
             {
                 MediaPlayer.Stop();
-                MediaPlayer.Play(mainTheme);
+                MediaPlayer.Play(dungeonTheme);
                 MediaPlayer.IsRepeating = true;
             }
         }

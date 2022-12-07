@@ -17,7 +17,7 @@ namespace Zelda.GameStates.Classes
         public RunningGameState(Game1 game)
         {
             this.game = game;
-            SoundManager.Instance.PlayMainThemeSound();
+            SoundManager.Instance.PlayDungeonThemeSound();
         }
 
         public void Update(GameTime gameTime)

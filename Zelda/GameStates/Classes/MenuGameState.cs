@@ -22,6 +22,7 @@ namespace Zelda.GameStates.Classes
         public MenuGameState(Game1 game)
         {
             this.game = game;
+            SoundManager.Instance.PlayMainThemeSound();
             game.GraphicClear();
             levelSelectButton = new MenuButton(new Vector2(X, Y), "LEVEL SELECT");
             achievementsButton = new MenuButton(new Vector2(X, Y + BUTTON_OFFSET_Y), "ACHIEVEMENTS");

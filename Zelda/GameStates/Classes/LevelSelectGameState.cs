@@ -74,9 +74,11 @@ namespace Zelda.GameStates.Classes
                 MenuButton button = menuButtons[i];
                 if (button.Destination.Contains(position) && AchievementManager.IsUnlocked(i + 1))
                 {
+                    SoundManager.Instance.Stop();
                     SoundManager.Instance.PlayMenuClickSound();
                     RoomBuilder.Instance.LoadLevel("Level" + (i + 1));
                     game.Link.Reset();
+                    game.LinkCompanion.Reset();
                     game.HUD = new LinkHUD(game, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
                     ProjectileStorage.Clear();
                     game.GameState = new RunningGameState(game);

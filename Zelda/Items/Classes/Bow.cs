@@ -11,5 +11,10 @@ namespace Zelda.Items.Classes
         {
 
         }
+
+        public override IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
+        {
+            return new Projectiles.Classes.Arrow(position, facingDirection);
+        }
     }
 }

@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><SourceFile>C:/Users/nicho/source/repos/CSE3902/Zelda/Content/SoundEffect/dungeon_theme.mp3</SourceFile><SourceTime>2022-12-07T14:27:26.6004121-05:00</SourceTime><DestFile>C:/Users/nicho/source/repos/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/dungeon_theme.xnb</DestFile><DestTime>2022-12-07T14:27:37.5038877-05:00</DestTime><Importer>Mp3Importer</Importer><ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime><Processor>SongProcessor</Processor><ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime><Parameters><Key>Quality</Key><Value>Best</Value></Parameters><Dependencies /><BuildAsset /><BuildOutput><string>C:/Users/nicho/source/repos/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/dungeon_theme.ogg</string></BuildOutput></PipelineBuildEvent>
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/dungeon_theme.mp3</SourceFile>
+  <SourceTime>2022-12-07T12:57:13.8458309-05:00</SourceTime>
+  <DestFile>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/dungeon_theme.xnb</DestFile>
+  <DestTime>2022-12-07T15:13:53.5268059-05:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/dungeon_theme.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

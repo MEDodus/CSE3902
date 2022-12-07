@@ -43,7 +43,7 @@ namespace Zelda.NPCs.Classes
             this.position = position;
             facingRight = false;
 
-            health = 1;
+            health = 8;
             blocksPerSecondSpeed = 1;
 
             this.dead = false;
@@ -77,17 +77,10 @@ namespace Zelda.NPCs.Classes
 
 
             //Take Damage
-            if (damageDelay <= 0)
+            if (damageCooldown > 0)
             {
-                damageDelay = 1;
-                int takeDamage = new Random().Next(100);
-                if (takeDamage < 30)
-                {
-                    state.TakeDamage();
-                    //damageDelay = 2;
-                }
+                damageCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
             }
-            damageDelay -= gameTime.ElapsedGameTime.TotalSeconds;
 
 
             if (attackCooldown > 0)
@@ -172,11 +165,15 @@ namespace Zelda.NPCs.Classes
         }
         public void TakeDamage(int damage)
         {
-            health -= damage;
-            changeDirectionCooldown = -1;
-            if(health < 0)
+            if (damageCooldown <= 0)
             {
-                Die();
+                damageCooldown = 0.5;
+                health -= damage;
+                changeDirectionCooldown = -1;
+                if (health < 0)
+                {
+                    Die();
+                }
             }
 
         }

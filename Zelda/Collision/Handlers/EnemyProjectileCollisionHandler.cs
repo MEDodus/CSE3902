@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Zelda.NPCs;
 using Zelda.NPCs.Classes;
 using Zelda.Projectiles;
+using Zelda.Projectiles.Classes;
 
 namespace Zelda.Collision.Handlers
 {
@@ -27,7 +28,7 @@ namespace Zelda.Collision.Handlers
                 }
                 else if (enemy is Dodongo)
                 {
-                    CollisionHelper((Dodongo)enemy);
+                    CollisionHelper((Dodongo)enemy, projectile);
                 }
                 else if (enemy is Goriya)
                 {
@@ -41,15 +42,16 @@ namespace Zelda.Collision.Handlers
         }
         public void CollisionHelper(Snake enemy)
         {
-            enemy.state.TakeDamage();
+            enemy.TakeDamage(1);
         }
-        public void CollisionHelper(Dodongo enemy)
+        public void CollisionHelper(Dodongo enemy, IProjectile projectile)
         {
-            enemy.state.TakeDamage();
+            int damage = projectile is Explosion ? 3 : 1;
+            enemy.TakeDamage(damage);
         }
         public void CollisionHelper(Goriya enemy)
         {
-            enemy.state.TakeDamage();
+            enemy.TakeDamage(1);
         }
     }
 }

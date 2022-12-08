@@ -1,0 +1,14 @@
+Review By: Jacob Pohlabel
+Date: 12/7/2022
+Sprint #: 5
+Class Reviewed: FriendlyNPCManager.cs
+Author: Alex Reed
+Time: 10 min
+
+Readability:
+This code is very readable, it can be easily understood at a glance. Variable and function names are descriptive and clear. 
+There is a good deal of commented out code, I'm not sure if you're gonna come back and add more functionality to this class,
+but this could probably get removed.
+
+Hypothetical Change:
+Remove the commented out sections if you do not need them anymore to further clean up the class.

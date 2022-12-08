@@ -1,0 +1,15 @@
+Review By: Jacob Pohlabel
+Date: 12/7/2022
+Sprint #: 5
+Class Reviewed: RightMovingGhostState.cs
+Author: Alex Reed
+Time: 10 min
+
+Code quality:
+This code is pretty good, there is not too much complex logic and it is pretty clear what the class does.
+There are some magic numbers which could maybe get moved to a separate file but this is pretty minor.
+There are also some constants which don't seem to be used so they could get removed or moved to any
+sub-classes which do use them.
+
+Hypothetical Change:
+Clean up the magic numbers

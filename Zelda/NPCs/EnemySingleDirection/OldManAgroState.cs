@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using System.ComponentModel;
+using Zelda.Achievements;
 using Zelda.Enemy;
 using Zelda.NPCs.Classes;
 using Zelda.NPCs.FriendlyNPCs;
@@ -80,6 +81,7 @@ namespace Zelda.NPCs.EnemyMultiDirection
         {
             FriendlyNPCManager.Instance.FriendlyNPCs.Add(new GhostFollower());
             enemy.Dead = true;
+            AchievementManager.GrantAchievement(Achievement.OldManKilled);
         }
 
         public void Update(GameTime gameTime)

@@ -48,9 +48,9 @@ namespace Zelda.NPCs.EnemyMultiDirection
 
         public void Attack()
         {
-            IProjectile fireball0 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_ZERO));
-            IProjectile fireball1 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_POS));
-            IProjectile fireball2 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_NEG));
+            IProjectile fireball0 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_ZERO), ProjectileBehavior.Friendly);
+            IProjectile fireball1 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_POS), ProjectileBehavior.Friendly);
+            IProjectile fireball2 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_NEG), ProjectileBehavior.Friendly);
 
 
             ProjectileStorage.Add(fireball0);

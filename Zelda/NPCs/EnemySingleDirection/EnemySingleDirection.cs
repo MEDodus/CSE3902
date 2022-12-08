@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Drawing;
 using Zelda.Achievements;
 using Zelda.HUD;
 using Zelda.Items;
@@ -8,6 +9,7 @@ using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
 using Zelda.Sprites;
+using Color = Microsoft.Xna.Framework.Color;
 using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
@@ -75,19 +77,27 @@ namespace Zelda.NPCs.Classes
 
         }
 
-        bool appeared = false;
+        bool visible = false;
         public void Draw(SpriteBatch spriteBatch)
         {
-            Color color = damageCooldown <= 0 ? Color.White : Color.Red;
-            sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset, color);
-            if (!appeared)
+            if (visible)
             {
-                appeared = true;
-                AppearanceCloud cloud = new AppearanceCloud(position);
-                cloud.Draw(spriteBatch);
-                ProjectileStorage.Add(cloud);
+                Color color = damageCooldown <= 0 ? Color.White : Color.Red;
+                sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset, color);
+                DrawAdditional(spriteBatch);
             }
-            DrawAdditional(spriteBatch);
+        }
+
+        public void Appear()
+        {
+            visible = true;
+            AppearanceCloud cloud = new AppearanceCloud(position);
+            ProjectileStorage.Add(cloud);
+        }
+
+        public void Disappear()
+        {
+            visible = false;
         }
 
         public abstract void Attack();
@@ -96,6 +106,7 @@ namespace Zelda.NPCs.Classes
         {
             ProjectileStorage.Add(new DeathExplosion(position));
             this.dead = true;
+            AchievementManager.GrantAchievement(Achievement.FirstKill);
         }
 
         public IItem DropItem()
@@ -113,7 +124,6 @@ namespace Zelda.NPCs.Classes
                 default:
                     return null;
             }
-            AchievementManager.GrantAchievement(Achievement.FirstKill);
         }
 
         public virtual void TakeDamage(int damage)

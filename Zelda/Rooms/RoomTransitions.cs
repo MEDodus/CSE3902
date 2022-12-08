@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using Zelda.Link;
+using Zelda.NPCs;
 using Zelda.Rooms.Parsers;
 
 namespace Zelda.Rooms
@@ -80,11 +81,14 @@ namespace Zelda.Rooms
                 if (animationTime < 0)
                 {
                     animationTime = 0;
+                    foreach (INPC npc in RoomBuilder.Instance.CurrentRoom.NPCs)
+                    {
+                        npc.Appear();
+                    }
                 }
                 float alpha = (float) ((ANIMATION_LENGTH - animationTime) / ANIMATION_LENGTH);
                 RoomBuilder.Instance.WindowPosition = (goal - start) * alpha + start;
             }
-
         }
 
         private static void Transition(Room.Direction direction)
@@ -105,26 +109,46 @@ namespace Zelda.Rooms
                 alpha = 1 - (goal.Y - windowPosition.Y) / (goal.Y - start.Y);
             }
             animationTime = (1 - alpha) * ANIMATION_LENGTH;
+            foreach (INPC npc in current.NPCs)
+            {
+                npc.Disappear();
+            }
         }
 
         public static void EnterWhiteBrickDungeon()
         {
+            foreach (INPC npc in RoomBuilder.Instance.CurrentRoom.NPCs)
+            {
+                npc.Disappear();
+            }
             RoomBuilder roomBuilder = RoomBuilder.Instance;
             Room whiteBrickDungeon = roomBuilder.GetRoom("Room17");
             roomBuilder.CurrentRoom = whiteBrickDungeon;
             roomBuilder.WindowPosition = whiteBrickDungeon.Position;
             game.Link.Position = Parser.GetSpawnPosition(3, -1, whiteBrickDungeon) + new Vector2(0, Settings.BLOCK_SIZE + Settings.BLOCK_SIZE / 2);
             game.LinkCompanion.Position = Parser.GetSpawnPosition(3, -1, whiteBrickDungeon) + new Vector2(0, Settings.BLOCK_SIZE / 2);
+            foreach (INPC npc in RoomBuilder.Instance.CurrentRoom.NPCs)
+            {
+                npc.Appear();
+            }
         }
 
         public static void LeaveWhiteBrickDungeon()
         {
+            foreach (INPC npc in RoomBuilder.Instance.CurrentRoom.NPCs)
+            {
+                npc.Disappear();
+            }
             RoomBuilder roomBuilder = RoomBuilder.Instance;
             Room spikeCrossRoom = roomBuilder.GetRoom("Room0");
             roomBuilder.CurrentRoom = spikeCrossRoom;
             roomBuilder.WindowPosition = spikeCrossRoom.Position;
             game.Link.Position = Parser.GetSpawnPosition(6, 3, spikeCrossRoom) + new Vector2 (-1 * Settings.BLOCK_SIZE, 0);
             game.LinkCompanion.Position = Parser.GetSpawnPosition(6, 3, spikeCrossRoom);
+            foreach (INPC npc in RoomBuilder.Instance.CurrentRoom.NPCs)
+            {
+                npc.Appear();
+            }
         }
     }
 }

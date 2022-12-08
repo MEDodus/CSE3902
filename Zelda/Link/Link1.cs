@@ -32,6 +32,7 @@ namespace Zelda.Link
         private int playerNumber;
 
         private readonly double ATTACK_TIMER_LENGTH = 0.35;
+        private readonly double BEAM_ATTACK_TIMER_LENGTH = 0.7;
 
         public Link1(Game1 game, int number)
         {
@@ -135,7 +136,7 @@ namespace Zelda.Link
         {
             if (primaryAttackTimer <= 0)
             {
-                primaryAttackTimer = ATTACK_TIMER_LENGTH;
+                primaryAttackTimer = health.CurrentHealth == health.MaxHealth ? BEAM_ATTACK_TIMER_LENGTH : ATTACK_TIMER_LENGTH;
                 // adjust spawn position
                 Vector2 spawnPos = getPositionInFrontOfLink(0);
                 if (facingDirection.Equals(new Vector2(1, 0)))

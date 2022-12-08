@@ -15,5 +15,7 @@ namespace Zelda.NPCs
         public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);
         public IItem DropItem();
+        public void Appear();
+        public void Disappear();
     }
 }

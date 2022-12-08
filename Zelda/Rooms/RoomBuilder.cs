@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using Zelda.Items;
 using Zelda.Items.Classes;
 using Zelda.Link;
+using Zelda.NPCs;
 using Zelda.Projectiles;
 using Zelda.Rooms.Parsers;
 
@@ -162,22 +163,31 @@ namespace Zelda.Rooms
             }
         }
 
-        public void NextRoom(ILink link, ILink linkCompanion)
+        private void SetRoom(int roomIndex, ILink link, ILink linkCompanion)
         {
-            i = (i + 1) % rooms.Length;
+            foreach (INPC npc in CurrentRoom.NPCs)
+            {
+                npc.Disappear();
+            }
+            i = roomIndex;
             windowPosition = CurrentRoom.Position;
+            foreach (INPC npc in CurrentRoom.NPCs)
+            {
+                npc.Appear();
+            }
             link.Position = CurrentRoom.Position + new Vector2(7.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
             linkCompanion.Position = CurrentRoom.Position + new Vector2(8.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
             ProjectileStorage.Clear();
         }
 
+        public void NextRoom(ILink link, ILink linkCompanion)
+        {
+            SetRoom((i + 1) % rooms.Length, link, linkCompanion);
+        }
+
         public void PreviousRoom(ILink link, ILink linkCompanion)
         {
-            i = i > 0 ? i - 1 : rooms.Length - 1;
-            windowPosition = CurrentRoom.Position;
-            link.Position = CurrentRoom.Position + new Vector2(7.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
-            linkCompanion.Position = CurrentRoom.Position + new Vector2(8.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
-            ProjectileStorage.Clear();
+            SetRoom(i > 0 ? i - 1 : rooms.Length - 1, link, linkCompanion);
         }
     }
 }

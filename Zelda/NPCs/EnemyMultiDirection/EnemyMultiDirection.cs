@@ -72,19 +72,27 @@ namespace Zelda.NPCs.Classes
 
         }
 
-        bool appeared = false;
+        bool visible = false;
         public void Draw(SpriteBatch spriteBatch)
         {
-            Color color = damageCooldown <= 0 ? Color.White : Color.Red;
-            sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset, color);
-            if (!appeared)
+            if (visible)
             {
-                appeared = true;
-                AppearanceCloud cloud = new AppearanceCloud(position);
-                cloud.Draw(spriteBatch);
-                ProjectileStorage.Add(cloud);
+                Color color = damageCooldown <= 0 ? Color.White : Color.Red;
+                sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset, color);
+                DrawAdditional(spriteBatch);
             }
-            DrawAdditional(spriteBatch);
+        }
+
+        public void Appear()
+        {
+            visible = true;
+            AppearanceCloud cloud = new AppearanceCloud(position);
+            ProjectileStorage.Add(cloud);
+        }
+
+        public void Disappear()
+        {
+            visible = false;
         }
 
         public virtual void Attack()

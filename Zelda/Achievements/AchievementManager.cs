@@ -9,7 +9,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Achievements
 {
-    public enum Achievement { DoorUnlocked, DragonKilled, DodongoKilled, FirstKill, BoomerangFound, MagicalRodFound, MapFound }
+    public enum Achievement { DoorUnlocked, DragonKilled, DodongoKilled, OldManKilled, FirstKill, BoomerangFound, MagicalRodFound, MapFound }
 
     public static class AchievementManager
     {
@@ -21,6 +21,7 @@ namespace Zelda.Achievements
             { Achievement.DoorUnlocked, "Breaking and entering" },
             { Achievement.DragonKilled, "Dragon killer" },
             { Achievement.DodongoKilled, "Dinosaur killer" },
+            { Achievement.OldManKilled, "Elder abuse" },
             { Achievement.FirstKill, "First blood" },
             { Achievement.BoomerangFound, "Australian" },
             { Achievement.MagicalRodFound, "You're a wizard Harry" },

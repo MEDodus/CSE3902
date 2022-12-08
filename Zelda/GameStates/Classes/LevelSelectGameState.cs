@@ -51,7 +51,7 @@ namespace Zelda.GameStates.Classes
             for (int i = 0; i < menuButtons.Count; i++)
             {
                 MenuButton button = menuButtons[i];
-                if (AchievementManager.IsUnlocked(i + 1))
+                if (AchievementManager.IsLevelUnlocked(i + 1))
                 {
                     button.Draw(spriteBatch);
                 }
@@ -72,7 +72,7 @@ namespace Zelda.GameStates.Classes
             for (int i = 0; i < menuButtons.Count; i++)
             {
                 MenuButton button = menuButtons[i];
-                if (button.Destination.Contains(position) && AchievementManager.IsUnlocked(i + 1))
+                if (button.Destination.Contains(position) && AchievementManager.IsLevelUnlocked(i + 1))
                 {
                     SoundManager.Instance.Stop();
                     SoundManager.Instance.PlayMenuClickSound();

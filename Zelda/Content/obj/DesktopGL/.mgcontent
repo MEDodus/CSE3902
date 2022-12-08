@@ -45,6 +45,7 @@
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Accomplish_DoorUnlocked.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Accomplish_FirstKill.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/Accomplish_SecretWeapon.png</File>
+    <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/achievement.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/arrow.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/back_arrow.png</File>
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/bat.png</File>
@@ -131,6 +132,7 @@
     <File>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/spritesheets/zol.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

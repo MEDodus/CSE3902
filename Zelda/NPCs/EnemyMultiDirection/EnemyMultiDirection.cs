@@ -115,26 +115,19 @@ namespace Zelda.NPCs.Classes
         public IItem DropItem()
         {
             int itemRow = EnemyCounter.Count;
+            EnemyCounter.Increment();
             int rand = new Random().Next(1, 5);
-            Group enemyGroup = this.group;
-
-            IItem item;
 
             switch (rand)
             {
                 case 1:
-
-                    item = NPCUtil.GetItem(enemyGroup, itemRow, position);
-                    break;
+                    return NPCUtil.GetItem(group, itemRow, position);
                 case 2:
                 case 3:
                 case 4:
                 default:
-                    item = null;
-                    break;
+                    return null;
             }
-            EnemyCounter.Increment();
-            return item;
         }
 
         public virtual void MoveRight()

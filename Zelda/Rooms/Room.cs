@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using Zelda.Achievements;
 using Zelda.Blocks;
 using Zelda.Blocks.Classes;
 using Zelda.Borders;
@@ -186,6 +187,7 @@ namespace Zelda.Rooms
                 }
                 if (unlockAdjacent)
                 {
+                    AchievementManager.GrantAchievement(Achievement.DoorUnlocked);
                     AdjacentRooms[direction].UnlockDoor(opposite, false);
                 }
                 else

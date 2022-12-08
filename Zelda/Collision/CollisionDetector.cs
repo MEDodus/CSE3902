@@ -34,11 +34,12 @@ namespace Zelda.Collision
 
         }
 
-        public void DetectCollisions(Game1 myGame, GameTime gameTime, ILink link)
+        public void DetectCollisions(Game1 myGame, GameTime gameTime, ILink link, ILink linkCompanion)
         {
             dynamicEnemies = RoomBuilder.Instance.CurrentRoom.NPCs;
             dynamicPlayers.Clear();
             dynamicPlayers.Add(link);
+            dynamicPlayers.Add(linkCompanion);
             CheckPlayerCollision(myGame, gameTime);
             CheckStaticEnemyCollision();  //Will wait to implement static enemy collisions; for now, assume always moving
             CheckDynamicEnemyCollision();

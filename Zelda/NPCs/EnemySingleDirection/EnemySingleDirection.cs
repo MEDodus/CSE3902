@@ -1,9 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Text.RegularExpressions;
 using Zelda.Items;
-using Zelda.Items.Classes;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;

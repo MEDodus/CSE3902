@@ -9,9 +9,9 @@ namespace Zelda.Link
         void MoveDown();
         void MoveLeft();
         void MoveRight();
-        void UseItem(int itemNum);
         void TakeDamage(Game1 game, Vector2 pushDirection);
-
+        void Attack();
+        void AttackSecondary();
         public void Update();
     }
 }

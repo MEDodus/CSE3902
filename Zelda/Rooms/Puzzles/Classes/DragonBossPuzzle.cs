@@ -7,7 +7,6 @@ namespace Zelda.Rooms.Puzzles.Classes
 {
     public class DragonBossPuzzle : IPuzzle
     {
-
         public DragonBossPuzzle(Room room) : base(room)
         {
             
@@ -15,7 +14,7 @@ namespace Zelda.Rooms.Puzzles.Classes
 
         protected override bool CanSolve()
         {
-            // If the dragon was defeated, there will be no NPCs left in the room.
+            // If the boss was defeated, there will be no NPCs left in the room.
             return Room.NPCs.Count == 0;
         }
 

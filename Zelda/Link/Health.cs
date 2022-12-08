@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Zelda.Items;
 using Zelda.Sound;
 using Zelda.Utilities;
+using Zelda.GameStates;
+using Zelda.GameStates.Classes;
 
 namespace Zelda.Link
 {
@@ -19,12 +21,12 @@ namespace Zelda.Link
             maxPlayerHealth = LinkUtilities.MAX_HEALTH_START;
         }
 
-        public void removeHealth(int health)
+        public void removeHealth(int health, Game1 game)
         {
             playerHealth -= health;
             if(playerHealth <= 0)
             {
-                // Trigger link death
+                game.GameState = new LosingGameState(game);
             }
         }
 

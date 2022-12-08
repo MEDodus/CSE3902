@@ -17,7 +17,6 @@ namespace Zelda.NPCs.Classes
         public bool Dead { get { return dead; } }
         public int Damage { get { return damage; } }
 
-
         protected ISprite sprite;
         protected Vector2 position;
         protected Vector2 moveDirection = new Vector2(0, 0);
@@ -50,7 +49,7 @@ namespace Zelda.NPCs.Classes
 
             // Update position based on move direction
             float magnitude = moveDirection.Length();
-            if (magnitude > 0)
+            if (magnitude > 0 && damageCooldown <= 0) // do not move when damaged
             {
                 double pixelsDelta = blocksPerSecondSpeed * Settings.BLOCK_SIZE * timeDelta;
                 float xDelta = (float)(moveDirection.X / magnitude * pixelsDelta);
@@ -88,11 +87,16 @@ namespace Zelda.NPCs.Classes
             DrawAdditional(spriteBatch);
         }
 
-        public abstract void Attack();
+        public virtual void Attack()
+        {
+
+        }
 
         public virtual void Die()
         {
+            dead = true;
             ProjectileStorage.Add(new DeathExplosion(position));
+            //NPCUtil.DropRandomItem(position);
         }
 
         public virtual void TakeDamage(int damage)

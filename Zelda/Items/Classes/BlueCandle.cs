@@ -1,20 +1,19 @@
 ﻿using Microsoft.Xna.Framework;
+using Zelda.Projectiles;
 using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
     public class BlueCandle : IItem
     {
-        // Working in inventory for CandleFlame projectile at the moment
-        public BlueCandle(Vector2 position) : base(ItemSpriteFactory.BlueCandleSprite(), position, INFINITE, new Zelda.ItemEffects.BlueCandleEffect(), 1)
+        public BlueCandle(Vector2 position) : base(ItemSpriteFactory.BlueCandleSprite(), position, INFINITE, new Zelda.ItemEffects.BlueCandleEffect())
         {
 
         }
 
-        /* Default constructor for item in inventory or not displayed in game */
-        public BlueCandle() : base(ItemSpriteFactory.BlueCandleSprite(), new Vector2(), INFINITE, new Zelda.ItemEffects.BlueCandleEffect(), 1)
+        public override IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
         {
-
+            return new Projectiles.Classes.CandleFlame(position, facingDirection);
         }
     }
 }

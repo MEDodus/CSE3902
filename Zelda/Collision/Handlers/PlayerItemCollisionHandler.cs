@@ -43,11 +43,10 @@ namespace Zelda.Collision.Handlers
                 else if (item is Triforce)
                 {
                     game.GameState = new WinningGameState(game);
-                    SoundManager.Instance.PlayGetItemSound();
                 }
-                else if (item is Key)
+                else
                 {
-                    SoundManager.Instance.PlayGetKeySound();
+                    SoundManager.Instance.PlayGetItemSound();
                 }
                 RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
             } else if (item is Rupy || item is FiveRupies)

@@ -26,6 +26,8 @@ namespace Zelda.Utilities
         public static readonly int PAUSE_HUD_WIDTH = 255;
         public static readonly int PAUSE_HUD_HEIGHT = 175;
 
+        public static readonly Vector2 LEVEL_TEXT_OFFSET = new Vector2(20, 40);
+
         // Pause menu map
         public static readonly int PAUSE_HUD_MAP_X = 300;
         public static readonly int PAUSE_HUD_MAP_Y = -230;
@@ -97,7 +99,7 @@ namespace Zelda.Utilities
 
         public static readonly int RUPY_COUNT_Y = 45;//HUD_Y + 45;
         public static readonly int KEY_COUNT_Y = 85;//HUD_Y + 85;
-        public static readonly int BOMB_COUNT_Y = 115;//HUD_Y + 120;
+        public static readonly int SECONDARY_COUNT_Y = 115;//HUD_Y + 120;
 
         public static readonly int LEVEL_X = 20;// HUD_X + 20;
         public static readonly int LEVEL_Y = 30;// HUD_Y - 30;
@@ -111,6 +113,8 @@ namespace Zelda.Utilities
         public static readonly int PAUSE_ITEM_X = HUD_X + 125;//HUD_X + 420;
         public static readonly int MAP_ITEM_Y = HUD_Y + 300; // HUD_Y + 70;
         public static readonly int COMPASS_ITEM_Y = HUD_Y + 415;// HUD_X + 353;
+        public static readonly int PAUSE_SECONDARY_ITEM_X = HUD_X + 5;
+        public static readonly int PAUSE_SECONDARY_ITEM_Y = HUD_Y - 370;
 
         //INVENTORY SLOTS
         public static readonly int SLOT_0_X = HUD_X + 365;
@@ -130,7 +134,11 @@ namespace Zelda.Utilities
         public static readonly int SLOT_7_X = HUD_X + 555;
         public static readonly int SLOT_7_Y = HUD_Y + 175;
 
-        //FONT
-
+        // SELECTION BOX
+        public static readonly int SELECTION_BOX_X = HUD_X + 350;
+        public static readonly int SELECTION_BOX_Y = HUD_Y + 125;
+        public static readonly int SELECTION_BOX_OFFSET_X = 15;
+        public static readonly int SELECTION_BOX_OFFSET_Y = 0;
+        public static readonly int SELECTION_BOX_SIZE = 50;
     }
 }

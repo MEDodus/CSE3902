@@ -10,6 +10,12 @@ namespace Zelda.Sprites.Factories
             return new Sprite(GetTexture("old_man"), 1);
         }
 
+        //Friendly
+        public static ISprite OldManGhostSprite()
+        {
+            return new AnimatedSprite(GetTexture("old_man_ghost"), 2, 2, 4, 0.6);
+        }
+
         // Enemies (single state)
         public static ISprite BatSprite()
         {

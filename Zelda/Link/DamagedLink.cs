@@ -1,9 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 using Zelda.Inventory;
 using Zelda.Items;
-using Zelda.Projectiles;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
 
@@ -17,6 +15,7 @@ namespace Zelda.Link
         public Vector2 Direction { get => decoratedLink.Direction; }
         public Health Health { get => decoratedLink.Health; }
         public IInventory Inventory { get => decoratedLink.Inventory; }
+        public int PlayerNumber { get => decoratedLink.PlayerNumber; }
 
         Game1 game;
         ILink decoratedLink;
@@ -29,6 +28,7 @@ namespace Zelda.Link
             this.game = game;
             this.pushDirection = pushDirection;
         }
+
         public void Update(GameTime gameTime)
         {
             if (timer % 8 == 0)
@@ -58,58 +58,70 @@ namespace Zelda.Link
                 decoratedLink.Position += pushDirection;
             }
         }
-
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            decoratedLink.Draw(spriteBatch);
+        }
         public void Reset()
         {
             decoratedLink.Reset();
             RemoveDecorator();
         }
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            decoratedLink.Draw(spriteBatch);
-        }
 
         public void MoveUp()
         {
-            // Can't move when damaged
+            decoratedLink.MoveUp();
+            
         }
         public void MoveDown()
         {
-            // Can't move when damaged
+            decoratedLink.MoveDown();
         }
         public void MoveLeft()
         {
-            // Can't move when damaged
+            decoratedLink.MoveLeft();
         }
         public void MoveRight()
         {
-            // Can't move when damaged
+            decoratedLink.MoveRight();
         }
-        public void TakeDamage(Game1 game, int damage, Vector2 direction)
+        public void TakeDamage(int damage, Vector2 direction)
         {
             // Can't take damage while already taking damage
         }
-
-        public void UseItem(int itemNum)
-        {
-            // Can't use items when damaged
-        }
-        
-        public void CreateItem(int itemNum)
-        {
-            // Can't create items when damaged
-        }
-
         public bool AddToInventory(IItem item)
         {
             // Can't equip items when damaged
             return false;
         }
-
+        public void Attack()
+        {
+            // Can't attack when damaged
+        }
+        public void AttackSecondary()
+        {
+            // Can't attack when damaged
+        }
+        public bool TryUsePrimary()
+        {
+            // Can't use items when damaged
+            return false;
+        }
+        public bool TryUseSecondary()
+        {
+            // Can't use items when damaged
+            return false;
+        }
         public void RemoveDecorator()
         {
             decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link2");
-            game.Link = decoratedLink;
+            if(decoratedLink.PlayerNumber == 1)
+            {
+                game.Link = decoratedLink;
+            } else
+            {
+                game.LinkCompanion = decoratedLink;
+            }
         }
     }
 }

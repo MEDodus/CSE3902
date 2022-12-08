@@ -7,7 +7,7 @@ namespace Zelda.NPCs.Classes
 {
     public class Zol : EnemySingleDirection
     {
-        public Zol(Vector2 position) : base(NPCSpriteFactory.ZolSprite(), position, 1, 1, Group.C)
+        public Zol(Vector2 position) : base(NPCSpriteFactory.ZolSprite(), position, 2, 1, Group.X)
         {
             damage = 2;
         }

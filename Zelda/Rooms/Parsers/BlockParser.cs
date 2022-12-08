@@ -11,15 +11,17 @@ namespace Zelda.Rooms.Parsers
     public class BlockParser : Parser
     {
         private HashSet<IBlock> blocks;
+        private IBlock[,] blocksArray;
         private HashSet<IBlock> collidableBlocks;
         private HashSet<IBlock> topLayerBlocks;
 
-        public BlockParser(Room room, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> topLayerBlocks)
-            : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\blocks.csv")
+        public BlockParser(Room room, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> topLayerBlocks, IBlock[,] blocksArray)
+            : base(room, room.Name + "\\blocks.csv")
         {
             this.blocks = blocks;
             this.collidableBlocks = collidableBlocks;
             this.topLayerBlocks = topLayerBlocks;
+            this.blocksArray = blocksArray;
         }
 
         public override void Parse()
@@ -91,8 +93,11 @@ namespace Zelda.Rooms.Parsers
                 default:
                     throw new Exception("Block type not found: " + identifier);
             }
-
             blocks.Add(block);
+            if (i >= 0 && j >= 0 && i < Settings.ROOM_WIDTH && j < Settings.ROOM_HEIGHT)
+            {
+                blocksArray[i, j] = block;
+            }
             if (block.CanCollide)
             {
                 collidableBlocks.Add(block);

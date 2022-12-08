@@ -6,7 +6,6 @@ namespace Zelda.Rooms.Puzzles.Classes
 {
     public class PushableBlockPuzzle : IPuzzle
     {
-
         public PushableBlockPuzzle(Room room) : base(room)
         {
             

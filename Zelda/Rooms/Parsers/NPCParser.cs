@@ -10,7 +10,7 @@ namespace Zelda.Rooms.Parsers
     {
         private HashSet<INPC> npcs;
 
-        public NPCParser(Room room, HashSet<INPC> npcs) : base(room, "..\\..\\..\\Rooms\\Files\\" + room.Name + "\\npcs.csv")
+        public NPCParser(Room room, HashSet<INPC> npcs) : base(room, room.Name + "\\npcs.csv")
         {
             this.npcs = npcs;
         }
@@ -37,7 +37,24 @@ namespace Zelda.Rooms.Parsers
                     npc = new Skeleton(spawnPos);
                     break;
                 case "spike_cross":
-                    npc = new SpikeCross(spawnPos);
+                    Vector2 moveDirection;
+                    if (i == 0 && j == 0)
+                    {
+                        moveDirection = new Vector2(1, 0);
+                    }
+                    else if (i == 0 && j == Settings.ROOM_HEIGHT - 1)
+                    {
+                        moveDirection = new Vector2(0, -1);
+                    }
+                    else if (i == Settings.ROOM_WIDTH - 1 && j == 0)
+                    {
+                        moveDirection = new Vector2(0, 1);
+                    }
+                    else
+                    {
+                        moveDirection = new Vector2(-1, 0);
+                    }
+                    npc = new SpikeCross(spawnPos, moveDirection);
                     break;
                 case "wallmaster":
                     npc = new Wallmaster(spawnPos);

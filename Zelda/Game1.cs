@@ -12,6 +12,12 @@ using Zelda.Sound;
 using Zelda.GameStates;
 using Zelda.GameStates.Classes;
 using Zelda.Utilities;
+using Zelda.Projectiles;
+using System.Drawing;
+using System.Numerics;
+using Vector2 = Microsoft.Xna.Framework.Vector2;
+using Color = Microsoft.Xna.Framework.Color;
+using Zelda.Achievements;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -31,12 +37,13 @@ namespace Zelda
     {
         public IGameState GameState { get { return gameState; } set { gameState = value; } }
         public ILink Link { get { return link; } set { link = value; } }
-        public IHUD HUD { get { return hud; } }
+        public ILink LinkCompanion { get { return linkCompanion; } set { linkCompanion = value; } }
+        public IHUD HUD { get { return hud; } set { hud = value; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        private ILink link;
+        private ILink link, linkCompanion;
         private IHUD hud;
         private IGameState gameState;
         private List<IController> controllers;
@@ -56,7 +63,7 @@ namespace Zelda
             // This must be done before creating any content-dependent objects
             SpriteFactory.Initialize(Content);
             SoundManager.Instance.Initialize(Content);
-            RoomBuilder.Instance.Initialize();
+            RoomBuilder.Instance.LoadLevel("Level1");
             RoomTransitions.Initialize(this);
 
             // Set up controllers
@@ -67,17 +74,40 @@ namespace Zelda
             controllers.Add(mouse);
 
             // Other initialization
-            link = new Link1();
-            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
             collisionDetector = new CollisionDetector();
-            gameState = new RunningGameState(this);
+            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
+            gameState = new TitleScreenGameState(this);
+            SoundManager.Instance.Resume();
+            RoomTransitions.Initialize(this);
+            ProjectileStorage.Clear();
+            link = new Link1(this, 1);
+            linkCompanion = new Link1(this, 2);
+            AchievementManager.Load(this);
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+        }
+
+        public void Reset()
+        {
+            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
+            gameState = new RunningGameState(this);
+            SoundManager.Instance.Stop();
+            RoomBuilder.Instance.Reset();
+            RoomTransitions.Initialize(this);
+            ProjectileStorage.Clear();
+            link = new Link1(this, 1);
+            linkCompanion = new Link1(this, 2);
+            base.Initialize();
+        }
+
+        public void GraphicClear()
+        {
+            GraphicsDevice.Clear(Color.Black);
         }
 
         protected override void Update(GameTime gameTime)
@@ -89,27 +119,11 @@ namespace Zelda
             }
             gameState.Update(gameTime);
             base.Update(gameTime);
-            if (link.Health.CurrentHealth <= 0)
-            {
-                Reset();
-            }
-        }
-
-        public void Reset()
-        {
-            // Other initialization
-            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
-            gameState = new RunningGameState(this);
-            RoomBuilder.Instance.Reset();
-            RoomTransitions.Initialize(this);
-            link = new Link1();
-
-            base.Initialize();
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicClear();
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             gameState.Draw(spriteBatch);
             spriteBatch.End();

@@ -30,6 +30,11 @@ namespace Zelda.Sprites.Factories
             return BlockSpriteFactory.FireSprite();
         }
 
+        public static ISprite MusicNoteSprite()
+        {
+            return new AnimatedSprite(GetTexture("music_note"), 1, 2, 8, 0.6);
+        }
+
         // Effects
         public static ISprite ExplosionSprite()
         {
@@ -141,6 +146,30 @@ namespace Zelda.Sprites.Factories
         public static ISprite LeftSwordSprite()
         {
             return new Sprite(GetTexture("directional_sword"), 2 * SWORD_WIDTH, SWORD_WIDTH, SWORD_HEIGHT, SWORD_WIDTH, SWORD_SIZE_IN_BLOCKS);
+        }
+
+        // Magical rod
+        private static readonly int MAGICAL_ROD_WIDTH = 64;
+        private static readonly int MAGICAL_ROD_HEIGHT = 256;
+        private static readonly int MAGICAL_ROD_SIZE_IN_BLOCKS = 1;
+        public static ISprite UpMagicalRodSprite()
+        {
+            return new Sprite(GetTexture("magical_rod_directional"), 0, 0, MAGICAL_ROD_WIDTH, MAGICAL_ROD_HEIGHT, MAGICAL_ROD_SIZE_IN_BLOCKS);
+        }
+
+        public static ISprite DownMagicalRodSprite()
+        {
+            return new Sprite(GetTexture("magical_rod_directional"), MAGICAL_ROD_WIDTH, 0, MAGICAL_ROD_WIDTH, MAGICAL_ROD_HEIGHT, MAGICAL_ROD_SIZE_IN_BLOCKS);
+        }
+
+        public static ISprite RightMagicalRodSprite()
+        {
+            return new Sprite(GetTexture("magical_rod_directional"), 2 * MAGICAL_ROD_WIDTH, 0, MAGICAL_ROD_HEIGHT, MAGICAL_ROD_WIDTH, MAGICAL_ROD_SIZE_IN_BLOCKS);
+        }
+
+        public static ISprite LeftMagicalRodSprite()
+        {
+            return new Sprite(GetTexture("magical_rod_directional"), 2 * MAGICAL_ROD_WIDTH, MAGICAL_ROD_WIDTH, MAGICAL_ROD_HEIGHT, MAGICAL_ROD_WIDTH, MAGICAL_ROD_SIZE_IN_BLOCKS);
         }
     }
 }

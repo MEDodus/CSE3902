@@ -6,9 +6,10 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Zelda.Sound
 {
-    class SoundManager
+    public class SoundManager
     {
         private Song mainTheme;
+        private Song dungeonTheme;
         private SoundEffect arrowBoomerang;
         private SoundEffect bombBlow;
         private SoundEffect bombDrop;
@@ -29,7 +30,7 @@ namespace Zelda.Sound
         private SoundEffect linkHurt;
         private SoundEffect lowHealth;
         private SoundEffect magicalRod;
-        private SoundEffect rocorder;
+        private SoundEffect recorder;
         private SoundEffect refillLoop;
         private SoundEffect secret;
         private SoundEffect shield;
@@ -40,9 +41,11 @@ namespace Zelda.Sound
         private SoundEffect swordSlash;
         private SoundEffect text;
         private SoundEffect textSlow;
+        private SoundEffect achievement;
 
         private bool muted = false;
-
+        private bool playingTheme = false;
+        private bool playingDungeonTheme = false;
         private static SoundManager instance = new SoundManager();
 
         public static SoundManager Instance
@@ -53,6 +56,8 @@ namespace Zelda.Sound
             }
         }
 
+        public bool Muted { get { return muted; } }
+
         private SoundManager()
         {
 
@@ -61,6 +66,7 @@ namespace Zelda.Sound
         public void Initialize(ContentManager content)
         {
             mainTheme = content.Load<Song>("SoundEffect\\LOZ_Main_Theme");
+            dungeonTheme = content.Load<Song>("SoundEffect\\dungeon_theme");
             arrowBoomerang = content.Load<SoundEffect>("SoundEffect\\LOZ_Arrow_boomerang");
             bombBlow = content.Load<SoundEffect>("SoundEffect\\LOZ_Bomb_Blow");
             bombDrop = content.Load<SoundEffect>("SoundEffect\\LOZ_Bomb_Drop");
@@ -81,7 +87,7 @@ namespace Zelda.Sound
             linkHurt = content.Load<SoundEffect>("SoundEffect\\LOZ_Link_Hurt");
             lowHealth = content.Load<SoundEffect>("SoundEffect\\LOZ_LowHealth");
             magicalRod = content.Load<SoundEffect>("SoundEffect\\LOZ_MagicalRod");
-            rocorder = content.Load<SoundEffect>("SoundEffect\\LOZ_Recorder");
+            recorder = content.Load<SoundEffect>("SoundEffect\\LOZ_Recorder");
             refillLoop = content.Load<SoundEffect>("SoundEffect\\LOZ_Refill_Loop");
             secret = content.Load<SoundEffect>("SoundEffect\\LOZ_Secret");
             shield = content.Load<SoundEffect>("SoundEffect\\LOZ_Shield");
@@ -92,8 +98,7 @@ namespace Zelda.Sound
             swordSlash = content.Load<SoundEffect>("SoundEffect\\LOZ_Sword_Slash");
             text = content.Load<SoundEffect>("SoundEffect\\LOZ_Text");
             textSlow = content.Load<SoundEffect>("SoundEffect\\LOZ_Text_Slow");
-            PlayMainThemeSound();
-
+            achievement = content.Load<SoundEffect>("SoundEffect\\achievement");
         }
 
         public void ToggleMute()
@@ -102,7 +107,7 @@ namespace Zelda.Sound
             if (muted)
             {
                 MediaPlayer.Pause();
-            } 
+            }
             else
             {
                 MediaPlayer.Resume();
@@ -112,13 +117,27 @@ namespace Zelda.Sound
         public void Pause()
         {
             MediaPlayer.Pause();
+            muted = true;
         }
 
         public void Resume()
         {
+            MediaPlayer.Resume();
+            muted = false;
+        }
+
+        public void Stop()
+        {
+            MediaPlayer.Stop();
+            playingTheme = false;
+            playingDungeonTheme = false;
+        }
+
+        private void PlaySound(SoundEffect soundEffect)
+        {
             if (!muted)
             {
-                MediaPlayer.Resume();
+                soundEffect.Play();
             }
         }
 
@@ -133,138 +152,122 @@ namespace Zelda.Sound
 
         public void PlayMainThemeSound()
         {
-            if (!muted)
+            if (!muted && !playingTheme)
             {
+                playingTheme = true;
                 MediaPlayer.Stop();
                 MediaPlayer.Play(mainTheme);
                 MediaPlayer.IsRepeating = true;
             }
         }
 
+        public void PlayDungeonThemeSound()
+        {
+            if (!muted && !playingDungeonTheme)
+            {
+                playingDungeonTheme = true;
+                MediaPlayer.Stop();
+                MediaPlayer.Play(dungeonTheme);
+                MediaPlayer.IsRepeating = true;
+            }
+        }
+
         public void PlayBombDropSound()
         {
-            if (!muted)
-            {
-                bombDrop.Play();
-            }
+            PlaySound(bombDrop);
         }
         public void PlayBombBlowSound()
         {
-            if (!muted)
-            {
-                bombBlow.Play();
-            }
+            PlaySound(bombBlow);
         }
 
         public void PlayArrowBoomerangSound()
         {
-            if (!muted)
-            {
-                arrowBoomerang.Play();
-            }
+            PlaySound(arrowBoomerang);
         }
 
         public void PlaySwardCombinedSound()
         {
-            if (!muted)
-            {
-                swordCombined.Play();
-            }
+            PlaySound(swordCombined);
         }
         public void PlaySwarShootSound()
         {
-            if (!muted)
-            {
-                swordShoot.Play();
-            }
+            PlaySound(swordShoot);
         }
 
         public void PlayEnemyDieSound()
         {
-            if (!muted)
-            {
-                enemyDie.Play();
-            }
+            PlaySound(enemyDie);
         }
 
         public void PlayBossHitSound()
         {
-            if (!muted)
-            {
-                bossHit.Play();
-            }
+            PlaySound(bossHit);
         }
 
         public void PlayLinkHurtSound()
         {
-            if (!muted)
-            {
-                linkHurt.Play();
-            }
+            PlaySound(linkHurt);
         }
 
         public void PlayBossScream1Sound()
         {
-            if (!muted)
-            {
-                bossScream1.Play();
-            }
+            PlaySound(bossScream1);
         }
 
         public void PlayArrowSound()
         {
-            if (!muted)
-            {
-                magicalRod.Play();
-            }
+            PlaySound(arrowBoomerang);
         }
 
         public void PlayFireSound()
         {
-            if (!muted)
-            {
-                candle.Play();
-            }
+            PlaySound(candle);
         }
 
         public void PlayDoorUnlockSound()
         {
-            if (!muted)
-            {
-                doorUnlock.Play();
-            }
+            PlaySound(doorUnlock);
         }
 
         public void PlayGetHealthSound()
         {
-            if (!muted)
-            {
-                getHeart.Play();
-            }
+            PlaySound(getHeart);
         }
 
         public void PlayGetItemSound()
         {
-            if (!muted)
-            {
-                getItem.Play();
-            }
+            PlaySound(getItem);
         }
 
-        public void PlayGetKeySound()
+        public void PlayItemAppearSound()
         {
-            if (!muted)
-            {
-                keyAppear.Play();
-            }
+            PlaySound(keyAppear);
         }
 
         public void PlayStairSound()
         {
-            if (!muted)
-            {
-                stairs.Play();
-            }
+            PlaySound(stairs);
+        }
+
+        public void PlaySecretSound()
+        {
+            PlaySound(secret);
+        }
+
+        public void PlayMenuClickSound()
+        {
+            PlaySound(getItem);
+        }
+
+        public void PlayAchievementSound()
+        {
+            PlaySound(achievement);
+        }
+
+        public void PlayRecorderSound()
+        {
+            PlaySound(recorder);
         }
     }
 }

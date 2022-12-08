@@ -20,6 +20,7 @@ namespace Zelda.Rooms
 
         private string filename;
         private HashSet<IBlock> blocks;
+        private IBlock[,] blocksArray = new IBlock[Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT];
         private HashSet<IBlock> collidableBlocks;
         private HashSet<IBlock> topLayerBlocks;
         private HashSet<INPC> npcs;
@@ -33,6 +34,7 @@ namespace Zelda.Rooms
 
         public string Name { get { return filename; } }
         public HashSet<IBlock> Blocks { get { return blocks; } }
+        public IBlock[,] BlocksArray { get { return blocksArray; } }
         public HashSet<IBlock> CollidableBlocks { get { return collidableBlocks; } }
         public HashSet<INPC> NPCs { get { return npcs; } }
         public HashSet<IItem> Items { get { return items; } }
@@ -59,7 +61,7 @@ namespace Zelda.Rooms
 
         public void Parse()
         {
-            BlockParser blockParser = new BlockParser(this, blocks, collidableBlocks, topLayerBlocks);
+            BlockParser blockParser = new BlockParser(this, blocks, collidableBlocks, topLayerBlocks, blocksArray);
             BorderParser borderParser = new BorderParser(this, borders, doors, collidableBlocks);
             NPCParser npcParser = new NPCParser(this, npcs);
             ItemParser itemParser = new ItemParser(this, items);

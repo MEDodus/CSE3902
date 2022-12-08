@@ -32,13 +32,30 @@ namespace Zelda.Link
         {
             // Can't move while using item
         }
-        public void UseItem(int itemNum)
-        {
-            // Can't use item while using item
-        }
         public void TakeDamage(Game1 game, Vector2 pushDirection)
         {
-            game.Link = new DamagedLink(link, game, pushDirection);
+            if (link.PlayerNumber == 1)
+            {
+                game.Link = new DamagedLink(link, game, pushDirection);
+            }
+            else
+            {
+                game.LinkCompanion = new DamagedLink(link, game, pushDirection);
+            }
+        }
+        public void Attack()
+        {
+            if (link.TryUsePrimary())
+            {
+                link.State = new LinkUsingItemDownState(link);
+            }
+        }
+        public void AttackSecondary()
+        {
+            if (link.TryUseSecondary())
+            {
+                link.State = new LinkUsingItemDownState(link);
+            }
         }
         public void Update()
         {

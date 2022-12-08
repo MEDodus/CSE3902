@@ -5,13 +5,13 @@ namespace Zelda.Items.Classes
 {
     public class Clock : IItem
     {
-        public Clock(Vector2 position) : base(ItemSpriteFactory.ClockSprite(), position, ONE, null, 1)
+        public Clock(Vector2 position) : base(ItemSpriteFactory.ClockSprite(), position, ONE, null)
         {
 
         }
 
         /* Default constructor for item in inventory or not displayed in game */
-        public Clock() : base(ItemSpriteFactory.ClockSprite(), new Vector2(), ONE, null, 1)
+        public Clock() : base(ItemSpriteFactory.ClockSprite(), new Vector2(), ONE, null)
         {
 
         }

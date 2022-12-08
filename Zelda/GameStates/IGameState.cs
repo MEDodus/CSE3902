@@ -7,5 +7,12 @@ namespace Zelda.GameStates
     {
         public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);
+        public void LeftClick();
+        public void RightClick();
+        public void Up();
+        public void Down();
+        public void Left();
+        public void Right();
+
     }
 }

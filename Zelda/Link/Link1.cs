@@ -1,17 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System.Collections.Generic;
-using Zelda.Controllers;
 using Zelda.Projectiles;
-using Zelda.Projectiles.Classes;
 using Zelda.Sprites;
 using Zelda.Items;
 using Zelda.Rooms;
 using Zelda.Inventory;
-using System;
-using Zelda.Items.Classes;
 using Zelda.Sound;
+using Zelda.Items.Classes;
 
 namespace Zelda.Link
 {
@@ -23,43 +18,61 @@ namespace Zelda.Link
         public Vector2 Direction { get { return facingDirection;  } }
         public IInventory Inventory { get { return inventory; } }
         public Health Health { get { return health; } }
+        public int PlayerNumber { get { return playerNumber; } }
 
+        private Game1 game;
         private ILinkState state;
         private ISprite sprite;
         private Vector2 position;
         private Vector2 facingDirection;
-        private double swordAttackTimer = 0;
-        private HashSet<Keys> movementKeys = new HashSet<Keys>();
+        private double primaryAttackTimer = 0;
+        private double secondaryAttackTimer = 0;
         private IInventory inventory;
         private Health health;
-        public Link1()
+        private int playerNumber;
+
+        private readonly double ATTACK_TIMER_LENGTH = 0.35;
+
+        public Link1(Game1 game, int number)
         {
+            playerNumber = number;
+            this.game = game;
             Reset();
-            movementKeys.Add(Keys.W);
-            movementKeys.Add(Keys.A);
-            movementKeys.Add(Keys.S);
-            movementKeys.Add(Keys.D);
-            movementKeys.Add(Keys.Up);
-            movementKeys.Add(Keys.Left);
-            movementKeys.Add(Keys.Down);
-            movementKeys.Add(Keys.Right);
-            inventory = new LinkInventory();
-            InventoryBuidler.BuildInventory(inventory);
-            health = new Health();
+            if (playerNumber == 1)
+            {
+                inventory = new LinkInventory();
+                InventoryBuilder.BuildInventory(inventory);
+                health = new Health();
+            } else
+            {
+                inventory = game.Link.Inventory;
+                health = game.Link.Health;
+            }
+
         }
 
         public void Reset()
         {
-            position = RoomBuilder.Instance.WindowPosition + new Vector2(Settings.BLOCK_SIZE * 7.5f, Settings.BLOCK_SIZE * 7);
+            if(playerNumber == 1)
+            {
+                position = RoomBuilder.Instance.WindowPosition + new Vector2(Settings.BLOCK_SIZE * 7.5f, Settings.BLOCK_SIZE * 7);
+            } else
+            {
+                position = RoomBuilder.Instance.WindowPosition + new Vector2(Settings.BLOCK_SIZE * 8.5f, Settings.BLOCK_SIZE * 7);
+            }
             state = new LinkFacingUpState(this);
             facingDirection = new Vector2(0, -1);
         }
 
         public void Update(GameTime gameTime)
         {
-            if (swordAttackTimer > 0)
+            if (primaryAttackTimer > 0)
             {
-                swordAttackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
+                primaryAttackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
+            }
+            if (secondaryAttackTimer > 0)
+            {
+                secondaryAttackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
             }
             state.Update();
             sprite.Update(gameTime);
@@ -70,132 +83,97 @@ namespace Zelda.Link
             sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset);
         }
 
-        private bool TryMove(Vector2 newDirection)
-        {
-            // Don't set direction if multiple keys are being pressed unless the direction is the same as the current direction
-            // also don't move if currently attacking with the sword
-            bool success = (!KeyboardController.AreMultipleKeysInSetPressed(movementKeys) || newDirection.Equals(facingDirection))
-                && swordAttackTimer <= 0;
-            if (success)
-            {
-                facingDirection = newDirection;
-            }
-            return success;
-        }
-
         public void MoveUp()
         {
-            if (TryMove(new Vector2(0, -1)))
-            {
-                state.MoveUp();
-            }
+            state.MoveUp();
+            facingDirection = new Vector2(0, -1);
         }
         public void MoveDown()
         {
-            if (TryMove(new Vector2(0, 1)))
-            {
-                state.MoveDown();
-            }
+            state.MoveDown();
+            facingDirection = new Vector2(0, 1);
         }
         public void MoveLeft()
         {
-            if (TryMove(new Vector2(-1, 0)))
-            {
-                state.MoveLeft();
-            }
+            state.MoveLeft();
+            facingDirection = new Vector2(-1, 0);
         }
         public void MoveRight()
         {
-            if (TryMove(new Vector2(1, 0)))
-            {
-                state.MoveRight();
-            }
+            state.MoveRight();
+            facingDirection = new Vector2(1, 0);
         }
-        public void TakeDamage(Game1 game, int damage, Vector2 direction)
+        public void TakeDamage(int damage, Vector2 direction)
         {
-            health.removeHealth(damage);
+            health.removeHealth(damage, game);
             state.TakeDamage(game, direction);
             SoundManager.Instance.PlayLinkHurtSound();
         }
-
-        public void UseItem(int itemNum)
+        public bool AddToInventory(IItem item)
         {
-            state.UseItem(itemNum);
+            if(item is Bomb)
+            {
+                return inventory.AddItem(item, 4);
+            }
+            return inventory.AddItem(item, 1);
+        }
+        public void Attack()
+        {
+            state.Attack();
+        }
+        public void AttackSecondary()
+        {
+            state.AttackSecondary();
         }
 
+        // Item usage (called in ILinkState)
         private Vector2 getPositionInFrontOfLink(double blocksInFrontOf)
         {
             return position + new Vector2(10, 12) + (facingDirection * Settings.BLOCK_SIZE * (float)blocksInFrontOf);
         }
-
-        public void CreateItem(int itemNum)
+        public bool TryUsePrimary()
         {
-            IProjectile item = null;
-            IItem type = null;
-            Vector2 defaultItemSpawnPos = getPositionInFrontOfLink(0);
-            switch (itemNum)
+            if (primaryAttackTimer <= 0)
             {
-                case 0:
-                    // base attack
-                    if (swordAttackTimer <= 0)
-                    {
-                        swordAttackTimer = 0.35;
-                        // adjust spawn position
-                        Vector2 spawnPos = defaultItemSpawnPos;
-                        if (facingDirection.Equals(new Vector2(1, 0)))
-                        {
-                            spawnPos += new Vector2(-10, 0);
-                        }
-                        else if (facingDirection.Equals(new Vector2(0, 1)))
-                        {
-                            spawnPos += new Vector2(0, -15);
-                        }
-                        else if (facingDirection.Equals(new Vector2(0, -1)))
-                        {
-                            spawnPos += new Vector2(0, -10);
-                        }
-                        item = new Zelda.Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3);
-                        type = new Items.Classes.Sword();
-                    }
-                    break;
-                case 1:
-                    item = new SwordBeam(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.Sword();
-                    break;
-                case 2:
-                    item = new Projectiles.Classes.Arrow(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.Bow(); // When using an arrow we need a bow
-                    break;
-                case 3:
-                    item = new Projectiles.Classes.SilverArrow(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.Bow(); // When using an arrow we need a bow
-                    break;
-                case 4:
-                    item = new Projectiles.Classes.Boomerang(defaultItemSpawnPos, facingDirection, ProjectileBehavior.Friendly);
-                    type = new Zelda.Items.Classes.Boomerang();
-                    break;
-                case 5:
-                    item = new Projectiles.Classes.MagicalBoomerang(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.MagicalBoomerang();
-                    break;
-                case 6:
-                    item = new Projectiles.Classes.Bomb(getPositionInFrontOfLink(1.5));
-                    type = new Zelda.Items.Classes.Bomb();
-                    break;
-                case 7:
-                    item = new CandleFlame(defaultItemSpawnPos, facingDirection);
-                    type = new Zelda.Items.Classes.BlueCandle();
-                    break;
+                primaryAttackTimer = ATTACK_TIMER_LENGTH;
+                // adjust spawn position
+                Vector2 spawnPos = getPositionInFrontOfLink(0);
+                if (facingDirection.Equals(new Vector2(1, 0)))
+                {
+                    spawnPos += new Vector2(-10, 0);
+                }
+                else if (facingDirection.Equals(new Vector2(0, 1)))
+                {
+                    spawnPos += new Vector2(0, -15);
+                }
+                else if (facingDirection.Equals(new Vector2(0, -1)))
+                {
+                    spawnPos += new Vector2(0, -10);
+                }
+                IItem sword = new Items.Classes.Sword(new Vector2());
+                if (inventory.Contains(sword) && inventory.GetItem(sword).UseItem(inventory, health, spawnPos, facingDirection))
+                {
+                    ProjectileStorage.Add(new Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3));
+                    return true;
+                }
             }
-            if (item != null && inventory.Contains(type) && inventory.GetItem(type).UseItem(inventory, health, defaultItemSpawnPos, facingDirection))
-            {
-                ProjectileStorage.Add(item);
-            }
+            return false;
         }
-
-        public bool AddToInventory(IItem item)
+        public bool TryUseSecondary()
         {
-            return inventory.AddItem(item);
+            IItem secondary = inventory.Secondary;
+            Vector2 spawnPos = getPositionInFrontOfLink(0);
+            if (secondary != null && secondaryAttackTimer <= 0 && secondary.UseItem(inventory, health, spawnPos, facingDirection))
+            {
+                secondaryAttackTimer = ATTACK_TIMER_LENGTH;
+                IProjectile projectile = secondary.CreateProjectile(position, facingDirection);
+                if (projectile != null)
+                {
+                    ProjectileStorage.Add(projectile);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

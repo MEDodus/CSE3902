@@ -11,12 +11,12 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite BlueCandleSprite()
         {
-            return new Sprite(GetTexture("blue_candle"), 1);
+            return new Sprite(GetTexture("blue_candle"), 0.8);
         }
 
         public static ISprite BluePotionSprite()
         {
-            return new Sprite(GetTexture("blue_potion"), 1);
+            return new Sprite(GetTexture("blue_potion"), 0.75);
         }
 
         public static ISprite BlueRingSprite()
@@ -56,22 +56,22 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite FairySprite()
         {
-            return new AnimatedSprite(GetTexture("fairy"), 1, 2, 4, 1);
+            return new AnimatedSprite(GetTexture("fairy"), 1, 2, 4, 0.7);
         }
 
         public static ISprite FiveRupiesSprite()
         {
-            return new Sprite(GetTexture("five_rupies"), 1);
+            return new Sprite(GetTexture("five_rupies"), 0.8);
         }
 
         public static ISprite FoodSprite()
         {
-            return new Sprite(GetTexture("food"), 1);
+            return new Sprite(GetTexture("food"), 0.7);
         }
 
         public static ISprite HeartSprite()
         {
-            return new AnimatedSprite(GetTexture("heart"), 1, 2, 4, 1);
+            return new AnimatedSprite(GetTexture("heart"), 1, 2, 4, 0.5);
         }
 
         public static ISprite HeartContainerSprite()
@@ -131,12 +131,12 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite RedCandleSprite()
         {
-            return new Sprite(GetTexture("red_candle"), 1);
+            return new Sprite(GetTexture("red_candle"), 0.8);
         }
 
         public static ISprite RedPotionSprite()
         {
-            return new Sprite(GetTexture("red_potion"), 1);
+            return new Sprite(GetTexture("red_potion"), 0.75);
         }
 
         public static ISprite RedRingSprite()
@@ -146,7 +146,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite RupySprite()
         {
-            return new AnimatedSprite(GetTexture("rupy"), 1, 2, 4, 1);
+            return new AnimatedSprite(GetTexture("rupy"), 1, 2, 4, 0.8);
         }
 
         public static ISprite SilverArrowSprite()

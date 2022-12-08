@@ -14,7 +14,7 @@ namespace Zelda.NPCs.Classes
 {
     public class OldMan : INPC
     {
-        public readonly int OLDMAN_AGRO_HEALTH = 1;
+        public readonly int OLDMAN_AGRO_HEALTH = 10;
         public readonly int OLDMAN_PASSIVE_DAMAGE = 0;
 
         public bool Dead { get { return dead; } set { dead = value; } }

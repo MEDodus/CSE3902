@@ -18,7 +18,7 @@ namespace Zelda.NPCs.EnemyMultiDirection
         protected readonly int ATTACK_DIR_POS = 1;
         protected readonly int ATTACK_DIR_NEG = -1;
         protected readonly int ATTACK_DIR_ZERO = 0;
-        protected readonly int ATTACK_COOLDOWN = 5;
+        protected readonly int ATTACK_COOLDOWN = 3;
 
         public LeftMovingGhostState(GhostFollower ghost)
         {
@@ -61,16 +61,22 @@ namespace Zelda.NPCs.EnemyMultiDirection
         public void Update(GameTime gameTime) { }
         public void Update(Game1 game, GameTime gameTime)
         {
-            ghost.LinkOldPosition = ghost.Position + new Vector2(-30, 30);
+            //update link position copies
+            ghost.LinkOldPosition = ghost.LinkPositionCopy;
+            ghost.LinkPositionCopy = game.Link.Position;
+
+            //update ghost position
             ghost.Position = game.Link.Position + new Vector2(30, -30);
+
+            //attack and turn
             DecideAttack(gameTime);
-            CheckIfTurned(game.Link.Position);
+            CheckIfTurned();
 
         }
 
-        protected void CheckIfTurned(Vector2 currentPosition)
+        protected void CheckIfTurned()
         {
-            if (ghost.LinkOldPosition.X < currentPosition.X)
+            if (ghost.LinkOldPosition.X < ghost.LinkPositionCopy.X)
             {
                 TurnRight();
             }

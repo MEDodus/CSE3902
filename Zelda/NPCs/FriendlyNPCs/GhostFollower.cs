@@ -20,11 +20,13 @@ namespace Zelda.NPCs.FriendlyNPCs
         public ISprite Sprite { get { return sprite; } set { sprite = value; } }
         public Vector2 Position { get { return position; } set { position = value; } }
         public Vector2 LinkOldPosition { get { return linkOldPosition; } set { linkOldPosition = value; } }
+        public Vector2 LinkPositionCopy { get { return linkPositionCopy; } set { linkPositionCopy = value; } }
 
         public IFriendlyNPCState State { get { return state; } set { state = value; } }
 
         protected Vector2 position;
         protected Vector2 linkOldPosition;
+        protected Vector2 linkPositionCopy;
         protected ISprite sprite;
         protected IFriendlyNPCState state;
 
@@ -44,7 +46,7 @@ namespace Zelda.NPCs.FriendlyNPCs
         {
             this.State.Update(game, gameTime);
 
-            //this.Sprite.Update(gameTime);
+            this.Sprite.Update(gameTime);
 
         }
 

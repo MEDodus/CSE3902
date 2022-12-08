@@ -29,7 +29,7 @@ namespace Zelda.Link
             this.decoratedLink = decoratedLink;
             State = new LinkFacingDownState(decoratedLink);
             originalSprite = decoratedLink.Sprite;
-            decoratedLink.Sprite = LinkSpriteFactory.LinkTriforceSprite();
+            decoratedLink.Sprite = LinkSpriteFactory.LinkTriforceSprite(decoratedLink.PlayerNumber);
             this.game = game;
             Position += OFFSET;
         }

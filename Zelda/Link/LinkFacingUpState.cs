@@ -12,7 +12,7 @@ namespace Zelda.Link
         public LinkFacingUpState(ILink link)
         {
             this.link = link;
-            link.Sprite = LinkSpriteFactory.LinkFacingUpSprite();
+            link.Sprite = LinkSpriteFactory.LinkFacingUpSprite(link.PlayerNumber);
         }
 
         public void MoveUp()

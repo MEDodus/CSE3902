@@ -881,6 +881,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/Link_hurt3.png
 
+#begin spritesheets/link_triforce_blue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/link_triforce_blue.png
+
 #begin spritesheets/link_triforce.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -904,6 +916,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/Link.png
+
+#begin spritesheets/link2_blue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/link2_blue.png
 
 #begin spritesheets/link2.png
 /importer:TextureImporter

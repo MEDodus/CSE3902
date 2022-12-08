@@ -100,6 +100,7 @@ namespace Zelda
             ProjectileStorage.Clear();
             link = new Link1(this, 1);
             linkCompanion = new Link1(this, 2);
+            FriendlyNPCManager.Instance.FriendlyNPCs.Clear();
             base.Initialize();
         }
 
@@ -117,7 +118,7 @@ namespace Zelda
             }
             gameState.Update(gameTime);
             base.Update(gameTime);
-            FriendlyNPCManager.Instance.Update(this, gameTime);
+            //FriendlyNPCManager.Instance.Update(this, gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
@@ -125,7 +126,7 @@ namespace Zelda
             GraphicClear();
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             gameState.Draw(spriteBatch);
-            FriendlyNPCManager.Instance.Draw(spriteBatch);
+            //FriendlyNPCManager.Instance.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
 

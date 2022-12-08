@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.NPCs.FriendlyNPCs;
 using Zelda.Sound;
 using Zelda.Sprites.Factories;
 using Color = Microsoft.Xna.Framework.Color;
@@ -19,6 +20,7 @@ namespace Zelda.GameStates.Classes
             font2 = HUDSpriteFactory.HUDFont();
             SoundManager.Instance.Stop();
             SoundManager.Instance.PlayLinkDieSound();
+            FriendlyNPCManager.Instance.FriendlyNPCs.Clear();
             game.GraphicClear();
         }
 

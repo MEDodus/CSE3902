@@ -1,0 +1,10 @@
+Code Review By: Michael Dodus
+Date: 12/7/2022
+Sprint #: 5
+Class Reviewed: AchievementManager.cs
+Author: Jiayuan Zhang
+Time to Review: 20min.
+
+Comments on Readability: I think this classes readability is quite good overall, method names are descriptive and tell the reader what they do without 
+the reader have to look into the code functionality. Genuinely not much to say else, this code is great on the eyes and I could figure out exactly what 
+each method was doing (or attempting to do if there are bugs) on first glance.

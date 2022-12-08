@@ -1,0 +1,16 @@
+Review By: Michael Dodus
+Date: 12/7/2022
+Sprint #: 5
+Class Reviewed: AchievementManager.cs
+Author: Jiayuan Zhang
+Time: 20min.
+
+Code Quality:
+Each method is a good length (<15 lines) and does a good job at keeping the logic simple. This class allows functionality for achievements as well as a save file.
+Maybe the functionality for the achievements should be in a different class but utilize the save file for more concise code. However, this is not necessary at the
+moment as the save file does need much more functionality other than levels unlocked and achievements unlocked currently. There's not much else to say.
+
+Hypothetical Change:
+As with my suggestion above, if we had more than two separate functionalities needed out of save files, using one class to write all logic into a save file might be tedious
+and hard for a reader to comprehend, thus, I would suggest refactoring into multiple classes if we were to say store different states of different save files, add save states
+for multiple players, or even for reverting to previous save states.

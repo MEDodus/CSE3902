@@ -2,7 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Zelda",
-    "\\Zelda\\Collision",
+    "\\Zelda\\Achievements",
     "\\Zelda\\Controllers",
     "\\Zelda\\Inventory",
     "\\Zelda\\Items",
@@ -11,6 +11,6 @@
     "\\Zelda\\NPCs",
     "\\Zelda\\NPCs\\EnemyMultiDirection"
   ],
-  "SelectedNode": "\\Zelda\\Inventory\\LinkInventory.cs",
+  "SelectedNode": "\\Zelda\\Achievements\\AchievementManager.cs",
   "PreviewInSolutionExplorer": false
 }

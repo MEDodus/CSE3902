@@ -24,6 +24,7 @@ namespace Zelda.NPCs.EnemyMultiDirection
         {
             this.ghost = ghost;
             this.ghost.Sprite = NPCSpriteFactory.RightAttackGhostFollower();
+            attackAnimationTime = ATTACK_ANIMATION_LENGTH;
             Attack();
         }
 
@@ -47,10 +48,9 @@ namespace Zelda.NPCs.EnemyMultiDirection
 
         public void Attack()
         {
-            attackAnimationTime = ATTACK_ANIMATION_LENGTH;
             IProjectile fireball0 = new Fireball(ghost.Position + new Vector2(100, 0), new Vector2(ATTACK_DIR_POS, ATTACK_DIR_ZERO));
             IProjectile fireball1 = new Fireball(ghost.Position + new Vector2(100, 0), new Vector2(ATTACK_DIR_POS, ATTACK_DIR_POS));
-            IProjectile fireball2 = new Fireball(ghost.Position + new Vector2(100, 0), new Vector2(ATTACK_DIR_ZERO, ATTACK_DIR_POS));
+            IProjectile fireball2 = new Fireball(ghost.Position + new Vector2(100, 0), new Vector2(ATTACK_DIR_POS, ATTACK_DIR_NEG));
 
 
             ProjectileStorage.Add(fireball0);

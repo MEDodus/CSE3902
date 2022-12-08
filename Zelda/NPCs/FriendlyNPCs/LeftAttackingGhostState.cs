@@ -24,15 +24,17 @@ namespace Zelda.NPCs.EnemyMultiDirection
         {
             this.ghost = ghost;
             this.ghost.Sprite = NPCSpriteFactory.LeftAttackGhostFollower();
+            attackAnimationTime = ATTACK_ANIMATION_LENGTH;
+            Attack();
         }
 
         public void TurnRight()
         {
-            ghost.State = new RightMovingGhostState(ghost);
         }
 
         public void TurnLeft()
         {
+            ghost.State = new LeftMovingGhostState(ghost);
         }
 
         //Ghost only has sprites for left and right movements - methods empty
@@ -46,15 +48,14 @@ namespace Zelda.NPCs.EnemyMultiDirection
 
         public void Attack()
         {
-            IProjectile fireball0 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_POS, ATTACK_DIR_ZERO));
-            IProjectile fireball1 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_POS, ATTACK_DIR_POS));
-            IProjectile fireball2 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_ZERO, ATTACK_DIR_POS));
+            IProjectile fireball0 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_ZERO));
+            IProjectile fireball1 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_POS));
+            IProjectile fireball2 = new Fireball(ghost.Position + new Vector2(-100, 0), new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_NEG));
 
 
             ProjectileStorage.Add(fireball0);
             ProjectileStorage.Add(fireball1);
             ProjectileStorage.Add(fireball2);
-            attackAnimationTime = ATTACK_ANIMATION_LENGTH;
         }
 
         //Ghost can neither take damage or die - methods empty

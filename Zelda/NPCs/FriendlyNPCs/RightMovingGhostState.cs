@@ -60,18 +60,18 @@ namespace Zelda.NPCs.EnemyMultiDirection
         public void Update(GameTime gameTime) { }
         public void Update(Game1 game, GameTime gameTime)
         {
-            oldPosition = ghost.Position;
+            ghost.LinkOldPosition = ghost.Position + new Vector2(30, 30);
             ghost.Position = game.Link.Position + new Vector2(-30, -30);
             DecideAttack(gameTime);
-            CheckIfTurned();
+            CheckIfTurned(game.Link.Position);
         }
 
-        protected void CheckIfTurned()
+        protected void CheckIfTurned(Vector2 currentPosition)
         {
-            if (oldPosition.X > ghost.Position.X + 5)
-            {
-                TurnLeft();
-            }
+                if (ghost.LinkOldPosition.X > currentPosition.X)
+                {
+                    TurnLeft();
+                }
         }
         protected void DecideAttack(GameTime gameTime)
         {

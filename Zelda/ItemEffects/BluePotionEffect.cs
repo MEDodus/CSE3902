@@ -8,6 +8,7 @@ using Zelda.Items;
 using Zelda.Items.Classes;
 using Microsoft.Xna.Framework;
 using Zelda.Link;
+using Zelda.Sound;
 
 namespace Zelda.ItemEffects
 {
@@ -25,6 +26,8 @@ namespace Zelda.ItemEffects
             {
                 item.AddToQuantity(-1);
                 health.healthToFull();
+                inventory.UpdateSecondary();
+                SoundManager.Instance.PlayGetHealthSound();
                 return true;
             }
             return false;

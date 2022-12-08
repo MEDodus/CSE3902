@@ -11,12 +11,12 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite BlueCandleSprite()
         {
-            return new Sprite(GetTexture("blue_candle"), 1);
+            return new Sprite(GetTexture("blue_candle"), 0.8);
         }
 
         public static ISprite BluePotionSprite()
         {
-            return new Sprite(GetTexture("blue_potion"), 1);
+            return new Sprite(GetTexture("blue_potion"), 0.75);
         }
 
         public static ISprite BlueRingSprite()
@@ -66,7 +66,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite FoodSprite()
         {
-            return new Sprite(GetTexture("food"), 1);
+            return new Sprite(GetTexture("food"), 0.7);
         }
 
         public static ISprite HeartSprite()
@@ -131,12 +131,12 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite RedCandleSprite()
         {
-            return new Sprite(GetTexture("red_candle"), 1);
+            return new Sprite(GetTexture("red_candle"), 0.8);
         }
 
         public static ISprite RedPotionSprite()
         {
-            return new Sprite(GetTexture("red_potion"), 1);
+            return new Sprite(GetTexture("red_potion"), 0.75);
         }
 
         public static ISprite RedRingSprite()

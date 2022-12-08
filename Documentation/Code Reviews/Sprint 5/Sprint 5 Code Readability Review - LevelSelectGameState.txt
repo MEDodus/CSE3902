@@ -1,0 +1,17 @@
+Code Review By: Nicholas Younoszai
+Date: 12/7/2022
+Sprint #: 5
+Class Reviewed: LevelSelectGameState.cs
+Author: Jacob Pohlabel
+Time to Review: 11 minutes
+
+Comments on Readability:
+The length of this class isn't too long and the methods seem to also be pretty short, making it easy to read through the code.
+One thing I immediately notice is that right direction methods and RightClick method are all empty. I think a comment in each of
+these explaining why this is could help improve the readability and let the reader understand why this is the case without checking
+the interface. While reading through the code, it is confusing seeing AchievementManager.IsUnlocked() being called since this is a level
+select game state. I think maybe adding a comment to this could help clear that up without the need to look at the AchievementManager.
+After knowing what AchievementManager does, it is easy to understand that the code in Draw is simply drawing the buttons depending on if
+the next level has been unlocked yet or not. It is also apparent that LeftClick will load the clicked level and switch to that GameState.
+I think that overall, this class is pretty readable. There are some things that could be commented to make easier to understand without
+looking at other parts of the code, but I think it is mostly fine as it is.

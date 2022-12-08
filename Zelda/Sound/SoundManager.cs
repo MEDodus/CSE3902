@@ -30,7 +30,7 @@ namespace Zelda.Sound
         private SoundEffect linkHurt;
         private SoundEffect lowHealth;
         private SoundEffect magicalRod;
-        private SoundEffect rocorder;
+        private SoundEffect recorder;
         private SoundEffect refillLoop;
         private SoundEffect secret;
         private SoundEffect shield;
@@ -45,6 +45,7 @@ namespace Zelda.Sound
 
         private bool muted = false;
         private bool playingTheme = false;
+        private bool playingDungeonTheme = false;
         private static SoundManager instance = new SoundManager();
 
         public static SoundManager Instance
@@ -54,6 +55,8 @@ namespace Zelda.Sound
                 return instance;
             }
         }
+
+        public bool Muted { get { return muted; } }
 
         private SoundManager()
         {
@@ -84,7 +87,7 @@ namespace Zelda.Sound
             linkHurt = content.Load<SoundEffect>("SoundEffect\\LOZ_Link_Hurt");
             lowHealth = content.Load<SoundEffect>("SoundEffect\\LOZ_LowHealth");
             magicalRod = content.Load<SoundEffect>("SoundEffect\\LOZ_MagicalRod");
-            rocorder = content.Load<SoundEffect>("SoundEffect\\LOZ_Recorder");
+            recorder = content.Load<SoundEffect>("SoundEffect\\LOZ_Recorder");
             refillLoop = content.Load<SoundEffect>("SoundEffect\\LOZ_Refill_Loop");
             secret = content.Load<SoundEffect>("SoundEffect\\LOZ_Secret");
             shield = content.Load<SoundEffect>("SoundEffect\\LOZ_Shield");
@@ -127,6 +130,7 @@ namespace Zelda.Sound
         {
             MediaPlayer.Stop();
             playingTheme = false;
+            playingDungeonTheme = false;
         }
 
         private void PlaySound(SoundEffect soundEffect)
@@ -159,8 +163,9 @@ namespace Zelda.Sound
 
         public void PlayDungeonThemeSound()
         {
-            if (!muted)
+            if (!muted && !playingDungeonTheme)
             {
+                playingDungeonTheme = true;
                 MediaPlayer.Stop();
                 MediaPlayer.Play(dungeonTheme);
                 MediaPlayer.IsRepeating = true;
@@ -258,6 +263,11 @@ namespace Zelda.Sound
         public void PlayAchievementSound()
         {
             PlaySound(achievement);
+        }
+
+        public void PlayRecorderSound()
+        {
+            PlaySound(recorder);
         }
     }
 }

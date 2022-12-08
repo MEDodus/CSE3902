@@ -1,0 +1,25 @@
+Review By: Nicholas Younoszai
+Date: 12/7/2022
+Sprint #: 5
+Class Reviewed: PausedGameState.cs
+Author: Alex Reed and Jacob Pohlabel
+Time: 20 minutes
+
+Code Quality:
+The paused game state seems to be a relatively simple class where the elements on the pause screen are drawn.
+It doesn't have too many methods, pretty much just what IGameState has. It is meant to handle certain control events
+and drawing when in the paused state. Each method seems to do exactly what it is supposed to do, which is good.
+I think the constructor only includes what it needs to create the pause HUD, with every other method handling their own 
+tasks. The keyboard direction control methods handle the inventory item selection process. I like the use of the
+MoveSelectionUpDown method for Up and Down to avoid repeating code. I wonder if something like this could be done
+for Left and Right, since the code seems to be very similar, just going in the opposite direction. I do think the Draw
+method is a little long, mainly due to the many if statements to draw specific inventory items. I wonder if there is a
+better way to do this, potentially with a loop or something similar.I think that overall, this class is very simple
+and the quality of the code is pretty good. It is obvious there was attention to keeping the code clean.
+
+
+Hypothetical Change:
+I think there could be the capability to have more inventory items above the boxed inventory, similar to the actual game.
+To do this, it could be useful to change how the inventory draws. Maybe a data structure to hold all the items, which then get
+checked in a loop to determine where to draw them. This could also make it easier to add a way to organize the inventory
+during runtime if the game were to get to that point by swapping their locations in the data structure.

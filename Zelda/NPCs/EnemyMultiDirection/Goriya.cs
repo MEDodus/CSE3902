@@ -45,7 +45,7 @@ namespace Zelda.NPCs.Classes
             state = new LeftMovingGoriyaState(this);
             this.position = position;
 
-            health = 3;
+            health = 2;
             blocksPerSecondSpeed = 1;
             this.dead = false;
             damage = 1;
@@ -77,19 +77,11 @@ namespace Zelda.NPCs.Classes
             }
             changeDirectionCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
 
-            //Take Damage
-            if (damageDelay <= 0)
+            if (damageCooldown > 0)
             {
-                damageDelay = 1;
-                int takeDamage = new Random().Next(100);
-                if (takeDamage < 30)
-                {
-                    //state.TakeDamage();
-                    //damageDelay = 2;
-                }
+                damageCooldown -= gameTime.ElapsedGameTime.TotalSeconds;
             }
-            damageDelay -= gameTime.ElapsedGameTime.TotalSeconds;
-
+            
             //Attack
             int decideAttack = new Random().Next(100);
             if (decideAttack < 100)
@@ -184,18 +176,22 @@ namespace Zelda.NPCs.Classes
         }
         public void TakeDamage(int damage)
         {
-            health -= damage;
-            changeDirectionCooldown = -1;
-            if(health < 0)
+            if (damageCooldown <= 0)
             {
-                Die();
+                damageCooldown = 0.5;
+                health -= damage;
+                changeDirectionCooldown = -1;
+                if (health < 0)
+                {
+                    Die();
+                }
             }
-
         }
         public void Die()
         {
             ProjectileStorage.Add(new DeathExplosion(position));
             this.dead = true;
+            NPCUtil.DropRandomItem(position);
         }
 
     }

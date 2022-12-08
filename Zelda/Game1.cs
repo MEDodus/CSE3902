@@ -18,6 +18,7 @@ using System.Numerics;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 using Color = Microsoft.Xna.Framework.Color;
 using Zelda.Achievements;
+using Microsoft.Xna.Framework.Input;
 using Zelda.NPCs.FriendlyNPCs;
 
 /*
@@ -79,16 +80,10 @@ namespace Zelda
             // Other initialization
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
             collisionDetector = new CollisionDetector();
-            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
-            gameState = new TitleScreenGameState(this);
-            SoundManager.Instance.Resume();
-            RoomTransitions.Initialize(this);
-            ProjectileStorage.Clear();
-            link = new Link1(this, 1);
-            linkCompanion = new Link1(this, 2);
             AchievementManager.Load(this);
             base.Initialize();
             FriendlyNPCManager.Instance.Initialize();
+            Reset();
         }
 
         protected override void LoadContent()
@@ -98,10 +93,9 @@ namespace Zelda
 
         public void Reset()
         {
-            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
-            gameState = new RunningGameState(this);
             SoundManager.Instance.Stop();
-            RoomBuilder.Instance.Reset();
+            hud = new LinkHUD(this, new Vector2(HUDUtilities.HUD_X, HUDUtilities.HUD_Y));
+            gameState = new TitleScreenGameState(this);
             RoomTransitions.Initialize(this);
             ProjectileStorage.Clear();
             link = new Link1(this, 1);

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Zelda.Sound;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
@@ -26,9 +27,9 @@ namespace Zelda.Achievements
             { Achievement.MapFound, "Mapped out" },
         };
         // Save file
-        private static readonly string FILENAME = "save.txt";
+        private static readonly string FILENAME = "..\\..\\..\\Achievements\\save.txt";
         // UI
-        private static readonly Vector2 POSITION= new Vector2(Settings.ROOM_WINDOW_X + 10, Settings.ROOM_WINDOW_Y - 100);
+        private static readonly Vector2 POSITION = new Vector2(Settings.ROOM_WINDOW_X + 10, Settings.ROOM_WINDOW_Y - 100);
         private static readonly Vector2 TEXT_POSITION = POSITION + new Vector2(75, 30);
         private static readonly double ACHIEVEMENT_DISPLAY_LENGTH = 5;
 
@@ -61,12 +62,34 @@ namespace Zelda.Achievements
         {
             achievementSprite = MenuSpriteFactory.AchievementSprite();
             font = MenuSpriteFactory.AchievementFont();
-            // TODO: load from file
+            // Load from file
+            string[] lines = File.ReadAllLines(FILENAME);
+            maxLevelUnlocked = int.Parse(lines[0]);
+            for (int i = 1; i < lines.Length; i++)
+            {
+                Achievement achievement = GetAchievementFromName(lines[i]);
+                if (!unlockedAchievements.Contains(achievement))
+                {
+                    unlockedAchievements.Add(achievement);
+                }
+            }
         }
 
         public static void Save()
         {
-            // TODO: write to file (this function needs to be referenced somewhere as well)
+            string content = maxLevelUnlocked.ToString() + "\n";
+            foreach (Achievement achievement in unlockedAchievements)
+            {
+                content += GetAchievementName(achievement) + "\n";
+            }
+            File.WriteAllText(FILENAME, content);
+        }
+
+        public static void Reset()
+        {
+            maxLevelUnlocked = 1;
+            unlockedAchievements.Clear();
+            Save();
         }
 
         public static void UnlockNextLevel()
@@ -91,6 +114,7 @@ namespace Zelda.Achievements
                 unlockedAchievements.Add(achievement);
                 lastAchievement = achievement;
                 achievementDisplayTime = ACHIEVEMENT_DISPLAY_LENGTH;
+                Save();
             }
         }
 
@@ -102,6 +126,18 @@ namespace Zelda.Achievements
         public static string GetAchievementName(Achievement achievement)
         {
             return ACHIEVEMENT_NAMES[achievement];
+        }
+
+        private static Achievement GetAchievementFromName(string name)
+        {
+            foreach (KeyValuePair<Achievement, string> pair in ACHIEVEMENT_NAMES)
+            {
+                if (pair.Value == name)
+                {
+                    return pair.Key;
+                }
+            }
+            throw new Exception(name + " is not mapped to an Achievement enum.");
         }
     }
 }

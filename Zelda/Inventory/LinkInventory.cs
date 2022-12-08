@@ -36,14 +36,14 @@ namespace Zelda.Inventory
 
         public bool AddItem(IItem item, int quantity)
         {
-            if (!Contains(item))
+            if (!Contains(item) && !IsOnCollisionItem(item))
             {
                 inventory.Add(item.GetType(), item);
                 item.AddToQuantity(quantity);
                 UpdateSecondary();
                 return true;
             } 
-            else
+            else if (!IsOnCollisionItem(item))
             {
                 if(item is Bomb && GetCount(item) + quantity > LinkUtilities.BOMB_MAX_COUNT)
                 {
@@ -57,10 +57,11 @@ namespace Zelda.Inventory
                 itemToChange.AddToQuantity(quantity);
                 UpdateSecondary();
                 return true;
+            } else
+            {
+                // Don't add to inventory, on collision effect occurs
+                return false;
             }
-            // only returning true now, conditions could chagne,
-            // for example, an item that can't be picked up until
-            // something happens in the story...
         }
 
         // Contains must be called before call to RemoveItem
@@ -147,6 +148,11 @@ namespace Zelda.Inventory
             {
                 secondary = null;
             }
+        }
+
+        public static bool IsOnCollisionItem(IItem item)
+        {
+            return item is Mushroom || item is Lightning || item is Star;
         }
     }
 }

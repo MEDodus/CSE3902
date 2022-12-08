@@ -102,7 +102,7 @@ namespace Zelda.NPCs.Classes
         {
             int itemRow = EnemyCounter.Count;
             EnemyCounter.Increment(); // Increment counter to next row in the table
-            int rand = new Random().Next(1, 5);
+            int rand = new Random().Next(1, 2);
             switch(rand)
             {
                 case 1:
@@ -113,7 +113,6 @@ namespace Zelda.NPCs.Classes
                 default:
                     return null;
             }
-            AchievementManager.GrantAchievement(Achievement.FirstKill);
         }
 
         public virtual void TakeDamage(int damage)

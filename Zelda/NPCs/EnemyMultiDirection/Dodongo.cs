@@ -192,12 +192,9 @@ namespace Zelda.NPCs.Classes
 
         public IItem DropItem()
         {
-            IItem item = NPCUtil.GetItem(group, EnemyCounter.Count, position);
+            int itemRow = EnemyCounter.Count;
             EnemyCounter.Increment(); // Increment counter to next row in the table
-            return item;
-
-            // Uncomment for chance at drop, above makes it 100% chance, below makes it 25% chance at drop
-            /*int rand = new Random().Next(1, 5);
+            int rand = new Random().Next(1, 5);
             switch(rand)
             {
                 case 1:
@@ -207,7 +204,7 @@ namespace Zelda.NPCs.Classes
                 case 4:
                 default:
                     return null;
-            }*/
+            }
         }
     }
 }

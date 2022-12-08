@@ -6,9 +6,9 @@ using Zelda.Projectiles.Classes;
 
 namespace Zelda.Link
 {
-    internal class LinkItemHandler
+    public class LinkItemHandler
     {
-        public static void UseItem(int itemNum, Vector2 facingDirection, Health health, IInventory inventory, Vector2 positionInFront)
+        public static void UseItem(int itemNum, Vector2 facingDirection, ILink link, IInventory inventory, Vector2 positionInFront)
         {
             IProjectile item = null;
             IItem type = null;
@@ -44,7 +44,7 @@ namespace Zelda.Link
                     type = new Items.Classes.BlueCandle(new Vector2());
                     break;
             }
-            if (item != null && inventory.Contains(type) && inventory.GetItem(type).UseItem(inventory, health, defaultItemSpawnPos, facingDirection))
+            if (item != null && inventory.Contains(type) && inventory.GetItem(type).UseItem(inventory, link, defaultItemSpawnPos, facingDirection))
             {
                 ProjectileStorage.Add(item);
             }

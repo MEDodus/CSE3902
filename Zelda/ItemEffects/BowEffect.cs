@@ -18,7 +18,7 @@ namespace Zelda.ItemEffects
             return inventory.Contains(new Arrow(new Vector2())) && inventory.Contains(new Bow(new Vector2())) && inventory.GetCount(new Wallet(new Vector2())) > 0;
         }
 
-        public bool UseEffect(IItem item, IInventory inventory, Health health, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseEffect(IItem item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
         {
             if (RequirementsMet(inventory))
             {

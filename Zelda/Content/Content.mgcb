@@ -329,6 +329,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/back_arrow.png
 
+#begin spritesheets/banana.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/banana.png
+
 #begin spritesheets/bat.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -701,6 +713,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/goriya.png
 
+#begin spritesheets/green_shell.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/green_shell.png
+
 #begin spritesheets/hand.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -796,6 +820,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/letter.png
+
+#begin spritesheets/lightning.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/lightning.png
 
 #begin spritesheets/link_hud_background.png
 /importer:TextureImporter
@@ -1001,6 +1037,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/map.png
 
+#begin spritesheets/mario_kart_items.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/mario_kart_items.jpg
+
 #begin spritesheets/menu_button.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1012,6 +1060,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/menu_button.png
+
+#begin spritesheets/mushroom.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/mushroom.png
 
 #begin spritesheets/music_note.png
 /importer:TextureImporter
@@ -1169,6 +1229,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/red_ring.png
 
+#begin spritesheets/red_shell.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/red_shell.png
+
 #begin spritesheets/rupy.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -1228,6 +1300,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:spritesheets/spike_cross.png
+
+#begin spritesheets/star.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/star.png
 
 #begin spritesheets/stepladder.png
 /importer:TextureImporter

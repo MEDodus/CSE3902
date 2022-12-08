@@ -69,5 +69,15 @@ namespace Zelda.Link
             }
             runTime++;
         }
+
+        public void Update(int speed)
+        {
+            link.Position += new Vector2(-Settings.LINK_SPEED * speed, 0);
+            if (runTime > moveLeftCount)
+            {
+                link.State = new LinkFacingLeftState(link);
+            }
+            runTime++;
+        }
     }
 }

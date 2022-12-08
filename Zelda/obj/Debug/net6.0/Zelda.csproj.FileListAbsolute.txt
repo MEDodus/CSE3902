@@ -152,3 +152,10 @@ C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\refint\Zelda.dll
 C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.pdb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
 C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\banana.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\green_shell.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\lightning.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\mario_kart_items.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\mushroom.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_shell.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\star.xnb

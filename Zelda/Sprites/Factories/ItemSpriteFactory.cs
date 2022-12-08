@@ -9,6 +9,11 @@ namespace Zelda.Sprites.Factories
             return new Sprite(GetTexture("arrow"), 0, 0, 40, 128, 1);
         }
 
+        public static ISprite BananaSprite()
+        {
+            return new Sprite(GetTexture("banana"), 1);
+        }
+
         public static ISprite BlueCandleSprite()
         {
             return new Sprite(GetTexture("blue_candle"), 0.8);
@@ -69,6 +74,11 @@ namespace Zelda.Sprites.Factories
             return new Sprite(GetTexture("food"), 0.7);
         }
 
+        public static ISprite GreenShellSprite()
+        {
+            return new Sprite(GetTexture("green_shell"), 1);
+        }
+
         public static ISprite HeartSprite()
         {
             return new AnimatedSprite(GetTexture("heart"), 1, 2, 4, 0.5);
@@ -87,6 +97,11 @@ namespace Zelda.Sprites.Factories
         public static ISprite LetterSprite()
         {
             return new Sprite(GetTexture("letter"), 1);
+        }
+
+        public static ISprite LightningSprite()
+        {
+            return new Sprite(GetTexture("lightning"), 1);
         }
 
         public static ISprite MagicalBoomerangSprite()
@@ -112,6 +127,11 @@ namespace Zelda.Sprites.Factories
         public static ISprite MapSprite()
         {
             return new Sprite(GetTexture("map"), 0.8);
+        }
+
+        public static ISprite MushroomSprite()
+        {
+            return new Sprite(GetTexture("mushroom"), 1);
         }
 
         public static ISprite PowerBraceletSprite()
@@ -149,9 +169,19 @@ namespace Zelda.Sprites.Factories
             return new AnimatedSprite(GetTexture("rupy"), 1, 2, 4, 0.8);
         }
 
+        public static ISprite RedShellSprite()
+        {
+            return new Sprite(GetTexture("red_shell"), 1);
+        }
+
         public static ISprite SilverArrowSprite()
         {
             return new Sprite(GetTexture("silver_arrow"), 0, 0, 40, 128, 1);
+        }
+
+        public static ISprite StarSprite()
+        {
+            return new Sprite(GetTexture("star"), 1);
         }
 
         public static ISprite StepladderSprite()

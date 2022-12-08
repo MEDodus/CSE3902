@@ -19,6 +19,7 @@ namespace Zelda.Link
         public IInventory Inventory { get { return inventory; } }
         public Health Health { get { return health; } }
         public int PlayerNumber { get { return playerNumber; } }
+        public int ItemTimer { get { return itemTimer; } set { itemTimer = value; } }
 
         private Game1 game;
         private ILinkState state;
@@ -30,6 +31,7 @@ namespace Zelda.Link
         private IInventory inventory;
         private Health health;
         private int playerNumber;
+        private int itemTimer = 0;
 
         private readonly double ATTACK_TIMER_LENGTH = 0.35;
 
@@ -73,8 +75,33 @@ namespace Zelda.Link
             if (secondaryAttackTimer > 0)
             {
                 secondaryAttackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
+            } 
+            if (itemTimer > 0)
+            {
+                itemTimer -= 1;
+                if (state is LinkMovingUpState)
+                {
+                    ((LinkMovingUpState)state).Update(2);
+                }
+                else if (state is LinkMovingDownState)
+                {
+                    ((LinkMovingDownState)state).Update(2);
+                }
+                else if (state is LinkMovingLeftState)
+                {
+                    ((LinkMovingLeftState)state).Update(2);
+                }
+                else if (state is LinkMovingRightState)
+                {
+                    ((LinkMovingRightState)state).Update(2);
+                } else
+                {
+                    state.Update();
+                }
+            } else
+            {
+                state.Update();
             }
-            state.Update();
             sprite.Update(gameTime);
         }
 
@@ -151,7 +178,7 @@ namespace Zelda.Link
                     spawnPos += new Vector2(0, -10);
                 }
                 IItem sword = new Items.Classes.Sword(new Vector2());
-                if (inventory.Contains(sword) && inventory.GetItem(sword).UseItem(inventory, health, spawnPos, facingDirection))
+                if (inventory.Contains(sword) && inventory.GetItem(sword).UseItem(inventory, this, spawnPos, facingDirection))
                 {
                     ProjectileStorage.Add(new Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3));
                     return true;
@@ -163,7 +190,7 @@ namespace Zelda.Link
         {
             IItem secondary = inventory.Secondary;
             Vector2 spawnPos = getPositionInFrontOfLink(0);
-            if (secondary != null && secondaryAttackTimer <= 0 && secondary.UseItem(inventory, health, spawnPos, facingDirection))
+            if (secondary != null && secondaryAttackTimer <= 0 && secondary.UseItem(inventory, this, spawnPos, facingDirection))
             {
                 secondaryAttackTimer = ATTACK_TIMER_LENGTH;
                 IProjectile projectile = secondary.CreateProjectile(position, facingDirection);

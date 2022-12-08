@@ -21,11 +21,11 @@ namespace Zelda.ItemEffects
             return inventory.Contains(new Sword(new Vector2()));
         }
 
-        public bool UseEffect(IItem item, IInventory inventory, Health health, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseEffect(IItem item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
         {
             if (RequirementsMet(inventory))
             {
-                if (health.CurrentHealth == health.MaxHealth) ProjectileStorage.Add(new SwordBeam(spawnPos, facingDirection));
+                if (link.Health.CurrentHealth == link.Health.MaxHealth) ProjectileStorage.Add(new SwordBeam(spawnPos, facingDirection));
                 return true;
             }
             return false;

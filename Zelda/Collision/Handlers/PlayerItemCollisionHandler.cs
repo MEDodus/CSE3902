@@ -54,8 +54,13 @@ namespace Zelda.Collision.Handlers
                 IItem wallet = link.Inventory.GetItem(new Wallet());
                 int add = item is Rupy ? 1 : 5;
                 wallet.AddToQuantity(add);
-                RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
+                //RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
+                SoundManager.Instance.PlayGetItemSound();
+            } else if (item is Mushroom || item is Lightning || item is Star)
+            {
+                if (item is Mushroom || item is Lightning) item.UseItem(link.Inventory, link, new Vector2(), new Vector2());
             }
+            RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
         }
     }
 }

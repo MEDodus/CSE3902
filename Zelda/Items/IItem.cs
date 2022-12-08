@@ -65,9 +65,9 @@ namespace Zelda.Items
          * True if we successfully removed amount from item capacity,
          * false if we can't or results in zero or negative item capacity
          */
-        public bool UseItem(IInventory inventory, Health health, Vector2 position, Vector2 facingDirection)
+        public bool UseItem(IInventory inventory, ILink link, Vector2 position, Vector2 facingDirection)
         {
-            return effect.UseEffect(this, inventory, health, position, facingDirection);
+            return effect.UseEffect(this, inventory, link, position, facingDirection);
         }
 
         public virtual IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)

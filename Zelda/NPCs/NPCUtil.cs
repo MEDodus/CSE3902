@@ -33,7 +33,11 @@ namespace Zelda.NPCs
 
         public static IItem GetItem(Group enemyGroup, int itemRow, Vector2 position)
         {
-            if (IsRupy(enemyGroup, itemRow))
+            int spawnMarioKartItem = new Random().Next(1, 5); // (1/2) * (1/4) = 1/8 chance of enemy dropping mario kart item
+            if (spawnMarioKartItem == 1 && enemyGroup == Group.X)
+            {
+                return GetMarioKartItem(position);
+            } else if (IsRupy(enemyGroup, itemRow))
             {
                 return new Rupy(position);
             } else if (IsFiveRupies(enemyGroup, itemRow))
@@ -53,6 +57,28 @@ namespace Zelda.NPCs
                 return new Clock(position);
             }
             return null;
+        }
+
+        public static IItem GetMarioKartItem(Vector2 position)
+        {
+            int marioKartItem = new Random().Next(1, 7); // 6 mario kart items total
+            switch(marioKartItem)
+            {
+                case 1:
+                    return new GreenShell(position);
+                case 2:
+                    return new RedShell(position);
+                case 3:
+                    return new Star(position);
+                case 4:
+                    return new Banana(position);
+                case 5:
+                    return new Mushroom(position);
+                case 6:
+                    return new Lightning(position);
+                default:
+                    return null;
+            }
         }
 
         public static bool IsRupy(Group enemyGroup, int itemRow)

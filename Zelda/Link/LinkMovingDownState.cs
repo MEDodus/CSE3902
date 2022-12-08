@@ -69,5 +69,15 @@ namespace Zelda.Link
             }
             runTime++;
         }
+
+        public void Update(int speed)
+        {
+            link.Position += new Vector2(0, Settings.LINK_SPEED * speed);
+            if (runTime > moveDownCount)
+            {
+                link.State = new LinkFacingDownState(link);
+            }
+            runTime++;
+        }
     }
 }

@@ -116,7 +116,7 @@ namespace Zelda.NPCs.Classes
         {
             int itemRow = EnemyCounter.Count;
             EnemyCounter.Increment();
-            int rand = new Random().Next(1, 5);
+            int rand = new Random().Next(1, 2);
 
             switch (rand)
             {

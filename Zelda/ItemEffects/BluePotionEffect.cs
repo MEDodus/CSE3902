@@ -20,12 +20,12 @@ namespace Zelda.ItemEffects
             IItem item = new BluePotion(new Vector2());
             return inventory.Contains(item) && inventory.GetCount(item) > 0;
         }
-        public bool UseEffect(IItem item, IInventory inventory, Health health, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseEffect(IItem item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
         {
             if (RequirementsMet(inventory))
             {
                 item.AddToQuantity(-1);
-                health.healthToFull();
+                link.Health.healthToFull();
                 inventory.UpdateSecondary();
                 SoundManager.Instance.PlayGetHealthSound();
                 return true;

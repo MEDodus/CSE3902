@@ -8,6 +8,7 @@ using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
 using Zelda.Sprites;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -26,8 +27,9 @@ namespace Zelda.NPCs.Classes
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
         protected int damage;
+        protected Group group;
 
-        public EnemySingleDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed)
+        public EnemySingleDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed, Group enemyGroup)
         {
             this.sprite = sprite;
             this.position = position;
@@ -35,6 +37,7 @@ namespace Zelda.NPCs.Classes
             this.health = health;
             this.blocksPerSecondSpeed = blocksPerSecondSpeed;
             this.dead = false;
+            this.group = enemyGroup;
         }
 
         // additional update features that differ between enemies
@@ -91,9 +94,25 @@ namespace Zelda.NPCs.Classes
 
         public virtual void Die()
         {
-            dead = true;
             ProjectileStorage.Add(new DeathExplosion(position));
-            NPCUtil.DropRandomItem(position);
+            this.dead = true;
+        }
+
+        public IItem DropItem()
+        {
+            int itemRow = EnemyCounter.Count;
+            EnemyCounter.Increment(); // Increment counter to next row in the table
+            int rand = new Random().Next(1, 5);
+            switch(rand)
+            {
+                case 1:
+                    return NPCUtil.GetItem(group, itemRow, position);
+                case 2:
+                case 3:
+                case 4:
+                default:
+                    return null;
+            }
             AchievementManager.GrantAchievement(Achievement.FirstKill);
         }
 

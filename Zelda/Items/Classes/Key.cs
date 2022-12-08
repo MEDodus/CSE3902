@@ -9,5 +9,11 @@ namespace Zelda.Items.Classes
         {
 
         }
+
+        /* Default constructor for item in inventory or not displayed in game */
+        public Key() : base(ItemSpriteFactory.KeySprite(), new Vector2(), INFINITE, new Zelda.ItemEffects.KeyEffect())
+        {
+
+        }
     }
 }

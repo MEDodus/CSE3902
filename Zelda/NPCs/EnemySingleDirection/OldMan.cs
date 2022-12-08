@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework.Graphics;
 using Zelda.Enemy;
 using Zelda.NPCs.EnemyMultiDirection;
+using System;
+using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
@@ -60,5 +62,9 @@ namespace Zelda.NPCs.Classes
             }
         }
 
+        public IItem DropItem()
+        {
+            return null;
+        }
     }
 }

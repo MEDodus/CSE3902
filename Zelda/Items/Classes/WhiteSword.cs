@@ -11,5 +11,11 @@ namespace Zelda.Items.Classes
         {
 
         }
+
+        /* Default constructor for item in inventory or not displayed in game */
+        public WhiteSword() : base(ItemSpriteFactory.WhiteSwordSprite(), new Vector2(), ONE, null)
+        {
+
+        }
     }
 }

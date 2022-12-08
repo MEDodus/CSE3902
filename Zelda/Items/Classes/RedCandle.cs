@@ -12,6 +12,12 @@ namespace Zelda.Items.Classes
 
         }
 
+        /* Default constructor for item in inventory or not displayed in game */
+        public RedCandle() : base(ItemSpriteFactory.RedCandleSprite(), new Vector2(), ONE, null)
+        {
+
+        }
+
         public override IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
         {
             return new CandleFlame(position, facingDirection);

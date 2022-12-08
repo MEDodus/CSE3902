@@ -10,6 +10,8 @@ using Zelda.Sprites.Factories;
 using Zelda.Collision;
 using Zelda.Rooms;
 using Zelda.Sound;
+using Group = Zelda.NPCs.INPC.Group;
+using Zelda.Items;
 using Zelda.Achievements;
 
 namespace Zelda.NPCs.Classes
@@ -33,6 +35,7 @@ namespace Zelda.NPCs.Classes
         private double attackCooldown = 0; // seconds
         private bool facingRight;
         private int damage;
+        protected Group group;
 
         bool appeared = false;
 
@@ -49,6 +52,8 @@ namespace Zelda.NPCs.Classes
 
             this.dead = false;
             damage = 2;
+
+            this.group = Group.D;
 
         }
 
@@ -183,8 +188,26 @@ namespace Zelda.NPCs.Classes
             ProjectileStorage.Add(new DeathExplosion(position));
             this.dead = true;
             AchievementManager.GrantAchievement(Achievement.DodongoKilled);
-            NPCUtil.DropRandomItem(position);
         }
 
+        public IItem DropItem()
+        {
+            IItem item = NPCUtil.GetItem(group, EnemyCounter.Count, position);
+            EnemyCounter.Increment(); // Increment counter to next row in the table
+            return item;
+
+            // Uncomment for chance at drop, above makes it 100% chance, below makes it 25% chance at drop
+            /*int rand = new Random().Next(1, 5);
+            switch(rand)
+            {
+                case 1:
+                    return NPCUtil.GetItem(group, EnemyCounter.Count, position);
+                case 2:
+                case 3:
+                case 4:
+                default:
+                    return null;
+            }*/
+        }
     }
 }

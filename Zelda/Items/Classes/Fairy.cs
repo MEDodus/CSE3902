@@ -9,5 +9,11 @@ namespace Zelda.Items.Classes
         {
 
         }
+
+        /* Default constructor for item in inventory or not displayed in game */
+        public Fairy() : base(ItemSpriteFactory.FairySprite(), new Vector2(), 0, null)
+        {
+
+        }
     }
 }

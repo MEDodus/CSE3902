@@ -13,6 +13,7 @@ namespace Zelda.Items
 {
     public abstract class IItem
     {
+
         public static readonly int INFINITE = int.MaxValue, ONE = 1;
         public ISprite Sprite { get { return sprite; } }
         public int MaxItemCount { get { return maxItemCount; } }

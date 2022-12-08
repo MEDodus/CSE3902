@@ -11,6 +11,12 @@ namespace Zelda.Items.Classes
 
         }
 
+        /* Default constructor for item in inventory or not displayed in game */
+        public SilverArrow() : base(ItemSpriteFactory.SilverArrowSprite(), new Vector2(), INFINITE, null)
+        {
+
+        }
+
         public override IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
         {
             return new Projectiles.Classes.SilverArrow(position, facingDirection);

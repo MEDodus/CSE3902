@@ -10,6 +10,12 @@ namespace Zelda.Items.Classes
         {
 
         }
+        
+        /* Default constructor for item in inventory or not displayed in game */
+        public Bomb() : base(ItemSpriteFactory.BombSprite(), new Vector2(), 8, new Zelda.ItemEffects.BombEffect())
+        {
+
+        }
 
         public override IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
         {

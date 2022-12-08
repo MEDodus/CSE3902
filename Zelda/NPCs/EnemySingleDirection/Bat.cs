@@ -1,12 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
     public class Bat : EnemySingleDirection
     {
-        public Bat(Vector2 position) : base(NPCSpriteFactory.BatSprite(), position, 1, 3)
+        public Bat(Vector2 position) : base(NPCSpriteFactory.BatSprite(), position, 1, 3, Group.X)
         {
             damage = 1;
         }

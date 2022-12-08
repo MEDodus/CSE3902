@@ -12,6 +12,12 @@ namespace Zelda.Items.Classes
 
         }
 
+        /* Default constructor for item in inventory or not displayed in game */
+        public Bow() : base(ItemSpriteFactory.BowSprite(), new Vector2(), INFINITE, new Zelda.ItemEffects.BowEffect())
+        {
+
+        }
+
         public override IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
         {
             return new Projectiles.Classes.Arrow(position, facingDirection);

@@ -79,7 +79,11 @@ namespace Zelda.Inventory
         // Sets index in list of found item and returns true if found
         public bool Contains(IItem item)
         {
-            if (inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld <= 0)
+            if (item is Wallet && inventory.ContainsKey(item.GetType()))
+            {
+                return true;
+            }
+            else if (inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld <= 0)
             {
                 inventory.Remove(item.GetType());
             }

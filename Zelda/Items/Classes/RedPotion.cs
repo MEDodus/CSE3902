@@ -9,5 +9,11 @@ namespace Zelda.Items.Classes
         {
 
         }
+
+        /* Default constructor for item in inventory or not displayed in game */
+        public RedPotion() : base(ItemSpriteFactory.RedPotionSprite(), new Vector2(), ONE, null /* Add later */)
+        {
+
+        }
     }
 }

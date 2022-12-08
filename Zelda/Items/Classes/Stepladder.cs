@@ -9,5 +9,11 @@ namespace Zelda.Items.Classes
         {
 
         }
+
+        /* Default constructor for item in inventory or not displayed in game */
+        public Stepladder() : base(ItemSpriteFactory.StepladderSprite(), new Vector2(), ONE, null)
+        {
+
+        }
     }
 }

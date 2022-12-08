@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -10,7 +11,7 @@ namespace Zelda.NPCs.Classes
         private readonly double VERTICAL_CHANGE_DIRECTION_COOLDOWN_LENGTH = 1.2;
         private readonly double USED_CHANGE_DIRECTION_COOLDOWN_LENGTH;
 
-        public SpikeCross(Vector2 position, Vector2 moveDirection) : base(NPCSpriteFactory.SpikeCross(), position, int.MaxValue, 5)
+        public SpikeCross(Vector2 position, Vector2 moveDirection) : base(NPCSpriteFactory.SpikeCross(), position, int.MaxValue, 5, Group.X)
         {
             damage = 1;
             this.moveDirection = moveDirection;

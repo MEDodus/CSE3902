@@ -1,9 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Text.RegularExpressions;
+using Zelda.Items;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
 using Zelda.Sprites;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -21,14 +25,16 @@ namespace Zelda.NPCs.Classes
         protected double blocksPerSecondSpeed;
         private double damageCooldown = 0; // seconds
         private int damage;
+        protected Group group;
 
-        public EnemyMultiDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed)
+        public EnemyMultiDirection(ISprite sprite, Vector2 position, int health, double blocksPerSecondSpeed, Group enemyGroup)
         {
             this.sprite = sprite;
             this.position = position;
 
             this.health = health;
             this.blocksPerSecondSpeed = blocksPerSecondSpeed;
+            this.group = enemyGroup;
         }
 
         // additional update features that differ between enemies
@@ -90,7 +96,7 @@ namespace Zelda.NPCs.Classes
         {
             dead = true;
             ProjectileStorage.Add(new DeathExplosion(position));
-            NPCUtil.DropRandomItem(position);
+            //NPCUtil.DropRandomItem(position);
         }
 
         public virtual void TakeDamage(int damage)
@@ -103,6 +109,24 @@ namespace Zelda.NPCs.Classes
                 {
                     Die();
                 }
+            }
+        }
+
+        public IItem DropItem()
+        {
+            int itemRow = EnemyCounter.Count;
+            EnemyCounter.Increment();
+            int rand = new Random().Next(1, 5);
+
+            switch (rand)
+            {
+                case 1:
+                    return NPCUtil.GetItem(group, itemRow, position);
+                case 2:
+                case 3:
+                case 4:
+                default:
+                    return null;
             }
         }
 

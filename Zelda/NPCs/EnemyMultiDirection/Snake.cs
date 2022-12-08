@@ -1,13 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Text.RegularExpressions;
 using Zelda.Enemy;
+using Zelda.Items;
 using Zelda.NPCs.EnemyMultiDirection;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Rooms;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
+using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -28,7 +31,7 @@ namespace Zelda.NPCs.Classes
         private double changeDirectionCooldown = 0;
         private bool facingRight;
         private int damage;
-
+        protected Group group;
         bool appeared = false;
 
 
@@ -43,7 +46,7 @@ namespace Zelda.NPCs.Classes
             damage = 1;
             blocksPerSecondSpeed = 1;
             this.dead = false;
-
+            this.group = Group.C;
         }
 
         public void Update(GameTime gameTime)
@@ -167,8 +170,26 @@ namespace Zelda.NPCs.Classes
         {
             ProjectileStorage.Add(new DeathExplosion(position));
             this.dead = true;
-            NPCUtil.DropRandomItem(position);
         }
 
+        public IItem DropItem()
+        {
+            IItem item = NPCUtil.GetItem(group, EnemyCounter.Count, position);
+            EnemyCounter.Increment(); // Increment counter to next row in the table
+            return item;
+
+            // Uncomment for chance at drop, above makes it 100% chance, below makes it 25% chance at drop
+            /*int rand = new Random().Next(1, 5);
+            switch(rand)
+            {
+                case 1:
+                    return NPCUtil.GetItem(group, EnemyCounter.Count, position);
+                case 2:
+                case 3:
+                case 4:
+                default:
+                    return null;
+            }*/
+        }
     }
 }

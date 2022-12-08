@@ -9,5 +9,11 @@ namespace Zelda.Items.Classes
         {
 
         }
+
+        /* Default constructor for item in inventory or not displayed in game */
+        public RedRing() : base(ItemSpriteFactory.RedRingSprite(), new Vector2(), ONE, null)
+        {
+
+        }
     }
 }

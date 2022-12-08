@@ -196,5 +196,21 @@ namespace Zelda.Rooms
                 }
             }
         }
+
+        public void ShowNPCs()
+        {
+            foreach (INPC npc in npcs)
+            {
+                npc.Appear();
+            }
+        }
+
+        public void HideNPCs()
+        {
+            foreach (INPC npc in npcs)
+            {
+                npc.Disappear();
+            }
+        }
     }
 }

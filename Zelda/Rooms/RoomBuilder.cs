@@ -165,16 +165,10 @@ namespace Zelda.Rooms
 
         private void SetRoom(int roomIndex, ILink link, ILink linkCompanion)
         {
-            foreach (INPC npc in CurrentRoom.NPCs)
-            {
-                npc.Disappear();
-            }
+            CurrentRoom.HideNPCs();
             i = roomIndex;
             windowPosition = CurrentRoom.Position;
-            foreach (INPC npc in CurrentRoom.NPCs)
-            {
-                npc.Appear();
-            }
+            CurrentRoom.ShowNPCs();
             link.Position = CurrentRoom.Position + new Vector2(7.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
             linkCompanion.Position = CurrentRoom.Position + new Vector2(8.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
             ProjectileStorage.Clear();

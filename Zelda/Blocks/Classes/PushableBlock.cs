@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Blocks.Classes
 {
-    public class PushableBlock : IBlock
+    public class PushableBlock : Block
     {
         public bool Pushed { get { return animationComplete; } }
 

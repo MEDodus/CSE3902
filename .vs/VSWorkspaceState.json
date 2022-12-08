@@ -1,14 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Documentation",
-    "\\Documentation\\Code Reviews",
-    "\\Documentation\\Code Reviews\\Sprint 4",
     "\\Zelda",
     "\\Zelda\\Collision",
     "\\Zelda\\Controllers",
-    "\\Zelda\\Link"
+    "\\Zelda\\Inventory",
+    "\\Zelda\\Items",
+    "\\Zelda\\Items\\Classes",
+    "\\Zelda\\Link",
+    "\\Zelda\\NPCs",
+    "\\Zelda\\NPCs\\EnemyMultiDirection"
   ],
-  "SelectedNode": "\\Documentation\\Code Reviews\\Sprint 4\\Sprint 4 Code Readability Review - Health.cs",
+  "SelectedNode": "\\Zelda\\Inventory\\LinkInventory.cs",
   "PreviewInSolutionExplorer": false
 }

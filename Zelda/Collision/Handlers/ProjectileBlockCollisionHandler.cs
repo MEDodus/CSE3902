@@ -6,7 +6,7 @@ namespace Zelda.Collision.Handlers
 {
     public class ProjectileBlockCollisionHandler
     {
-        public void HandleCollision(IProjectile projectile, IBlock block)
+        public void HandleCollision(Projectile projectile, Block block)
         {
             if (projectile.CanCollide && !block.IsGap)
             {

@@ -10,11 +10,11 @@ namespace Zelda.Inventory
 {
     public class Record
     {
-        public IItem Item { get; set; }
-        private IItem item;
+        public Item Item { get; set; }
+        private Item item;
         private int quantity;
 
-        public Record(IItem item)
+        public Record(Item item)
         {
             this.item = item;
             this.quantity = 0;

@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using Zelda.Items;
 using Zelda.Items.Classes;
 using Zelda.Link;
+using Zelda.NPCs;
 using Zelda.Projectiles;
 using Zelda.Rooms.Parsers;
 
@@ -88,7 +89,7 @@ namespace Zelda.Rooms
             triforceRoom = CurrentRoom;
             foreach (Room room in rooms)
             {
-                foreach (IItem item in room.Items)
+                foreach (Item item in room.Items)
                 {
                     if (item is Triforce)
                     {
@@ -162,22 +163,25 @@ namespace Zelda.Rooms
             }
         }
 
-        public void NextRoom(ILink link, ILink linkCompanion)
+        private void SetRoom(int roomIndex, ILink link, ILink linkCompanion)
         {
-            i = (i + 1) % rooms.Length;
+            CurrentRoom.HideNPCs();
+            i = roomIndex;
             windowPosition = CurrentRoom.Position;
+            CurrentRoom.ShowNPCs();
             link.Position = CurrentRoom.Position + new Vector2(7.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
             linkCompanion.Position = CurrentRoom.Position + new Vector2(8.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
             ProjectileStorage.Clear();
         }
 
+        public void NextRoom(ILink link, ILink linkCompanion)
+        {
+            SetRoom((i + 1) % rooms.Length, link, linkCompanion);
+        }
+
         public void PreviousRoom(ILink link, ILink linkCompanion)
         {
-            i = i > 0 ? i - 1 : rooms.Length - 1;
-            windowPosition = CurrentRoom.Position;
-            link.Position = CurrentRoom.Position + new Vector2(7.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
-            linkCompanion.Position = CurrentRoom.Position + new Vector2(8.5f * Settings.BLOCK_SIZE, 7 * Settings.BLOCK_SIZE);
-            ProjectileStorage.Clear();
+            SetRoom(i > 0 ? i - 1 : rooms.Length - 1, link, linkCompanion);
         }
     }
 }

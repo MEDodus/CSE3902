@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Zelda.Achievements;
 using Zelda.Link;
+using Zelda.NPCs.FriendlyNPCs;
 using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sound;
@@ -39,6 +40,7 @@ namespace Zelda.GameStates.Classes
             {
                 swappedScreens = true;
                 decoratedLink.RemoveDecorator();
+                FriendlyNPCManager.Instance.FriendlyNPCs.Clear();
                 SoundManager.Instance.Stop();
                 SoundManager.Instance.PlaySecretSound();
             }

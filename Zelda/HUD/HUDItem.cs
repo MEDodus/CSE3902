@@ -16,7 +16,7 @@ namespace Zelda.HUD
         private ISprite sprite;
         private Vector2 destination;
 
-        public HUDItem(IItem item, Vector2 position)
+        public HUDItem(Item item, Vector2 position)
         {
             sprite = item.Sprite;
             destination = new Vector2(position.X, position.Y);

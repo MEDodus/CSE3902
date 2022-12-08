@@ -3,32 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zelda.Items.Classes;
 using Zelda.NPCs;
 using Zelda.NPCs.Classes;
 using Zelda.Projectiles;
-using Boomerang = Zelda.Projectiles.Classes.Boomerang;
+using Zelda.Projectiles.Classes;
 
 namespace Zelda.Collision.Handlers
 {
     public class EnemyProjectileCollisionHandler
     {
-        public void HandleCollision(INPC enemy, IProjectile projectile)
+        public void HandleCollision(INPC enemy, Projectile projectile)
         {
             if (projectile.Behavior == ProjectileBehavior.Friendly || projectile.Behavior == ProjectileBehavior.NeutralHarmful)
             {
-                
-                if (projectile is Boomerang) 
-                {
-                    if (enemy is Bat || enemy is Gel)
-                    {
-                        CollisionHelper((EnemySingleDirection)enemy);
-                    } else
-                    {
-                        return;
-                    }
-                }
-                else if (enemy is EnemySingleDirection)
+                projectile.Delete();
+
+                if (enemy is EnemySingleDirection)
                 {
                     CollisionHelper((EnemySingleDirection)enemy);
                 }
@@ -44,7 +34,6 @@ namespace Zelda.Collision.Handlers
                 {
                     CollisionHelper((Goriya)enemy);
                 }
-                projectile.Delete();
             }
         }
         public void CollisionHelper(EnemySingleDirection enemy)
@@ -55,9 +44,9 @@ namespace Zelda.Collision.Handlers
         {
             enemy.TakeDamage(1);
         }
-        public void CollisionHelper(Dodongo enemy, IProjectile projectile)
+        public void CollisionHelper(Dodongo enemy, Projectile projectile)
         {
-            int damage = projectile is Projectiles.Classes.Explosion ? 3 : 1;
+            int damage = projectile is Explosion ? 3 : 1;
             enemy.TakeDamage(damage);
         }
         public void CollisionHelper(Goriya enemy)

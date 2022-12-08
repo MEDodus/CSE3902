@@ -56,7 +56,7 @@ namespace Zelda.HUD
             bombQuantity.Update(gameTime, link);
             itemSelectionBox.Update(gameTime, link);
             slotA.Update(gameTime, link);
-            IItem secondary = link.Inventory.Secondary;
+            Item secondary = link.Inventory.Secondary;
             if (secondary != null)
             {
                 slotB = new HUDItem(secondary, HUDPosition + new Vector2(HUDUtilities.SLOT_B_X, HUDUtilities.SLOT_Y));

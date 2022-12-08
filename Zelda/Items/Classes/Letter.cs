@@ -3,15 +3,9 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Letter : IItem
+    public class Letter : Item
     {
         public Letter(Vector2 position) : base(ItemSpriteFactory.LetterSprite(), position, ONE, null)
-        {
-
-        }
-
-        /* Default constructor for item in inventory or not displayed in game */
-        public Letter() : base(ItemSpriteFactory.LetterSprite(), new Vector2(), ONE, null)
         {
 
         }

@@ -45,6 +45,7 @@ C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spriteshee
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\achievement.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\arrow.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\back_arrow.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\banana.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\bat.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\black_rectangle.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\blocks.xnb
@@ -76,6 +77,7 @@ C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spriteshee
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\GameOver.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\gel.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\goriya.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\green_shell.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\hand.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\heart_container.xnb
@@ -84,8 +86,10 @@ C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spriteshee
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\item_select.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\key.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\letter.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\lightning.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link2.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link2_blue.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hud_background.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt1.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\Link_hurt2.xnb
@@ -94,6 +98,7 @@ C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spriteshee
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_2.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_hurt_3.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_triforce.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\link_triforce_blue.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_boomerang.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_key.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_rod.xnb
@@ -101,9 +106,12 @@ C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spriteshee
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\magical_shield.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\map_position.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\mario_kart_items.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\menu_button.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\mushroom.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\music_note.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man_ghost.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\old_man_words.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\pause_hud_background.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\pause_hud_inventory_map.xnb
@@ -115,11 +123,13 @@ C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spriteshee
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_candle.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_potion.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_ring.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_shell.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\rupy.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\silver_arrow.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\skeleton.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\snake.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\spike_cross.xnb
+C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\star.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\stepladder.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword.xnb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\sword_beam.xnb
@@ -152,10 +162,3 @@ C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\refint\Zelda.dll
 C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.pdb
 C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\Zelda.genruntimeconfig.cache
 C:\Users\Michael\source\repos\CSE 3902\Zelda\obj\Debug\net6.0\ref\Zelda.dll
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\banana.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\green_shell.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\lightning.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\mario_kart_items.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\mushroom.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\red_shell.xnb
-C:\Users\Michael\source\repos\CSE 3902\Zelda\bin\Debug\net6.0\Content\spritesheets\star.xnb

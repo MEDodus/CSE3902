@@ -89,7 +89,7 @@ namespace Zelda.Link
         {
             // Can't take damage while already taking damage
         }
-        public bool AddToInventory(IItem item)
+        public bool AddToInventory(Item item)
         {
             // Can't equip items when damaged
             return false;
@@ -114,7 +114,13 @@ namespace Zelda.Link
         }
         public void RemoveDecorator()
         {
-            decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link2");
+            if(decoratedLink.PlayerNumber == 1)
+            {
+                decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link2");
+            } else
+            {
+                decoratedLink.Sprite.Texture = SpriteFactory.GetTexture("link2_blue");
+            }
             if(decoratedLink.PlayerNumber == 1)
             {
                 game.Link = decoratedLink;

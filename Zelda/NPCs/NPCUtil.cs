@@ -31,7 +31,7 @@ namespace Zelda.NPCs
             }
         }
 
-        public static IItem GetItem(Group enemyGroup, int itemRow, Vector2 position)
+        public static Item GetItem(Group enemyGroup, int itemRow, Vector2 position)
         {
             int spawnMarioKartItem = new Random().Next(1, 5); // (1/2) * (1/4) = 1/8 chance of enemy dropping mario kart item
             if (spawnMarioKartItem == 1 && enemyGroup == Group.X)
@@ -59,7 +59,7 @@ namespace Zelda.NPCs
             return null;
         }
 
-        public static IItem GetMarioKartItem(Vector2 position)
+        public static Item GetMarioKartItem(Vector2 position)
         {
             int marioKartItem = new Random().Next(1, 7); // 6 mario kart items total
             switch(marioKartItem)

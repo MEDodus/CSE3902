@@ -4,7 +4,6 @@ using Zelda.Achievements;
 using Zelda.Projectiles;
 using Zelda.Projectiles.Classes;
 using Zelda.Sprites.Factories;
-using Group = Zelda.NPCs.INPC.Group;
 
 namespace Zelda.NPCs.Classes
 {
@@ -16,7 +15,7 @@ namespace Zelda.NPCs.Classes
         private double attackCooldown = 0; // seconds
         private bool isAttacking = false;
 
-        public Dragon(Vector2 position) : base(NPCSpriteFactory.NonAttackingDragonSprite(), position, 6, 0.5, Group.D)
+        public Dragon(Vector2 position) : base(NPCSpriteFactory.NonAttackingDragonSprite(), position, 6, 0.5, INPC.Group.A)
         {
             damage = 2;
         }
@@ -62,9 +61,9 @@ namespace Zelda.NPCs.Classes
             {
                 attackCooldown = ATTACK_COOLDOWN_LENGTH;
                 isAttacking = true;
-                IProjectile fireball1 = new Fireball(position, new Vector2(-1, 0));
-                IProjectile fireball2 = new Fireball(position, new Vector2(-3, 1));
-                IProjectile fireball3 = new Fireball(position, new Vector2(-3, -1));
+                Projectile fireball1 = new Fireball(position, new Vector2(-1, 0));
+                Projectile fireball2 = new Fireball(position, new Vector2(-3, 1));
+                Projectile fireball3 = new Fireball(position, new Vector2(-3, -1));
                 ProjectileStorage.Add(fireball1);
                 ProjectileStorage.Add(fireball2);
                 ProjectileStorage.Add(fireball3);

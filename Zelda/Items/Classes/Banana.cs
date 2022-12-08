@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Banana : IItem
+    public class Banana : Item
     {
         public Banana(Vector2 position) : base(ItemSpriteFactory.BananaSprite(), position, 0, null)
         {

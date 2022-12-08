@@ -9,7 +9,7 @@ namespace Zelda.Inventory
 {
     public class LinkInventory : IInventory
     {
-        public IItem Secondary { get { return secondary; } }
+        public Item Secondary { get { return secondary; } }
         public int SecondaryIndex { 
             get { return secondaryIndex; }
             set
@@ -22,19 +22,19 @@ namespace Zelda.Inventory
             }
         }
 
-        private Dictionary<Type, IItem> inventory;
-        private IItem secondary;
+        private Dictionary<Type, Item> inventory;
+        private Item secondary;
         private int secondaryIndex = 0;
 
         private readonly int NUM_SECONDARY_SLOTS = 8;
 
         public LinkInventory()
         {
-            inventory = new Dictionary<Type, IItem>();
+            inventory = new Dictionary<Type, Item>();
             secondary = null;
         }
 
-        public bool AddItem(IItem item, int quantity)
+        public bool AddItem(Item item, int quantity)
         {
             if (!Contains(item) && !IsOnCollisionItem(item))
             {
@@ -53,7 +53,7 @@ namespace Zelda.Inventory
                         return false;
                     }
                 }
-                IItem itemToChange = inventory[item.GetType()];
+                Item itemToChange = inventory[item.GetType()];
                 itemToChange.AddToQuantity(quantity);
                 UpdateSecondary();
                 return true;
@@ -65,12 +65,12 @@ namespace Zelda.Inventory
         }
 
         // Contains must be called before call to RemoveItem
-        public bool RemoveItem(IItem item, int quantity)
+        public bool RemoveItem(Item item, int quantity)
         {
             if (!Contains(item)) return false;
 
             // Try to use item... check requirements etc...
-            IItem itemToChange = inventory[item.GetType()];
+            Item itemToChange = inventory[item.GetType()];
             return itemToChange.UseItem(this, null, new Vector2(), new Vector2());
             // only returning true now, conditions could chagne,
             // for example, an item that can't be picked up until
@@ -78,20 +78,16 @@ namespace Zelda.Inventory
         }
 
         // Sets index in list of found item and returns true if found
-        public bool Contains(IItem item)
+        public bool Contains(Item item)
         {
-            if (item is Wallet && inventory.ContainsKey(item.GetType()))
-            {
-                return true;
-            }
-            else if (inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld <= 0)
+            if (inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld <= 0)
             {
                 inventory.Remove(item.GetType());
             }
             return inventory.ContainsKey(item.GetType()) && inventory[item.GetType()].QuantityHeld > 0;
         }
 
-        public int GetCount(IItem item)
+        public int GetCount(Item item)
         {
             if (!Contains(item))
             {
@@ -100,7 +96,7 @@ namespace Zelda.Inventory
             return inventory[item.GetType()].QuantityHeld;
         }
 
-        public IItem GetItem(IItem item)
+        public Item GetItem(Item item)
         {
             if (Contains(item))
             {
@@ -111,7 +107,7 @@ namespace Zelda.Inventory
 
         public void UpdateSecondary()
         {
-            IItem type;
+            Item type;
             Vector2 defaultPos = new Vector2();
             switch (secondaryIndex)
             {
@@ -150,7 +146,7 @@ namespace Zelda.Inventory
             }
         }
 
-        public static bool IsOnCollisionItem(IItem item)
+        public static bool IsOnCollisionItem(Item item)
         {
             return item is Mushroom || item is Lightning || item is Star;
         }

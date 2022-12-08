@@ -4,7 +4,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Mushroom : IItem
+    public class Mushroom : Item
     {
         public Mushroom(Vector2 position) : base(ItemSpriteFactory.MushroomSprite(), position, 0, new MushroomEffect())
         {

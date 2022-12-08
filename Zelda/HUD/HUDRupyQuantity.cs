@@ -19,8 +19,8 @@ namespace Zelda.HUD
         private Vector2 destination;
         private int quantity;
         //private string text;
-        private IItem item;
-        public HUDRupyQuantity(IItem item, Vector2 position)
+        private Item item;
+        public HUDRupyQuantity(Item item, Vector2 position)
         {
             font = HUDSpriteFactory.HUDFont();
             destination = new Vector2(position.X, position.Y);

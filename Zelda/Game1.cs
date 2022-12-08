@@ -19,6 +19,7 @@ using Vector2 = Microsoft.Xna.Framework.Vector2;
 using Color = Microsoft.Xna.Framework.Color;
 using Zelda.Achievements;
 using Microsoft.Xna.Framework.Input;
+using Zelda.NPCs.FriendlyNPCs;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -41,6 +42,7 @@ namespace Zelda
         public ILink LinkCompanion { get { return linkCompanion; } set { linkCompanion = value; } }
         public IHUD HUD { get { return hud; } set { hud = value; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
+        public FriendlyNPCManager FriendlyNPCManager { get { return friendlyNPCManager; } set { friendlyNPCManager = value; } }
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -50,6 +52,7 @@ namespace Zelda
         private List<IController> controllers;
         private CommandBuilder commandBuilder;
         private CollisionDetector collisionDetector;
+        private FriendlyNPCManager friendlyNPCManager;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -78,6 +81,8 @@ namespace Zelda
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
             collisionDetector = new CollisionDetector();
             AchievementManager.Load(this);
+            base.Initialize();
+            FriendlyNPCManager.Instance.Initialize();
             Reset();
         }
 
@@ -95,6 +100,7 @@ namespace Zelda
             ProjectileStorage.Clear();
             link = new Link1(this, 1);
             linkCompanion = new Link1(this, 2);
+            FriendlyNPCManager.Instance.FriendlyNPCs.Clear();
             base.Initialize();
         }
 
@@ -112,6 +118,7 @@ namespace Zelda
             }
             gameState.Update(gameTime);
             base.Update(gameTime);
+            //FriendlyNPCManager.Instance.Update(this, gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
@@ -119,8 +126,10 @@ namespace Zelda
             GraphicClear();
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             gameState.Draw(spriteBatch);
+            //FriendlyNPCManager.Instance.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
+
         }
     }
 }

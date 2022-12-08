@@ -34,6 +34,7 @@ namespace Zelda.Link
         private int itemTimer = 0;
 
         private readonly double ATTACK_TIMER_LENGTH = 0.35;
+        private readonly double BEAM_ATTACK_TIMER_LENGTH = 0.7;
 
         public Link1(Game1 game, int number)
         {
@@ -136,7 +137,7 @@ namespace Zelda.Link
             state.TakeDamage(game, direction);
             SoundManager.Instance.PlayLinkHurtSound();
         }
-        public bool AddToInventory(IItem item)
+        public bool AddToInventory(Item item)
         {
             if(item is Bomb)
             {
@@ -162,7 +163,7 @@ namespace Zelda.Link
         {
             if (primaryAttackTimer <= 0)
             {
-                primaryAttackTimer = ATTACK_TIMER_LENGTH;
+                primaryAttackTimer = health.CurrentHealth == health.MaxHealth ? BEAM_ATTACK_TIMER_LENGTH : ATTACK_TIMER_LENGTH;
                 // adjust spawn position
                 Vector2 spawnPos = getPositionInFrontOfLink(0);
                 if (facingDirection.Equals(new Vector2(1, 0)))
@@ -177,7 +178,7 @@ namespace Zelda.Link
                 {
                     spawnPos += new Vector2(0, -10);
                 }
-                IItem sword = new Items.Classes.Sword(new Vector2());
+                Item sword = new Items.Classes.Sword(new Vector2());
                 if (inventory.Contains(sword) && inventory.GetItem(sword).UseItem(inventory, this, spawnPos, facingDirection))
                 {
                     ProjectileStorage.Add(new Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3));
@@ -188,12 +189,12 @@ namespace Zelda.Link
         }
         public bool TryUseSecondary()
         {
-            IItem secondary = inventory.Secondary;
+            Item secondary = inventory.Secondary;
             Vector2 spawnPos = getPositionInFrontOfLink(0);
             if (secondary != null && secondaryAttackTimer <= 0 && secondary.UseItem(inventory, this, spawnPos, facingDirection))
             {
                 secondaryAttackTimer = ATTACK_TIMER_LENGTH;
-                IProjectile projectile = secondary.CreateProjectile(position, facingDirection);
+                Projectile projectile = secondary.CreateProjectile(position, facingDirection);
                 if (projectile != null)
                 {
                     ProjectileStorage.Add(projectile);

@@ -4,7 +4,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
 {
-    public class Boomerang : IProjectile
+    public class Boomerang : Projectile
     {
         private Vector2 baseVelocity;
         public Boomerang(Vector2 position, Vector2 direction, ProjectileBehavior behavior) 

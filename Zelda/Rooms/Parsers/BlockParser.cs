@@ -10,12 +10,12 @@ namespace Zelda.Rooms.Parsers
 {
     public class BlockParser : Parser
     {
-        private HashSet<IBlock> blocks;
-        private IBlock[,] blocksArray;
-        private HashSet<IBlock> collidableBlocks;
-        private HashSet<IBlock> topLayerBlocks;
+        private HashSet<Block> blocks;
+        private Block[,] blocksArray;
+        private HashSet<Block> collidableBlocks;
+        private HashSet<Block> topLayerBlocks;
 
-        public BlockParser(Room room, HashSet<IBlock> blocks, HashSet<IBlock> collidableBlocks, HashSet<IBlock> topLayerBlocks, IBlock[,] blocksArray)
+        public BlockParser(Room room, HashSet<Block> blocks, HashSet<Block> collidableBlocks, HashSet<Block> topLayerBlocks, Block[,] blocksArray)
             : base(room, room.Name + "\\blocks.csv")
         {
             this.blocks = blocks;
@@ -38,7 +38,7 @@ namespace Zelda.Rooms.Parsers
 
         protected override void ParseObject(string identifier, int i, int j)
         {
-            IBlock block;
+            Block block;
             Vector2 spawnPos = GetSpawnPosition(i, j, room);
             switch (identifier)
             {

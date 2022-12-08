@@ -29,7 +29,7 @@ namespace Zelda.Link
             this.decoratedLink = decoratedLink;
             State = new LinkFacingDownState(decoratedLink);
             originalSprite = decoratedLink.Sprite;
-            decoratedLink.Sprite = LinkSpriteFactory.LinkTriforceSprite();
+            decoratedLink.Sprite = LinkSpriteFactory.LinkTriforceSprite(decoratedLink.PlayerNumber);
             this.game = game;
             Position += OFFSET;
         }
@@ -68,7 +68,7 @@ namespace Zelda.Link
         {
             // Can't take when holding triforce
         }
-        public bool AddToInventory(IItem item)
+        public bool AddToInventory(Item item)
         {
             // Can't equip items when holding triforce
             return false;

@@ -25,7 +25,7 @@ namespace Zelda.Link
         public void MoveLeft();
         public void MoveRight();
         public void TakeDamage(int damage, Vector2 direction);
-        public bool AddToInventory(IItem item);
+        public bool AddToInventory(Item item);
         public void Attack();
         public void AttackSecondary();
         public bool TryUsePrimary();

@@ -4,7 +4,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Lightning : IItem
+    public class Lightning : Item
     {
         public Lightning(Vector2 position) : base(ItemSpriteFactory.LightningSprite(), position, 0, new LightningEffect())
         {

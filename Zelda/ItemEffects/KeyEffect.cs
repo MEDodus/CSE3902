@@ -17,10 +17,10 @@ namespace Zelda.ItemEffects
         // Can only use effect class if it is in your inventory
         public bool RequirementsMet(IInventory inventory)
         {
-            IItem item = new Key(new Vector2());
+            Item item = new Key(new Vector2());
             return inventory.Contains(item) && inventory.GetItem(item).QuantityHeld > 0;
         }
-        public bool UseEffect(IItem item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseEffect(Item item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
         {
             if (RequirementsMet(inventory))
             {

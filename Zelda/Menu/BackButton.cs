@@ -9,15 +9,15 @@ namespace Zelda.Menu
     {
         public Rectangle Destination { get { return sprite.Destination; } }
 
-        private Vector2 position;
         private ISprite sprite;
 
-        private static readonly int WIDTH = 81;
-        private static readonly int HEIGHT = 55;
+        private readonly int X = 100;
+        private readonly int Y = 100;
+        private readonly int WIDTH = 81;
+        private readonly int HEIGHT = 55;
 
-        public BackButton(Vector2 position)
+        public BackButton()
         {
-            this.position = position;
             sprite = MenuSpriteFactory.BackButtonSprite();
         }
 
@@ -28,7 +28,7 @@ namespace Zelda.Menu
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            sprite.Draw(spriteBatch, new Rectangle((int)position.X, (int)position.Y, WIDTH, HEIGHT));
+            sprite.Draw(spriteBatch, new Rectangle(X, Y, WIDTH, HEIGHT));
         }
     }
 }

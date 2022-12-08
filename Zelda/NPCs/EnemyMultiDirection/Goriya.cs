@@ -101,18 +101,28 @@ namespace Zelda.NPCs.Classes
             state.Update(gameTime);
             //state.Draw(spritebatch);
         }
+        bool visible = false;
         public void Draw(SpriteBatch spriteBatch)
         {
-            Color color = damageCooldown <= 0 ? Color.White : Color.Red;
-            sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset, color);
-            if (!appeared)
+            if (visible)
             {
-                appeared = true;
-                AppearanceCloud cloud = new AppearanceCloud(position);
-                cloud.Draw(spriteBatch);
-                ProjectileStorage.Add(cloud);
+                Color color = damageCooldown <= 0 ? Color.White : Color.Red;
+                sprite.Draw(spriteBatch, position + RoomBuilder.Instance.WindowOffset, color);
             }
         }
+
+        public void Appear()
+        {
+            visible = true;
+            AppearanceCloud cloud = new AppearanceCloud(position);
+            ProjectileStorage.Add(cloud);
+        }
+
+        public void Disappear()
+        {
+            visible = false;
+        }
+
         public void ChangeDirection(Vector2 direction)
         {
             switch (direction)
@@ -173,7 +183,7 @@ namespace Zelda.NPCs.Classes
             {
                 attackCooldown = ATTACK_COOLDOWN_LENGTH;
                 isAttacking = true;
-                IProjectile boomerang = new Boomerang(position, direction, ProjectileBehavior.Enemy);
+                Projectile boomerang = new Boomerang(position, direction, ProjectileBehavior.Enemy);
                 ProjectileStorage.Add(boomerang);
             }
         }
@@ -196,7 +206,7 @@ namespace Zelda.NPCs.Classes
             this.dead = true;
         }
 
-        public IItem DropItem()
+        public Item DropItem()
         {
             int itemRow = EnemyCounter.Count;
             EnemyCounter.Increment(); // Increment counter to next row in the table

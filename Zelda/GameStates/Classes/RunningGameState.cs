@@ -1,8 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using Zelda.Achievements;
 using Zelda.Controllers;
+using Zelda.NPCs.FriendlyNPCs;
 using Zelda.Projectiles;
 using Zelda.Rooms;
 using Zelda.Sound;
@@ -31,6 +33,7 @@ namespace Zelda.GameStates.Classes
             RoomBuilder.Instance.Update(gameTime);
             RoomTransitions.Update(gameTime, game.Link, game.LinkCompanion);
             ProjectileStorage.Update(gameTime);
+            FriendlyNPCManager.Instance.Update(game, gameTime);
             game.Link.Update(gameTime);
             game.LinkCompanion.Update(gameTime);
             game.Collisions.DetectCollisions(game, gameTime, game.Link, game.LinkCompanion);
@@ -47,6 +50,7 @@ namespace Zelda.GameStates.Classes
             game.LinkCompanion.Draw(spriteBatch);
             RoomBuilder.Instance.DrawTopLayer(spriteBatch);
             game.HUD.Draw(spriteBatch);
+            FriendlyNPCManager.Instance.Draw(spriteBatch);
             AchievementManager.Draw(spriteBatch);
         }
 

@@ -11,23 +11,23 @@ namespace Zelda.Link
          * consult gameplay footage for details
          */
 
-        private List<IItem> items;
+        private List<Item> items;
 
-        public List<IItem> Items { get { return items; } }
+        public List<Item> Items { get { return items; } }
 
         public OldInventory()
         {
-            items = new List<IItem>();
+            items = new List<Item>();
         }
 
         // Returns whether the item could be successfully added to the inventory
-        public bool Add(IItem item)
+        public bool Add(Item item)
         {
             items.Add(item);
             return true; // TODO: return false if full inventory
         }
 
-        public void Remove(IItem item)
+        public void Remove(Item item)
         {
             items.Remove(item);
         }

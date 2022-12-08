@@ -4,14 +4,14 @@ namespace Zelda.Inventory
 {
     public interface IInventory
     {
-        public IItem Secondary { get; }
+        public Item Secondary { get; }
         public int SecondaryIndex { get; set; }
 
-        public bool AddItem(IItem item, int quantity);
-        public bool RemoveItem(IItem item, int quantity);
-        public bool Contains(IItem item);
-        public int GetCount(IItem item);
-        public IItem GetItem(IItem item);
+        public bool AddItem(Item item, int quantity);
+        public bool RemoveItem(Item item, int quantity);
+        public bool Contains(Item item);
+        public int GetCount(Item item);
+        public Item GetItem(Item item);
         public void UpdateSecondary();
     }
 }

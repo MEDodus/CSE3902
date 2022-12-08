@@ -8,16 +8,16 @@ namespace Zelda.Rooms.Parsers
 {
     public class ItemParser : Parser
     {
-        private HashSet<IItem> items;
+        private HashSet<Item> items;
 
-        public ItemParser(Room room, HashSet<IItem> items) : base(room, room.Name + "\\items.csv")
+        public ItemParser(Room room, HashSet<Item> items) : base(room, room.Name + "\\items.csv")
         {
             this.items = items;
         }
 
         protected override void ParseObject(string identifier, int i, int j)
         {
-            IItem item;
+            Item item;
             Vector2 spawnPos = GetSpawnPosition(i, j, room) + new Vector2(5, 5);
             switch (identifier)
             {

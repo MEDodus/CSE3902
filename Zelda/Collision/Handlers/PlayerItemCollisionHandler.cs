@@ -20,7 +20,7 @@ namespace Zelda.Collision.Handlers
             
         }
 
-        public void HandleCollision(ILink link, IItem item, Game1 game)
+        public void HandleCollision(ILink link, Item item, Game1 game)
         {
             if (item is not Rupy && item is not FiveRupies && link.AddToInventory(item))
             {
@@ -51,7 +51,7 @@ namespace Zelda.Collision.Handlers
                 RoomBuilder.Instance.CurrentRoom.RemoveItem(item);
             } else if (item is Rupy || item is FiveRupies)
             {
-                IItem wallet = link.Inventory.GetItem(new Wallet());
+                Item wallet = link.Inventory.GetItem(new Wallet());
                 int add = item is Rupy ? 1 : 5;
                 wallet.AddToQuantity(add);
                 //RoomBuilder.Instance.CurrentRoom.RemoveItem(item);

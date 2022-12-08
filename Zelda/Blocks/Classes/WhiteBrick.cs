@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Blocks.Classes
 {
-    public class WhiteBrick : IBlock
+    public class WhiteBrick : Block
     {
         public WhiteBrick(Vector2 position) : base(BlockSpriteFactory.WhiteBrickSprite(), position, true, false)
         {

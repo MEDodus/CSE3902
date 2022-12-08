@@ -9,11 +9,11 @@ namespace Zelda.Rooms.Parsers
 {
     public class BorderParser : Parser
     {
-        private Dictionary<Room.Direction, IBorder> borders;
-        private HashSet<IBlock> collidableBlocks;
-        private Dictionary<Room.Direction, IBlock> doors;
+        private Dictionary<Room.Direction, Border> borders;
+        private HashSet<Block> collidableBlocks;
+        private Dictionary<Room.Direction, Block> doors;
 
-        public BorderParser(Room room, Dictionary<Room.Direction, IBorder> borders, Dictionary<Room.Direction, IBlock> doors, HashSet<IBlock> collidableBlocks) 
+        public BorderParser(Room room, Dictionary<Room.Direction, Border> borders, Dictionary<Room.Direction, Block> doors, HashSet<Block> collidableBlocks) 
             : base(room, room.Name + "\\borders.csv")
         {
             this.borders = borders;
@@ -23,7 +23,7 @@ namespace Zelda.Rooms.Parsers
 
         protected override void ParseObject(string identifier, int i, int j)
         {
-            IBorder border = null;
+            Border border = null;
             bool puzzle = false;
             if (identifier == "wall")
             {
@@ -109,7 +109,7 @@ namespace Zelda.Rooms.Parsers
             }
         }
 
-        private void CreateLeftRightInvisibleBlocks(int i, int doorOffset, IBorder border, Room.Direction direction, bool puzzle)
+        private void CreateLeftRightInvisibleBlocks(int i, int doorOffset, Border border, Room.Direction direction, bool puzzle)
         {
             for (int j = 0; j < Settings.ROOM_HEIGHT; j++)
             {
@@ -122,7 +122,7 @@ namespace Zelda.Rooms.Parsers
                     }
                     else if (border.Locked)
                     {
-                        IBlock door = puzzle ? new PuzzleDoor(spawnPosition) : new Door(spawnPosition, true);
+                        Block door = puzzle ? new PuzzleDoor(spawnPosition) : new Door(spawnPosition, true);
                         collidableBlocks.Add(door);
                         doors[direction] = door;
                     }
@@ -139,7 +139,7 @@ namespace Zelda.Rooms.Parsers
             }
         }
 
-        private void CreateTopBottomInvisibleBlocks(int j, int doorOffset, IBorder border, Room.Direction direction, bool puzzle)
+        private void CreateTopBottomInvisibleBlocks(int j, int doorOffset, Border border, Room.Direction direction, bool puzzle)
         {
             for (int i = 0; i < Settings.ROOM_WIDTH; i++)
             {
@@ -152,7 +152,7 @@ namespace Zelda.Rooms.Parsers
                     }
                     else if (border.Locked)
                     {
-                        IBlock door = puzzle ? new PuzzleDoor(spawnPosition) : new Door(spawnPosition, true);
+                        Block door = puzzle ? new PuzzleDoor(spawnPosition) : new Door(spawnPosition, true);
                         collidableBlocks.Add(door);
                         doors[direction] = door;
                     }

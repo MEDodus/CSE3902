@@ -3,7 +3,7 @@ using Zelda.Sprites;
 
 namespace Zelda.Projectiles.Classes.Abstract
 {
-    public abstract class MultiDirectionProjectile : IProjectile
+    public abstract class MultiDirectionProjectile : Projectile
     {
         public MultiDirectionProjectile(ISprite leftSprite, ISprite rightSprite, ISprite upSprite, ISprite downSprite, Vector2 position, Vector2 direction,
             double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior, bool canCollide)

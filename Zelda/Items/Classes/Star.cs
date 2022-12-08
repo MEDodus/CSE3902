@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Star : IItem
+    public class Star : Item
     {
         public Star(Vector2 position) : base(ItemSpriteFactory.StarSprite(), position, 0, null)
         {

@@ -3,7 +3,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class GreenShell : IItem
+    public class GreenShell : Item
     {
         public GreenShell(Vector2 position) : base(ItemSpriteFactory.HeartSprite(), position, 0, null)
         {

@@ -4,7 +4,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Blocks.Classes
 {
-    public class OldManWords : IBlock
+    public class OldManWords : Block
     {
         public OldManWords(Vector2 position) : base(BlockSpriteFactory.OldManWordsSprite(), position, false, true)
         {

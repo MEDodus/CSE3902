@@ -6,7 +6,7 @@ using Zelda.Sound;
 
 namespace Zelda.Rooms.Puzzles.Classes
 {
-    public class OldManPuzzle : IPuzzle
+    public class OldManPuzzle : Puzzle
     {
         public OldManPuzzle(Room room) : base(room)
         {

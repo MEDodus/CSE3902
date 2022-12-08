@@ -12,9 +12,9 @@ namespace Zelda.HUD
         private SpriteFont font;
         private Vector2 destination;
         private int quantity;
-        private IItem item;
+        private Item item;
 
-        public HUDItemQuantity(IItem item, Vector2 position)
+        public HUDItemQuantity(Item item, Vector2 position)
         {
             font = HUDSpriteFactory.HUDFont();
             destination = new Vector2(position.X, position.Y);

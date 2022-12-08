@@ -13,7 +13,7 @@ namespace Zelda.Link
         public LinkUsingItemLeftState(ILink link)
         {
             this.link = link;
-            link.Sprite = LinkSpriteFactory.LinkUsingItemLeftSprite();
+            link.Sprite = LinkSpriteFactory.LinkUsingItemLeftSprite(link.PlayerNumber);
         }
 
         public void MoveUp()

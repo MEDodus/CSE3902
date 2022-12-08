@@ -15,7 +15,7 @@ namespace Zelda.Link
         public LinkMovingLeftState(ILink link)
         {
             this.link = link;
-            link.Sprite = LinkSpriteFactory.LinkMovingLeftSprite();
+            link.Sprite = LinkSpriteFactory.LinkMovingLeftSprite(link.PlayerNumber);
         }
 
         public void MoveUp()

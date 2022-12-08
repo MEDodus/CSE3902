@@ -56,6 +56,7 @@ namespace Zelda.Link
                 link.State = new LinkUsingItemRightState(link);
             }
         }
+
         public void Update()
         {
             

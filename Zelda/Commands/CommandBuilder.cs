@@ -31,6 +31,8 @@ namespace Zelda.Commands
             keyboard.RegisterCommand(Keys.M, new Attack(game, 2));
             keyboard.RegisterCommand(Keys.Z, new AttackSecondary(game, 1));
             keyboard.RegisterCommand(Keys.N, new AttackSecondary(game, 2));
+            keyboard.RegisterCommand(Keys.CapsLock, new MarioKartAttack(game, 1));
+            keyboard.RegisterCommand(Keys.RightAlt, new MarioKartAttack(game, 2));
 
             // Cheats
             keyboard.RegisterCommand(Keys.H, new HealthCheat(game));

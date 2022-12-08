@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class GreenShell : Item
     {
-        public GreenShell(Vector2 position) : base(ItemSpriteFactory.HeartSprite(), position, 0, null)
+        public GreenShell(Vector2 position) : base(ItemSpriteFactory.GreenShellSprite(), position, ONE, null)
         {
 
         }

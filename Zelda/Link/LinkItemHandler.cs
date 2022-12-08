@@ -44,7 +44,7 @@ namespace Zelda.Link
                     type = new Items.Classes.BlueCandle(new Vector2());
                     break;
             }
-            if (item != null && inventory.Contains(type) && inventory.GetItem(type).UseItem(inventory, link, defaultItemSpawnPos, facingDirection))
+            if (item != null && inventory.Contains(type) && inventory.GetItem(type).UseItem(link, defaultItemSpawnPos, facingDirection))
             {
                 ProjectileStorage.Add(item);
             }

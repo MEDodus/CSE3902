@@ -25,5 +25,8 @@
 
         // Link movement settings
         public static readonly float LINK_SPEED = 3f; // pixels per frame
+
+        // Mushroom & Star modifier to LINK_SPEED
+        public static readonly int SPEED_MULT = 2;
     }
 }

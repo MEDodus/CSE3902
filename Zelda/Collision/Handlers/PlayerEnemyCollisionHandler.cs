@@ -13,6 +13,7 @@ using Zelda.Blocks;
 using Zelda.Rooms;
 using System.IO;
 using Zelda.Sound;
+using Zelda.Items.Classes;
 
 namespace Zelda.Collision.Handlers
 {
@@ -29,11 +30,17 @@ namespace Zelda.Collision.Handlers
 
         }
 
-        public void HandleCollision(ILink link, INPC enemy, Game1 game, GameTime gameTime)
+        public void HandleCollision(ILink link, INPC npc, Game1 game, GameTime gameTime)
         {
-            if(enemy.Damage > 0)
+            if (link.ItemTimer.Item is Star && link.ItemTimer.Duration > 0 && NPCUtil.IsEnemy(npc))
             {
-                GetCollisionDirection(link, enemy);
+                NPCUtil.DamageEnemy(npc);
+                return;
+            }
+
+            if(npc.Damage > 0)
+            {
+                GetCollisionDirection(link, npc);
                 Vector2 direction;
                 switch (collisionDirection.Side)
                 {
@@ -52,10 +59,10 @@ namespace Zelda.Collision.Handlers
                 }
                 if(link.PlayerNumber == 1)
                 {
-                    game.Link.TakeDamage(enemy.Damage, direction);
+                    game.Link.TakeDamage(npc.Damage, direction);
                 } else
                 {
-                    game.LinkCompanion.TakeDamage(enemy.Damage, direction);
+                    game.LinkCompanion.TakeDamage(npc.Damage, direction);
                 }
             }
         }

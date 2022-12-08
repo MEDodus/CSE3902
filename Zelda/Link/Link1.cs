@@ -7,6 +7,7 @@ using Zelda.Rooms;
 using Zelda.Inventory;
 using Zelda.Sound;
 using Zelda.Items.Classes;
+using Zelda.ItemEffects;
 
 namespace Zelda.Link
 {
@@ -19,7 +20,7 @@ namespace Zelda.Link
         public IInventory Inventory { get { return inventory; } }
         public Health Health { get { return health; } }
         public int PlayerNumber { get { return playerNumber; } }
-        public int ItemTimer { get { return itemTimer; } set { itemTimer = value; } }
+        public ItemTimer ItemTimer { get { return itemTimer; } set { itemTimer = value; } }
 
         private Game1 game;
         private ILinkState state;
@@ -31,7 +32,8 @@ namespace Zelda.Link
         private IInventory inventory;
         private Health health;
         private int playerNumber;
-        private int itemTimer = 0;
+        private ItemTimer itemTimer;
+
 
         private readonly double ATTACK_TIMER_LENGTH = 0.35;
         private readonly double BEAM_ATTACK_TIMER_LENGTH = 0.7;
@@ -46,12 +48,13 @@ namespace Zelda.Link
                 inventory = new LinkInventory();
                 InventoryBuilder.BuildInventory(inventory);
                 health = new Health();
+                itemTimer = new ItemTimer();
             } else
             {
                 inventory = game.Link.Inventory;
                 health = game.Link.Health;
+                itemTimer = game.Link.ItemTimer;
             }
-
         }
 
         public void Reset()
@@ -77,25 +80,26 @@ namespace Zelda.Link
             {
                 secondaryAttackTimer -= gameTime.ElapsedGameTime.TotalSeconds;
             } 
-            if (itemTimer > 0)
+            if (itemTimer.Duration > 0)
             {
-                itemTimer -= 1;
+                itemTimer.Duration -= 1;
                 if (state is LinkMovingUpState)
                 {
-                    ((LinkMovingUpState)state).Update(2);
+                    ((LinkMovingUpState)state).Update(Settings.SPEED_MULT);
                 }
                 else if (state is LinkMovingDownState)
                 {
-                    ((LinkMovingDownState)state).Update(2);
+                    ((LinkMovingDownState)state).Update(Settings.SPEED_MULT);
                 }
                 else if (state is LinkMovingLeftState)
                 {
-                    ((LinkMovingLeftState)state).Update(2);
+                    ((LinkMovingLeftState)state).Update(Settings.SPEED_MULT);
                 }
                 else if (state is LinkMovingRightState)
                 {
-                    ((LinkMovingRightState)state).Update(2);
-                } else
+                    ((LinkMovingRightState)state).Update(Settings.SPEED_MULT);
+                }
+                else
                 {
                     state.Update();
                 }
@@ -179,7 +183,7 @@ namespace Zelda.Link
                     spawnPos += new Vector2(0, -10);
                 }
                 Item sword = new Items.Classes.Sword(new Vector2());
-                if (inventory.Contains(sword) && inventory.GetItem(sword).UseItem(inventory, this, spawnPos, facingDirection))
+                if (inventory.Contains(sword) && inventory.GetItem(sword).UseItem(this, spawnPos, facingDirection))
                 {
                     ProjectileStorage.Add(new Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3));
                     return true;
@@ -191,7 +195,7 @@ namespace Zelda.Link
         {
             Item secondary = inventory.Secondary;
             Vector2 spawnPos = getPositionInFrontOfLink(0);
-            if (secondary != null && secondaryAttackTimer <= 0 && secondary.UseItem(inventory, this, spawnPos, facingDirection))
+            if (secondary != null && secondaryAttackTimer <= 0 && secondary.UseItem(this, spawnPos, facingDirection))
             {
                 secondaryAttackTimer = ATTACK_TIMER_LENGTH;
                 Projectile projectile = secondary.CreateProjectile(position, facingDirection);
@@ -202,6 +206,11 @@ namespace Zelda.Link
                 }
             }
             return false;
+        }
+
+        public void MarioAttack()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

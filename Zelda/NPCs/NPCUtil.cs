@@ -11,6 +11,29 @@ namespace Zelda.NPCs
 {
     public static class NPCUtil
     {
+        public static bool IsEnemy(INPC npc)
+        {
+            if (npc is Dodongo || npc is Goriya || npc is Snake || npc is EnemySingleDirection) return true;
+            return false;
+        }
+
+        public static void DamageEnemy(INPC npc)
+        {
+            if (npc is Dodongo)
+            {
+                ((Dodongo)npc).TakeDamage(1);
+            } else if (npc is Snake)
+            {
+                ((Snake)npc).TakeDamage(1);
+            } else if (npc is Goriya)
+            {
+                ((Goriya)npc).TakeDamage(1);
+            } else if (npc is EnemySingleDirection)
+            {
+                ((EnemySingleDirection)npc).TakeDamage(1);
+            }
+        }
+
         public static void MoveRandomly(EnemySingleDirection enemy)
         {
             int rand = new Random().Next(1, 5);
@@ -33,7 +56,7 @@ namespace Zelda.NPCs
 
         public static Item GetItem(Group enemyGroup, int itemRow, Vector2 position)
         {
-            int spawnMarioKartItem = new Random().Next(1, 5); // (1/2) * (1/4) = 1/8 chance of enemy dropping mario kart item
+            int spawnMarioKartItem = new Random().Next(1, 2); // (1/2) * (1/4) = 1/8 chance of enemy dropping mario kart item
             if (spawnMarioKartItem == 1 && enemyGroup == Group.X)
             {
                 return GetMarioKartItem(position);

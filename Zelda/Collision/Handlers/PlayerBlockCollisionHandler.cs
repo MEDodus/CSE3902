@@ -62,7 +62,7 @@ namespace Zelda.Collision.Handlers
             }
             else if (block is Door && block.CanCollide && link.Inventory.Contains(new Key(new Vector2())))
             {
-                link.Inventory.GetItem(new Key(new Vector2())).UseItem(link.Inventory, null, new Vector2(), new Vector2());
+                link.Inventory.GetItem(new Key(new Vector2())).UseItem(link, new Vector2(), new Vector2());
                 RoomBuilder.Instance.CurrentRoom.UnlockDoor(roomDirection, true);
             }
             else if (block is StairsTrigger)

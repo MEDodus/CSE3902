@@ -14,9 +14,9 @@ namespace Zelda.ItemEffects
             Item item = new Recorder(new Vector2());
             return inventory.Contains(item);
         }
-        public bool UseEffect(Item item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseEffect(Item item, ILink link, Vector2 spawnPos, Vector2 facingDirection)
         {
-            if (RequirementsMet(inventory)) return true;
+            if (RequirementsMet(link.Inventory)) return true;
             return false;
         }
     }

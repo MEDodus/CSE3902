@@ -208,7 +208,7 @@ namespace Zelda.NPCs.Classes
             switch(rand)
             {
                 case 1:
-                    return NPCUtil.GetItem(group, EnemyCounter.Count, position);
+                    return NPCUtil.GetItem(group, itemRow, position);
                 case 2:
                 case 3:
                 case 4:

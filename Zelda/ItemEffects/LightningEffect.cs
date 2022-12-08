@@ -20,20 +20,25 @@ namespace Zelda.ItemEffects
             return true;
         }
 
-        public bool UseEffect(Item item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseEffect(Item item, ILink link, Vector2 spawnPos, Vector2 facingDirection)
         {
-            HashSet<INPC> npcs = RoomBuilder.Instance.CurrentRoom.NPCs;
-            foreach (INPC npc in npcs) 
+            if (RequirementsMet(link.Inventory))
             {
-                if (npc is EnemyMultiDirection)
+                HashSet<INPC> npcs = RoomBuilder.Instance.CurrentRoom.NPCs;
+                foreach (INPC npc in npcs)
                 {
-                    ((EnemyMultiDirection)npc).Die();
-                } else if (npc is EnemySingleDirection)
-                {
-                    ((EnemySingleDirection)npc).Die();
+                    if (npc is EnemyMultiDirection)
+                    {
+                        ((EnemyMultiDirection)npc).Die();
+                    }
+                    else if (npc is EnemySingleDirection)
+                    {
+                        ((EnemySingleDirection)npc).Die();
+                    }
                 }
+                return true;
             }
-            return true;
+            return false;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Zelda.Inventory;
+using Zelda.ItemEffects;
 using Zelda.Items;
 using Zelda.Sprites;
 using Zelda.Sprites.Factories;
@@ -16,6 +17,7 @@ namespace Zelda.Link
         public Health Health { get => decoratedLink.Health; }
         public IInventory Inventory { get => decoratedLink.Inventory; }
         public int PlayerNumber { get => decoratedLink.PlayerNumber; }
+        public ItemTimer ItemTimer { get => decoratedLink.ItemTimer; set => decoratedLink.ItemTimer = value; }
 
         Game1 game;
         ILink decoratedLink;
@@ -128,6 +130,11 @@ namespace Zelda.Link
             {
                 game.LinkCompanion = decoratedLink;
             }
+        }
+
+        public void MarioAttack()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

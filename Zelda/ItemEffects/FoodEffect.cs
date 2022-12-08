@@ -20,13 +20,13 @@ namespace Zelda.ItemEffects
             Item item = new Food(new Vector2());
             return inventory.Contains(item) && inventory.GetCount(item) > 0;
         }
-        public bool UseEffect(Item item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseEffect(Item item, ILink link, Vector2 spawnPos, Vector2 facingDirection)
         {
-            if (RequirementsMet(inventory))
+            if (RequirementsMet(link.Inventory))
             {
                 item.AddToQuantity(-1);
                 link.Health.addHealth(1);
-                inventory.UpdateSecondary();
+                link.Inventory.UpdateSecondary();
                 SoundManager.Instance.PlayGetHealthSound();
                 return true;
             }

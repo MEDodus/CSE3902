@@ -18,11 +18,11 @@ namespace Zelda.ItemEffects
             return inventory.Contains(new Arrow(new Vector2())) && inventory.Contains(new Bow(new Vector2())) && inventory.Contains(new Rupy(new Vector2()));
         }
 
-        public bool UseEffect(Item item, IInventory inventory, ILink link, Vector2 spawnPos, Vector2 facingDirection)
+        public bool UseEffect(Item item, ILink link, Vector2 spawnPos, Vector2 facingDirection)
         {
-            if (RequirementsMet(inventory))
+            if (RequirementsMet(link.Inventory))
             {
-                Item rupy = inventory.GetItem(new Rupy(new Vector2()));
+                Item rupy = link.Inventory.GetItem(new Rupy(new Vector2()));
                 rupy.AddToQuantity(-1);
                 return true;
             }

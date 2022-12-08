@@ -5,7 +5,7 @@ namespace Zelda.Items.Classes
 {
     public class RedShell : Item
     {
-        public RedShell(Vector2 position) : base(ItemSpriteFactory.RedShellSprite(), position, 0, null)
+        public RedShell(Vector2 position) : base(ItemSpriteFactory.RedShellSprite(), position, ONE, null)
         {
 
         }

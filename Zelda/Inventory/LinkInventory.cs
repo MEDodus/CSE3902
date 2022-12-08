@@ -36,45 +36,22 @@ namespace Zelda.Inventory
 
         public bool AddItem(Item item, int quantity)
         {
-            if (!Contains(item) && !IsOnCollisionItem(item))
+            if ((item is Banana || item is RedShell || item is GreenShell) && ContainsMarioKartProjectile())
+            {
+                RemoveMarioKartProjectile();
+            }
+
+            if (!Contains(item))
             {
                 inventory.Add(item.GetType(), item);
                 item.AddToQuantity(quantity);
-                UpdateSecondary();
-                return true;
-            } 
-            else if (!IsOnCollisionItem(item))
-            {
-                if(item is Bomb && GetCount(item) + quantity > LinkUtilities.BOMB_MAX_COUNT)
-                {
-                    quantity = GetCount(item) + quantity - LinkUtilities.BOMB_MAX_COUNT;
-                    if(quantity == LinkUtilities.BOMB_ITEM_PICKUP_AMOUNT)
-                    {
-                        return false;
-                    }
-                }
-                Item itemToChange = inventory[item.GetType()];
-                itemToChange.AddToQuantity(quantity);
-                UpdateSecondary();
-                return true;
             } else
             {
-                // Don't add to inventory, on collision effect occurs
-                return false;
+                Item itemToChange = inventory[item.GetType()];
+                itemToChange.AddToQuantity(quantity);
             }
-        }
-
-        // Contains must be called before call to RemoveItem
-        public bool RemoveItem(Item item, int quantity)
-        {
-            if (!Contains(item)) return false;
-
-            // Try to use item... check requirements etc...
-            Item itemToChange = inventory[item.GetType()];
-            return itemToChange.UseItem(this, null, new Vector2(), new Vector2());
-            // only returning true now, conditions could chagne,
-            // for example, an item that can't be picked up until
-            // something happens in the story...
+            UpdateSecondary();
+            return true;
         }
 
         // Sets index in list of found item and returns true if found
@@ -146,9 +123,25 @@ namespace Zelda.Inventory
             }
         }
 
-        public static bool IsOnCollisionItem(Item item)
+        public bool ContainsMarioKartProjectile()
         {
-            return item is Mushroom || item is Lightning || item is Star;
+            return Contains(new GreenShell()) || Contains(new RedShell()) || Contains(new Banana());
+        }
+
+        public void RemoveMarioKartProjectile()
+        {
+            if (Contains(new GreenShell()))
+            {
+                inventory.Remove(new GreenShell().GetType());
+            }
+            if (Contains(new RedShell()))
+            {
+                inventory.Remove(new RedShell().GetType());
+            }
+            if (Contains(new Banana()))
+            {
+                inventory.Remove(new Banana().GetType());
+            }
         }
     }
 }

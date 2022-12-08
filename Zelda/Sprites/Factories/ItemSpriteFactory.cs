@@ -11,7 +11,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite BananaSprite()
         {
-            return new Sprite(GetTexture("banana"), 1);
+            return new Sprite(GetTexture("banana"), 0.75);
         }
 
         public static ISprite BlueCandleSprite()
@@ -76,7 +76,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite GreenShellSprite()
         {
-            return new Sprite(GetTexture("green_shell"), 1);
+            return new Sprite(GetTexture("green_shell"), 0.75);
         }
 
         public static ISprite HeartSprite()
@@ -101,7 +101,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite LightningSprite()
         {
-            return new Sprite(GetTexture("lightning"), 1);
+            return new Sprite(GetTexture("lightning"), 0.75);
         }
 
         public static ISprite MagicalBoomerangSprite()
@@ -131,7 +131,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite MushroomSprite()
         {
-            return new Sprite(GetTexture("mushroom"), 1);
+            return new Sprite(GetTexture("mushroom"), 0.75);
         }
 
         public static ISprite PowerBraceletSprite()
@@ -171,7 +171,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite RedShellSprite()
         {
-            return new Sprite(GetTexture("red_shell"), 1);
+            return new Sprite(GetTexture("red_shell"), 0.75);
         }
 
         public static ISprite SilverArrowSprite()
@@ -181,7 +181,7 @@ namespace Zelda.Sprites.Factories
 
         public static ISprite StarSprite()
         {
-            return new Sprite(GetTexture("star"), 1);
+            return new Sprite(GetTexture("star"), 0.75);
         }
 
         public static ISprite StepladderSprite()

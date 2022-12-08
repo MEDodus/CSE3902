@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Zelda.Inventory;
+using Zelda.ItemEffects;
 using Zelda.Items;
 using Zelda.Sprites;
 
@@ -15,6 +16,7 @@ namespace Zelda.Link
         public Health Health { get; }
         public IInventory Inventory { get; }
         public int PlayerNumber { get; }
+        public ItemTimer ItemTimer { get; set; }
         
         public void Update(GameTime gameTime);
         public void Draw(SpriteBatch spriteBatch);
@@ -30,5 +32,6 @@ namespace Zelda.Link
         public void AttackSecondary();
         public bool TryUsePrimary();
         public bool TryUseSecondary();
+        public void MarioAttack();
     }
 }

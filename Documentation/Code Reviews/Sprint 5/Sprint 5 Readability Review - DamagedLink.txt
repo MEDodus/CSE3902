@@ -1,0 +1,15 @@
+Code Review By: Alex Reed
+Date: 12/7/2022
+Sprint #: 5
+Class Reviewed: DamagedLink.cs
+Author: Nicholas Younoszai
+Time to Review: 20min
+
+Comments on Readability: The methods/states in this class are very readable.  The names of variables (game, decoratedLink, etc.) describe exactly
+what they contain.  The methods are also descriptive of the jobs they do (update, draw, MoveUp, etc.).
+
+
+The only thing that is not very readable are the magic numbers. Timer is arbitrarily set to 48 , and the if statements in update compares it to 0
+and its modulus to several undefined numbers.
+This could be solved by placing timer variable values in the Settings.cs file as a constant. Or it could be added as a constant to the beginning to the
+class.

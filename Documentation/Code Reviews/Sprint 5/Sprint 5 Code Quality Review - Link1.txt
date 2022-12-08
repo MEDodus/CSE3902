@@ -1,0 +1,18 @@
+Review By: Alex Reed
+Date: 12/7/2022
+Sprint #: 5
+Class Reviewed: Link1.cs
+Author: Nicholas Younoszai
+Time: 38min.
+
+Code Quality:
+This code is very readable, although it is longer than the recommended class length. However, this appears
+unavoidable due to the amount of functionality in Link.
+The class handles many different types of functionality, but all for the Link player, so the class is cohesive.
+The class has high coupling as it requires a reference to Game1 and many other classes reference the Link class 
+directly.
+
+Hypothetical Change:
+This class could break up some of its functionality into helper classes to improve readability. This would decrease
+the overall length of the class. Also, instead of having separate Move****() classes, a generalized move class could
+accept a Vector and use an Enum to change the facing direction of Link.

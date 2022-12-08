@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/SoundEffect/achievement.wav</SourceFile>
-  <SourceTime>2022-12-07T12:42:28.8180703-05:00</SourceTime>
-  <DestFile>C:/Users/jacob/source/repos/MEDodus/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/achievement.xnb</DestFile>
-  <DestTime>2022-12-07T12:44:39.3031745-05:00</DestTime>
-  <Importer>WavImporter</Importer>
-  <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
-  <Processor>SoundEffectProcessor</Processor>
-  <ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime>
-  <Parameters>
-    <Key>Quality</Key>
-    <Value>Best</Value>
-  </Parameters>
-  <Dependencies />
-  <BuildAsset />
-  <BuildOutput />
-</PipelineBuildEvent>
+<?xml version="1.0" encoding="utf-8"?><PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><SourceFile>C:/Users/alexr/Source/Repos/CSE3902/Zelda/Content/SoundEffect/achievement.wav</SourceFile><SourceTime>2022-12-07T14:56:29.6976515-05:00</SourceTime><DestFile>C:/Users/alexr/Source/Repos/CSE3902/Zelda/Content/bin/DesktopGL/Content/SoundEffect/achievement.xnb</DestFile><DestTime>2022-12-07T15:21:11.7288693-05:00</DestTime><Importer>WavImporter</Importer><ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime><Processor>SoundEffectProcessor</Processor><ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime><Parameters><Key>Quality</Key><Value>Best</Value></Parameters><Dependencies /><BuildAsset /><BuildOutput /></PipelineBuildEvent>

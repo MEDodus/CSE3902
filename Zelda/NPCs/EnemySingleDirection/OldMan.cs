@@ -12,13 +12,15 @@ namespace Zelda.NPCs.Classes
 {
     public class OldMan : INPC
     {
-        public readonly int OLDMAN_AGRO_HEALTH = 5;
+        public readonly int OLDMAN_AGRO_HEALTH = 1;
+        public readonly int OLDMAN_PASSIVE_DAMAGE = 0;
 
-        public bool Dead { get { return false; } }
+        public bool Dead { get { return dead; } set { dead = value; } }
 
         protected ISprite sprite;
         protected Vector2 position;
         protected INPCState state;
+        protected bool dead;
         private int damage;
         protected int health;
 
@@ -34,8 +36,9 @@ namespace Zelda.NPCs.Classes
         {
             sprite = NPCSpriteFactory.OldManSprite();
             position = startPosition;
-            damage = 0;
+            damage = OLDMAN_PASSIVE_DAMAGE;
             state = new OldManPassiveState(this);
+            dead = false;
         }
 
         public void Update(GameTime gameTime)

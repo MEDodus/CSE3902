@@ -982,6 +982,18 @@
 /processorParam:TextureFormat=Color
 /build:spritesheets/menu_button.png
 
+#begin spritesheets/old_man_ghost.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spritesheets/old_man_ghost.png
+
 #begin spritesheets/old_man_words.png
 /importer:TextureImporter
 /processor:TextureProcessor

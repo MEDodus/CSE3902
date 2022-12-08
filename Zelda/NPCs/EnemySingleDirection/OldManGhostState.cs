@@ -12,7 +12,7 @@ namespace Zelda.NPCs.EnemyMultiDirection
         public OldManGhostState(OldMan oldMan)
         {
             ghost = oldMan;
-            ghost.Sprite = NPCSpriteFactory.OldManGhostSprite();
+            ghost.Sprite = NPCSpriteFactory.LeftGhostFollower();
         }
 
         public void TurnLeft()

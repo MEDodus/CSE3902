@@ -18,6 +18,7 @@ using System.Numerics;
 using Vector2 = Microsoft.Xna.Framework.Vector2;
 using Color = Microsoft.Xna.Framework.Color;
 using Zelda.Achievements;
+using Zelda.NPCs.FriendlyNPCs;
 
 /*
  * CSE 3902 Legend of Zelda
@@ -40,6 +41,7 @@ namespace Zelda
         public ILink LinkCompanion { get { return linkCompanion; } set { linkCompanion = value; } }
         public IHUD HUD { get { return hud; } set { hud = value; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
+        public FriendlyNPCManager FriendlyNPCManager { get { return friendlyNPCManager; } set { friendlyNPCManager = value; } }
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -49,6 +51,7 @@ namespace Zelda
         private List<IController> controllers;
         private CommandBuilder commandBuilder;
         private CollisionDetector collisionDetector;
+        private FriendlyNPCManager friendlyNPCManager;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -85,6 +88,7 @@ namespace Zelda
             linkCompanion = new Link1(this, 2);
             AchievementManager.Load(this);
             base.Initialize();
+            FriendlyNPCManager.Instance.Initialize();
         }
 
         protected override void LoadContent()
@@ -119,6 +123,7 @@ namespace Zelda
             }
             gameState.Update(gameTime);
             base.Update(gameTime);
+            FriendlyNPCManager.Instance.Update(this, gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
@@ -126,8 +131,10 @@ namespace Zelda
             GraphicClear();
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp);
             gameState.Draw(spriteBatch);
+            FriendlyNPCManager.Instance.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
+
         }
     }
 }

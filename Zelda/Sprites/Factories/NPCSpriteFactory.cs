@@ -1,9 +1,22 @@
-﻿using Zelda.Sprites.Classes;
+﻿using System.Runtime.CompilerServices;
+using Zelda.Sprites.Classes;
 
 namespace Zelda.Sprites.Factories
 {
     public class NPCSpriteFactory : SpriteFactory
     {
+        public static int GHOSTFOLLOWER_ROWS = 1;
+        public static int GHOSTFOLLOWER_COLUMNS = 2;
+        public static int GHOSTFOLLOWER_SIDELENGTH = 48;
+        public static int GHOSTFOLLOWER_LEFT;
+        public static int TOP_CORNER = 0;
+        public static int GHOSTFOLLWER_FPS = 4;
+        public static double GHOSTFOLLOWER_BLOCK_SIZE = 0.6;
+        public static int RIGHT_ATTACK_Y = GHOSTFOLLOWER_SIDELENGTH * 2;
+        public static int LEFT_ATTACK_Y = GHOSTFOLLOWER_SIDELENGTH * 3;
+
+        //AnimatedSprite(Texture2D texture, int x, int y, int rows, int columns, int rowHeight, int columnWidth, int fps, double sizeInBlocks)
+
         // Neutral
         public static ISprite OldManSprite()
         {
@@ -11,9 +24,26 @@ namespace Zelda.Sprites.Factories
         }
 
         //Friendly
+        public static ISprite LeftGhostFollower()
+        {
+            return new AnimatedSprite(GetTexture("old_man_ghost"), TOP_CORNER, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLOWER_ROWS, GHOSTFOLLOWER_COLUMNS, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLWER_FPS, GHOSTFOLLOWER_BLOCK_SIZE);
+        }
+        public static ISprite RightGhostFollower()
+        {
+            return new AnimatedSprite(GetTexture("old_man_ghost"), TOP_CORNER, TOP_CORNER, GHOSTFOLLOWER_ROWS, GHOSTFOLLOWER_COLUMNS, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLWER_FPS, GHOSTFOLLOWER_BLOCK_SIZE);
+        }
+        public static ISprite LeftAttackGhostFollower()
+        {
+            return new AnimatedSprite(GetTexture("old_man_ghost"), TOP_CORNER, LEFT_ATTACK_Y, GHOSTFOLLOWER_ROWS, GHOSTFOLLOWER_COLUMNS, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLWER_FPS, GHOSTFOLLOWER_BLOCK_SIZE);
+        }
+        public static ISprite RightAttackGhostFollower()
+        {
+            return new AnimatedSprite(GetTexture("old_man_ghost"), TOP_CORNER, RIGHT_ATTACK_Y, GHOSTFOLLOWER_ROWS, GHOSTFOLLOWER_COLUMNS, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLOWER_SIDELENGTH, GHOSTFOLLWER_FPS, GHOSTFOLLOWER_BLOCK_SIZE);
+        }
+
         public static ISprite OldManGhostSprite()
         {
-            return new AnimatedSprite(GetTexture("old_man_ghost"), 2, 2, 4, 0.6);
+            return new AnimatedSprite(GetTexture("old_man_ghost"), 4, 2, 4, 0.6);
         }
 
         // Enemies (single state)

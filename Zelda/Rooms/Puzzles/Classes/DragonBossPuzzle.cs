@@ -5,7 +5,7 @@ using Zelda.Rooms.Parsers;
 
 namespace Zelda.Rooms.Puzzles.Classes
 {
-    public class DragonBossPuzzle : IPuzzle
+    public class DragonBossPuzzle : Puzzle
     {
         public DragonBossPuzzle(Room room) : base(room)
         {

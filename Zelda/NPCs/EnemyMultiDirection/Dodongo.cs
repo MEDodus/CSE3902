@@ -200,9 +200,9 @@ namespace Zelda.NPCs.Classes
             AchievementManager.GrantAchievement(Achievement.DodongoKilled);
         }
 
-        public IItem DropItem()
+        public Item DropItem()
         {
-            IItem item = NPCUtil.GetItem(group, EnemyCounter.Count, position);
+            Item item = NPCUtil.GetItem(group, EnemyCounter.Count, position);
             EnemyCounter.Increment(); // Increment counter to next row in the table
             return item;
 

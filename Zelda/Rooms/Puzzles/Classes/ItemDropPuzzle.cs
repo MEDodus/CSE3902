@@ -10,11 +10,11 @@ using Zelda.Sound;
 
 namespace Zelda.Rooms.Puzzles.Classes
 {
-    public class ItemDropPuzzle : IPuzzle
+    public class ItemDropPuzzle : Puzzle
     {
-        private IItem item;
+        private Item item;
 
-        public ItemDropPuzzle(Room room, IItem item) : base(room)
+        public ItemDropPuzzle(Room room, Item item) : base(room)
         {
             this.item = item;
         }
@@ -29,7 +29,7 @@ namespace Zelda.Rooms.Puzzles.Classes
         {
             // Spawn the item in a random location within the room that is not occupied by a collidable block.
             Random rng = new Random();
-            IBlock block;
+            Block block;
             do
             {
                 block = Room.BlocksArray[rng.Next(Settings.ROOM_WIDTH), rng.Next(Settings.ROOM_HEIGHT)];

@@ -68,7 +68,7 @@ namespace Zelda.Collision
                         playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
                     }
                 }
-                foreach (IProjectile projectile in ProjectileStorage.Projectiles)
+                foreach (Projectile projectile in ProjectileStorage.Projectiles)
                 {
                     if (player.Sprite.Destination.Intersects(projectile.Sprite.Destination))
                     {
@@ -89,14 +89,14 @@ namespace Zelda.Collision
                         playerEnemyCollisionHandler.HandleCollision(player, dynamicEnemy, myGame, gameTime);
                     }
                 }
-                foreach(IProjectile projectile in ProjectileStorage.Projectiles)
+                foreach(Projectile projectile in ProjectileStorage.Projectiles)
                 {
                     if (player.Sprite.Destination.Intersects(projectile.Sprite.Destination))
                     {
                         playerProjectileCollisionHandler.HandleCollision(player, projectile, myGame);
                     }
                 }
-                foreach(IBlock block in RoomBuilder.Instance.CurrentRoom.CollidableBlocks)
+                foreach(Block block in RoomBuilder.Instance.CurrentRoom.CollidableBlocks)
                 {
                     if (block != null && player.Sprite.Destination.Intersects(block.Sprite.Destination))
                     {
@@ -105,7 +105,7 @@ namespace Zelda.Collision
                 }
                 foreach (Room room in RoomBuilder.Instance.CurrentRoom.AdjacentRooms.Values)
                 {
-                    foreach (IBlock block in room.CollidableBlocks)
+                    foreach (Block block in room.CollidableBlocks)
                     {
                         if (block != null && player.Sprite.Destination.Intersects(block.Sprite.Destination))
                         {
@@ -113,7 +113,7 @@ namespace Zelda.Collision
                         }
                     }
                 }
-                foreach (IItem item in RoomBuilder.Instance.CurrentRoom.Items)
+                foreach (Item item in RoomBuilder.Instance.CurrentRoom.Items)
                 {
                     if (player.Sprite.Destination.Intersects(item.Sprite.Destination))
                     {
@@ -127,14 +127,14 @@ namespace Zelda.Collision
         {
             foreach (INPC dynamicEnemy in dynamicEnemies)
             {
-                foreach (IProjectile projectile in ProjectileStorage.Projectiles)
+                foreach (Projectile projectile in ProjectileStorage.Projectiles)
                 {
                     if (projectile.Sprite.Destination.Intersects(dynamicEnemy.Sprite.Destination))
                     {
                         enemyProjectileCollisionHandler.HandleCollision(dynamicEnemy, projectile);
                     }
                 }
-                foreach (IBlock block in RoomBuilder.Instance.CurrentRoom.CollidableBlocks)
+                foreach (Block block in RoomBuilder.Instance.CurrentRoom.CollidableBlocks)
                 {
                     if (dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
                     {
@@ -143,7 +143,7 @@ namespace Zelda.Collision
                 }
                 foreach (Room room in RoomBuilder.Instance.CurrentRoom.AdjacentRooms.Values)
                 {
-                    foreach (IBlock block in room.CollidableBlocks)
+                    foreach (Block block in room.CollidableBlocks)
                     {
                         if (dynamicEnemy.Sprite.Destination.Intersects(block.Sprite.Destination))
                         {
@@ -158,7 +158,7 @@ namespace Zelda.Collision
         {
             foreach (INPC staticEnemy in staticEnemies)
             {
-                foreach (IProjectile projectile in ProjectileStorage.Projectiles)
+                foreach (Projectile projectile in ProjectileStorage.Projectiles)
                 {
                     projectile.Sprite.Destination.Intersects(staticEnemy.Sprite.Destination);
                 }
@@ -167,9 +167,9 @@ namespace Zelda.Collision
 
         private void CheckProjectileBlockCollision()
         {
-            foreach (IProjectile projectile in ProjectileStorage.Projectiles)
+            foreach (Projectile projectile in ProjectileStorage.Projectiles)
             {
-                foreach (IBlock block in RoomBuilder.Instance.CurrentRoom.CollidableBlocks)
+                foreach (Block block in RoomBuilder.Instance.CurrentRoom.CollidableBlocks)
                 {
                     if (projectile.Sprite.Destination.Intersects(block.Sprite.Destination))
                     {

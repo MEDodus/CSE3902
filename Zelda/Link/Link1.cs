@@ -110,7 +110,7 @@ namespace Zelda.Link
             state.TakeDamage(game, direction);
             SoundManager.Instance.PlayLinkHurtSound();
         }
-        public bool AddToInventory(IItem item)
+        public bool AddToInventory(Item item)
         {
             if(item is Bomb)
             {
@@ -151,7 +151,7 @@ namespace Zelda.Link
                 {
                     spawnPos += new Vector2(0, -10);
                 }
-                IItem sword = new Items.Classes.Sword(new Vector2());
+                Item sword = new Items.Classes.Sword(new Vector2());
                 if (inventory.Contains(sword) && inventory.GetItem(sword).UseItem(inventory, health, spawnPos, facingDirection))
                 {
                     ProjectileStorage.Add(new Projectiles.Classes.Sword(spawnPos, facingDirection, 0.3));
@@ -162,12 +162,12 @@ namespace Zelda.Link
         }
         public bool TryUseSecondary()
         {
-            IItem secondary = inventory.Secondary;
+            Item secondary = inventory.Secondary;
             Vector2 spawnPos = getPositionInFrontOfLink(0);
             if (secondary != null && secondaryAttackTimer <= 0 && secondary.UseItem(inventory, health, spawnPos, facingDirection))
             {
                 secondaryAttackTimer = ATTACK_TIMER_LENGTH;
-                IProjectile projectile = secondary.CreateProjectile(position, facingDirection);
+                Projectile projectile = secondary.CreateProjectile(position, facingDirection);
                 if (projectile != null)
                 {
                     ProjectileStorage.Add(projectile);

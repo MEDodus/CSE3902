@@ -68,7 +68,7 @@ namespace Zelda.NPCs.Classes
             visible = false;
         }
 
-        public IItem DropItem()
+        public Item DropItem()
         {
             return null;
         }

@@ -23,7 +23,7 @@ namespace Zelda.Collision.Handlers
             
         }
 
-        public void HandleCollision(ILink link, IBlock block)
+        public void HandleCollision(ILink link, Block block)
         {
             if (!block.CanCollide)
                 return;
@@ -76,7 +76,7 @@ namespace Zelda.Collision.Handlers
             }
         }
 
-        protected void GetCollisionDirection(ILink link, IBlock block)
+        protected void GetCollisionDirection(ILink link, Block block)
         {
             Rectangle collisionArea = Rectangle.Intersect(link.Sprite.Destination, block.Sprite.Destination);
             if (collisionArea.Height > collisionArea.Width)
@@ -91,7 +91,7 @@ namespace Zelda.Collision.Handlers
 
         }
 
-        protected void UpOrDownCollision(ILink link, IBlock block)
+        protected void UpOrDownCollision(ILink link, Block block)
         {
             if (link.Sprite.Destination.Y > block.Sprite.Destination.Y)
             {
@@ -102,7 +102,7 @@ namespace Zelda.Collision.Handlers
                 collisionDirection = new Direction("up");
             }
         }
-        protected void LeftOrRightCollision(ILink link, IBlock block)
+        protected void LeftOrRightCollision(ILink link, Block block)
         {
             if (link.Sprite.Destination.X > block.Sprite.Destination.X)
             {

@@ -4,7 +4,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
 {
-    public class Fireball : IProjectile
+    public class Fireball : Projectile
     {
         public Fireball(Vector2 position, Vector2 direction, ProjectileBehavior behavior) :
             base(ProjectileSpriteFactory.FireballSprite(), position, direction, 8, 3, behavior)

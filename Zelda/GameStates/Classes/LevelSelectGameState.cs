@@ -22,6 +22,7 @@ namespace Zelda.GameStates.Classes
         private Game1 game;
         private double clickCooldown = 0.75; // when entering menu, left click is already down from the title screen, so wait to accept input
         private List<MenuButton> menuButtons;
+        private BackButton backButton;
 
         public LevelSelectGameState(Game1 game)
         {
@@ -32,6 +33,7 @@ namespace Zelda.GameStates.Classes
             {
                 menuButtons.Add(new MenuButton(new Vector2(X, Y + (i - 1) * BUTTON_OFFSET_Y), "     LEVEL " + i));
             }
+            backButton = new BackButton();
         }
 
         public void Update(GameTime gameTime)
@@ -44,10 +46,12 @@ namespace Zelda.GameStates.Classes
             {
                 button.Update(gameTime);
             }
+            backButton.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            backButton.Draw(spriteBatch);
             for (int i = 0; i < menuButtons.Count; i++)
             {
                 MenuButton button = menuButtons[i];
@@ -84,6 +88,11 @@ namespace Zelda.GameStates.Classes
                     game.GameState = new RunningGameState(game);
                     return;
                 }
+            }
+            if (backButton.Destination.Contains(position))
+            {
+                SoundManager.Instance.PlayMenuClickSound();
+                game.GameState = new MenuGameState(game);
             }
         }
 

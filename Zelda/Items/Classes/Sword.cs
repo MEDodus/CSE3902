@@ -5,7 +5,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Items.Classes
 {
-    public class Sword : IItem
+    public class Sword : Item
     {
         public Sword(Vector2 position) : base(ItemSpriteFactory.SwordSprite(), position, INFINITE, new Zelda.ItemEffects.SwordEffect())
         {

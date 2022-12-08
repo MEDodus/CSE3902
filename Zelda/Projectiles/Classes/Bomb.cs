@@ -5,7 +5,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
 {
-    public class Bomb : IProjectile
+    public class Bomb : Projectile
     {
         public Bomb(Vector2 position) : base(ProjectileSpriteFactory.BombSprite(), position, new Vector2(), 0, 2, ProjectileBehavior.NeutralHarmless, false)
         {

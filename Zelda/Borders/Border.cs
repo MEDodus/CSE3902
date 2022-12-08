@@ -8,7 +8,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Borders
 {
-    public abstract class IBorder
+    public abstract class Border
     {
         public bool IsWall { get { return isWall; } }
         public bool Locked { get { return locked; } }
@@ -20,7 +20,7 @@ namespace Zelda.Borders
         protected bool locked;
         protected bool isWall;
 
-        public IBorder(Room room, ISprite sprite, bool locked, bool isWall, Vector2 relativePosition, Vector2 size)
+        public Border(Room room, ISprite sprite, bool locked, bool isWall, Vector2 relativePosition, Vector2 size)
         {
             this.room = room;
             this.sprite = sprite;

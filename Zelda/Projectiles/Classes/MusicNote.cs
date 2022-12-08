@@ -4,7 +4,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Projectiles.Classes
 {
-    public class MusicNote : IProjectile
+    public class MusicNote : Projectile
     {
         public MusicNote(Vector2 position, Vector2 direction) : base(ProjectileSpriteFactory.MusicNoteSprite(), position, direction, 8, 3, ProjectileBehavior.Friendly)
         {

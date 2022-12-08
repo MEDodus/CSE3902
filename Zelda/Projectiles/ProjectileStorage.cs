@@ -7,13 +7,13 @@ namespace Zelda.Projectiles
 {
     public static class ProjectileStorage
     {
-        private static readonly HashSet<IProjectile> projectiles = new();
-        private static readonly HashSet<IProjectile> projectilesToAdd = new();
-        public static HashSet<IProjectile> Projectiles { 
+        private static readonly HashSet<Projectile> projectiles = new();
+        private static readonly HashSet<Projectile> projectilesToAdd = new();
+        public static HashSet<Projectile> Projectiles { 
             get {return projectiles;}
         }
 
-        public static void Add(IProjectile projectile)
+        public static void Add(Projectile projectile)
         {
             // Projectiles might be created externally within foreach loops over Projectiles, so do not add directly to Projectiles
             projectilesToAdd.Add(projectile);
@@ -21,13 +21,13 @@ namespace Zelda.Projectiles
 
         public static void Update(GameTime gameTime)
         {
-            foreach (IProjectile projectile in projectilesToAdd)
+            foreach (Projectile projectile in projectilesToAdd)
             {
                 Projectiles.Add(projectile);
             }
             projectilesToAdd.Clear();
-            HashSet<IProjectile> projectilesToDelete = new HashSet<IProjectile>();
-            foreach (IProjectile projectile in Projectiles)
+            HashSet<Projectile> projectilesToDelete = new HashSet<Projectile>();
+            foreach (Projectile projectile in Projectiles)
             {
                 bool lifetimeExpired = projectile.Update(gameTime);
                 if (lifetimeExpired)
@@ -36,7 +36,7 @@ namespace Zelda.Projectiles
                     projectilesToDelete.Add(projectile);
                 }
             }
-            foreach (IProjectile projectile in projectilesToDelete)
+            foreach (Projectile projectile in projectilesToDelete)
             {
                 projectile.OnDelete();
                 Projectiles.Remove(projectile);
@@ -45,7 +45,7 @@ namespace Zelda.Projectiles
 
         public static void Draw(SpriteBatch spriteBatch)
         {
-            foreach (IProjectile projectile in projectiles)
+            foreach (Projectile projectile in projectiles)
             {
                 projectile.Draw(spriteBatch);
             }

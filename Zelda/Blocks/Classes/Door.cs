@@ -4,7 +4,7 @@ using Zelda.Sprites.Factories;
 
 namespace Zelda.Blocks.Classes
 {
-    public class Door : IBlock
+    public class Door : Block
     {
         public Door(Vector2 position, bool locked) : base(BlockSpriteFactory.InvisibleSprite(), position, locked, false)
         {

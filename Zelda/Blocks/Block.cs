@@ -6,7 +6,7 @@ using Zelda.Sprites;
 
 namespace Zelda.Blocks
 {
-    public abstract class IBlock
+    public abstract class Block
     {
         public ISprite Sprite { get { return sprite; } }
         public Vector2 Position { get { return position; } }
@@ -18,7 +18,7 @@ namespace Zelda.Blocks
         protected bool canCollide;
         protected bool isGap; // canCollide is true but projectiles can fly over
 
-        public IBlock(ISprite sprite, Vector2 position, bool canCollide, bool isGap)
+        public Block(ISprite sprite, Vector2 position, bool canCollide, bool isGap)
         {
             this.sprite = sprite;
             this.position = position;

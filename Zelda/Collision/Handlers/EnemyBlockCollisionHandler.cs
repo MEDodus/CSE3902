@@ -17,7 +17,7 @@ namespace Zelda.Collision
         protected Rectangle collisionArea;
         protected Rectangle enemyBox;
         protected Rectangle blockBox;
-        public void HandleCollision(INPC enemy, IBlock block)
+        public void HandleCollision(INPC enemy, Block block)
         {
             GetCollisionDirection(enemy, block);
 
@@ -38,27 +38,27 @@ namespace Zelda.Collision
                 CollisionHelper((Goriya)enemy, block);
             }
         }
-        public void CollisionHelper(EnemySingleDirection enemy, IBlock block)
+        public void CollisionHelper(EnemySingleDirection enemy, Block block)
         {
             //change direction
             enemy.ChangeDirection(this.AwayFromCollision.Vector);
         }
 
-        public void CollisionHelper(Snake enemy, IBlock block)
+        public void CollisionHelper(Snake enemy, Block block)
         {
             //change direction
             enemy.ChangeDirection(this.AwayFromCollision.Vector);
         }
-        public void CollisionHelper(Dodongo enemy, IBlock block)
+        public void CollisionHelper(Dodongo enemy, Block block)
         {
             enemy.ChangeDirection(this.AwayFromCollision.Vector);
         }
-        public void CollisionHelper(Goriya enemy, IBlock block)
+        public void CollisionHelper(Goriya enemy, Block block)
         {
             enemy.ChangeDirection(this.AwayFromCollision.Vector);
         }
 
-        protected void GetCollisionDirection(INPC enemy, IBlock block)
+        protected void GetCollisionDirection(INPC enemy, Block block)
         {
             collisionArea = Rectangle.Intersect(enemy.Sprite.Destination, block.Sprite.Destination);
             if(collisionArea.Height > collisionArea.Width)
@@ -73,7 +73,7 @@ namespace Zelda.Collision
 
         }
 
-        protected void UpOrDownCollision(INPC enemy, IBlock block)
+        protected void UpOrDownCollision(INPC enemy, Block block)
         {
             if(enemy.Sprite.Destination.Y > block.Sprite.Destination.Y)
             {
@@ -84,7 +84,7 @@ namespace Zelda.Collision
                 this.AwayFromCollision = new Direction("up");
             }
         }
-        protected void LeftOrRightCollision(INPC enemy, IBlock block)
+        protected void LeftOrRightCollision(INPC enemy, Block block)
         {
             if (enemy.Sprite.Destination.X > block.Sprite.Destination.X)
             {

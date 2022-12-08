@@ -11,7 +11,7 @@ using Zelda.Sprites;
 
 namespace Zelda.Items
 {
-    public abstract class IItem
+    public abstract class Item
     {
 
         public static readonly int INFINITE = int.MaxValue, ONE = 1;
@@ -27,7 +27,7 @@ namespace Zelda.Items
 
         public int QuantityHeld { get { return quantityHeld; } }
 
-        public IItem(ISprite sprite, Vector2 position, int maxItemCount, IEffect effect)
+        public Item(ISprite sprite, Vector2 position, int maxItemCount, IEffect effect)
         {
             this.sprite = sprite;
             this.position = position;
@@ -70,7 +70,7 @@ namespace Zelda.Items
             return effect.UseEffect(this, inventory, health, position, facingDirection);
         }
 
-        public virtual IProjectile CreateProjectile(Vector2 position, Vector2 facingDirection)
+        public virtual Projectile CreateProjectile(Vector2 position, Vector2 facingDirection)
         {
             // Most items do not have a projectile counterpart
             return null;

@@ -49,14 +49,14 @@ namespace Zelda.NPCs.EnemyMultiDirection
 
         public void Attack()
         {
-            IProjectile fireball0 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_POS, ATTACK_DIR_ZERO));
-            IProjectile fireball1 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_POS, ATTACK_DIR_POS));
-            IProjectile fireball2 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_ZERO, ATTACK_DIR_POS));
-            IProjectile fireball3 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_POS));
-            IProjectile fireball4 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_ZERO));
-            IProjectile fireball5 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_NEG));
-            IProjectile fireball6 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_ZERO, ATTACK_DIR_NEG));
-            IProjectile fireball7 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_POS, ATTACK_DIR_NEG));
+            Projectile fireball0 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_POS, ATTACK_DIR_ZERO));
+            Projectile fireball1 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_POS, ATTACK_DIR_POS));
+            Projectile fireball2 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_ZERO, ATTACK_DIR_POS));
+            Projectile fireball3 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_POS));
+            Projectile fireball4 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_ZERO));
+            Projectile fireball5 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_NEG, ATTACK_DIR_NEG));
+            Projectile fireball6 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_ZERO, ATTACK_DIR_NEG));
+            Projectile fireball7 = new Fireball(enemy.Position, new Vector2(ATTACK_DIR_POS, ATTACK_DIR_NEG));
 
 
             ProjectileStorage.Add(fireball0);

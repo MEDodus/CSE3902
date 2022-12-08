@@ -89,7 +89,7 @@ namespace Zelda.Rooms
             triforceRoom = CurrentRoom;
             foreach (Room room in rooms)
             {
-                foreach (IItem item in room.Items)
+                foreach (Item item in room.Items)
                 {
                     if (item is Triforce)
                     {

@@ -59,7 +59,7 @@ namespace Zelda.Rooms.Parsers
                 }
                 else if (roomName.Equals("Room2"))
                 {
-                    room.Puzzle = new ItemDropPuzzle(room, new Bow(new Vector2()));
+                    room.Puzzle = new ItemDropPuzzle(room, new Recorder(new Vector2()));
                 }
                 else if (roomName.Equals("Room3"))
                 {

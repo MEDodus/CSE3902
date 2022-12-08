@@ -8,7 +8,7 @@ namespace Zelda.Projectiles
 {
     public enum ProjectileBehavior { Friendly, Enemy, NeutralHarmless, NeutralHarmful }
 
-    public abstract class IProjectile
+    public abstract class Projectile
     {
         protected ISprite sprite;
         protected Vector2 position;
@@ -23,7 +23,7 @@ namespace Zelda.Projectiles
         public ProjectileBehavior Behavior { get { return behavior; } }
         public bool CanCollide { get { return canCollide; } }
 
-        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior, bool canCollide)
+        public Projectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior, bool canCollide)
         {
             this.sprite = sprite;
             this.position = position;
@@ -39,7 +39,7 @@ namespace Zelda.Projectiles
             this.canCollide = canCollide;
         }
 
-        public IProjectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior)
+        public Projectile(ISprite sprite, Vector2 position, Vector2 direction, double blocksPerSecondSpeed, double lifetime, ProjectileBehavior behavior)
             : this(sprite, position, direction, blocksPerSecondSpeed, lifetime, behavior, true) { }
 
         // Returns whether the projectile should be deleted

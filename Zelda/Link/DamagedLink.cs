@@ -89,7 +89,7 @@ namespace Zelda.Link
         {
             // Can't take damage while already taking damage
         }
-        public bool AddToInventory(IItem item)
+        public bool AddToInventory(Item item)
         {
             // Can't equip items when damaged
             return false;

@@ -4,7 +4,7 @@ using Zelda.Puzzles;
 
 namespace Zelda.Rooms.Puzzles.Classes
 {
-    public class PushableBlockPuzzle : IPuzzle
+    public class PushableBlockPuzzle : Puzzle
     {
         public PushableBlockPuzzle(Room room) : base(room)
         {
@@ -13,7 +13,7 @@ namespace Zelda.Rooms.Puzzles.Classes
 
         protected override bool CanSolve()
         {
-            foreach (IBlock block in Room.CollidableBlocks)
+            foreach (Block block in Room.CollidableBlocks)
             {
                 if (block is PushableBlock)
                 {

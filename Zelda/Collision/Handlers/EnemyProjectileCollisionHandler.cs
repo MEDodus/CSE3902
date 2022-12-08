@@ -12,7 +12,7 @@ namespace Zelda.Collision.Handlers
 {
     public class EnemyProjectileCollisionHandler
     {
-        public void HandleCollision(INPC enemy, IProjectile projectile)
+        public void HandleCollision(INPC enemy, Projectile projectile)
         {
             if (projectile.Behavior == ProjectileBehavior.Friendly || projectile.Behavior == ProjectileBehavior.NeutralHarmful)
             {
@@ -34,10 +34,6 @@ namespace Zelda.Collision.Handlers
                 {
                     CollisionHelper((Goriya)enemy);
                 }
-                else if(enemy is OldMan)
-                {
-                    CollisionHelper((OldMan)enemy);
-                }
             }
         }
         public void CollisionHelper(EnemySingleDirection enemy)
@@ -48,7 +44,7 @@ namespace Zelda.Collision.Handlers
         {
             enemy.TakeDamage(1);
         }
-        public void CollisionHelper(Dodongo enemy, IProjectile projectile)
+        public void CollisionHelper(Dodongo enemy, Projectile projectile)
         {
             int damage = projectile is Explosion ? 3 : 1;
             enemy.TakeDamage(damage);
@@ -56,10 +52,6 @@ namespace Zelda.Collision.Handlers
         public void CollisionHelper(Goriya enemy)
         {
             enemy.TakeDamage(1);
-        }
-        public void CollisionHelper(OldMan enemy)
-        {
-            enemy.State.TakeDamage();
         }
     }
 }

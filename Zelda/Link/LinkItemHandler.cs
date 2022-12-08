@@ -10,8 +10,8 @@ namespace Zelda.Link
     {
         public static void UseItem(int itemNum, Vector2 facingDirection, Health health, IInventory inventory, Vector2 positionInFront)
         {
-            IProjectile item = null;
-            IItem type = null;
+            Projectile item = null;
+            Item type = null;
             Vector2 defaultItemSpawnPos = positionInFront;
             switch (itemNum)
             {

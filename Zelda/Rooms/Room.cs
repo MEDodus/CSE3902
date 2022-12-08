@@ -20,42 +20,42 @@ namespace Zelda.Rooms
         public enum Direction { Left, Right, Up, Down }
 
         private string filename;
-        private HashSet<IBlock> blocks;
-        private IBlock[,] blocksArray = new IBlock[Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT];
-        private HashSet<IBlock> collidableBlocks;
-        private HashSet<IBlock> topLayerBlocks;
+        private HashSet<Block> blocks;
+        private Block[,] blocksArray = new Block[Settings.ROOM_WIDTH, Settings.ROOM_HEIGHT];
+        private HashSet<Block> collidableBlocks;
+        private HashSet<Block> topLayerBlocks;
         private HashSet<INPC> npcs;
-        private HashSet<IItem> items;
-        private HashSet<IItem> itemsToRemove;
-        private Dictionary<Direction, IBorder> borders;
-        private Dictionary<Direction, IBlock> doors;
+        private HashSet<Item> items;
+        private HashSet<Item> itemsToRemove;
+        private Dictionary<Direction, Border> borders;
+        private Dictionary<Direction, Block> doors;
         private Dictionary<Direction, Room> adjacentRooms;
         private Vector2 position;
-        private IPuzzle puzzle;
+        private Puzzle puzzle;
 
         public string Name { get { return filename; } }
-        public HashSet<IBlock> Blocks { get { return blocks; } }
-        public IBlock[,] BlocksArray { get { return blocksArray; } }
-        public HashSet<IBlock> CollidableBlocks { get { return collidableBlocks; } }
+        public HashSet<Block> Blocks { get { return blocks; } }
+        public Block[,] BlocksArray { get { return blocksArray; } }
+        public HashSet<Block> CollidableBlocks { get { return collidableBlocks; } }
         public HashSet<INPC> NPCs { get { return npcs; } }
-        public HashSet<IItem> Items { get { return items; } }
-        public Dictionary<Direction, IBorder> Borders { get { return borders; } }
-        public Dictionary<Direction, IBlock> Doors { get { return doors; } }
+        public HashSet<Item> Items { get { return items; } }
+        public Dictionary<Direction, Border> Borders { get { return borders; } }
+        public Dictionary<Direction, Block> Doors { get { return doors; } }
         public Dictionary<Direction, Room> AdjacentRooms { get { return adjacentRooms; } }
         public Vector2 Position { get { return position; } set { position = value; } }
-        public IPuzzle Puzzle { set { puzzle = value; } }
+        public Puzzle Puzzle { set { puzzle = value; } }
 
         public Room(string filename)
         {
             this.filename = filename;
-            blocks = new HashSet<IBlock>();
-            collidableBlocks = new HashSet<IBlock>();
-            topLayerBlocks = new HashSet<IBlock>();
+            blocks = new HashSet<Block>();
+            collidableBlocks = new HashSet<Block>();
+            topLayerBlocks = new HashSet<Block>();
             npcs = new HashSet<INPC>();
-            items = new HashSet<IItem>();
-            itemsToRemove = new HashSet<IItem>();
-            borders = new Dictionary<Direction, IBorder>();
-            doors = new Dictionary<Direction, IBlock>();
+            items = new HashSet<Item>();
+            itemsToRemove = new HashSet<Item>();
+            borders = new Dictionary<Direction, Border>();
+            doors = new Dictionary<Direction, Block>();
             adjacentRooms = new Dictionary<Direction, Room>();
             puzzle = null;
         }
@@ -76,15 +76,15 @@ namespace Zelda.Rooms
 
         public void Update(GameTime gameTime)
         {
-            foreach (IBlock block in blocks)
+            foreach (Block block in blocks)
             {
                 block.Update(gameTime);
             }
-            foreach (IBlock block in topLayerBlocks)
+            foreach (Block block in topLayerBlocks)
             {
                 block.Update(gameTime);
             }
-            foreach (IBorder border in borders.Values)
+            foreach (Border border in borders.Values)
             {
                 border.Update(gameTime);
             }
@@ -95,7 +95,7 @@ namespace Zelda.Rooms
                 if (npc.Dead)
                 {
                     npcsToRemove.Add(npc);
-                    IItem item = npc.DropItem();
+                    Item item = npc.DropItem();
                     if (item != null)
                     {
                         items.Add(item);
@@ -106,12 +106,12 @@ namespace Zelda.Rooms
             {
                 npcs.Remove(npc);
             }
-            foreach (IItem item in itemsToRemove)
+            foreach (Item item in itemsToRemove)
             {
                 items.Remove(item);
             }
             itemsToRemove.Clear();
-            foreach (IItem item in items)
+            foreach (Item item in items)
             {
                 item.Update(gameTime);
             }
@@ -123,11 +123,11 @@ namespace Zelda.Rooms
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach (IBlock block in blocks)
+            foreach (Block block in blocks)
             {
                 block.Draw(spriteBatch);
             }
-            foreach (IBlock block in collidableBlocks)
+            foreach (Block block in collidableBlocks)
             {
                 // border blocks are in collidableBlocks but not in blocks
                 block.Draw(spriteBatch);
@@ -136,7 +136,7 @@ namespace Zelda.Rooms
             {
                 npc.Draw(spriteBatch);
             }
-            foreach (IItem item in items)
+            foreach (Item item in items)
             {
                 item.Draw(spriteBatch);
             }
@@ -144,17 +144,17 @@ namespace Zelda.Rooms
 
         public void DrawTopLayer(SpriteBatch spriteBatch)
         {
-            foreach (IBlock block in topLayerBlocks)
+            foreach (Block block in topLayerBlocks)
             {
                 block.Draw(spriteBatch);
             }
-            foreach (IBorder border in borders.Values)
+            foreach (Border border in borders.Values)
             {
                 border.Draw(spriteBatch);
             }
         }
 
-        public void RemoveItem(IItem item)
+        public void RemoveItem(Item item)
         {
             itemsToRemove.Add(item);
         }

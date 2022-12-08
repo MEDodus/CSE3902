@@ -4,7 +4,7 @@ using Zelda.Sprites;
 
 namespace Zelda.Borders.Classes.Abstract
 {
-    public abstract class TopBorder : IBorder
+    public abstract class TopBorder : Border
     {
         public TopBorder(Room room, ISprite sprite, bool locked, bool isWall) : base(room, sprite, locked, isWall,
             new Vector2(0, 0),

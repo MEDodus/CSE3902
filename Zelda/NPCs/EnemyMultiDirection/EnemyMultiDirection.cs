@@ -120,7 +120,7 @@ namespace Zelda.NPCs.Classes
             }
         }
 
-        public IItem DropItem()
+        public Item DropItem()
         {
             int itemRow = EnemyCounter.Count;
             EnemyCounter.Increment();

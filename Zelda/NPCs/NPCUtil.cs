@@ -31,7 +31,7 @@ namespace Zelda.NPCs
             }
         }
 
-        public static IItem GetItem(Group enemyGroup, int itemRow, Vector2 position)
+        public static Item GetItem(Group enemyGroup, int itemRow, Vector2 position)
         {
             if (IsRupy(enemyGroup, itemRow))
             {

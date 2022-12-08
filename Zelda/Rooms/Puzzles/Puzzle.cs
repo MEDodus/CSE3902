@@ -2,14 +2,14 @@
 
 namespace Zelda.Puzzles
 {
-    public abstract class IPuzzle
+    public abstract class Puzzle
     {
         protected Room Room { get { return room; } }
 
         private readonly Room room;
         private bool solved = false;
 
-        public IPuzzle(Room room)
+        public Puzzle(Room room)
         {
             this.room = room;
         }

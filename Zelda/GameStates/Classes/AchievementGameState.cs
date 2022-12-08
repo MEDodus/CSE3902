@@ -25,7 +25,7 @@ namespace Zelda.GameStates.Classes
         {
             this.game = game;
             game.GraphicClear();
-            backButton = new BackButton(new Vector2(100, 100));
+            backButton = new BackButton();
             font = MenuSpriteFactory.MenuFont();
         }
 

@@ -109,7 +109,7 @@ namespace Zelda.NPCs.Classes
             AchievementManager.GrantAchievement(Achievement.FirstKill);
         }
 
-        public IItem DropItem()
+        public Item DropItem()
         {
             int itemRow = EnemyCounter.Count;
             EnemyCounter.Increment(); // Increment counter to next row in the table

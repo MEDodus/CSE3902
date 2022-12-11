@@ -50,6 +50,7 @@ namespace Zelda.NPCs.Classes
 
         public void Update(GameTime gameTime)
         {
+            if (!visible) return;
             double timeDelta = gameTime.ElapsedGameTime.TotalSeconds;
 
             // Update position based on move direction

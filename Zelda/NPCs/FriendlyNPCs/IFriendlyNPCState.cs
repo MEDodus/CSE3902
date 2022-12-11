@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace Zelda.Enemy
+namespace Zelda.NPCs.FriendlyNPCs
 {
     public interface IFriendlyNPCState
     {

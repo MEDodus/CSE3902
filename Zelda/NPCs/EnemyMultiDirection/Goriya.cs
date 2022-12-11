@@ -57,6 +57,7 @@ namespace Zelda.NPCs.Classes
 
         public void Update(GameTime gameTime)
         {
+            if (!visible) return;
             //Movement
             if (changeDirectionCooldown <= 0 && damageDelay <= 0)
             {

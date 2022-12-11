@@ -34,6 +34,11 @@ namespace Zelda.Collision.Handlers
                 {
                     CollisionHelper((Goriya)enemy);
                 }
+                else if (enemy is OldMan)
+                {
+                    OldMan oldMan = (OldMan)enemy;
+                    oldMan.State.TakeDamage();
+                }
             }
         }
         public void CollisionHelper(EnemySingleDirection enemy)

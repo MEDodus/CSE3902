@@ -39,6 +39,7 @@ namespace Zelda.NPCs.FriendlyNPCs
                     npc.Update(game, gameTime);
                 }
             }
+            CheckOldManDead(game);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -47,16 +48,16 @@ namespace Zelda.NPCs.FriendlyNPCs
                 npc.Draw(spriteBatch);
             }
         }
-        /*private void CheckOldManDead(Game1 game)
+        private void CheckOldManDead(Game1 game)
         {
             foreach (INPC npc in RoomBuilder.Instance.CurrentRoom.NPCs)
             {
                 if (npc is OldMan && ((OldMan)npc).State is OldManGhostState)
                 {
-                    friendlyNPCs.Add(npc);
+                    friendlyNPCs.Add((IFriendlyNPC)npc);
                     ((OldMan)npc).Dead = true;  //set to true so OldMan reference in Roombuilder.rooms[5] is removed
                 }
             }
-        }*/
+        }
     }
 }

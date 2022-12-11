@@ -34,7 +34,6 @@ namespace Zelda.Achievements
         private static readonly Vector2 TEXT_POSITION = POSITION + new Vector2(75, 30);
         private static readonly double ACHIEVEMENT_DISPLAY_LENGTH = 5;
 
-        private static Game1 game;
         private static int maxLevelUnlocked = 1;
         private static HashSet<Achievement> unlockedAchievements= new HashSet<Achievement>();
         private static ISprite achievementSprite;
@@ -59,7 +58,7 @@ namespace Zelda.Achievements
             }
         }
 
-        public static void Load(Game1 game)
+        public static void Load()
         {
             achievementSprite = MenuSpriteFactory.AchievementSprite();
             font = MenuSpriteFactory.AchievementFont();

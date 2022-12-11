@@ -80,7 +80,7 @@ namespace Zelda
             // Other initialization
             commandBuilder = new CommandBuilder(keyboard, mouse, this);
             collisionDetector = new CollisionDetector();
-            AchievementManager.Load(this);
+            AchievementManager.Load();
             base.Initialize();
             FriendlyNPCManager.Instance.Initialize();
             Reset();

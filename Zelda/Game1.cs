@@ -43,6 +43,7 @@ namespace Zelda
         public IHUD HUD { get { return hud; } set { hud = value; } }
         public CollisionDetector Collisions { get { return collisionDetector; } }
         public FriendlyNPCManager FriendlyNPCManager { get { return friendlyNPCManager; } set { friendlyNPCManager = value; } }
+        public int PlayerCount { get { return playerCount; } set { playerCount = value; } }
 
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
@@ -53,6 +54,7 @@ namespace Zelda
         private CommandBuilder commandBuilder;
         private CollisionDetector collisionDetector;
         private FriendlyNPCManager friendlyNPCManager;
+        private int playerCount;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -83,6 +85,7 @@ namespace Zelda
             AchievementManager.Load();
             base.Initialize();
             FriendlyNPCManager.Instance.Initialize();
+            playerCount = 1;
             Reset();
         }
 

@@ -15,7 +15,7 @@ namespace Zelda.Commands
 
         public void Execute(GameTime gameTime)
         {
-            if(playerNumber == 1)
+            if(game.PlayerCount == 1 || playerNumber == 1)
             {
                 game.Link.AttackSecondary();
             }

@@ -35,7 +35,10 @@ namespace Zelda.GameStates.Classes
             ProjectileStorage.Update(gameTime);
             FriendlyNPCManager.Instance.Update(game, gameTime);
             game.Link.Update(gameTime);
-            game.LinkCompanion.Update(gameTime);
+            if(game.PlayerCount > 1)
+            {
+                game.LinkCompanion.Update(gameTime);
+            }
             game.Collisions.DetectCollisions(game, gameTime, game.Link, game.LinkCompanion);
             game.HUD.Update(gameTime);
             AchievementManager.Update(gameTime);
@@ -47,7 +50,10 @@ namespace Zelda.GameStates.Classes
             RoomBuilder.Instance.Draw(spriteBatch);
             ProjectileStorage.Draw(spriteBatch);
             game.Link.Draw(spriteBatch);
-            game.LinkCompanion.Draw(spriteBatch);
+            if(game.PlayerCount > 1)
+            {
+                game.LinkCompanion.Draw(spriteBatch);
+            }
             RoomBuilder.Instance.DrawTopLayer(spriteBatch);
             game.HUD.Draw(spriteBatch);
             FriendlyNPCManager.Instance.Draw(spriteBatch);

@@ -20,6 +20,7 @@ namespace Zelda.GameStates.Classes
         private MenuButton levelSelectButton;
         private MenuButton achievementsButton;
         private MenuButton resetButton;
+        private MenuButton multiplayerButton, multiplayerButtonOne, multiplayerButtonTwo;
 
         public MenuGameState(Game1 game)
         {
@@ -29,6 +30,15 @@ namespace Zelda.GameStates.Classes
             levelSelectButton = new MenuButton(new Vector2(X, Y), " LEVEL SELECT");
             achievementsButton = new MenuButton(new Vector2(X, Y + BUTTON_OFFSET_Y), "ACHIEVEMENTS");
             resetButton = new MenuButton(new Vector2(X, Y + 2 * BUTTON_OFFSET_Y), "  RESET DATA");
+            multiplayerButtonOne = new MenuButton(new Vector2(X, Y - BUTTON_OFFSET_Y), "   PLAYERS: 1");
+            multiplayerButtonTwo = new MenuButton(new Vector2(X, Y - BUTTON_OFFSET_Y), "   PLAYERS: 2");
+            if(game.PlayerCount == 1)
+            {
+                multiplayerButton = multiplayerButtonOne;
+            } else
+            {
+                multiplayerButton = multiplayerButtonTwo;
+            }
         }
 
         public void Update(GameTime gameTime)
@@ -40,6 +50,7 @@ namespace Zelda.GameStates.Classes
             levelSelectButton.Update(gameTime);
             achievementsButton.Update(gameTime);
             resetButton.Update(gameTime);
+            multiplayerButton.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -47,6 +58,7 @@ namespace Zelda.GameStates.Classes
             levelSelectButton.Draw(spriteBatch);
             achievementsButton.Draw(spriteBatch);
             resetButton.Draw(spriteBatch);
+            multiplayerButton.Draw(spriteBatch);
         }
 
         public void LeftClick()
@@ -71,6 +83,19 @@ namespace Zelda.GameStates.Classes
                 clickCooldown = 0.5;
                 SoundManager.Instance.PlayMenuClickSound();
                 AchievementManager.Reset();
+            } else if (multiplayerButton.Destination.Contains(position))
+            {
+                clickCooldown = 0.5;
+                SoundManager.Instance.PlayMenuClickSound();
+                if(multiplayerButton == multiplayerButtonOne)
+                {
+                    multiplayerButton = multiplayerButtonTwo;
+                    game.PlayerCount = 2;
+                } else
+                {
+                    multiplayerButton = multiplayerButtonOne;
+                    game.PlayerCount = 1;
+                }
             }
         }
 

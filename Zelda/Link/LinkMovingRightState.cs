@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Zelda.Controllers;
 using Zelda.Sprites.Factories;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 
@@ -8,9 +9,6 @@ namespace Zelda.Link
     public class LinkMovingRightState : ILinkState
     {
         private ILink link;
-
-        private int runTime = 0;
-        private int moveRightCount = 0;
 
         public LinkMovingRightState(ILink link)
         {
@@ -33,7 +31,6 @@ namespace Zelda.Link
         public void MoveRight()
         {
             // Already moving right, stay in this state
-            moveRightCount++;
         }
         public void TakeDamage(Game1 game, Vector2 pushDirection)
         {
@@ -63,21 +60,19 @@ namespace Zelda.Link
         public void Update()
         {
             link.Position += new Vector2(Settings.LINK_SPEED, 0);
-            if (runTime > moveRightCount)
+            if (!KeyboardController.PlayerMovingRightKey(link.PlayerNumber))
             {
                 link.State = new LinkFacingRightState(link);
             }
-            runTime++;
         }
 
         public void Update(int speed)
         {
             link.Position += new Vector2(Settings.LINK_SPEED * speed, 0);
-            if (runTime > moveRightCount)
+            if (!KeyboardController.PlayerMovingRightKey(link.PlayerNumber))
             {
                 link.State = new LinkFacingRightState(link);
             }
-            runTime++;
         }
     }
 }

@@ -74,11 +74,11 @@ namespace Zelda.GameStates.Classes
 
         public void Up()
         {
-            if(KeyboardController.mostRecentLinkMovementKey(Keys.W) == Keys.W)
+            if (KeyboardController.PlayerMovingUpKey(1))
             {
                 game.Link.MoveUp();
             }
-            else if(KeyboardController.mostRecentCompMovementKey(Keys.Up) == Keys.Up)
+            if(KeyboardController.PlayerMovingUpKey(2))
             {
                 game.LinkCompanion.MoveUp();
             }
@@ -86,11 +86,11 @@ namespace Zelda.GameStates.Classes
 
         public void Down()
         {
-            if (KeyboardController.mostRecentLinkMovementKey(Keys.S) == Keys.S)
+            if (KeyboardController.PlayerMovingDownKey(1))
             {
                 game.Link.MoveDown();
             }
-            if (KeyboardController.mostRecentCompMovementKey(Keys.Down) == Keys.Down)
+            if (KeyboardController.PlayerMovingDownKey(2))
             {
                 game.LinkCompanion.MoveDown();
             }
@@ -98,11 +98,11 @@ namespace Zelda.GameStates.Classes
 
         public void Left()
         {
-            if (KeyboardController.mostRecentLinkMovementKey(Keys.A) == Keys.A)
+            if (KeyboardController.PlayerMovingLeftKey(1))
             {
                 game.Link.MoveLeft();
             }
-            if (KeyboardController.mostRecentCompMovementKey(Keys.Left) == Keys.Left)
+            if (KeyboardController.PlayerMovingLeftKey(2))
             {
                 game.LinkCompanion.MoveLeft();
             }
@@ -110,11 +110,11 @@ namespace Zelda.GameStates.Classes
 
         public void Right()
         {
-            if (KeyboardController.mostRecentLinkMovementKey(Keys.D) == Keys.D)
+            if (KeyboardController.PlayerMovingRightKey(1))
             {
                 game.Link.MoveRight();
             }
-            if (KeyboardController.mostRecentCompMovementKey(Keys.Right) == Keys.Right)
+            if (KeyboardController.PlayerMovingRightKey(2))
             {
                 game.LinkCompanion.MoveRight();
             }

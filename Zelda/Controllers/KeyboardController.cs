@@ -2,10 +2,12 @@
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Transactions;
 using Zelda.Commands;
 using Zelda.Commands.Classes;
 using Zelda.GameStates.Classes;
+using Zelda.Items.Classes;
 
 namespace Zelda.Controllers
 {
@@ -17,7 +19,8 @@ namespace Zelda.Controllers
         private static KeyboardState currentState;
         private static HashSet<Keys> linkMovementKeys = new HashSet<Keys>();
         private static HashSet<Keys> compMovementKeys = new HashSet<Keys>();
-        private static Keys mostRecentMoveKeyLink, mostRecentMoveKeyComp;
+        private static Stack<Keys> pressedLinkMovementKeys = new Stack <Keys>();
+        private static Stack<Keys> pressedCompanionMovementKeys = new Stack<Keys>();
 
         public KeyboardController(Game1 game)
         {
@@ -31,8 +34,8 @@ namespace Zelda.Controllers
             compMovementKeys.Add(Keys.Left);
             compMovementKeys.Add(Keys.Down);
             compMovementKeys.Add(Keys.Right);
-            mostRecentMoveKeyLink = Keys.D0;
-            mostRecentMoveKeyComp = Keys.D0;
+            pressedLinkMovementKeys.Push(Keys.D0);
+            pressedCompanionMovementKeys.Push(Keys.D0);
         }
 
         public void RegisterCommand(Keys key, ICommand command)
@@ -80,61 +83,78 @@ namespace Zelda.Controllers
                     command.Execute(gameTime);
                 }
             }
+            UpdateLinkKeys(pressedKeys);
         }
 
-        public static Keys mostRecentLinkMovementKey(Keys key)
+        private static void UpdateLinkKeys(Keys[] pressedKeys)
         {
-            Keys[] oldPressedKeys = previousState.GetPressedKeys();
-            Keys[] newPressedKeys = currentState.GetPressedKeys();
-            Boolean anyMovementKeyPressed = false;
-            foreach (Keys pressedKey in newPressedKeys)
+            foreach (Keys pressedKey in pressedKeys)
             {
-                if (linkMovementKeys.Contains(pressedKey)) { anyMovementKeyPressed = true; }
-            }
-            if (!anyMovementKeyPressed) { return Keys.D0; }
-            if (currentState.IsKeyDown(key) && previousState.IsKeyUp(key))
-            {
-                mostRecentMoveKeyLink = key;
-            }
-            if (currentState.IsKeyUp(mostRecentMoveKeyLink) && previousState.IsKeyDown(mostRecentMoveKeyLink))
-            {
-                foreach (Keys pressedKey in newPressedKeys)
+                if (linkMovementKeys.Contains(pressedKey) && !pressedLinkMovementKeys.Contains(pressedKey))
                 {
-                    if (linkMovementKeys.Contains(pressedKey))
-                    {
-                        mostRecentMoveKeyLink = pressedKey;
-                    }
+                    pressedLinkMovementKeys.Push(pressedKey);
+                }
+                if (compMovementKeys.Contains(pressedKey) && !pressedCompanionMovementKeys.Contains(pressedKey))
+                {
+                    pressedCompanionMovementKeys.Push(pressedKey);
                 }
             }
-            
-            return mostRecentMoveKeyLink;
+            while (!pressedLinkMovementKeys.Peek().Equals(Keys.D0) && !pressedKeys.Contains(pressedLinkMovementKeys.Peek()))
+            {
+                pressedLinkMovementKeys.Pop();
+            }
+            while (!pressedCompanionMovementKeys.Peek().Equals(Keys.D0) && !pressedKeys.Contains(pressedCompanionMovementKeys.Peek()))
+            {
+                pressedCompanionMovementKeys.Pop();
+            }
         }
 
-        public static Keys mostRecentCompMovementKey(Keys key)
+        public static bool PlayerMovingUpKey(int number)
         {
-            Keys[] oldPressedKeys = previousState.GetPressedKeys();
-            Keys[] newPressedKeys = currentState.GetPressedKeys();
-            Boolean anyMovementKeyPressed = false;
-            foreach (Keys pressedKey in newPressedKeys)
+            if (number == 1)
             {
-                if (compMovementKeys.Contains(pressedKey)) { anyMovementKeyPressed = true; }
+                return Keys.W.Equals(pressedLinkMovementKeys.Peek());
             }
-            if(!anyMovementKeyPressed) { return Keys.D0; }
-            if (currentState.IsKeyDown(key) && previousState.IsKeyUp(key))
+            else
             {
-                mostRecentMoveKeyComp = key;
+                return Keys.Up.Equals(pressedCompanionMovementKeys.Peek());
             }
-            if (currentState.IsKeyUp(mostRecentMoveKeyComp) && previousState.IsKeyDown(mostRecentMoveKeyComp))
+        }
+
+        public static bool PlayerMovingDownKey(int number)
+        {
+            if (number == 1)
             {
-                foreach (Keys pressedKey in newPressedKeys)
-                {
-                    if (compMovementKeys.Contains(pressedKey))
-                    {
-                        mostRecentMoveKeyComp = pressedKey;
-                    }
-                }
+                return Keys.S.Equals(pressedLinkMovementKeys.Peek());
             }
-            return mostRecentMoveKeyComp;
+            else
+            {
+                return Keys.Down.Equals(pressedCompanionMovementKeys.Peek());
+            }
+        }
+
+        public static bool PlayerMovingLeftKey(int number)
+        {
+            if (number == 1)
+            {
+                return Keys.A.Equals(pressedLinkMovementKeys.Peek());
+            }
+            else
+            {
+                return Keys.Left.Equals(pressedCompanionMovementKeys.Peek());
+            }
+        }
+
+        public static bool PlayerMovingRightKey(int number)
+        {
+            if (number == 1)
+            {
+                return Keys.D.Equals(pressedLinkMovementKeys.Peek());
+            }
+            else
+            {
+                return Keys.Right.Equals(pressedCompanionMovementKeys.Peek());
+            }
         }
     }
 }

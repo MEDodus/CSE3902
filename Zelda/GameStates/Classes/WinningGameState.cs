@@ -15,6 +15,7 @@ namespace Zelda.GameStates.Classes
     {
         private Game1 game;
         private TriforceLink decoratedLink;
+        private TriforceLink decoratedCompanion;
         private double timer;
         private SpriteFont font1;
         private SpriteFont font2;
@@ -24,7 +25,9 @@ namespace Zelda.GameStates.Classes
             SoundManager.Instance.PlayGetItemSound();
             this.game = game;
             decoratedLink = new TriforceLink(game.Link, game);
+            decoratedCompanion = new TriforceLink(game.LinkCompanion, game);
             game.Link = decoratedLink;
+            game.LinkCompanion = decoratedCompanion;
             timer = 1.5;
             font1 = HUDSpriteFactory.WinOrLoseFont();
             font2 = HUDSpriteFactory.HUDFont();
@@ -40,6 +43,7 @@ namespace Zelda.GameStates.Classes
             {
                 swappedScreens = true;
                 decoratedLink.RemoveDecorator();
+                decoratedCompanion.RemoveDecorator();
                 FriendlyNPCManager.Instance.FriendlyNPCs.Clear();
                 SoundManager.Instance.Stop();
                 SoundManager.Instance.PlaySecretSound();
@@ -47,6 +51,10 @@ namespace Zelda.GameStates.Classes
             // Update only some game objects
             RoomBuilder.Instance.Update(gameTime);
             game.Link.Update(gameTime);
+            if(game.PlayerCount > 1)
+            {
+                game.LinkCompanion.Update(gameTime);
+            }
             game.HUD.Update(gameTime);
         }
 
@@ -64,6 +72,10 @@ namespace Zelda.GameStates.Classes
                 RoomBuilder.Instance.Draw(spriteBatch);
                 ProjectileStorage.Draw(spriteBatch);
                 game.Link.Draw(spriteBatch);
+                if(game.PlayerCount > 1)
+                {
+                    game.LinkCompanion.Draw(spriteBatch);
+                }
                 RoomBuilder.Instance.DrawTopLayer(spriteBatch);
                 game.HUD.Draw(spriteBatch);
             }
